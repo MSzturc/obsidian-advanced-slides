@@ -1,9 +1,25 @@
 {
-  "name": "obsidian-advanced-slides",
-  "version": "0.1.0",
-  "description": "Create markdown-based reveal.js slides in Obsidian",
-  "main": "src/main.ts",
-  "repository": "git@github.com:MSzturc/obsidian-advanced-slides.git",
-  "author": "Matthäus Szturc",
-  "license": "MIT"
+	"name": "obsidian-advanced-slides",
+	"version": "0.1.0",
+	"description": "Create markdown-based reveal.js slides in Obsidian",
+	"main": "src/main.ts",
+	"scripts": {
+		"dev": "node esbuild.config.mjs",
+		"build": "node esbuild.config.mjs production"
+	},
+	"repository": "git@github.com:MSzturc/obsidian-advanced-slides.git",
+	"author": "Matthäus Szturc",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^16.11.11",
+		"@typescript-eslint/eslint-plugin": "^5.5.0",
+		"@typescript-eslint/parser": "^5.5.0",
+		"builtin-modules": "^3.2.0",
+		"esbuild": "^0.14.2",
+		"esbuild-plugin-copy": "^0.3.0",
+		"obsidian": "^0.12.17",
+		"ts-node": "^10.4.0",
+		"tslib": "^2.3.1",
+		"typescript": "^4.5.2"
+	}
 }

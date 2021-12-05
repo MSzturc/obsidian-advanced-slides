@@ -1,3 +1,10 @@
+# vscode specific
+.vscode 
+
 # node specific
 node_modules
 package-lock.json
+yarn.lock
+
+# test specific
+test-vault
