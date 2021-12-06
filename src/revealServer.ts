@@ -26,20 +26,17 @@ export class RevealServer {
 
 	start() {
 
-		this._app.get('/', (req, res) => {
-			res.send('Hello my friends!');
-		});
-
 		['plugin', 'dist', 'css'].forEach(dir => {
 			this._app.use('/' + dir, this._staticDir(path.join(this._pluginDirectory, dir)));
 		});
-
 
 		this._app.get(/(\w+\.md)/, async (req, res) => {
 			const filePath = path.join(this._baseDirectory, decodeURI(req.url));
 			const markup = await this._revealRenderer.renderFile(filePath);
 			res.send(markup);
 		});
+
+		this._app.use(this._staticDir(this._baseDirectory));
 
 		this._server = this._app.listen(this._port, () => {
 			// tslint:disable-next-line:no-console
