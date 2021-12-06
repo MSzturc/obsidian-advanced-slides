@@ -1,3 +1,4 @@
+import fs from "fs-extra";
 
 export class RevealRenderer {
 
@@ -5,7 +6,8 @@ export class RevealRenderer {
 	}
 
 	async renderFile(filePath : String) {
-		return "Hallo Welt";
+		const content = await (await fs.readFile(filePath.toString())).toString();
+		return content;
 	}
 
 }
