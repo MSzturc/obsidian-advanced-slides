@@ -43,11 +43,92 @@ esbuild.build({
     plugins: [
 		staticAssetsPlugin,
         copy.default({
-            assets: prod ? {
+			assets: {
                 from: ['manifest.json', 'styles.css'],
                 to: ['.'],
-            } : {
-                from: ['manifest.json', 'styles.css', '.hotreload'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['src/template/*'],
+                to: ['./template/'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/dist/*'],
+                to: ['./dist'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/dist/theme/*'],
+                to: ['./dist/theme'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/dist/theme/fonts/league-gothic/*'],
+                to: ['./dist/theme/fonts/league-gothic'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/dist/theme/fonts/source-sans-pro/*'],
+                to: ['./dist/theme/fonts/source-sans-pro'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/plugin/highlight/*'],
+                to: ['./plugin/highlight'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/plugin/markdown/*'],
+                to: ['./plugin/markdown'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/plugin/math/*'],
+                to: ['./plugin/math'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/plugin/notes/*'],
+                to: ['./plugin/notes'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/plugin/search/*'],
+                to: ['./plugin/search'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/reveal.js/plugin/zoom/*'],
+                to: ['./plugin/zoom'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['node_modules/highlight.js/styles/vs2015.css'],
+                to: ['./css'],
+            }
+        }),
+		copy.default({
+			assets: {
+                from: ['src/css/mattropolis.css'],
+                to: ['./css'],
+            }
+        }),
+		copy.default({
+            assets: prod ? {} : {
+                from: ['.hotreload'],
                 to: ['.'],
             },
         }),
