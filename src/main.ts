@@ -1,7 +1,6 @@
-import { Plugin, ItemView, App, PluginManifest, FileSystemAdapter } from 'obsidian';
+import { Plugin, FileSystemAdapter } from 'obsidian';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
-import path from 'path';
 
 export default class AdvancedSlidesPlugin extends Plugin {
 
