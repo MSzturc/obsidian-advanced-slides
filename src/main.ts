@@ -1,15 +1,20 @@
-import { Plugin, ItemView, App, PluginManifest } from 'obsidian';
+import { Plugin, ItemView, App, PluginManifest, FileSystemAdapter } from 'obsidian';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
+import path from 'path';
 
 export default class AdvancedSlidesPlugin extends Plugin {
 
 	private previewView: RevealPreviewView;
 	private revealServer: RevealServer;
 
-	async onload() {
+	private vaultDirectory: String;
 
-		this.revealServer = new RevealServer();
+	async onload() {
+		const fileSystemAdapter: FileSystemAdapter = this.app.vault.adapter as FileSystemAdapter;
+		this.vaultDirectory = fileSystemAdapter.getBasePath();
+
+		this.revealServer = new RevealServer(this.vaultDirectory);
 		this.revealServer.start();
 
 		this.registerView(
@@ -21,8 +26,13 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		);
 
 		this.addRibbonIcon("dice", "Activate view", () => {
+			const targetDocument = this.app.workspace.getActiveFile().path;
 			this.activateView();
-			this.previewView.setUrl(this.revealServer.getUrl());
+
+			let url = new URL(this.revealServer.getUrl());
+			url.pathname = targetDocument;
+
+			this.previewView.setUrl(url.toString());
 		});
 	}
 
