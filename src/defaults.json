@@ -1,4 +1,5 @@
 {
+	"theme": "black",
 	"template": "template/reveal.html",
 	"separator": "\r?\n---\r?\n",
 	"verticalSeparator": "\r?\n--\r?\n"
