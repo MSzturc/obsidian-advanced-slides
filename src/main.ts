@@ -52,18 +52,12 @@ export class ExampleView extends ItemView {
 	async onOpen() {
 		const container = this.containerEl.children[1];
 		container.empty();
-		container.setAttr('style','padding: 0;');
+		container.addClass('reveal-preview-view');
 
-		const inner = container.createDiv({
-            cls: "markdown-preview-view",
-            attr: { style: "padding: 0;overflow:hidden;" }
-        });
-
-		inner.createEl("iframe",
+		container.createEl("iframe",
 			{
 				attr: {
-					src: 'http://www.google.de',
-					style: 'border-style:none;width: 100%; height: 100%'
+					src: 'http://www.google.com'
 				}
 			});
 	}
