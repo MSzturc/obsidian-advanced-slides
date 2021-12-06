@@ -1,68 +1,39 @@
-import { Plugin, ItemView, WorkspaceLeaf } from 'obsidian';
+import { Plugin, ItemView, App, PluginManifest } from 'obsidian';
+import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 
 export default class AdvancedSlidesPlugin extends Plugin {
 
+	private previewView: RevealPreviewView
+
 	async onload() {
 		this.registerView(
-			VIEW_TYPE_EXAMPLE,
-			(leaf) => new ExampleView(leaf)
+			REVEAL_PREVIEW_VIEW,
+			(leaf) => {
+				this.previewView = new RevealPreviewView(leaf);
+				return this.previewView;
+			}
 		);
 
 		this.addRibbonIcon("dice", "Activate view", () => {
 			this.activateView();
+			this.previewView.setUrl('http://www.heise.de');
 		});
 	}
 
 	onunload() {
-		this.app.workspace.detachLeavesOfType(VIEW_TYPE_EXAMPLE);
+		this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
 	}
 
 	async activateView() {
-		this.app.workspace.detachLeavesOfType(VIEW_TYPE_EXAMPLE);
+		this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
 
 		await this.app.workspace.getLeaf(true).setViewState({
-			type: VIEW_TYPE_EXAMPLE,
+			type: REVEAL_PREVIEW_VIEW,
 			active: true,
 		});
 
 		this.app.workspace.revealLeaf(
-			this.app.workspace.getLeavesOfType(VIEW_TYPE_EXAMPLE)[0]
+			this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW)[0]
 		);
-	}
-}
-
-export const VIEW_TYPE_EXAMPLE = "example-view";
-
-export class ExampleView extends ItemView {
-
-	iframe: HTMLIFrameElement;
-
-	constructor(leaf: WorkspaceLeaf) {
-		super(leaf);
-	}
-
-	getViewType() {
-		return VIEW_TYPE_EXAMPLE;
-	}
-
-	getDisplayText() {
-		return "Reveal.js Preview";
-	}
-
-	async onOpen() {
-		const container = this.containerEl.children[1];
-		container.empty();
-		container.addClass('reveal-preview-view');
-
-		container.createEl("iframe",
-			{
-				attr: {
-					src: 'http://www.google.com'
-				}
-			});
-	}
-
-	async onClose() {
-		// Nothing to clean up.
 	}
 }
