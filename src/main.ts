@@ -1,11 +1,17 @@
 import { Plugin, ItemView, App, PluginManifest } from 'obsidian';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
+import { RevealServer } from './revealServer';
 
 export default class AdvancedSlidesPlugin extends Plugin {
 
-	private previewView: RevealPreviewView
+	private previewView: RevealPreviewView;
+	private revealServer: RevealServer;
 
 	async onload() {
+
+		this.revealServer = new RevealServer();
+		this.revealServer.start();
+
 		this.registerView(
 			REVEAL_PREVIEW_VIEW,
 			(leaf) => {
@@ -16,12 +22,13 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 		this.addRibbonIcon("dice", "Activate view", () => {
 			this.activateView();
-			this.previewView.setUrl('http://www.heise.de');
+			this.previewView.setUrl(this.revealServer.getUrl());
 		});
 	}
 
 	onunload() {
 		this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
+		this.revealServer.stop();
 	}
 
 	async activateView() {
