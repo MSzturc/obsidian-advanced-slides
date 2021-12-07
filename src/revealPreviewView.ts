@@ -8,10 +8,19 @@ export class RevealPreviewView extends ItemView {
 	private viewContent: Element;
 	private url: String = 'about:blank';
 
+	private messageListener;
+
 	constructor(leaf: WorkspaceLeaf) {
+		
 		super(leaf);
 		this.viewHeader = this.containerEl.children[0];
 		this.viewContent = this.containerEl.children[1];
+
+		window.addEventListener("message", this.onMessage.bind(this));
+	}
+
+	onMessage(msg : MessageEvent){
+		this.setUrl(msg.data);
 	}
 
 	getViewType() {
@@ -38,11 +47,19 @@ export class RevealPreviewView extends ItemView {
 			});
 	}
 
+	async onUpdate() {
+		this.renderView();
+	}
+
 	async onOpen() {
 		this.renderView();
 	}
 
 	async onClose() {
 		// Nothing to clean up.
+	}
+
+	async destroy() {
+		window.removeEventListener("message", this.onMessage);
 	}
 }

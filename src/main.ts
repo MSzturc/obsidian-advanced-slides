@@ -8,6 +8,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	private revealServer: RevealServer;
 
 	private vaultDirectory: String;
+	private target: string;
 
 	async onload() {
 		const fileSystemAdapter: FileSystemAdapter = this.app.vault.adapter as FileSystemAdapter;
@@ -25,28 +26,32 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		);
 		this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 
-		this.addRibbonIcon("dice", "Activate view", () => {
-			this.updateView();
+		this.addRibbonIcon("dice", "Show Reveal Preview", () => {
+			this.showView();
 		});
 	}
 
-	updateView(){
+	onChange(file) {
+		this.previewView.onUpdate();
+	}
+
+	showView() {
+
 		const targetDocument = this.app.workspace.getActiveFile().path;
+
+		if (targetDocument.startsWith(this.target)
+			&& this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW).length > 0) {
+			return;
+		}
+		
+		this.target = targetDocument;
 		this.activateView();
 
 		let url = new URL(this.revealServer.getUrl());
 		url.pathname = targetDocument;
 
 		this.previewView.setUrl(url.toString());
-	}
 
-	onChange(file) {
-		this.updateView();
-	}
-
-	onunload() {
-		this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
-		this.revealServer.stop();
 	}
 
 	async activateView() {
@@ -60,5 +65,13 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		this.app.workspace.revealLeaf(
 			this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW)[0]
 		);
+	}
+
+	onunload() {
+		this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
+		if (this.previewView) {
+			this.previewView.destroy();
+		}
+		this.revealServer.stop();
 	}
 }
