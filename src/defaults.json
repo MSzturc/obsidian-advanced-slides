@@ -1,5 +1,6 @@
 {
 	"theme": "black",
+	"highlightTheme": "zenburn",
 	"template": "template/reveal.html",
 	"separator": "\r?\n---\r?\n",
 	"verticalSeparator": "\r?\n--\r?\n"

@@ -29,19 +29,37 @@ export class RevealRenderer {
 
 		const { title } = options;
 		const themeUrl = this.getThemeUrl(options.theme);
+		const highlightThemeUrl = this.getHighlightThemeUrl(options.highlightTheme);
 		const slides = this.slidify(markdown, this.getSlidifyOptions(options));
 
 		const context = Object.assign(options, {
 			title,
 			slides,
 			themeUrl,
-			revealOptionsStr: JSON.stringify({}),
-			watch: false
+			highlightThemeUrl,
+			revealOptionsStr: JSON.stringify({})
 		  });
+
+		console.log(context);
 
 		const template = await this.getTemplate();
 		const result = Mustache.render(template, context);
 		return result;
+	}
+
+	private getHighlightThemeUrl(theme: string) {
+		try {
+			const parsedUrl = new URL(theme);
+			return theme;
+		} catch (err) { }
+
+		const highlightThemes = glob.sync('plugin/highlight/*.css', { cwd: this._pluginDirectory });
+		
+		const highlightTheme = highlightThemes.find(
+			themePath => path.basename(themePath).replace(path.extname(themePath), '') === theme
+		  );
+
+		  return highlightTheme ?  '/' + highlightTheme : '/' + theme;
 	}
 
 	private getThemeUrl(theme: string) {
