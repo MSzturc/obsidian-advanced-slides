@@ -4,14 +4,14 @@ export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
 
 export class RevealPreviewView extends ItemView {
 
-	private _viewHeader: any;
-	private _viewContent: any;
-	private _url: String = 'about:blank';
+	private viewHeader: Element;
+	private viewContent: Element;
+	private url: String = 'about:blank';
 
 	constructor(leaf: WorkspaceLeaf) {
 		super(leaf);
-		this._viewHeader = this.containerEl.children[0];
-		this._viewContent = this.containerEl.children[1];
+		this.viewHeader = this.containerEl.children[0];
+		this.viewContent = this.containerEl.children[1];
 	}
 
 	getViewType() {
@@ -23,17 +23,17 @@ export class RevealPreviewView extends ItemView {
 	}
 
 	setUrl(url: String) {
-		this._url = url;
-		this.renderView();
+		this.url = url;
 	}
 
-	private renderView() {
-		this._viewContent.empty();
-		this._viewContent.addClass('reveal-preview-view');
-		this._viewContent.createEl("iframe",
+	private async renderView() {
+
+		this.viewContent.empty();
+		this.viewContent.addClass('reveal-preview-view');
+		const element = this.viewContent.createEl("iframe",
 			{
 				attr: {
-					src: this._url
+					src: this.url
 				}
 			});
 	}
