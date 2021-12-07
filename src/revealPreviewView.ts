@@ -42,6 +42,7 @@ export class RevealPreviewView extends ItemView {
 		const element = this.viewContent.createEl("iframe",
 			{
 				attr: {
+					// @ts-ignore:
 					src: this.url
 				}
 			});
