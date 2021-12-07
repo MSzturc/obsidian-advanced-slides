@@ -10,12 +10,7 @@
     <link rel="stylesheet" href="{{{themeUrl}}}" id="theme" />
     <link rel="stylesheet" href="{{{base}}}{{{highlightThemeUrl}}}" />
 
-    {{#cssPaths}}
-    <link rel="stylesheet" href="{{{.}}}" />
-    {{/cssPaths}}
-
 	<script type="text/javascript">
-        
 		function onPopState(event) {
 			parent.postMessage(event.target.location.href, "app://obsidian.md");
         }
@@ -69,10 +64,6 @@
 
       var options = extend(defaultOptions, {{{revealOptionsStr}}}, queryOptions);
     </script>
-
-    {{#scriptPaths}}
-    <script src="{{{.}}}"></script>
-    {{/scriptPaths}}
 
     <script>
       Reveal.initialize(options);
