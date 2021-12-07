@@ -23,16 +23,25 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				return this.previewView;
 			}
 		);
+		this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 
 		this.addRibbonIcon("dice", "Activate view", () => {
-			const targetDocument = this.app.workspace.getActiveFile().path;
-			this.activateView();
-
-			let url = new URL(this.revealServer.getUrl());
-			url.pathname = targetDocument;
-
-			this.previewView.setUrl(url.toString());
+			this.updateView();
 		});
+	}
+
+	updateView(){
+		const targetDocument = this.app.workspace.getActiveFile().path;
+		this.activateView();
+
+		let url = new URL(this.revealServer.getUrl());
+		url.pathname = targetDocument;
+
+		this.previewView.setUrl(url.toString());
+	}
+
+	onChange(file) {
+		this.updateView();
 	}
 
 	onunload() {
@@ -45,7 +54,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 		await this.app.workspace.getLeaf(true).setViewState({
 			type: REVEAL_PREVIEW_VIEW,
-			active: true,
+			active: false,
 		});
 
 		this.app.workspace.revealLeaf(

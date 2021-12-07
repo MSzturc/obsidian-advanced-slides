@@ -27,6 +27,7 @@ export class RevealServer {
 	start() {
 
 		['plugin', 'dist', 'css'].forEach(dir => {
+			// @ts-ignore:
 			this._app.use('/' + dir, this._staticDir(path.join(this._pluginDirectory, dir)));
 		});
 
