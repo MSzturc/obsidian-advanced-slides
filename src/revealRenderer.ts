@@ -7,15 +7,20 @@ import { md } from "./markdown";
 
 import _ from "lodash"
 import defaults from "./defaults.json";
+import { ObsidianMarkdownPreprocessor } from "./obsidianMarkdownPreprocessor";
+import { App } from "obsidian";
 
 export class RevealRenderer {
 
-	private _vaultDirectory: string;
-	private _pluginDirectory: string;
+	private processor: ObsidianMarkdownPreprocessor;
 
-	constructor(baseDirectory: string) {
-		this._vaultDirectory = baseDirectory;
-		this._pluginDirectory = path.join(this._vaultDirectory, '/.obsidian/plugins/obsidian-advanced-slides/');
+	private vaultDirectory: string;
+	private pluginDirectory: string;
+
+	constructor(app: App, baseDirectory: string) {
+		this.vaultDirectory = baseDirectory;
+		this.pluginDirectory = path.join(this.vaultDirectory, '/.obsidian/plugins/obsidian-advanced-slides/');
+		this.processor = new ObsidianMarkdownPreprocessor(app);
 	}
 
 	async renderFile(filePath: String) {
@@ -31,7 +36,9 @@ export class RevealRenderer {
 		const { title } = options;
 		const themeUrl = this.getThemeUrl(options.theme);
 		const highlightThemeUrl = this.getHighlightThemeUrl(options.highlightTheme);
-		const slides = this.slidify(markdown, this.getSlidifyOptions(options));
+
+		const processedMarkdown = this.processor.process(markdown);
+		const slides = this.slidify(processedMarkdown, this.getSlidifyOptions(options));
 
 		const context = Object.assign(options, {
 			title,
@@ -54,13 +61,13 @@ export class RevealRenderer {
 			return theme;
 		} catch (err) { }
 
-		const highlightThemes = glob.sync('plugin/highlight/*.css', { cwd: this._pluginDirectory });
-		
+		const highlightThemes = glob.sync('plugin/highlight/*.css', { cwd: this.pluginDirectory });
+
 		const highlightTheme = highlightThemes.find(
 			themePath => path.basename(themePath).replace(path.extname(themePath), '') === theme
-		  );
+		);
 
-		  return highlightTheme ?  '/' + highlightTheme : '/' + theme;
+		return highlightTheme ? '/' + highlightTheme : '/' + theme;
 	}
 
 	private getThemeUrl(theme: string) {
@@ -69,17 +76,17 @@ export class RevealRenderer {
 			return theme;
 		} catch (err) { }
 
-		const revealThemes = glob.sync('dist/theme/*.css', { cwd: this._pluginDirectory });
-		
+		const revealThemes = glob.sync('dist/theme/*.css', { cwd: this.pluginDirectory });
+
 		const revealTheme = revealThemes.find(
 			themePath => path.basename(themePath).replace(path.extname(themePath), '') === theme
-		  );
+		);
 
-		  return revealTheme ?  '/' + revealTheme : '/' + theme;
+		return revealTheme ? '/' + revealTheme : '/' + theme;
 	}
 
 	private async getTemplate() {
-		const templateFile = path.join(this._pluginDirectory, defaults.template);
+		const templateFile = path.join(this.pluginDirectory, defaults.template);
 		const content = (await fs.readFile(templateFile.toString())).toString();
 		return content;
 	}

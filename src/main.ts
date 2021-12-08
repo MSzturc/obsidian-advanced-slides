@@ -15,7 +15,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		const fileSystemAdapter: FileSystemAdapter = this.app.vault.adapter as FileSystemAdapter;
 		this.vaultDirectory = fileSystemAdapter.getBasePath();
 
-		this.revealServer = new RevealServer(this.vaultDirectory);
+		this.revealServer = new RevealServer(this.app, this.vaultDirectory);
 		this.revealServer.start();
 
 		this.registerView(

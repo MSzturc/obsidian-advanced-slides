@@ -2,6 +2,7 @@ import express from "express";
 import path from 'path';
 import { Server } from "http";
 import { RevealRenderer } from "./revealRenderer";
+import { App } from "obsidian";
 
 export class RevealServer {
 
@@ -13,11 +14,11 @@ export class RevealServer {
 	private _revealRenderer: RevealRenderer;
 	private _staticDir = express.static;
 
-	constructor(vaultDir: String) {
+	constructor(app: App, vaultDir: String) {
 		this._baseDirectory = vaultDir.toString();
 		this._pluginDirectory = path.join(this._baseDirectory, '/.obsidian/plugins/obsidian-advanced-slides/');
 		this._app = express();
-		this._revealRenderer = new RevealRenderer(this._baseDirectory);
+		this._revealRenderer = new RevealRenderer(app, this._baseDirectory);
 	}
 
 	getUrl() {
