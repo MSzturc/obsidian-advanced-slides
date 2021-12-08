@@ -1,0 +1,26 @@
+name: build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+      - name: Setup yarn
+        run: npm install -g yarn
+      - name: Build advanced slides
+        run: npm run build
+      - name: Create Release
+        uses: ncipollo/release-action@v1.9.0
+        with:
+          artifacts: "test-vault/.obsidian/plugins/obsidian-advanced-slides/"
+          token: ${{ secrets.GITHUB_TOKEN }}
