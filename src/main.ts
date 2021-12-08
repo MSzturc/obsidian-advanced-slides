@@ -1,4 +1,5 @@
-import { Plugin, FileSystemAdapter } from 'obsidian';
+import { Plugin, FileSystemAdapter, addIcon } from 'obsidian';
+import { ICON_DATA } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
 
@@ -26,7 +27,9 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		);
 		this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 
-		this.addRibbonIcon("dice", "Show Reveal Preview", () => {
+		addIcon("slides", ICON_DATA);
+
+		this.addRibbonIcon("slides", "Show Reveal Preview", () => {
 			this.showView();
 		});
 	}
