@@ -120,3 +120,24 @@ You can pass reveal options through frontmatter.
 	---
 
 You can find an overview of all possible parameters [here](https://revealjs.com/config/)
+
+---
+
+
+### Embed your Notes into Slides
+
+You can use information from your notes in your presentation
+
+	# My Slide
+	
+	![[MyFirstNote]]
+
+---
+
+### Embed parts of your Notes
+
+You can embed sections from your notes into your presentation
+
+	# My Slide
+	
+	![[MyFirstNote#My Title]]
