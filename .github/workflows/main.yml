@@ -17,6 +17,8 @@ jobs:
           node-version: '17'
       - name: Setup yarn
         run: npm install -g yarn
+      - name: Setup dependencies
+        run: yarn
       - name: Build advanced slides
         run: npm run build
       - name: Create Release
