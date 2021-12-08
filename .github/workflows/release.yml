@@ -28,5 +28,5 @@ jobs:
       - name: Create Release
         uses: ncipollo/release-action@v1.9.0
         with:
-          artifacts: "obsidian-advanced-slides.zip"
+          artifacts: "test-vault/.obsidian/plugins/obsidian-advanced-slides/obsidian-advanced-slides.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
