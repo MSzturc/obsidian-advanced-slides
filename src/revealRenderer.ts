@@ -26,6 +26,7 @@ export class RevealRenderer {
 	async render(input: string) {
 		const { yamlOptions, markdown } = this.parseYamlFrontMatter(input);
 		const options = this.getSlideOptions(yamlOptions);
+		const revealOptions = this.getRevealOptions(yamlOptions);
 
 		const { title } = options;
 		const themeUrl = this.getThemeUrl(options.theme);
@@ -37,8 +38,8 @@ export class RevealRenderer {
 			slides,
 			themeUrl,
 			highlightThemeUrl,
-			revealOptionsStr: JSON.stringify({})
-		  });
+			revealOptionsStr: JSON.stringify(revealOptions)
+		});
 
 		console.log(context);
 
@@ -94,6 +95,11 @@ export class RevealRenderer {
 	private getSlidifyOptions(options) {
 		const slidifyProps = ['separator', 'verticalSeparator'];
 		return _.pick(options, slidifyProps)
+	}
+
+	private getRevealOptions(options) {
+		const revealProps = ['controls', 'controlsTutorial', 'controlsLayout', 'controlsBackArrows', 'progress', 'slideNumber', 'showSlideNumber', 'hashOneBasedIndex', 'hash', 'respondToHashChanges', 'history', 'keyboard', 'keyboardCondition', 'disableLayout', 'overview', 'center', 'touch', 'loop', 'rtl', 'navigationMode', 'shuffle', 'fragments', 'fragmentInURL', 'embedded', 'help', 'pause', 'showNotes', 'autoPlayMedia', 'preloadIframes', 'autoAnimate', 'autoAnimateMatcher', 'autoAnimateEasing', 'autoAnimateDuration', 'autoAnimateUnmatched', 'autoSlide', 'autoSlideStoppable', 'autoSlideMethod', 'defaultTiming', 'mouseWheel', 'previewLinks', 'postMessage', 'postMessageEvents', 'focusBodyOnPageVisibilityChange', 'transition', 'transitionSpeed', 'backgroundTransition', 'pdfMaxPagesPerSlide', 'pdfSeparateFragments', 'pdfPageHeightOffset', 'viewDistance', 'mobileViewDistance', 'display', 'hideInactiveCursor', 'hideCursorTime'];
+		return _.pick(options, revealProps)
 	}
 
 	private parseYamlFrontMatter(input: string): { yamlOptions: any; markdown: any; } {
