@@ -1,11 +1,9 @@
 name: build
 
-on:
+on: 
   push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
+    tags:
+    - '*'
 
 jobs:
   build:
