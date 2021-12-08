@@ -19,8 +19,14 @@ jobs:
         run: yarn
       - name: Build advanced slides
         run: npm run build
+      - name: Archive Release
+        uses: thedoctor0/zip-release@master
+        with:
+          type: 'zip'
+          filename: 'obsidian-advanced-slides.zip'
+          directory: 'test-vault/.obsidian/plugins/obsidian-advanced-slides/'
       - name: Create Release
         uses: ncipollo/release-action@v1.9.0
         with:
-          artifacts: "test-vault/.obsidian/plugins/obsidian-advanced-slides/"
+          artifacts: "obsidian-advanced-slides.zip"
           token: ${{ secrets.GITHUB_TOKEN }}
