@@ -107,3 +107,16 @@ By default advanced slides comes with a varity of diffrent highlight themes:
 - zenburn (default)
 - monokai
 - css/vs2015.css
+
+
+---
+
+### Configure Reveal.js through frontmatter
+
+You can pass reveal options through frontmatter.
+
+	---
+	slideNumber: true
+	---
+
+You can find an overview of all possible parameters [here](https://revealjs.com/config/)
