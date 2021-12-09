@@ -81,7 +81,9 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	onChange(file: TAbstractFile) {
-		this.previewView.onUpdate();
+		if(this.previewView){
+			this.previewView.onUpdate();
+		}
 	}
 
 	showView() {
