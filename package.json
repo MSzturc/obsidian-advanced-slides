@@ -17,6 +17,7 @@
 		"@types/lodash": "^4.14.177",
 		"@types/mustache": "^4.1.2",
 		"@types/node": "^16.11.11",
+		"@types/request": "^2.48.7",
 		"@types/yaml-front-matter": "^4.1.0",
 		"@typescript-eslint/eslint-plugin": "^5.5.0",
 		"@typescript-eslint/parser": "^5.5.0",
@@ -35,8 +36,10 @@
 		"express": "4.15.5",
 		"fs-extra": "^10.0.0",
 		"glob": "^7.2.0",
+		"jszip": "^3.7.1",
 		"lodash": "^4.17.21",
 		"mustache": "^4.2.0",
+		"request": "^2.88.2",
 		"yaml-front-matter": "^4.1.1"
 	}
 }
