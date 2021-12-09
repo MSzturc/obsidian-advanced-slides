@@ -205,4 +205,20 @@ By annotating the block all items inside this block gets the properties of the a
 
 	no color
 
+---
+
+### Inline Styling
+
+you may define css styles inside your markdown:
+
+	<style>
+		.with-border{
+			border: 1px solid red;
+		}
+	</style>
+	
+To use the defined style simply annotate an element with it 
+
+	styled text <!-- .element: class="with-border" -->
+
 
