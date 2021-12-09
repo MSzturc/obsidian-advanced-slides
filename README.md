@@ -141,3 +141,31 @@ You can embed sections from your notes into your presentation
 	# My Slide
 	
 	![[MyFirstNote#My Title]]
+
+---
+
+## Element Annotations
+
+You can pass style or class properties for an element by annotating it:
+
+	## Header with red background color <!-- .element: class="red" -->
+
+	Text without background color
+
+	Text with blue background color <!-- .element: style="background-color: blue;" -->
+
+---
+
+## Slide Annotations
+
+You can pass style or class properties for the whole slide by annotating it:
+
+	<!-- .slide: style="background-color: coral;" -->
+
+	# Slide with coral background color
+
+	---
+
+	<!-- .slide: style="background-color: green;" -->
+
+	# Slide with green background color
