@@ -31,14 +31,16 @@ export class RevealRenderer {
 	async render(input: string) {
 		const { yamlOptions, markdown } = this.parseYamlFrontMatter(input);
 		const options = this.getSlideOptions(yamlOptions);
-		const revealOptions = this.getRevealOptions(yamlOptions);
+		const revealOptions = this.getRevealOptions(options);
 
 		const { title } = options;
 		const themeUrl = this.getThemeUrl(options.theme);
 		const highlightThemeUrl = this.getHighlightThemeUrl(options.highlightTheme);
 
-		const processedMarkdown = this.processor.process(markdown);
-		const slides = this.slidify(processedMarkdown, this.getSlidifyOptions(options));
+		const slidifyOptions = this.getSlidifyOptions(options);
+
+		const processedMarkdown = this.processor.process(markdown,slidifyOptions);
+		const slides = this.slidify(processedMarkdown, slidifyOptions);
 
 		const context = Object.assign(options, {
 			title,
@@ -47,8 +49,6 @@ export class RevealRenderer {
 			highlightThemeUrl,
 			revealOptionsStr: JSON.stringify(revealOptions)
 		});
-
-		console.log(context);
 
 		const template = await this.getTemplate();
 		const result = Mustache.render(template, context);
