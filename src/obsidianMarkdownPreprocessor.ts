@@ -1,6 +1,7 @@
 import { App } from "obsidian";
 import { BlockProcessor } from "./blockProcessor";
 import { ImageProcessor } from "./imageProcessor";
+import { InternalLinkProcessor } from "./internalLinkProcessor";
 import { MultipleFileProcessor } from "./multipleFileProcessor";
 
 export class ObsidianMarkdownPreprocessor {
@@ -8,11 +9,13 @@ export class ObsidianMarkdownPreprocessor {
 	private multipleFileProcessor : MultipleFileProcessor;
 	private blockProcessor : BlockProcessor;
 	private imageProcessor : ImageProcessor;
+	private internalLinkProcessor : InternalLinkProcessor;
 
 	constructor(app: App) {
 		this.multipleFileProcessor = new MultipleFileProcessor(app);
 		this.blockProcessor = new BlockProcessor();
 		this.imageProcessor = new ImageProcessor(app);
+		this.internalLinkProcessor = new InternalLinkProcessor();
 	}
 
 	process(markdown: string){
@@ -20,7 +23,8 @@ export class ObsidianMarkdownPreprocessor {
 		const afterBlockProcessor = this.blockProcessor.process(afterMultipleFileProcessor);
 
 		const afterImageProcessor = this.imageProcessor.process(afterBlockProcessor);
-		return afterImageProcessor;
+		const afterInternalLinkProcessor = this.internalLinkProcessor.process(afterImageProcessor);
+		return afterInternalLinkProcessor;
 	}
 
 
