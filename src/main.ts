@@ -22,7 +22,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		this.registerView(
 			REVEAL_PREVIEW_VIEW,
 			(leaf) => {
-				this.previewView = new RevealPreviewView(leaf);
+				this.previewView = new RevealPreviewView(leaf,this.revealServer.getUrl());
 				return this.previewView;
 			}
 		);
