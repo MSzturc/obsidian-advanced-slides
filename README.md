@@ -144,7 +144,7 @@ You can embed sections from your notes into your presentation
 
 ---
 
-## Element Annotations
+### Element Annotations
 
 You can pass style or class properties for an element by annotating it:
 
@@ -156,7 +156,7 @@ You can pass style or class properties for an element by annotating it:
 
 ---
 
-## Slide Annotations
+### Slide Annotations
 
 You can pass style or class properties for the whole slide by annotating it:
 
@@ -169,3 +169,40 @@ You can pass style or class properties for the whole slide by annotating it:
 	<!-- .slide: style="background-color: green;" -->
 
 	# Slide with green background color
+
+---
+
+### Block Comments
+
+You can use block comments to group parts of your slide. 
+
+	::: block
+
+	#### Header
+	_and_
+	Paragraph content
+	*in same block*
+
+	:::
+
+By annotating the block all items inside this block gets the properties of the annotation:
+
+	no color
+
+	::: block <!-- .element: style="background-color: red;" -->
+
+	everything inside this block has red background color
+
+	::: block <!-- .element: style="background-color: blue;" -->
+
+	blue
+
+	:::
+
+	red
+
+	:::
+
+	no color
+
+
