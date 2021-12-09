@@ -8,8 +8,6 @@ export class RevealPreviewView extends ItemView {
 	private viewContent: Element;
 	private url: String = 'about:blank';
 
-	private messageListener;
-
 	constructor(leaf: WorkspaceLeaf) {
 		
 		super(leaf);

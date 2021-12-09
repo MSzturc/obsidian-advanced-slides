@@ -1,4 +1,5 @@
-import { Plugin, FileSystemAdapter, addIcon } from 'obsidian';
+import { Plugin, FileSystemAdapter, addIcon, TAbstractFile } from 'obsidian';
+import { URL } from 'url';
 import { ICON_DATA } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
@@ -34,7 +35,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		});
 	}
 
-	onChange(file) {
+	onChange(file: TAbstractFile) {
 		this.previewView.onUpdate();
 	}
 

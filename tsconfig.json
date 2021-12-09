@@ -10,8 +10,11 @@
 	  "allowJs": true,
 	  "noImplicitAny": true,
 	  "moduleResolution": "node",
+	  "resolveJsonModule": true,
+	  "allowSyntheticDefaultImports": true,
 	  "importHelpers": true,
 	  "lib": [
+		"DOM",
 		"ES2020",
 		"ES2021"
 	  ]

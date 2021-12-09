@@ -1,5 +1,5 @@
-import fs from "fs-extra";
-import path from 'path';
+import { readFile } from "fs-extra";
+import { join, basename, extname } from 'path';
 import { glob } from "glob";
 import Mustache from "mustache";
 import { loadFront } from "yaml-front-matter";
@@ -19,12 +19,12 @@ export class RevealRenderer {
 
 	constructor(app: App, baseDirectory: string) {
 		this.vaultDirectory = baseDirectory;
-		this.pluginDirectory = path.join(this.vaultDirectory, '/.obsidian/plugins/obsidian-advanced-slides/');
+		this.pluginDirectory = join(this.vaultDirectory, '/.obsidian/plugins/obsidian-advanced-slides/');
 		this.processor = new ObsidianMarkdownPreprocessor(app);
 	}
 
 	async renderFile(filePath: String) {
-		const content = (await fs.readFile(filePath.toString())).toString();
+		const content = (await readFile(filePath.toString())).toString();
 		return await this.render(content);
 	}
 
@@ -64,7 +64,7 @@ export class RevealRenderer {
 		const highlightThemes = glob.sync('plugin/highlight/*.css', { cwd: this.pluginDirectory });
 
 		const highlightTheme = highlightThemes.find(
-			themePath => path.basename(themePath).replace(path.extname(themePath), '') === theme
+			themePath => basename(themePath).replace(extname(themePath), '') === theme
 		);
 
 		return highlightTheme ? '/' + highlightTheme : '/' + theme;
@@ -79,32 +79,32 @@ export class RevealRenderer {
 		const revealThemes = glob.sync('dist/theme/*.css', { cwd: this.pluginDirectory });
 
 		const revealTheme = revealThemes.find(
-			themePath => path.basename(themePath).replace(path.extname(themePath), '') === theme
+			themePath => basename(themePath).replace(extname(themePath), '') === theme
 		);
 
 		return revealTheme ? '/' + revealTheme : '/' + theme;
 	}
 
 	private async getTemplate() {
-		const templateFile = path.join(this.pluginDirectory, defaults.template);
-		const content = (await fs.readFile(templateFile.toString())).toString();
+		const templateFile = join(this.pluginDirectory, defaults.template);
+		const content = (await readFile(templateFile.toString())).toString();
 		return content;
 	}
 
-	private slidify(markdown, slidifyOptions) {
+	private slidify(markdown: string, slidifyOptions: any) {
 		return md.slidify(markdown, slidifyOptions);
 	}
 
-	private getSlideOptions(options) {
+	private getSlideOptions(options: any) {
 		return _.defaults({}, options, defaults);
 	}
 
-	private getSlidifyOptions(options) {
+	private getSlidifyOptions(options: any) {
 		const slidifyProps = ['separator', 'verticalSeparator'];
 		return _.pick(options, slidifyProps)
 	}
 
-	private getRevealOptions(options) {
+	private getRevealOptions(options: any) {
 		const revealProps = ['controls', 'controlsTutorial', 'controlsLayout', 'controlsBackArrows', 'progress', 'slideNumber', 'showSlideNumber', 'hashOneBasedIndex', 'hash', 'respondToHashChanges', 'history', 'keyboard', 'keyboardCondition', 'disableLayout', 'overview', 'center', 'touch', 'loop', 'rtl', 'navigationMode', 'shuffle', 'fragments', 'fragmentInURL', 'embedded', 'help', 'pause', 'showNotes', 'autoPlayMedia', 'preloadIframes', 'autoAnimate', 'autoAnimateMatcher', 'autoAnimateEasing', 'autoAnimateDuration', 'autoAnimateUnmatched', 'autoSlide', 'autoSlideStoppable', 'autoSlideMethod', 'defaultTiming', 'mouseWheel', 'previewLinks', 'postMessage', 'postMessageEvents', 'focusBodyOnPageVisibilityChange', 'transition', 'transitionSpeed', 'backgroundTransition', 'pdfMaxPagesPerSlide', 'pdfSeparateFragments', 'pdfPageHeightOffset', 'viewDistance', 'mobileViewDistance', 'display', 'hideInactiveCursor', 'hideCursorTime'];
 		return _.pick(options, revealProps)
 	}
