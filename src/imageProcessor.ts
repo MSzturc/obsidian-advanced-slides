@@ -10,7 +10,6 @@ export class ImageProcessor {
 
 	private app: App;
 
-	private regex = /!\[\[(.*(jpg|png|jpeg|gif|bmp|svg)(\|\d*(x\d*)?)?)\]\]/gmi;
 	private markdownImageRegex = /!\[[^\]]*\]\(.*(jpg|png|jpeg|gif|bmp|svg)\)/gmi;
 
 	constructor(app: App) {
@@ -20,19 +19,39 @@ export class ImageProcessor {
 	process(markdown: string){
 		return markdown
         .split('\n')
-        .map((line, index) => {
+        .map((line) => {
             // Transform ![[myImage.png]] to ![](myImage.png)
-            if (this.regex.test(line))
+			if(this.isImage(line)){
                 return this.transformImageString(line);
+			}
             return line;
         })
-        .map((line, index) => {
+        .map((line) => {
             // Transform ![](myImage.png) to html
             if (this.markdownImageRegex.test(line))
                 return this.htmlify(line);
             return line;
         })
         .join('\n');
+	}
+
+	private isImage(line: string){
+
+		if(!line.contains('![[')){
+			return false;
+		}
+
+		if(!line.contains(']]')){
+			return false;
+		}
+
+		if(['jpg','png','jpeg', 'gif', 'bmp', 'svg'].filter( (x) => {
+			return line.contains(x);
+		}).length < 1) {
+			return false;
+		} 
+
+		return true;
 	}
 
 	private transformImageString(line: string){
