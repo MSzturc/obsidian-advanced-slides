@@ -1,6 +1,7 @@
 import { App } from "obsidian";
 import { BlockProcessor } from "./blockProcessor";
 import { FootnoteProcessor } from "./footNoteProcessor";
+import { FormatProcessor } from "./formatProcessor";
 import { ImageProcessor } from "./imageProcessor";
 import { InternalLinkProcessor } from "./internalLinkProcessor";
 import { LatexProcessor } from "./latexProcessor";
@@ -14,6 +15,7 @@ export class ObsidianMarkdownPreprocessor {
 	private internalLinkProcessor : InternalLinkProcessor;
 	private footnoteProcessor : FootnoteProcessor;
 	private latexProcessor : LatexProcessor;
+	private formatProcessor : FormatProcessor;
 
 	constructor(app: App) {
 		this.multipleFileProcessor = new MultipleFileProcessor(app);
@@ -22,6 +24,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.internalLinkProcessor = new InternalLinkProcessor();
 		this.footnoteProcessor = new FootnoteProcessor();
 		this.latexProcessor = new LatexProcessor();
+		this.formatProcessor = new FormatProcessor();
 	}
 
 	process(markdown: string, options: any){
@@ -31,7 +34,8 @@ export class ObsidianMarkdownPreprocessor {
 		const afterImageProcessor = this.imageProcessor.process(afterFootNoteProcessor);
 		const afterInternalLinkProcessor = this.internalLinkProcessor.process(afterImageProcessor);
 		const afterLatexProcessor = this.latexProcessor.process(afterInternalLinkProcessor);
-		return afterLatexProcessor;
+		const afterFormatProcessor = this.formatProcessor.process(afterLatexProcessor);
+		return afterFormatProcessor;
 	}
 
 
