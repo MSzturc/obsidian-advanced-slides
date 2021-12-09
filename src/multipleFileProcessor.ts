@@ -46,7 +46,7 @@ export class MultipleFileProcessor {
 		var fileContent = readFileSync(file, { encoding: 'utf-8' });
 
 		if (header === null) {
-			return fileContent;
+			return this.stripYaml(fileContent);
 		} else {
 
 			var lines = fileContent.split('\n');
@@ -91,6 +91,16 @@ export class MultipleFileProcessor {
 			return null;
 		}
 
+	}
+
+	private stripYaml(markdown: string){
+		if(markdown.startsWith('---')){
+			var split = markdown.split('---');
+			if(split.length > 2){
+				return split[2];
+			}
+		}
+		return markdown;
 	}
 }
 
