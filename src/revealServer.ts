@@ -13,12 +13,14 @@ export class RevealServer {
 	private _pluginDirectory: string;
 	private _revealRenderer: RevealRenderer;
 	private _staticDir = express.static;
+	private filePath: string;
 
 	constructor(app: App, vaultDir: String) {
 		this._baseDirectory = vaultDir.toString();
 		this._pluginDirectory = path.join(this._baseDirectory, '/.obsidian/plugins/obsidian-advanced-slides/');
 		this._app = express();
 		this._revealRenderer = new RevealRenderer(app, this._baseDirectory);
+		this.filePath = null;
 	}
 
 	getUrl() {
@@ -33,8 +35,17 @@ export class RevealServer {
 		});
 
 		this._app.get(/(\w+\.md)/, async (req, res) => {
-			const filePath = path.join(this._baseDirectory, decodeURI(req.url));
-			const markup = await this._revealRenderer.renderFile(filePath);
+			this.filePath = path.join(this._baseDirectory, decodeURI(req.url));
+			const markup = await this._revealRenderer.renderFile(this.filePath);
+			res.send(markup);
+		});
+
+		this._app.get('/', async (req,res) => {
+			if(this.filePath === null){
+				res.send("Open Presentation Preview in Obsidian first!");
+			}
+			
+			const markup = await this._revealRenderer.renderFile(this.filePath);
 			res.send(markup);
 		});
 
