@@ -30,10 +30,10 @@ export class LatexProcessor {
 
 		return markdown
 		.replaceAll('~~d~~', '\\$')
-		.replaceAll('~~s~~', '`$$')
-		.replaceAll('~~e~~', '$$`')
+		.replaceAll('~~e~~', '$$$$`')
+		.replaceAll('~~s~~', '`$$$$')
 		.replaceAll('~~ss~~', '`$')
-		.replaceAll('~~se~~', '$`');
+		.replaceAll('~~se~~', '$$`');
 	}
 
 	private processSingleLine(markdown: string) {
@@ -56,13 +56,17 @@ export class LatexProcessor {
 		if (markdown.includes('$$')) {
 			return markdown
 				.split('$$')
-				.map((line, index, arr) => {
+				.map((line, index) => {
 					if (this.isOdd(index)) {
 						return line;
 					} else {
 						return '`' + line + '`';
 					}
 				})
+				.map((line) => {
+					//Replace all empty lines in multiline LaTex expressions
+					return line.replaceAll(/^\s*[\r\n]/gm,'');
+				}) 
 				.join('$$').slice(1, -1);
 
 		}
