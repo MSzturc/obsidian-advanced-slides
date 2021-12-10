@@ -174,10 +174,7 @@ export class ImageProcessor {
 	
 		if (comment != null && comment.type === 'element') {
 			result = '<p ' + this.buildAttributes(comment) + '>' + result + '</p>';
-		}
-
-		console.log(result);
-	
+		}	
 		return result;
 	}
 
