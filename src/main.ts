@@ -1,6 +1,6 @@
 import { Plugin, FileSystemAdapter, addIcon, TAbstractFile } from 'obsidian';
 import { URL } from 'url';
-import { ICON_DATA } from './constants';
+import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
 import { version } from '../package.json';
@@ -74,6 +74,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 
 		addIcon("slides", ICON_DATA);
+		addIcon("refresh", REFRESH_ICON);
 
 		this.addRibbonIcon("slides", "Show Reveal Preview", () => {
 			this.showView();

@@ -19,6 +19,10 @@ export class RevealPreviewView extends ItemView {
 			shell.openExternal(serverUrl);
 		});
 
+		this.addAction('refresh','Refresh Slides',() => {
+			this.onUpdate();
+		});
+
 		window.addEventListener("message", this.onMessage.bind(this));
 	}
 
