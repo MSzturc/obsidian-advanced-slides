@@ -42,11 +42,14 @@ export class RevealRenderer {
 		const processedMarkdown = this.processor.process(markdown,slidifyOptions);
 		const slides = this.slidify(processedMarkdown, slidifyOptions);
 
+		const cssPaths = this.getCssPaths(options.css);
+
 		const context = Object.assign(options, {
 			title,
 			slides,
 			themeUrl,
 			highlightThemeUrl,
+			cssPaths,
 			revealOptionsStr: JSON.stringify(revealOptions)
 		});
 
@@ -115,5 +118,26 @@ export class RevealRenderer {
 			yamlOptions: _.omit(document, '__content'),
 			markdown: document.__content || input
 		};
+	}
+
+	private getCssPaths(css: string | string[]) {
+		var input: string[] 
+		if(!css){
+			return input;
+		}
+		if(typeof css === 'string'){
+			input = css.split(',');
+		} else {
+			input = css;
+		}
+
+		return input.map(css => {
+			try {
+				const url = new URL(css);
+				return css;
+			} catch (err) { }
+
+			return '/' + css;
+		});
 	}
 }

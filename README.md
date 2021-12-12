@@ -111,6 +111,16 @@ By default advanced slides comes with a varity of diffrent highlight themes:
 
 ---
 
+### Custom CSS 
+
+it is possible to add further css files beside theme and highlight theme to slide deck:
+
+	---
+	css: [css/layout.css,css/customFonts.css]
+	---
+
+---
+
 ### Configure Reveal.js through frontmatter
 
 You can pass reveal options through frontmatter.
