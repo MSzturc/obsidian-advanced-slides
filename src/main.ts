@@ -1,4 +1,4 @@
-import { Plugin, FileSystemAdapter, addIcon, TAbstractFile } from 'obsidian';
+import { Plugin, FileSystemAdapter, addIcon, TAbstractFile, PluginSettingTab, App, Setting } from 'obsidian';
 import { URL } from 'url';
 import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
@@ -8,8 +8,19 @@ import path from 'path';
 import { existsSync, outputFileSync } from 'fs-extra';
 import request from 'request';
 import JSZip from 'jszip';
+import _ from 'lodash';
+
+interface AdvancedSlidesSettings {
+	port: string;
+}
+
+const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
+	port: '3000'
+}
+
 
 export default class AdvancedSlidesPlugin extends Plugin {
+	settings: AdvancedSlidesSettings;
 
 	private previewView: RevealPreviewView;
 	private revealServer: RevealServer;
@@ -18,6 +29,9 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	private target: string;
 
 	async onload() {
+
+		await this.loadSettings();
+
 		const fileSystemAdapter: FileSystemAdapter = this.app.vault.adapter as FileSystemAdapter;
 		this.vaultDirectory = fileSystemAdapter.getBasePath();
 
@@ -61,7 +75,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 		}
 
-		this.revealServer = new RevealServer(this.app, this.vaultDirectory);
+		this.revealServer = new RevealServer(this.app, this.vaultDirectory, this.settings.port);
 		this.revealServer.start();
 
 		this.registerView(
@@ -79,6 +93,8 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		this.addRibbonIcon("slides", "Show Reveal Preview", () => {
 			this.showView();
 		});
+
+		this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
 	}
 
 	onChange(file: TAbstractFile) {
@@ -125,5 +141,44 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			this.previewView.destroy();
 		}
 		this.revealServer.stop();
+	}
+
+	async loadSettings() {
+		this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
+	}
+
+	async saveSettings() {
+		await this.saveData(this.settings);
+		this.onunload();
+		this.onload();
+	}
+}
+
+
+class AdvancedSlidesSettingTab extends PluginSettingTab {
+	plugin: AdvancedSlidesPlugin;
+
+	constructor(app: App, plugin: AdvancedSlidesPlugin) {
+		super(app, plugin);
+		this.plugin = plugin;
+	}
+
+	display(): void {
+		const {containerEl} = this;
+
+		containerEl.empty();
+
+		containerEl.createEl('h2', {text: 'Advanced Slides Settings'});
+
+		new Setting(containerEl)
+			.setName('Port')
+			.setDesc('On which port should Advanced Slides run? (default: 3000)')
+			.addText(text => text
+				.setPlaceholder('3000')
+				.setValue(this.plugin.settings.port)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.port = value;
+					await this.plugin.saveSettings();
+				},750)));
 	}
 }

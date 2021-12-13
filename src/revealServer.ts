@@ -15,7 +15,9 @@ export class RevealServer {
 	private _staticDir = express.static;
 	private filePath: string;
 
-	constructor(app: App, vaultDir: String) {
+	constructor(app: App, vaultDir: String, port: string) {
+		var numPort = Number(port);
+		this._port = isNaN(numPort) ? 3000 : numPort;
 		this._baseDirectory = vaultDir.toString();
 		this._pluginDirectory = path.join(this._baseDirectory, '/.obsidian/plugins/obsidian-advanced-slides/');
 		this._app = express();
