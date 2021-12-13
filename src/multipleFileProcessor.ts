@@ -78,6 +78,10 @@ export class MultipleFileProcessor {
 	}
 
 	getMarkdownFile(line: string) {
+		if (line.toLowerCase().endsWith(".excalidraw")) {
+			return null; // Do not import excalidraw files
+		}
+
 		var file = line;
 		if (!line.toLowerCase().endsWith(".md")) {
 			file = file + ".md";
