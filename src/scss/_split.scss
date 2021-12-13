@@ -1,3 +1,8 @@
+:root {
+	--split-div-size: 0px;
+	--split-gap-size: 0px;
+}
+
 split {
     display: flex;
     gap: unset;
@@ -6,33 +11,32 @@ split {
 }
 
 split[even]>* {
-    flex: 1;
+    flex: 1
 }
 
-split[divider]>*+* {
-    border-left: 2px solid rgb(146, 146, 146);
-    padding-left: 1em;
+split[no-margin]>* {
+	--r-block-margin: 0px;
+}
+
+@for $i from 1 through 12 {
+	split[wrap="#{$i}"]>* {
+		flex: 1 1 calc((100% - (calc(var(--split-gap-size) * (#{$i} - 1))) - (calc(var(--dbg-size) * #{$i} * 2))) / #{$i});
+	}
 }
 
 split[gap="0"] {
+	--split-gap-size: 0px;
     gap: unset;
-}
-
-split[gap="2em"] {
-    gap: 2em;
 }
 
 @for $i from 1 through 5 {
     split[gap="#{$i}"] {
+		--split-gap-size: #{$i}em;
         gap: #{$i}em;
     }
 }
 
 @for $i from 1 through 11 {
-    split[gap="#{$i}"] {
-        gap: #{$i}em;
-    }
-
 	split[left="#{$i}"]>*:first-child {
 		flex: #{$i};
 	}
@@ -48,5 +52,4 @@ split[gap="2em"] {
 	split[right="#{$i}"]>*:nth-child(3) {
 		flex: #{$i};
 	}
-
 }

@@ -1,6 +1,11 @@
 @import '_split.scss';
 @import '_align.scss';
 
+:root {
+	--dbg-size: 0px;
+}
+
 .dbg * {
+	--dbg-size: 1px;
     border: 1px solid red;
 }
