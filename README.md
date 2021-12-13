@@ -304,7 +304,8 @@ Advanced Slides provides a variety of components that simplify layouting of you 
 
 #### Split even
 
-By using the property `even` property of the split element you are able to split a slide evenly:
+By using the `even` property of the split element you are able to split a slide evenly
+The `gap` property defines how much space should be between the columns of the split element
 
 	---
 	theme: css/mattropolis.css
