@@ -1,4 +1,4 @@
-import { App, FileSystemAdapter } from "obsidian";
+import { App } from "obsidian";
 
 type Comment = {
 	type: string,
@@ -85,9 +85,12 @@ export class ImageProcessor {
 	}
 
 	private findFile(line: string) {
-		const adapter = this.app.vault.adapter as FileSystemAdapter;
 		const imgFile = this.app.vault.getFiles().filter(item => item.path.contains(line)).first();
-		return '/'+ imgFile.path;
+		if(imgFile){
+			return '/'+ imgFile.path;
+		} else {
+			return line;
+		}
 	}
 
 	private buildComment(toParse: string, commentAsString: string) {
