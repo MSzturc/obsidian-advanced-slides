@@ -289,7 +289,6 @@ Advanced Slides provides a variety of components that simplify layouting of you 
 ### Split Component
 
 	---
-	css: css/layout.css
 	theme: css/mattropolis.css
 	transition: none
 	---
