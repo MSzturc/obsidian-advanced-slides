@@ -1,0 +1,52 @@
+split {
+    display: flex;
+    gap: unset;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+split[even]>* {
+    flex: 1;
+}
+
+split[divider]>*+* {
+    border-left: 2px solid rgb(146, 146, 146);
+    padding-left: 1em;
+}
+
+split[gap="0"] {
+    gap: unset;
+}
+
+split[gap="2em"] {
+    gap: 2em;
+}
+
+@for $i from 1 through 5 {
+    split[gap="#{$i}"] {
+        gap: #{$i}em;
+    }
+}
+
+@for $i from 1 through 11 {
+    split[gap="#{$i}"] {
+        gap: #{$i}em;
+    }
+
+	split[left="#{$i}"]>*:first-child {
+		flex: #{$i};
+	}
+
+	split[middle="#{$i}"]>*:nth-child(2) {
+		flex: #{$i}!important;
+	}
+
+	split[right="#{$i}"]>*:nth-child(2) {
+		flex: #{$i};
+	}
+
+	split[right="#{$i}"]>*:nth-child(3) {
+		flex: #{$i};
+	}
+
+}

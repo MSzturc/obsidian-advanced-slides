@@ -281,3 +281,46 @@ you can change the background by annotating the slide:
 	## More options:
 
 	See [reveal backgrounds](https://revealjs.com/backgrounds/)
+
+## Layout
+
+Advanced Slides provides a variety of components that simplify layouting of you slides
+
+### Split Component
+
+	---
+	css: css/layout.css
+	theme: css/mattropolis.css
+	transition: none
+	---
+
+	<!-- .slide: data-background="white" data-background-image="https://picsum.photos/id/3/960/700" data-background-opacity="0.4" -->
+
+
+	# Our Team <!-- .element: class="align-right" -->
+
+	<split even gap="1">
+
+	<left class="align-right"> 
+
+	![](https://picsum.photos/id/1005/250/250) 
+	### Timmy Jimmy 
+	**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+
+	</left> 
+	<middle class="align-right">
+
+	![](https://picsum.photos/id/1010/250/250) 
+	### Jenna Doe 
+	when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+
+	</middle>
+	<right> <!-- .element: class="align-right" -->
+
+	![](https://picsum.photos/id/1025/250/250) 
+	### Doggy Dog
+	into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+		
+	</right>
+		
+	</split>
