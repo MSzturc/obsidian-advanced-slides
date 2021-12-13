@@ -6,6 +6,20 @@ Advanced Slides is a Plugin that lets you create markdown-based reveal.js presen
 
 ![demo](https://raw.githubusercontent.com/MSzturc/obsidian-advanced-slides/main/imgs/demo.gif)
 
+## How to Install?
+
+### with BRAT
+
+* Add `MSzturc/obsidian-advanced-slides` to the beta Plugins in BRAT
+
+### manually
+* Download obsidian-advanced-slides.zip from [github](https://github.com/MSzturc/obsidian-advanced-slides/releases), extract it in your Vault in  `/.obsidian/plugins/obsidian-advanced-slides/` folder.
+
+### Community Plugins
+
+* A [pull request](https://github.com/obsidianmd/obsidian-releases/pull/682) for inclusion in the community plugins has been made, but is still waiting to be accepted.
+
+
 ## Features
 
 ### Horizontal Slides
