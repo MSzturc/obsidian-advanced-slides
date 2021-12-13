@@ -24,6 +24,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        npm config set tag-version-prefix ''
         npm version ${{ github.event.inputs.type }}
         echo "::set-output name=tag::$(git describe --abbrev=0)"
     # update the manifest.json with the tag version
