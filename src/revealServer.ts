@@ -2,7 +2,7 @@ import express from "express";
 import path from 'path';
 import { Server } from "http";
 import { RevealRenderer } from "./revealRenderer";
-import { App } from "obsidian";
+import { App, Notice } from "obsidian";
 
 export class RevealServer {
 
@@ -42,11 +42,11 @@ export class RevealServer {
 			res.send(markup);
 		});
 
-		this._app.get('/', async (req,res) => {
-			if(this.filePath === null){
+		this._app.get('/', async (req, res) => {
+			if (this.filePath === null) {
 				res.send("Open Presentation Preview in Obsidian first!");
 			}
-			
+
 			const markup = await this._revealRenderer.renderFile(this.filePath);
 			res.send(markup);
 		});
@@ -56,7 +56,12 @@ export class RevealServer {
 		this._server = this._app.listen(this._port, () => {
 			// tslint:disable-next-line:no-console
 			console.log(`server started at http://localhost:${this._port}`);
+		}).on('error', (err) => {
+			new Notice(`Port ${this._port} already used!`);
 		});
+
+
+
 	}
 
 	stop() {

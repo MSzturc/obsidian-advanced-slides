@@ -1,4 +1,4 @@
-import { Plugin, FileSystemAdapter, addIcon, TAbstractFile, PluginSettingTab, App, Setting } from 'obsidian';
+import { Plugin, FileSystemAdapter, addIcon, TAbstractFile, PluginSettingTab, App, Setting, WorkspaceLeaf } from 'obsidian';
 import { URL } from 'url';
 import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
@@ -78,27 +78,30 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		this.revealServer = new RevealServer(this.app, this.vaultDirectory, this.settings.port);
 		this.revealServer.start();
 
-		this.registerView(
-			REVEAL_PREVIEW_VIEW,
-			(leaf) => {
-				this.previewView = new RevealPreviewView(leaf, this.revealServer.getUrl());
-				return this.previewView;
-			}
-		);
-		this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 
-		addIcon("slides", ICON_DATA);
-		addIcon("refresh", REFRESH_ICON);
+		try {
+			this.registerView(REVEAL_PREVIEW_VIEW, this.viewCreator.bind(this));
+			this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 
-		this.addRibbonIcon("slides", "Show Reveal Preview", () => {
-			this.showView();
-		});
+			addIcon("slides", ICON_DATA);
+			addIcon("refresh", REFRESH_ICON);
 
-		this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
+			this.addRibbonIcon("slides", "Show Reveal Preview", () => {
+				this.showView();
+			});
+
+			this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
+		} catch (err) { }
+
+	}
+
+	viewCreator(leaf: WorkspaceLeaf, ext?: string): RevealPreviewView {
+		this.previewView = new RevealPreviewView(leaf, this.revealServer.getUrl());
+		return this.previewView;
 	}
 
 	onChange(file: TAbstractFile) {
-		if(this.previewView){
+		if (this.previewView) {
 			this.previewView.onUpdate();
 		}
 	}
@@ -164,11 +167,11 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 	}
 
 	display(): void {
-		const {containerEl} = this;
+		const { containerEl } = this;
 
 		containerEl.empty();
 
-		containerEl.createEl('h2', {text: 'Advanced Slides Settings'});
+		containerEl.createEl('h2', { text: 'Advanced Slides Settings' });
 
 		new Setting(containerEl)
 			.setName('Port')
@@ -179,6 +182,6 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 				.onChange(_.debounce(async (value) => {
 					this.plugin.settings.port = value;
 					await this.plugin.saveSettings();
-				},750)));
+				}, 750)));
 	}
 }
