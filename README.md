@@ -302,6 +302,10 @@ Advanced Slides provides a variety of components that simplify layouting of you 
 
 ### Split Component
 
+#### Split even
+
+By using the property `even` property of the split element you are able to split a slide evenly:
+
 	---
 	theme: css/mattropolis.css
 	transition: none
@@ -336,4 +340,70 @@ Advanced Slides provides a variety of components that simplify layouting of you 
 		
 	</right>
 		
+	</split>
+
+#### Split left/right
+
+If you want to split a slide proportionally you can do that with left and right properties. Left and right represent the proportions of the slide columns. For example if you want a right column that is twice wide as the left column you should set `left="1"` and `right="2"`
+
+	<!-- .slide: data-background="white" data-background-image="https://image.freepik.com/free-photo/gray-abstract-wireframe-technology-background_53876-101941.jpg" -->
+
+	<style>
+	.activity-label {
+		background-color:lightgray;
+		padding: 8px 16px;
+		border: 1px solid black;
+	}
+	</style>
+	<split left="3" right="7" gap="1">
+	<left>
+
+	## Activity 2:
+	Divide each shape into the number of equal parts shown, taking the circle as exaple. All parts must be identical
+
+	</left>
+	<split wrap="3" gap="1" no-margin>
+	<item class="align-center">
+
+	![[Circle.png]]
+
+	2 Parts <!-- .element: class="activity-label"-->
+
+	</item>
+	<item class="align-center">
+
+	![[Square.png]]
+
+	4 Parts <!-- .element: class="activity-label"-->
+
+	</item>
+	<item class="align-center">
+
+	![[Penta.png]]
+
+	5 Parts <!-- .element: class="activity-label"-->
+
+	</item>
+	<item class="align-center">
+
+	![[Triangle.png]]
+
+	2 Parts<!-- .element: class="activity-label"-->
+
+	</item>
+	<item class="align-center">
+
+	![[Circle2.png]]
+
+	8 Parts<!-- .element: class="activity-label"-->
+
+	</item>
+	<item class="align-center">
+
+	![[Rect.png]]
+
+	6 Parts<!-- .element: class="activity-label"-->
+
+	</item>
+	</split>
 	</split>
