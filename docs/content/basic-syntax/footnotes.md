@@ -12,4 +12,4 @@ Here's a simple footnote[^1]
 
 ```
 
-![Footnote](/footnote.png)
+![Footnote](https://mszturc.github.io/obsidian-advanced-slides/images/footnote.png)

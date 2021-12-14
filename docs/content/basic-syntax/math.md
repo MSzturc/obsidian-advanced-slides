@@ -10,5 +10,5 @@ c & d
 \end{vmatrix}=ad-bc$$
 ```
 
-![Math](/math.png)
+![Math](https://mszturc.github.io/obsidian-advanced-slides/images/math.png)
 

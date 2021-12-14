@@ -21,7 +21,7 @@ sequenceDiagram
     ```
 ```
 
-![Mermaid](/images/mermaid.png)
+![Mermaid](https://mszturc.github.io/obsidian-advanced-slides/images/mermaid.png)
 
 
 
