@@ -27,7 +27,6 @@ And the following `Slide.md`:
 ```
 
 {{<revealjs theme="black" progress="true" controls="true">}}
-
 # Notes about Obsidian
 A knowledge base that works on local Markdown files
 
