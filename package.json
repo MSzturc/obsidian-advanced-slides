@@ -30,6 +30,7 @@
 		"node-sass": "^7.0.0",
 		"obsidian": "^0.12.17",
 		"reveal.js": "^4.2.1",
+		"reveal.js-mermaid-plugin": "^0.0.2",
 		"sass": "^1.45.0",
 		"ts-node": "^10.4.0",
 		"tslib": "^2.3.1",

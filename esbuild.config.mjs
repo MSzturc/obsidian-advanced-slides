@@ -115,6 +115,12 @@ esbuild.build({
                     to: ['./plugin/zoom'],
                 }
             }),
+			copy.default({
+                assets: {
+                    from: ['node_modules/reveal.js-mermaid-plugin/plugin/mermaid/*'],
+                    to: ['./plugin/mermaid'],
+                }
+            }),
             copy.default({
                 assets: {
                     from: ['node_modules/highlight.js/styles/vs2015.css'],

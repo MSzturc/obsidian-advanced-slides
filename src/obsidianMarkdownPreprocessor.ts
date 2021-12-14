@@ -6,6 +6,7 @@ import { FormatProcessor } from "./formatProcessor";
 import { ImageProcessor } from "./imageProcessor";
 import { InternalLinkProcessor } from "./internalLinkProcessor";
 import { LatexProcessor } from "./latexProcessor";
+import { MermaidProcessor } from "./mermaidProcessor";
 import { MultipleFileProcessor } from "./multipleFileProcessor";
 
 export class ObsidianMarkdownPreprocessor {
@@ -18,6 +19,7 @@ export class ObsidianMarkdownPreprocessor {
 	private latexProcessor : LatexProcessor;
 	private formatProcessor : FormatProcessor;
 	private excalidrawProcessor : ExcalidrawProcessor;
+	private mermaidProcessor : MermaidProcessor;
 
 	constructor(app: App) {
 		this.multipleFileProcessor = new MultipleFileProcessor(app);
@@ -28,11 +30,13 @@ export class ObsidianMarkdownPreprocessor {
 		this.latexProcessor = new LatexProcessor();
 		this.formatProcessor = new FormatProcessor();
 		this.excalidrawProcessor = new ExcalidrawProcessor(app);
+		this.mermaidProcessor = new MermaidProcessor();
 	}
 
 	process(markdown: string, options: any){
 		const afterMultipleFileProcessor = this.multipleFileProcessor.process(markdown);
-		const afterBlockProcessor = this.blockProcessor.process(afterMultipleFileProcessor);
+		const afterMermaidProcessor = this.mermaidProcessor.process(afterMultipleFileProcessor);
+		const afterBlockProcessor = this.blockProcessor.process(afterMermaidProcessor);
 		const afterFootNoteProcessor = this.footnoteProcessor.process(afterBlockProcessor, options);
 		const afterExcalidrawProcessor = this.excalidrawProcessor.process(afterFootNoteProcessor);
 		const afterImageProcessor = this.imageProcessor.process(afterExcalidrawProcessor);
