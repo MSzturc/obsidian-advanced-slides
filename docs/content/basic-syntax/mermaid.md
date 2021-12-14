@@ -21,7 +21,7 @@ sequenceDiagram
     ```
 ```
 
-![Mermaid](mermaid.png)
+![Mermaid](/images/mermaid.png)
 
 
 

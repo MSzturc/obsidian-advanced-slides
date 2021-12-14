@@ -6,6 +6,7 @@ title = "Advaced Slides Documentation"
 theme = "docdock"
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
+canonifyurls = true
 
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
