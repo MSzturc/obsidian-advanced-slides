@@ -10,7 +10,6 @@ weight = 8
 ```
 
 {{<revealjs theme="black" progress="true" controls="true">}}
-
 ### Text inside `backticks` on a line will be formatted like code.
 
 {{</revealjs>}}
