@@ -19,6 +19,11 @@ Advanced Slides is a Plugin that lets you create markdown-based reveal.js presen
 
 * A [pull request](https://github.com/obsidianmd/obsidian-releases/pull/682) for inclusion in the community plugins has been made, but is still waiting to be accepted.
 
+## How to use?
+
+Simply click on the `Show Slide Preview` button in the main navigation bar:
+![howToUse](https://raw.githubusercontent.com/MSzturc/obsidian-advanced-slides/main/imgs/howToUse.png)
+
 
 ## Features
 

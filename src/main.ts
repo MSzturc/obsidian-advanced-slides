@@ -86,7 +86,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			addIcon("slides", ICON_DATA);
 			addIcon("refresh", REFRESH_ICON);
 
-			this.addRibbonIcon("slides", "Show Reveal Preview", () => {
+			this.addRibbonIcon("slides", "Show Slide Preview", () => {
 				this.showView();
 			});
 
