@@ -8,3 +8,6 @@ yarn.lock
 
 # test specific
 test-vault
+
+# docs
+docs/public
