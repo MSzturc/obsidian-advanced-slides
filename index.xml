@@ -71,7 +71,10 @@ gap By adding the gap attribute there will be a gap between each element:</descr
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/textstyle/</guid>
-      <description>*This text will be italic* _This will also be italic_ **This text will be bold** __This will also be bold__ _You **can** combine them_ --- Any word wrapped with two tildes (like ~~this~~) will appear crossed out.  *This text will be italic* _This will also be italic_ **This text will be bold** __This will also be bold__ _You **can** combine them_ --- Any word wrapped with two tildes (like ~~this~~) will appear crossed out.</description>
+      <description>*This text will be italic* _This will also be italic_ **This text will be bold** __This will also be bold__ _You **can** combine them_ --- Any word wrapped with two tildes (like ~~this~~) will appear crossed out. Any word wrapped with two equal signs (like ==this==) will appear as highlighted.  This text will be italic
+This will also be italic
+This text will be bold
+This will also be bold</description>
     </item>
     
     <item>
@@ -224,7 +227,7 @@ by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 120 commits   @actions-user 2 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 123 commits   @actions-user 3 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
     </item>
     
   </channel>
