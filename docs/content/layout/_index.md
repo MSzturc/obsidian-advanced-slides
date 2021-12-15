@@ -2,7 +2,7 @@
 title = "Layouts"
 description = ""
 weight = 5
-alwaysopen = true
+alwaysopen = false
 pre ="<i class='fa fa-list-alt' ></i> "
 +++
 
