@@ -1,7 +1,7 @@
 +++
 title = "Themes"
 description = ""
-weight = 4
+weight = 5
 alwaysopen = false
 pre ="<i class='fa fa-paint-brush' ></i> "
 +++
