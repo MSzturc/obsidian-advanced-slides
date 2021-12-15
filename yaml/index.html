@@ -4,7 +4,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name=revised content="2021-12-15T10:11:38 UTC">
-<title>Math :: Advaced Slides Documentation</title>
+<title>Frontmatter Options :: Advaced Slides Documentation</title>
 <link rel="shortcut icon" href=/obsidian-advanced-slides/images/favicon.png type=image/x-icon>
 <link href=/obsidian-advanced-slides/css/nucleus.css rel=stylesheet>
 <link href=/obsidian-advanced-slides/css/font-awesome.min.css rel=stylesheet>
@@ -16,7 +16,7 @@
 <style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','G-0TT7HV5B11','auto'),ga('send','pageview')</script>
 </head>
-<body data-url=/obsidian-advanced-slides/basic-syntax/math/>
+<body data-url=/obsidian-advanced-slides/yaml/>
 <div id=headermain></div>
 <nav id=sidebar class=showVisitedLinks>
 <div class=highlightable>
@@ -200,7 +200,7 @@ Element Annotations
 <div class="padding highlightable">
 <div id=top-bar>
 <div id=top-github-link>
-<a class=github-link href=https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/basic-syntax/math.md target=blank>
+<a class=github-link href=https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/yaml/_index.md target=blank>
 <i class="fa fa-code-fork"></i>
 Improve this page
 </a>
@@ -212,7 +212,7 @@ Improve this page
 </span>
 <span id=toc-menu><i class="fa fa-list-alt"></i></span>
 <span class=links>
-<a href=https://mszturc.github.io/obsidian-advanced-slides/>Advanced Slides Documentation</a> > <a href=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/>Basic Markdown Syntax</a> > Math
+<a href=https://mszturc.github.io/obsidian-advanced-slides/>Advanced Slides Documentation</a> > Frontmatter Options
 </span>
 </div>
 <div class=progress>
@@ -222,11 +222,122 @@ Improve this page
 </div>
 </div>
 <div id=body-inner>
-<h1>Math</h1>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-md data-lang=md>$$\begin{vmatrix}a <span style=color:#960050;background-color:#1e0010>&amp;</span> b\\
-c <span style=color:#960050;background-color:#1e0010>&amp;</span> d
-\end{vmatrix}=ad-bc$$
-</code></pre></div><p><img src=https://mszturc.github.io/obsidian-advanced-slides/images/math.png alt=Math></p>
+<h1>Frontmatter Options</h1>
+<p>You can customize many setting for your current slide deck by adding one or more of the following properties into the frontmatter section of your slide:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+<th>Possible Values</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>theme</td>
+<td>Sets the theme</td>
+<td><a href=/obsidian-advanced-slides/themes/>see theme docs</a></td>
+<td>black</td>
+</tr>
+<tr>
+<td>highlightTheme</td>
+<td>Sets the highlight theme</td>
+<td><a href=/obsidian-advanced-slides/themes/>see theme docs</a></td>
+<td>zenburn</td>
+</tr>
+<tr>
+<td>css</td>
+<td>Adds further css files</td>
+<td></td>
+<td>[]</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>Display presentation control arrows</td>
+<td>true / false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>controlsLayout</td>
+<td>Determines where controls appear</td>
+<td>edges / bottom-right</td>
+<td>bottom-right</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>Display a presentation progress bar</td>
+<td>true / false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>slideNumber</td>
+<td>Display the page number of the current slide</td>
+<td><a href=https://revealjs.com/config/>see reveal.js docs</a></td>
+<td>false</td>
+</tr>
+<tr>
+<td>overview</td>
+<td>Enable the slide overview mode</td>
+<td>true / false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>center</td>
+<td>Vertical centering of slides</td>
+<td>true / false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>Loop the presentation</td>
+<td>true / false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>rtl</td>
+<td>Change the presentation direction to be RTL</td>
+<td>true / false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>shuffle</td>
+<td>Randomizes the order of slides each time the presentation loads</td>
+<td>true / false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>fragments</td>
+<td>Turns fragments on and off globally</td>
+<td>true / false</td>
+<td>true</td>
+</tr>
+<tr>
+<td>showNotes</td>
+<td>Flags if speaker notes should be visible to all viewers</td>
+<td>true / false</td>
+<td>false</td>
+</tr>
+<tr>
+<td>autoSlide</td>
+<td>Controls automatic progression to the next slide</td>
+<td>number (in milliseconds)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>transition</td>
+<td>Transition style</td>
+<td>none / fade / slide / convex / concave / zoom</td>
+<td>true</td>
+</tr>
+<tr>
+<td>transitionSpeed</td>
+<td>Transition speed</td>
+<td>default / fast / slow</td>
+<td>default</td>
+</tr>
+</tbody>
+</table>
 <footer class=footline>
 </footer>
 </div>
