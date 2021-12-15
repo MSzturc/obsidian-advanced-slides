@@ -1,0 +1,51 @@
+{
+	"categories": [
+		{
+			"title": "## 🚀 Features",
+			"labels": [
+				"feature"
+			]
+		},
+		{
+			"title": "## 🐛 Fixes",
+			"labels": [
+				"fix",
+				"bugfix"
+			]
+		},
+		{
+			"title": "## 📚  Documentation",
+			"labels": [
+				"docs",
+				"documentation"
+			]
+		},
+		{
+			"title": "## 📍  Other",
+			"labels": [
+				"refactor",
+				"revert",
+				"build",
+				"ci"
+			]
+		}
+	],
+	"ignore_labels": [
+		"ignore"
+	],
+	"sort": "ASC",
+	"template": "${{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n${{UNCATEGORIZED}}\n</details>\n**Full Changelog**: __GITHUB_REPO_URL__/compare/${{FROM_TAG}}...__TO_TAG___",
+	"pr_template": "- ${{TITLE}}\n",
+	"empty_template": "- no changes",
+	"label_extractor": [
+		{
+			"pattern": "^(feature|fix|bugfix|docs|documentation|refactor|revert|build|):(.*)",
+			"target": "$1"
+		}
+	],
+	"duplicate_filter": {
+		"pattern": "\\[ABC-....\\]",
+		"on_property": "title",
+		"method": "match"
+	}
+}
