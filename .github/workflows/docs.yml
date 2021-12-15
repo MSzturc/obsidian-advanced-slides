@@ -1,10 +1,9 @@
 name: Release Docs
 
-on:
+on: 
   push:
-    branches:
-      - main  # Set a branch to deploy
-  pull_request:
+    tags:
+    - '*'
 
 jobs:
   deploy:
