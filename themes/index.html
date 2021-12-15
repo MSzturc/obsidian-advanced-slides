@@ -4,7 +4,7 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name=revised content="2021-12-15T10:11:28 UTC">
-<title>Settings :: Advaced Slides Documentation</title>
+<title>Themes :: Advaced Slides Documentation</title>
 <link rel="shortcut icon" href=/obsidian-advanced-slides/images/favicon.png type=image/x-icon>
 <link href=/obsidian-advanced-slides/css/nucleus.css rel=stylesheet>
 <link href=/obsidian-advanced-slides/css/font-awesome.min.css rel=stylesheet>
@@ -16,7 +16,7 @@
 <style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 <script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','G-0TT7HV5B11','auto'),ga('send','pageview')</script>
 </head>
-<body data-url=/obsidian-advanced-slides/getting-start/settings/>
+<body data-url=/obsidian-advanced-slides/themes/>
 <div id=headermain></div>
 <nav id=sidebar class=showVisitedLinks>
 <div class=highlightable>
@@ -195,7 +195,7 @@ Element Annotations
 <div class="padding highlightable">
 <div id=top-bar>
 <div id=top-github-link>
-<a class=github-link href=https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/getting-start/settings.md target=blank>
+<a class=github-link href=https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/themes/_index.md target=blank>
 <i class="fa fa-code-fork"></i>
 Improve this page
 </a>
@@ -207,33 +207,65 @@ Improve this page
 </span>
 <span id=toc-menu><i class="fa fa-list-alt"></i></span>
 <span class=links>
-<a href=https://mszturc.github.io/obsidian-advanced-slides/>Advanced Slides Documentation</a> > <a href=https://mszturc.github.io/obsidian-advanced-slides/getting-start/>Getting started</a> > Settings
+<a href=https://mszturc.github.io/obsidian-advanced-slides/>Advanced Slides Documentation</a> > Themes
 </span>
 </div>
 <div class=progress>
 <div class=wrapper>
-<nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li><a href=#port>Port</a></li>
-</ul>
-</li>
-<li><a href=#first-steps>First Steps</a></li>
-</ul>
-</nav>
+<nav id=TableOfContents></nav>
 </div>
 </div>
 </div>
 <div id=body-inner>
-<h1>Settings</h1>
-<p>The settings can be found under Advanced Slides Section inside Plugin Settings. The settings can be found by clicking the gear in the bottom left corner, or by hitting <code>Ctrl/Cmd-,</code>.</p>
-<p>Most of them are fairly self-explanatory, but here are some notes that might be helpful.</p>
-<h3 id=port>Port</h3>
-<p>Define on which Port Advanced Slides should run. The default Port is <code>3000</code>.
-Changing the port can be useful if you operate multiple vaults and both have Advanced Slides plugin installed.</p>
-<h2 id=first-steps>First Steps</h2>
-<p><a href=/obsidian-advanced-slides/getting-start/firststeps/>Follow instructions here</a></p>
+<h1>Themes</h1>
+<p>Advanced Slides comes with a varity of diffrent themes built in:</p>
+<ul>
+<li>black (default)</li>
+<li>white</li>
+<li>league</li>
+<li>beige</li>
+<li>sky</li>
+<li>night</li>
+<li>serif</li>
+<li>simple</li>
+<li>solarized</li>
+<li>blood</li>
+<li>moon</li>
+<li>css/mattropolis.css</li>
+</ul>
+<p>To activate a theme simply add a theme property in the frontmatter section of your slides:</p>
+<pre><code>---
+theme: night
+
+---
+</code></pre>
+<p>if you want to use a custum theme you can do it! Just place the theme in the plugins directory and load them from there.</p>
+<p><strong>Example:</strong></p>
+<p>If your theme file name is <strong>my-theme.css</strong> place it inside your Vaults directory in <code>.obsidian/plugins/obsidian-advanced-slides/css/</code> subfolder and load it by adding the following line on top of your slides markdown file:</p>
+<pre><code>---
+theme: css/my-theme.css
+
+---
+</code></pre>
+<p>You can also load a custom theme directly from the Internet:</p>
+<pre><code>---
+theme: https://revealjs-themes.dzello.com/css/theme/robot-lung.css
+
+---
+</code></pre>
+<h1 id=highlight-themes>Highlight Themes</h1>
+<p>All you have learned so far about custom themes could be applied to highlight themes as well. Highlight Themes define how codeblock elements should look. To activate a highlight theme simply add a highlightTheme property in the frontmatter section of your slides:</p>
+<pre><code>---
+highlightTheme: monokai
+
+---
+</code></pre>
+<p>By default advanced slides comes with a varity of diffrent highlight themes:</p>
+<ul>
+<li>zenburn (default)</li>
+<li>monokai</li>
+<li>css/vs2015.css</li>
+</ul>
 <footer class=footline>
 </footer>
 </div>
