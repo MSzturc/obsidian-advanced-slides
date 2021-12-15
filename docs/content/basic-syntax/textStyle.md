@@ -11,6 +11,8 @@ _This will also be italic_
 **This text will be bold**
 __This will also be bold__
 
+%%This is a Comment(Can't see it)%%
+
 _You **can** combine them_
 
 ---
