@@ -1,255 +1,360 @@
-<!doctype html><html>
-<head>
-<title>Advaced Slides Documentation</title>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name=revised content="2021-12-15T10:11:38 UTC">
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advaced Slides Documentation</title>
+    
+      <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="revised" content="2021-12-15T10:18:28 UTC">
 <title>Extended Syntax :: Advaced Slides Documentation</title>
-<link rel="shortcut icon" href=/obsidian-advanced-slides/images/favicon.png type=image/x-icon>
-<link href=/obsidian-advanced-slides/css/nucleus.css rel=stylesheet>
-<link href=/obsidian-advanced-slides/css/font-awesome.min.css rel=stylesheet>
-<link href=/obsidian-advanced-slides/css/hybrid.css rel=stylesheet>
-<link href=/obsidian-advanced-slides/css/featherlight.min.css rel=stylesheet>
-<link href=/obsidian-advanced-slides/css/auto-complete.css rel=stylesheet>
-<link href=/obsidian-advanced-slides/theme-original/style.css rel=stylesheet>
-<link rel=stylesheet href=/obsidian-advanced-slides/css/bootstrap.min.css>
-<style type=text/css>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
-<script>(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','G-0TT7HV5B11','auto'),ga('send','pageview')</script>
-</head>
-<body data-url=/obsidian-advanced-slides/extend-syntax/>
-<div id=headermain></div>
-<nav id=sidebar class=showVisitedLinks>
-<div class=highlightable>
-<div id=header-wrapper>
-<div id=header>
-<a class=baselink href=https://mszturc.github.io/obsidian-advanced-slides/>Advaced Slides Documentation</a>
-</div>
-<div class=searchbox>
-<label for=search-by><i class="fa fa-search"></i></label>
-<input data-search-input id=search-by type=text placeholder=Search...>
-<span data-search-clear><i class="fa fa-close"></i></span>
-</div>
-</div>
-<ul class=topics>
-<li data-nav-id=/obsidian-advanced-slides/ class=dd-item>
-<a href=/obsidian-advanced-slides/><i class="fa fa-fw fa-home"></i></a>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/getting-start/ class="dd-item alwaysopen haschildren">
-<div>
-<a href=/obsidian-advanced-slides/getting-start/><i class="fa fa-hand-pointer-o"></i> Getting started</a>
-<i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-</div>
-<ul>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/getting-start/installation/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/getting-start/installation/>
-<i class="fa fa-wrench"></i> Installation
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/getting-start/settings/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/getting-start/settings/>
-<i class="fa fa-gears"></i> Settings
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/getting-start/firststeps/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/getting-start/firststeps/>
-<i class="fa fa-send"></i> First Steps
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-</ul>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/ class="dd-item haschildren">
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/><i class="fa fa-book"></i> Basic Markdown Syntax</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-</div>
-<ul>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/heading/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/heading/>
-Headers
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/textstyle/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/textstyle/>
-Text style
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/lists/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/lists/>
-Lists
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/images/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/images/>
-Images
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/links/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/links/>
-Links
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/embeds/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/embeds/>
-Embeds
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/blockquotes/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/blockquotes/>
-Blockquotes
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/inlinecode/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/inlinecode/>
-Inline Code
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/tables/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/tables/>
-Tables
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/footnotes/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/footnotes/>
-Footnotes
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/math/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/math/>
-Math
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/mermaid/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/basic-syntax/mermaid/>
-Mermaid
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-</ul>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/ class="dd-item haschildren">
-<div>
-<a href=/obsidian-advanced-slides/extend-syntax/><i class="fa fa-graduation-cap"></i> Extended Syntax</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
-</div>
-<ul>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/extend-syntax/classes/>
-Element Annotations
-</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-</ul>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/themes/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/themes/><i class="fa fa-paint-brush"></i> Themes</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<li data-nav-id=https://mszturc.github.io/obsidian-advanced-slides/yaml/ class=dd-item>
-<div>
-<a href=/obsidian-advanced-slides/yaml/><i class="fa fa-hashtag"></i> Frontmatter Options</a><i class="fa fa-circle-thin read-icon"></i>
-</div>
-</li>
-<section id=shortcuts>
-<li role><h3>More</h3><a href=https://github.com/MSzturc/obsidian-advanced-slides rel=noopener><i class="fa fa-github"></i> <label>Github repo</label></a></li>
-<li role><a href=/obsidian-advanced-slides/credits rel=noopener><i class="fa fa-bullhorn"></i> <label>Credits</label></a></li>
-</section>
-<a id=clear-history href=# data-clear-history-toggle><i class="fa fa-history"></i> Clear History</a>
-<hr>
-<li></li>
-</ul>
-<section id=footer><center>
-<a class=github-button href=https://github.com/MSzturc/obsidian-advanced-slides/releases/latest data-icon=octicon-cloud-download aria-label="Download vjeantet/hugo-theme-docdock on GitHub">Download</a>
-<a class=github-button href=https://github.com/MSzturc/obsidian-advanced-slides data-icon=octicon-star data-show-count=true aria-label="Star vjeantet/hugo-theme-docdock on GitHub">Star</a>
-<a class=github-button href=https://github.com/MSzturc/obsidian-advanced-slides/fork data-icon=octicon-repo-forked data-show-count=true aria-label="Fork vjeantet/hugo-theme-docdock on GitHub">Fork</a>
+<link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
+<link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
+<link href="/obsidian-advanced-slides/css/font-awesome.min.css" rel="stylesheet">
+<link href="/obsidian-advanced-slides/css/hybrid.css" rel="stylesheet">
+<link href="/obsidian-advanced-slides/css/featherlight.min.css" rel="stylesheet">
+<link href="/obsidian-advanced-slides/css/auto-complete.css" rel="stylesheet">
+<link href="/obsidian-advanced-slides/theme-original/style.css" rel="stylesheet">
+
+<link rel="stylesheet" href="/obsidian-advanced-slides/css/bootstrap.min.css">
+<style type="text/css">
+  :root #header + #content > #left > #rlblock_left {
+    display:none !important;
+  }
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'G-0TT7HV5B11', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    
+  </head>
+  <body data-url="/obsidian-advanced-slides/extend-syntax/">
+    
+      <div id="headermain"></div>
+<nav id="sidebar" class="showVisitedLinks">
+
+
+
+<div class="highlightable">
+  <div id="header-wrapper">
+    <div id="header">
+      
+	
+  
+    <a class="baselink" href="https://mszturc.github.io/obsidian-advanced-slides/">Advaced Slides Documentation</a>
+  
+
+
+    </div>
+        <div class="searchbox">
+		    <label for="search-by"><i class="fa fa-search"></i></label>
+		    <input data-search-input id="search-by" type="text" placeholder="Search...">
+		    <span data-search-clear=""><i class="fa fa-close"></i></span>
+		</div>
+  </div>
+
+      <ul class="topics">
+            <li data-nav-id="/obsidian-advanced-slides/" class="dd-item">
+            <a href="/obsidian-advanced-slides/"><i class="fa fa-fw fa-home"></i></a>
+            </li>
+    <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/getting-start/" class="dd-item alwaysopen haschildren
+        ">
+      <div>
+      <a href="/obsidian-advanced-slides/getting-start/"><i class='fa fa-hand-pointer-o' ></i> Getting started</a>
+            <i class="fa fa-angle-down fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/getting-start/installation/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/getting-start/installation/">
+            <i class='fa fa-wrench' ></i> Installation
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/getting-start/settings/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/getting-start/settings/">
+            <i class='fa fa-gears' ></i> Settings
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/getting-start/firststeps/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/getting-start/firststeps/">
+            <i class='fa fa-send' ></i> First Steps
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/obsidian-advanced-slides/basic-syntax/"><i class='fa fa-book' ></i> Basic Markdown Syntax</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/heading/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/heading/">
+            Headers
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/textstyle/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/textstyle/">
+            Text style
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/lists/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/lists/">
+            Lists
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/images/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/images/">
+            Images
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/links/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/links/">
+            Links
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/embeds/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/embeds/">
+            Embeds
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/blockquotes/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/blockquotes/">
+            Blockquotes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/inlinecode/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/inlinecode/">
+            Inline Code
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/tables/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/tables/">
+            Tables
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/footnotes/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/footnotes/">
+            Footnotes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/math/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/math/">
+            Math
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/mermaid/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/basic-syntax/mermaid/">
+            Mermaid
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/obsidian-advanced-slides/extend-syntax/"><i class='fa fa-graduation-cap' ></i> Extended Syntax</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/extend-syntax/classes/">
+            Element Annotations
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/themes/" class="dd-item
+        ">
+      <div>
+      <a href="/obsidian-advanced-slides/themes/"><i class='fa fa-paint-brush' ></i> Themes</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+    <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/yaml/" class="dd-item
+        ">
+      <div>
+      <a href="/obsidian-advanced-slides/yaml/"><i class='fa fa-hashtag' ></i> Frontmatter Options</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
+
+
+
+        <section id="shortcuts">
+                <li class="" role=""><h3>More</h3><a href="https://github.com/MSzturc/obsidian-advanced-slides" rel="noopener"><i class='fa fa-github'></i> <label>Github repo</label></a></li>
+                <li class="" role=""><a href="/obsidian-advanced-slides/credits" rel="noopener"><i class='fa fa-bullhorn'></i> <label>Credits</label></a></li>
+        </section>
+            <a id="clear-history" class="" href="#" data-clear-history-toggle=""><i class="fa  fa-history"></i> Clear History</a>
+
+    <hr />
+    <li></li>
+    
+    </ul>
+
+ <section id="footer"><center>
+
+<a class="github-button" href="https://github.com/MSzturc/obsidian-advanced-slides/releases/latest" data-icon="octicon-cloud-download" aria-label="Download vjeantet/hugo-theme-docdock on GitHub">Download</a>
+
+
+<a class="github-button" href="https://github.com/MSzturc/obsidian-advanced-slides" data-icon="octicon-star" data-show-count="true" aria-label="Star vjeantet/hugo-theme-docdock on GitHub">Star</a>
+
+
+<a class="github-button" href="https://github.com/MSzturc/obsidian-advanced-slides/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork vjeantet/hugo-theme-docdock on GitHub">Fork</a>
+
 </center>
-<script async defer src=https://buttons.github.io/buttons.js></script>
-</section>
-</div>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
 </nav>
-<section id=body>
-<div id=overlay></div>
+
+
+
+<section id="body">
+<div id="overlay"></div>
 <div class="padding highlightable">
-<div id=top-bar>
-<div id=top-github-link>
-<a class=github-link href=https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/extend-syntax/_index.md target=blank>
-<i class="fa fa-code-fork"></i>
-Improve this page
-</a>
-</div><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
-<span id=sidebar-toggle-span>
-<a href=# id=sidebar-toggle data-sidebar-toggle>
-<i class="fa fa-bars"></i>
-</a>
-</span>
-<span id=toc-menu><i class="fa fa-list-alt"></i></span>
-<span class=links>
-<a href=https://mszturc.github.io/obsidian-advanced-slides/>Advanced Slides Documentation</a> > Extended Syntax
-</span>
-</div>
-<div class=progress>
-<div class=wrapper>
-<nav id=TableOfContents></nav>
-</div>
-</div>
-</div>
-<div id=body-inner>
-<h1>Extended Syntax</h1>
+
+  <div id="top-bar">
+    
+      
+      
+      
+    <div id="top-github-link">
+      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/extend-syntax/_index.md" target="blank">
+        <i class="fa fa-code-fork"></i>
+        Improve this page
+      </a>
+    </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+ <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > Extended Syntax
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents"></nav>
+        </div>
+    </div>
+    
+
+  </div>
+
+
+<div id="body-inner">
+  
+    <h1>Extended Syntax</h1>
+  
+
+
+
+    
+    
+    
+
 <p>Index</p>
 <ul class="children children-li">
 <p><span><li>
-<a href=/obsidian-advanced-slides/extend-syntax/classes/>Element Annotations</a></li>
+<a href="/obsidian-advanced-slides/extend-syntax/classes/" >Element Annotations</a></li>
 </span></p>
 </ul>
-<footer class=footline>
+
+
+
+    
+    
+          <footer class=" footline" >
+	
 </footer>
+  </div>
 </div>
+
+<div id="navigation">
 </div>
-<div id=navigation>
-</div>
+
 </section>
-<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
-<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
-</div>
-<script src=/obsidian-advanced-slides/js/jquery-2.x.min.js></script>
-<script type=text/javascript>var baseurl="https://mszturc.github.io/obsidian-advanced-slides/"</script>
-<script src=/obsidian-advanced-slides/js/clipboard.min.js></script>
-<script src=/obsidian-advanced-slides/js/featherlight.min.js></script>
-<script src=/obsidian-advanced-slides/js/html5shiv-printshiv.min.js></script>
-<script src=/obsidian-advanced-slides/js/modernizr.custom.71422.js></script>
-<script src=/obsidian-advanced-slides/js/docdock.js></script>
-<script type=text/javascript src=/obsidian-advanced-slides/js/lunr.min.js></script>
-<script type=text/javascript src=/obsidian-advanced-slides/js/auto-complete.js></script>
-<script type=text/javascript src=/obsidian-advanced-slides/js/search.js></script>
-<script src=/obsidian-advanced-slides/theme-original/script.js></script>
-<script src=https://mszturc.github.io/obsidian-advanced-slides/js/scripts.min.js></script>
-</body>
+<div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+  <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+</div>    
+
+<script src="/obsidian-advanced-slides/js/jquery-2.x.min.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "https:\/\/mszturc.github.io\/obsidian-advanced-slides\/";
+    
+</script>
+<script src="/obsidian-advanced-slides/js/clipboard.min.js"></script>
+<script src="/obsidian-advanced-slides/js/featherlight.min.js"></script>
+<script src="/obsidian-advanced-slides/js/html5shiv-printshiv.min.js"></script>
+
+<script src="/obsidian-advanced-slides/js/modernizr.custom.71422.js"></script>
+<script src="/obsidian-advanced-slides/js/docdock.js"></script>
+<script type="text/javascript" src="/obsidian-advanced-slides/js/lunr.min.js"></script>
+<script type="text/javascript" src="/obsidian-advanced-slides/js/auto-complete.js"></script>
+<script type="text/javascript" src="/obsidian-advanced-slides/js/search.js"></script>
+<script src="/obsidian-advanced-slides/theme-original/script.js"></script>
+
+
+
+
+<script src="https://mszturc.github.io/obsidian-advanced-slides/js/scripts.min.js"></script>
+
+    
+
+    
+    
+
+    
+  </body>
 </html>
