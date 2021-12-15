@@ -10,6 +10,9 @@ You can customize many setting for your current slide deck by adding one or more
 
 Name | Description | Possible Values | Default Value
 ------------ | ------------ | ------------ | ------------
+notesSeparator | Sets the note delimiter | string | note:
+separator | Sets the slide separator | string | ^( ?\| )---( ?\| )$
+verticalSeparator | Sets the vertical slide separator | string | ^( ?\| )--( ?\| )$
 theme | Sets the theme | [see theme docs]({{%relref "themes"%}}) | black
 highlightTheme | Sets the highlight theme | [see theme docs]({{%relref "themes"%}}) | zenburn
 css | Adds further css files |  | []
@@ -28,4 +31,7 @@ autoSlide | Controls automatic progression to the next slide | number (in millis
 transition | Transition style | none / fade / slide / convex / concave / zoom | true
 transitionSpeed | Transition speed | default / fast / slow | default
 
-You can find more possible parameters [here](https://revealjs.com/config/)
+
+<br>
+
+{{%alert%}}You can find more possible parameters [here](https://revealjs.com/config/){{%/alert%}}
