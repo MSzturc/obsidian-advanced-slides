@@ -10,6 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: "Build Changelog"
+        id: build_changelog
+        uses: mikepenz/release-changelog-builder-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          configuration: "./.github/workflows/release_changelog.json"
       - uses: actions/setup-node@v2
         with:
           node-version: '17'
@@ -30,5 +37,5 @@ jobs:
         with:
           artifacts: "test-vault/.obsidian/plugins/obsidian-advanced-slides/obsidian-advanced-slides.zip, test-vault/.obsidian/plugins/obsidian-advanced-slides/main.js, test-vault/.obsidian/plugins/obsidian-advanced-slides/manifest.json, test-vault/.obsidian/plugins/obsidian-advanced-slides/styles.css"
           token: ${{ secrets.GITHUB_TOKEN }}
-          generateReleaseNotes: true
+          body: ${{steps.build_changelog.outputs.changelog}}
           
