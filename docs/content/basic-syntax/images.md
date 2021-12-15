@@ -44,13 +44,13 @@ Insert image with obsidian markdown syntax
 ---
 
 Scale image to a width of 100 px
-
+<br><br>
 ![Image](https://picsum.photos/id/1006/100/60)
 
 ---
 
 Scale image to a width of 300x100 px
-
+<br><br>
 ![Image](https://picsum.photos/id/1006/300/100)
 
 
