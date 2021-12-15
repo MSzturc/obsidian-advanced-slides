@@ -2,15 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/</loc>
-  </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/getting-start/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/heading/</loc>
   </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slides/</loc>
+  </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/getting-start/installation/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/</loc>
+  </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/getting-start/settings/</loc>
   </url><url>
@@ -22,13 +24,21 @@
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/lists/</loc>
   </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slideannotations/</loc>
+  </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/blockcomment/</loc>
+  </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/images/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/themes/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/yaml/</loc>
   </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</loc>
+  </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/links/</loc>
+  </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/embeds/</loc>
   </url><url>

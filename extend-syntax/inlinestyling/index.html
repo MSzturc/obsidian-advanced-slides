@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta name="generator" content="Hugo 0.90.1" />
     <title>Advaced Slides Documentation</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2021-12-15T11:29:37 UTC">
-<title>Advanced Slides Documentation :: Advaced Slides Documentation</title>
+<title>Inline Styling :: Advaced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
 <link href="/obsidian-advanced-slides/css/font-awesome.min.css" rel="stylesheet">
@@ -35,7 +34,7 @@
 
     
   </head>
-  <body data-url="/obsidian-advanced-slides/">
+  <body data-url="/obsidian-advanced-slides/extend-syntax/inlinestyling/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -286,8 +285,65 @@
 <div id="overlay"></div>
 <div class="padding highlightable">
 
+  <div id="top-bar">
+    
+      
+      
+      
+    <div id="top-github-link">
+      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/extend-syntax/inlineStyling.md" target="blank">
+        <i class="fa fa-code-fork"></i>
+        Improve this page
+      </a>
+    </div><div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+        <span id="sidebar-toggle-span">
+          <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+            <i class="fa fa-bars"></i>
+          </a>
+        </span>
+        <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+        <span class="links">
+        
+
+
+
+
+
+
+
+ <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/'>Extended Syntax</a> > Inline Styling
+
+ 
+
+ 
+
+   
+        </span>
+    </div>
+    
+    
+    <div class="progress">
+        <div class="wrapper">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#by-using-the-style-compoment">by using the &lt;style&gt; compoment</a></li>
+        <li><a href="#by-including-them-through-css-file">by including them through css file</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+        </div>
+    </div>
+    
+
+  </div>
+
 
 <div id="body-inner">
+  
+    <h1>Inline Styling</h1>
   
 
 
@@ -295,52 +351,88 @@
     
     
     
-<span id="sidebar-toggle-span">
-<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fa fa-bars"></i> navigation</a>
-</span>
- 
-<h1 id="create-awesome-presentations-in-obsidian">Create Awesome Presentations in Obsidian</h1>
-<p><a href="https://github.com/MSzturc/obsidian-advanced-slides">Advanced Slides <span class="fa fa-github" aria-hidden="true"></span></a> is an open source plugin for <a href="https://obsidian.md/">Obsidian</a> that allows you to create <a href="https://revealjs.com/">reveal.js</a> based presentations in Obsidian. With this tool anyone who is able to create a note in Obsidian can also create a beautiful presentation.</p>
+    <p>you may define css styles inside your markdown:</p>
+<h3 id="by-using-the-style-compoment">by using the &lt;style&gt; compoment</h3>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">style</span><span style="color:#111">&gt;</span>
+	<span style="color:#111">.</span><span style="color:#75af00">with-border</span><span style="color:#111">{</span>
+		<span style="color:#00a8c8">border</span><span style="color:#111">:</span> <span style="color:#ae81ff">1</span><span style="color:#00a8c8">px</span> <span style="color:#00a8c8">solid</span> <span style="color:#00a8c8">red</span><span style="color:#111">;</span>
+	<span style="color:#111">}</span>
+<span style="color:#111">&lt;/</span><span style="color:#f92672">style</span><span style="color:#111">&gt;</span>
 
-<div class="panel panel-primary"><div class="panel-body">We follow the philosophy of <code>convention over configuration</code>, which means that in most cases it is sufficient to simply write a Slide in <strong>Obsidian Markdown syntax</strong>.</div></div>
+styled text <span style="color:#75715e">&lt;!-- .element: class=&#34;with-border&#34; --&gt;</span>
+</code></pre></div><iframe id="slideFrame" src="/obsidian-advanced-slides/none.html" style="width:100%;height:30em; border:0px"></iframe>
 
-<h2 id="main-features">Main features</h2>
-<ul>
-<li>Live Preview while editing your slides markdown</li>
-<li>Theme support for your slides</li>
-<li>Embed Support - include other Markdown documents in slides - <code>![[Note.md#FirstChapter]]</code></li>
-<li>Image Support
-<ul>
-<li>include images through Obsidian Synthax - <code>![[picture.jpg]]</code></li>
-<li>pipe image properties - - <code>![[image.png|100x100]]</code></li>
-</ul>
-</li>
-<li>Block Support - <code>::: block</code></li>
-<li>Footnote Support - <code>Here's a footnote[^1]</code></li>
-<li>Define stylesheets inside Markdown - <code>&lt;style&gt;....&lt;/style&gt;</code></s></li>
-<li>Pass options To Slide Compiler through frontmatter</li>
-<li>Annotate elements <code>&lt;!-- .element: class=&quot;red&quot; --&gt;</code></li>
-<li>Support for internal links
-<ul>
-<li><code>[[Note]]</code> will be rendered as normal text in Presentation</li>
-<li>with aliases <code>[[Note|My Note]]</code></li>
-</ul>
-</li>
-<li>Excalidraw Support</li>
-<li>Mermaid Support</li>
-</ul>
-<h2 id="call-for-help">Call for Help</h2>
+<div id="slideContent">
+	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/reveal.css">
+	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/theme/black.css" id="theme">
+	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/lib/css/zenburn.css">
 
-<div class="alert alert-success" role="alert">You have coding skills and you are missing a proper Slides functionality as much as me and want to help? Join us, there is enough work to do <span class="fa fa-smile-o" aria-hidden="true"></span></div>
+	<div class="reveal">
+	<div class="slides">
+		
 
-<h2 id="contribute-to-this-documentation">Contribute to this documentation</h2>
-<p>Feel free to update this content, just click the <strong>Improve this page</strong> link displayed on top right of each page, and pullrequest it
-
-<div class="alert alert-info" role="alert">Your modification will be deployed automatically when merged !</div>
-</p>
+<section>
+<p style="border: 1px solid red;">styled text <!-- --></p>
+</section>
 
 
+	</div>
+	</div>
 
+	<script async src="/obsidian-advanced-slides/revealjs/lib/js/head.min.js"></script>
+	<script async src="/obsidian-advanced-slides/revealjs/js/reveal.js"></script>
+	<script>
+	function initSlides() {
+		Reveal.initialize({
+		      	embedded : true,
+
+		        controls : "true", 
+ 				center: true ,		
+		        history: false ,
+		        progress: "true" ,
+		        transition: "concave",
+
+		        
+		        
+		        dependencies: [
+		          { src: '\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js"', condition: function() { return !document.body.classList; } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/highlight\/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/zoom-js\/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/notes\/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+		        ]
+		      });
+	}
+	</script>
+</div>
+<li><a href="#" onclick="slideFullScreen();">See it fullscreen</a></li>
+
+<script type="text/javascript">
+var toto = document.getElementById('slideContent').innerHTML
+document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); 
+document.getElementById('slideContent').remove();
+document.addEventListener("DOMContentLoaded",function(){
+	  setTimeout(function () {
+      document.getElementById('slideFrame').contentWindow.initSlides() ;
+    }, 2000);
+});
+
+
+function slideFullScreen() {
+	document.open();
+	document.write(toto);
+	document.close();
+	initSlides()
+}
+</script>
+
+<h3 id="by-including-them-through-css-file">by including them through css file</h3>
+<p>it is possible to add further css files beside theme and highlight theme to slide deck:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">---
+css: [css/layout.css,css/customFonts.css]
+---
+</code></pre></div>
 
     
     

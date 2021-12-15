@@ -7,12 +7,65 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Horizontal / Vertical Slides</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slides/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slides/</guid>
+      <description>To create a horizontal slide use three dashes surrounded by two blank lines. To create vertical slides use two dashes surrounded by two blank lines:
+# Slide 1 --- # Slide 2.1 -- # Slide 2.2  # Slide 1 --- # Slide 2.1 -- # Slide 2.2       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;</description>
+    </item>
+    
+    <item>
       <title>Element Annotations</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/</guid>
       <description>text with border &amp;lt;!-- .element: class=&amp;#34;with-border&amp;#34; --&amp;gt; text with background &amp;lt;!-- .element: style=&amp;#34;background:blue&amp;#34; --&amp;gt; text with attribute &amp;lt;!-- .element: data-toggle=&amp;#34;modal&amp;#34; --&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Slide Annotations</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slideannotations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slideannotations/</guid>
+      <description>You can pass style or class properties for the whole slide by annotating it:
+&amp;lt;!-- .slide: style=&amp;#34;background-color: coral;&amp;#34; --&amp;gt; # Header with coral background color Paragraph has coral background color, too! --- &amp;lt;!-- .slide: style=&amp;#34;background-color: green;&amp;#34; --&amp;gt; - All Bullet points - have green - background color  Header with coral background color Paragraph has coral background color, too!
+  All Bullet points
+ have green
+ background color</description>
+    </item>
+    
+    <item>
+      <title>Block Comments</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/blockcomment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/blockcomment/</guid>
+      <description>You can use block comments to group parts of your slide. By annotating the block all items inside this block gets the properties of the annotation:
+::: block #### Header _and_ Paragraph content *in same block* ::: --- no color ::: block &amp;lt;!-- .element: style=&amp;#34;background-color: red;&amp;#34; --&amp;gt; everything inside this block has red background color ::: block &amp;lt;!-- .element: style=&amp;#34;background-color: blue;&amp;#34; --&amp;gt; blue ::: red ::: no color  Header and Paragraph content in same block</description>
+    </item>
+    
+    <item>
+      <title>Inline Styling</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</guid>
+      <description>you may define css styles inside your markdown:
+by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{ border: 1px solid red; } &amp;lt;/style&amp;gt; styled text &amp;lt;!-- .element: class=&amp;#34;with-border&amp;#34; --&amp;gt;   styled text       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;true&#34; , transition: &#34;concave&#34;, dependencies: [ { src: &#39;\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js&#34;&#39;, condition: function() { return !document.body.classList; } }, { src: &#39;\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.</description>
+    </item>
+    
+    <item>
+      <title>Slide Backgrounds</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</guid>
+      <description>you can change the background by annotating the slide:
+&amp;lt;!-- .slide: data-background=&amp;#34;aquamarine&amp;#34; --&amp;gt; ## Slide with text based background --- &amp;lt;!-- .slide: data-background=&amp;#34;#ff0000&amp;#34; --&amp;gt; ## Slide with hex based background --- &amp;lt;!-- .slide: data-background=&amp;#34;rgb(70, 70, 255)&amp;#34; --&amp;gt; ## Slide with rgb based background --- &amp;lt;!-- .slide: data-background=&amp;#34;hsla(315, 100%, 50%, 1)&amp;#34; --&amp;gt; ## Slide with hsl based background --- # Slide without background --- &amp;lt;!-- .slide: data-background-image=&amp;#34;https://picsum.photos/seed/picsum/800/600&amp;#34; --&amp;gt; ## Slide with image background --- &amp;lt;!</description>
     </item>
     
   </channel>
