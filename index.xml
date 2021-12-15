@@ -35,6 +35,18 @@
     </item>
     
     <item>
+      <title>Split Component</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/layout/split/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/layout/split/</guid>
+      <description>By using the &amp;lt;split&amp;gt; tag you are able to split the content of your slide in rows and columns
+Attributes even By setting the even attribute the Content of the split element gets divided evenly:
+&amp;lt;split even&amp;gt; ![](https://picsum.photos/id/1005/250/250) ![](https://picsum.photos/id/1010/250/250) ![](https://picsum.photos/id/1025/250/250) &amp;lt;/split&amp;gt; Example: In a split with 3 children every child takes 1/3 of the availible width of the slide
+gap By adding the gap attribute there will be a gap between each element:</description>
+    </item>
+    
+    <item>
       <title>Element Annotations</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -212,7 +224,7 @@ by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 118 commits   @actions-user 2 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 119 commits   @actions-user 2 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
     </item>
     
   </channel>
