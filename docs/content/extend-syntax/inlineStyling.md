@@ -1,7 +1,7 @@
 +++
 title = "Inline Styling"
 description = ""
-weight = 5
+weight = 6
 +++
 
 you may define css styles inside your markdown:

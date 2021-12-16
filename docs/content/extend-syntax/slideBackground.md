@@ -1,7 +1,7 @@
 +++
 title = "Slide Backgrounds"
 description = ""
-weight = 5
+weight = 7
 +++
 
 you can change the background by annotating the slide:
