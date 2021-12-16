@@ -51,6 +51,11 @@ export class RevealServer {
 			res.send(markup);
 		});
 
+		this._app.get('/localFileSlash/*', async (req, res) => {
+			var filepath = req.originalUrl.replace('/localFileSlash','');
+			res.download(filepath);
+		});
+
 		this._app.use(this._staticDir(this._baseDirectory));
 
 		this._server = this._app.listen(this._port, () => {

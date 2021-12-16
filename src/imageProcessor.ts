@@ -160,7 +160,11 @@ export class ImageProcessor {
 		var startIdx = line.indexOf('(') + 1;
 		var endIdx = line.indexOf(')', startIdx);
 		var filePath = line.substring(startIdx, endIdx).trim();
-	
+
+		if(filePath.startsWith('file:/')){
+			filePath = this.transformAbsoluteFilePath(filePath);
+		}
+		
 		var startAltIdx = line.indexOf('[') + 1;
 		var endAltIdx = line.indexOf(']', startAltIdx);
 		var alt = line.substring(startAltIdx, endAltIdx).trim();
@@ -179,6 +183,14 @@ export class ImageProcessor {
 			result = '<p ' + this.buildAttributes(comment) + '>' + result + '</p>';
 		}	
 		return result;
+	}
+
+	private transformAbsoluteFilePath(path: string){
+		const pathURL = new URL(path);
+		if(pathURL){
+			return '/localFileSlash' + pathURL.pathname;
+		}
+		return path;
 	}
 
 	private parseComment(comment: string) {
