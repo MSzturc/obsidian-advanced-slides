@@ -34,12 +34,12 @@
 		"ignore"
 	],
 	"sort": "ASC",
-	"template": "${{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n${{UNCATEGORIZED}}\n</details>\n**Full Changelog**: __GITHUB_REPO_URL__/compare/${{FROM_TAG}}...__TO_TAG___",
+	"template": "${{CHANGELOG}}\n\n**Full Changelog**: https://github.com/MSzturc/obsidian-advanced-slides/compare/${{FROM_TAG}}...${{TO_TAG}}",
 	"pr_template": "- ${{TITLE}}\n",
 	"empty_template": "- no changes",
 	"label_extractor": [
 		{
-			"pattern": "^(feature|fix|bugfix|docs|documentation|refactor|revert|build|):(.*)",
+			"pattern": "^(feature|fix|bugfix|docs|documentation|refactor|revert|build|ci):(.*)",
 			"target": "$1"
 		}
 	],
