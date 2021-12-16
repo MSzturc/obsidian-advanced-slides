@@ -168,20 +168,16 @@ export class ImageProcessor {
 		var startAltIdx = line.indexOf('[') + 1;
 		var endAltIdx = line.indexOf(']', startAltIdx);
 		var alt = line.substring(startAltIdx, endAltIdx).trim();
-	
-		var result = '<img src="' + filePath + '" alt="' + alt + '"></img>';
-	
+
 		if (comment === null) {
-			comment = { 'type': 'element', 'style': [], 'clazz': ['reset-paragraph'] }
-		} else {
-			if (!comment.clazz.includes('reset-paragraph')) {
-				comment.clazz.push('reset-paragraph');
-			}
+			comment = { 'type': 'element', 'style': [], 'clazz': [] };
 		}
+
+		var imageHtml = '<img src="' + filePath + '" alt="' + alt + '" ' + this.buildAttributes(comment) + '></img>';
 	
-		if (comment != null && comment.type === 'element') {
-			result = '<p ' + this.buildAttributes(comment) + '>' + result + '</p>';
-		}	
+		var paragraphComment: Comment = { 'type': 'element', 'style': [], 'clazz': ['reset-paragraph'] };
+		var result = '<p ' + this.buildAttributes(paragraphComment) + '>' + imageHtml + '</p>';
+
 		return result;
 	}
 
