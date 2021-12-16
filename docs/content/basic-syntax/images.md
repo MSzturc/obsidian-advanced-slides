@@ -32,7 +32,7 @@ Scale image to a width of 100 px
 
 Scale image to a width of 300x100 px
 
-![[Image.jpg|300x100]]
+![[Image.jpg|300x100]] <!-- .element: style="object-fit: cover" -->
 
 ```
 
