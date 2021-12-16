@@ -16,5 +16,7 @@ jobs:
         with:
           configuration: "./.github/workflows/release_changelog.json"
           commitMode: "true"
+          fromTag: "0.14.0"
+          toTag: "0.15.0"
       - name: "debug output"
         run: echo "Changelog >>> ${{steps.build_changelog.outputs.changelog}}"
