@@ -49,6 +49,15 @@
     </item>
     
     <item>
+      <title>Fragments</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragments/</guid>
+      <description>Fragments are used to highlight or incrementally reveal individual elements on a slide. Every element with the class fragment will be stepped through before moving on to the next slide. The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment. A list of all possible fragment types could be found here Fade in &amp;lt;!-- .element: class=&amp;#34;fragment&amp;#34; --&amp;gt; Fade out &amp;lt;!</description>
+    </item>
+    
+    <item>
       <title>Inline Styling</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

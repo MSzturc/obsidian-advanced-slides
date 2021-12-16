@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2021-12-16T11:33:37 UTC">
-<title>Basic Markdown Syntax :: Advaced Slides Documentation</title>
+<title>Fragments :: Advaced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
 <link href="/obsidian-advanced-slides/css/font-awesome.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 
     
   </head>
-  <body data-url="/obsidian-advanced-slides/basic-syntax/">
+  <body data-url="/obsidian-advanced-slides/extend-syntax/fragments/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -311,7 +311,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/basic-syntax/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/extend-syntax/fragments.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -328,7 +328,12 @@
 
 
 
- <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > Basic Markdown Syntax
+
+
+
+ <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/'>Extended Syntax</a> > Fragments
+
+ 
 
  
 
@@ -349,7 +354,7 @@
 
 <div id="body-inner">
   
-    <h1>Basic Markdown Syntax</h1>
+    <h1>Fragments</h1>
   
 
 
@@ -357,46 +362,91 @@
     
     
     
+    <p>Fragments are used to highlight or incrementally reveal individual elements on a slide. Every element with the class fragment will be stepped through before moving on to the next slide.
+The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment.
+<br>
 
-<p>Index</p>
-<ul class="children children-li">
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/heading/" >Headers</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/textstyle/" >Text style</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/lists/" >Lists</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/images/" >Images</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/links/" >Links</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/embeds/" >Embeds</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/blockquotes/" >Blockquotes</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/inlinecode/" >Inline Code</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/tables/" >Tables</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/footnotes/" >Footnotes</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/math/" >Math</a></li>
-</span></p>
-<p><span><li>
-<a href="/obsidian-advanced-slides/basic-syntax/mermaid/" >Mermaid</a></li>
-</span></p>
-</ul>
+<div class="alert alert-info" role="alert">A list of all possible fragment types could be found <a href="https://revealjs.com/fragments/">here</a></div>
+</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Fade in <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment&#34; --&gt;</span>
+
+Fade out <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment fade-out&#34; --&gt;</span>
+
+Highlight red <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment highlight-red&#34; --&gt;</span>
+
+Fade in, then out <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment fade-in-then-out&#34; --&gt;</span>
+
+Slide up while fading in <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment fade-up&#34; --&gt;</span>
+</code></pre></div><iframe id="slideFrame" src="/obsidian-advanced-slides/none.html" style="width:100%;height:30em; border:0px"></iframe>
+
+<div id="slideContent">
+	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/reveal.css">
+	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/theme/black.css" id="theme">
+	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/lib/css/zenburn.css">
+	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/layout.css">
+
+	<div class="reveal">
+	<div class="slides">
+		
+
+<section data-fragment="-1"><p class="fragment" data-fragment-index="0">Fade in <!-- --></p>
+<p class="fragment fade-out" data-fragment-index="1">Fade out <!-- --></p>
+<p class="fragment highlight-red" data-fragment-index="2">Highlight red <!-- --></p>
+<p class="fragment fade-in-then-out" data-fragment-index="3">Fade in, then out <!-- --></p>
+<p class="fragment fade-up" data-fragment-index="4">Slide up while fading in <!-- --></p>
+</section>
+
+
+	</div>
+	</div>
+
+	<script async src="/obsidian-advanced-slides/revealjs/lib/js/head.min.js"></script>
+	<script async src="/obsidian-advanced-slides/revealjs/js/reveal.js"></script>
+	<script>
+	function initSlides() {
+		Reveal.initialize({
+		      	embedded : true,
+
+		        controls : "true", 
+ 				center: true ,		
+		        history: false ,
+		        progress: "true" ,
+		        transition: "concave",
+
+		        
+		        
+		        dependencies: [
+		          { src: '\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js"', condition: function() { return !document.body.classList; } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/highlight\/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/zoom-js\/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/notes\/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+		        ]
+		      });
+	}
+	</script>
+</div>
+<li><a href="#" onclick="slideFullScreen();">See it fullscreen</a></li>
+
+<script type="text/javascript">
+var toto = document.getElementById('slideContent').innerHTML
+document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); 
+document.getElementById('slideContent').remove();
+document.addEventListener("DOMContentLoaded",function(){
+	  setTimeout(function () {
+      document.getElementById('slideFrame').contentWindow.initSlides() ;
+    }, 2000);
+});
+
+
+function slideFullScreen() {
+	document.open();
+	document.write(toto);
+	document.close();
+	initSlides()
+}
+</script>
 
 
 
