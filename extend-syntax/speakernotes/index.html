@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2021-12-17T18:04:32 UTC">
-<title>Blockquotes :: Advaced Slides Documentation</title>
+<title>Speaker Notes :: Advaced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
 <link href="/obsidian-advanced-slides/css/font-awesome.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 
     
   </head>
-  <body data-url="/obsidian-advanced-slides/basic-syntax/blockquotes/">
+  <body data-url="/obsidian-advanced-slides/extend-syntax/speakernotes/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -325,7 +325,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/basic-syntax/blockquotes.md" target="blank">
+      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/extend-syntax/speakerNotes.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -345,7 +345,7 @@
 
 
 
- <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/'>Basic Markdown Syntax</a> > Blockquotes
+ <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/'>Extended Syntax</a> > Speaker Notes
 
  
 
@@ -368,7 +368,7 @@
 
 <div id="body-inner">
   
-    <h1>Blockquotes</h1>
+    <h1>Speaker Notes</h1>
   
 
 
@@ -376,83 +376,24 @@
     
     
     
-    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
-</span><span style="font-style:italic"></span>
-\- Doug Engelbart, 1961
-</code></pre></div><iframe id="slideFrame" src="/obsidian-advanced-slides/none.html" style="width:100%;height:30em; border:0px"></iframe>
+    <p>Advanced Slides comes with a speaker notes function which can be used to present per-slide notes in a speaker view.</p>
+<p>To access the speaker view you have to open <code>Slide Preview</code> and click on the <code>Open in Browser</code> Button in the top right corner. Your Slide will open in your default web browser. Press the »S« key on your keyboard to open the notes window.</p>
+<p>The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven&rsquo;t written any notes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">## My Slide
 
-<div id="slideContent">
-	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/reveal.css">
-	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/theme/black.css" id="theme">
-	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/lib/css/zenburn.css">
-	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/layout.css">
-
-	<div class="reveal">
-	<div class="slides">
-	<section data-markdown
-	         data-separator="^---"
-			 data-separator-vertical="^--"
-			 data-separator-notes="^Note:"
-			 data-charset="utf8">
-		
-> Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
-
-<br><br>
-
-\- Doug Engelbart, 1961
+This is part of my Presentation
 
 
-	</section>
-	</div>
-	</div>
+note: this is not! Only the speaker might see this text.
 
-	<script async src="/obsidian-advanced-slides/revealjs/lib/js/head.min.js"></script>
-	<script async src="/obsidian-advanced-slides/revealjs/js/reveal.js"></script>
-	<script>
-	function initSlides() {
-		Reveal.initialize({
-		      	embedded : true,
+<span style="color:#00a8c8">-</span> and this bulletpoint
+<span style="color:#00a8c8">-</span> or this picture
 
-		        controls : "true", 
- 				center: true ,		
-		        history: false ,
-		        progress: "true" ,
-		        transition: "concave",
+![](https://picsum.photos/id/1005/250/250) 
+</code></pre></div><p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/speakerView.png" alt="Speaker View"></p>
+<br>
 
-		        
-		        
-		        dependencies: [
-		          { src: '\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js"', condition: function() { return !document.body.classList; } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/highlight\/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/zoom-js\/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/notes\/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-		        ]
-		      });
-	}
-	</script>
-</div>
-<li><a href="#" onclick="slideFullScreen();">See it fullscreen</a></li>
-
-<script type="text/javascript">
-var toto = document.getElementById('slideContent').innerHTML
-document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); 
-document.getElementById('slideContent').remove();
-document.addEventListener("DOMContentLoaded",function(){
-	  setTimeout(function () {
-      document.getElementById('slideFrame').contentWindow.initSlides() ;
-    }, 2000);
-});
-
-
-function slideFullScreen() {
-	document.open();
-	document.write(toto);
-	document.close();
-	initSlides()
-}
-</script>
+<div class="alert alert-info" role="alert">It is possible to change the notes indicator by changing the <code>notesSeparator</code> property in frontmatter <a href="/obsidian-advanced-slides/yaml/">see yaml docs</a></div>
 
 
 

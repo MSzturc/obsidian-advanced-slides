@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-16T11:33:37 UTC">
+<meta name="revised" content="2021-12-17T18:04:32 UTC">
 <title>Fragments :: Advaced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -238,6 +238,20 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/speakernotes/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/extend-syntax/speakernotes/">
+            Speaker Notes
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragmentedlists/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/extend-syntax/fragmentedlists/">
+            Fragmented list
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/layout/" class="dd-item haschildren
@@ -377,6 +391,14 @@ Highlight red <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment 
 Fade in, then out <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment fade-in-then-out&#34; --&gt;</span>
 
 Slide up while fading in <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment fade-up&#34; --&gt;</span>
+
+---
+
+<span style="color:#00a8c8">-</span> Permanent item
+<span style="color:#00a8c8">-</span> Appear Fourth <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment&#34; data-fragment-index=&#34;4&#34; --&gt;</span>
+<span style="color:#00a8c8">-</span> Appear Third <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment&#34; data-fragment-index=&#34;3&#34; --&gt;</span>
+<span style="color:#00a8c8">-</span> Appear Second <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment&#34; data-fragment-index=&#34;2&#34; --&gt;</span>
+<span style="color:#00a8c8">-</span> Appear First <span style="color:#75715e">&lt;!-- .element: class=&#34;fragment&#34; data-fragment-index=&#34;1&#34; --&gt;</span>
 </code></pre></div><iframe id="slideFrame" src="/obsidian-advanced-slides/none.html" style="width:100%;height:30em; border:0px"></iframe>
 
 <div id="slideContent">
@@ -394,6 +416,16 @@ Slide up while fading in <span style="color:#75715e">&lt;!-- .element: class=&#3
 <p class="fragment highlight-red" data-fragment-index="2">Highlight red <!-- --></p>
 <p class="fragment fade-in-then-out" data-fragment-index="3">Fade in, then out <!-- --></p>
 <p class="fragment fade-up" data-fragment-index="4">Slide up while fading in <!-- --></p>
+</section>
+
+<section data-fragment="-1">
+<ul>
+<li>Permanent item</li>
+<li class="fragment" data-fragment-index="3">Appear Fourth <!-- --></li>
+<li class="fragment" data-fragment-index="2">Appear Third <!-- --></li>
+<li class="fragment" data-fragment-index="1">Appear Second <!-- --></li>
+<li class="fragment" data-fragment-index="0">Appear First <!-- --></li>
+</ul>
 </section>
 
 

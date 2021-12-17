@@ -136,32 +136,12 @@ This text will be bold</description>
     </item>
     
     <item>
-      <title>Inline Styling</title>
-      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</guid>
-      <description>you may define css styles inside your markdown:
-by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{ border: 1px solid red; } &amp;lt;/style&amp;gt; styled text &amp;lt;!-- .element: class=&amp;#34;with-border&amp;#34; --&amp;gt;   styled text       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;true&#34; , transition: &#34;concave&#34;, dependencies: [ { src: &#39;\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js&#34;&#39;, condition: function() { return !document.body.classList; } }, { src: &#39;\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.</description>
-    </item>
-    
-    <item>
       <title>Links</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/links/</guid>
       <description>External Links http://obsidian.md - automatic! [Obsidian](http://obsidian.md) --- Obsidian URI links [Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md) [Link to note](obsidian://open?vault=MainVault&amp;amp;file=MyNote.md) --- Internal Links This [[Internal link]] will be displayed as normal text This [[Internal link|Link]] will use its alias for displaying  External Links http://obsidian.md - automatic! [Obsidian](http://obsidian.md) --- Obsidian URI links [Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md) [Link to note](obsidian://open?vault=MainVault&amp;file=MyNote.md) --- Internal Links This Internal link will be displayed as normal text This Link will use its alias for displaying       function initSlides() { Reveal.</description>
-    </item>
-    
-    <item>
-      <title>Slide Backgrounds</title>
-      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</guid>
-      <description>you can change the background by annotating the slide:
-&amp;lt;!-- .slide: data-background=&amp;#34;aquamarine&amp;#34; --&amp;gt; ## Slide with text based background --- &amp;lt;!-- .slide: data-background=&amp;#34;#ff0000&amp;#34; --&amp;gt; ## Slide with hex based background --- &amp;lt;!-- .slide: data-background=&amp;#34;rgb(70, 70, 255)&amp;#34; --&amp;gt; ## Slide with rgb based background --- &amp;lt;!-- .slide: data-background=&amp;#34;hsla(315, 100%, 50%, 1)&amp;#34; --&amp;gt; ## Slide with hsl based background --- # Slide without background --- &amp;lt;!-- .slide: data-background-image=&amp;#34;https://picsum.photos/seed/picsum/800/600&amp;#34; --&amp;gt; ## Slide with image background --- &amp;lt;!</description>
     </item>
     
     <item>
@@ -176,6 +156,16 @@ by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{
     </item>
     
     <item>
+      <title>Inline Styling</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</guid>
+      <description>you may define css styles inside your markdown:
+by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{ border: 1px solid red; } &amp;lt;/style&amp;gt; styled text &amp;lt;!-- .element: class=&amp;#34;with-border&amp;#34; --&amp;gt;   styled text       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;true&#34; , transition: &#34;concave&#34;, dependencies: [ { src: &#39;\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js&#34;&#39;, condition: function() { return !document.body.classList; } }, { src: &#39;\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.</description>
+    </item>
+    
+    <item>
       <title>Blockquotes</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/blockquotes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -185,12 +175,43 @@ by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{
     </item>
     
     <item>
+      <title>Slide Backgrounds</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</guid>
+      <description>you can change the background by annotating the slide:
+&amp;lt;!-- .slide: data-background=&amp;#34;aquamarine&amp;#34; --&amp;gt; ## Slide with text based background --- &amp;lt;!-- .slide: data-background=&amp;#34;#ff0000&amp;#34; --&amp;gt; ## Slide with hex based background --- &amp;lt;!-- .slide: data-background=&amp;#34;rgb(70, 70, 255)&amp;#34; --&amp;gt; ## Slide with rgb based background --- &amp;lt;!-- .slide: data-background=&amp;#34;hsla(315, 100%, 50%, 1)&amp;#34; --&amp;gt; ## Slide with hsl based background --- # Slide without background --- &amp;lt;!-- .slide: data-background-image=&amp;#34;https://picsum.photos/seed/picsum/800/600&amp;#34; --&amp;gt; ## Slide with image background --- &amp;lt;!</description>
+    </item>
+    
+    <item>
       <title>Inline Code</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/inlinecode/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/inlinecode/</guid>
       <description>### Text inside `backticks` on a line will be formatted like code.  ### Text inside `backticks` on a line will be formatted like code.       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;true&#34; , transition: &#34;concave&#34;, dependencies: [ { src: &#39;\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js&#34;&#39;, condition: function() { return !document.body.classList; } }, { src: &#39;\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.js&#39;, condition: function() { return !</description>
+    </item>
+    
+    <item>
+      <title>Speaker Notes</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/speakernotes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/speakernotes/</guid>
+      <description>Advanced Slides comes with a speaker notes function which can be used to present per-slide notes in a speaker view.
+To access the speaker view you have to open Slide Preview and click on the Open in Browser Button in the top right corner. Your Slide will open in your default web browser. Press the »S« key on your keyboard to open the notes window.
+The notes window also gives you a preview of the next upcoming slide so it may be helpful even if you haven&amp;rsquo;t written any notes.</description>
+    </item>
+    
+    <item>
+      <title>Fragmented list</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragmentedlists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragmentedlists/</guid>
+      <description>Based on the Fragments concept Advanced Slides introduced a convention to automatically add fragment annotation to bullet points of ordered and unordered lists. By using + or ) as indicator for a list, the list will be automatically displayed as a fragmented list.
+# Unordered list - First - Second - Third --- # Fragmented unordered list - Permanent + First + Second + Third --- # Ordered list 1. First 2.</description>
     </item>
     
     <item>
@@ -235,7 +256,7 @@ by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 133 commits   @actions-user 6 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 147 commits   @actions-user 7 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2021-12-17T18:04:32 UTC">
-<title>Blockquotes :: Advaced Slides Documentation</title>
+<title>Fragmented list :: Advaced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
 <link href="/obsidian-advanced-slides/css/font-awesome.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 
     
   </head>
-  <body data-url="/obsidian-advanced-slides/basic-syntax/blockquotes/">
+  <body data-url="/obsidian-advanced-slides/extend-syntax/fragmentedlists/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -325,7 +325,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/basic-syntax/blockquotes.md" target="blank">
+      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/extend-syntax/fragmentedLists.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -345,7 +345,7 @@
 
 
 
- <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/'>Basic Markdown Syntax</a> > Blockquotes
+ <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/'>Extended Syntax</a> > Fragmented list
 
  
 
@@ -368,7 +368,7 @@
 
 <div id="body-inner">
   
-    <h1>Blockquotes</h1>
+    <h1>Fragmented list</h1>
   
 
 
@@ -376,9 +376,38 @@
     
     
     
-    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
-</span><span style="font-style:italic"></span>
-\- Doug Engelbart, 1961
+    <p>Based on the Fragments concept Advanced Slides introduced a convention to automatically add fragment annotation to bullet points of ordered and unordered lists. By using <code>+</code> or <code>)</code> as indicator for a list, the list will be automatically displayed as a fragmented list.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"># Unordered list
+
+<span style="color:#00a8c8">-</span> First
+<span style="color:#00a8c8">-</span> Second
+<span style="color:#00a8c8">-</span> Third
+
+---
+
+# Fragmented unordered list
+
+<span style="color:#00a8c8">-</span> Permanent
++ First
++ Second
++ Third
+
+---
+
+# Ordered list
+
+<span style="color:#00a8c8">1.</span> First
+<span style="color:#00a8c8">2.</span> Second
+<span style="color:#00a8c8">3.</span> Third
+
+---
+
+# Fragmented ordered list
+
+<span style="color:#00a8c8">1.</span> Permanent
+2) Second
+3) Third
+4) Fourth
 </code></pre></div><iframe id="slideFrame" src="/obsidian-advanced-slides/none.html" style="width:100%;height:30em; border:0px"></iframe>
 
 <div id="slideContent">
@@ -389,20 +418,43 @@
 
 	<div class="reveal">
 	<div class="slides">
-	<section data-markdown
-	         data-separator="^---"
-			 data-separator-vertical="^--"
-			 data-separator-notes="^Note:"
-			 data-charset="utf8">
 		
-> Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
 
-<br><br>
+<section><h1 id="unordered-list">Unordered list</h1>
+<ul>
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ul>
+</section>
 
-\- Doug Engelbart, 1961
+<section><h1 id="fragmented-unordered-list">Fragmented unordered list</h1>
+<ul>
+<li>Permanent</li>
+<li class="fragment" data-fragment-index="0">First</li>
+<li class="fragment" data-fragment-index="1">Second</li>
+<li class="fragment" data-fragment-index="2">Third</li>
+</ul>
+</section>
+
+<section><h1 id="ordered-list">Ordered list</h1>
+<ol>
+<li>First</li>
+<li>Second</li>
+<li>Third</li>
+</ol>
+</section>
+
+<section><h1 id="fragmented-ordered-list">Fragmented ordered list</h1>
+<ol>
+<li>Permanent</li>
+<li class="fragment" data-fragment-index="0">Second</li>
+<li class="fragment" data-fragment-index="1">Third</li>
+<li class="fragment" data-fragment-index="2">Fourth</li>
+</ol>
+</section>
 
 
-	</section>
 	</div>
 	</div>
 
