@@ -4,6 +4,7 @@ export class FragmentProcessor {
 
 	private parser: CommentParser;
 	private fragmentCounter: number = 1;
+	private orderedListRegex = /\d\) /g;
 
 	constructor() {
 		this.parser = new CommentParser();
@@ -22,7 +23,7 @@ export class FragmentProcessor {
 
 						var newSlide = slide.split('\n')
 							.map((line) => {
-								if (line.trim().startsWith("+ ")) {
+								if (line.trim().startsWith("+ ") || this.orderedListRegex.test(line.trim())) {
 									return this.transformLine(line);
 								}
 								return line;
@@ -35,18 +36,21 @@ export class FragmentProcessor {
 					.join(options.verticalSeparator);
 			})
 			.join(options.separator);
-			
+
 		return output;
 	}
 
 	transformLine(line: string) {
 		var comment = this.parser.parseLine(line) ?? this.parser.buildComment('element');
 
+		console.log(line);
+
 		if (line.includes('<!--')) {
 			line = line.substring(0, line.indexOf('<!--'));
 		}
 
 		line = line.replaceAll("+ ", "- ");
+		line = line.replaceAll(this.orderedListRegex, '1. ');
 
 		if (!comment.attributes.get('data-fragment-index')) {
 			comment.attributes.set("data-fragment-index", this.fragmentCounter.toString());
