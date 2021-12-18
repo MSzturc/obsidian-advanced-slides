@@ -6,7 +6,7 @@ export class MultipleFileProcessor {
 	private app: App;
 
 	private regex = /!\[\[(.*)\]\]/gm;
-	private yamlRegex = /^---[^-]*---/gm;
+	private yamlRegex = /^---[^-]*---/;
 
 	constructor(app: App) {
 		this.app = app;
