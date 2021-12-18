@@ -38,7 +38,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		const pluginDirectory = path.join(this.vaultDirectory.toString(), '/.obsidian/plugins/obsidian-advanced-slides/');
 		const distDirectory = path.join(pluginDirectory, '/dist/');
 
-		if (!existsSync(distDirectory) || this.isOldVersion(distDirectory)) {
+		if (!existsSync(distDirectory) || this.isOldVersion(pluginDirectory)) {
 			//Download binary
 			const downloadUrl = `https://github.com/MSzturc/obsidian-advanced-slides/releases/download/${version}/obsidian-advanced-slides.zip`;
 
@@ -106,7 +106,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	isOldVersion(dir: string){
-		const versionFile = path.join(dir, 'version.json');
+		const versionFile = path.join(dir, 'distVersion.json');
 		if(!existsSync(versionFile)){
 			return true;
 		} else {

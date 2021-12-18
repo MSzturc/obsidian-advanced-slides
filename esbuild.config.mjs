@@ -45,7 +45,7 @@ esbuild.build({
             staticAssetsPlugin,
             copy.default({
                 assets: {
-                    from: ['manifest.json', 'styles.css'],
+                    from: ['manifest.json', 'styles.css', 'distVersion.json'],
                     to: ['.'],
                 }
             }),
