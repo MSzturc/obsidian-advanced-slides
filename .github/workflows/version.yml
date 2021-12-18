@@ -34,6 +34,13 @@ jobs:
         file: manifest.json
         field: version
         value: ${{ steps.version.outputs.tag }}
+    # update the distVersion.json with the tag version
+    - name: Update dist version
+      uses: jossef/action-set-json-field@v1
+      with:
+        file: distVersion.json
+        field: version
+        value: ${{ steps.version.outputs.tag }}
     - name: Commit manifest
       run: |
         git branch --show-current
