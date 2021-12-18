@@ -6,6 +6,7 @@ export class MultipleFileProcessor {
 	private app: App;
 
 	private regex = /!\[\[(.*)\]\]/gm;
+	private yamlRegex = /^---[^-]*---/gm;
 
 	constructor(app: App) {
 		this.app = app;
@@ -98,13 +99,7 @@ export class MultipleFileProcessor {
 	}
 
 	private stripYaml(markdown: string){
-		if(markdown.startsWith('---')){
-			var split = markdown.split('---');
-			if(split.length > 2){
-				return split[2];
-			}
-		}
-		return markdown;
+		return markdown.replace(this.yamlRegex,'');
 	}
 }
 
