@@ -90,6 +90,17 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				this.showView();
 			});
 
+			this.addCommand({
+				id: 'open-advanced-slides-preview',
+				name: 'Show Slide Preview',
+				hotkeys: [
+					{ modifiers: ["Alt"], key: "P"},
+				],
+				callback: () => {
+					this.showView();
+				}
+			});
+
 			this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
 		} catch (err) { }
 
