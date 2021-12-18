@@ -9,6 +9,7 @@ import { existsSync, outputFileSync } from 'fs-extra';
 import request from 'request';
 import JSZip from 'jszip';
 import _ from 'lodash';
+import { throws } from 'assert';
 
 interface AdvancedSlidesSettings {
 	port: string;
@@ -94,10 +95,10 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				id: 'open-advanced-slides-preview',
 				name: 'Show Slide Preview',
 				hotkeys: [
-					{ modifiers: ["Alt"], key: "P"},
+					{ modifiers: ["Mod", "Shift"], key: "E" },
 				],
 				callback: () => {
-					this.showView();
+					this.toggleView();
 				}
 			});
 
@@ -114,6 +115,18 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	onChange(file: TAbstractFile) {
 		if (this.previewView) {
 			this.previewView.onUpdate();
+		}
+	}
+
+	toggleView() {
+		if (this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW).length > 0) {
+			this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
+			if (this.previewView) {
+				this.previewView.destroy();
+			}
+		}
+		else {
+			this.showView();
 		}
 	}
 
