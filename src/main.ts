@@ -5,11 +5,10 @@ import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
 import { version } from '../package.json';
 import path from 'path';
-import { existsSync, outputFileSync } from 'fs-extra';
+import { existsSync, outputFileSync, readFileSync } from 'fs-extra';
 import request from 'request';
 import JSZip from 'jszip';
 import _ from 'lodash';
-import { throws } from 'assert';
 
 interface AdvancedSlidesSettings {
 	port: string;
@@ -39,8 +38,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		const pluginDirectory = path.join(this.vaultDirectory.toString(), '/.obsidian/plugins/obsidian-advanced-slides/');
 		const distDirectory = path.join(pluginDirectory, '/dist/');
 
-		if (!existsSync(distDirectory)) {
-
+		if (!existsSync(distDirectory) || this.isOldVersion(distDirectory)) {
 			//Download binary
 			const downloadUrl = `https://github.com/MSzturc/obsidian-advanced-slides/releases/download/${version}/obsidian-advanced-slides.zip`;
 
@@ -105,6 +103,17 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
 		} catch (err) { }
 
+	}
+
+	isOldVersion(dir: string){
+		const versionFile = path.join(dir, 'version.json');
+		if(!existsSync(versionFile)){
+			return true;
+		} else {
+			let rawdata = readFileSync(versionFile, { encoding: 'utf-8' });
+			let distVersion = JSON.parse(rawdata).version;
+			return distVersion != version;
+		}
 	}
 
 	viewCreator(leaf: WorkspaceLeaf, ext?: string): RevealPreviewView {
