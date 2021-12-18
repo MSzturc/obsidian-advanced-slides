@@ -8,13 +8,13 @@ export class InternalLinkProcessor {
 		this.app = app;
 	}
 
-	private regex = /\[\[(?:.*\|)?([^\]]*)\]\]/gm;
+	private regex = /(?:^|[^!])\[\[(?:.*\|)?([^\]]*)\]\]/gm;
 
 	process(markdown: string, options: any) {
 		console.log(options);
 		if(options.enableLinks){
 			return markdown.replaceAll(this.regex,(sub, args) => {
-				return `[${args}](obsidian://open?vault=${this.app.vault.getName()}&file=${args})`;
+				return `[${args}](obsidian://open?vault=${encodeURI(this.app.vault.getName())}&file=${encodeURI(args)})`;
 			});
 		} else {
 			return markdown.replaceAll(this.regex,`$1`);
