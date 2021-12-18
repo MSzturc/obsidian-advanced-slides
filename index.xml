@@ -141,7 +141,7 @@ This text will be bold</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/links/</guid>
-      <description>External Links http://obsidian.md - automatic! [Obsidian](http://obsidian.md) --- Obsidian URI links [Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md) [Link to note](obsidian://open?vault=MainVault&amp;amp;file=MyNote.md) --- Internal Links This [[Internal link]] will be displayed as normal text This [[Internal link|Link]] will use its alias for displaying  External Links http://obsidian.md - automatic! [Obsidian](http://obsidian.md) --- Obsidian URI links [Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md) [Link to note](obsidian://open?vault=MainVault&amp;file=MyNote.md) --- Internal Links This Internal link will be displayed as normal text This Link will use its alias for displaying       function initSlides() { Reveal.</description>
+      <description>External Links http://obsidian.md - automatic! [Obsidian](http://obsidian.md) --- Obsidian URI links [Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md) [Link to note](obsidian://open?vault=MainVault&amp;amp;file=MyNote.md) --- Internal Links This [[Internal link]] will be displayed as normal text This [[Internal link|Link]] will use its alias for displaying  External Links http://obsidian.md - automatic! [Obsidian](http://obsidian.md) --- Obsidian URI links [Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md) [Link to note](obsidian://open?vault=MainVault&amp;file=MyNote.md) --- Internal Links This Internal link will be displayed as normal text This Link will use its alias for displaying ___  If you&#39;d like backlinks to be displayed in the slides, check out the frontmatter property **enableLinks**       function initSlides() { Reveal.</description>
     </item>
     
     <item>
@@ -256,7 +256,7 @@ The notes window also gives you a preview of the next upcoming slide so it may b
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 147 commits   @actions-user 7 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 156 commits   @actions-user 8 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
     </item>
     
   </channel>
