@@ -27,7 +27,6 @@ This [[Internal link]] will be displayed as normal text
 
 This [[Internal link|Link]] will use its alias for displaying
 
-
 ```
 
 {{<revealjs theme="black" progress="true" controls="true">}}
@@ -53,5 +52,12 @@ This Internal link will be displayed as normal text
 
 This Link will use its alias for displaying
 
+___
+
+> If you'd like backlinks to be displayed in the slides, check out the frontmatter property **enableLinks**
 
 {{</revealjs>}}
+
+<br>
+
+{{%alert%}}If you'd like backlinks to be displayed in the slides, check out the frontmatter property `enableLinks`. [see yaml docs]({{%relref "yaml"%}}){{%/alert%}}

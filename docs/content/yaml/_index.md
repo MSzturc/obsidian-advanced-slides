@@ -13,6 +13,7 @@ Name | Description | Possible Values | Default Value
 notesSeparator | Sets the note delimiter | string | note:
 separator | Sets the slide separator | string | ^( ?\| )---( ?\| )$
 verticalSeparator | Sets the vertical slide separator | string | ^( ?\| )--( ?\| )$
+enableLinks | Enable backlinks in slides | true / false | false
 theme | Sets the theme | [see theme docs]({{%relref "themes"%}}) | black
 highlightTheme | Sets the highlight theme | [see theme docs]({{%relref "themes"%}}) | zenburn
 css | Adds further css files |  | []
