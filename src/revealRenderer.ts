@@ -39,7 +39,7 @@ export class RevealRenderer {
 
 		const slidifyOptions = this.getSlidifyOptions(options);
 
-		const processedMarkdown = this.processor.process(markdown,slidifyOptions);
+		const processedMarkdown = this.processor.process(markdown,options);
 		const slides = this.slidify(processedMarkdown, slidifyOptions);
 
 		const cssPaths = this.getCssPaths(options.css);

@@ -27,7 +27,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.multipleFileProcessor = new MultipleFileProcessor(app);
 		this.blockProcessor = new BlockProcessor();
 		this.imageProcessor = new ImageProcessor(app);
-		this.internalLinkProcessor = new InternalLinkProcessor();
+		this.internalLinkProcessor = new InternalLinkProcessor(app);
 		this.footnoteProcessor = new FootnoteProcessor();
 		this.latexProcessor = new LatexProcessor();
 		this.formatProcessor = new FormatProcessor();
@@ -43,7 +43,7 @@ export class ObsidianMarkdownPreprocessor {
 		const afterFootNoteProcessor = this.footnoteProcessor.process(afterBlockProcessor, options);
 		const afterExcalidrawProcessor = this.excalidrawProcessor.process(afterFootNoteProcessor);
 		const afterImageProcessor = this.imageProcessor.process(afterExcalidrawProcessor);
-		const afterInternalLinkProcessor = this.internalLinkProcessor.process(afterImageProcessor);
+		const afterInternalLinkProcessor = this.internalLinkProcessor.process(afterImageProcessor, options);
 		const afterLatexProcessor = this.latexProcessor.process(afterInternalLinkProcessor);
 		const afterFormatProcessor = this.formatProcessor.process(afterLatexProcessor);
 		const afterFragmentProcessor = this.fragmentProcessor.process(afterFormatProcessor, options);
