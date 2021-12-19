@@ -197,4 +197,24 @@ See [reveal backgrounds](https://revealjs.com/backgrounds/)
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Extended Markdown Syntax >  Speaker Notes', () => {
 
+	const input =
+`## My Slide
+
+This is part of my Presentation
+
+
+note: this is not! Only the speaker might see this text.
+
+- and this bulletpoint
+- or this picture
+
+![](https://picsum.photos/id/1005/250/250) 
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
