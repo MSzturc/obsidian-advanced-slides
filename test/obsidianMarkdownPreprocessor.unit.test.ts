@@ -310,6 +310,29 @@ c & d
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Basic Markdown Syntax > Mermaid', () => {
+
+	const input =
+`---
+theme: beige
+highlightTheme: css/vs2015.css
+
+---
+
+\`\`\`mermaid
+sequenceDiagram
+    Alice->>+John: Hello John, how are you?
+    Alice->>+John: John, can you hear me?
+    John-->>-Alice: Hi Alice, I can hear you!
+    John-->>-Alice: I feel great!
+\`\`\``;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
 /****************************************************************************** */
 
 function prepare(input: string): { options: any; markdown: string; } {

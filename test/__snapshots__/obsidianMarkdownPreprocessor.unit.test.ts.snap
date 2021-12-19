@@ -136,6 +136,21 @@ end{vmatrix}=ad-bc$$\`
 "
 `;
 
+exports[`Basic Markdown Syntax > Mermaid 1`] = `
+"
+
+
+<div class=\\"mermaid\\">
+sequenceDiagram
+    Alice->>+John: Hello John, how are you?
+    Alice->>+John: John, can you hear me?
+    John-->>-Alice: Hi Alice, I can hear you!
+    John-->>-Alice: I feel great!
+
+</div>
+"
+`;
+
 exports[`Basic Markdown Syntax > Tables 1`] = `
 "First Header | Second Header
 ------------ | ------------
