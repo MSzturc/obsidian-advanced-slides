@@ -148,3 +148,53 @@ styled text <!-- .element: class="with-border" -->
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Extended Markdown Syntax >  Slide Backgrounds', () => {
+
+	const input =
+`<!-- .slide: data-background="aquamarine" -->
+## Slide with text based background
+---
+
+<!-- .slide: data-background="#ff0000" -->
+## Slide with hex based background
+
+---
+
+<!-- .slide: data-background="rgb(70, 70, 255)" -->
+## Slide with rgb based background
+
+---
+
+<!-- .slide: data-background="hsla(315, 100%, 50%, 1)" -->
+## Slide with hsl based background
+
+---
+
+# Slide without background
+
+---
+
+<!-- .slide: data-background-image="https://picsum.photos/seed/picsum/800/600" -->
+## Slide with image background
+
+---
+
+<!-- .slide: data-background-image="https://picsum.photos/seed/picsum/800/600" data-background-opacity="0.5" -->
+## with opacity
+
+0.5 ≙ 50% opacity
+
+---
+
+## More options:
+
+See [reveal backgrounds](https://revealjs.com/backgrounds/)
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+
