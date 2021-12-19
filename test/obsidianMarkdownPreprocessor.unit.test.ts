@@ -240,6 +240,20 @@ Link to Obsidian Homepage: http://obsidian.md`;
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Basic Markdown Syntax > Blockquotes', () => {
+
+	const input =
+`> Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
+
+\- Doug Engelbart, 1961
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
 /****************************************************************************** */
 
 function prepare(input: string): { options: any; markdown: string; } {
