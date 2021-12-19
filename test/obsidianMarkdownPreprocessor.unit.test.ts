@@ -150,6 +150,43 @@ Scale image to a width of 300x100 px
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+/*test('Basic Markdown Syntax > Links', () => {
+
+	const input =
+`External Links
+
+http://obsidian.md - automatic!
+
+[Obsidian](http://obsidian.md)
+
+---
+
+Obsidian URI links
+
+[Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md)
+
+[Link to note](obsidian://open?vault=MainVault&file=MyNote.md)
+
+---
+
+Internal Links
+
+This [[Internal link]] will be displayed as normal text
+
+This [[Internal link|Link]] will use its alias for displaying
+
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});*/
+
+
+
+/****************************************************************************** */
+
 function prepare(input: string): { options: any; markdown: string; } {
 	const { yamlOptions, markdown } = parseYamlFrontMatter(input);
 	const options = getSlideOptions(yamlOptions);
