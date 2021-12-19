@@ -43,8 +43,6 @@ export class FragmentProcessor {
 	transformLine(line: string) {
 		var comment = this.parser.parseLine(line) ?? this.parser.buildComment('element');
 
-		console.log(line);
-
 		if (line.includes('<!--')) {
 			line = line.substring(0, line.indexOf('<!--'));
 		}
