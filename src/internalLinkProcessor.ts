@@ -8,7 +8,7 @@ export class InternalLinkProcessor {
 		this.utils = utils;
 	}
 
-	private regex = /(?:^|[^!])\[\[(?:.*\|)?([^\]]*)\]\]/gm;
+	private regex = /(?<=[^!]|^)\[\[(?:.*\|)?([^\]]*)\]\]/gm;
 
 	process(markdown: string, options: any) {
 		if(options.enableLinks){
