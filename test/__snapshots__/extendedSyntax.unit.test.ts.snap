@@ -1,5 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Extended Markdown Syntax >  Block Comments 1`] = `
+"<div class=\\"block\\">
+
+#### Header
+_and_
+Paragraph content
+*in same block*
+
+</div>
+
+---
+
+no color
+
+<div class=\\"block\\"> <!-- .element: style=\\"background-color: red;\\" -->
+
+everything inside this block has red background color
+
+<div class=\\"block\\"> <!-- .element: style=\\"background-color: blue;\\" -->
+
+blue
+
+</div>
+
+red
+
+</div>
+
+no color
+"
+`;
+
 exports[`Extended Markdown Syntax >  Element Annotations 1`] = `
 "text with border <!-- .element: class=\\"with-border\\" -->
 
