@@ -5,7 +5,9 @@
 	"main": "src/main.ts",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
-		"build": "node esbuild.config.mjs production"
+		"build": "node esbuild.config.mjs production",
+		"test": "jest",
+		"coverage": "jest --coverage"
 	},
 	"repository": "git@github.com:MSzturc/obsidian-advanced-slides.git",
 	"author": "Matthäus Szturc",
@@ -14,6 +16,7 @@
 		"@types/express": "4.11.1",
 		"@types/fs-extra": "^9.0.13",
 		"@types/glob": "^7.2.0",
+		"@types/jest": "^27.0.3",
 		"@types/lodash": "^4.14.177",
 		"@types/mustache": "^4.1.2",
 		"@types/node": "^16.11.11",
@@ -27,11 +30,13 @@
 		"esbuild-plugin-copy": "^0.3.0",
 		"esbuild-sass-plugin": "^1.8.0",
 		"highlight.js": "^11.3.1",
+		"jest": "^27.4.5",
 		"node-sass": "^7.0.0",
 		"obsidian": "^0.12.17",
 		"reveal.js": "^4.2.1",
 		"reveal.js-mermaid-plugin": "^0.0.2",
 		"sass": "^1.45.0",
+		"ts-mockito": "^2.6.1",
 		"ts-node": "^10.4.0",
 		"tslib": "^2.3.1",
 		"typescript": "^4.5.2"

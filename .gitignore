@@ -8,5 +8,8 @@ package-lock.json
 # test specific
 test-vault
 
+# coverage report
+coverage
+
 # docs
 docs/public
