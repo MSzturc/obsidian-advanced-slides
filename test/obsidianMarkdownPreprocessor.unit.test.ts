@@ -254,6 +254,18 @@ test('Basic Markdown Syntax > Blockquotes', () => {
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Basic Markdown Syntax > Inline Code', () => {
+
+	const input =
+`### Text inside \`backticks\` on a line will be formatted like code.
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
 /****************************************************************************** */
 
 function prepare(input: string): { options: any; markdown: string; } {

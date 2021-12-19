@@ -62,6 +62,11 @@ Scale image to a width of 300x100 px
 "
 `;
 
+exports[`Basic Markdown Syntax > Inline Code 1`] = `
+"### Text inside \`backticks\` on a line will be formatted like code.
+"
+`;
+
 exports[`Basic Markdown Syntax > Links 1`] = `
 "External Links
 
