@@ -130,3 +130,21 @@ Slide up while fading in <!-- .element: class="fragment fade-up" -->
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Extended Markdown Syntax >  Inline Styling', () => {
+
+	const input =
+`<style>
+.with-border{
+	border: 1px solid red;
+}
+</style>
+
+styled text <!-- .element: class="with-border" -->
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+

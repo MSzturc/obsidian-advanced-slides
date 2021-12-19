@@ -32,7 +32,16 @@ no color
 "
 `;
 
-exports[`Extended Markdown Syntax >  Block Comments 2`] = `
+exports[`Extended Markdown Syntax >  Element Annotations 1`] = `
+"text with border <!-- .element: class=\\"with-border\\" -->
+
+text with background <!-- .element: style=\\"background:blue\\" -->
+
+text with attribute <!-- .element: data-toggle=\\"modal\\" -->
+"
+`;
+
+exports[`Extended Markdown Syntax >  Fragments 1`] = `
 "Fade in <!-- .element: class=\\"fragment\\" -->
 
 Fade out <!-- .element: class=\\"fragment fade-out\\" -->
@@ -53,12 +62,14 @@ Slide up while fading in <!-- .element: class=\\"fragment fade-up\\" -->
 "
 `;
 
-exports[`Extended Markdown Syntax >  Element Annotations 1`] = `
-"text with border <!-- .element: class=\\"with-border\\" -->
+exports[`Extended Markdown Syntax >  Inline Styling 1`] = `
+"<style>
+.with-border{
+	border: 1px solid red;
+}
+</style>
 
-text with background <!-- .element: style=\\"background:blue\\" -->
-
-text with attribute <!-- .element: data-toggle=\\"modal\\" -->
+styled text <!-- .element: class=\\"with-border\\" -->
 "
 `;
 
