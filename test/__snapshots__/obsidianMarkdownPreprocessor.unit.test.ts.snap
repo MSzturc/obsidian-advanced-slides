@@ -68,6 +68,18 @@ This Link will use its alias for displaying
 "
 `;
 
+exports[`Basic Markdown Syntax > Links 2`] = `
+"
+
+Internal Links
+
+This [Internal link](obsidian://open?vault=test-vault&file=Internal%20link) will be displayed as normal text
+
+This [Link](obsidian://open?vault=test-vault&file=Internal%20link) will use its alias for displaying
+
+"
+`;
+
 exports[`Basic Markdown Syntax > Lists 1`] = `
 "- Item 1
 - Item 2

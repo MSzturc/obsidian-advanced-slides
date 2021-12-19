@@ -150,7 +150,7 @@ Scale image to a width of 300x100 px
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
-/*test('Basic Markdown Syntax > Links', () => {
+test('Basic Markdown Syntax > Links', () => {
 
 	const input =
 `External Links
@@ -181,8 +181,28 @@ This [[Internal link|Link]] will use its alias for displaying
 	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
-});*/
+});
 
+test('Basic Markdown Syntax > Links', () => {
+
+	const input =
+`---
+enableLinks: true
+---
+
+Internal Links
+
+This [[Internal link]] will be displayed as normal text
+
+This [[Internal link|Link]] will use its alias for displaying
+
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
 
 
 /****************************************************************************** */
