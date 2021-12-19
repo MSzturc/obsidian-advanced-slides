@@ -23,3 +23,20 @@ test('Extended Markdown Syntax > Horizontal / Vertical Slides', () => {
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Extended Markdown Syntax >  Element Annotations', () => {
+
+	const input =
+`text with border <!-- .element: class="with-border" -->
+
+text with background <!-- .element: style="background:blue" -->
+
+text with attribute <!-- .element: data-toggle="modal" -->
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+

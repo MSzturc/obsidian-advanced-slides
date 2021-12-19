@@ -1,5 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Extended Markdown Syntax >  Element Annotations 1`] = `
+"text with border <!-- .element: class=\\"with-border\\" -->
+
+text with background <!-- .element: style=\\"background:blue\\" -->
+
+text with attribute <!-- .element: data-toggle=\\"modal\\" -->
+"
+`;
+
 exports[`Extended Markdown Syntax > Horizontal / Vertical Slides 1`] = `
 "# Slide 1
 
