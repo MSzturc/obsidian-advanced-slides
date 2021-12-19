@@ -281,6 +281,21 @@ Content in the first column | Content in the second column
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Basic Markdown Syntax > Footnotes', () => {
+
+	const input =
+`Here's a simple footnote[^1]
+
+[^1]: meaningful!
+
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
 /****************************************************************************** */
 
 function prepare(input: string): { options: any; markdown: string; } {
