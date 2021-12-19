@@ -14,7 +14,7 @@ Insert image with standard markdown syntax
 
 Insert image that lies outside of your vault
 
-![Image](file:///Users/testUser/Desktop/howToUse.png))
+![Image](file:///Users/testUser/Desktop/howToUse.png)
 
 ---
 
