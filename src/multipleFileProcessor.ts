@@ -5,6 +5,7 @@ export class MultipleFileProcessor {
 	private utils: ObsidianUtils;
 
 	private regex = /!\[\[(.*)\]\]/gm;
+	private excalidrawRegex = /(.*\.excalidraw)/i
 
 	constructor(utils: ObsidianUtils) {
 		this.utils = utils;
@@ -41,7 +42,7 @@ export class MultipleFileProcessor {
 	}
 
 	getMarkdownFile(line: string) {
-		if (line.toLowerCase().endsWith(".excalidraw")) {
+		if (this.excalidrawRegex.test(line)){
 			return null; // Do not import excalidraw files
 		}
 

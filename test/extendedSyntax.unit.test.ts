@@ -1,4 +1,5 @@
 import { ObsidianMarkdownPreprocessor } from "src/obsidianMarkdownPreprocessor";
+import { when } from "ts-mockito";
 import { prepare } from "./testUtils";
 import { MockedObsidianUtils, obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
 
@@ -254,6 +255,29 @@ test('Extended Markdown Syntax >  Fragmented list', () => {
 3) Third
 4) Fourth
 `;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Extended Markdown Syntax >  Excalidraw support', () => {
+
+	when(MockedObsidianUtils.findImageEx('Sample.excalidraw')).thenCall( (arg) => {
+		return 'Sample.excalidraw.svg';
+	});
+
+	when(MockedObsidianUtils.findFile('Sample.excalidraw.svg')).thenCall( (arg) => {
+		return 'path/to/Sample.excalidraw.svg';
+	});
+
+	const input =
+`#### Excalidraw support
+
+![[Sample.excalidraw|100]]
+
+![[Sample.excalidraw]] <!-- .element: style="width:300px; height:400px" -->`;
 
 	const { options, markdown } = prepare(input);
 	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);

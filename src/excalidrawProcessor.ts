@@ -2,11 +2,9 @@ import { Notice } from "obsidian";
 import { ObsidianUtils } from "./obsidianUtils";
 
 export class ExcalidrawProcessor {
-
-	private regex = /!\[\[(.*\.excalidraw)\]\]/gm;
+	private excalidrawImageRegex = /!\[\[(.*\.excalidraw)\|?([^\]]*)??\]\]\s?(<!--.*-->)?/i
 
 	private utils: ObsidianUtils;
-
 
 	constructor(utils: ObsidianUtils) {
 		this.utils = utils;
@@ -16,7 +14,7 @@ export class ExcalidrawProcessor {
 		return markdown
 			.split('\n')
 			.map((line) => {
-				if (this.regex.test(line))
+				if (this.excalidrawImageRegex.test(line))
 					return this.transformLine(line);
 				return line;
 			})
@@ -24,21 +22,15 @@ export class ExcalidrawProcessor {
 	}
 
 	private transformLine(line: string) {
-		var filePath: string = line.replace("![[", "").replace("]]", "");
 
-		if (filePath.includes('|')) {
-			const split = filePath.split('|');
-			filePath = split[0];
-		}
-
-		var imgFile = this.utils.findImageEx(filePath);
+		var [, image, ext, comment] = this.excalidrawImageRegex.exec(line);
+		var imgFile = this.utils.findImageEx(image);
 
 		if (imgFile === null) {
-			new Notice(`Cannot find Image for ${filePath}. Make sure to activate Auto-export SVG/PNG in Excalidraw Settings.`, 8000);
+			new Notice(`Cannot find Image for ${image}. Make sure to activate Auto-export SVG/PNG in Excalidraw Settings.`, 8000);
 			return line;
 		}
-
-		return '![['+ imgFile + ']]';
+		return `![[${imgFile}${ext==undefined ? '' : '|' + ext}]] ${comment ?? ''}`;
 	}
 }
 

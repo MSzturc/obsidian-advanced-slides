@@ -41,6 +41,14 @@ text with attribute <!-- .element: data-toggle=\\"modal\\" -->
 "
 `;
 
+exports[`Extended Markdown Syntax >  Excalidraw support 1`] = `
+"#### Excalidraw support
+
+<p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 100px\\" class=\\"\\" ></img></p>
+
+<p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width:300px; height:400px\\" class=\\"\\" ></img></p>"
+`;
+
 exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 "# Unordered list
 
