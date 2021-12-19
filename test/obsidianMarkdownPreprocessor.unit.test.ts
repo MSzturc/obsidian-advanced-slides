@@ -50,6 +50,29 @@ Any word wrapped with two equal signs (like ==this==) will appear as highlighted
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Basic Markdown Syntax > Lists', () => {
+
+	const input = 
+`- Item 1
+- Item 2
+	- Item 2a
+	- Item 2b
+
+---
+
+1. Item 1
+1. Item 2
+1. Item 3
+   1. Item 3a
+   1. Item 3b
+`;
+
+	const { options, markdown} = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(app);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
 function prepare(input: string): { options: any; markdown: string; } {
 	const { yamlOptions, markdown } = parseYamlFrontMatter(input);
 	const options = getSlideOptions(yamlOptions);
