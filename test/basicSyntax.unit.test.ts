@@ -23,7 +23,7 @@ test('Basic Markdown Syntax > Headers', () => {
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
-/*test('Basic Markdown Syntax > Text style', () => {
+test('Basic Markdown Syntax > Text style', () => {
 
 	const input =
 		`*This text will be italic*
@@ -48,7 +48,7 @@ Any word wrapped with two equal signs (like ==this==) will appear as highlighted
 	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
-});*/
+});
 
 test('Basic Markdown Syntax > Lists', () => {
 
@@ -132,7 +132,7 @@ Scale image to a width of 300x100 px
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
-/*test('Basic Markdown Syntax > Links', () => {
+test('Basic Markdown Syntax > Links', () => {
 
 	const input =
 `External Links
@@ -184,7 +184,7 @@ This [[Internal link|Link]] will use its alias for displaying
 	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
-});*/
+});
 
 test('Basic Markdown Syntax > Embeds', () => {
 
