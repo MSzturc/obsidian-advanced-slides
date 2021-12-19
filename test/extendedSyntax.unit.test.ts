@@ -39,4 +39,29 @@ text with attribute <!-- .element: data-toggle="modal" -->
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Extended Markdown Syntax >  Slide Annotations', () => {
+
+	const input =
+`<!-- .slide: style="background-color: coral;" -->
+
+# Header with coral background color
+
+Paragraph has coral background color, too!
+
+---
+
+<!-- .slide: style="background-color: green;" -->
+
+- All Bullet points
+- have green
+- background color
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+
 

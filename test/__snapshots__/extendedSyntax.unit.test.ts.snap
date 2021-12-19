@@ -9,6 +9,23 @@ text with attribute <!-- .element: data-toggle=\\"modal\\" -->
 "
 `;
 
+exports[`Extended Markdown Syntax >  Slide Annotations 1`] = `
+"<!-- .slide: style=\\"background-color: coral;\\" -->
+
+# Header with coral background color
+
+Paragraph has coral background color, too!
+
+---
+
+<!-- .slide: style=\\"background-color: green;\\" -->
+
+- All Bullet points
+- have green
+- background color
+"
+`;
+
 exports[`Extended Markdown Syntax > Horizontal / Vertical Slides 1`] = `
 "# Slide 1
 
