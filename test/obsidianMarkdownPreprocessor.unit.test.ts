@@ -23,6 +23,33 @@ test('Basic Markdown Syntax > Headers', () => {
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Basic Markdown Syntax > Text style', () => {
+
+	const input = 
+`*This text will be italic*
+
+_This will also be italic_
+
+**This text will be bold**
+
+__This will also be bold__
+
+%%This is a Comment(Can't see it)%%
+
+_You **can** combine them_
+
+---
+
+Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
+
+Any word wrapped with two equal signs (like ==this==) will appear as highlighted.`;
+
+	const { options, markdown} = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(app);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
 function prepare(input: string): { options: any; markdown: string; } {
 	const { yamlOptions, markdown } = parseYamlFrontMatter(input);
 	const options = getSlideOptions(yamlOptions);
