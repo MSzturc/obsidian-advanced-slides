@@ -3,30 +3,8 @@ import { ObsidianMarkdownPreprocessor } from "src/obsidianMarkdownPreprocessor";
 import { anyString, anything, instance, mock, when } from "ts-mockito";
 import { loadFront } from "yaml-front-matter";
 import defaultConfig from "src/defaults.json";
-import { ObsidianUtils } from "src/obsidianUtils";
-import { throws } from "assert";
-
-const MockedObsidianUtils = mock(ObsidianUtils);
-
-when(MockedObsidianUtils.getAbsolutePath(anyString())).thenCall( (arg) => {
-	throw new Error('Parameter not mocked: ' + arg);
-});
-
-when(MockedObsidianUtils.findFile(anyString())).thenCall( (arg) => {
-	throw new Error('Parameter not mocked: ' + arg);
-});
-
-when(MockedObsidianUtils.findImageEx(anyString())).thenCall( (arg) => {
-	throw new Error('Parameter not mocked: ' + arg);
-});
-
-when(MockedObsidianUtils.parseFile(anyString(),anything())).thenCall( (arg1, arg2) => {
-	throw new Error('Parameter not mocked: ' + arg1 + ' - ' + arg2);
-});
-
-when(MockedObsidianUtils.getVaultName()).thenReturn('test-vault');
-
-const utilsInstance: ObsidianUtils = instance(MockedObsidianUtils);
+import { MockedObsidianUtils, obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
+import { prepare } from "./testUtils";
 
 
 test('Basic Markdown Syntax > Headers', () => {
@@ -332,24 +310,3 @@ sequenceDiagram
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
-
-/****************************************************************************** */
-
-function prepare(input: string): { options: any; markdown: string; } {
-	const { yamlOptions, markdown } = parseYamlFrontMatter(input);
-	const options = getSlideOptions(yamlOptions);
-	return { options, markdown };
-}
-
-function parseYamlFrontMatter(input: string): { yamlOptions: any; markdown: any; } {
-	const document = loadFront(input.replace(/^\uFEFF/, ''));
-	return {
-		yamlOptions: omit(document, '__content'),
-		markdown: document.__content || input
-	};
-}
-
-function getSlideOptions(options: any) {
-	return defaults({}, options, defaultConfig);
-}
-
