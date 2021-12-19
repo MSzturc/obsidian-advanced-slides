@@ -11,7 +11,6 @@ export class InternalLinkProcessor {
 	private regex = /(?:^|[^!])\[\[(?:.*\|)?([^\]]*)\]\]/gm;
 
 	process(markdown: string, options: any) {
-		console.log(options);
 		if(options.enableLinks){
 			return markdown.replaceAll(this.regex,(sub, args) => {
 				return `[${args}](obsidian://open?vault=${encodeURI(this.app.vault.getName())}&file=${encodeURI(args)})`;
