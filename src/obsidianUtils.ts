@@ -1,9 +1,11 @@
+import { readFileSync } from "fs-extra";
 import { App, FileSystemAdapter } from "obsidian";
 
 
 export class ObsidianUtils {
 
 	private app: App;
+	private yamlRegex = /^---[^-]*---/;
 
 	constructor(app: App) {
 		this.app = app;
@@ -57,6 +59,42 @@ export class ObsidianUtils {
 
 	getVaultName(){
 		return this.app.vault.getName();
+	}
+
+	parseFile(file: string, header: string) {
+
+		var fileContent = readFileSync(file, { encoding: 'utf-8' });
+
+		if (header === null) {
+			return fileContent.replace(this.yamlRegex,'');
+		} else {
+
+			var lines = fileContent.split('\n');
+
+			var startIdx = null;
+			var endIdx = null;
+			for (let i = 0; i < lines.length; i++) {
+
+				if (startIdx != null && lines[i].startsWith('#')) {
+					endIdx = i;
+					break;
+				}
+
+				if (lines[i].includes(header)) {
+					startIdx = i;
+				}
+			}
+
+			if (startIdx === null) {
+				return "![[" + file + "#" + header + "]]";
+			}
+
+			if (endIdx === null) {
+				return lines.slice(startIdx).join('\n');
+			} else {
+				return lines.slice(startIdx, endIdx).join('\n');
+			}
+		}
 	}
 	
 
