@@ -266,6 +266,21 @@ test('Basic Markdown Syntax > Inline Code', () => {
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Basic Markdown Syntax > Tables', () => {
+
+	const input =
+`First Header | Second Header
+------------ | ------------
+Content from cell 1 | Content from cell 2
+Content in the first column | Content in the second column
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
 /****************************************************************************** */
 
 function prepare(input: string): { options: any; markdown: string; } {
