@@ -27,6 +27,8 @@ jobs:
         run: yarn
       - name: Build advanced slides
         run: npm run build
+      - name: Test advanced slides
+        run: npm test
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
