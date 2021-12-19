@@ -218,3 +218,45 @@ note: this is not! Only the speaker might see this text.
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
+
+test('Extended Markdown Syntax >  Fragmented list', () => {
+
+	const input =
+`# Unordered list
+
+- First
+- Second
+- Third
+
+---
+
+# Fragmented unordered list
+
+- Permanent
++ First
++ Second
++ Third
+
+---
+
+# Ordered list
+
+1. First
+2. Second
+3. Third
+
+---
+
+# Fragmented ordered list
+
+1. Permanent
+2) Second
+3) Third
+4) Fourth
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
