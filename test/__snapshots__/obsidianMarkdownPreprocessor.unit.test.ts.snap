@@ -129,6 +129,13 @@ exports[`Basic Markdown Syntax > Lists 1`] = `
 "
 `;
 
+exports[`Basic Markdown Syntax > Math 1`] = `
+"\`$$egin{vmatrix}a & b\\\\
+c & d
+end{vmatrix}=ad-bc$$\`
+"
+`;
+
 exports[`Basic Markdown Syntax > Tables 1`] = `
 "First Header | Second Header
 ------------ | ------------

@@ -296,6 +296,20 @@ test('Basic Markdown Syntax > Footnotes', () => {
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Basic Markdown Syntax > Math', () => {
+
+	const input =
+`$$\begin{vmatrix}a & b\\
+c & d
+\end{vmatrix}=ad-bc$$
+`;
+
+	const { options, markdown } = prepare(input);
+	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
 /****************************************************************************** */
 
 function prepare(input: string): { options: any; markdown: string; } {
