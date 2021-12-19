@@ -1,17 +1,17 @@
-import { App } from "obsidian";
-import { Comment, CommentParser } from "./comment";
+import { CommentParser } from "./comment";
+import { ObsidianUtils } from "./obsidianUtils";
 
 export class ImageProcessor {
 
-	private app: App;
+	private utils: ObsidianUtils;
 	private parser: CommentParser;
 
 	private markdownImageRegex = /!\[([^\]]*)\]\((.*)\)\s?(<!--.*-->)?/i;
 
 	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|svg))\|?([^\]]*)??\]\]\s?(<!--.*-->)?/i
 
-	constructor(app: App) {
-		this.app = app;
+	constructor(utils: ObsidianUtils) {
+		this.utils = utils;
 		this.parser = new CommentParser();
 	}
 
@@ -37,22 +37,10 @@ export class ImageProcessor {
 	private transformImageString(line: string) {
 		var [, image, ext, comment] = this.obsidianImageRegex.exec(line);
 
-		var filePath = this.findFile(image);
+		var filePath = this.utils.findFile(image);
 		var commentAsString = this.buildComment(ext, comment) ?? '';
 
 		return `![](${filePath}) ${commentAsString}`;
-	}
-
-	private findFile(imagePath: string) {
-		const imgFile = this.app.vault.getFiles()
-			.filter(item => item.path.contains(imagePath))
-			.first();
-
-		if (imgFile) {
-			return '/' + imgFile.path;
-		} else {
-			return imagePath;
-		}
 	}
 
 	private buildComment(ext: string, commentAsString: string) {

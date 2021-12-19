@@ -1,4 +1,3 @@
-import { App } from "obsidian";
 import { BlockProcessor } from "./blockProcessor";
 import { ExcalidrawProcessor } from "./excalidrawProcessor";
 import { FootnoteProcessor } from "./footNoteProcessor";
@@ -9,6 +8,7 @@ import { InternalLinkProcessor } from "./internalLinkProcessor";
 import { LatexProcessor } from "./latexProcessor";
 import { MermaidProcessor } from "./mermaidProcessor";
 import { MultipleFileProcessor } from "./multipleFileProcessor";
+import { ObsidianUtils } from "./obsidianUtils";
 
 export class ObsidianMarkdownPreprocessor {
 
@@ -23,15 +23,15 @@ export class ObsidianMarkdownPreprocessor {
 	private mermaidProcessor: MermaidProcessor;
 	private fragmentProcessor: FragmentProcessor;
 
-	constructor(app: App) {
-		this.multipleFileProcessor = new MultipleFileProcessor(app);
+	constructor(utils: ObsidianUtils) {
+		this.multipleFileProcessor = new MultipleFileProcessor(utils);
 		this.blockProcessor = new BlockProcessor();
-		this.imageProcessor = new ImageProcessor(app);
-		this.internalLinkProcessor = new InternalLinkProcessor(app);
+		this.imageProcessor = new ImageProcessor(utils);
+		this.internalLinkProcessor = new InternalLinkProcessor(utils);
 		this.footnoteProcessor = new FootnoteProcessor();
 		this.latexProcessor = new LatexProcessor();
 		this.formatProcessor = new FormatProcessor();
-		this.excalidrawProcessor = new ExcalidrawProcessor(app);
+		this.excalidrawProcessor = new ExcalidrawProcessor(utils);
 		this.mermaidProcessor = new MermaidProcessor();
 		this.fragmentProcessor = new FragmentProcessor();
 	}

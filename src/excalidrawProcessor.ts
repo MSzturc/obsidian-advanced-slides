@@ -1,14 +1,15 @@
-import { App, Notice } from "obsidian";
+import { Notice } from "obsidian";
+import { ObsidianUtils } from "./obsidianUtils";
 
 export class ExcalidrawProcessor {
 
 	private regex = /!\[\[(.*\.excalidraw)\]\]/gm;
 
-	private app: App;
+	private utils: ObsidianUtils;
 
 
-	constructor(app: App) {
-		this.app = app;
+	constructor(utils: ObsidianUtils) {
+		this.utils = utils;
 	}
 
 	process(markdown: string){
@@ -30,8 +31,7 @@ export class ExcalidrawProcessor {
 			filePath = split[0];
 		}
 
-		var imgFile = this.findImage(filePath);
-
+		var imgFile = this.utils.findImageEx(filePath);
 
 		if (imgFile === null) {
 			new Notice(`Cannot find Image for ${filePath}. Make sure to activate Auto-export SVG/PNG in Excalidraw Settings.`, 8000);
@@ -39,34 +39,6 @@ export class ExcalidrawProcessor {
 		}
 
 		return '![['+ imgFile + ']]';
-	}
-
-	private findImage(filePath: string){
-
-		var imagePath = filePath + '.svg';
-		var imgFile = this.app.vault.getFiles().filter(item => item.path.contains(imagePath)).first();
-
-		if(imgFile){
-			return imagePath;
-		}
-		
-		imagePath = filePath + '.png';
-		imgFile = this.app.vault.getFiles().filter(item => item.path.contains(imagePath)).first();
-
-		if(imgFile){
-			return imagePath;
-		}
-		return null;
-	}
-
-
-	private findFile(line: string) {
-		const imgFile = this.app.vault.getFiles().filter(item => item.path.contains(line)).first();
-		if(imgFile){
-			return '/'+ imgFile.path;
-		} else {
-			return line;
-		}
 	}
 }
 

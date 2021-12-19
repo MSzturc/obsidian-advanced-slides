@@ -1,15 +1,15 @@
 import { readFileSync } from "fs-extra";
-import { App, FileSystemAdapter } from "obsidian";
+import { ObsidianUtils } from "./obsidianUtils";
 
 export class MultipleFileProcessor {
 
-	private app: App;
+	private utils: ObsidianUtils;
 
 	private regex = /!\[\[(.*)\]\]/gm;
 	private yamlRegex = /^---[^-]*---/;
 
-	constructor(app: App) {
-		this.app = app;
+	constructor(utils: ObsidianUtils) {
+		this.utils = utils;
 	}
 
 	process(markdown: string): string {
@@ -87,15 +87,7 @@ export class MultipleFileProcessor {
 		if (!line.toLowerCase().endsWith(".md")) {
 			file = file + ".md";
 		}
-
-		const adapter = this.app.vault.adapter as FileSystemAdapter;
-		const markdownFile = this.app.vault.getMarkdownFiles().filter(item => item.path.contains(file)).first();
-		if (markdownFile)
-			return adapter.getFullPath(markdownFile.path);
-		else {
-			return null;
-		}
-
+		return this.utils.getAbsolutePath(file);
 	}
 
 	private stripYaml(markdown: string){
