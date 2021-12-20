@@ -34,7 +34,7 @@ jobs:
       - name: Setup dependencies
         run: yarn
 
-      - name: Run unit tests with coverage
+      - name: Create coverage summary
         run: |
           SUMMARY="$(yarn test --coverage --coverageReporters=text-summary | tail -3 | head -1)"
           TOKENS=($SUMMARY)
@@ -49,6 +49,9 @@ jobs:
           label: coverage
           message: ${{ env.COVERAGE }}
           color: brightgreen
+
+      - name: Create coverage report
+	    run: yarn test --coverage
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
