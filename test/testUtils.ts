@@ -1,6 +1,5 @@
 import { loadFront } from "yaml-front-matter";
-import defaultConfig from "src/defaults.json";
-import { omit, defaults } from "lodash";
+import { omit, defaults as def } from "lodash";
 
 export function prepare(input: string): { options: any; markdown: string; } {
 	const { yamlOptions, markdown } = parseYamlFrontMatter(input);
@@ -17,5 +16,12 @@ function parseYamlFrontMatter(input: string): { yamlOptions: any; markdown: any;
 }
 
 function getSlideOptions(options: any) {
-	return defaults({}, options, defaultConfig);
+	return def({}, options, {
+		"theme": "black",
+		"highlightTheme": "zenburn",
+		"template": "template/reveal.html",
+		"separator": "\r?\n---\r?\n",
+		"verticalSeparator": "\r?\n--\r?\n",
+		"enableLinks": false
+	});
 }

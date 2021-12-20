@@ -52,7 +52,7 @@ export class FragmentProcessor {
 
 		if (!comment.attributes.get('data-fragment-index')) {
 			comment.attributes.set("data-fragment-index", this.fragmentCounter.toString());
-			if (!comment.clazz.contains('fragment')) {
+			if (!comment.clazz.includes('fragment')) {
 				comment.clazz.push('fragment');
 			}
 			this.fragmentCounter++;

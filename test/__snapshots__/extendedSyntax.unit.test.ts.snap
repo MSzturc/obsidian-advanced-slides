@@ -61,9 +61,9 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 # Fragmented unordered list
 
 - Permanent
-+ First
-+ Second
-+ Third
+- First<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"1\\" -->
+- Second<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"2\\" -->
+- Third<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"3\\" -->
 
 ---
 
@@ -78,9 +78,9 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 # Fragmented ordered list
 
 1. Permanent
-2) Second
-3) Third
-4) Fourth
+1. Second<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"1\\" -->
+1. Third<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"2\\" -->
+1. Fourth<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"3\\" -->
 "
 `;
 
