@@ -67,7 +67,7 @@
 	"title": "Extended Syntax",
 	"tags": [],
 	"description": "",
-	"content": "Index\n Horizontal / Vertical Slides \n Element Annotations \n Slide Annotations \n Block Comments \n Fragments \n Inline Styling \n Slide Backgrounds \n Speaker Notes \n Fragmented list \n "
+	"content": "Index\n Horizontal / Vertical Slides \n Element Annotations \n Slide Annotations \n Block Comments \n Fragments \n Inline Styling \n Slide Backgrounds \n Speaker Notes \n Fragmented list \n Excalidraw support \n "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/getting-start/firststeps/",
@@ -196,6 +196,13 @@
 	"content": "First Header | Second Header ------------ | ------------ Content from cell 1 | Content from cell 2 Content in the first column | Content in the second column "
 },
 {
+	"uri": "https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/excalidraw/",
+	"title": "Excalidraw support",
+	"tags": [],
+	"description": "",
+	"content": " It’s required to activate Auto-Export SVG / PNG in Excalidraw Settings. #### Excalidraw support ![[Sample.excalidraw|100]] ![[Sample.excalidraw]] \u0026lt;!-- .element: style=\u0026#34;width:300px; height:400px\u0026#34; --\u0026gt; "
+},
+{
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/footnotes/",
 	"title": "Footnotes",
 	"tags": [],
@@ -207,7 +214,7 @@
 	"title": "Math",
 	"tags": [],
 	"description": "",
-	"content": "$$\\begin{vmatrix}a \u0026amp; b\\\\ c \u0026amp; d \\end{vmatrix}=ad-bc$$ "
+	"content": "$$\\begin{vmatrix}a \u0026amp; b\\\\ c \u0026amp; d \\end{vmatrix}=ad-bc$$ You can also do inline math like $s^{-2}_{n}\\sum_{i=1}^{n}$ "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/mermaid/",
@@ -235,7 +242,7 @@
 	"title": "Credits",
 	"tags": [],
 	"description": "contributors and packages used by Advanced Slides",
-	"content": "github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 191 commits   @actions-user 10 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  "
+	"content": "github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 202 commits   @actions-user 11 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/tags/",

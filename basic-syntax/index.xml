@@ -106,7 +106,7 @@ This text will be bold</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/math/</guid>
-      <description>$$\begin{vmatrix}a &amp;amp; b\\ c &amp;amp; d \end{vmatrix}=ad-bc$$ </description>
+      <description>$$\begin{vmatrix}a &amp;amp; b\\ c &amp;amp; d \end{vmatrix}=ad-bc$$ You can also do inline math like $s^{-2}_{n}\sum_{i=1}^{n}$ </description>
     </item>
     
     <item>
