@@ -20,10 +20,35 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Build
+      - name: Build Documentation
         run: |
           cd docs
           hugo
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '17'
+      - name: Setup yarn
+        run: npm install -g yarn
+      - name: Setup dependencies
+        run: yarn
+
+      - name: Run unit tests with coverage
+        run: |
+          SUMMARY="$(yarn test --coverage --coverageReporters=text-summary | tail -3 | head -1)"
+          TOKENS=($SUMMARY)
+          echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
+      
+	  - name: Create Coverage Badge
+        uses: schneegans/dynamic-badges-action@v1.1.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: a2879612aa47b6364392d94cae882c50
+          filename: obsidian-advanced-slides_coverage.json
+          label: coverage
+          message: ${{ env.COVERAGE }}
+          color: brightgreen
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
