@@ -6,6 +6,7 @@
 	<a href="https://github.com/MSzturc/obsidian-advanced-slides/blob/main/LICENSE"><img src="https://img.shields.io/github/license/MSzturc/obsidian-advanced-slides"></a>
 	<img src="https://img.shields.io/github/downloads/MSzturc/obsidian-advanced-slides/total">
 	<a href="https://github.com/MSzturc/obsidian-advanced-slides/issues"><img src="https://img.shields.io/github/issues/MSzturc/obsidian-advanced-slides"></a>
+	<br>
 	<img src="https://img.shields.io/tokei/lines/github/MSzturc/obsidian-advanced-slides">
 	<img src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/MSzturc/a2879612aa47b6364392d94cae882c50/raw/obsidian-advanced-slides_coverage.json">
 	<img src="https://img.shields.io/github/package-json/dependency-version/MSzturc/obsidian-advanced-slides/dev/reveal.js">
