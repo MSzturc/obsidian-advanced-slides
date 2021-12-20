@@ -29,7 +29,7 @@ export class FragmentProcessor {
 								return line;
 							})
 							.join('\n');
-						output = output.replace(slide, newSlide);
+						output = output.split(slide).join(newSlide);
 						return newSlide;
 
 					})

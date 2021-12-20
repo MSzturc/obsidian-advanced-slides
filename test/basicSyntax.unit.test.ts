@@ -280,7 +280,8 @@ test('Basic Markdown Syntax > Math', () => {
 `$$\begin{vmatrix}a & b\\
 c & d
 \end{vmatrix}=ad-bc$$
-`;
+
+You can also do inline math like $s^{-2}_{n}\sum_{i=1}^{n}$`;
 
 	const { options, markdown } = prepare(input);
 	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
