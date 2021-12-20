@@ -29,6 +29,10 @@ jobs:
         run: npm run build
       - name: Test advanced slides
         run: npm test
+      - uses: ArtiomTr/jest-coverage-report-action@v2.0-rc.6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          package-manager: yarn
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
