@@ -49,10 +49,9 @@ jobs:
           label: coverage
           message: ${{ env.COVERAGE }}
           color: brightgreen
-
       - name: Create coverage report
-	    run: yarn test --coverage
-
+        run: yarn test --coverage
+	
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
