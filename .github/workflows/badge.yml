@@ -22,6 +22,4 @@ jobs:
         filename: obsidian-advanced-slides_coverage.json
         label: coverage
         message: ${{ env.COVERAGE }}
-        namedLogo: jest
-        color: blue
-        logoColor: lightblue
+        color: brightgreen
