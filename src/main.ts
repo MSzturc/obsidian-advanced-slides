@@ -128,7 +128,10 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	onChange(file: TAbstractFile) {
-		this.getViewInstance().onOpen();
+		const instance = this.getViewInstance();
+		if(instance){
+			instance.onOpen();
+		}
 	}
 
 	async toggleView() {
