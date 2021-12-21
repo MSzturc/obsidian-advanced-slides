@@ -1,4 +1,4 @@
-import { Plugin, FileSystemAdapter, addIcon, TAbstractFile, PluginSettingTab, App, Setting, WorkspaceLeaf } from 'obsidian';
+import { Plugin, addIcon, TAbstractFile, PluginSettingTab, App, Setting } from 'obsidian';
 import { URL } from 'url';
 import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
@@ -23,7 +23,6 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 export default class AdvancedSlidesPlugin extends Plugin {
 	settings: AdvancedSlidesSettings;
 
-	private previewView: RevealPreviewView;
 	private revealServer: RevealServer;
 	private obsidianUtils: ObsidianUtils;
 
@@ -33,7 +32,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 		await this.loadSettings();
 
-		if(!this.obsidianUtils){
+		if (!this.obsidianUtils) {
 			this.obsidianUtils = new ObsidianUtils(this.app);
 		}
 
@@ -81,14 +80,15 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 
 		try {
-			this.registerView(REVEAL_PREVIEW_VIEW, this.viewCreator.bind(this));
+			this.registerView(REVEAL_PREVIEW_VIEW, (leaf) => new RevealPreviewView(leaf, this.revealServer.getUrl()));
+
 			this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 
 			addIcon("slides", ICON_DATA);
 			addIcon("refresh", REFRESH_ICON);
 
-			this.addRibbonIcon("slides", "Show Slide Preview", () => {
-				this.showView();
+			this.addRibbonIcon("slides", "Show Slide Preview", async () => {
+				await this.showView();
 			});
 
 			this.addCommand({
@@ -97,8 +97,8 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				hotkeys: [
 					{ modifiers: ["Mod", "Shift"], key: "E" },
 				],
-				callback: () => {
-					this.toggleView();
+				callback: async () => {
+					await this.toggleView();
 				}
 			});
 
@@ -107,9 +107,19 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 	}
 
-	isOldVersion(dir: string){
+	getViewInstance(): RevealPreviewView {
+		for (let leaf of this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW)) {
+			let view = leaf.view;
+			if (view instanceof RevealPreviewView) {
+				return view;
+			}
+		}
+		return null;
+	}
+
+	isOldVersion(dir: string) {
 		const versionFile = path.join(dir, 'distVersion.json');
-		if(!existsSync(versionFile)){
+		if (!existsSync(versionFile)) {
 			return true;
 		} else {
 			let rawdata = readFileSync(versionFile, { encoding: 'utf-8' });
@@ -118,30 +128,23 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		}
 	}
 
-	viewCreator(leaf: WorkspaceLeaf, ext?: string): RevealPreviewView {
-		this.previewView = new RevealPreviewView(leaf, this.revealServer.getUrl());
-		return this.previewView;
-	}
-
 	onChange(file: TAbstractFile) {
-		if (this.previewView) {
-			this.previewView.onUpdate();
-		}
+		this.getViewInstance().onOpen();
 	}
 
-	toggleView() {
-		if (this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW).length > 0) {
+	async toggleView() {
+		const instance = this.getViewInstance();
+
+		if (instance) {
 			this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
-			if (this.previewView) {
-				this.previewView.destroy();
-			}
+			instance.onClose();
 		}
 		else {
 			this.showView();
 		}
 	}
 
-	showView() {
+	async showView() {
 
 		const targetDocument = this.app.workspace.getActiveFile().path;
 
@@ -151,13 +154,18 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		}
 
 		this.target = targetDocument;
-		this.activateView();
+		await this.activateView();
 
 		let url = new URL(this.revealServer.getUrl());
 		url.pathname = targetDocument;
 
-		this.previewView.setUrl(url.toString());
+		this.openUrl(url);
+	}
 
+	private async openUrl(url : URL){
+		const instance = this.getViewInstance();
+		instance.setUrl(url.toString());
+		instance.onOpen();
 	}
 
 	async activateView() {
@@ -174,9 +182,11 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	onunload() {
-		this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
-		if (this.previewView) {
-			this.previewView.destroy();
+		const instance = this.getViewInstance();
+
+		if (instance) {
+			this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
+			instance.onClose();
 		}
 		this.revealServer.stop();
 	}

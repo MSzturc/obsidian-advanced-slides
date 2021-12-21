@@ -4,23 +4,17 @@ import { shell } from 'electron';
 export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
 
 export class RevealPreviewView extends ItemView {
-
-	private viewHeader: Element;
-	private viewContent: Element;
-	private url: String = 'about:blank';
+	private url: string = 'about:blank';
 
 	constructor(leaf: WorkspaceLeaf, serverUrl: string) {
-		
 		super(leaf);
-		this.viewHeader = this.containerEl.children[0];
-		this.viewContent = this.containerEl.children[1];
-
+		
 		this.addAction('slides','Open in Browser',() => {
 			shell.openExternal(serverUrl);
 		});
 
 		this.addAction('refresh','Refresh Slides',() => {
-			this.onUpdate();
+			this.renderView();
 		});
 
 		window.addEventListener("message", this.onMessage.bind(this));
@@ -38,25 +32,8 @@ export class RevealPreviewView extends ItemView {
 		return "Slide Preview";
 	}
 
-	setUrl(url: String) {
+	setUrl(url: string) {
 		this.url = url;
-	}
-
-	private async renderView() {
-
-		this.viewContent.empty();
-		this.viewContent.addClass('reveal-preview-view');
-		const element = this.viewContent.createEl("iframe",
-			{
-				attr: {
-					// @ts-ignore:
-					src: this.url
-				}
-			});
-	}
-
-	async onUpdate() {
-		this.renderView();
 	}
 
 	async onOpen() {
@@ -64,10 +41,21 @@ export class RevealPreviewView extends ItemView {
 	}
 
 	async onClose() {
-		// Nothing to clean up.
+		window.removeEventListener("message", this.onMessage);
 	}
 
-	async destroy() {
-		window.removeEventListener("message", this.onMessage);
+	private async renderView() {
+
+		const viewContent = this.containerEl.children[1];
+
+		viewContent.empty();
+		viewContent.addClass('reveal-preview-view');
+		viewContent.createEl("iframe",
+			{
+				attr: {
+					// @ts-ignore:
+					src: this.url
+				}
+			});
 	}
 }
