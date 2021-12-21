@@ -1,16 +1,15 @@
 import { ItemView, WorkspaceLeaf } from 'obsidian';
-import { shell } from 'electron';
 
 export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
 
 export class RevealPreviewView extends ItemView {
 	private url: string = 'about:blank';
 
-	constructor(leaf: WorkspaceLeaf, serverUrl: string) {
+	constructor(leaf: WorkspaceLeaf) {
 		super(leaf);
 		
 		this.addAction('slides','Open in Browser',() => {
-			shell.openExternal(serverUrl);
+			window.open(this.url);
 		});
 
 		this.addAction('refresh','Refresh Slides',() => {

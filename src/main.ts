@@ -1,5 +1,4 @@
 import { Plugin, addIcon, TAbstractFile, PluginSettingTab, App, Setting } from 'obsidian';
-import { URL } from 'url';
 import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
@@ -80,7 +79,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 
 		try {
-			this.registerView(REVEAL_PREVIEW_VIEW, (leaf) => new RevealPreviewView(leaf, this.revealServer.getUrl()));
+			this.registerView(REVEAL_PREVIEW_VIEW, (leaf) => new RevealPreviewView(leaf));
 
 			this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 
@@ -156,7 +155,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		this.target = targetDocument;
 		await this.activateView();
 
-		let url = new URL(this.revealServer.getUrl());
+		let url = this.revealServer.getUrl();
 		url.pathname = targetDocument;
 
 		this.openUrl(url);

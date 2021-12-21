@@ -27,8 +27,8 @@ export class RevealServer {
 		this.filePath = null;
 	}
 
-	getUrl() {
-		return `http://localhost:${this._port}`;
+	getUrl(): URL {
+		return new URL(`http://localhost:${this._port}`);
 	}
 
 	start() {
@@ -54,7 +54,7 @@ export class RevealServer {
 		});
 
 		this._app.get('/localFileSlash/*', async (req, res) => {
-			var filepath = req.originalUrl.replace('/localFileSlash','');
+			var filepath = req.originalUrl.replace('/localFileSlash', '');
 			res.download(filepath);
 		});
 
