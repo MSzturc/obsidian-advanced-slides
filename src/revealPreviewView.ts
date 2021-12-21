@@ -43,7 +43,7 @@ export class RevealPreviewView extends ItemView {
 		window.removeEventListener("message", this.onMessage);
 	}
 
-	private async renderView() {
+	private renderView() {
 
 		const viewContent = this.containerEl.children[1];
 
@@ -53,7 +53,8 @@ export class RevealPreviewView extends ItemView {
 			{
 				attr: {
 					// @ts-ignore:
-					src: this.url
+					src: this.url,
+					sandbox: 'allow-scripts allow-same-origin'
 				}
 			});
 	}
