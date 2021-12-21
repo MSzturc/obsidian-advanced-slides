@@ -1,4 +1,4 @@
-import { Plugin, addIcon, TAbstractFile, PluginSettingTab, App, Setting } from 'obsidian';
+import { Plugin, addIcon, TAbstractFile, PluginSettingTab, App, Setting, TFile } from 'obsidian';
 import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
@@ -129,9 +129,15 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 	onChange(file: TAbstractFile) {
 		const instance = this.getViewInstance();
-		if(instance){
-			instance.onOpen();
+
+		if (! instance) {
+			return;
 		}
+
+		if (file.path.startsWith(this.target)){
+				instance.onOpen();
+		}
+
 	}
 
 	async toggleView() {
@@ -164,7 +170,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		this.openUrl(url);
 	}
 
-	private async openUrl(url : URL){
+	private async openUrl(url: URL) {
 		const instance = this.getViewInstance();
 		instance.setUrl(url.toString());
 		instance.onOpen();
