@@ -9,6 +9,7 @@ import { existsSync, outputFileSync, readFileSync } from 'fs-extra';
 import request from 'request';
 import JSZip from 'jszip';
 import _ from 'lodash';
+import { ObsidianUtils } from './obsidianUtils';
 
 interface AdvancedSlidesSettings {
 	port: string;
@@ -24,19 +25,20 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 	private previewView: RevealPreviewView;
 	private revealServer: RevealServer;
+	private obsidianUtils: ObsidianUtils;
 
-	private vaultDirectory: String;
 	private target: string;
 
 	async onload() {
 
 		await this.loadSettings();
 
-		const fileSystemAdapter: FileSystemAdapter = this.app.vault.adapter as FileSystemAdapter;
-		this.vaultDirectory = fileSystemAdapter.getBasePath();
+		if(!this.obsidianUtils){
+			this.obsidianUtils = new ObsidianUtils(this.app);
+		}
 
-		const pluginDirectory = path.join(this.vaultDirectory.toString(), '/.obsidian/plugins/obsidian-advanced-slides/');
-		const distDirectory = path.join(pluginDirectory, '/dist/');
+		const pluginDirectory = this.obsidianUtils.getPluginDirectory();
+		const distDirectory = this.obsidianUtils.getDistDirectory();
 
 		if (!existsSync(distDirectory) || this.isOldVersion(pluginDirectory)) {
 			//Download binary
@@ -74,7 +76,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 		}
 
-		this.revealServer = new RevealServer(this.app, this.vaultDirectory, this.settings.port);
+		this.revealServer = new RevealServer(this.obsidianUtils, this.settings.port);
 		this.revealServer.start();
 
 

@@ -1,24 +1,45 @@
 import { readFileSync } from "fs-extra";
 import { App, FileSystemAdapter } from "obsidian";
+import path from "path";
 
 
 export class ObsidianUtils {
 
 	private app: App;
+	private fileSystem: FileSystemAdapter;
+	
 	private yamlRegex = /^---[^-]*---/;
 
 	constructor(app: App) {
 		this.app = app;
+		this.fileSystem = this.app.vault.adapter as FileSystemAdapter;
 	}
 
+	getVaultName(): string{
+		return this.app.vault.getName();
+	}
+
+	getVaultDirectory(): string {
+		return this.fileSystem.getBasePath();
+	}
+
+	getPluginDirectory(): string {
+		return path.join(this.getVaultDirectory(), this.app.vault.configDir, 'plugins/obsidian-advanced-slides/');
+	}
+
+	getDistDirectory(): string {
+		return path.join(this.getPluginDirectory(), '/dist/');
+	}
+
+	/** TODO: Refactoring ************************** */
+
 	getAbsolutePath(filename: string): string {
-		const adapter = this.app.vault.adapter as FileSystemAdapter;
 		const markdownFile = this.app.vault.getMarkdownFiles().filter((item: { path: string | any[]; }) => {
 			return item.path.contains(filename)
 		}
 		).first();
 		if (markdownFile)
-			return adapter.getFullPath(markdownFile.path);
+			return this.fileSystem.getFullPath(markdownFile.path);
 		else {
 			return null;
 		}
@@ -54,11 +75,6 @@ export class ObsidianUtils {
 			return imagePath;
 		}
 		return null;
-	}
-
-
-	getVaultName(){
-		return this.app.vault.getName();
 	}
 
 	parseFile(file: string, header: string) {

@@ -8,20 +8,16 @@ import { md } from "./markdown";
 import _ from "lodash"
 import defaults from "./defaults.json";
 import { ObsidianMarkdownPreprocessor } from "./obsidianMarkdownPreprocessor";
-import { App } from "obsidian";
 import { ObsidianUtils } from "./obsidianUtils";
 
 export class RevealRenderer {
 
 	private processor: ObsidianMarkdownPreprocessor;
-
-	private vaultDirectory: string;
 	private pluginDirectory: string;
 
-	constructor(app: App, baseDirectory: string) {
-		this.vaultDirectory = baseDirectory;
-		this.pluginDirectory = join(this.vaultDirectory, '/.obsidian/plugins/obsidian-advanced-slides/');
-		this.processor = new ObsidianMarkdownPreprocessor(new ObsidianUtils(app));
+	constructor(utils: ObsidianUtils) {
+		this.pluginDirectory = utils.getPluginDirectory();
+		this.processor = new ObsidianMarkdownPreprocessor(utils);
 	}
 
 	async renderFile(filePath: String) {

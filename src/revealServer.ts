@@ -2,26 +2,28 @@ import express from "express";
 import path from 'path';
 import { Server } from "http";
 import { RevealRenderer } from "./revealRenderer";
-import { App, Notice } from "obsidian";
+import { Notice } from "obsidian";
+import { ObsidianUtils } from "./obsidianUtils";
 
 export class RevealServer {
 
 	private _app: express.Application;
 	private _port: number = 3000;
 	private _server: Server;
+	//TODO: get rid of base & plugin dir
 	private _baseDirectory: string;
 	private _pluginDirectory: string;
 	private _revealRenderer: RevealRenderer;
 	private _staticDir = express.static;
 	private filePath: string;
 
-	constructor(app: App, vaultDir: String, port: string) {
+	constructor(utils: ObsidianUtils, port: string) {
 		var numPort = Number(port);
 		this._port = isNaN(numPort) ? 3000 : numPort;
-		this._baseDirectory = vaultDir.toString();
-		this._pluginDirectory = path.join(this._baseDirectory, '/.obsidian/plugins/obsidian-advanced-slides/');
+		this._baseDirectory = utils.getVaultDirectory();
+		this._pluginDirectory = utils.getPluginDirectory();
 		this._app = express();
-		this._revealRenderer = new RevealRenderer(app, this._baseDirectory);
+		this._revealRenderer = new RevealRenderer(utils);
 		this.filePath = null;
 	}
 
