@@ -5,11 +5,11 @@ export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
 export class RevealPreviewView extends ItemView {
 	private url: string = 'about:blank';
 
-	constructor(leaf: WorkspaceLeaf) {
+	constructor(leaf: WorkspaceLeaf, home: URL) {
 		super(leaf);
 		
 		this.addAction('slides','Open in Browser',() => {
-			window.open(this.url);
+			window.open(home);
 		});
 
 		this.addAction('refresh','Refresh Slides',() => {

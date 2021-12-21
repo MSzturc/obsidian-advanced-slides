@@ -79,7 +79,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 
 		try {
-			this.registerView(REVEAL_PREVIEW_VIEW, (leaf) => new RevealPreviewView(leaf));
+			this.registerView(REVEAL_PREVIEW_VIEW, (leaf) => new RevealPreviewView(leaf, this.revealServer.getUrl()));
 
 			this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 
