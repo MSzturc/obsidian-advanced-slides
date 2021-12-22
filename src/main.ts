@@ -42,7 +42,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			//Download binary
 			const downloadUrl = `https://github.com/MSzturc/obsidian-advanced-slides/releases/download/${version}/obsidian-advanced-slides.zip`;
 
-			const bufs: any = [];
+			const bufs: Uint8Array[] = [];
 			let buf: Uint8Array;
 			request
 				.get(downloadUrl)

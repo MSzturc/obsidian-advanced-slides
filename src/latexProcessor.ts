@@ -17,7 +17,7 @@ export class LatexProcessor {
 
 		return markdown
 			//Escaped $ signs
-			.replaceAll('\\\$', '~~d~~')
+			.replaceAll('\\$', '~~d~~')
 			//Multiline in backticks
 			.replaceAll(/`\$\$/gm, '~~s~~')
 			.replaceAll(/\$\$`/gm, '~~e~~')

@@ -1,3 +1,4 @@
+/* eslint-disable no-var */
 import { CommentParser } from "./comment";
 import { ObsidianUtils } from "./obsidianUtils";
 
@@ -66,6 +67,7 @@ export class ImageProcessor {
 
 
 	private htmlify(line: string) {
+		// eslint-disable-next-line prefer-const
 		let [, alt, filePath, commentString] = this.markdownImageRegex.exec(line);
 		const comment = this.parser.parseLine(commentString) ?? this.parser.buildComment('element');
 
