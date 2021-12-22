@@ -1,8 +1,5 @@
-import { omit, defaults } from "lodash";
 import { ObsidianMarkdownPreprocessor } from "src/obsidianMarkdownPreprocessor";
-import { anyString, anything, instance, mock, when } from "ts-mockito";
-import { loadFront } from "yaml-front-matter";
-import defaultConfig from "src/defaults.json";
+import { when } from "ts-mockito";
 import { MockedObsidianUtils, obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
 import { prepare } from "./testUtils";
 
@@ -223,7 +220,7 @@ test('Basic Markdown Syntax > Blockquotes', () => {
 	const input =
 `> Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
 
-\- Doug Engelbart, 1961
+- Doug Engelbart, 1961
 `;
 
 	const { options, markdown } = prepare(input);
@@ -279,9 +276,9 @@ test('Basic Markdown Syntax > Math', () => {
 	const input =
 `$$\begin{vmatrix}a & b\\
 c & d
-\end{vmatrix}=ad-bc$$
+end{vmatrix}=ad-bc$$
 
-You can also do inline math like $s^{-2}_{n}\sum_{i=1}^{n}$`;
+You can also do inline math like $s^{-2}_{n}sum_{i=1}^{n}$`;
 
 	const { options, markdown } = prepare(input);
 	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
