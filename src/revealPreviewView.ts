@@ -7,20 +7,20 @@ export class RevealPreviewView extends ItemView {
 
 	constructor(leaf: WorkspaceLeaf, home: URL) {
 		super(leaf);
-		
-		this.addAction('slides','Open in Browser',() => {
+
+		this.addAction('slides', 'Open in Browser', () => {
 			window.open(home);
 		});
 
-		this.addAction('refresh','Refresh Slides',() => {
-			this.renderView();
+		this.addAction('refresh', 'Refresh Slides', () => {
+			this.reloadIframe();
 		});
 
 		window.addEventListener("message", this.onMessage.bind(this));
 	}
 
-	onMessage(msg : MessageEvent){
-		this.setUrl(msg.data);
+	onMessage(msg: MessageEvent) {
+		this.setUrl(msg.data,false);
 	}
 
 	getViewType() {
@@ -31,16 +31,26 @@ export class RevealPreviewView extends ItemView {
 		return "Slide Preview";
 	}
 
-	setUrl(url: string) {
+	setUrl(url: string, rerender = true) {
 		this.url = url;
+		if(rerender){
+			this.renderView();
+		}
 	}
 
-	async onOpen() {
-		this.renderView();
+	async onChange() {
+		this.reloadIframe();
 	}
 
 	async onClose() {
 		window.removeEventListener("message", this.onMessage);
+	}
+
+	private reloadIframe() {
+		const viewContent = this.containerEl.children[1];
+		const iframe = viewContent.getElementsByTagName('iframe')[0];
+		// eslint-disable-next-line no-self-assign
+		iframe.src = iframe.src;
 	}
 
 	private renderView() {

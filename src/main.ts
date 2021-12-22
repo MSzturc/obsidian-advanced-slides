@@ -135,7 +135,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		}
 
 		if (file.path.startsWith(this.target)){
-				instance.onOpen();
+				instance.onChange();
 		}
 
 	}
@@ -173,7 +173,6 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	private async openUrl(url: URL) {
 		const instance = this.getViewInstance();
 		instance.setUrl(url.toString());
-		instance.onOpen();
 	}
 
 	async activateView() {
