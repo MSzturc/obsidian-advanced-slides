@@ -3,6 +3,7 @@ import { ExcalidrawProcessor } from "./excalidrawProcessor";
 import { FootnoteProcessor } from "./footNoteProcessor";
 import { FormatProcessor } from "./formatProcessor";
 import { FragmentProcessor } from "./fragmentProcessor";
+import { GridProcessor } from "./gridProcessor";
 import { ImageProcessor } from "./imageProcessor";
 import { InternalLinkProcessor } from "./internalLinkProcessor";
 import { LatexProcessor } from "./latexProcessor";
@@ -23,6 +24,7 @@ export class ObsidianMarkdownPreprocessor {
 	private excalidrawProcessor: ExcalidrawProcessor;
 	private mermaidProcessor: MermaidProcessor;
 	private fragmentProcessor: FragmentProcessor;
+	private gridProcessor: GridProcessor;
 
 	constructor(utils: ObsidianUtils) {
 		this.multipleFileProcessor = new MultipleFileProcessor(utils);
@@ -35,6 +37,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.excalidrawProcessor = new ExcalidrawProcessor(utils);
 		this.mermaidProcessor = new MermaidProcessor();
 		this.fragmentProcessor = new FragmentProcessor();
+		this.gridProcessor = new GridProcessor();
 	}
 
 	process(markdown: string, options: Options) {
@@ -48,7 +51,8 @@ export class ObsidianMarkdownPreprocessor {
 		const afterLatexProcessor = this.latexProcessor.process(afterInternalLinkProcessor);
 		const afterFormatProcessor = this.formatProcessor.process(afterLatexProcessor);
 		const afterFragmentProcessor = this.fragmentProcessor.process(afterFormatProcessor, options);
-		return afterFragmentProcessor;
+		const afterGridProcessor = this.gridProcessor.process(afterFragmentProcessor, options);
+		return afterGridProcessor;
 	}
 
 

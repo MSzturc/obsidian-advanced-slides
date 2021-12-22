@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Grid Component > Basic Syntax 1`] = `
+"<div style=\\"position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral;\\" >
+
+### Left
+</div>
+
+<div style=\\"position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral;\\" >
+
+### Right
+</div>
+
+<div style=\\"position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral;\\" >
+
+### Bottom
+</div>"
+`;
+
+exports[`Grid Component > Basic Syntax 2`] = `
+"<div style=\\"position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral;\\" >
+
+### Left
+</div>
+
+<div style=\\"position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral;\\" >
+
+### Right
+</div>
+
+<div style=\\"position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral;\\" >
+
+### Bottom
+</div>"
+`;
