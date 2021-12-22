@@ -30,8 +30,8 @@ export class CommentParser {
 
 	parseComment(comment: string): Comment {
 		try {
-			let [, type, properties] = this.parseRegex.exec(comment);
-			let [style, clazz, attributes] = this.parseProperties(properties);
+			const [, type, properties] = this.parseRegex.exec(comment);
+			const [style, clazz, attributes] = this.parseProperties(properties);
 			return this.buildComment(type, style, clazz, attributes);
 		} catch (ex) {
 			console.log("ERROR: Cannot parse comment: " + comment);
@@ -49,7 +49,7 @@ export class CommentParser {
 	}
 
 	private attributeMapToString(attributes: Map<string, string>): string {
-		let result = [];
+		const result = [];
 		for (const [key, value] of attributes) {
 			result.push(`${key}="${value}"`);
 		}
@@ -65,7 +65,7 @@ export class CommentParser {
 	}
 
 	private parseProperties(properties: string): [string[], string[], Map<string, string>] {
-		let result: [string[], string[], Map<string, string>] = [[], [], new Map<string, string>()];
+		const result: [string[], string[], Map<string, string>] = [[], [], new Map<string, string>()];
 
 		if (properties.includes('style=')) {
 			result[0] = this.parseStyle(properties);
@@ -81,14 +81,14 @@ export class CommentParser {
 	}
 
 	private parseStyle(comment: string): string[] {
-		let result = this.styleRegex.exec(comment)?.[1] ?? '';
+		const result = this.styleRegex.exec(comment)?.[1] ?? '';
 		return result.split(";").map((attr) => {
 			return attr.trim();
 		});
 	}
 
 	private parseClass(comment: string): string[] {
-		let result = this.classRegex.exec(comment)?.[1] ?? '';
+		const result = this.classRegex.exec(comment)?.[1] ?? '';
 		return result.split(" ").map((attr) => {
 			return attr.trim();
 		});

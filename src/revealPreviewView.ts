@@ -3,7 +3,7 @@ import { ItemView, WorkspaceLeaf } from 'obsidian';
 export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
 
 export class RevealPreviewView extends ItemView {
-	private url: string = 'about:blank';
+	private url = 'about:blank';
 
 	constructor(leaf: WorkspaceLeaf, home: URL) {
 		super(leaf);

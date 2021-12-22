@@ -19,7 +19,7 @@ test('Extended Markdown Syntax > Horizontal / Vertical Slides', () => {
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -35,7 +35,7 @@ text with attribute <!-- .element: data-toggle="modal" -->
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -59,7 +59,7 @@ Paragraph has coral background color, too!
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -98,7 +98,7 @@ no color
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -126,7 +126,7 @@ Slide up while fading in <!-- .element: class="fragment fade-up" -->
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -144,7 +144,7 @@ styled text <!-- .element: class="with-border" -->
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -193,7 +193,7 @@ See [reveal backgrounds](https://revealjs.com/backgrounds/)
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -215,7 +215,7 @@ note: this is not! Only the speaker might see this text.
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -257,7 +257,7 @@ test('Extended Markdown Syntax >  Fragmented list', () => {
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -280,7 +280,7 @@ test('Extended Markdown Syntax >  Excalidraw support', () => {
 ![[Sample.excalidraw]] <!-- .element: style="width:300px; height:400px" -->`;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });

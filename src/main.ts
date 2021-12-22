@@ -42,19 +42,19 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			//Download binary
 			const downloadUrl = `https://github.com/MSzturc/obsidian-advanced-slides/releases/download/${version}/obsidian-advanced-slides.zip`;
 
-			let bufs: any = [];
+			const bufs: any = [];
 			let buf: Uint8Array;
 			request
 				.get(downloadUrl)
 				.on('end', () => {
 					buf = Buffer.concat(bufs);
-					var zip = new JSZip();
+					const zip = new JSZip();
 					zip.loadAsync(buf).then((contents) => {
 
 						Object.keys(contents.files).forEach(function (filename) {
 							if (!contents.files[filename].dir) {
 								zip.file(filename).async('nodebuffer').then(function (content) {
-									var dest = path.join(pluginDirectory, filename);
+									const dest = path.join(pluginDirectory, filename);
 									outputFileSync(dest, content);
 								});
 							}
@@ -107,8 +107,8 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	getViewInstance(): RevealPreviewView {
-		for (let leaf of this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW)) {
-			let view = leaf.view;
+		for (const leaf of this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW)) {
+			const view = leaf.view;
 			if (view instanceof RevealPreviewView) {
 				return view;
 			}
@@ -121,8 +121,8 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		if (!existsSync(versionFile)) {
 			return true;
 		} else {
-			let rawdata = readFileSync(versionFile, { encoding: 'utf-8' });
-			let distVersion = JSON.parse(rawdata).version;
+			const rawdata = readFileSync(versionFile, { encoding: 'utf-8' });
+			const distVersion = JSON.parse(rawdata).version;
 			return distVersion != version;
 		}
 	}
@@ -164,7 +164,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		this.target = targetDocument;
 		await this.activateView();
 
-		let url = this.revealServer.getUrl();
+		const url = this.revealServer.getUrl();
 		url.pathname = targetDocument;
 
 		this.openUrl(url);

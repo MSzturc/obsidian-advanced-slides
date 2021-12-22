@@ -35,17 +35,17 @@ export class ImageProcessor {
 	}
 
 	private transformImageString(line: string) {
-		var [, image, ext, comment] = this.obsidianImageRegex.exec(line);
+		const [, image, ext, comment] = this.obsidianImageRegex.exec(line);
 
-		var filePath = this.utils.findFile(image);
-		var commentAsString = this.buildComment(ext, comment) ?? '';
+		const filePath = this.utils.findFile(image);
+		const commentAsString = this.buildComment(ext, comment) ?? '';
 
 		return `![](${filePath}) ${commentAsString}`;
 	}
 
 	private buildComment(ext: string, commentAsString: string) {
 
-		var comment = commentAsString
+		const comment = commentAsString
 			? this.parser.parseComment(commentAsString)
 			: this.parser.buildComment('element');
 
@@ -66,15 +66,15 @@ export class ImageProcessor {
 
 
 	private htmlify(line: string) {
-		var [, alt, filePath, commentString] = this.markdownImageRegex.exec(line);
-		var comment = this.parser.parseLine(commentString) ?? this.parser.buildComment('element');
+		let [, alt, filePath, commentString] = this.markdownImageRegex.exec(line);
+		const comment = this.parser.parseLine(commentString) ?? this.parser.buildComment('element');
 
 		if (filePath.startsWith('file:/')) {
 			filePath = this.transformAbsoluteFilePath(filePath);
 		}
 
-		var imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}></img>`;
-		var pHtml = `<p ${this.parser.buildAttributes(this.parser.buildComment('element',[],['reset-paragraph']))}>${imageHtml}</p>`;
+		const imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}></img>`;
+		const pHtml = `<p ${this.parser.buildAttributes(this.parser.buildComment('element',[],['reset-paragraph']))}>${imageHtml}</p>`;
 		return pHtml;
 	}
 

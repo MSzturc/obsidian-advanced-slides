@@ -3,7 +3,7 @@ import { CommentParser } from "./comment";
 export class FragmentProcessor {
 
 	private parser: CommentParser;
-	private fragmentCounter: number = 1;
+	private fragmentCounter = 1;
 	private orderedListRegex = /\d\) /g;
 
 	constructor() {
@@ -11,7 +11,7 @@ export class FragmentProcessor {
 	}
 
 	process(markdown: string, options: any) {
-		var output = markdown;
+		let output = markdown;
 
 		markdown
 			.split(new RegExp(options.separator, 'gmi'))
@@ -21,7 +21,7 @@ export class FragmentProcessor {
 					.map((slide) => {
 						this.fragmentCounter = 1;
 
-						var newSlide = slide.split('\n')
+						const newSlide = slide.split('\n')
 							.map((line) => {
 								if (line.trim().startsWith("+ ") || this.orderedListRegex.test(line.trim())) {
 									return this.transformLine(line);
@@ -41,7 +41,7 @@ export class FragmentProcessor {
 	}
 
 	transformLine(line: string) {
-		var comment = this.parser.parseLine(line) ?? this.parser.buildComment('element');
+		const comment = this.parser.parseLine(line) ?? this.parser.buildComment('element');
 
 		if (line.includes('<!--')) {
 			line = line.substring(0, line.indexOf('<!--'));
@@ -57,7 +57,7 @@ export class FragmentProcessor {
 			}
 			this.fragmentCounter++;
 		}
-		var output = line + this.parser.commentToString(comment);
+		const output = line + this.parser.commentToString(comment);
 		return output;
 	}
 

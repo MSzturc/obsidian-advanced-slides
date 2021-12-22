@@ -23,8 +23,8 @@ export class ExcalidrawProcessor {
 
 	private transformLine(line: string) {
 
-		var [, image, ext, comment] = this.excalidrawImageRegex.exec(line);
-		var imgFile = this.utils.findImageEx(image);
+		const [, image, ext, comment] = this.excalidrawImageRegex.exec(line);
+		const imgFile = this.utils.findImageEx(image);
 
 		if (imgFile === null) {
 			new Notice(`Cannot find Image for ${image}. Make sure to activate Auto-export SVG/PNG in Excalidraw Settings.`, 8000);

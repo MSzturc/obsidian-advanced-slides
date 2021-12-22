@@ -8,7 +8,7 @@ import { ObsidianUtils } from "./obsidianUtils";
 export class RevealServer {
 
 	private _app: express.Application;
-	private _port: number = 3000;
+	private _port = 3000;
 	private _server: Server;
 	//TODO: get rid of base & plugin dir
 	private _baseDirectory: string;
@@ -18,7 +18,7 @@ export class RevealServer {
 	private filePath: string;
 
 	constructor(utils: ObsidianUtils, port: string) {
-		var numPort = Number(port);
+		const numPort = Number(port);
 		this._port = isNaN(numPort) ? 3000 : numPort;
 		this._baseDirectory = utils.getVaultDirectory();
 		this._pluginDirectory = utils.getPluginDirectory();
@@ -54,7 +54,7 @@ export class RevealServer {
 		});
 
 		this._app.get('/localFileSlash/*', async (req, res) => {
-			var filepath = req.originalUrl.replace('/localFileSlash', '');
+			const filepath = req.originalUrl.replace('/localFileSlash', '');
 			res.download(filepath);
 		});
 

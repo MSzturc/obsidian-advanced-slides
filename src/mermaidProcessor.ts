@@ -7,21 +7,21 @@ export class MermaidProcessor {
 
 	transformMermaid(markdown: string) : string {
 
-		var startIdx = markdown.indexOf('```mermaid');
+		const startIdx = markdown.indexOf('```mermaid');
 
 		if(startIdx < 0){
 			return markdown;
 		} else {
-			var endIdx = markdown.indexOf('```', startIdx+11);
+			const endIdx = markdown.indexOf('```', startIdx+11);
 			if(endIdx < 0){
 				return markdown;
 			}
 
-			var before = markdown.substring(0,startIdx);
-			var after = markdown.substring(endIdx+3);
-			var content = markdown.substring(startIdx+11,endIdx);
+			const before = markdown.substring(0,startIdx);
+			const after = markdown.substring(endIdx+3);
+			const content = markdown.substring(startIdx+11,endIdx);
 
-			var result = before + '\n' + '<div class="mermaid">' + '\n' + content + '\n' + '</div>' + '\n' + after;
+			const result = before + '\n' + '<div class="mermaid">' + '\n' + content + '\n' + '</div>' + '\n' + after;
 
 			return this.transformMermaid(result);
 

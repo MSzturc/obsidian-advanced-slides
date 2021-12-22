@@ -59,8 +59,8 @@ export class ObsidianUtils {
 
 	findImageEx(filePath: string){
 
-		var imagePath = filePath + '.svg';
-		var imgFile = this.app.vault.getFiles()
+		let imagePath = filePath + '.svg';
+		let imgFile = this.app.vault.getFiles()
 		.filter(item => item.path.contains(imagePath))
 		.first();
 
@@ -79,16 +79,16 @@ export class ObsidianUtils {
 
 	parseFile(file: string, header: string) {
 
-		var fileContent = readFileSync(file, { encoding: 'utf-8' });
+		const fileContent = readFileSync(file, { encoding: 'utf-8' });
 
 		if (header === null) {
 			return fileContent.replace(this.yamlRegex,'');
 		} else {
 
-			var lines = fileContent.split('\n');
+			const lines = fileContent.split('\n');
 
-			var startIdx = null;
-			var endIdx = null;
+			let startIdx = null;
+			let endIdx = null;
 			for (let i = 0; i < lines.length; i++) {
 
 				if (startIdx != null && lines[i].startsWith('#')) {

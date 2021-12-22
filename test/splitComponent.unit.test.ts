@@ -15,7 +15,7 @@ test('Split Component > even', () => {
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -34,7 +34,7 @@ into electronic typesetting, remaining essentially unchanged. It was popularised
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -52,7 +52,7 @@ into electronic typesetting, remaining essentially unchanged. It was popularised
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -77,7 +77,7 @@ test('Split Component > wrap', () => {
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -99,7 +99,7 @@ test('Split Component > no-margin', () => {
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });

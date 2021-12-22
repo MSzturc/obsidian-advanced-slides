@@ -23,8 +23,8 @@ export class MultipleFileProcessor {
 	}
 
 	private transformLine(line: string) {
-		var filePath: string = line.replace("![[", "").replace("]]", "");
-		var header: string = null;
+		let filePath: string = line.replace("![[", "").replace("]]", "");
+		let header: string = null;
 
 		if (filePath.includes('#')) {
 			const split = filePath.split('#');
@@ -46,7 +46,7 @@ export class MultipleFileProcessor {
 			return null; // Do not import excalidraw files
 		}
 
-		var file = line;
+		let file = line;
 		if (!line.toLowerCase().endsWith(".md")) {
 			file = file + ".md";
 		}

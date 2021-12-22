@@ -5,16 +5,16 @@ export class FootnoteProcessor {
 
 	process(markdown: string, options: any){
 
-		var output = markdown;
+		let output = markdown;
 
-		var result = markdown
+		const result = markdown
         .split(new RegExp(options.separator, 'gmi'))
         .map((slidegroup, index) => {
             return slidegroup
                 .split(new RegExp(options.verticalSeparator, 'gmi'))
                 .map((slide, index) => {
                     if (this.regex.test(slide)) {
-						var newSlide = this.transformFootNotes(slide);
+						const newSlide = this.transformFootNotes(slide);
 						output = output.replace(slide, newSlide);
                         return newSlide;
                     }
@@ -28,12 +28,12 @@ export class FootnoteProcessor {
 
 	transformFootNotes(markdown: string) {
 
-		var input = markdown;
-		var noteIdx = 1;
+		let input = markdown;
+		let noteIdx = 1;
 	
-		var footNotes = new Map();
+		const footNotes = new Map();
 	
-		var reResult : RegExpExecArray;
+		let reResult : RegExpExecArray;
 		while (reResult = this.regex.exec(input)) {
 	
 			input = input
@@ -46,9 +46,9 @@ export class FootnoteProcessor {
 							}
 							return "";
 						} else {
-							var split = line.split(reResult[0]);
+							const split = line.split(reResult[0]);
 	
-							var result = split[0].trim();
+							let result = split[0].trim();
 							result += '<sup id="fnref:' + reResult[1] + '" role="doc-noteref">' + noteIdx + '</sup>';
 							result += '\n' + split[1].trim();
 	
@@ -65,7 +65,7 @@ export class FootnoteProcessor {
 	
 		}
 	
-		var footNotesBlock = '';
+		let footNotesBlock = '';
 		footNotesBlock += '<div class="footnotes" role="doc-endnotes">\n';
 		footNotesBlock += '<ol>\n';
 	

@@ -20,7 +20,7 @@ export class RevealRenderer {
 		this.processor = new ObsidianMarkdownPreprocessor(utils);
 	}
 
-	async renderFile(filePath: String) {
+	async renderFile(filePath: string) {
 		const content = (await readFile(filePath.toString())).toString();
 		return await this.render(content);
 	}
@@ -118,7 +118,7 @@ export class RevealRenderer {
 	}
 
 	private getCssPaths(css: string | string[]) {
-		var input: string[] 
+		let input: string[] 
 		if(!css){
 			return input;
 		}

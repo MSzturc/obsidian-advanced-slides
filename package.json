@@ -7,7 +7,8 @@
 		"dev": "node esbuild.config.mjs",
 		"build": "node esbuild.config.mjs production",
 		"test": "jest",
-		"coverage": "jest --coverage"
+		"coverage": "jest --coverage",
+		"lint": "eslint --fix --ext .ts ."
 	},
 	"repository": "git@github.com:MSzturc/obsidian-advanced-slides.git",
 	"author": "Matthäus Szturc",
@@ -29,6 +30,7 @@
 		"esbuild": "^0.14.2",
 		"esbuild-plugin-copy": "^0.3.0",
 		"esbuild-sass-plugin": "^1.8.0",
+		"eslint": "^8.5.0",
 		"highlight.js": "^11.3.1",
 		"jest": "^27.4.5",
 		"node-sass": "^7.0.0",

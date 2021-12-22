@@ -18,7 +18,7 @@ test('Basic Markdown Syntax > Headers', () => {
 ###### This is a heading 6`;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -45,7 +45,7 @@ Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
 Any word wrapped with two equal signs (like ==this==) will appear as highlighted.`;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -68,7 +68,7 @@ test('Basic Markdown Syntax > Lists', () => {
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -127,7 +127,7 @@ Scale image to a width of 300x100 px
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -160,7 +160,7 @@ This [[Internal link|Link]] will use its alias for displaying
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -181,7 +181,7 @@ This [[Internal link|Link]] will use its alias for displaying
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -213,7 +213,7 @@ Link to Obsidian Homepage: http://obsidian.md`;
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -227,7 +227,7 @@ test('Basic Markdown Syntax > Blockquotes', () => {
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -239,7 +239,7 @@ test('Basic Markdown Syntax > Inline Code', () => {
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -254,7 +254,7 @@ Content in the first column | Content in the second column
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -269,7 +269,7 @@ test('Basic Markdown Syntax > Footnotes', () => {
 `;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -284,7 +284,7 @@ c & d
 You can also do inline math like $s^{-2}_{n}\sum_{i=1}^{n}$`;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
@@ -307,7 +307,7 @@ sequenceDiagram
 \`\`\``;
 
 	const { options, markdown } = prepare(input);
-	var sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
