@@ -12,10 +12,12 @@ import { ObsidianUtils } from './obsidianUtils';
 
 interface AdvancedSlidesSettings {
 	port: string;
+	autoReload: boolean;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
-	port: '3000'
+	port: '3000',
+	autoReload: true
 }
 
 
@@ -128,14 +130,19 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	onChange(file: TAbstractFile) {
-		const instance = this.getViewInstance();
 
-		if (! instance) {
+		if(! this.settings.autoReload){
 			return;
 		}
 
-		if (file.path.startsWith(this.target)){
-				instance.onChange();
+		const instance = this.getViewInstance();
+
+		if (!instance) {
+			return;
+		}
+
+		if (file.path.startsWith(this.target)) {
+			instance.onChange();
 		}
 
 	}
@@ -233,6 +240,16 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 				.setValue(this.plugin.settings.port)
 				.onChange(_.debounce(async (value) => {
 					this.plugin.settings.port = value;
+					await this.plugin.saveSettings();
+				}, 750)));
+
+		new Setting(containerEl)
+			.setName('Auto Reload')
+			.setDesc('Should the slide preview window be updated when a change in source file is detected?')
+			.addToggle(value => value
+				.setValue(this.plugin.settings.autoReload)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.autoReload = value;
 					await this.plugin.saveSettings();
 				}, 750)));
 	}
