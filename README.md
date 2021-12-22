@@ -18,10 +18,10 @@
 	</a>
 	<br>
 	<img src="https://img.shields.io/tokei/lines/github/MSzturc/obsidian-advanced-slides">
+	<img src="https://img.shields.io/codefactor/grade/github/MSzturc/obsidian-advanced-slides">
 	<a href="https://mszturc.github.io/obsidian-advanced-slides/lcov-report/">
 		<img src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/MSzturc/a2879612aa47b6364392d94cae882c50/raw/obsidian-advanced-slides_coverage.json">
 	</a>
-	<img src="https://img.shields.io/github/package-json/dependency-version/MSzturc/obsidian-advanced-slides/dev/reveal.js">
 </p>
 
 <div align="center">
