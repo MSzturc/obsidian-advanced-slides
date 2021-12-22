@@ -18,7 +18,9 @@
 	</a>
 	<br>
 	<img src="https://img.shields.io/tokei/lines/github/MSzturc/obsidian-advanced-slides">
-	<img src="https://img.shields.io/codefactor/grade/github/MSzturc/obsidian-advanced-slides">
+	<a href="https://www.codefactor.io/repository/github/mszturc/obsidian-advanced-slides/stats">
+		<img src="https://img.shields.io/codefactor/grade/github/MSzturc/obsidian-advanced-slides">
+	</a>
 	<a href="https://mszturc.github.io/obsidian-advanced-slides/lcov-report/">
 		<img src="https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/MSzturc/a2879612aa47b6364392d94cae882c50/raw/obsidian-advanced-slides_coverage.json">
 	</a>
