@@ -44,10 +44,10 @@ text with attribute <!-- .element: data-toggle=\\"modal\\" -->
 exports[`Extended Markdown Syntax >  Excalidraw support 1`] = `
 "#### Excalidraw support
 
-<p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 100px\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 100px\\" class=\\"\\" ></img></p>
 
 
-<p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width:300px; height:400px\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width:300px; height:400px\\" class=\\"\\" ></img></p>
 "
 `;
 
@@ -188,7 +188,7 @@ note: this is not! Only the speaker might see this text.
 - and this bulletpoint
 - or this picture
 
-<p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"https://picsum.photos/id/1005/250/250\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"https://picsum.photos/id/1005/250/250\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
 
 "
 `;
