@@ -30,8 +30,8 @@ export class CommentParser {
 
 	parseComment(comment: string): Comment {
 		try {
-			var [, type, properties] = this.parseRegex.exec(comment);
-			var [style, clazz, attributes] = this.parseProperties(properties);
+			let [, type, properties] = this.parseRegex.exec(comment);
+			let [style, clazz, attributes] = this.parseProperties(properties);
 			return this.buildComment(type, style, clazz, attributes);
 		} catch (ex) {
 			console.log("ERROR: Cannot parse comment: " + comment);
@@ -49,8 +49,8 @@ export class CommentParser {
 	}
 
 	private attributeMapToString(attributes: Map<string, string>): string {
-		var result = [];
-		for (let [key, value] of attributes) {
+		let result = [];
+		for (const [key, value] of attributes) {
 			result.push(`${key}="${value}"`);
 		}
 		return result.join(" ");
@@ -65,7 +65,7 @@ export class CommentParser {
 	}
 
 	private parseProperties(properties: string): [string[], string[], Map<string, string>] {
-		var result: [string[], string[], Map<string, string>] = [[], [], new Map<string, string>()];
+		let result: [string[], string[], Map<string, string>] = [[], [], new Map<string, string>()];
 
 		if (properties.includes('style=')) {
 			result[0] = this.parseStyle(properties);
@@ -81,14 +81,14 @@ export class CommentParser {
 	}
 
 	private parseStyle(comment: string): string[] {
-		var result = this.styleRegex.exec(comment)?.[1] ?? '';
+		let result = this.styleRegex.exec(comment)?.[1] ?? '';
 		return result.split(";").map((attr) => {
 			return attr.trim();
 		});
 	}
 
 	private parseClass(comment: string): string[] {
-		var result = this.classRegex.exec(comment)?.[1] ?? '';
+		let result = this.classRegex.exec(comment)?.[1] ?? '';
 		return result.split(" ").map((attr) => {
 			return attr.trim();
 		});
@@ -96,15 +96,15 @@ export class CommentParser {
 
 	private parseAttributes(properties: string): Map<string, string> {
 		let m;
-		let attributes = new Map<string, string>();
+		const attributes = new Map<string, string>();
 
 		while ((m = this.parsePropertiesRegex.exec(properties)) !== null) {
 			if (m.index === this.parsePropertiesRegex.lastIndex) {
 				this.parsePropertiesRegex.lastIndex++;
 			}
 
-			var key: string;
-			var value: string;
+			let key: string;
+			let value: string;
 
 			m.forEach((match, groupIndex) => {
 				if (groupIndex == 1 || groupIndex == 3) {
