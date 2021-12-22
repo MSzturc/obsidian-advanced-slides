@@ -103,6 +103,22 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				}
 			});
 
+			this.addCommand({
+				id: 'reload-advanced-slides-preview',
+				name: 'Reload Slide Preview',
+				hotkeys: [
+					{ modifiers: ["Mod", "Shift"], key: "R" },
+				],
+				callback: () => {
+					const instance = this.getViewInstance();
+
+					if (!instance) {
+						return;
+					}
+					instance.onChange();
+				}
+			});
+
 			this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
 		} catch (err) { }
 
@@ -131,7 +147,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 	onChange(file: TAbstractFile) {
 
-		if(! this.settings.autoReload){
+		if (!this.settings.autoReload) {
 			return;
 		}
 

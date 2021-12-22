@@ -38,7 +38,7 @@ export class RevealPreviewView extends ItemView {
 		}
 	}
 
-	async onChange() {
+	onChange() {
 		this.reloadIframe();
 	}
 
