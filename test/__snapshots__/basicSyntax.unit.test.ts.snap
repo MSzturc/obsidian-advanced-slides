@@ -49,11 +49,13 @@ Insert image with standard markdown syntax
 
 <p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"https://picsum.photos/id/1006/500/300\\" alt=\\"Image\\" style=\\"\\" class=\\"\\" ></img></p>
 
+
 ---
 
 Insert image that lies outside of your vault
 
 <p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"/localFileSlash/Users/testUser/Desktop/howToUse.png\\" alt=\\"Image\\" style=\\"\\" class=\\"\\" ></img></p>
+
 
 ---
 
@@ -61,17 +63,20 @@ Insert image with obsidian markdown syntax
 
 <p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
 
+
 ---
 
 Scale image to a width of 100 px
 
 <p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 100px\\" class=\\"\\" ></img></p>
 
+
 ---
 
 Scale image to a width of 300x100 px
 
 <p style=\\"\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: cover; width: 300px; height: 100px\\" class=\\"\\" ></img></p>
+
 
 "
 `;
