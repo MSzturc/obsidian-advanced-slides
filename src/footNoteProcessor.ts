@@ -7,7 +7,7 @@ export class FootnoteProcessor {
 
 		let output = markdown;
 
-		const result = markdown
+		markdown
         .split(new RegExp(options.separator, 'gmi'))
         .map((slidegroup, index) => {
             return slidegroup

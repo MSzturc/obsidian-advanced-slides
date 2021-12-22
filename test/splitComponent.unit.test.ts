@@ -1,6 +1,6 @@
 import { ObsidianMarkdownPreprocessor } from "src/obsidianMarkdownPreprocessor";
 import { prepare } from "./testUtils";
-import { MockedObsidianUtils, obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
+import { obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
 
 
 test('Split Component > even', () => {

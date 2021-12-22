@@ -1,4 +1,4 @@
-import { Plugin, addIcon, TAbstractFile, PluginSettingTab, App, Setting, TFile } from 'obsidian';
+import { Plugin, addIcon, TAbstractFile, PluginSettingTab, App, Setting } from 'obsidian';
 import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';

@@ -1,6 +1,6 @@
 :root {
-	--split-div-size: 0px;
-	--split-gap-size: 0px;
+	--split-div-size: 0;
+	--split-gap-size: 0;
 }
 
 split {
@@ -15,7 +15,7 @@ split[even]>* {
 }
 
 split[no-margin]>* {
-	--r-block-margin: 0px;
+	--r-block-margin: 0;
 }
 
 @for $i from 1 through 12 {
@@ -25,7 +25,7 @@ split[no-margin]>* {
 }
 
 split[gap="0"] {
-	--split-gap-size: 0px;
+	--split-gap-size: 0;
     gap: unset;
 }
 
