@@ -20,7 +20,7 @@ export class RevealPreviewView extends ItemView {
 	}
 
 	onMessage(msg: MessageEvent) {
-		this.setUrl(msg.data,false);
+		this.setUrl(msg.data, false);
 	}
 
 	getViewType() {
@@ -33,7 +33,7 @@ export class RevealPreviewView extends ItemView {
 
 	setUrl(url: string, rerender = true) {
 		this.url = url;
-		if(rerender){
+		if (rerender) {
 			this.renderView();
 		}
 	}
