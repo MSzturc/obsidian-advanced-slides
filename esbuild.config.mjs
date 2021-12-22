@@ -2,7 +2,7 @@ import esbuild from "esbuild";
 import process from "process";
 import builtins from 'builtin-modules';
 import copy from 'esbuild-plugin-copy';
-import {sassPlugin} from 'esbuild-sass-plugin';
+import { sassPlugin } from 'esbuild-sass-plugin';
 
 
 const staticAssetsPlugin = {
@@ -115,7 +115,7 @@ esbuild.build({
                     to: ['./plugin/zoom'],
                 }
             }),
-			copy.default({
+            copy.default({
                 assets: {
                     from: ['node_modules/reveal.js-mermaid-plugin/plugin/mermaid/*'],
                     to: ['./plugin/mermaid'],
@@ -152,17 +152,17 @@ esbuild.build({
             '.otf': 'dataurl'
         },
         outfile: TEST_VAULT + '/css/layout.css',
-		bundle: true,
+        bundle: true,
         external: ['obsidian', 'electron', ...builtins],
         watch: !prod,
         target: 'es2020',
         logLevel: "info",
         sourcemap: prod ? false : 'inline',
         treeShaking: true,
-		plugins: [
-			sassPlugin({
-			  implementation: 'node-sass',
-			}),
-		  ]
+        plugins: [
+            sassPlugin({
+                implementation: 'node-sass',
+            }),
+        ]
     }))
     .catch(() => process.exit(1));

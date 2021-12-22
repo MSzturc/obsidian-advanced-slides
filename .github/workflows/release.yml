@@ -1,6 +1,6 @@
 name: release
 
-on: 
+on:
   push:
     tags:
     - '*'
@@ -45,4 +45,3 @@ jobs:
           artifacts: "test-vault/.obsidian/plugins/obsidian-advanced-slides/obsidian-advanced-slides.zip, test-vault/.obsidian/plugins/obsidian-advanced-slides/main.js, test-vault/.obsidian/plugins/obsidian-advanced-slides/manifest.json, test-vault/.obsidian/plugins/obsidian-advanced-slides/styles.css"
           token: ${{ secrets.GITHUB_TOKEN }}
           body: ${{steps.build_changelog.outputs.changelog}}
-          

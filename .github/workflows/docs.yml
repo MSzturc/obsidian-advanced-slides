@@ -1,6 +1,6 @@
 name: Release Docs
 
-on: 
+on:
   push:
     tags:
     - '*'
@@ -39,7 +39,7 @@ jobs:
           SUMMARY="$(yarn test --coverage --coverageReporters=text-summary | tail -3 | head -1)"
           TOKENS=($SUMMARY)
           echo "COVERAGE=$(echo ${TOKENS[2]})" >> $GITHUB_ENV
-      
+
       - name: Create Coverage Badge
         uses: schneegans/dynamic-badges-action@v1.1.0
         with:
