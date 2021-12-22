@@ -55,11 +55,20 @@ export class RevealRenderer {
 		return result;
 	}
 
-	private getHighlightThemeUrl(theme: string) {
+	private isValidUrl(input: string): boolean {
 		try {
-			const parsedUrl = new URL(theme);
+			new URL(input);
+			return true;
+		} catch (_) { 
+			return false;
+		}
+	}
+
+	private getHighlightThemeUrl(theme: string) {
+		
+		if(this.isValidUrl(theme)){
 			return theme;
-		} catch (err) { }
+		}
 
 		const highlightThemes = glob.sync('plugin/highlight/*.css', { cwd: this.pluginDirectory });
 
@@ -71,10 +80,10 @@ export class RevealRenderer {
 	}
 
 	private getThemeUrl(theme: string) {
-		try {
-			const parsedUrl = new URL(theme);
+		
+		if(this.isValidUrl(theme)){
 			return theme;
-		} catch (err) { }
+		}
 
 		const revealThemes = glob.sync('dist/theme/*.css', { cwd: this.pluginDirectory });
 
@@ -129,11 +138,9 @@ export class RevealRenderer {
 		}
 
 		return input.map(css => {
-			try {
-				const url = new URL(css);
+			if(this.isValidUrl(css)){
 				return css;
-			} catch (err) { }
-
+			}
 			return '/' + css;
 		});
 	}
