@@ -1,4 +1,5 @@
 import { ObsidianUtils } from "./obsidianUtils";
+import { Options } from "./options";
 
 export class InternalLinkProcessor {
 
@@ -10,7 +11,7 @@ export class InternalLinkProcessor {
 
 	private regex = /(?<=[^!]|^)\[\[(?:(.*)\|)?([^\]]*)\]\]/gm;
 
-	process(markdown: string, options: any) {
+	process(markdown: string, options: Options) {
 		if(options.enableLinks){
 			return markdown.replaceAll(this.regex,(sub, first, second) => {
 				return `[${second}](obsidian://open?vault=${encodeURI(this.utils.getVaultName())}&file=${encodeURI(first == undefined ? second : first)})`;

@@ -1,4 +1,5 @@
 import { CommentParser } from "./comment";
+import { Options } from "./options";
 
 export class FragmentProcessor {
 
@@ -10,7 +11,7 @@ export class FragmentProcessor {
 		this.parser = new CommentParser();
 	}
 
-	process(markdown: string, options: any) {
+	process(markdown: string, options: Options) {
 		let output = markdown;
 
 		markdown

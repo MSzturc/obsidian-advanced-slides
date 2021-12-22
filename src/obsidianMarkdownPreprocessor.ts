@@ -9,6 +9,7 @@ import { LatexProcessor } from "./latexProcessor";
 import { MermaidProcessor } from "./mermaidProcessor";
 import { MultipleFileProcessor } from "./multipleFileProcessor";
 import { ObsidianUtils } from "./obsidianUtils";
+import { Options } from "./options";
 
 export class ObsidianMarkdownPreprocessor {
 
@@ -36,7 +37,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.fragmentProcessor = new FragmentProcessor();
 	}
 
-	process(markdown: string, options: any) {
+	process(markdown: string, options: Options) {
 		const afterMultipleFileProcessor = this.multipleFileProcessor.process(markdown);
 		const afterMermaidProcessor = this.mermaidProcessor.process(afterMultipleFileProcessor);
 		const afterBlockProcessor = this.blockProcessor.process(afterMermaidProcessor);
