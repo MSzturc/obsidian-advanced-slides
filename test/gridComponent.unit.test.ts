@@ -50,3 +50,27 @@ test('Grid Component > Basic Syntax', () => {
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
+
+test('Grid Component > Position by Name', () => {
+
+	const input =
+`<grid drag="40 30" drop="topleft" style="background-color: red;">
+
+### Top Left
+</grid>
+
+<grid drop="right" style="background-color: green;">
+
+### Right Default Size
+</grid>
+
+<grid drag="80 30" drop="bottom" style="background-color: coral;">
+
+### Bottom
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});

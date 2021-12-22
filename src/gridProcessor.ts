@@ -5,7 +5,7 @@ export class GridProcessor {
 	private gridRegex = /<\s*grid([^>]+)>(.*?)<\/grid>/sg;
 	private gridPropertiesRegex = /([^=]*)\s*=\s*"([^"]*)"\s*|([^=]*)\s*=\s*'([^']*)'\s*/g;
 
-	private gridAttributeRegex = /^(-?\d*(?:px)?)(?:\s|x)(-?\d*(?:px)?)$/m;
+	private gridAttributeRegex = /^(?:(-?\d*(?:px)?)(?:\s|x)(-?\d*(?:px)?)|(center|top|bottom|left|right|topleft|topright|bottomleft|bottomright))$/m;
 
 	process(markdown: string, options: Options) {
 		let output = markdown;
@@ -76,34 +76,71 @@ export class GridProcessor {
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
-		const result = new Map<string, number>();
+		try {
+			const result = new Map<string, number>();
 
-		const drag = attributes.get('drag');
-		const drop = attributes.get('drop');
+			const drag = attributes.get('drag') ?? '480px 700px';
+			const drop = attributes.get('drop');
 
-		if (drag == undefined || drop == undefined) {
+			if (drop == undefined) {
+				return undefined;
+			}
+
+			const [, width, height] = this.gridAttributeRegex.exec(drag);
+			const [, x, y, name] = this.gridAttributeRegex.exec(drop);
+
+			if (width) {
+				result.set('width', this.toPixel(960, width));
+			}
+
+			if (height) {
+				result.set('height', this.toPixel(700, height));
+			}
+
+			if (name) {
+				const [nx, ny] = this.getXYof(name, result.get('width'), result.get('height'));
+
+				result.set('x', nx);
+				result.set('y', ny);
+			} else {
+				if (x) {
+					result.set('x', this.toPixel(960, x));
+				}
+
+				if (y) {
+					result.set('y', this.toPixel(700, y));
+				}
+			}
+			return result;
+		} catch (ex) {
 			return undefined;
 		}
+	}
 
-		const [, width, height] = this.gridAttributeRegex.exec(drag);
-		const [, x, y] = this.gridAttributeRegex.exec(drop);
+	getXYof(name: string, width: number, height: number): [number, number] {
 
-		if (width) {
-			result.set('width', this.toPixel(960, width));
+		switch (name) {
+			case "topleft":
+				return [0, 0];
+			case "topright":
+				return [960 - width, 0];
+			case "bottomleft":
+				return [0, 700 - height];
+			case "bottomright":
+				return [960 - width, 700 - height];
+			case "left":
+				return [0, (700 - height) / 2];
+			case "right":
+				return [960 - width, (700 - height) / 2];
+			case "top":
+				return [(960 - width) / 2, 0];
+			case "bottom":
+				return [(960 - width) / 2, 700 - height];
+			case "center":
+				return [(960 - width) / 2, (700 - height) / 2];
+			default:
+				return [0, 0];
 		}
-
-		if (height) {
-			result.set('height', this.toPixel(700, height));
-		}
-
-		if (x) {
-			result.set('x', this.toPixel(960, x));
-		}
-
-		if (y) {
-			result.set('y', this.toPixel(700, y));
-		}
-		return result;
 	}
 
 	toPixel(max: number, input: string): number {

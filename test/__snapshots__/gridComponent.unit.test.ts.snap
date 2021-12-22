@@ -33,3 +33,20 @@ exports[`Grid Component > Basic Syntax 2`] = `
 ### Bottom
 </div>"
 `;
+
+exports[`Grid Component > Position by Name 1`] = `
+"<div style=\\"position: fixed; left: 0px; top: 0px; height: 210px; width: 384px; background-color: red;\\" >
+
+### Top Left
+</div>
+
+<div style=\\"position: fixed; left: 480px; top: 0px; height: 700px; width: 480px; background-color: green;\\" >
+
+### Right Default Size
+</div>
+
+<div style=\\"position: fixed; left: 96px; top: 490px; height: 210px; width: 768px; background-color: coral;\\" >
+
+### Bottom
+</div>"
+`;
