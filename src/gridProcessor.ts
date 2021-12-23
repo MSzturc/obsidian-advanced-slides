@@ -74,10 +74,11 @@ export class GridProcessor {
 		const pad = this.paddingOf(attributes);
 		const opacity = this.opacityOf(attributes);
 		const border = this.borderOf(attributes);
+		const filter = this.filterOf(attributes);
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}" style="${flow}${bg}${pad}${opacity}${border}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
+		return `<div class="reset-margin${clazz}" style="${flow}${bg}${pad}${opacity}${border}${filter}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -168,6 +169,11 @@ export class GridProcessor {
 		return (border != undefined) ? `border: ${border}; ` : '';
 	}
 
+	filterOf(attributes: Map<string, string>){
+		const filter = attributes.get('filter');
+		return (filter != undefined) ? `filter: ${filter}; ` : '';
+	}
+
 	flowOf(attributes: Map<string, string>){
 		const flow = attributes.get('flow');
 
@@ -199,6 +205,7 @@ export class GridProcessor {
 		attributes.delete('pad');
 		attributes.delete('opacity');
 		attributes.delete('border');
+		attributes.delete('filter');
 
 		let result = '';
 
