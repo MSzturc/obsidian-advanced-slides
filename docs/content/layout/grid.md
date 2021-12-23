@@ -84,6 +84,8 @@ Bottom
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-basic2.png)
 
+{{%alert%}}When drap property is not specified, grid component uses a default size of **50 100**{{%/alert%}}
+
 ### Flow
 
 The following syntax is used to define a custom flow for a grid:
@@ -133,6 +135,35 @@ Heading
 ```
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-flow2.png)
+
+### Style
+
+#### Background
+
+The grid bg property is used to define a custom background for a grid. Children added to the grid are rendered on top of the background.
+
+	<grid  drag="width height" drop="x y" bg="color">
+
+Where the color option of the **bg** property takes any valid [CSS Color Value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value). The following sample demonstrates color backgrounds:
+
+```md
+<grid  drag="55 50" drop="topleft" bg="orange">
+
+### Make
+</grid>
+
+<grid  drag="55 50" drop="bottomright" bg="rgb(0,0,0)">
+
+### Noise
+</grid>
+
+<grid  drag="25 20" drop="center" bg="green" rotate="-15">
+
+### some
+</grid>
+```
+
+![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-bg.png)
 
 ### Attributes
 
