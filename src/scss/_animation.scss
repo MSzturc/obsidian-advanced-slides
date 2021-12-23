@@ -29,10 +29,10 @@
 
 @keyframes slideRightIn {
     from {
-        transform: translate3d(-200px, 0px, 0px);
+        transform: translate3d(-200px, 0, 0);
     }
     to {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -45,10 +45,10 @@
 
 @keyframes slideLeftIn {
     from {
-        transform: translate3d(200px, 0px, 0px);
+        transform: translate3d(200px, 0, 0);
     }
     to {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -61,10 +61,10 @@
 
 @keyframes slideUpIn {
     from {
-        transform: translate3d(0px, 150px, 0px);
+        transform: translate3d(0, 150px, 0);
     }
     to {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -77,10 +77,10 @@
 
 @keyframes slideDownIn {
     from {
-        transform: translate3d(0px, -150px, 0px);
+        transform: translate3d(0, -150px, 0);
     }
     to {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -110,10 +110,10 @@
 
 @keyframes slideRightOut {
     from {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0, 0, 0);
     }
     to {
-        transform: translate3d(200px, 0px, 0px);
+        transform: translate3d(200px, 0, 0);
     }
 }
 
@@ -126,10 +126,10 @@
 
 @keyframes slideLeftOut {
     from {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0, 0, 0);
     }
     to {
-        transform: translate3d(-200px, 0px, 0px);
+        transform: translate3d(-200px, 0, 0);
     }
 }
 
@@ -142,10 +142,10 @@
 
 @keyframes slideUpOut {
     from {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0, 0, 0);
     }
     to {
-        transform: translate3d(0px, -150px, 0px);
+        transform: translate3d(0, -150px, 0);
     }
 }
 
@@ -158,10 +158,10 @@
 
 @keyframes slideDownOut {
     from {
-        transform: translate3d(0px, 0px, 0px);
+        transform: translate3d(0, 0, 0);
     }
     to {
-        transform: translate3d(0px, 150px, 0px);
+        transform: translate3d(0, 150px, 0);
     }
 }
 
