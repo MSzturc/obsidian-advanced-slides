@@ -70,10 +70,11 @@ export class GridProcessor {
 		const clazz = this.classOf(attributes);
 
 		const flow = this.flowOf(attributes);
+		const bg = this.backgroundOf(attributes);
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}" style="${flow} position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
+		return `<div class="reset-margin${clazz}" style="${flow}${bg}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -144,15 +145,20 @@ export class GridProcessor {
 		}
 	}
 
+	backgroundOf(attributes: Map<string, string>){
+		const bg = attributes.get('bg');
+		return (bg != undefined) ? `background-color: ${bg}; ` : '';
+	}
+
 	flowOf(attributes: Map<string, string>){
 		const flow = attributes.get('flow');
 
 		switch (flow) {
 			case "row":
-				return `display: flex; flex-direction: row; align-items: center; justify-content: space-evenly;`;
+				return `display: flex; flex-direction: row; align-items: center; justify-content: space-evenly; `;
 			case "col":
 			default:
-				return `display: flex; flex-direction: column; justify-content: space-evenly;`;
+				return `display: flex; flex-direction: column; justify-content: space-evenly; `;
 		}
 	}
 
@@ -171,6 +177,7 @@ export class GridProcessor {
 		attributes.delete('style');
 		attributes.delete('class');
 		attributes.delete('flow');
+		attributes.delete('bg');
 
 		let result = '';
 
