@@ -68,11 +68,12 @@ export class GridProcessor {
 
 		const otherStyle = this.styleOf(attributes);
 		const clazz = this.classOf(attributes);
-		const classString = clazz ? ` class="${clazz}"` : ' ';
+
+		const flow = this.flowOf(attributes);
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div${classString}style="position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
+		return `<div class="reset-margin${clazz}" style="${flow} position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -143,6 +144,18 @@ export class GridProcessor {
 		}
 	}
 
+	flowOf(attributes: Map<string, string>){
+		const flow = attributes.get('flow');
+
+		switch (flow) {
+			case "row":
+				return `display: flex; flex-direction: row; align-items: center; justify-content: space-evenly;`;
+			case "col":
+			default:
+				return `display: flex; flex-direction: column; justify-content: space-evenly;`;
+		}
+	}
+
 	toPixel(max: number, input: string): number {
 		if (input.toLowerCase().endsWith('px')) {
 			return Number(input.toLowerCase().replace('px', ''));
@@ -157,6 +170,7 @@ export class GridProcessor {
 		attributes.delete('drop');
 		attributes.delete('style');
 		attributes.delete('class');
+		attributes.delete('flow');
 
 		let result = '';
 
@@ -169,7 +183,7 @@ export class GridProcessor {
 	}
 
 	classOf(attributes: Map<string, string>): string {
-		return attributes.has('class') ? attributes.get('class') : undefined;
+		return attributes.has('class') ? ' ' + attributes.get('class') : '';
 	}
 
 	styleOf(attributes: Map<string, string>): string {

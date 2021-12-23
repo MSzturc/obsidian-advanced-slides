@@ -9,3 +9,8 @@
 	--dbg-size: 1px;
     border: 1px solid red;
 }
+
+.reset-margin > * {
+	--r-block-margin: 0;
+	--r-heading-margin: 0;
+}

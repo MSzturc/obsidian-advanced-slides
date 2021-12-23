@@ -1,6 +1,7 @@
 import { ObsidianMarkdownPreprocessor } from "src/obsidianMarkdownPreprocessor";
+import { when } from "ts-mockito";
 import { prepare } from "./testUtils";
-import { obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
+import { MockedObsidianUtils, obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
 
 
 test('Grid Component > Basic Syntax', () => {
@@ -74,3 +75,81 @@ test('Grid Component > Position by Name', () => {
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
+
+test('Grid Component > Position Coordinates', () => {
+
+	const input =
+`<grid drag="40 50" drop="10 15" style="background-color: orange;">
+
+### Positive X, Y
+</grid>
+
+<grid drag="30 30" drop="-40px 40px" style="background-color: red;">
+
+### Negative X, Positive Y
+</grid>
+
+<grid drag="40 40" drop="-5 -20" style="background-color: blue;">
+
+### Negative X, Y
+</grid>
+
+<grid drag="100 10" drop="0 -5" style="background-color: green;">
+
+### Positive X, Negative Y
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Column Flow', () => {
+
+	when(MockedObsidianUtils.getAbsolutePath("Image.jpg.md")).thenCall( (arg) => {
+		return null;
+	});
+
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall( (arg) => {
+		return '/documentation/Image.jpg';
+	});
+
+	const input =
+`<grid  drag="40 100" drop="center" style="background-color: coral;" flow="col">
+
+### Lorem
+![[Image.jpg]]
+### Ipsum
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Row Flow', () => {
+
+	when(MockedObsidianUtils.getAbsolutePath("Image.jpg|350.md")).thenCall( (arg) => {
+		return null;
+	});
+
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall( (arg) => {
+		return '/documentation/Image.jpg';
+	});
+
+	const input =
+`<grid  drag="100 40" drop="center" style="background-color: coral;" flow="row">
+
+### Lorem
+![[Image.jpg|350]]
+### Ipsum
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+

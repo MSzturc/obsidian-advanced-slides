@@ -1,52 +1,94 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grid Component > Basic Syntax 1`] = `
-"<div style=\\"position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral;\\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral;\\" >
 
 ### Left
 </div>
 
-<div style=\\"position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral;\\" >
 
 ### Right
 </div>
 
-<div style=\\"position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral;\\" >
 
 ### Bottom
 </div>"
 `;
 
 exports[`Grid Component > Basic Syntax 2`] = `
-"<div style=\\"position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral;\\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral;\\" >
 
 ### Left
 </div>
 
-<div style=\\"position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral;\\" >
 
 ### Right
 </div>
 
-<div style=\\"position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral;\\" >
 
 ### Bottom
 </div>"
 `;
 
+exports[`Grid Component > Column Flow 1`] = `
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 288px; top: 0px; height: 700px; width: 384px; background-color: coral;\\" >
+
+### Lorem
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
+
+### Ipsum
+</div>"
+`;
+
+exports[`Grid Component > Position Coordinates 1`] = `
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 96px; top: 105px; height: 350px; width: 384px; background-color: orange;\\" >
+
+### Positive X, Y
+</div>
+
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 632px; top: 40px; height: 210px; width: 288px; background-color: red;\\" >
+
+### Negative X, Positive Y
+</div>
+
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 528px; top: 280px; height: 280px; width: 384px; background-color: blue;\\" >
+
+### Negative X, Y
+</div>
+
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 0px; top: 595px; height: 70px; width: 960px; background-color: green;\\" >
+
+### Positive X, Negative Y
+</div>"
+`;
+
 exports[`Grid Component > Position by Name 1`] = `
-"<div style=\\"position: fixed; left: 0px; top: 0px; height: 210px; width: 384px; background-color: red;\\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 0px; top: 0px; height: 210px; width: 384px; background-color: red;\\" >
 
 ### Top Left
 </div>
 
-<div style=\\"position: fixed; left: 480px; top: 0px; height: 700px; width: 480px; background-color: green;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 480px; top: 0px; height: 700px; width: 480px; background-color: green;\\" >
 
 ### Right Default Size
 </div>
 
-<div style=\\"position: fixed; left: 96px; top: 490px; height: 210px; width: 768px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 96px; top: 490px; height: 210px; width: 768px; background-color: coral;\\" >
 
 ### Bottom
+</div>"
+`;
+
+exports[`Grid Component > Row Flow 1`] = `
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: row; align-items: center; justify-content: space-evenly; position: fixed; left: 0px; top: 210px; height: 280px; width: 960px; background-color: coral;\\" >
+
+### Lorem
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 350px\\" class=\\"\\" ></img></p>
+
+### Ipsum
 </div>"
 `;
