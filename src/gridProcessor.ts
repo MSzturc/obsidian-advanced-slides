@@ -75,10 +75,11 @@ export class GridProcessor {
 		const opacity = this.opacityOf(attributes);
 		const border = this.borderOf(attributes);
 		const filter = this.filterOf(attributes);
+		const rotate = this.rotateOf(attributes);
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}" style="${flow}${bg}${pad}${opacity}${border}${filter}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
+		return `<div class="reset-margin${clazz}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -174,6 +175,11 @@ export class GridProcessor {
 		return (filter != undefined) ? `filter: ${filter}; ` : '';
 	}
 
+	rotateOf(attributes: Map<string, string>){
+		const rotate = attributes.get('rotate');
+		return (rotate != undefined) ? `transform: rotate(${rotate.toLowerCase().endsWith('deg')?rotate : rotate +'deg'}); ` : '';
+	}
+
 	flowOf(attributes: Map<string, string>){
 		const flow = attributes.get('flow');
 
@@ -206,6 +212,7 @@ export class GridProcessor {
 		attributes.delete('opacity');
 		attributes.delete('border');
 		attributes.delete('filter');
+		attributes.delete('rotate');
 
 		let result = '';
 
