@@ -76,10 +76,11 @@ export class GridProcessor {
 		const border = this.borderOf(attributes);
 		const filter = this.filterOf(attributes);
 		const rotate = this.rotateOf(attributes);
+		const animate = this.animationOf(attributes);
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
+		return `<div class="reset-margin${clazz}${animate}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -150,6 +151,11 @@ export class GridProcessor {
 		}
 	}
 
+	animationOf(attributes: Map<string, string>){
+		const animate = attributes.get('animate');
+		return (animate != undefined) ? ` ${animate}` : '';
+	}
+
 	backgroundOf(attributes: Map<string, string>){
 		const bg = attributes.get('bg');
 		return (bg != undefined) ? `background-color: ${bg}; ` : '';
@@ -213,6 +219,7 @@ export class GridProcessor {
 		attributes.delete('border');
 		attributes.delete('filter');
 		attributes.delete('rotate');
+		attributes.delete('animate');
 
 		let result = '';
 
