@@ -72,10 +72,11 @@ export class GridProcessor {
 		const flow = this.flowOf(attributes);
 		const bg = this.backgroundOf(attributes);
 		const pad = this.paddingOf(attributes);
+		const opacity = this.opacityOf(attributes);
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}" style="${flow}${bg}${pad}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
+		return `<div class="reset-margin${clazz}" style="${flow}${bg}${pad}${opacity}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -156,6 +157,10 @@ export class GridProcessor {
 		return (pad != undefined) ? `box-sizing: border-box; padding: ${pad}; ` : '';
 	}
 	
+	opacityOf(attributes: Map<string, string>){
+		const opacity = attributes.get('opacity');
+		return (opacity != undefined) ? `opacity: ${opacity}; ` : '';
+	}
 
 	flowOf(attributes: Map<string, string>){
 		const flow = attributes.get('flow');
@@ -186,6 +191,7 @@ export class GridProcessor {
 		attributes.delete('flow');
 		attributes.delete('bg');
 		attributes.delete('pad');
+		attributes.delete('opacity');
 
 		let result = '';
 
