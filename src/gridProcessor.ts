@@ -77,10 +77,11 @@ export class GridProcessor {
 		const filter = this.filterOf(attributes);
 		const rotate = this.rotateOf(attributes);
 		const animate = this.animationOf(attributes);
+		const fragment = this.fragmentOf(attributes);
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}${animate}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
+		return `<div class="reset-margin${clazz}${animate}${fragment}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -156,6 +157,11 @@ export class GridProcessor {
 		return (animate != undefined) ? ` ${animate}` : '';
 	}
 
+	fragmentOf(attributes: Map<string, string>){
+		const animate = attributes.get('frag');
+		return (animate != undefined) ? ` fragment` : '';
+	}
+
 	backgroundOf(attributes: Map<string, string>){
 		const bg = attributes.get('bg');
 		return (bg != undefined) ? `background-color: ${bg}; ` : '';
@@ -220,6 +226,7 @@ export class GridProcessor {
 		attributes.delete('filter');
 		attributes.delete('rotate');
 		attributes.delete('animate');
+		this.remap(attributes, 'frag', 'data-fragment-index');
 
 		let result = '';
 
@@ -229,6 +236,14 @@ export class GridProcessor {
 			}
 		}
 		return ' ' + result.trim();
+	}
+
+	remap(attributes: Map<string, string>, src : string, dst: string){
+		const value = attributes.get(src);
+		if( value){
+			attributes.set(dst,value);
+			attributes.delete(src);
+		}
 	}
 
 	classOf(attributes: Map<string, string>): string {
