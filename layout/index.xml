@@ -18,5 +18,17 @@ Attributes even By setting the even attribute the Content of the split element g
 gap By adding the gap attribute there will be a gap between each element:</description>
     </item>
     
+    <item>
+      <title>Grid Component</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/layout/grid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/layout/grid/</guid>
+      <description>By using the &amp;lt;grid&amp;gt; tag you are able to layout the content of your slide in parts.
+Concept Grid layouts drag-and-drop is used to size and position content of your slides.
+ Drag to size a block of content on your slide, then Drop to position that block anywhere on the slide.  Basic Syntax The following syntax is used to drag-and-drop a grid in Advanced Slides:
+&amp;lt;grid drag=&amp;quot;width height&amp;quot; drop=&amp;quot;x y&amp;quot;&amp;gt;  The width and height values of the drag property define the size of the area in which the content will be displayed.</description>
+    </item>
+    
   </channel>
 </rss>

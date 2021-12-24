@@ -56,6 +56,18 @@ gap By adding the gap attribute there will be a gap between each element:</descr
     </item>
     
     <item>
+      <title>Grid Component</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/layout/grid/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/layout/grid/</guid>
+      <description>By using the &amp;lt;grid&amp;gt; tag you are able to layout the content of your slide in parts.
+Concept Grid layouts drag-and-drop is used to size and position content of your slides.
+ Drag to size a block of content on your slide, then Drop to position that block anywhere on the slide.  Basic Syntax The following syntax is used to drag-and-drop a grid in Advanced Slides:
+&amp;lt;grid drag=&amp;quot;width height&amp;quot; drop=&amp;quot;x y&amp;quot;&amp;gt;  The width and height values of the drag property define the size of the area in which the content will be displayed.</description>
+    </item>
+    
+    <item>
       <title>Settings</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/getting-start/settings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -265,7 +277,7 @@ The notes window also gives you a preview of the next upcoming slide so it may b
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 239 commits   @actions-user 15 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 262 commits   @actions-user 16 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
     </item>
     
   </channel>
