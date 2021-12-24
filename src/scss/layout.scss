@@ -19,3 +19,15 @@
 .flex-even > * {
 	flex: 1;
 }
+
+//Get rid of color definition in layout (theme should handle this)
+
+.has-light-background {
+	--r-main-color: #000;
+	--r-heading-color: #000;
+}
+
+.has-dark-background {
+	--r-main-color: #fff;
+	--r-heading-color: #fff;
+}

@@ -1,4 +1,5 @@
 import { Options } from "./options";
+import Color from "color";
 
 export class GridProcessor {
 
@@ -71,6 +72,7 @@ export class GridProcessor {
 		const flow = this.flowOf(attributes);
 		const flowClass = this.flowClassOf(attributes);
 		const bg = this.backgroundOf(attributes);
+		const bgClass = this.backgroundClassOf(attributes);
 		const pad = this.paddingOf(attributes);
 		const opacity = this.opacityOf(attributes);
 		const border = this.borderOf(attributes);
@@ -82,7 +84,7 @@ export class GridProcessor {
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}${animate}${fragment}${flowClass}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}${boxSizing}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>\n${inner}</div>`;
+		return `<div class="reset-margin${clazz}${animate}${fragment}${flowClass}${bgClass}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}${boxSizing}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>\n${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -166,6 +168,17 @@ export class GridProcessor {
 	backgroundOf(attributes: Map<string, string>){
 		const bg = attributes.get('bg');
 		return (bg != undefined) ? `background-color: ${bg}; ` : '';
+	}
+
+	backgroundClassOf(attributes: Map<string, string>){
+		const bg = attributes.get('bg');
+
+		if(bg != undefined){
+			const color = Color(bg);
+			return color.isLight() ? ' has-light-background' : ' has-dark-background';
+		} {
+			return '';
+		}
 	}
 	
 	paddingOf(attributes: Map<string, string>){
