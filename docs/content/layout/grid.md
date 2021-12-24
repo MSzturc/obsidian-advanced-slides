@@ -226,6 +226,28 @@ The grid opacity property is used to control the transparency of a grid section.
 
 Where the **level** option of the **opacity** property can take any value from **0.0** to **1.0**. A grid section with an opacity value of 0.0 is invisible.
 
+#### Rotate
+
+The grid rotate property is used to control the 2D rotation of a grid section. Rotation on a grid section also affect all associated children.
+
+	<grid  drag="width height" drop="x y" rotate="deg">
+
+Where the **deg** option of the **rotate** property is a postive or negative value indicates a degree of rotation from 0 to 360 degrees.
+
+The following sample demonstrates rotation:
+
+```md
+<grid  drag="30 25" drop="12 15" bg="#B565A7" rotate="-10">
+Hello
+</grid>
+
+<grid  drag="40 25" drop="-12 -25" bg="#D65076" rotate="40">
+World!
+</grid>
+```
+
+![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-rotate.png)
+
 #### Padding
 
 The grid **pad** property is used to define custom padding for grid. Custom padding can help to enhance the overall appearance of content by controlling the space around grid children.
