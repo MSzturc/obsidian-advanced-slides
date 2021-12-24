@@ -191,6 +191,32 @@ thick dotted blue
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-border.png)
 
+#### Animation
+
+The grid animate property is used to define a slide animation a grid section. The animation applies to the grid and all associated children.
+
+	<grid  drag="width height" drop="x y" animate="type speed">
+
+
+Where the **type** option of the **animate** property can take one of the following animation types:
+
+- fadeIn
+- fadeOut
+- slideRightIn
+- slideLeftIn
+- slideUpIn
+- slideDownIn
+- slideRightOut
+- slideLeftOut
+- slideUpOut
+- slideDownOut
+- scaleUp
+- scaleUpOut
+- scaleDown
+- scaleDownOut
+
+{{%alert%}}The **speed** option is optional. When specified it accepts a value of slower or faster.{{%/alert%}}
+
 #### Padding
 
 The grid **pad** property is used to define custom padding for grid. Custom padding can help to enhance the overall appearance of content by controlling the space around grid children.
