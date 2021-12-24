@@ -136,7 +136,7 @@ Heading
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-flow2.png)
 
-### Style
+### Attributes
 
 #### Background
 
@@ -165,7 +165,34 @@ Where the color option of the **bg** property takes any valid [CSS Color Value](
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-bg.png)
 
-### Attributes
+#### Padding
+
+The grid **pad** property is used to define custom padding for grid. Custom padding can help to enhance the overall appearance of content by controlling the space around grid children.
+
+	<grid  drag="width height" drop="x y" pad="top right bottom left">
+
+Where the **top**, **right**, **bottom**, and **left** options on the **pad** property all take pixel size values. Following standard [CSS Padding Rules](https://developer.mozilla.org/en-US/docs/Web/CSS/padding) these four options can also be specified with just two values or even a single value, for example:
+
+	<grid  drag="width height" drop="x y" pad="10px 15px">
+
+This sample grid above would display with 10px padding top and bottom and 15px padding left and right. The following sample demonstrates padding:
+
+```md
+<grid  drag="50 50" drop="topleft" bg="orange" pad="0 50px">
+
+###### Lorem Ipsum wasnt simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book here there
+</grid>
+
+<grid  drag="50 50" drop="bottomright" bg="orange" pad="20px">
+![[Image.jpg|800]]
+</grid>
+```
+
+![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-pad.png)
+
+{{%alert%}}Padding introduced by this property does not increase the size of the grid itself. Rather it reduces the size of the area available to render children within the grid.{{%/alert%}}
+
+### Reference
 
 This guide provides a quick reference to the full set of attributes that can be set on grid component:
 
