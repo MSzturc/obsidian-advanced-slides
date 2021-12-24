@@ -165,6 +165,32 @@ Where the color option of the **bg** property takes any valid [CSS Color Value](
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-bg.png)
 
+#### Border
+
+The grid border property is used to define a custom border for a grid section. Custom borders can help to highlight or differentiate grids on your slide.
+
+	<grid  drag="width height" drop="x y" border="width style color">
+
+Where the **width** option of the **border** property takes values of *thin*, *medium*, *thick* or a pixel value such as **10px**. The style option takes values of *dotted*, *solid*, *dashed*, *inset*, or *outset*. And the **color** option takes any valid [CSS Color Value](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value).
+
+The following sample demonstrates borders:
+
+```md
+<grid  drag="30 25" drop="left" border="thick dotted blue">
+thick dotted blue
+</grid>
+
+<grid  drag="30 25" drop="center" border="4px solid white">
+20px solid white
+</grid>
+
+<grid  drag="30 25" drop="right" border="medium dashed red">
+thick dotted blue
+</grid>
+```
+
+![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-border.png)
+
 #### Padding
 
 The grid **pad** property is used to define custom padding for grid. Custom padding can help to enhance the overall appearance of content by controlling the space around grid children.
