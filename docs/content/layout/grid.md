@@ -318,18 +318,23 @@ Where the **index** option of the **frag** property is a postive value indicates
 The following sample demonstrates fragments:
 
 ```md
-<grid drag="60 55" drop="5 10" bg="red" frag="1">
-60 x 55
+<grid drag="60 55" drop="5 10" bg="red">
+
+### Fragments:
++ Right
++ Bottom
 </grid>
 
-<grid drag="25 55" drop="-5 10" style=bg="green" frag="2">
+<grid drag="25 55" drop="-5 10" bg="green" frag="1">
 25 x 55
 </grid>
 
-<grid drag="90 20" drop="5 -10" bg="gray" frag="3">
+<grid drag="90 20" drop="5 -10" bg="gray" frag="2">
 90  x 20
 </grid>
 ```
+
+As you have surely seen in the example, you can combine Fragments and [Fragment Lists]({{%relref "fragments.md"%}}) with each other. By default, Fragment Lists generate indexes that start at 1.
 
 ### Reference
 
