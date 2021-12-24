@@ -217,6 +217,15 @@ Where the **type** option of the **animate** property can take one of the follow
 
 {{%alert%}}The **speed** option is optional. When specified it accepts a value of slower or faster.{{%/alert%}}
 
+#### Opacity
+
+The grid opacity property is used to control the transparency of a grid section. Adjusting the opacity of a section also affects the opacity of all associated children.
+
+	<grid  drag="width height" drop="x y" opacity="level">
+
+
+Where the **level** option of the **opacity** property can take any value from **0.0** to **1.0**. A grid section with an opacity value of 0.0 is invisible.
+
 #### Padding
 
 The grid **pad** property is used to define custom padding for grid. Custom padding can help to enhance the overall appearance of content by controlling the space around grid children.
