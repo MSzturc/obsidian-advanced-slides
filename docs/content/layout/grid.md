@@ -226,6 +226,38 @@ The grid opacity property is used to control the transparency of a grid section.
 
 Where the **level** option of the **opacity** property can take any value from **0.0** to **1.0**. A grid section with an opacity value of 0.0 is invisible.
 
+#### Filter
+
+The grid filter property is used to define filter effects for a grid section. Filter effects on a grid section also affect all associated children.
+
+	<grid  drag="width height" drop="x y" filter="effect">
+
+
+Where the **effect** option of the **filter** property can take one of the following types:
+
+- blur
+- bright
+- contrast
+- grayscale
+- hue
+- invert
+- saturate
+- sepia
+
+The following sample demonstrates filters:
+
+```md
+<grid  drag="30 25" drop="5 15" bg="#B565A7" filter="blur(10px)">
+Text is too blurry
+</grid>
+
+<grid  drag="50 50" drop="-12 -25" bg="white" filter="grayscale()">
+![[Image.jpg]]
+</grid>
+```
+
+![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-filter.png)
+
 #### Rotate
 
 The grid rotate property is used to control the 2D rotation of a grid section. Rotation on a grid section also affect all associated children.
