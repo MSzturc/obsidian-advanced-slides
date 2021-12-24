@@ -153,3 +153,140 @@ test('Grid Component > Row Flow', () => {
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Grid Component > Attributes > Background', () => {
+
+	const input =
+`<grid  drag="55 50" drop="topright" bg="orange">
+
+### Make
+</grid>
+
+<grid  drag="55 50" drop="bottomleft" bg="rgb(0,0,0)">
+
+### Noise
+</grid>
+
+<grid  drag="25 20" drop="center" bg="green" rotate="-15">
+
+### some
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Border', () => {
+
+	const input =
+`<grid  drag="30 25" drop="left" border="thick dotted blue">
+thick dotted blue
+</grid>
+
+<grid  drag="30 25" drop="center" border="4px solid white">
+20px solid white
+</grid>
+
+<grid  drag="30 25" drop="right" border="medium dashed red">
+thick dotted blue
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Filter', () => {
+
+	when(MockedObsidianUtils.getAbsolutePath("Image.jpg.md")).thenCall( (arg) => {
+		return null;
+	});
+
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall( (arg) => {
+		return '/documentation/Image.jpg';
+	});
+
+	const input =
+`<grid  drag="30 25" drop="5 15" bg="#B565A7" filter="blur(10px)">
+Text is too blurry
+</grid>
+
+<grid  drag="50 50" drop="-12 -25" bg="white" filter="grayscale()">
+![[Image.jpg]]
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Rotate', () => {
+
+	const input =
+`<grid  drag="30 25" drop="top" bg="#B565A7" rotate="-10">
+Hello
+</grid>
+
+<grid  drag="40 25" drop="bottomright" bg="#D65076" rotate="40">
+World!
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Padding', () => {
+
+	when(MockedObsidianUtils.getAbsolutePath("Image.jpg|800.md")).thenCall( (arg) => {
+		return null;
+	});
+
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall( (arg) => {
+		return '/documentation/Image.jpg';
+	});
+
+	const input =
+`<grid  drag="50 50" drop="topleft" bg="orange" pad="0 50px">
+
+###### Lorem Ipsum wasnt simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book here there
+</grid>
+
+<grid  drag="50 50" drop="bottomright" bg="orange" pad="20px">
+![[Image.jpg|800]]
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Padding', () => {
+
+	const input =
+`<grid drag="60 55" drop="5 10" bg="red">
+
+### Fragments:
++ Right
++ Bottom
+</grid>
+
+<grid drag="25 55" drop="-5 10" bg="green" frag="1">
+Right Grid
+</grid>
+
+<grid drag="90 20" drop="5 -10" bg="gray" frag="2">
+Bottom Grid
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
