@@ -69,6 +69,7 @@ export class GridProcessor {
 		const clazz = this.classOf(attributes);
 
 		const flow = this.flowOf(attributes);
+		const flowClass = this.flowClassOf(attributes);
 		const bg = this.backgroundOf(attributes);
 		const pad = this.paddingOf(attributes);
 		const opacity = this.opacityOf(attributes);
@@ -80,7 +81,7 @@ export class GridProcessor {
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}${animate}${fragment}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
+		return `<div class="reset-margin${clazz}${animate}${fragment}${flowClass}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -201,6 +202,11 @@ export class GridProcessor {
 			default:
 				return `display: flex; flex-direction: column; justify-content: space-evenly; `;
 		}
+	}
+
+	flowClassOf(attributes: Map<string, string>){
+		const flow = attributes.get('flow');
+		return (flow == "row") ? ` flex-even` : '';
 	}
 
 	toPixel(max: number, input: string): number {

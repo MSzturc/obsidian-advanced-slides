@@ -15,3 +15,7 @@
 	--r-block-margin: 0;
 	--r-heading-margin: 0;
 }
+
+.flex-even > * {
+	flex: 1;
+}

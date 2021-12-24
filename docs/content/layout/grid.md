@@ -128,9 +128,10 @@ The following sample slide helps to clarify these concepts:
 
 ```md
 <grid  drag="100 40" drop="center" bg="coral" flow="row">
+
 Left
 ![[Image.jpg|350]]
-**Lorem Ipsum**<br> is simply<br> dummy text
+**Lorem Ipsum** is simply dummy text
 </grid>
 ```
 
