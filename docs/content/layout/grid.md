@@ -122,15 +122,15 @@ When `flow=row` the following layout and spacing behaviors occur within the grid
 - An equal amount of space is injected between each child
 - An equal amount of space is injected at the start and end of the grid
 
-The following sample slide screenshot helps to clarify this concept. Note, the sample block width here is 100% of the slide width:
+The following sample slide helps to clarify this concept. Note, the grid width here is 100% of the slide width:
 
 The following sample slide helps to clarify these concepts:
 
 ```md
-<grid  drag="40 100" drop="center" bg="coral" flow="col">
-Heading
-![[Image.jpg]]
-**Lorem Ipsum** is simply dummy text
+<grid  drag="100 40" drop="center" bg="coral" flow="row">
+Left
+![[Image.jpg|350]]
+**Lorem Ipsum**<br> is simply<br> dummy text
 </grid>
 ```
 
