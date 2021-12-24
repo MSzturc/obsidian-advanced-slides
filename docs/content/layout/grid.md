@@ -128,7 +128,6 @@ The following sample slide helps to clarify these concepts:
 
 ```md
 <grid  drag="100 40" drop="center" bg="coral" flow="row">
-
 Left
 ![[Image.jpg|350]]
 **Lorem Ipsum** is simply dummy text
@@ -149,17 +148,14 @@ Where the color option of the **bg** property takes any valid [CSS Color Value](
 
 ```md
 <grid  drag="55 50" drop="topleft" bg="orange">
-
 ### Make
 </grid>
 
 <grid  drag="55 50" drop="bottomright" bg="rgb(0,0,0)">
-
 ### Noise
 </grid>
 
 <grid  drag="25 20" drop="center" bg="green" rotate="-15">
-
 ### some
 </grid>
 ```
@@ -295,7 +291,6 @@ This sample grid above would display with 10px padding top and bottom and 15px p
 
 ```md
 <grid  drag="50 50" drop="topleft" bg="orange" pad="0 50px">
-
 ###### Lorem Ipsum wasnt simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book here there
 </grid>
 
@@ -320,7 +315,6 @@ The following sample demonstrates fragments:
 
 ```md
 <grid drag="60 55" drop="5 10" bg="red">
-
 ### Fragments:
 + Right
 + Bottom

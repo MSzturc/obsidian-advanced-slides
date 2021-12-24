@@ -20,14 +20,17 @@ exports[`Grid Component > Attributes > Background 1`] = `
 
 exports[`Grid Component > Attributes > Border 1`] = `
 "<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: thick dotted blue; position: fixed; left: 0px; top: 262.5px; height: 175px; width: 288px; \\" >
+
 thick dotted blue
 </div>
 
 <div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: 4px solid white; position: fixed; left: 336px; top: 262.5px; height: 175px; width: 288px; \\" >
+
 20px solid white
 </div>
 
 <div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: medium dashed red; position: fixed; left: 672px; top: 262.5px; height: 175px; width: 288px; \\" >
+
 thick dotted blue
 </div>
 <!-- .slide: class=\\"stack\\" -->"
@@ -35,10 +38,12 @@ thick dotted blue
 
 exports[`Grid Component > Attributes > Filter 1`] = `
 "<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #B565A7; filter: blur(10px); position: fixed; left: 48px; top: 105px; height: 175px; width: 288px; \\" >
+
 Text is too blurry
 </div>
 
 <div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: white; filter: grayscale(); position: fixed; left: 364.79999999999995px; top: 175px; height: 350px; width: 480px; \\" >
+
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
 
 </div>
@@ -52,6 +57,7 @@ exports[`Grid Component > Attributes > Padding 1`] = `
 </div>
 
 <div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; box-sizing: border-box; padding: 20px; position: fixed; left: 480px; top: 350px; height: 350px; width: 480px; \\" >
+
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\" class=\\"\\" ></img></p>
 
 </div>
@@ -67,10 +73,12 @@ exports[`Grid Component > Attributes > Padding 2`] = `
 </div>
 
 <div class=\\"reset-margin fragment\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: green; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; \\" data-fragment-index=\\"1\\">
+
 Right Grid
 </div>
 
 <div class=\\"reset-margin fragment\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: gray; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; \\" data-fragment-index=\\"2\\">
+
 Bottom Grid
 </div>
 <!-- .slide: class=\\"stack\\" -->"
@@ -78,10 +86,12 @@ Bottom Grid
 
 exports[`Grid Component > Attributes > Rotate 1`] = `
 "<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #B565A7; transform: rotate(-10deg); position: fixed; left: 336px; top: 0px; height: 175px; width: 288px; \\" >
+
 Hello
 </div>
 
 <div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #D65076; transform: rotate(40deg); position: fixed; left: 576px; top: 525px; height: 175px; width: 384px; \\" >
+
 World!
 </div>
 <!-- .slide: class=\\"stack\\" -->"

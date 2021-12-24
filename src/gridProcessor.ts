@@ -81,7 +81,7 @@ export class GridProcessor {
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}${animate}${fragment}${flowClass}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>${inner}</div>`;
+		return `<div class="reset-margin${clazz}${animate}${fragment}${flowClass}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>\n${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
