@@ -78,10 +78,11 @@ export class GridProcessor {
 		const rotate = this.rotateOf(attributes);
 		const animate = this.animationOf(attributes);
 		const fragment = this.fragmentOf(attributes);
+		const boxSizing = this.boxSizingOf(attributes);
 
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}${animate}${fragment}${flowClass}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>\n${inner}</div>`;
+		return `<div class="reset-margin${clazz}${animate}${fragment}${flowClass}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}${boxSizing}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>\n${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -169,7 +170,12 @@ export class GridProcessor {
 	
 	paddingOf(attributes: Map<string, string>){
 		const pad = attributes.get('pad');
-		return (pad != undefined) ? `box-sizing: border-box; padding: ${pad}; ` : '';
+		return (pad != undefined) ? `padding: ${pad}; ` : '';
+	}
+
+	boxSizingOf(attributes: Map<string, string>){
+		const boxSizingRequired = attributes.has('pad') || attributes.has('border');
+		return (boxSizingRequired) ? `box-sizing: border-box; ` : '';
 	}
 	
 	opacityOf(attributes: Map<string, string>){

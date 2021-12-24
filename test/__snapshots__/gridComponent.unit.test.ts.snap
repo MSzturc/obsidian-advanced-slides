@@ -19,17 +19,17 @@ exports[`Grid Component > Attributes > Background 1`] = `
 `;
 
 exports[`Grid Component > Attributes > Border 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: thick dotted blue; position: fixed; left: 0px; top: 262.5px; height: 175px; width: 288px; \\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: thick dotted blue; box-sizing: border-box; position: fixed; left: 0px; top: 262.5px; height: 175px; width: 288px; \\" >
 
 thick dotted blue
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: 4px solid white; position: fixed; left: 336px; top: 262.5px; height: 175px; width: 288px; \\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: 4px solid white; box-sizing: border-box; position: fixed; left: 336px; top: 262.5px; height: 175px; width: 288px; \\" >
 
 20px solid white
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: medium dashed red; position: fixed; left: 672px; top: 262.5px; height: 175px; width: 288px; \\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: medium dashed red; box-sizing: border-box; position: fixed; left: 672px; top: 262.5px; height: 175px; width: 288px; \\" >
 
 thick dotted blue
 </div>
@@ -51,12 +51,12 @@ Text is too blurry
 `;
 
 exports[`Grid Component > Attributes > Padding 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; box-sizing: border-box; padding: 0 50px; position: fixed; left: 0px; top: 0px; height: 350px; width: 480px; \\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; padding: 0 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 350px; width: 480px; \\" >
 
 ###### Lorem Ipsum wasnt simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book here there
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; box-sizing: border-box; padding: 20px; position: fixed; left: 480px; top: 350px; height: 350px; width: 480px; \\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; padding: 20px; box-sizing: border-box; position: fixed; left: 480px; top: 350px; height: 350px; width: 480px; \\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\" class=\\"\\" ></img></p>
 
