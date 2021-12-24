@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T00:51:22 UTC">
+<meta name="revised" content="2021-12-24T15:06:52 UTC">
 <title>Grid Component :: Advaced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -493,10 +493,10 @@ Heading
 <li>An equal amount of space is injected between each child</li>
 <li>An equal amount of space is injected at the start and end of the grid</li>
 </ul>
-<p>The following sample slide screenshot helps to clarify this concept. Note, the sample block width here is 100% of the slide width:</p>
+<p>The following sample slide helps to clarify this concept. Note, the grid width here is 100% of the slide width:</p>
 <p>The following sample slide helps to clarify these concepts:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;40 100&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;center&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;coral&#34;</span> <span style="color:#75af00">flow</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;col&#34;</span><span style="color:#111">&gt;</span>
-Heading
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;100 40&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;center&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;coral&#34;</span> <span style="color:#75af00">flow</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;row&#34;</span><span style="color:#111">&gt;</span>
+Left
 ![[Image.jpg]]
 <span style="font-weight:bold">**Lorem Ipsum**</span> is simply dummy text
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
@@ -508,17 +508,14 @@ Heading
 </code></pre>
 <p>Where the color option of the <strong>bg</strong> property takes any valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value">CSS Color Value</a>. The following sample demonstrates color backgrounds:</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;55 50&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;topleft&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;orange&#34;</span><span style="color:#111">&gt;</span>
-
 ### Make
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
 
 <span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;55 50&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;bottomright&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;rgb(0,0,0)&#34;</span><span style="color:#111">&gt;</span>
-
 ### Noise
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
 
 <span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;25 20&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;center&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;green&#34;</span> <span style="color:#75af00">rotate</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;-15&#34;</span><span style="color:#111">&gt;</span>
-
 ### some
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
 </code></pre></div><p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/grid-bg.png" alt="Example"></p>
@@ -616,7 +613,6 @@ World!
 </code></pre>
 <p>This sample grid above would display with 10px padding top and bottom and 15px padding left and right. The following sample demonstrates padding:</p>
 <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;50 50&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;topleft&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;orange&#34;</span> <span style="color:#75af00">pad</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;0 50px&#34;</span><span style="color:#111">&gt;</span>
-
 ###### Lorem Ipsum wasnt simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book here there
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
 
@@ -633,18 +629,21 @@ World!
 </code></pre>
 <p>Where the <strong>index</strong> option of the <strong>frag</strong> property is a postive value indicates the order the fragment will be displayed.</p>
 <p>The following sample demonstrates fragments:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span> <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;60 55&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;5 10&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;red&#34;</span> <span style="color:#75af00">frag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;1&#34;</span><span style="color:#111">&gt;</span>
-60 x 55
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span> <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;60 55&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;5 10&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;red&#34;</span><span style="color:#111">&gt;</span>
+### Fragments:
++ Right
++ Bottom
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
 
-<span style="color:#111">&lt;</span><span style="color:#f92672">grid</span> <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;25 55&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;-5 10&#34;</span> <span style="color:#75af00">style</span><span style="color:#f92672">=</span><span style="color:#d88200">bg=&#34;green&#34;</span> <span style="color:#75af00">frag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;2&#34;</span><span style="color:#111">&gt;</span>
-25 x 55
+<span style="color:#111">&lt;</span><span style="color:#f92672">grid</span> <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;25 55&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;-5 10&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;green&#34;</span> <span style="color:#75af00">frag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;1&#34;</span><span style="color:#111">&gt;</span>
+Right Grid
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
 
-<span style="color:#111">&lt;</span><span style="color:#f92672">grid</span> <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;90 20&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;5 -10&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;gray&#34;</span> <span style="color:#75af00">frag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;3&#34;</span><span style="color:#111">&gt;</span>
-90  x 20
+<span style="color:#111">&lt;</span><span style="color:#f92672">grid</span> <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;90 20&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;5 -10&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;gray&#34;</span> <span style="color:#75af00">frag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;2&#34;</span><span style="color:#111">&gt;</span>
+Bottom Grid
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
-</code></pre></div><h3 id="reference">Reference</h3>
+</code></pre></div><p>As you have surely seen in the example, you can combine Fragments and <a href="/obsidian-advanced-slides/extend-syntax/fragments/">Fragment Lists</a> with each other. By default, Fragment Lists generate indexes that start at 1.</p>
+<h3 id="reference">Reference</h3>
 <p>This guide provides a quick reference to the full set of attributes that can be set on grid component:</p>
 <ul>
 <li><strong>drag</strong>=&ldquo;width height&rdquo;</li>
