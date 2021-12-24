@@ -189,7 +189,7 @@ exports[`Grid Component > Row Flow 1`] = `
 "<div class=\\"reset-margin flex-even\\" style=\\"display: flex; flex-direction: row; align-items: center; justify-content: space-evenly; position: fixed; left: 0px; top: 210px; height: 280px; width: 960px; background-color: coral;\\" >
 
 ### Lorem
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 350px\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
 
 ### Ipsum
 </div>

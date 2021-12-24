@@ -129,7 +129,7 @@ The following sample slide helps to clarify these concepts:
 ```md
 <grid  drag="100 40" drop="center" bg="coral" flow="row">
 Left
-![[Image.jpg|350]]
+![[Image.jpg]]
 **Lorem Ipsum** is simply dummy text
 </grid>
 ```

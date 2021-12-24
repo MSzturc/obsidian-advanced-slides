@@ -117,7 +117,7 @@ test('Grid Component > Column Flow', () => {
 
 test('Grid Component > Row Flow', () => {
 
-	when(MockedObsidianUtils.getAbsolutePath("Image.jpg|350.md")).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath("Image.jpg.md")).thenCall( (arg) => {
 		return null;
 	});
 
@@ -128,7 +128,7 @@ test('Grid Component > Row Flow', () => {
 	const input =
 `<grid  drag="100 40" drop="center" style="background-color: coral;" flow="row">
 ### Lorem
-![[Image.jpg|350]]
+![[Image.jpg]]
 ### Ipsum
 </grid>`;
 
