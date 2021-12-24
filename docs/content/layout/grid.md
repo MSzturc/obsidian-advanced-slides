@@ -326,11 +326,11 @@ The following sample demonstrates fragments:
 </grid>
 
 <grid drag="25 55" drop="-5 10" bg="green" frag="1">
-25 x 55
+Right Grid
 </grid>
 
 <grid drag="90 20" drop="5 -10" bg="gray" frag="2">
-90  x 20
+Bottom Grid
 </grid>
 ```
 
