@@ -142,7 +142,7 @@ esbuild.build({
         ],
     }).then(esbuild.build({
         entryPoints: [
-            'src/scss/layout.scss',
+            'src/scss/layout/main.scss',
         ],
         loader: {
             '.eot': 'dataurl',
