@@ -140,29 +140,36 @@ esbuild.build({
                 },
             }),
         ],
-    }).then(esbuild.build({
-        entryPoints: [
-            'src/scss/layout/main.scss',
-        ],
-        loader: {
-            '.eot': 'dataurl',
-            '.woff': 'dataurl',
-            '.ttf': 'dataurl',
-            '.svg': 'dataurl',
-            '.otf': 'dataurl'
-        },
-        outfile: TEST_VAULT + '/css/layout.css',
-        bundle: true,
-        external: ['obsidian', 'electron', ...builtins],
-        watch: !prod,
-        target: 'es2020',
-        logLevel: "info",
-        sourcemap: prod ? false : 'inline',
-        treeShaking: true,
-        plugins: [
-            sassPlugin({
-                implementation: 'node-sass',
-            }),
-        ]
-    }))
+    }).then(buildScss('src/scss/layout/main.scss',TEST_VAULT + '/css/layout.css'))
     .catch(() => process.exit(1));
+
+
+
+function buildScss(source, target) {
+	return esbuild.build({
+		entryPoints: [
+			source,
+		],
+		loader: {
+			'.eot': 'dataurl',
+			'.woff': 'dataurl',
+			'.ttf': 'dataurl',
+			'.svg': 'dataurl',
+			'.otf': 'dataurl'
+		},
+		outfile: target,
+		bundle: true,
+		external: ['obsidian', 'electron', ...builtins],
+		watch: !prod,
+		target: 'es2020',
+		logLevel: "info",
+		sourcemap: prod ? false : 'inline',
+		treeShaking: true,
+		plugins: [
+			sassPlugin({
+				implementation: 'node-sass',
+			}),
+		]
+	});
+}
+
