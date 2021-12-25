@@ -65,13 +65,13 @@ esbuild.build({
             }),
             copy.default({
                 assets: {
-                    from: ['node_modules/reveal.js/dist/theme/fonts/league-gothic/*'],
+                    from: ['src/scss/theme/source/fonts/league-gothic/*'],
                     to: ['./dist/theme/fonts/league-gothic'],
                 }
             }),
             copy.default({
                 assets: {
-                    from: ['node_modules/reveal.js/dist/theme/fonts/source-sans-pro/*'],
+                    from: ['src/scss/theme/source/fonts/source-sans-pro/*'],
                     to: ['./dist/theme/fonts/source-sans-pro'],
                 }
             }),
@@ -157,21 +157,7 @@ function buildScss(source, target) {
 		entryPoints: [
 			source,
 		],
-		loader: {
-			'.eot': 'dataurl',
-			'.woff': 'dataurl',
-			'.ttf': 'dataurl',
-			'.svg': 'dataurl',
-			'.otf': 'dataurl'
-		},
-		outfile: target,
-		bundle: true,
-		external: ['obsidian', 'electron', ...builtins],
-		watch: !prod,
-		target: 'es2020',
-		logLevel: "info",
-		sourcemap: prod ? false : 'inline',
-		treeShaking: true,
+			outfile: target,
 		plugins: [
 			sassPlugin(),
 		]
