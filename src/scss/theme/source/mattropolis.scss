@@ -1,0 +1,93 @@
+/**
+ * Mattropolis theme for reveal.js.
+ *
+ * Copyright (C) 2021 Matthäus Szturc, https://github.com/MSzturc
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import "./fonts/league-gothic/league-gothic";
+@import "./fonts/lato/lato";
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #111;
+
+$mainColor: #fff;
+$headingColor: #fff;
+
+$mainFontSize: 24px;
+$headingLineHeight: 1em;
+$linkColor: #e7ad52;
+
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1TextShadow: none;
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color(#222);
+
+// Background generator
+@mixin bodyBackground() {
+	@include radial-gradient( rgba(28,30,32,1), rgba(85,90,95,1) );
+}
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+
+.reveal .slides {
+    text-align: left;
+}
+
+p.reset-paragraph {
+    margin: inherit;
+    line-height: inherit;
+}
+
+.reveal img,
+.reveal video,
+.reveal iframe {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+    text-align: left;
+    margin: var(--r-block-margin) 0;
+    margin-left: 1em;
+}
+
+.reveal sup {
+    vertical-align: super;
+    font-size: x-small;
+    color: var(--r-link-color);
+}
+
+.reveal sub {
+    vertical-align: sub;
+    font-size: x-small;
+}
+
+.footnotes {
+    font-size: 8px;
+}
+
+.footnotes>ol * {
+    margin: 0px !important;
+}
+
+.footnotes>ol>li::marker {
+    color: var(--r-link-color);
+    content: counter(list-item) ": ";
+}

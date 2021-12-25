@@ -75,6 +75,12 @@ esbuild.build({
                     to: ['./dist/theme/fonts/source-sans-pro'],
                 }
             }),
+			copy.default({
+                assets: {
+                    from: ['src/scss/theme/source/fonts/lato/*'],
+                    to: ['./dist/theme/fonts/lato'],
+                }
+            }),
             copy.default({
                 assets: {
                     from: ['node_modules/reveal.js/plugin/highlight/*'],
@@ -124,12 +130,6 @@ esbuild.build({
                 }
             }),
             copy.default({
-                assets: {
-                    from: ['src/css/mattropolis.css'],
-                    to: ['./css'],
-                }
-            }),
-            copy.default({
                 assets: prod ? {} : {
                     from: ['.hotreload'],
                     to: ['.'],
@@ -137,6 +137,7 @@ esbuild.build({
             }),
         ],
     }).then(buildScss('src/scss/layout/main.scss',TEST_VAULT + '/css/layout.css'))
+	.then(buildScss('src/scss/theme/source/mattropolis.scss',TEST_VAULT + '/css/mattropolis.css'))
 	.then(buildAllThemes('src/scss/theme/source/'))
     .catch(() => process.exit(1));
 
