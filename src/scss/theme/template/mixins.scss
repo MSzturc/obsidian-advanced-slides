@@ -29,7 +29,7 @@
 }
 
 @mixin light-bg-text-color( $color ) {
-	section.has-light-background {
+	.reveal .has-light-background {
 		&, h1, h2, h3, h4, h5, h6 {
 			color: $color;
 		}
@@ -37,7 +37,7 @@
 }
 
 @mixin dark-bg-text-color( $color ) {
-	section.has-dark-background {
+	.reveal .has-dark-background {
 		&, h1, h2, h3, h4, h5, h6 {
 			color: $color;
 		}
