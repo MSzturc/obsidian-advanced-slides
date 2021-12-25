@@ -3,6 +3,8 @@ import process from "process";
 import builtins from 'builtin-modules';
 import copy from 'esbuild-plugin-copy';
 import { sassPlugin } from 'esbuild-sass-plugin';
+import { readdir } from "fs";
+import { basename } from "path";
 
 
 const staticAssetsPlugin = {
@@ -59,12 +61,6 @@ esbuild.build({
                 assets: {
                     from: ['node_modules/reveal.js/dist/*'],
                     to: ['./dist'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/reveal.js/dist/theme/*'],
-                    to: ['./dist/theme'],
                 }
             }),
             copy.default({
@@ -141,9 +137,20 @@ esbuild.build({
             }),
         ],
     }).then(buildScss('src/scss/layout/main.scss',TEST_VAULT + '/css/layout.css'))
+	.then(buildAllThemes('src/scss/theme/source/'))
     .catch(() => process.exit(1));
 
-
+function buildAllThemes(themeDir){
+	readdir(themeDir, function (err, files){
+		files.forEach(function (file) {
+			if(file.endsWith('.scss')){
+				const source = themeDir + file;
+				const target = TEST_VAULT + '/dist/theme/' + basename(file).replaceAll('.scss','.css');
+				buildScss(source,target);
+			}
+		});
+	});
+}
 
 function buildScss(source, target) {
 	return esbuild.build({
@@ -166,9 +173,7 @@ function buildScss(source, target) {
 		sourcemap: prod ? false : 'inline',
 		treeShaking: true,
 		plugins: [
-			sassPlugin({
-				implementation: 'node-sass',
-			}),
+			sassPlugin(),
 		]
 	});
 }
