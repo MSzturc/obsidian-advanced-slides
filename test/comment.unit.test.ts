@@ -30,6 +30,20 @@ test('Parse Coment', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
+
+test('Empty Slide comment', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .slide: -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'slide'
+	);
+	expect(parsed).toStrictEqual(expected);
+});
+
 test('Parse Coment', () => {
 
 	const parser = new CommentParser();
@@ -71,6 +85,22 @@ test('Parse Coment with bg property', () => {
 		'slide',
 		['background-color: coral'],
 		['has-light-background']
+	);
+	expect(parsed).toStrictEqual(expected);
+});
+
+test('Merge Coment', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .slide: bg="coral" class="reveal section small" style="width: 200px; height: 400px; margin: 0" data-toggle="modal" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'slide',
+		['background-color: coral','width: 200px'],
+		['has-light-background','small'],
+		new Map<string, string>([["data-toggle", "modal"],["class","reveal section"],["style","height: 400px; margin: 0"]])
 	);
 	expect(parsed).toStrictEqual(expected);
 });

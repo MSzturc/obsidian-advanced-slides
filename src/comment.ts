@@ -39,11 +39,6 @@ export class Comment extends Properties {
 
 		return new Comment(type, attributes);
 	}
-
-
-	public toString() {
-		return JSON.stringify(this);
-	}
 }
 
 export class CommentParser {
