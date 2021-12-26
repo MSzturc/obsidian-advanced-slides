@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grid Component > Attributes > Background 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; position: fixed; left: 432px; top: 0px; height: 350px; width: 528px; \\" >
+"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; position: fixed; left: 432px; top: 0px; height: 350px; width: 528px; \\" >
 
 ### Make
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: rgb(0,0,0); position: fixed; left: 0px; top: 350px; height: 350px; width: 528px; \\" >
+<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: rgb(0,0,0); position: fixed; left: 0px; top: 350px; height: 350px; width: 528px; \\" >
 
 ### Noise
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: green; transform: rotate(-15deg); position: fixed; left: 360px; top: 280px; height: 140px; width: 240px; \\" >
+<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: green; transform: rotate(-15deg); position: fixed; left: 360px; top: 280px; height: 140px; width: 240px; \\" >
 
 ### some
 </div>
@@ -37,12 +37,12 @@ thick dotted blue
 `;
 
 exports[`Grid Component > Attributes > Filter 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #B565A7; filter: blur(10px); position: fixed; left: 48px; top: 105px; height: 175px; width: 288px; \\" >
+"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #B565A7; filter: blur(10px); position: fixed; left: 48px; top: 105px; height: 175px; width: 288px; \\" >
 
 Text is too blurry
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: white; filter: grayscale(); position: fixed; left: 364.79999999999995px; top: 175px; height: 350px; width: 480px; \\" >
+<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: white; filter: grayscale(); position: fixed; left: 364.79999999999995px; top: 175px; height: 350px; width: 480px; \\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
 
@@ -51,12 +51,12 @@ Text is too blurry
 `;
 
 exports[`Grid Component > Attributes > Padding 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; padding: 0 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 350px; width: 480px; \\" >
+"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; padding: 0 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 350px; width: 480px; \\" >
 
 ###### Lorem Ipsum wasnt simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book here there
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; padding: 20px; box-sizing: border-box; position: fixed; left: 480px; top: 350px; height: 350px; width: 480px; \\" >
+<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; padding: 20px; box-sizing: border-box; position: fixed; left: 480px; top: 350px; height: 350px; width: 480px; \\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\" class=\\"\\" ></img></p>
 
@@ -65,19 +65,19 @@ exports[`Grid Component > Attributes > Padding 1`] = `
 `;
 
 exports[`Grid Component > Attributes > Padding 2`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: red; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; \\" >
+"<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: red; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; \\" >
 
 ### Fragments:
 - Right<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"1\\" -->
 - Bottom<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"2\\" -->
 </div>
 
-<div class=\\"reset-margin fragment\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: green; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; \\" data-fragment-index=\\"1\\">
+<div class=\\"reset-margin fragment has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: green; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; \\" data-fragment-index=\\"1\\">
 
 Right Grid
 </div>
 
-<div class=\\"reset-margin fragment\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: gray; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; \\" data-fragment-index=\\"2\\">
+<div class=\\"reset-margin fragment has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: gray; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; \\" data-fragment-index=\\"2\\">
 
 Bottom Grid
 </div>
@@ -85,12 +85,12 @@ Bottom Grid
 `;
 
 exports[`Grid Component > Attributes > Rotate 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #B565A7; transform: rotate(-10deg); position: fixed; left: 336px; top: 0px; height: 175px; width: 288px; \\" >
+"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #B565A7; transform: rotate(-10deg); position: fixed; left: 336px; top: 0px; height: 175px; width: 288px; \\" >
 
 Hello
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #D65076; transform: rotate(40deg); position: fixed; left: 576px; top: 525px; height: 175px; width: 384px; \\" >
+<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #D65076; transform: rotate(40deg); position: fixed; left: 576px; top: 525px; height: 175px; width: 384px; \\" >
 
 World!
 </div>
