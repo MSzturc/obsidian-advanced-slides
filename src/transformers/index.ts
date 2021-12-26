@@ -1,5 +1,11 @@
 import { BackgroundTransformer } from "./backgroundTransformer";
+import { BorderTransformer } from "./borderTransformer";
+import { ClassMappingTransformer } from "./classMappingTransformer";
 import { ClassTransformer } from "./classTransformer";
+import { FragmentTransformer } from "./fragmentTransformer";
+import { PaddingTransformer } from "./paddingTransformer";
+import { RotateTransformer } from "./rotateTransformer";
+import { StyleMappingTransformer } from "./styleMappingTransformer";
 import { StyleTransformer } from "./styleTransformer";
 
 export interface AttributeTransformer {
@@ -106,6 +112,13 @@ class AttributeTransformers {
 		this.allTransformers.push(new ClassTransformer());
 		this.allTransformers.push(new StyleTransformer());
 		this.allTransformers.push(new BackgroundTransformer());
+		this.allTransformers.push(new PaddingTransformer());
+		this.allTransformers.push(new ClassMappingTransformer('animate'));
+		this.allTransformers.push(new FragmentTransformer());
+		this.allTransformers.push(new StyleMappingTransformer('opacity','opacity'));
+		this.allTransformers.push(new BorderTransformer());
+		this.allTransformers.push(new StyleMappingTransformer('filter','filter'));
+		this.allTransformers.push(new RotateTransformer());
 	}
 
 	transform(element: Properties) {

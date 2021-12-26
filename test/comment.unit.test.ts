@@ -114,3 +114,90 @@ test('Invalid input', () => {
 
 	expect(parsed).toBeNull();
 });
+
+test('Parse Coment with pad property', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .slide: pad="10px 15px" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'slide',
+		['padding: 10px 15px','box-sizing: border-box']
+	);
+	expect(parsed).toStrictEqual(expected);
+});
+
+test('Parse Coment with animate property', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .slide: animate="fadeIn slower" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'slide',
+		[],
+		['fadeIn', 'slower']
+	);
+	expect(parsed).toStrictEqual(expected);
+});
+
+test('Parse Coment with fragment property', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .element: frag="1" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'element',
+		[],
+		['fragment'],
+		new Map<string, string>([["data-fragment-index", "1"]])
+	);
+	expect(parsed).toStrictEqual(expected);
+});
+
+test('Parse Coment with opacity property', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .element: opacity="0.5" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'element',
+		['opacity: 0.5']
+	);
+	expect(parsed).toStrictEqual(expected);
+});
+
+test('Parse Coment with border property', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .slide: border="thick dotted blue" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'slide',
+		['border: thick dotted blue','box-sizing: border-box']
+	);
+	expect(parsed).toStrictEqual(expected);
+});
+
+test('Parse Coment with rotate property', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .slide: rotate="-10" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'slide',
+		['transform: rotate(-10deg)']
+	);
+	expect(parsed).toStrictEqual(expected);
+});
