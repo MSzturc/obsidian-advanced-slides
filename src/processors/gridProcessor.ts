@@ -1,4 +1,4 @@
-import { Options } from "./options";
+import { Options } from "../options";
 import Color from "color";
 
 export class GridProcessor {

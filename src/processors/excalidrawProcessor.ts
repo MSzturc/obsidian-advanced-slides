@@ -1,5 +1,5 @@
 import { Notice } from "obsidian";
-import { ObsidianUtils } from "./obsidianUtils";
+import { ObsidianUtils } from "../obsidianUtils";
 
 export class ExcalidrawProcessor {
 	private excalidrawImageRegex = /!\[\[(.*\.excalidraw)\|?([^\]]*)??\]\]\s?(<!--.*-->)?/i

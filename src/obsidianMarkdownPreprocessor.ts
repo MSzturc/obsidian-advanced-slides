@@ -1,14 +1,14 @@
-import { BlockProcessor } from "./blockProcessor";
-import { ExcalidrawProcessor } from "./excalidrawProcessor";
-import { FootnoteProcessor } from "./footNoteProcessor";
-import { FormatProcessor } from "./formatProcessor";
-import { FragmentProcessor } from "./fragmentProcessor";
-import { GridProcessor } from "./gridProcessor";
-import { ImageProcessor } from "./imageProcessor";
-import { InternalLinkProcessor } from "./internalLinkProcessor";
-import { LatexProcessor } from "./latexProcessor";
-import { MermaidProcessor } from "./mermaidProcessor";
-import { MultipleFileProcessor } from "./multipleFileProcessor";
+import { BlockProcessor } from "./processors/blockProcessor";
+import { ExcalidrawProcessor } from "./processors/excalidrawProcessor";
+import { FootnoteProcessor } from "./processors/footNoteProcessor";
+import { FormatProcessor } from "./processors/formatProcessor";
+import { FragmentProcessor } from "./processors/fragmentProcessor";
+import { GridProcessor } from "./processors/gridProcessor";
+import { ImageProcessor } from "./processors/imageProcessor";
+import { InternalLinkProcessor } from "./processors/internalLinkProcessor";
+import { LatexProcessor } from "./processors/latexProcessor";
+import { MermaidProcessor } from "./processors/mermaidProcessor";
+import { MultipleFileProcessor } from "./processors/multipleFileProcessor";
 import { ObsidianUtils } from "./obsidianUtils";
 import { Options } from "./options";
 

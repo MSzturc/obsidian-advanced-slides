@@ -1,5 +1,5 @@
-import { CommentParser } from "./comment";
-import { Options } from "./options";
+import { CommentParser } from "../comment";
+import { Options } from "../options";
 
 export class FragmentProcessor {
 

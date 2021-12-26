@@ -1,5 +1,5 @@
-import { ObsidianUtils } from "./obsidianUtils";
-import { Options } from "./options";
+import { ObsidianUtils } from "../obsidianUtils";
+import { Options } from "../options";
 
 export class InternalLinkProcessor {
 

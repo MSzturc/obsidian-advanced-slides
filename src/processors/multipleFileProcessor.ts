@@ -1,4 +1,4 @@
-import { ObsidianUtils } from "./obsidianUtils";
+import { ObsidianUtils } from "../obsidianUtils";
 
 export class MultipleFileProcessor {
 

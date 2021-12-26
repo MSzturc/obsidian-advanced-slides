@@ -1,6 +1,6 @@
 /* eslint-disable no-var */
-import { CommentParser } from "./comment";
-import { ObsidianUtils } from "./obsidianUtils";
+import { CommentParser } from "../comment";
+import { ObsidianUtils } from "../obsidianUtils";
 
 export class ImageProcessor {
 
