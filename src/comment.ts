@@ -1,16 +1,54 @@
-export type Comment = {
+import { Properties } from "./transformers";
 
-	type: string,
-	style: string[],
-	clazz: string[],
-	attributes: Map<string, string>,
+export class Comment extends Properties {
+
+	type: string;
+
+	constructor(type: string, attributes: Map<string, string>) {
+		super(attributes);
+		this.type = type;
+	}
+
+	public static of(type: string, style: string[] = [], clazz: string[] = [], attributes: Map<string, string> = new Map<string, string>()): Comment {
+
+
+		if (clazz && clazz.length > 0) {
+
+			const classValue = attributes.get("class");
+
+			if (classValue) {
+				const split = classValue.split(" ");
+				split.push(...clazz);
+				attributes.set("class", split.join(" "));
+			} else {
+				attributes.set("class", clazz.join(" "));
+			}
+		}
+
+		if (style && style.length > 0) {
+			const styleValue = attributes.get("style");
+
+			if (styleValue) {
+				const split = styleValue.split(";").map((value) => value.trim());
+				split.push(...style);
+				attributes.set("style", split.join("; "));
+			} else {
+				attributes.set("style", style.join("; "));
+			}
+		}
+
+		return new Comment(type, attributes);
+	}
+
+
+	public toString() {
+		return JSON.stringify(this);
+	}
 }
 
 export class CommentParser {
 
 	private readCommentRegex = /<!--.*-->/;
-	private styleRegex = /(?:style="([^"]+)")|(?:style='([^']+)')/;
-	private classRegex = /(?:class="([^"]+)")|(?:class='([^']+)')/;
 	private parseRegex = /<!--\s*\.(element|slide):\s*(.*)-->/;
 	private parsePropertiesRegex = /([^=]*)\s*=\s*"([^"]*)"\s*|([^=]*)\s*=\s*'([^']*)'\s*/g;
 
@@ -19,7 +57,14 @@ export class CommentParser {
 	}
 
 	buildAttributes(comment: Comment): string {
-		return `style="${comment.style.join('; ')}" class="${comment.clazz.join(' ')}" ${this.attributeMapToString(comment.attributes)}`;
+
+		const styles = comment.getStyles();
+		const classes = comment.getClasses();
+
+		const stylesString = (styles.length > 0) ? `style="${styles}" ` : '';
+		const classesString = (classes.length > 0) ? `class="${classes}" ` : '';
+
+		return `${stylesString}${classesString}${comment.getAttributes()}`.trim();
 	}
 
 	parseLine(line: string): Comment {
@@ -31,8 +76,9 @@ export class CommentParser {
 	parseComment(comment: string): Comment {
 		try {
 			const [, type, properties] = this.parseRegex.exec(comment);
-			const [style, clazz, attributes] = this.parseProperties(properties);
-			return this.buildComment(type, style, clazz, attributes);
+			const attributes = this.parseAttributes(properties);
+
+			return new Comment(type, attributes);
 		} catch (ex) {
 			console.log("ERROR: Cannot parse comment: " + comment);
 			return null;
@@ -40,20 +86,7 @@ export class CommentParser {
 	}
 
 	buildComment(type: string, style: string[] = [], clazz: string[] = [], attributes: Map<string, string> = new Map<string, string>()): Comment {
-		return {
-			type: type,
-			style: style,
-			clazz: clazz,
-			attributes: attributes,
-		}
-	}
-
-	private attributeMapToString(attributes: Map<string, string>): string {
-		const result = [];
-		for (const [key, value] of attributes) {
-			result.push(`${key}="${value}"`);
-		}
-		return result.join(" ");
+		return Comment.of(type, style, clazz, attributes);
 	}
 
 	private lineHasComment(line: string): boolean {
@@ -62,38 +95,6 @@ export class CommentParser {
 
 	private readCommentStringFromLine(line: string): string {
 		return this.readCommentRegex.exec(line)?.[0] ?? '';
-	}
-
-	private parseProperties(properties: string): [string[], string[], Map<string, string>] {
-		const result: [string[], string[], Map<string, string>] = [[], [], new Map<string, string>()];
-
-		if (properties.includes('style=')) {
-			result[0] = this.parseStyle(properties);
-		}
-
-		if (properties.includes('class=')) {
-			result[1] = this.parseClass(properties);
-		}
-
-		result[2] = this.parseAttributes(properties);
-
-		return result;
-	}
-
-	private parseStyle(comment: string): string[] {
-		const result = this.styleRegex.exec(comment)?.[1] ?? '';
-		return result.split(";").map((attr) => {
-			return attr.trim();
-		}).filter((value) => {
-			return value && value.length > 0;
-		});
-	}
-
-	private parseClass(comment: string): string[] {
-		const result = this.classRegex.exec(comment)?.[1] ?? '';
-		return result.split(" ").map((attr) => {
-			return attr.trim();
-		});
 	}
 
 	private parseAttributes(properties: string): Map<string, string> {
@@ -121,8 +122,6 @@ export class CommentParser {
 		}
 
 		attributes.delete(undefined);
-		attributes.delete('style');
-		attributes.delete('class');
 		return attributes;
 	}
 

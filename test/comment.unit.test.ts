@@ -7,12 +7,11 @@ test('Parse Coment', () => {
 	const input = `text with border <!-- .element: class="with-border" -->`;
 	const parsed = parser.parseLine(input);
 
-	const expected : Comment = {
-		type: 'element',
-		style: [],
-		clazz: ["with-border"],
-		attributes: new Map<string, string>()
-	}
+	const expected = Comment.of(
+		'element',
+		[],
+		["with-border"]
+	);
 	expect(parsed).toStrictEqual(expected);
 });
 
@@ -23,12 +22,11 @@ test('Parse Coment', () => {
 	const input = `text with background <!-- .element: style="background:blue" -->`;
 	const parsed = parser.parseLine(input);
 
-	const expected : Comment = {
-		type: 'element',
-		style: ["background:blue"],
-		clazz: [],
-		attributes: new Map<string, string>()
-	}
+	const expected = Comment.of(
+		'element',
+		["background:blue"],
+	);
+
 	expect(parsed).toStrictEqual(expected);
 });
 
@@ -39,12 +37,12 @@ test('Parse Coment', () => {
 	const input = `text with attribute <!-- .element: data-toggle="modal" -->`;
 	const parsed = parser.parseLine(input);
 
-	const expected : Comment = {
-		type: 'element',
-		style: [],
-		clazz: [],
-		attributes: new Map<string, string>([["data-toggle", "modal"]])
-	}
+	const expected = Comment.of(
+		'element',
+		[],
+		[],
+		new Map<string, string>([["data-toggle", "modal"]])
+	);
 	expect(parsed).toStrictEqual(expected);
 });
 
@@ -55,12 +53,25 @@ test('Parse Coment', () => {
 	const input = `<!-- .slide: style="background-color: coral;" -->`;
 	const parsed = parser.parseLine(input);
 
-	const expected : Comment = {
-		type: 'slide',
-		style: ['background-color: coral'],
-		clazz: [],
-		attributes: new Map<string, string>()
-	}
+	const expected = Comment.of(
+		'slide',
+		['background-color: coral']
+	);
+	expect(parsed).toStrictEqual(expected);
+});
+
+test('Parse Coment with bg property', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .slide: bg="coral" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'slide',
+		['background-color: coral'],
+		['has-light-background']
+	);
 	expect(parsed).toStrictEqual(expected);
 });
 

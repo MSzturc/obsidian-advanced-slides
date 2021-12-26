@@ -51,10 +51,10 @@ export class FragmentProcessor {
 		line = line.replaceAll("+ ", "- ");
 		line = line.replaceAll(this.orderedListRegex, '1. ');
 
-		if (!comment.attributes.get('data-fragment-index')) {
-			comment.attributes.set("data-fragment-index", this.fragmentCounter.toString());
-			if (!comment.clazz.includes('fragment')) {
-				comment.clazz.push('fragment');
+		if (!comment.hasAttribute('data-fragment-index')) {
+			comment.addAttribute("data-fragment-index", this.fragmentCounter.toString());
+			if (!comment.hasClass('fragment')) {
+				comment.addClass('fragment');
 			}
 			this.fragmentCounter++;
 		}

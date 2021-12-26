@@ -11,6 +11,7 @@ import { MermaidProcessor } from "./processors/mermaidProcessor";
 import { MultipleFileProcessor } from "./processors/multipleFileProcessor";
 import { ObsidianUtils } from "./obsidianUtils";
 import { Options } from "./options";
+import { CommentProcessor } from "./processors/commentProcessor";
 
 export class ObsidianMarkdownPreprocessor {
 
@@ -25,6 +26,7 @@ export class ObsidianMarkdownPreprocessor {
 	private mermaidProcessor: MermaidProcessor;
 	private fragmentProcessor: FragmentProcessor;
 	private gridProcessor: GridProcessor;
+	private commentProcessor: CommentProcessor;
 
 	constructor(utils: ObsidianUtils) {
 		this.multipleFileProcessor = new MultipleFileProcessor(utils);
@@ -38,6 +40,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.mermaidProcessor = new MermaidProcessor();
 		this.fragmentProcessor = new FragmentProcessor();
 		this.gridProcessor = new GridProcessor();
+		this.commentProcessor = new CommentProcessor();
 	}
 
 	process(markdown: string, options: Options) {
@@ -52,7 +55,8 @@ export class ObsidianMarkdownPreprocessor {
 		const afterFormatProcessor = this.formatProcessor.process(afterLatexProcessor);
 		const afterFragmentProcessor = this.fragmentProcessor.process(afterFormatProcessor, options);
 		const afterGridProcessor = this.gridProcessor.process(afterFragmentProcessor, options);
-		return afterGridProcessor;
+		const afterCommentProcessor = this.commentProcessor.process(afterGridProcessor);
+		return afterCommentProcessor;
 	}
 
 

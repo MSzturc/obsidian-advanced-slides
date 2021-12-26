@@ -44,7 +44,7 @@ Text is too blurry
 
 <div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: white; filter: grayscale(); position: fixed; left: 364.79999999999995px; top: 175px; height: 350px; width: 480px; \\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"stack\\" -->"
@@ -58,7 +58,7 @@ exports[`Grid Component > Attributes > Padding 1`] = `
 
 <div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; padding: 20px; box-sizing: border-box; position: fixed; left: 480px; top: 350px; height: 350px; width: 480px; \\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\"></img></p>
 
 </div>
 <!-- .slide: class=\\"stack\\" -->"
@@ -68,8 +68,8 @@ exports[`Grid Component > Attributes > Padding 2`] = `
 "<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: red; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; \\" >
 
 ### Fragments:
-- Right<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"1\\" -->
-- Bottom<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"2\\" -->
+- Right<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->
+- Bottom<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" -->
 </div>
 
 <div class=\\"reset-margin fragment has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: green; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; \\" data-fragment-index=\\"1\\">
@@ -137,7 +137,7 @@ exports[`Grid Component > Column Flow 1`] = `
 "<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 288px; top: 0px; height: 700px; width: 384px; background-color: coral;\\" >
 
 ### Lorem
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 ### Ipsum
 </div>
@@ -189,7 +189,7 @@ exports[`Grid Component > Row Flow 1`] = `
 "<div class=\\"reset-margin flex-even\\" style=\\"display: flex; flex-direction: row; align-items: center; justify-content: space-evenly; position: fixed; left: 0px; top: 210px; height: 280px; width: 960px; background-color: coral;\\" >
 
 ### Lorem
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 ### Ipsum
 </div>

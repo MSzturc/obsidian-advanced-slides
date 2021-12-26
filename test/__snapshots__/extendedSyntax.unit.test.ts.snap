@@ -14,11 +14,11 @@ Paragraph content
 
 no color
 
-<div class=\\"block\\"> <!-- .element: style=\\"background-color: red;\\" -->
+<div class=\\"block\\"> <!-- .element: style=\\"background-color: red\\" -->
 
 everything inside this block has red background color
 
-<div class=\\"block\\"> <!-- .element: style=\\"background-color: blue;\\" -->
+<div class=\\"block\\"> <!-- .element: style=\\"background-color: blue\\" -->
 
 blue
 
@@ -35,7 +35,7 @@ no color
 exports[`Extended Markdown Syntax >  Element Annotations 1`] = `
 "text with border <!-- .element: class=\\"with-border\\" -->
 
-text with background <!-- .element: style=\\"background:blue\\" -->
+text with background <!-- .element: style=\\"background: blue\\" -->
 
 text with attribute <!-- .element: data-toggle=\\"modal\\" -->
 "
@@ -44,10 +44,10 @@ text with attribute <!-- .element: data-toggle=\\"modal\\" -->
 exports[`Extended Markdown Syntax >  Excalidraw support 1`] = `
 "#### Excalidraw support
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 100px\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 100px\\"></img></p>
 
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width:300px; height:400px\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 300px; height: 400px\\"></img></p>
 "
 `;
 
@@ -63,9 +63,9 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 # Fragmented unordered list
 
 - Permanent
-- First<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"1\\" -->
-- Second<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"2\\" -->
-- Third<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"3\\" -->
+- First<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->
+- Second<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" -->
+- Third<!-- .element: class=\\"fragment\\" data-fragment-index=\\"3\\" -->
 
 ---
 
@@ -80,9 +80,9 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 # Fragmented ordered list
 
 1. Permanent
-1. Second<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"1\\" -->
-1. Third<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"2\\" -->
-1. Fourth<!-- .element: style=\\"\\" class=\\"fragment\\" data-fragment-index=\\"3\\" -->
+1. Second<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->
+1. Third<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" -->
+1. Fourth<!-- .element: class=\\"fragment\\" data-fragment-index=\\"3\\" -->
 "
 `;
 
@@ -119,7 +119,7 @@ styled text <!-- .element: class=\\"with-border\\" -->
 `;
 
 exports[`Extended Markdown Syntax >  Slide Annotations 1`] = `
-"<!-- .slide: style=\\"background-color: coral;\\" -->
+"<!-- .slide: style=\\"background-color: coral\\" -->
 
 # Header with coral background color
 
@@ -127,7 +127,7 @@ Paragraph has coral background color, too!
 
 ---
 
-<!-- .slide: style=\\"background-color: green;\\" -->
+<!-- .slide: style=\\"background-color: green\\" -->
 
 - All Bullet points
 - have green
@@ -188,7 +188,7 @@ note: this is not! Only the speaker might see this text.
 - and this bulletpoint
 - or this picture
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\" ><img src=\\"https://picsum.photos/id/1005/250/250\\" alt=\\"\\" style=\\"\\" class=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1005/250/250\\" alt=\\"\\" ></img></p>
 
 "
 `;

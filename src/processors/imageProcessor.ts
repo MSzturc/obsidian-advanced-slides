@@ -56,10 +56,10 @@ export class ImageProcessor {
 			} else {
 				var width = ext;
 			}
-			comment.style.push(`width: ${width}px`);
+			comment.addStyle('width',`${width}px`);
 
 			if (height) {
-				comment.style.push(`height: ${height}px`);
+				comment.addStyle('height',`${height}px`);
 			}
 		}
 		return this.parser.commentToString(comment);
