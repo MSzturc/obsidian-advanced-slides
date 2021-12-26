@@ -84,6 +84,8 @@ export class CommentParser {
 		const result = this.styleRegex.exec(comment)?.[1] ?? '';
 		return result.split(";").map((attr) => {
 			return attr.trim();
+		}).filter((value) => {
+			return value && value.length > 0;
 		});
 	}
 
