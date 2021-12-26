@@ -60,7 +60,7 @@ export class RevealServer {
 
 		this._app.use(this._staticDir(this._baseDirectory));
 
-		this._server = this._app.listen(this._port, () => {
+		this._server = this._app.listen(this._port, '127.0.0.1', () => {
 			// tslint:disable-next-line:no-console
 			console.log(`server started at http://localhost:${this._port}`);
 		}).on('error', (err) => {
