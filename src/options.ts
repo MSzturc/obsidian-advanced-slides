@@ -8,4 +8,7 @@ export type Options = {
 	enableLinks: boolean,
 	title: string,
 	css: string | string[],
+	width: number,
+	height: number,
+	margin: number
 }

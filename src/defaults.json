@@ -6,5 +6,8 @@
 	"verticalSeparator": "\r?\n--\r?\n",
 	"enableLinks": false,
 	"title": "",
-	"css": ""
+	"css": "",
+	"width": 960,
+	"height": 700,
+	"margin": 0.04
 }

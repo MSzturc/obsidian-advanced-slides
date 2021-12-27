@@ -1,6 +1,15 @@
+import { YamlStore } from "src/yamlStore";
 import { AttributeTransformer, Properties } from ".";
 
 export class GridTransformer implements AttributeTransformer {
+
+	private maxWidth: number;
+	private maxHeight: number;
+
+	constructor(){
+		this.maxWidth = YamlStore.getInstance().options.width;
+		this.maxHeight = YamlStore.getInstance().options.height;
+	}
 
 	private gridAttributeRegex = /^(?:(-?\d*(?:px)?)(?:\s|x)(-?\d*(?:px)?)|(center|top|bottom|left|right|topleft|topright|bottomleft|bottomright))$/m;
 
@@ -58,11 +67,11 @@ export class GridTransformer implements AttributeTransformer {
 			const [, x, y, name] = this.gridAttributeRegex.exec(drop);
 
 			if (width) {
-				result.set('width', this.toPixel(960, width));
+				result.set('width', this.toPixel(this.maxWidth, width));
 			}
 
 			if (height) {
-				result.set('height', this.toPixel(700, height));
+				result.set('height', this.toPixel(this.maxHeight, height));
 			}
 
 			if (name) {
@@ -72,11 +81,11 @@ export class GridTransformer implements AttributeTransformer {
 				result.set('y', ny);
 			} else {
 				if (x) {
-					result.set('x', this.toPixel(960, x));
+					result.set('x', this.toPixel(this.maxWidth, x));
 				}
 
 				if (y) {
-					result.set('y', this.toPixel(700, y));
+					result.set('y', this.toPixel(this.maxHeight, y));
 				}
 			}
 			return result;
@@ -99,21 +108,21 @@ export class GridTransformer implements AttributeTransformer {
 			case "topleft":
 				return [0, 0];
 			case "topright":
-				return [960 - width, 0];
+				return [this.maxWidth - width, 0];
 			case "bottomleft":
-				return [0, 700 - height];
+				return [0, this.maxHeight - height];
 			case "bottomright":
-				return [960 - width, 700 - height];
+				return [this.maxWidth - width, this.maxHeight - height];
 			case "left":
-				return [0, (700 - height) / 2];
+				return [0, (this.maxHeight - height) / 2];
 			case "right":
-				return [960 - width, (700 - height) / 2];
+				return [this.maxWidth - width, (this.maxHeight - height) / 2];
 			case "top":
-				return [(960 - width) / 2, 0];
+				return [(this.maxWidth - width) / 2, 0];
 			case "bottom":
-				return [(960 - width) / 2, 700 - height];
+				return [(this.maxWidth - width) / 2, this.maxHeight - height];
 			case "center":
-				return [(960 - width) / 2, (700 - height) / 2];
+				return [(this.maxWidth - width) / 2, (this.maxHeight - height) / 2];
 			default:
 				return [0, 0];
 		}
@@ -121,7 +130,7 @@ export class GridTransformer implements AttributeTransformer {
 
 	leftOf(grid: Map<string, number>): string {
 		if (grid.get('x') < 0) {
-			return (960 + grid.get('x') - grid.get('width')) + 'px';
+			return (this.maxWidth + grid.get('x') - grid.get('width')) + 'px';
 		} else {
 			return grid.get('x') + 'px';
 		}
@@ -129,7 +138,7 @@ export class GridTransformer implements AttributeTransformer {
 
 	topOf(grid: Map<string, number>): string {
 		if (grid.get('y') < 0) {
-			return (700 + grid.get('y') - grid.get('height')) + 'px';
+			return (this.maxHeight + grid.get('y') - grid.get('height')) + 'px';
 		} else {
 			return grid.get('y') + 'px';
 		}

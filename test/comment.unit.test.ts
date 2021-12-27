@@ -1,7 +1,9 @@
 import { CommentParser, Comment } from "src/comment";
+import { YamlStore } from "src/yamlStore";
+import { getSlideOptions } from "./testUtils";
 
 test('Parse Coment', () => {
-
+	YamlStore.getInstance().options = getSlideOptions({})
 	const parser = new CommentParser();
 
 	const input = `text with border <!-- element class="with-border" -->`;
@@ -16,6 +18,7 @@ test('Parse Coment', () => {
 });
 
 test('Parse Coment', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -32,6 +35,7 @@ test('Parse Coment', () => {
 
 
 test('Empty Slide comment', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -45,6 +49,7 @@ test('Empty Slide comment', () => {
 });
 
 test('Parse Coment', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -61,6 +66,7 @@ test('Parse Coment', () => {
 });
 
 test('Parse Coment', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -75,6 +81,7 @@ test('Parse Coment', () => {
 });
 
 test('Parse Coment with bg property', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -90,6 +97,7 @@ test('Parse Coment with bg property', () => {
 });
 
 test('Parse Coment with bg property', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -105,6 +113,7 @@ test('Parse Coment with bg property', () => {
 });
 
 test('Merge Coment', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -121,6 +130,7 @@ test('Merge Coment', () => {
 });
 
 test('Invalid input', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -131,6 +141,7 @@ test('Invalid input', () => {
 });
 
 test('Parse Coment with pad property', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -145,6 +156,7 @@ test('Parse Coment with pad property', () => {
 });
 
 test('Parse Coment with animate property', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -160,6 +172,7 @@ test('Parse Coment with animate property', () => {
 });
 
 test('Parse Coment with fragment property', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -176,6 +189,7 @@ test('Parse Coment with fragment property', () => {
 });
 
 test('Parse Coment with opacity property', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -190,6 +204,7 @@ test('Parse Coment with opacity property', () => {
 });
 
 test('Parse Coment with border property', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -204,6 +219,7 @@ test('Parse Coment with border property', () => {
 });
 
 test('Parse Coment with rotate property', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 
@@ -219,6 +235,7 @@ test('Parse Coment with rotate property', () => {
 });
 
 test('Parse Coment with rotate property', () => {
+	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
 

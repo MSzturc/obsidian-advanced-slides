@@ -13,6 +13,7 @@ import { ObsidianUtils } from "./obsidianUtils";
 import { Options } from "./options";
 import { CommentProcessor } from "./processors/commentProcessor";
 import { DropProcessor } from "./processors/dropProcessor";
+import { YamlStore } from "./yamlStore";
 
 export class ObsidianMarkdownPreprocessor {
 
@@ -46,6 +47,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.dropProcessor = new DropProcessor();
 	}
 	process(markdown: string, options: Options) {
+		YamlStore.getInstance().options = options;
 		const afterMultipleFileProcessor = this.multipleFileProcessor.process(markdown);
 		const afterDropProcessor = this.dropProcessor.process(afterMultipleFileProcessor, options);
 		const afterMermaidProcessor = this.mermaidProcessor.process(afterDropProcessor);
