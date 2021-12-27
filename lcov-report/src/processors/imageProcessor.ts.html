@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/imageProcessor.ts</title>
+    <title>Code coverage report for src/processors/imageProcessor.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> imageProcessor.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/processors</a> imageProcessor.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.85% </span>
+                <span class="strong">93.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>13/14</span>
+                <span class='fraction'>14/15</span>
             </div>
         
             
@@ -155,7 +155,9 @@
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -178,16 +180,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">485x</span>
+<span class="cline-any cline-yes">509x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">476x</span>
+<span class="cline-any cline-yes">500x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">485x</span>
+<span class="cline-any cline-yes">509x</span>
 <span class="cline-any cline-yes">29x</span>
-<span class="cline-any cline-yes">456x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">480x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -248,15 +252,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/* eslint-disable no-var */
-import { CommentParser } from "./comment";
-import { ObsidianUtils } from "./obsidianUtils";
+import { CommentParser } from "../comment";
+import { ObsidianUtils } from "../obsidianUtils";
 &nbsp;
 export class ImageProcessor {
 &nbsp;
 	private utils: ObsidianUtils;
 	private parser: CommentParser;
 &nbsp;
-	private markdownImageRegex = /!\[([^\]]*)\]\((.*)\)\s?(&lt;!--.*--&gt;)?/i;
+	private markdownImageRegex = /!\[([^\]]*)\]\((.*?)\)\s?(&lt;!--.*--&gt;)?/i;
 &nbsp;
 	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|svg))\|?([^\]]*)??\]\]\s?(&lt;!--.*--&gt;)?/i
 &nbsp;
@@ -277,9 +281,11 @@ export class ImageProcessor {
 			})
 			.map((line) =&gt; {
 				// Transform ![](myImage.png) to html
-				if (this.markdownImageRegex.test(line))
+				if (this.markdownImageRegex.test(line)) {
 					return this.htmlify(line);
-				return line;
+				} else {
+					return line;
+				}
 			})
 			.join('\n');
 	}
@@ -305,10 +311,10 @@ export class ImageProcessor {
 			} else {
 				var width = ext;
 			}
-			comment.style.push(`width: ${width}px`);
+			comment.addStyle('width', `${width}px`);
 &nbsp;
 			if (height) {
-				comment.style.push(`height: ${height}px`);
+				comment.addStyle('height', `${height}px`);
 			}
 		}
 		return this.parser.commentToString(comment);
@@ -325,7 +331,7 @@ export class ImageProcessor {
 		}
 &nbsp;
 		const imageHtml = `&lt;img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}&gt;&lt;/img&gt;`;
-		const pHtml = `&lt;p ${this.parser.buildAttributes(this.parser.buildComment('element',['line-height: 0'],['reset-paragraph']))}&gt;${imageHtml}&lt;/p&gt;\n`;
+		const pHtml = `&lt;p ${this.parser.buildAttributes(this.parser.buildComment('element', ['line-height: 0'], ['reset-paragraph']))}&gt;${imageHtml}&lt;/p&gt;\n`;
 		return pHtml;
 	}
 &nbsp;
@@ -346,17 +352,17 @@ export class ImageProcessor {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Fri Dec 24 2021 15:07:30 GMT+0000 (Coordinated Universal Time)
+                at Mon Dec 27 2021 13:58:43 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     

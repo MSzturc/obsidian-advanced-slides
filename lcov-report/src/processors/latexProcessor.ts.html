@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/obsidianMarkdownPreprocessor.ts</title>
+    <title>Code coverage report for src/processors/latexProcessor.ts</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">src</a> obsidianMarkdownPreprocessor.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/processors</a> latexProcessor.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>41/41</span>
+                <span class='fraction'>25/25</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>41/41</span>
+                <span class='fraction'>25/25</span>
             </div>
         
             
@@ -132,23 +132,35 @@
 <a name='L67'></a><a href='#L67'>67</a>
 <a name='L68'></a><a href='#L68'>68</a>
 <a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<a name='L70'></a><a href='#L70'>70</a>
+<a name='L71'></a><a href='#L71'>71</a>
+<a name='L72'></a><a href='#L72'>72</a>
+<a name='L73'></a><a href='#L73'>73</a>
+<a name='L74'></a><a href='#L74'>74</a>
+<a name='L75'></a><a href='#L75'>75</a>
+<a name='L76'></a><a href='#L76'>76</a>
+<a name='L77'></a><a href='#L77'>77</a>
+<a name='L78'></a><a href='#L78'>78</a>
+<a name='L79'></a><a href='#L79'>79</a>
+<a name='L80'></a><a href='#L80'>80</a>
+<a name='L81'></a><a href='#L81'>81</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">80x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,38 +173,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
-<span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-yes">40x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -201,75 +181,128 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { BlockProcessor } from "./processors/blockProcessor";
-import { ExcalidrawProcessor } from "./processors/excalidrawProcessor";
-import { FootnoteProcessor } from "./processors/footNoteProcessor";
-import { FormatProcessor } from "./processors/formatProcessor";
-import { FragmentProcessor } from "./processors/fragmentProcessor";
-import { GridProcessor } from "./processors/gridProcessor";
-import { ImageProcessor } from "./processors/imageProcessor";
-import { InternalLinkProcessor } from "./processors/internalLinkProcessor";
-import { LatexProcessor } from "./processors/latexProcessor";
-import { MermaidProcessor } from "./processors/mermaidProcessor";
-import { MultipleFileProcessor } from "./processors/multipleFileProcessor";
-import { ObsidianUtils } from "./obsidianUtils";
-import { Options } from "./options";
-import { CommentProcessor } from "./processors/commentProcessor";
-import { DropProcessor } from "./processors/dropProcessor";
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">537x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">537x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">40x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">39x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
+export class LatexProcessor {
 &nbsp;
-export class ObsidianMarkdownPreprocessor {
+	private singleLine = /\$..*\$/gm;
 &nbsp;
-	private multipleFileProcessor: MultipleFileProcessor;
-	private blockProcessor: BlockProcessor;
-	private imageProcessor: ImageProcessor;
-	private internalLinkProcessor: InternalLinkProcessor;
-	private footnoteProcessor: FootnoteProcessor;
-	private latexProcessor: LatexProcessor;
-	private formatProcessor: FormatProcessor;
-	private excalidrawProcessor: ExcalidrawProcessor;
-	private mermaidProcessor: MermaidProcessor;
-	private fragmentProcessor: FragmentProcessor;
-	private gridProcessor: GridProcessor;
-	private commentProcessor: CommentProcessor;
-	private dropProcessor: DropProcessor;
+	process(markdown: string) {
 &nbsp;
-	constructor(utils: ObsidianUtils) {
-		this.multipleFileProcessor = new MultipleFileProcessor(utils);
-		this.blockProcessor = new BlockProcessor();
-		this.imageProcessor = new ImageProcessor(utils);
-		this.internalLinkProcessor = new InternalLinkProcessor(utils);
-		this.footnoteProcessor = new FootnoteProcessor();
-		this.latexProcessor = new LatexProcessor();
-		this.formatProcessor = new FormatProcessor();
-		this.excalidrawProcessor = new ExcalidrawProcessor(utils);
-		this.mermaidProcessor = new MermaidProcessor();
-		this.fragmentProcessor = new FragmentProcessor();
-		this.gridProcessor = new GridProcessor();
-		this.commentProcessor = new CommentProcessor();
-		this.dropProcessor = new DropProcessor();
-	}
-	process(markdown: string, options: Options) {
-		const afterMultipleFileProcessor = this.multipleFileProcessor.process(markdown);
-		const afterDropProcessor = this.dropProcessor.process(afterMultipleFileProcessor, options);
-		const afterMermaidProcessor = this.mermaidProcessor.process(afterDropProcessor);
-		const afterBlockProcessor = this.blockProcessor.process(afterMermaidProcessor);
-		const afterFootNoteProcessor = this.footnoteProcessor.process(afterBlockProcessor, options);
-		const afterExcalidrawProcessor = this.excalidrawProcessor.process(afterFootNoteProcessor);
-		const afterImageProcessor = this.imageProcessor.process(afterExcalidrawProcessor);
-		const afterInternalLinkProcessor = this.internalLinkProcessor.process(afterImageProcessor, options);
-		const afterLatexProcessor = this.latexProcessor.process(afterInternalLinkProcessor);
-		const afterFormatProcessor = this.formatProcessor.process(afterLatexProcessor);
-		const afterFragmentProcessor = this.fragmentProcessor.process(afterFormatProcessor, options);
-		const afterGridProcessor = this.gridProcessor.process(afterFragmentProcessor, options);
-		const afterCommentProcessor = this.commentProcessor.process(afterGridProcessor);
-		return afterCommentProcessor;
+		const withoutEscapedCharaters = this.markEscapedCharacters(markdown);
+		const processedMultiline = this.processMultiLine(withoutEscapedCharaters);
+		const multiWithoutEscapedCharaters = this.markEscapedCharacters(processedMultiline);
+		const processedSingleLine = this.processSingleLine(multiWithoutEscapedCharaters);
+		const finalResult = this.unmarkEscapedCharacters(processedSingleLine);
+		return finalResult;
 	}
 &nbsp;
+	private markEscapedCharacters(markdown: string) {
 &nbsp;
+		return markdown
+			//Escaped $ signs
+			.replaceAll('\\$', '~~d~~')
+			//Multiline in backticks
+			.replaceAll(/`\$\$/gm, '~~s~~')
+			.replaceAll(/\$\$`/gm, '~~e~~')
+			//Singleline in backticks
+			.replaceAll(/`\$/gm, '~~ss~~')
+			.replaceAll(/\$`/gm, '~~se~~');
+	}
+&nbsp;
+	private unmarkEscapedCharacters(markdown: string) {
+&nbsp;
+		return markdown
+		.replaceAll('~~d~~', '\\$')
+		.replaceAll('~~e~~', '$$$$`')
+		.replaceAll('~~s~~', '`$$$$')
+		.replaceAll('~~ss~~', '`$')
+		.replaceAll('~~se~~', '$$`');
+	}
+&nbsp;
+	private processSingleLine(markdown: string) {
+		return markdown
+			.split('\n')
+			.map((line, index) =&gt; {
+				if (this.singleLine.test(line)) {
+					line = line.replace('$', '`$');
+					line = line.split('').reverse().join('');
+					line = line.replace('$', '`$');
+					line = line.split('').reverse().join('');
+				}
+				return line;
+			})
+			.join('\n');
+	}
+&nbsp;
+	private processMultiLine(markdown: string) {
+&nbsp;
+		if (markdown.includes('$$')) {
+			return markdown
+				.split('$$')
+				.map((line, index) =&gt; {
+					if (this.isOdd(index)) {
+						return line;
+					} else {
+						return '`' + line + '`';
+					}
+				})
+				.map((line) =&gt; {
+					//Replace all empty lines in multiline LaTex expressions
+					return line.replaceAll(/^\s*[\r\n]/gm,'');
+				}) 
+				.join('$$').slice(1, -1);
+&nbsp;
+		}
+		return markdown;
+	}
+&nbsp;
+	private isOdd(number: number) {
+		return number &amp; 1;
+	}
 &nbsp;
 }
-&nbsp;
-&nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -280,14 +313,14 @@ export class ObsidianMarkdownPreprocessor {
                 at Mon Dec 27 2021 13:58:43 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     

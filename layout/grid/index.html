@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2021-12-24T15:06:52 UTC">
+<meta name="revised" content="2021-12-27T13:57:59 UTC">
 <title>Grid Component :: Advaced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -511,9 +511,7 @@ Left
 ### Make
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
 
-<span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;55 50&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;bottomright&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;rgb(0,0,0)&#34;</span><span style="color:#111">&gt;</span>
-### Noise
-<span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
+### Noise &lt;!-- .element: drag=&#34;55 50&#34; drop=&#34;bottomright&#34; bg=&#34;rgb(0,0,0)&#34;--&gt;
 
 <span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;25 20&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;center&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;green&#34;</span> <span style="color:#75af00">rotate</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;-15&#34;</span><span style="color:#111">&gt;</span>
 ### some
@@ -533,9 +531,7 @@ thick dotted blue
 20px solid white
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
 
-<span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;30 25&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;right&#34;</span> <span style="color:#75af00">border</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;medium dashed red&#34;</span><span style="color:#111">&gt;</span>
-thick dotted blue
-<span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
+thick dotted blue <span style="color:#75715e">&lt;!-- .element: drag=&#34;30 25&#34; drop=&#34;right&#34; border=&#34;medium dashed red&#34;--&gt;</span>
 </code></pre></div><p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/grid-border.png" alt="Example"></p>
 <h4 id="animation">Animation</h4>
 <p>The grid animate property is used to define a slide animation a grid section. The animation applies to the grid and all associated children.</p>
@@ -582,13 +578,11 @@ thick dotted blue
 <li>sepia</li>
 </ul>
 <p>The following sample demonstrates filters:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;30 25&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;5 15&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;#B565A7&#34;</span> <span style="color:#75af00">filter</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;blur(10px)&#34;</span><span style="color:#111">&gt;</span>
-Text is too blurry
-<span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
-
-<span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;50 50&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;-12 -25&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;white&#34;</span> <span style="color:#75af00">filter</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;grayscale()&#34;</span><span style="color:#111">&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;50 50&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;-12 -25&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;white&#34;</span> <span style="color:#75af00">filter</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;grayscale()&#34;</span><span style="color:#111">&gt;</span>
 ![[Image.jpg]]
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
+
+Text is too blurry <span style="color:#75715e">&lt;!-- .element: drag=&#34;30 25&#34; drop=&#34;5 15&#34; bg=&#34;#B565A7&#34; filter=&#34;blur(10px)&#34; --&gt;</span>
 </code></pre></div><p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/grid-filter.png" alt="Example"></p>
 <h4 id="rotate">Rotate</h4>
 <p>The grid rotate property is used to control the 2D rotation of a grid section. Rotation on a grid section also affect all associated children.</p>
@@ -600,9 +594,7 @@ Text is too blurry
 Hello
 <span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
 
-<span style="color:#111">&lt;</span><span style="color:#f92672">grid</span>  <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;40 25&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;-12 -25&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;#D65076&#34;</span> <span style="color:#75af00">rotate</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;40&#34;</span><span style="color:#111">&gt;</span>
-World!
-<span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
+World! <span style="color:#75715e">&lt;!-- .element: drag=&#34;40 25&#34; drop=&#34;-12 -25&#34; bg=&#34;#D65076&#34; rotate=&#34;40&#34; --&gt;</span>
 </code></pre></div><p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/grid-rotate.png" alt="Example"></p>
 <h4 id="padding">Padding</h4>
 <p>The grid <strong>pad</strong> property is used to define custom padding for grid. Custom padding can help to enhance the overall appearance of content by controlling the space around grid children.</p>
