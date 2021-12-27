@@ -7,7 +7,7 @@ export class ImageProcessor {
 	private utils: ObsidianUtils;
 	private parser: CommentParser;
 
-	private markdownImageRegex = /!\[([^\]]*)\]\((.*)\)\s?(<!--.*-->)?/i;
+	private markdownImageRegex = /!\[([^\]]*)\]\((.*?)\)\s?(<!--.*-->)?/i;
 
 	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|svg))\|?([^\]]*)??\]\]\s?(<!--.*-->)?/i
 
@@ -28,9 +28,11 @@ export class ImageProcessor {
 			})
 			.map((line) => {
 				// Transform ![](myImage.png) to html
-				if (this.markdownImageRegex.test(line))
+				if (this.markdownImageRegex.test(line)) {
 					return this.htmlify(line);
-				return line;
+				} else {
+					return line;
+				}
 			})
 			.join('\n');
 	}
@@ -56,10 +58,10 @@ export class ImageProcessor {
 			} else {
 				var width = ext;
 			}
-			comment.addStyle('width',`${width}px`);
+			comment.addStyle('width', `${width}px`);
 
 			if (height) {
-				comment.addStyle('height',`${height}px`);
+				comment.addStyle('height', `${height}px`);
 			}
 		}
 		return this.parser.commentToString(comment);
@@ -76,7 +78,7 @@ export class ImageProcessor {
 		}
 
 		const imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}></img>`;
-		const pHtml = `<p ${this.parser.buildAttributes(this.parser.buildComment('element',['line-height: 0'],['reset-paragraph']))}>${imageHtml}</p>\n`;
+		const pHtml = `<p ${this.parser.buildAttributes(this.parser.buildComment('element', ['line-height: 0'], ['reset-paragraph']))}>${imageHtml}</p>\n`;
 		return pHtml;
 	}
 
