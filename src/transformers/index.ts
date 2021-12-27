@@ -13,7 +13,7 @@ export interface AttributeTransformer {
 	transform(element: Properties): void;
 }
 
-export abstract class Properties {
+export class Properties {
 	private transformer: AttributeTransformers;
 
 	private style: Map<string, string>;

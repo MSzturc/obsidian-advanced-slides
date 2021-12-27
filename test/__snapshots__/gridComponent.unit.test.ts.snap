@@ -1,17 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grid Component > Attributes > Background 1`] = `
-"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; position: fixed; left: 432px; top: 0px; height: 350px; width: 528px; \\" >
+"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 432px; top: 0px; height: 350px; width: 528px; background-color: orange \\" >
 
 ### Make
 </div>
 
-<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: rgb(0,0,0); position: fixed; left: 0px; top: 350px; height: 350px; width: 528px; \\" >
+<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 0px; top: 350px; height: 350px; width: 528px; background-color: rgb(0,0,0) \\" >
 
 ### Noise
 </div>
 
-<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: green; transform: rotate(-15deg); position: fixed; left: 360px; top: 280px; height: 140px; width: 240px; \\" >
+<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 360px; top: 280px; height: 140px; width: 240px; background-color: green; transform: rotate(-15deg) \\" >
 
 ### some
 </div>
@@ -19,17 +19,17 @@ exports[`Grid Component > Attributes > Background 1`] = `
 `;
 
 exports[`Grid Component > Attributes > Border 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: thick dotted blue; box-sizing: border-box; position: fixed; left: 0px; top: 262.5px; height: 175px; width: 288px; \\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 0px; top: 262.5px; height: 175px; width: 288px; border: thick dotted blue; box-sizing: border-box \\" >
 
 thick dotted blue
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: 4px solid white; box-sizing: border-box; position: fixed; left: 336px; top: 262.5px; height: 175px; width: 288px; \\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 336px; top: 262.5px; height: 175px; width: 288px; border: 4px solid white; box-sizing: border-box \\" >
 
 20px solid white
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; border: medium dashed red; box-sizing: border-box; position: fixed; left: 672px; top: 262.5px; height: 175px; width: 288px; \\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 672px; top: 262.5px; height: 175px; width: 288px; border: medium dashed red; box-sizing: border-box \\" >
 
 thick dotted blue
 </div>
@@ -37,12 +37,12 @@ thick dotted blue
 `;
 
 exports[`Grid Component > Attributes > Filter 1`] = `
-"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #B565A7; filter: blur(10px); position: fixed; left: 48px; top: 105px; height: 175px; width: 288px; \\" >
+"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 105px; height: 175px; width: 288px; background-color: #B565A7; filter: blur(10px) \\" >
 
 Text is too blurry
 </div>
 
-<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: white; filter: grayscale(); position: fixed; left: 364.79999999999995px; top: 175px; height: 350px; width: 480px; \\" >
+<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 364.79999999999995px; top: 175px; height: 350px; width: 480px; background-color: white; filter: grayscale() \\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
@@ -51,12 +51,12 @@ Text is too blurry
 `;
 
 exports[`Grid Component > Attributes > Padding 1`] = `
-"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; padding: 0 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 350px; width: 480px; \\" >
+"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 0px; top: 0px; height: 350px; width: 480px; background-color: orange; padding: 0 50px; box-sizing: border-box \\" >
 
 ###### Lorem Ipsum wasnt simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book here there
 </div>
 
-<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: orange; padding: 20px; box-sizing: border-box; position: fixed; left: 480px; top: 350px; height: 350px; width: 480px; \\" >
+<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 480px; top: 350px; height: 350px; width: 480px; background-color: orange; padding: 20px; box-sizing: border-box \\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\"></img></p>
 
@@ -65,19 +65,19 @@ exports[`Grid Component > Attributes > Padding 1`] = `
 `;
 
 exports[`Grid Component > Attributes > Padding 2`] = `
-"<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: red; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; \\" >
+"<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: red \\" >
 
 ### Fragments:
 - Right<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->
 - Bottom<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" -->
 </div>
 
-<div class=\\"reset-margin fragment has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: green; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; \\" data-fragment-index=\\"1\\">
+<div class=\\"reset-margin has-dark-background fragment\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: green \\" data-fragment-index=\\"1\\">
 
 Right Grid
 </div>
 
-<div class=\\"reset-margin fragment has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: gray; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; \\" data-fragment-index=\\"2\\">
+<div class=\\"reset-margin has-light-background fragment\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: gray \\" data-fragment-index=\\"2\\">
 
 Bottom Grid
 </div>
@@ -85,12 +85,12 @@ Bottom Grid
 `;
 
 exports[`Grid Component > Attributes > Rotate 1`] = `
-"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #B565A7; transform: rotate(-10deg); position: fixed; left: 336px; top: 0px; height: 175px; width: 288px; \\" >
+"<div class=\\"reset-margin has-light-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 336px; top: 0px; height: 175px; width: 288px; background-color: #B565A7; transform: rotate(-10deg) \\" >
 
 Hello
 </div>
 
-<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; background-color: #D65076; transform: rotate(40deg); position: fixed; left: 576px; top: 525px; height: 175px; width: 384px; \\" >
+<div class=\\"reset-margin has-dark-background\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 576px; top: 525px; height: 175px; width: 384px; background-color: #D65076; transform: rotate(40deg) \\" >
 
 World!
 </div>
@@ -98,17 +98,17 @@ World!
 `;
 
 exports[`Grid Component > Basic Syntax 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral;\\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral \\" >
 
 ### Left
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral \\" >
 
 ### Right
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral \\" >
 
 ### Bottom
 </div>
@@ -116,17 +116,17 @@ exports[`Grid Component > Basic Syntax 1`] = `
 `;
 
 exports[`Grid Component > Basic Syntax 2`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral;\\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 70px; height: 385px; width: 576px; background-color: coral \\" >
 
 ### Left
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 672px; top: 70px; height: 385px; width: 240px; background-color: coral \\" >
 
 ### Right
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 48px; top: 490px; height: 140px; width: 864px; background-color: coral \\" >
 
 ### Bottom
 </div>
@@ -134,7 +134,7 @@ exports[`Grid Component > Basic Syntax 2`] = `
 `;
 
 exports[`Grid Component > Column Flow 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 288px; top: 0px; height: 700px; width: 384px; background-color: coral;\\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 288px; top: 0px; height: 700px; width: 384px; background-color: coral \\" >
 
 ### Lorem
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
@@ -145,22 +145,22 @@ exports[`Grid Component > Column Flow 1`] = `
 `;
 
 exports[`Grid Component > Position Coordinates 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 96px; top: 105px; height: 350px; width: 384px; background-color: orange;\\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 96px; top: 105px; height: 350px; width: 384px; background-color: orange \\" >
 
 ### Positive X, Y
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 632px; top: 40px; height: 210px; width: 288px; background-color: red;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 632px; top: 40px; height: 210px; width: 288px; background-color: red \\" >
 
 ### Negative X, Positive Y
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 528px; top: 280px; height: 280px; width: 384px; background-color: blue;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 528px; top: 280px; height: 280px; width: 384px; background-color: blue \\" >
 
 ### Negative X, Y
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 0px; top: 595px; height: 70px; width: 960px; background-color: green;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 0px; top: 595px; height: 70px; width: 960px; background-color: green \\" >
 
 ### Positive X, Negative Y
 </div>
@@ -168,17 +168,17 @@ exports[`Grid Component > Position Coordinates 1`] = `
 `;
 
 exports[`Grid Component > Position by Name 1`] = `
-"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 0px; top: 0px; height: 210px; width: 384px; background-color: red;\\" >
+"<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 0px; top: 0px; height: 210px; width: 384px; background-color: red \\" >
 
 ### Top Left
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 480px; top: 0px; height: 700px; width: 480px; background-color: green;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 480px; top: 0px; height: 700px; width: 480px; background-color: green \\" >
 
 ### Right Default Size
 </div>
 
-<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 96px; top: 490px; height: 210px; width: 768px; background-color: coral;\\" >
+<div class=\\"reset-margin\\" style=\\"display: flex; flex-direction: column; justify-content: space-evenly; position: fixed; left: 96px; top: 490px; height: 210px; width: 768px; background-color: coral \\" >
 
 ### Bottom
 </div>
@@ -186,7 +186,7 @@ exports[`Grid Component > Position by Name 1`] = `
 `;
 
 exports[`Grid Component > Row Flow 1`] = `
-"<div class=\\"reset-margin flex-even\\" style=\\"display: flex; flex-direction: row; align-items: center; justify-content: space-evenly; position: fixed; left: 0px; top: 210px; height: 280px; width: 960px; background-color: coral;\\" >
+"<div class=\\"reset-margin flex-even\\" style=\\"display: flex; flex-direction: row; align-items: center; justify-content: space-evenly; position: fixed; left: 0px; top: 210px; height: 280px; width: 960px; background-color: coral \\" >
 
 ### Lorem
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>

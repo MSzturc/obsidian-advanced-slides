@@ -1,5 +1,5 @@
 import { Options } from "../options";
-import Color from "color";
+import { Properties } from "src/transformers";
 
 export class GridProcessor {
 
@@ -55,36 +55,28 @@ export class GridProcessor {
 	transformGrid(attr: string, inner: string): string {
 		const attributes = this.parseAttributes(attr.trim());
 
+		const properties = new Properties(attributes);
+
 		const grid = this.read(attributes);
 
 		if (grid == undefined) {
 			return undefined;
 		}
 
+		const clazz = (properties.getClasses().length > 0) ? ' ' + properties.getClasses() : '';
+		const style = (properties.getStyles().length > 0) ? properties.getStyles() + ' ' : ''; 
+
 		const left = this.leftOf(grid);
 		const top = this.topOf(grid);
 		const height = this.heightOf(grid);
 		const width = this.widthOf(grid);
 
-		const otherStyle = this.styleOf(attributes);
-		const clazz = this.classOf(attributes);
-
 		const flow = this.flowOf(attributes);
 		const flowClass = this.flowClassOf(attributes);
-		const bg = this.backgroundOf(attributes);
-		const bgClass = this.backgroundClassOf(attributes);
-		const pad = this.paddingOf(attributes);
-		const opacity = this.opacityOf(attributes);
-		const border = this.borderOf(attributes);
-		const filter = this.filterOf(attributes);
-		const rotate = this.rotateOf(attributes);
-		const animate = this.animationOf(attributes);
-		const fragment = this.fragmentOf(attributes);
-		const boxSizing = this.boxSizingOf(attributes);
-
+	
 		const attrResult = this.attrOf(attributes);
 
-		return `<div class="reset-margin${clazz}${animate}${fragment}${flowClass}${bgClass}" style="${flow}${bg}${pad}${opacity}${border}${filter}${rotate}${boxSizing}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${otherStyle}"${attrResult}>\n${inner}</div>`;
+		return `<div class="reset-margin${clazz}${flowClass}" style="${flow}position: fixed; left: ${left}; top: ${top}; height: ${height}; width: ${width}; ${style}"${attrResult}>\n${inner}</div>`;
 	}
 
 	read(attributes: Map<string, string>): Map<string, number> {
@@ -155,62 +147,6 @@ export class GridProcessor {
 		}
 	}
 
-	animationOf(attributes: Map<string, string>){
-		const animate = attributes.get('animate');
-		return (animate != undefined) ? ` ${animate}` : '';
-	}
-
-	fragmentOf(attributes: Map<string, string>){
-		const animate = attributes.get('frag');
-		return (animate != undefined) ? ` fragment` : '';
-	}
-
-	backgroundOf(attributes: Map<string, string>){
-		const bg = attributes.get('bg');
-		return (bg != undefined) ? `background-color: ${bg}; ` : '';
-	}
-
-	backgroundClassOf(attributes: Map<string, string>){
-		const bg = attributes.get('bg');
-
-		if(bg != undefined){
-			const color = Color(bg);
-			return color.isLight() ? ' has-light-background' : ' has-dark-background';
-		} {
-			return '';
-		}
-	}
-	
-	paddingOf(attributes: Map<string, string>){
-		const pad = attributes.get('pad');
-		return (pad != undefined) ? `padding: ${pad}; ` : '';
-	}
-
-	boxSizingOf(attributes: Map<string, string>){
-		const boxSizingRequired = attributes.has('pad') || attributes.has('border');
-		return (boxSizingRequired) ? `box-sizing: border-box; ` : '';
-	}
-	
-	opacityOf(attributes: Map<string, string>){
-		const opacity = attributes.get('opacity');
-		return (opacity != undefined) ? `opacity: ${opacity}; ` : '';
-	}
-
-	borderOf(attributes: Map<string, string>){
-		const border = attributes.get('border');
-		return (border != undefined) ? `border: ${border}; ` : '';
-	}
-
-	filterOf(attributes: Map<string, string>){
-		const filter = attributes.get('filter');
-		return (filter != undefined) ? `filter: ${filter}; ` : '';
-	}
-
-	rotateOf(attributes: Map<string, string>){
-		const rotate = attributes.get('rotate');
-		return (rotate != undefined) ? `transform: rotate(${rotate.toLowerCase().endsWith('deg')?rotate : rotate +'deg'}); ` : '';
-	}
-
 	flowOf(attributes: Map<string, string>){
 		const flow = attributes.get('flow');
 
@@ -235,7 +171,6 @@ export class GridProcessor {
 			return max / 100 * Number(input);
 		}
 	}
-
 
 	attrOf(attributes: Map<string, string>): string {
 		attributes.delete('drag');
@@ -268,14 +203,6 @@ export class GridProcessor {
 			attributes.set(dst,value);
 			attributes.delete(src);
 		}
-	}
-
-	classOf(attributes: Map<string, string>): string {
-		return attributes.has('class') ? ' ' + attributes.get('class') : '';
-	}
-
-	styleOf(attributes: Map<string, string>): string {
-		return attributes.has('style') ? attributes.get('style') : '';
 	}
 
 	leftOf(grid: Map<string, number>): string {
