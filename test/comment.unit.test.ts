@@ -89,6 +89,21 @@ test('Parse Coment with bg property', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
+test('Parse Coment with bg property', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .slide: bg="black" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'slide',
+		['background-color: black'],
+		['has-dark-background']
+	);
+	expect(parsed).toStrictEqual(expected);
+});
+
 test('Merge Coment', () => {
 
 	const parser = new CommentParser();
@@ -200,4 +215,20 @@ test('Parse Coment with rotate property', () => {
 		['transform: rotate(-10deg)']
 	);
 	expect(parsed).toStrictEqual(expected);
+
+});
+
+test('Parse Coment with rotate property', () => {
+
+	const parser = new CommentParser();
+
+	const input = `<!-- .slide: rotate="-10deg" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of(
+		'slide',
+		['transform: rotate(-10deg)']
+	);
+	expect(parsed).toStrictEqual(expected);
+
 });
