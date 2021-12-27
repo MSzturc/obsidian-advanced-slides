@@ -10,6 +10,11 @@ You can customize many setting for your current slide deck by adding one or more
 
 Name | Description | Possible Values | Default Value
 ------------ | ------------ | ------------ | ------------
+width | Sets the width of the presentation | number | 960
+height | Sets the width of the presentation | number | 700:
+margin | Empty space around the content | number | 0.04:
+minScale | Bounds for smallest possible scale to apply to content | number | 0.2
+maxScale | Bounds for largest possible scale to apply to content | number | 2.0
 notesSeparator | Sets the note delimiter | string | note:
 separator | Sets the slide separator | string | ^( ?\| )---( ?\| )$
 verticalSeparator | Sets the vertical slide separator | string | ^( ?\| )--( ?\| )$
