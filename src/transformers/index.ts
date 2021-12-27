@@ -3,6 +3,7 @@ import { BorderTransformer } from "./borderTransformer";
 import { ClassMappingTransformer } from "./classMappingTransformer";
 import { ClassTransformer } from "./classTransformer";
 import { FragmentTransformer } from "./fragmentTransformer";
+import { GridTransformer } from "./gridTransformer";
 import { PaddingTransformer } from "./paddingTransformer";
 import { RotateTransformer } from "./rotateTransformer";
 import { StyleMappingTransformer } from "./styleMappingTransformer";
@@ -119,6 +120,9 @@ class AttributeTransformers {
 		this.allTransformers.push(new BorderTransformer());
 		this.allTransformers.push(new StyleMappingTransformer('filter','filter'));
 		this.allTransformers.push(new RotateTransformer());
+		this.allTransformers.push(new GridTransformer());
+
+		
 	}
 
 	transform(element: Properties) {
