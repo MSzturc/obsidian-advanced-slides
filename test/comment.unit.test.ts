@@ -4,7 +4,7 @@ test('Parse Coment', () => {
 
 	const parser = new CommentParser();
 
-	const input = `text with border <!-- .element: class="with-border" -->`;
+	const input = `text with border <!-- element class="with-border" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -19,7 +19,7 @@ test('Parse Coment', () => {
 
 	const parser = new CommentParser();
 
-	const input = `text with background <!-- .element: style="background:blue" -->`;
+	const input = `text with background <!-- element style="background:blue" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -35,7 +35,7 @@ test('Empty Slide comment', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .slide: -->`;
+	const input = `<!-- slide -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -48,7 +48,7 @@ test('Parse Coment', () => {
 
 	const parser = new CommentParser();
 
-	const input = `text with attribute <!-- .element: data-toggle="modal" -->`;
+	const input = `text with attribute <!-- element data-toggle="modal" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -78,7 +78,7 @@ test('Parse Coment with bg property', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .slide: bg="coral" -->`;
+	const input = `<!-- slide bg="coral" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -93,7 +93,7 @@ test('Parse Coment with bg property', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .slide: bg="black" -->`;
+	const input = `<!-- slide bg="black" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -108,7 +108,7 @@ test('Merge Coment', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .slide: bg="coral" class="reveal section small" style="width: 200px; height: 400px; margin: 0" data-toggle="modal" -->`;
+	const input = `<!-- slide bg="coral" class="reveal section small" style="width: 200px; height: 400px; margin: 0" data-toggle="modal" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -134,7 +134,7 @@ test('Parse Coment with pad property', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .slide: pad="10px 15px" -->`;
+	const input = `<!-- slide pad="10px 15px" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -148,7 +148,7 @@ test('Parse Coment with animate property', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .slide: animate="fadeIn slower" -->`;
+	const input = `<!-- slide animate="fadeIn slower" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -163,7 +163,7 @@ test('Parse Coment with fragment property', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .element: frag="1" -->`;
+	const input = `<!-- element frag="1" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -179,7 +179,7 @@ test('Parse Coment with opacity property', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .element: opacity="0.5" -->`;
+	const input = `<!-- element opacity="0.5" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -193,7 +193,7 @@ test('Parse Coment with border property', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .slide: border="thick dotted blue" -->`;
+	const input = `<!-- slide border="thick dotted blue" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -207,7 +207,7 @@ test('Parse Coment with rotate property', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .slide: rotate="-10" -->`;
+	const input = `<!-- slide rotate="-10" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(
@@ -222,7 +222,7 @@ test('Parse Coment with rotate property', () => {
 
 	const parser = new CommentParser();
 
-	const input = `<!-- .slide: rotate="-10deg" -->`;
+	const input = `<!-- slide rotate="-10deg" -->`;
 	const parsed = parser.parseLine(input);
 
 	const expected = Comment.of(

@@ -151,7 +151,7 @@ Where the color option of the **bg** property takes any valid [CSS Color Value](
 ### Make
 </grid>
 
-### Noise <!-- .element: drag="55 50" drop="bottomright" bg="rgb(0,0,0)"-->
+### Noise <!-- element drag="55 50" drop="bottomright" bg="rgb(0,0,0)"-->
 
 <grid  drag="25 20" drop="center" bg="green" rotate="-15">
 ### some
@@ -179,7 +179,7 @@ thick dotted blue
 20px solid white
 </grid>
 
-thick dotted blue <!-- .element: drag="30 25" drop="right" border="medium dashed red"-->
+thick dotted blue <!-- element drag="30 25" drop="right" border="medium dashed red"-->
 ```
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-border.png)
@@ -244,7 +244,7 @@ The following sample demonstrates filters:
 ![[Image.jpg]]
 </grid>
 
-Text is too blurry <!-- .element: drag="30 25" drop="5 15" bg="#B565A7" filter="blur(10px)" -->
+Text is too blurry <!-- element drag="30 25" drop="5 15" bg="#B565A7" filter="blur(10px)" -->
 ```
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-filter.png)
@@ -264,7 +264,7 @@ The following sample demonstrates rotation:
 Hello
 </grid>
 
-World! <!-- .element: drag="40 25" drop="-12 -25" bg="#D65076" rotate="40" -->
+World! <!-- element drag="40 25" drop="-12 -25" bg="#D65076" rotate="40" -->
 ```
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-rotate.png)

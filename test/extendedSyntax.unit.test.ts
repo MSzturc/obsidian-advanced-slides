@@ -27,11 +27,11 @@ test('Extended Markdown Syntax > Horizontal / Vertical Slides', () => {
 test('Extended Markdown Syntax >  Element Annotations', () => {
 
 	const input =
-`text with border <!-- .element: class="with-border" -->
+`text with border <!-- element class="with-border" -->
 
-text with background <!-- .element: style="background:blue" -->
+text with background <!-- element style="background:blue" -->
 
-text with attribute <!-- .element: data-toggle="modal" -->
+text with attribute <!-- element data-toggle="modal" -->
 `;
 
 	const { options, markdown } = prepare(input);
@@ -43,7 +43,7 @@ text with attribute <!-- .element: data-toggle="modal" -->
 test('Extended Markdown Syntax >  Slide Annotations', () => {
 
 	const input =
-`<!-- .slide: style="background-color: coral;" -->
+`<!-- slide style="background-color: coral;" -->
 
 # Header with coral background color
 
@@ -51,7 +51,7 @@ Paragraph has coral background color, too!
 
 ---
 
-<!-- .slide: style="background-color: green;" -->
+<!-- slide style="background-color: green;" -->
 
 - All Bullet points
 - have green
@@ -80,11 +80,11 @@ Paragraph content
 
 no color
 
-::: block <!-- .element: style="background-color: red;" -->
+::: block <!-- element style="background-color: red;" -->
 
 everything inside this block has red background color
 
-::: block <!-- .element: style="background-color: blue;" -->
+::: block <!-- element style="background-color: blue;" -->
 
 blue
 
@@ -106,23 +106,23 @@ no color
 test('Extended Markdown Syntax >  Fragments', () => {
 
 	const input =
-`Fade in <!-- .element: class="fragment" -->
+`Fade in <!-- element class="fragment" -->
 
-Fade out <!-- .element: class="fragment fade-out" -->
+Fade out <!-- element class="fragment fade-out" -->
 
-Highlight red <!-- .element: class="fragment highlight-red" -->
+Highlight red <!-- element class="fragment highlight-red" -->
 
-Fade in, then out <!-- .element: class="fragment fade-in-then-out" -->
+Fade in, then out <!-- element class="fragment fade-in-then-out" -->
 
-Slide up while fading in <!-- .element: class="fragment fade-up" -->
+Slide up while fading in <!-- element class="fragment fade-up" -->
 
 ---
 
 - Permanent item
-- Appear Fourth <!-- .element: class="fragment" data-fragment-index="4" -->
-- Appear Third <!-- .element: class="fragment" data-fragment-index="3" -->
-- Appear Second <!-- .element: class="fragment" data-fragment-index="2" -->
-- Appear First <!-- .element: class="fragment" data-fragment-index="1" -->
+- Appear Fourth <!-- element class="fragment" data-fragment-index="4" -->
+- Appear Third <!-- element class="fragment" data-fragment-index="3" -->
+- Appear Second <!-- element class="fragment" data-fragment-index="2" -->
+- Appear First <!-- element class="fragment" data-fragment-index="1" -->
 `;
 
 	const { options, markdown } = prepare(input);
@@ -140,7 +140,7 @@ test('Extended Markdown Syntax >  Inline Styling', () => {
 }
 </style>
 
-styled text <!-- .element: class="with-border" -->
+styled text <!-- element class="with-border" -->
 `;
 
 	const { options, markdown } = prepare(input);
@@ -152,21 +152,21 @@ styled text <!-- .element: class="with-border" -->
 test('Extended Markdown Syntax >  Slide Backgrounds', () => {
 
 	const input =
-`<!-- .slide: data-background="aquamarine" -->
+`<!-- slide data-background="aquamarine" -->
 ## Slide with text based background
 ---
 
-<!-- .slide: data-background="#ff0000" -->
+<!-- slide data-background="#ff0000" -->
 ## Slide with hex based background
 
 ---
 
-<!-- .slide: data-background="rgb(70, 70, 255)" -->
+<!-- slide data-background="rgb(70, 70, 255)" -->
 ## Slide with rgb based background
 
 ---
 
-<!-- .slide: data-background="hsla(315, 100%, 50%, 1)" -->
+<!-- slide data-background="hsla(315, 100%, 50%, 1)" -->
 ## Slide with hsl based background
 
 ---
@@ -175,12 +175,12 @@ test('Extended Markdown Syntax >  Slide Backgrounds', () => {
 
 ---
 
-<!-- .slide: data-background-image="https://picsum.photos/seed/picsum/800/600" -->
+<!-- slide data-background-image="https://picsum.photos/seed/picsum/800/600" -->
 ## Slide with image background
 
 ---
 
-<!-- .slide: data-background-image="https://picsum.photos/seed/picsum/800/600" data-background-opacity="0.5" -->
+<!-- slide data-background-image="https://picsum.photos/seed/picsum/800/600" data-background-opacity="0.5" -->
 ## with opacity
 
 0.5 ≙ 50% opacity
@@ -277,7 +277,7 @@ test('Extended Markdown Syntax >  Excalidraw support', () => {
 
 ![[Sample.excalidraw|100]]
 
-![[Sample.excalidraw]] <!-- .element: style="width:300px; height:400px" -->`;
+![[Sample.excalidraw]] <!-- element style="width:300px; height:400px" -->`;
 
 	const { options, markdown } = prepare(input);
 	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);

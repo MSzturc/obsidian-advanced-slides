@@ -16,7 +16,7 @@ you may define css styles inside your markdown:
 	}
 </style>
 
-styled text <!-- .element: class="with-border" -->
+styled text <!-- element class="with-border" -->
 ```
 
 {{<revealhtml theme="black" progress="true" controls="true">}}

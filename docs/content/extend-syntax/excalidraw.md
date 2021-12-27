@@ -11,7 +11,7 @@ weight = 10
 
 ![[Sample.excalidraw|100]]
 
-![[Sample.excalidraw]] <!-- .element: style="width:300px; height:400px" -->
+![[Sample.excalidraw]] <!-- element style="width:300px; height:400px" -->
 ```
 
 ![Excalidraw](https://mszturc.github.io/obsidian-advanced-slides/images/excalidraw.png)

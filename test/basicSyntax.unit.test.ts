@@ -81,7 +81,7 @@ test('Basic Markdown Syntax > Images', () => {
 		return null;
 	});
 
-	when(MockedObsidianUtils.getAbsolutePath('Image.jpg|300x100 <!-- .element: style="object-fit: cover" -->.md')).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath('Image.jpg|300x100 <!-- element style="object-fit: cover" -->.md')).thenCall( (arg) => {
 		return null;
 	});
 
@@ -119,7 +119,7 @@ Scale image to a width of 100 px
 
 Scale image to a width of 300x100 px
 
-![[Image.jpg|300x100]] <!-- .element: style="object-fit: cover" -->
+![[Image.jpg|300x100]] <!-- element style="object-fit: cover" -->
 
 `;
 

@@ -20,11 +20,11 @@ Paragraph content
 
 no color
 
-::: block <!-- .element: style="background-color: red;" -->
+::: block <!-- element style="background-color: red;" -->
 
 everything inside this block has red background color
 
-::: block <!-- .element: style="background-color: blue;" -->
+::: block <!-- element style="background-color: blue;" -->
 
 blue
 

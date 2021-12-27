@@ -24,7 +24,7 @@ description = ""
 - Footnote Support - `Here's a footnote[^1]`
 - Define stylesheets inside Markdown - `<style>....</style>`</s> 
 - Pass options To Slide Compiler through frontmatter
-- Annotate elements `<!-- .element: class="red" -->`
+- Annotate elements `<!-- element class="red" -->`
 - Support for internal links
   -  `[[Note]]` will be rendered as normal text in Presentation
   - with aliases `[[Note|My Note]]`

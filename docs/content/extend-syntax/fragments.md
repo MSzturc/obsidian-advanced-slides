@@ -9,23 +9,23 @@ The default fragment style is to start out invisible and fade in. This style can
 <br>
 {{%alert%}}A list of all possible fragment types could be found [here](https://revealjs.com/fragments/){{%/alert%}}
 ```md
-Fade in <!-- .element: class="fragment" -->
+Fade in <!-- element class="fragment" -->
 
-Fade out <!-- .element: class="fragment fade-out" -->
+Fade out <!-- element class="fragment fade-out" -->
 
-Highlight red <!-- .element: class="fragment highlight-red" -->
+Highlight red <!-- element class="fragment highlight-red" -->
 
-Fade in, then out <!-- .element: class="fragment fade-in-then-out" -->
+Fade in, then out <!-- element class="fragment fade-in-then-out" -->
 
-Slide up while fading in <!-- .element: class="fragment fade-up" -->
+Slide up while fading in <!-- element class="fragment fade-up" -->
 
 ---
 
 - Permanent item
-- Appear Fourth <!-- .element: class="fragment" data-fragment-index="4" -->
-- Appear Third <!-- .element: class="fragment" data-fragment-index="3" -->
-- Appear Second <!-- .element: class="fragment" data-fragment-index="2" -->
-- Appear First <!-- .element: class="fragment" data-fragment-index="1" -->
+- Appear Fourth <!-- element class="fragment" data-fragment-index="4" -->
+- Appear Third <!-- element class="fragment" data-fragment-index="3" -->
+- Appear Second <!-- element class="fragment" data-fragment-index="2" -->
+- Appear First <!-- element class="fragment" data-fragment-index="1" -->
 ```
 
 {{<revealhtml theme="black" progress="true" controls="true">}}
