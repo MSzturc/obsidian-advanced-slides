@@ -1,7 +1,7 @@
 
 export class LatexProcessor {
 
-	private singleLine = /\$..*\$/gm;
+	private singleLine = /\$(.*?)\$/g;
 
 	process(markdown: string) {
 
@@ -39,12 +39,9 @@ export class LatexProcessor {
 	private processSingleLine(markdown: string) {
 		return markdown
 			.split('\n')
-			.map((line, index) => {
-				if (this.singleLine.test(line)) {
-					line = line.replace('$', '`$');
-					line = line.split('').reverse().join('');
-					line = line.replace('$', '`$');
-					line = line.split('').reverse().join('');
+			.map((line) => {
+				if (line.includes('$')) {
+					line = line.replaceAll(this.singleLine, '`$$$1$$`');
 				}
 				return line;
 			})
