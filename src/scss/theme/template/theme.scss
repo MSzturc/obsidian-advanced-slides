@@ -74,6 +74,12 @@
  * OTHER
  *********************************************/
 
+.reveal .slides>section.drop {
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 100%;
+}
+
 .reveal p {
 	margin: var(--r-block-margin) 0;
 	line-height: 1.3;

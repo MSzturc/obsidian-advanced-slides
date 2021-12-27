@@ -15,7 +15,8 @@ exports[`Grid Component > Attributes > Background 1`] = `
 
 ### some
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Attributes > Border 1`] = `
@@ -33,7 +34,8 @@ thick dotted blue
 
 thick dotted blue
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Attributes > Filter 1`] = `
@@ -47,7 +49,8 @@ Text is too blurry
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Attributes > Padding 1`] = `
@@ -61,7 +64,8 @@ exports[`Grid Component > Attributes > Padding 1`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\"></img></p>
 
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Attributes > Padding 2`] = `
@@ -81,7 +85,8 @@ Right Grid
 
 Bottom Grid
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Attributes > Rotate 1`] = `
@@ -94,7 +99,8 @@ Hello
 
 World!
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Basic Syntax 1`] = `
@@ -112,7 +118,8 @@ exports[`Grid Component > Basic Syntax 1`] = `
 
 ### Bottom
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Basic Syntax 2`] = `
@@ -130,7 +137,8 @@ exports[`Grid Component > Basic Syntax 2`] = `
 
 ### Bottom
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Column Flow 1`] = `
@@ -141,7 +149,8 @@ exports[`Grid Component > Column Flow 1`] = `
 
 ### Ipsum
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Position Coordinates 1`] = `
@@ -164,7 +173,8 @@ exports[`Grid Component > Position Coordinates 1`] = `
 
 ### Positive X, Negative Y
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Position by Name 1`] = `
@@ -182,7 +192,8 @@ exports[`Grid Component > Position by Name 1`] = `
 
 ### Bottom
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;
 
 exports[`Grid Component > Row Flow 1`] = `
@@ -193,5 +204,6 @@ exports[`Grid Component > Row Flow 1`] = `
 
 ### Ipsum
 </div>
-<!-- .slide: class=\\"stack\\" -->"
+<!-- .slide: class=\\"drop\\" -->
+"
 `;

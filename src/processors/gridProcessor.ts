@@ -47,7 +47,7 @@ export class GridProcessor {
 				slide = slide.split(key).join(value);
 			}
 		}
-		return slide + '\n<!-- .slide: class="stack" -->';
+		return slide;
 	}
 
 	transformGrid(attr: string, inner: string): string {
