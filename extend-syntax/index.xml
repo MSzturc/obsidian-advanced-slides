@@ -22,7 +22,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/</guid>
-      <description>text with border &amp;lt;!-- .element: class=&amp;#34;with-border&amp;#34; --&amp;gt; text with background &amp;lt;!-- .element: style=&amp;#34;background:blue&amp;#34; --&amp;gt; text with attribute &amp;lt;!-- .element: data-toggle=&amp;#34;modal&amp;#34; --&amp;gt; </description>
+      <description>text with border &amp;lt;!-- element class=&amp;#34;with-border&amp;#34; --&amp;gt; text with background &amp;lt;!-- element style=&amp;#34;background:blue&amp;#34; --&amp;gt; text with attribute &amp;lt;!-- element data-toggle=&amp;#34;modal&amp;#34; --&amp;gt; </description>
     </item>
     
     <item>
@@ -45,7 +45,7 @@
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/blockcomment/</guid>
       <description>You can use block comments to group parts of your slide. By annotating the block all items inside this block gets the properties of the annotation:
-::: block #### Header _and_ Paragraph content *in same block* ::: --- no color ::: block &amp;lt;!-- .element: style=&amp;#34;background-color: red;&amp;#34; --&amp;gt; everything inside this block has red background color ::: block &amp;lt;!-- .element: style=&amp;#34;background-color: blue;&amp;#34; --&amp;gt; blue ::: red ::: no color  Header and Paragraph content in same block</description>
+::: block #### Header _and_ Paragraph content *in same block* ::: --- no color ::: block &amp;lt;!-- element style=&amp;#34;background-color: red;&amp;#34; --&amp;gt; everything inside this block has red background color ::: block &amp;lt;!-- element style=&amp;#34;background-color: blue;&amp;#34; --&amp;gt; blue ::: red ::: no color  Header and Paragraph content in same block</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragments/</guid>
-      <description>Fragments are used to highlight or incrementally reveal individual elements on a slide. Every element with the class fragment will be stepped through before moving on to the next slide. The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment. A list of all possible fragment types could be found here Fade in &amp;lt;!-- .element: class=&amp;#34;fragment&amp;#34; --&amp;gt; Fade out &amp;lt;!</description>
+      <description>Fragments are used to highlight or incrementally reveal individual elements on a slide. Every element with the class fragment will be stepped through before moving on to the next slide. The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment. A list of all possible fragment types could be found here Fade in &amp;lt;!-- element class=&amp;#34;fragment&amp;#34; --&amp;gt; Fade out &amp;lt;!</description>
     </item>
     
     <item>
@@ -64,7 +64,7 @@
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</guid>
       <description>you may define css styles inside your markdown:
-by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{ border: 1px solid red; } &amp;lt;/style&amp;gt; styled text &amp;lt;!-- .element: class=&amp;#34;with-border&amp;#34; --&amp;gt;   styled text       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;true&#34; , transition: &#34;concave&#34;, dependencies: [ { src: &#39;\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js&#34;&#39;, condition: function() { return !document.body.classList; } }, { src: &#39;\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.</description>
+by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{ border: 1px solid red; } &amp;lt;/style&amp;gt; styled text &amp;lt;!-- element class=&amp;#34;with-border&amp;#34; --&amp;gt;   styled text       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;true&#34; , transition: &#34;concave&#34;, dependencies: [ { src: &#39;\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js&#34;&#39;, condition: function() { return !document.body.classList; } }, { src: &#39;\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.</description>
     </item>
     
     <item>
@@ -104,7 +104,7 @@ The notes window also gives you a preview of the next upcoming slide so it may b
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/excalidraw/</guid>
-      <description> It’s required to activate Auto-Export SVG / PNG in Excalidraw Settings. #### Excalidraw support ![[Sample.excalidraw|100]] ![[Sample.excalidraw]] &amp;lt;!-- .element: style=&amp;#34;width:300px; height:400px&amp;#34; --&amp;gt; </description>
+      <description> It’s required to activate Auto-Export SVG / PNG in Excalidraw Settings. #### Excalidraw support ![[Sample.excalidraw|100]] ![[Sample.excalidraw]] &amp;lt;!-- element style=&amp;#34;width:300px; height:400px&amp;#34; --&amp;gt; </description>
     </item>
     
   </channel>

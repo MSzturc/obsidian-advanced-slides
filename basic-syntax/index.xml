@@ -41,7 +41,7 @@ This text will be bold</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/images/</guid>
-      <description>Insert image with standard markdown syntax ![Image](https://picsum.photos/id/1006/500/300) --- Insert image that lies outside of your vault ![Image](file:///Users/testUser/Desktop/howToUse.png) --- Insert image with obsidian markdown syntax ![[Image.jpg]] --- Scale image to a width of 100 px ![[Image.jpg|100]] --- Scale image to a width of 300x100 px ![[Image.jpg|300x100]] &amp;lt;!-- .element: style=&amp;#34;object-fit: cover&amp;#34; --&amp;gt;  Include image with standard markdown syntax ![Image](https://picsum.photos/id/1006/500/300) --- Insert image that lies outside of your vault ![Image](https://picsum.photos/id/1006/500/300) --- Insert image with obsidian markdown syntax !</description>
+      <description>Insert image with standard markdown syntax ![Image](https://picsum.photos/id/1006/500/300) --- Insert image that lies outside of your vault ![Image](file:///Users/testUser/Desktop/howToUse.png) --- Insert image with obsidian markdown syntax ![[Image.jpg]] --- Scale image to a width of 100 px ![[Image.jpg|100]] --- Scale image to a width of 300x100 px ![[Image.jpg|300x100]] &amp;lt;!-- element style=&amp;#34;object-fit: cover&amp;#34; --&amp;gt;  Include image with standard markdown syntax ![Image](https://picsum.photos/id/1006/500/300) --- Insert image that lies outside of your vault ![Image](https://picsum.photos/id/1006/500/300) --- Insert image with obsidian markdown syntax !</description>
     </item>
     
     <item>
