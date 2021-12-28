@@ -295,6 +295,37 @@ This sample grid above would display with 10px padding top and bottom and 15px p
 
 {{%alert%}}Padding introduced by this property does not increase the size of the grid itself. Rather it reduces the size of the area available to render children within the grid.{{%/alert%}}
 
+#### Alignment
+
+The grid **align** property is used to define the horizontal alignment of a grid section.
+
+	<grid  drag="width height" drop="x y" align="type">
+
+Where the **type** option of the **align** property can take one of the following types:
+
+- left
+- right
+- center (default)
+- justify
+
+The following sample demonstrates the use of align:
+
+```md
+<grid drag="35 20" drop="topleft" align="left">
+This text is aligned to the left side of the box
+</grid>
+
+<grid drag="35 20" drop="topright" align="right">
+This text is aligned to the right side of the box
+</grid>
+
+<grid drag="36 20" drop="center" align="justify">
+Stretches the text so that each line has equal width (like in newspapers and magazines)
+</grid>
+```
+
+![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-align.png)
+
 #### Fragments
 
 The grid frag property is used to define fragments for grid. Fragments are used to highlight or incrementally reveal individual elements on a slide.
@@ -331,7 +362,8 @@ This guide provides a quick reference to the full set of attributes that can be 
 - **drop**="x y | topleft | top | topright | left | center | right | bottomleft | bottom | bottomright"
 - **flow**="col | row"
 - **bg**="color name | #425232 | rgb(255, 99, 71) | hsl(0, 100%, 50%)"
-- **pad**="all  sides | top bottom | top right bottom left"
+- **pad**="all sides | top bottom | top right bottom left"
+- **align**="left | right | center | justify"
 - **border**="width style color"
 - **animate**="fadeIn | fadeOut | slideRightIn | slideLeftIn | slideUpIn | slideDownIn | slideRightOut | slideLeftOut | slideUpOut | slideDownOut | scaleUp | scaleUpOut | scaleDown | scaleDownOut | slower | faster"
 - **opacity**="0.1...1"
