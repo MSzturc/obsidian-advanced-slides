@@ -90,8 +90,9 @@ test('Parse Coment with bg property', () => {
 
 	const expected = Comment.of(
 		'slide',
-		['background-color: coral'],
-		['has-light-background']
+		[],
+		['has-light-background'],
+		new Map<string, string>([["data-background-color","coral"]])
 	);
 	expect(parsed).toStrictEqual(expected);
 });
@@ -106,8 +107,10 @@ test('Parse Coment with bg property', () => {
 
 	const expected = Comment.of(
 		'slide',
-		['background-color: black'],
-		['has-dark-background']
+		[],
+		['has-dark-background'],
+		new Map<string, string>([["data-background-color","black"]])
+	
 	);
 	expect(parsed).toStrictEqual(expected);
 });
@@ -122,9 +125,9 @@ test('Merge Coment', () => {
 
 	const expected = Comment.of(
 		'slide',
-		['background-color: coral','width: 200px'],
+		['width: 200px'],
 		['has-light-background','small'],
-		new Map<string, string>([["data-toggle", "modal"],["class","reveal section"],["style","height: 400px; margin: 0"]])
+		new Map<string, string>([["data-toggle", "modal"],["data-background-color","coral"],["class","reveal section"],["style","height: 400px; margin: 0"]])
 	);
 	expect(parsed).toStrictEqual(expected);
 });

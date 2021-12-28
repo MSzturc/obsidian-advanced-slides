@@ -17,10 +17,14 @@ export class BackgroundTransformer implements  AttributeTransformer {
 				element.deleteClass('has-light-background');
 			}
 
-			element.addStyle('background-color', bg);
-
 			element.deleteAttribute('bg');
+			const target = element.getAttribute('onTarget');
+			if(target && target == "slide"){
+				element.addAttribute('data-background-color',bg);
 
+			} else {
+				element.addStyle('background-color', bg);
+			}
 		}
 	}
 }

@@ -5,6 +5,7 @@ export class Comment extends Properties {
 	type: string;
 
 	constructor(type: string, attributes: Map<string, string>) {
+		attributes.set('onTarget', type);
 		super(attributes);
 		this.type = type;
 	}
