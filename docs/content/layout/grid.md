@@ -326,6 +326,57 @@ Stretches the text so that each line has equal width (like in newspapers and mag
 
 ![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-align.png)
 
+#### Justify Content
+
+The grid **justify-content** property is used to define how the grid component distributes space between and around their children.
+
+	<grid  drag="width height" drop="x y" justify-content="type">
+
+Where the **type** option of the **justify-content** property can take one of the following types:
+
+- start
+- center
+- space-between
+- space-around
+- space-evenly (default)
+- end
+
+The following sample demonstrates the use of align:
+
+```md
+<grid drag="30 100" drop="left" justify-content="center" bg="red">
+Item 1
+	
+Item 2
+	
+Item 3
+	
+Item 4
+</grid>
+
+<grid drag="30 100" drop="center" justify-content="space-between" bg="green">
+Item 1
+
+Item 2
+	
+Item 3
+	
+Item 4
+</grid>
+
+<grid drag="30 100" drop="right" justify-content="space-around" bg="coral">
+Item 1
+	
+Item 2
+	
+Item 3
+	
+Item 4
+</grid>
+```
+
+![Example](https://mszturc.github.io/obsidian-advanced-slides/images/grid-justify.png)
+
 #### Fragments
 
 The grid frag property is used to define fragments for grid. Fragments are used to highlight or incrementally reveal individual elements on a slide.

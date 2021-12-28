@@ -6,7 +6,7 @@ export class GridTransformer implements AttributeTransformer {
 	private maxWidth: number;
 	private maxHeight: number;
 
-	constructor(){
+	constructor() {
 		this.maxWidth = YamlStore.getInstance().options.width;
 		this.maxHeight = YamlStore.getInstance().options.height;
 	}
@@ -35,23 +35,25 @@ export class GridTransformer implements AttributeTransformer {
 				element.addStyle('width', width);
 
 				const flow = element.getAttribute('flow');
+				const justifyContent = element.getAttribute('justify-content') ?? 'space-evenly';
 
 				switch (flow) {
 					case "row":
 						element.addStyle('display', 'flex');
 						element.addStyle('flex-direction', 'row');
 						element.addStyle('align-items', 'center');
-						element.addStyle('justify-content', 'space-evenly');
+						element.addStyle('justify-content', justifyContent);
 						element.addClass('flex-even');
 						break;
 					case "col":
 					default:
 						element.addStyle('display', 'flex');
 						element.addStyle('flex-direction', 'column');
-						element.addStyle('justify-content', 'space-evenly');
+						element.addStyle('justify-content', justifyContent);
 						break;
 				}
 				element.deleteAttribute('flow');
+				element.deleteAttribute('justify-content');
 			}
 			element.deleteAttribute('drag');
 			element.deleteAttribute('drop');
