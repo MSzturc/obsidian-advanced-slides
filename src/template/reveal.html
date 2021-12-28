@@ -20,6 +20,11 @@
 			parent.postMessage(event.target.location.href, "app://obsidian.md");
         }
 		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+		}
         </script>
   </head>
   <body>

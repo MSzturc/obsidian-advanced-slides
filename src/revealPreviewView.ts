@@ -49,8 +49,7 @@ export class RevealPreviewView extends ItemView {
 	private reloadIframe() {
 		const viewContent = this.containerEl.children[1];
 		const iframe = viewContent.getElementsByTagName('iframe')[0];
-		// eslint-disable-next-line no-self-assign
-		iframe.src = iframe.src;
+		iframe.contentWindow.postMessage('reload', this.url);
 	}
 
 	private renderView() {
@@ -65,6 +64,7 @@ export class RevealPreviewView extends ItemView {
 					// @ts-ignore:
 					src: this.url,
 					sandbox: 'allow-scripts allow-same-origin'
+
 				}
 			});
 	}
