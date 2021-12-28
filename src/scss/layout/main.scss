@@ -6,7 +6,7 @@
 	--dbg-size: 0;
 }
 
-.dbg * {
+.dbg, .dbg * {
 	--dbg-size: 1px;
     border: 1px solid red;
 }
