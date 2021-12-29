@@ -306,7 +306,13 @@ Where the **type** option of the **align** property can take one of the followin
 - left
 - right
 - center (default)
-- justify
+- justify / block
+- top
+- bottom
+- topleft
+- topright
+- bottomleft
+- bottomright
 
 The following sample demonstrates the use of align:
 
@@ -414,7 +420,7 @@ This guide provides a quick reference to the full set of attributes that can be 
 - **flow**="col | row"
 - **bg**="color name | #425232 | rgb(255, 99, 71) | hsl(0, 100%, 50%)"
 - **pad**="all sides | top bottom | top right bottom left"
-- **align**="left | right | center | justify"
+- **align**="left | right | center | justify | block | top | bottom | topleft | topright | bottomleft | bottomright"
 - **border**="width style color"
 - **animate**="fadeIn | fadeOut | slideRightIn | slideLeftIn | slideUpIn | slideDownIn | slideRightOut | slideLeftOut | slideUpOut | slideDownOut | scaleUp | scaleUpOut | scaleDown | scaleDownOut | slower | faster"
 - **opacity**="0.1...1"
