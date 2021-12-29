@@ -15,7 +15,7 @@ exports[`Grid Component > Attributes > Alignment 1`] = `
 `;
 
 exports[`Grid Component > Attributes > Alignment 2`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: fixed; left: 0px; top: 210px; height: 490px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly\\" >
+"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: fixed; left: 0px; top: 210px; height: 490px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
@@ -43,7 +43,7 @@ exports[`Grid Component > Attributes > Alignment 3`] = `
 `;
 
 exports[`Grid Component > Attributes > Alignment 4`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: fixed; left: 0px; top: 210px; height: 490px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly\\" >
+"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: fixed; left: 0px; top: 210px; height: 490px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
@@ -141,7 +141,7 @@ exports[`Grid Component > Attributes > Alignment 10`] = `
 `;
 
 exports[`Grid Component > Attributes > Alignment 11`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start\\" >
+"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start\\" align=\\"left\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -169,7 +169,7 @@ exports[`Grid Component > Attributes > Alignment 12`] = `
 `;
 
 exports[`Grid Component > Attributes > Alignment 13`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start\\" >
+"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start\\" align=\\"right\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -197,7 +197,7 @@ exports[`Grid Component > Attributes > Alignment 14`] = `
 `;
 
 exports[`Grid Component > Attributes > Alignment 15`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end\\" >
+"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end\\" align=\\"right\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -225,7 +225,7 @@ exports[`Grid Component > Attributes > Alignment 16`] = `
 `;
 
 exports[`Grid Component > Attributes > Alignment 17`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end\\" >
+"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: fixed; left: 0px; top: 0px; height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end\\" align=\\"left\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 

@@ -75,37 +75,37 @@ export class GridTransformer implements AttributeTransformer {
 		switch (input) {
 			case "topleft":
 				if (direction == "col") {
-					return [undefined, 'flex-start', 'flex-start'];
+					return ['left', 'flex-start', 'flex-start'];
 				} else {
 					return ['left', 'flex-start', 'space-evenly'];
 				}
 			case "topright":
 				if (direction == "col") {
-					return [undefined, 'flex-end', 'flex-start'];
+					return ['right', 'flex-end', 'flex-start'];
 				} else {
 					return ['right', 'flex-start', 'space-evenly'];
 				}
 			case "bottomright":
 				if (direction == "col") {
-					return [undefined, 'flex-end', 'flex-end'];
+					return ['right', 'flex-end', 'flex-end'];
 				} else {
 					return ['right', 'flex-end', 'space-evenly'];
 				}
 			case "bottomleft":
 				if (direction == "col") {
-					return [undefined, 'flex-start', 'flex-end'];
+					return ['left', 'flex-start', 'flex-end'];
 				} else {
 					return ['left', 'flex-end', 'space-evenly'];
 				}
 			case "left":
 				if (direction == "col") {
-					return [undefined, 'flex-start', 'space-evenly'];
+					return ['left', 'flex-start', 'space-evenly'];
 				} else {
 					return ['left', 'center', 'space-evenly'];
 				}
 			case "right":
 				if (direction == "col") {
-					return [undefined, 'flex-end', 'space-evenly'];
+					return ['right', 'flex-end', 'space-evenly'];
 				} else {
 					return ['right', 'center', 'space-evenly'];
 				}
@@ -121,6 +121,10 @@ export class GridTransformer implements AttributeTransformer {
 				} else {
 					return [undefined, 'flex-end', 'space-evenly'];
 				}
+
+			case "block":
+			case "justify":
+				return ['justify', 'center', 'space-evenly'];
 			case "center":
 			default:
 				// align - alignItems - justifyContent
