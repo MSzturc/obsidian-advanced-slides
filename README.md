@@ -44,6 +44,7 @@ Advanced Slides is the perfect slide deck extension for <a href="https://obsidia
 
 ### Getting started
 - 🚀 [Install Advanced Slides](https://mszturc.github.io/obsidian-advanced-slides/getting-start/installation/)
+- 👀 [View the demo presentation](https://mszturc.github.io/obsidian-advanced-slides/examples/minml)
 - 📖 [Read the documentation](https://mszturc.github.io/obsidian-advanced-slides/)
 - 💬 [Join the discussion](https://forum.obsidian.md/t/advanced-slides-create-markdown-based-reveal-js-presentations-in-obsidian/28243)
 
