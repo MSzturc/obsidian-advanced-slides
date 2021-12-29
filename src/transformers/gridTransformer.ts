@@ -35,21 +35,29 @@ export class GridTransformer implements AttributeTransformer {
 				element.addStyle('width', width);
 
 				const flow = element.getAttribute('flow');
-				const justifyContent = element.getAttribute('justify-content') ?? 'space-evenly';
+				const [align, alignItems, justifyContent] = this.getAlignment(element.getAttribute('align'), flow);
+				const justifyCtx = element.getAttribute('justify-content') ?? justifyContent;
+
+				element.deleteAttribute('align');
+
+				if (align) {
+					element.addAttribute('align', align, false);
+				}
 
 				switch (flow) {
 					case "row":
 						element.addStyle('display', 'flex');
 						element.addStyle('flex-direction', 'row');
-						element.addStyle('align-items', 'center');
-						element.addStyle('justify-content', justifyContent);
+						element.addStyle('align-items', alignItems);
+						element.addStyle('justify-content', justifyCtx);
 						element.addClass('flex-even');
 						break;
 					case "col":
 					default:
 						element.addStyle('display', 'flex');
 						element.addStyle('flex-direction', 'column');
-						element.addStyle('justify-content', justifyContent);
+						element.addStyle('align-items', alignItems);
+						element.addStyle('justify-content', justifyCtx);
 						break;
 				}
 				element.deleteAttribute('flow');
@@ -57,6 +65,66 @@ export class GridTransformer implements AttributeTransformer {
 			}
 			element.deleteAttribute('drag');
 			element.deleteAttribute('drop');
+		}
+	}
+
+	getAlignment(input: string, flow: string): [string, string, string] {
+
+		const direction = flow ?? 'col';
+
+		switch (input) {
+			case "topleft":
+				if (direction == "col") {
+					return [undefined, 'flex-start', 'flex-start'];
+				} else {
+					return ['left', 'flex-start', 'space-evenly'];
+				}
+			case "topright":
+				if (direction == "col") {
+					return [undefined, 'flex-end', 'flex-start'];
+				} else {
+					return ['right', 'flex-start', 'space-evenly'];
+				}
+			case "bottomright":
+				if (direction == "col") {
+					return [undefined, 'flex-end', 'flex-end'];
+				} else {
+					return ['right', 'flex-end', 'space-evenly'];
+				}
+			case "bottomleft":
+				if (direction == "col") {
+					return [undefined, 'flex-start', 'flex-end'];
+				} else {
+					return ['left', 'flex-end', 'space-evenly'];
+				}
+			case "left":
+				if (direction == "col") {
+					return [undefined, 'flex-start', 'space-evenly'];
+				} else {
+					return ['left', 'center', 'space-evenly'];
+				}
+			case "right":
+				if (direction == "col") {
+					return [undefined, 'flex-end', 'space-evenly'];
+				} else {
+					return ['right', 'center', 'space-evenly'];
+				}
+			case "top":
+				if (direction == "col") {
+					return [undefined, 'center', 'flex-start'];
+				} else {
+					return [undefined, 'flex-start', 'space-evenly'];
+				}
+			case "bottom":
+				if (direction == "col") {
+					return [undefined, 'center', 'flex-end'];
+				} else {
+					return [undefined, 'flex-end', 'space-evenly'];
+				}
+			case "center":
+			default:
+				// align - alignItems - justifyContent
+				return [undefined, 'center', 'space-evenly'];
 		}
 	}
 

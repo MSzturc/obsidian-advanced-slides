@@ -270,3 +270,272 @@ Bottom Grid
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="row" pad="0 50px" align="left">
+![](https://picsum.photos/id/978/150/200)
+![](https://picsum.photos/id/996/150/200)
+![](https://picsum.photos/id/1011/150/200)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="col" pad="0 50px" align="left">
+![](https://picsum.photos/id/978/150/200)
+![](https://picsum.photos/id/996/150/200)
+![](https://picsum.photos/id/1011/150/200)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="row" pad="0 50px" align="right">
+![](https://picsum.photos/id/978/150/200)
+![](https://picsum.photos/id/996/150/200)
+![](https://picsum.photos/id/1011/150/200)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="col" pad="0 50px" align="right">
+![](https://picsum.photos/id/978/150/200)
+![](https://picsum.photos/id/996/150/200)
+![](https://picsum.photos/id/1011/150/200)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="top">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="top">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="bottom">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="bottom">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="center">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="center">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="topleft">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="topleft">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="topright">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="topright">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="bottomright">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="bottomright">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="bottomleft">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment', () => {
+
+	const input =
+`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="bottomleft">
+![](https://picsum.photos/id/978/150/150)
+![](https://picsum.photos/id/996/150/150)
+![](https://picsum.photos/id/1011/150/150)
+</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});

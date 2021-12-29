@@ -49,9 +49,11 @@ export class Properties {
 		return this.style.has(name);
 	}
 
-	public addAttribute(key: string, value: string): Properties {
+	public addAttribute(key: string, value: string, update=true): Properties {
 		this.attributes.set(key, value);
-		this.transformer.transform(this);
+		if(update){
+			this.transformer.transform(this);
+		}
 		return this;
 	}
 
