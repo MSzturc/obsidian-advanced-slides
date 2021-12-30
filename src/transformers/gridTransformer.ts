@@ -28,10 +28,11 @@ export class GridTransformer implements AttributeTransformer {
 				const width = this.widthOf(grid);
 
 				element.addClass('reset-margin');
-				element.addStyle('position', 'fixed');
+				element.addStyle('position', 'absolute');
 				element.addStyle('left', left);
 				element.addStyle('top', top);
 				element.addStyle('height', height);
+				element.addStyle('min-height', height);
 				element.addStyle('width', width);
 
 				const flow = element.getAttribute('flow');
