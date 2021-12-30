@@ -25,6 +25,19 @@
 				window.document.location.reload();
 			}
 		}
+
+		document.onreadystatechange = () => {
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
         </script>
   </head>
   <body>

@@ -1,12 +1,14 @@
-import { ItemView, WorkspaceLeaf } from 'obsidian';
+import { ItemView, Menu, WorkspaceLeaf } from 'obsidian';
 
 export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
 
 export class RevealPreviewView extends ItemView {
 	private url = 'about:blank';
+	private home : URL;
 
 	constructor(leaf: WorkspaceLeaf, home: URL) {
 		super(leaf);
+		this.home = home;
 
 		this.addAction('slides', 'Open in Browser', () => {
 			window.open(home);
@@ -17,6 +19,21 @@ export class RevealPreviewView extends ItemView {
 		});
 
 		window.addEventListener("message", this.onMessage.bind(this));
+	}
+
+	onMoreOptionsMenu(menu: Menu): void {
+
+		super.onMoreOptionsMenu(menu);
+
+		menu.addSeparator();
+		menu.addItem((item) => {
+			item.setIcon("document")
+				.setTitle("Print Presentation")
+				.onClick(() => {
+					window.open(this.home.toString() + '?print-pdf');
+				});
+		});
+
 	}
 
 	onMessage(msg: MessageEvent) {
