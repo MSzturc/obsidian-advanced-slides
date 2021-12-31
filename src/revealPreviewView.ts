@@ -1,10 +1,12 @@
-import { ItemView, Menu, WorkspaceLeaf } from 'obsidian';
+import { ItemView, MarkdownView, Menu, WorkspaceLeaf } from 'obsidian';
 
 export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
 
 export class RevealPreviewView extends ItemView {
 	private url = 'about:blank';
 	private home : URL;
+
+	private urlRegex = /#\/(\d*)(?:\/(\d*))?(?:\/(\d*))?/;
 
 	constructor(leaf: WorkspaceLeaf, home: URL) {
 		super(leaf);
@@ -38,6 +40,43 @@ export class RevealPreviewView extends ItemView {
 
 	onMessage(msg: MessageEvent) {
 		this.setUrl(msg.data, false);
+
+		const url = new URL(msg.data);
+		let filename = decodeURI(url.pathname);
+		filename = filename.substring(filename.lastIndexOf("/")+1);
+
+		const view = this.app.workspace.getActiveViewOfType(MarkdownView);
+		if(view && view.file.name.includes(filename)){
+			const pageString = url.href.substring(url.href.lastIndexOf('#'));
+			const [,h,v,s] = this.urlRegex.exec(pageString);
+
+			if(h){
+				const str = view.data.trim();
+				let target : number = Number.parseInt(h);
+				if(str.startsWith('---')){
+					target = target + 2;
+				}
+
+				const split = str.split('\n');
+
+				for (let idx = 0; idx < split.length; idx++) {
+					const element = split[idx];
+					if(element.includes('---')){
+						target = target - 1;
+					}
+					if(target < 1){
+						view.editor.setCursor(view.editor.lastLine());
+						view.editor.setCursor({line: idx, ch: 0});
+						break;
+					}
+				}
+
+
+			} else {
+				view.editor.scrollTo(1);
+			}
+		}
+
 	}
 
 	getViewType() {
