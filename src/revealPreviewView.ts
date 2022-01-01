@@ -47,36 +47,30 @@ export class RevealPreviewView extends ItemView {
 
 		const view = this.app.workspace.getActiveViewOfType(MarkdownView);
 		if(view && view.file.name.includes(filename)){
-			const pageString = url.href.substring(url.href.lastIndexOf('#'));
-			const [,h,v,s] = this.urlRegex.exec(pageString);
-
-			if(h){
-				const str = view.data.trim();
-				let target : number = Number.parseInt(h);
-				if(str.startsWith('---')){
-					target = target + 2;
-				}
-
-				const split = str.split('\n');
-
-				for (let idx = 0; idx < split.length; idx++) {
-					const element = split[idx];
-					if(element.includes('---')){
-						target = target - 1;
-					}
-					if(target < 1){
-						view.editor.setCursor(view.editor.lastLine());
-						view.editor.setCursor({line: idx, ch: 0});
-						break;
-					}
-				}
-
-
-			} else {
-				view.editor.scrollTo(1);
-			}
+			const line = this.getTargetLine(url, view.data);
+			view.editor.setCursor(view.editor.lastLine());
+			view.editor.setCursor({line: line, ch: 0});
 		}
 
+	}
+
+	getTargetLine(url : URL, source: string) : number {
+		const pageString = url.href.substring(url.href.lastIndexOf('#'));
+		const [,h,v,s] = this.urlRegex.exec(pageString);
+
+		if(h){
+			let hSeparators : number = Number.parseInt(h);
+			if(source.trim().startsWith('---')){
+				hSeparators = hSeparators + 2;
+			}
+
+			const lines = source.split(/^/gm)
+			.map((v, i) => v.match(/---/gm) ? i + 1 : 0)
+			.filter(a => a);
+
+			return lines[hSeparators-1];
+		} 
+		return 0;
 	}
 
 	getViewType() {
