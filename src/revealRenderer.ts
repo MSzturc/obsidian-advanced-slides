@@ -9,17 +9,20 @@ import { ObsidianMarkdownPreprocessor } from "./obsidianMarkdownPreprocessor";
 import { ObsidianUtils } from "./obsidianUtils";
 import { YamlParser } from "./yamlParser";
 import { ImageCollector } from "./imageCollector";
+import { RevealExporter } from "./revealExporter";
 
 export class RevealRenderer {
 
 	private processor: ObsidianMarkdownPreprocessor;
 	private pluginDirectory: string;
 	private yaml: YamlParser;
+	private exporter : RevealExporter;
 
 	constructor(utils: ObsidianUtils) {
 		this.pluginDirectory = utils.getPluginDirectory();
 		this.processor = new ObsidianMarkdownPreprocessor(utils);
 		this.yaml = new YamlParser();
+		this.exporter = new RevealExporter(utils);
 	}
 
 	async renderFile(filePath: string, renderForExport = false) {
@@ -34,7 +37,7 @@ export class RevealRenderer {
 
 		if (renderForExport) {
 			ImageCollector.getInstance().disable();
-			console.log(ImageCollector.getInstance().getAll());
+			await this.exporter.export(filePath, rendered,ImageCollector.getInstance().getAll());
 		}
 
 		return rendered;

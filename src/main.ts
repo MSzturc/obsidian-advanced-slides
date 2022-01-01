@@ -11,7 +11,7 @@ import _ from 'lodash';
 import { ObsidianUtils } from './obsidianUtils';
 import { FolderSuggest } from './suggesters/FolderSuggester';
 
-interface AdvancedSlidesSettings {
+export interface AdvancedSlidesSettings {
 	port: string;
 	autoReload: boolean;
 	exportDirectory: string;
@@ -37,7 +37,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		await this.loadSettings();
 
 		if (!this.obsidianUtils) {
-			this.obsidianUtils = new ObsidianUtils(this.app);
+			this.obsidianUtils = new ObsidianUtils(this.app, this.settings);
 		}
 
 		const pluginDirectory = this.obsidianUtils.getPluginDirectory();

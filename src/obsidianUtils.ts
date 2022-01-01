@@ -1,21 +1,24 @@
 import { readFileSync } from "fs-extra";
 import { App, FileSystemAdapter } from "obsidian";
 import path from "path";
+import { AdvancedSlidesSettings } from "./main";
 
 
 export class ObsidianUtils {
 
 	private app: App;
 	private fileSystem: FileSystemAdapter;
-	
+	private settings: AdvancedSlidesSettings;
+
 	private yamlRegex = /^---[^-]*---/;
 
-	constructor(app: App) {
+	constructor(app: App, settings: AdvancedSlidesSettings) {
 		this.app = app;
 		this.fileSystem = this.app.vault.adapter as FileSystemAdapter;
+		this.settings = settings;
 	}
 
-	getVaultName(): string{
+	getVaultName(): string {
 		return this.app.vault.getName();
 	}
 
@@ -29,6 +32,10 @@ export class ObsidianUtils {
 
 	getDistDirectory(): string {
 		return path.join(this.getPluginDirectory(), '/dist/');
+	}
+
+	getExportDirectory(): string {
+		return path.join(this.getVaultDirectory(), this.settings.exportDirectory);
 	}
 
 	/** TODO: Refactoring ************************** */
@@ -57,21 +64,21 @@ export class ObsidianUtils {
 		}
 	}
 
-	findImageEx(filePath: string){
+	findImageEx(filePath: string) {
 
 		let imagePath = filePath + '.svg';
 		let imgFile = this.app.vault.getFiles()
-		.filter(item => item.path.contains(imagePath))
-		.first();
+			.filter(item => item.path.contains(imagePath))
+			.first();
 
-		if(imgFile){
+		if (imgFile) {
 			return imagePath;
 		}
-		
+
 		imagePath = filePath + '.png';
 		imgFile = this.app.vault.getFiles().filter(item => item.path.contains(imagePath)).first();
 
-		if(imgFile){
+		if (imgFile) {
 			return imagePath;
 		}
 		return null;
@@ -82,7 +89,7 @@ export class ObsidianUtils {
 		const fileContent = readFileSync(file, { encoding: 'utf-8' });
 
 		if (header === null) {
-			return fileContent.replace(this.yamlRegex,'');
+			return fileContent.replace(this.yamlRegex, '');
 		} else {
 
 			const lines = fileContent.split('\n');
@@ -112,6 +119,6 @@ export class ObsidianUtils {
 			}
 		}
 	}
-	
+
 
 }
