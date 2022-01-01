@@ -1,4 +1,5 @@
 import { ItemView, MarkdownView, Menu, WorkspaceLeaf } from 'obsidian';
+import { Options } from './options';
 import { YamlParser } from './yamlParser';
 
 export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
@@ -8,7 +9,7 @@ export class RevealPreviewView extends ItemView {
 	private home: URL;
 
 	private urlRegex = /#\/(\d*)(?:\/(\d*))?(?:\/(\d*))?/;
-	private yaml : YamlParser;
+	private yaml: YamlParser;
 
 	constructor(leaf: WorkspaceLeaf, home: URL) {
 		super(leaf);
@@ -63,16 +64,68 @@ export class RevealPreviewView extends ItemView {
 		const { yamlOptions, markdown } = this.yaml.parseYamlFrontMatter(source);
 		const separators = this.yaml.getSlideOptions(yamlOptions);
 		const yamlLength = source.indexOf(markdown);
-		const offset = source.substring(0,yamlLength).split(/^/gm).length;
+		const offset = source.substring(0, yamlLength).split(/^/gm).length;
+		const slides = this.getSlideLines(markdown, separators);
 
-		if (h) {
-			const hSeparators: number = Number.parseInt(h);
-			if(hSeparators > 0){
-				const lines = this.getLine(RegExp(separators.separator, 'gm'), markdown,offset);
-				return lines[hSeparators - 1];
+		const hX = parseInt(h) || 0;
+		const vX = parseInt(v) || 0;
+
+		return slides.get([hX, vX].join(',')) + offset;
+	}
+
+	getSlideLines(source: string, separators: Options) {
+
+		let store = new Map<number, string>();
+
+		const l = this.getIdxOfRegex(/^/gm, source);
+		const h = this.getIdxOfRegex(RegExp(separators.separator, 'gm'), source);
+
+		for (const item of h) {
+			for (let index = 0; index < l.length; index++) {
+				const line = l[index];
+				if (line > item) {
+					store.set(index, 'h');
+					break;
+				}
 			}
 		}
-		return 0;
+
+		const v = this.getIdxOfRegex(RegExp(separators.verticalSeparator, 'gm'), source);
+
+		for (const item of v) {
+			for (let index = 0; index < l.length; index++) {
+				const line = l[index];
+				if (line > item) {
+					store.set(index, 'v');
+					break;
+				}
+			}
+		}
+
+		store.set(0, 'h');
+
+		store = new Map([...store].sort((a, b) => {
+			return a[0] - b[0];
+		}));
+
+		const result = new Map<string, number>();
+
+		let hV = -1;
+		let vV = 0;
+		for (const [key, value] of store.entries()) {
+
+			if (value == 'h') {
+				hV++;
+				vV = 0;
+			}
+
+			if (value == 'v') {
+				vV++;
+			}
+
+			result.set([hV, vV].join(','), key);
+		}
+		return result;
 	}
 
 	getIdxOfRegex(regex: RegExp, source: string): number[] {
@@ -88,21 +141,6 @@ export class RevealPreviewView extends ItemView {
 			}
 		} while (m);
 		return idxs;
-	}
-
-	getLine(regex: RegExp, source: string, offset: number) {
-		const idxs = this.getIdxOfRegex(regex, source);
-		const newLineIdx = this.getIdxOfRegex(/^/gm, source);
-
-		return idxs.map((idx) => {
-			for (let index = 0; index < newLineIdx.length; index++) {
-				const line = newLineIdx[index];
-				if(line >= idx){
-					return index + offset;
-				}
-			}
-			return 0;
-		})
 	}
 
 	getViewType() {
