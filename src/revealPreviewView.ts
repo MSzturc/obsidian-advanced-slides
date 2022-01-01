@@ -39,6 +39,15 @@ export class RevealPreviewView extends ItemView {
 					window.open(this.home.toString() + '?print-pdf');
 				});
 		});
+		menu.addItem((item) => {
+			item.setIcon("install")
+				.setTitle("Export as html")
+				.onClick(() => {
+					const url = new URL(this.url);
+					url.searchParams.append("export","true");
+					this.setUrl(url.toString());
+				});
+		});
 
 	}
 

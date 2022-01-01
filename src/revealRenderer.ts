@@ -8,6 +8,7 @@ import defaults from "./defaults.json";
 import { ObsidianMarkdownPreprocessor } from "./obsidianMarkdownPreprocessor";
 import { ObsidianUtils } from "./obsidianUtils";
 import { YamlParser } from "./yamlParser";
+import { ImageCollector } from "./imageCollector";
 
 export class RevealRenderer {
 
@@ -21,9 +22,22 @@ export class RevealRenderer {
 		this.yaml = new YamlParser();
 	}
 
-	async renderFile(filePath: string) {
+	async renderFile(filePath: string, renderForExport = false) {
+
+		if (renderForExport) {
+			ImageCollector.getInstance().reset();
+			ImageCollector.getInstance().enable();
+		}
+
 		const content = (await readFile(filePath.toString())).toString();
-		return await this.render(content);
+		const rendered = await this.render(content);
+
+		if (renderForExport) {
+			ImageCollector.getInstance().disable();
+			console.log(ImageCollector.getInstance().getAll());
+		}
+
+		return rendered;
 	}
 
 	async render(input: string) {
@@ -37,7 +51,7 @@ export class RevealRenderer {
 
 		const slidifyOptions = this.yaml.getSlidifyOptions(options);
 
-		const processedMarkdown = this.processor.process(markdown,options);
+		const processedMarkdown = this.processor.process(markdown, options);
 		const slides = this.slidify(processedMarkdown, slidifyOptions);
 
 		const cssPaths = this.getCssPaths(options.css);
@@ -60,14 +74,14 @@ export class RevealRenderer {
 		try {
 			new URL(input);
 			return true;
-		} catch (_) { 
+		} catch (_) {
 			return false;
 		}
 	}
 
 	private getHighlightThemeUrl(theme: string) {
-		
-		if(this.isValidUrl(theme)){
+
+		if (this.isValidUrl(theme)) {
 			return theme;
 		}
 
@@ -81,8 +95,8 @@ export class RevealRenderer {
 	}
 
 	private getThemeUrl(theme: string) {
-		
-		if(this.isValidUrl(theme)){
+
+		if (this.isValidUrl(theme)) {
 			return theme;
 		}
 
@@ -106,18 +120,18 @@ export class RevealRenderer {
 	}
 
 	private getCssPaths(css: string | string[]) {
-		let input: string[] 
-		if(!css){
+		let input: string[]
+		if (!css) {
 			return input;
 		}
-		if(typeof css === 'string'){
+		if (typeof css === 'string') {
 			input = css.split(',');
 		} else {
 			input = css;
 		}
 
 		return input.map(css => {
-			if(this.isValidUrl(css)){
+			if (this.isValidUrl(css)) {
 				return css;
 			}
 			return '/' + css;

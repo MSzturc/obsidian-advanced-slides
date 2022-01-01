@@ -39,8 +39,9 @@ export class RevealServer {
 		});
 
 		this._app.get(/(\w+\.md)/, async (req, res) => {
-			this.filePath = path.join(this._baseDirectory, decodeURI(req.url));
-			const markup = await this._revealRenderer.renderFile(this.filePath);
+
+			this.filePath = path.join(this._baseDirectory, decodeURI(req.url.split('?')[0]));
+			const markup = await this._revealRenderer.renderFile(this.filePath, req.query.export != undefined);
 			res.send(markup);
 		});
 

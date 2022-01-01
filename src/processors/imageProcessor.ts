@@ -1,4 +1,5 @@
 /* eslint-disable no-var */
+import { ImageCollector } from "src/imageCollector";
 import { CommentParser } from "../comment";
 import { ObsidianUtils } from "../obsidianUtils";
 
@@ -72,6 +73,10 @@ export class ImageProcessor {
 		// eslint-disable-next-line prefer-const
 		let [, alt, filePath, commentString] = this.markdownImageRegex.exec(line);
 		const comment = this.parser.parseLine(commentString) ?? this.parser.buildComment('element');
+
+		if(ImageCollector.getInstance().shouldCollect()){
+			ImageCollector.getInstance().addImage(filePath);
+		}
 
 		if (filePath.startsWith('file:/')) {
 			filePath = this.transformAbsoluteFilePath(filePath);
