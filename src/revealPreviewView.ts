@@ -1,16 +1,19 @@
 import { ItemView, MarkdownView, Menu, WorkspaceLeaf } from 'obsidian';
+import { YamlParser } from './yamlParser';
 
 export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
 
 export class RevealPreviewView extends ItemView {
 	private url = 'about:blank';
-	private home : URL;
+	private home: URL;
 
 	private urlRegex = /#\/(\d*)(?:\/(\d*))?(?:\/(\d*))?/;
+	private yaml : YamlParser;
 
 	constructor(leaf: WorkspaceLeaf, home: URL) {
 		super(leaf);
 		this.home = home;
+		this.yaml = new YamlParser();
 
 		this.addAction('slides', 'Open in Browser', () => {
 			window.open(home);
@@ -43,34 +46,62 @@ export class RevealPreviewView extends ItemView {
 
 		const url = new URL(msg.data);
 		let filename = decodeURI(url.pathname);
-		filename = filename.substring(filename.lastIndexOf("/")+1);
+		filename = filename.substring(filename.lastIndexOf("/") + 1);
 
 		const view = this.app.workspace.getActiveViewOfType(MarkdownView);
-		if(view && view.file.name.includes(filename)){
+		if (view && view.file.name.includes(filename)) {
 			const line = this.getTargetLine(url, view.data);
 			view.editor.setCursor(view.editor.lastLine());
-			view.editor.setCursor({line: line, ch: 0});
+			view.editor.setCursor({ line: line, ch: 0 });
 		}
 
 	}
 
-	getTargetLine(url : URL, source: string) : number {
+	getTargetLine(url: URL, source: string): number {
 		const pageString = url.href.substring(url.href.lastIndexOf('#'));
-		const [,h,v,s] = this.urlRegex.exec(pageString);
+		const [, h, v, s] = this.urlRegex.exec(pageString);
+		const { yamlOptions, markdown } = this.yaml.parseYamlFrontMatter(source);
+		const separators = this.yaml.getSlideOptions(yamlOptions);
+		const yamlLength = source.indexOf(markdown);
+		const offset = source.substring(0,yamlLength).split(/^/gm).length;
 
-		if(h){
-			let hSeparators : number = Number.parseInt(h);
-			if(source.trim().startsWith('---')){
-				hSeparators = hSeparators + 2;
-			}
+		if (h) {
+			const hSeparators: number = Number.parseInt(h);
 
-			const lines = source.split(/^/gm)
-			.map((v, i) => v.match(/---/gm) ? i + 1 : 0)
-			.filter(a => a);
-
-			return lines[hSeparators-1];
-		} 
+			const lines = this.getLine(RegExp(separators.separator, 'gm'), markdown,offset);
+			return lines[hSeparators - 1];
+		}
 		return 0;
+	}
+
+	getIdxOfRegex(regex: RegExp, source: string): number[] {
+		const idxs: Array<number> = new Array<number>();
+		let m;
+		do {
+			m = regex.exec(source);
+			if (m) {
+				if (m.index === regex.lastIndex) {
+					regex.lastIndex++;
+				}
+				idxs.push(m.index);
+			}
+		} while (m);
+		return idxs;
+	}
+
+	getLine(regex: RegExp, source: string, offset: number) {
+		const idxs = this.getIdxOfRegex(regex, source);
+		const newLineIdx = this.getIdxOfRegex(/^/gm, source);
+
+		return idxs.map((idx) => {
+			for (let index = 0; index < newLineIdx.length; index++) {
+				const line = newLineIdx[index];
+				if(line >= idx){
+					return index + offset;
+				}
+			}
+			return 0;
+		})
 	}
 
 	getViewType() {
