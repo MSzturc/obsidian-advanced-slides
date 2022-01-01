@@ -2,22 +2,23 @@ import { readFile } from "fs-extra";
 import { join, basename, extname } from 'path';
 import { glob } from "glob";
 import Mustache from "mustache";
-import { loadFront } from "yaml-front-matter";
 import { md } from "./markdown";
 
-import _ from "lodash"
 import defaults from "./defaults.json";
 import { ObsidianMarkdownPreprocessor } from "./obsidianMarkdownPreprocessor";
 import { ObsidianUtils } from "./obsidianUtils";
+import { YamlParser } from "./yamlParser";
 
 export class RevealRenderer {
 
 	private processor: ObsidianMarkdownPreprocessor;
 	private pluginDirectory: string;
+	private yaml: YamlParser;
 
 	constructor(utils: ObsidianUtils) {
 		this.pluginDirectory = utils.getPluginDirectory();
 		this.processor = new ObsidianMarkdownPreprocessor(utils);
+		this.yaml = new YamlParser();
 	}
 
 	async renderFile(filePath: string) {
@@ -26,15 +27,15 @@ export class RevealRenderer {
 	}
 
 	async render(input: string) {
-		const { yamlOptions, markdown } = this.parseYamlFrontMatter(input);
-		const options = this.getSlideOptions(yamlOptions);
-		const revealOptions = this.getRevealOptions(options);
+		const { yamlOptions, markdown } = this.yaml.parseYamlFrontMatter(input);
+		const options = this.yaml.getSlideOptions(yamlOptions);
+		const revealOptions = this.yaml.getRevealOptions(options);
 
 		const { title } = options;
 		const themeUrl = this.getThemeUrl(options.theme);
 		const highlightThemeUrl = this.getHighlightThemeUrl(options.highlightTheme);
 
-		const slidifyOptions = this.getSlidifyOptions(options);
+		const slidifyOptions = this.yaml.getSlidifyOptions(options);
 
 		const processedMarkdown = this.processor.process(markdown,options);
 		const slides = this.slidify(processedMarkdown, slidifyOptions);
@@ -102,28 +103,6 @@ export class RevealRenderer {
 
 	private slidify(markdown: string, slidifyOptions: unknown) {
 		return md.slidify(markdown, slidifyOptions);
-	}
-
-	private getSlideOptions(options: unknown) {
-		return _.defaults({}, options, defaults);
-	}
-
-	private getSlidifyOptions(options: unknown) {
-		const slidifyProps = ['separator', 'verticalSeparator'];
-		return _.pick(options, slidifyProps)
-	}
-
-	private getRevealOptions(options: unknown) {
-		const revealProps = ['width', 'height', 'margin', 'minScale', 'maxScale', 'controls', 'controlsTutorial', 'controlsLayout', 'controlsBackArrows', 'progress', 'slideNumber', 'showSlideNumber', 'hashOneBasedIndex', 'hash', 'respondToHashChanges', 'history', 'keyboard', 'keyboardCondition', 'disableLayout', 'overview', 'center', 'touch', 'loop', 'rtl', 'navigationMode', 'shuffle', 'fragments', 'fragmentInURL', 'embedded', 'help', 'pause', 'showNotes', 'autoPlayMedia', 'preloadIframes', 'autoAnimate', 'autoAnimateMatcher', 'autoAnimateEasing', 'autoAnimateDuration', 'autoAnimateUnmatched', 'autoSlide', 'autoSlideStoppable', 'autoSlideMethod', 'defaultTiming', 'mouseWheel', 'previewLinks', 'postMessage', 'postMessageEvents', 'focusBodyOnPageVisibilityChange', 'transition', 'transitionSpeed', 'backgroundTransition', 'pdfMaxPagesPerSlide', 'pdfSeparateFragments', 'pdfPageHeightOffset', 'viewDistance', 'mobileViewDistance', 'display', 'hideInactiveCursor', 'hideCursorTime'];
-		return _.pick(options, revealProps)
-	}
-
-	private parseYamlFrontMatter(input: string): { yamlOptions: unknown; markdown: string; } {
-		const document = loadFront(input.replace(/^\uFEFF/, ''));
-		return {
-			yamlOptions: _.omit(document, '__content'),
-			markdown: document.__content || input
-		};
 	}
 
 	private getCssPaths(css: string | string[]) {
