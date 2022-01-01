@@ -9,15 +9,18 @@ import request from 'request';
 import JSZip from 'jszip';
 import _ from 'lodash';
 import { ObsidianUtils } from './obsidianUtils';
+import { FolderSuggest } from './suggesters/FolderSuggester';
 
 interface AdvancedSlidesSettings {
 	port: string;
 	autoReload: boolean;
+	exportDirectory: string;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	port: '3000',
-	autoReload: true
+	autoReload: true,
+	exportDirectory: '/export'
 }
 
 
@@ -268,5 +271,19 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 					this.plugin.settings.autoReload = value;
 					await this.plugin.saveSettings();
 				}, 750)));
+
+		new Setting(containerEl)
+			.setName('Export Directory')
+			.setDesc('Where should Advanced Slides export presentations?')
+			.addSearch((cb) => {
+				new FolderSuggest(this.app, cb.inputEl);
+				cb
+					.setPlaceholder("Folder")
+					.setValue(this.plugin.settings.exportDirectory)
+					.onChange(_.debounce(async (value) => {
+						this.plugin.settings.exportDirectory = value;
+						await this.plugin.saveSettings();
+					}, 750))
+			})
 	}
 }
