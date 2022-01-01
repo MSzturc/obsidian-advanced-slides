@@ -67,9 +67,10 @@ export class RevealPreviewView extends ItemView {
 
 		if (h) {
 			const hSeparators: number = Number.parseInt(h);
-
-			const lines = this.getLine(RegExp(separators.separator, 'gm'), markdown,offset);
-			return lines[hSeparators - 1];
+			if(hSeparators > 0){
+				const lines = this.getLine(RegExp(separators.separator, 'gm'), markdown,offset);
+				return lines[hSeparators - 1];
+			}
 		}
 		return 0;
 	}
