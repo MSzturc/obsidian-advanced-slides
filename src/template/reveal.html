@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="{{{base}}}{{{highlightThemeUrl}}}" />
 
 	<link rel="stylesheet" href="{{{base}}}css/layout.css" />
+	<link rel="stylesheet" href="{{{base}}}plugin/chalkboard/style.css">
+	<link rel="stylesheet" href="{{{base}}}plugin/customcontrols/style.css">
+
 	{{#cssPaths}}
     <link rel="stylesheet" href="{{{base}}}{{{.}}}" />
     {{/cssPaths}}
@@ -57,6 +60,8 @@
     <script src="{{{base}}}plugin/notes/notes.js"></script>
     <script src="{{{base}}}plugin/math/math.js"></script>
 	<script src="{{{base}}}plugin/mermaid/mermaid.js"></script>
+	<script src="{{{base}}}plugin/chalkboard/plugin.js"></script>
+	<script src="{{{base}}}plugin/customcontrols/plugin.js"></script>
 
     <script>
       function extend() {
@@ -85,8 +90,28 @@
           RevealZoom,
           RevealNotes,
           RevealMath,
-		  RevealMermaid
-        ]
+		  RevealMermaid,
+		  RevealChalkboard, 
+		  RevealCustomControls,
+        ],
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				}
+			]
+		},
       };
 
       // options from URL query string

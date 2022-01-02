@@ -138,6 +138,24 @@ function build() {
                         to: ['./dist/fontawesome'],
                     }
                 }),
+				copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js-plugins/chalkboard/*'],
+                        to: ['./plugin/chalkboard'],
+                    }
+                }),
+				copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js-plugins/chalkboard/img/*'],
+                        to: ['./plugin/chalkboard/img'],
+                    }
+                }),
+				copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js-plugins/customcontrols/*'],
+                        to: ['./plugin/customcontrols'],
+                    }
+                }),
                 copy.default({
                     assets: prod ? {} : {
                         from: ['.hotreload'],
