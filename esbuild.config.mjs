@@ -156,6 +156,12 @@ function build() {
                         to: ['./plugin/customcontrols'],
                     }
                 }),
+				copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js-menu/*'],
+                        to: ['./plugin/menu'],
+                    }
+                }),
                 copy.default({
                     assets: prod ? {} : {
                         from: ['.hotreload'],

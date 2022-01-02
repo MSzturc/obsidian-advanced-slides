@@ -38,6 +38,7 @@
 		"jest": "^27.4.5",
 		"obsidian": "^0.12.17",
 		"reveal.js": "^4.2.1",
+		"reveal.js-menu": "^2.1.0",
 		"reveal.js-mermaid-plugin": "^0.0.2",
 		"reveal.js-plugins": "^4.1.5",
 		"sass": "^1.45.1",

@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="{{{base}}}dist/reveal.css" />
     <link rel="stylesheet" href="{{{base}}}{{{themeUrl}}}" id="theme" />
     <link rel="stylesheet" href="{{{base}}}{{{highlightThemeUrl}}}" />
-
 	<link rel="stylesheet" href="{{{base}}}css/layout.css" />
-	<link rel="stylesheet" href="{{{base}}}plugin/chalkboard/style.css">
 	<link rel="stylesheet" href="{{{base}}}plugin/customcontrols/style.css">
+	{{#enableChalkboard}}
+	<link rel="stylesheet" href="{{{base}}}plugin/chalkboard/style.css">
+	{{/enableChalkboard}}
 
 	{{#cssPaths}}
     <link rel="stylesheet" href="{{{base}}}{{{.}}}" />
@@ -60,6 +61,9 @@
     <script src="{{{base}}}plugin/notes/notes.js"></script>
     <script src="{{{base}}}plugin/math/math.js"></script>
 	<script src="{{{base}}}plugin/mermaid/mermaid.js"></script>
+	{{#enableMenu}}
+	<script src="{{{base}}}plugin/menu/menu.js"></script>
+	{{/enableMenu}}
 	<script src="{{{base}}}plugin/customcontrols/plugin.js"></script>
 	{{#enableChalkboard}}
 	<script src="{{{base}}}plugin/chalkboard/plugin.js"></script>
@@ -94,6 +98,9 @@
           RevealMath,
 		  RevealMermaid,
 		  RevealCustomControls,
+		  {{#enableMenu}}
+		  RevealMenu,
+		  {{/enableMenu}}
 		  {{#enableChalkboard}}
 		  RevealChalkboard, 
 		  {{/enableChalkboard}}
@@ -120,6 +127,11 @@
 				{{/enableChalkboard}}
 			]
 		},
+		{{#enableMenu}}
+		menu: {
+			loadIcons: false
+		}
+		{{/enableMenu}}
       };
 
       // options from URL query string

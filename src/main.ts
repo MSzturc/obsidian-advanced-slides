@@ -17,6 +17,7 @@ export interface AdvancedSlidesSettings {
 	exportDirectory: string;
 	enableOverview: boolean;
 	enableChalkboard: boolean;
+	enableMenu: boolean;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
@@ -25,6 +26,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	exportDirectory: '/export',
 	enableChalkboard: false,
 	enableOverview: false,
+	enableMenu: false,
 }
 
 
@@ -293,8 +295,18 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 		containerEl.createEl('h2', { text: 'Plugins' });
 
 		new Setting(containerEl)
+		.setName('Menu')
+		.setDesc('Should the slides contain a menu button?')
+		.addToggle(value => value
+			.setValue(this.plugin.settings.enableMenu)
+			.onChange(_.debounce(async (value) => {
+				this.plugin.settings.enableMenu = value;
+				await this.plugin.saveSettings();
+			}, 750)));
+
+		new Setting(containerEl)
 			.setName('Overview')
-			.setDesc('Should the slides contain an overview Button?')
+			.setDesc('Should the slides contain an overview button?')
 			.addToggle(value => value
 				.setValue(this.plugin.settings.enableOverview)
 				.onChange(_.debounce(async (value) => {

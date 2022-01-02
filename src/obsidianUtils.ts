@@ -41,7 +41,7 @@ export class ObsidianUtils {
 	}
 
 	getTemplateSettings(options: any) {
-		const properties = ['enableOverview', 'enableChalkboard'];
+		const properties = ['enableOverview', 'enableChalkboard', 'enableMenu'];
 
 		const globalSettings = _.pick(this.settings, properties);
 		const slideSettings = _.pick(options, properties);

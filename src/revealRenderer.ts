@@ -63,7 +63,7 @@ export class RevealRenderer {
 
 		const settings = this.utils.getTemplateSettings(yamlOptions);
 
-		const { enableChalkboard, enableOverview } = settings;
+		const { enableChalkboard, enableOverview, enableMenu } = settings;
 
 		let base = '';
 		if (!ImageCollector.getInstance().shouldCollect()) {
@@ -79,6 +79,7 @@ export class RevealRenderer {
 			base,
 			enableChalkboard,
 			enableOverview,
+			enableMenu,
 			revealOptionsStr: JSON.stringify(revealOptions)
 		});
 
