@@ -27,6 +27,9 @@
 
 		document.onreadystatechange = () => {
 			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
 				if (window.location.href.indexOf("print-pdf") != -1){
 					let stateCheck = setInterval(() => {
 						clearInterval(stateCheck);

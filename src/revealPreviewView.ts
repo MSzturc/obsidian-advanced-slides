@@ -52,6 +52,12 @@ export class RevealPreviewView extends ItemView {
 	}
 
 	onMessage(msg: MessageEvent) {
+
+		if(msg.data.includes('?export')){
+			this.setUrl(msg.data.split('?')[0])
+			return;
+		}
+
 		this.setUrl(msg.data, false);
 
 		const url = new URL(msg.data);
