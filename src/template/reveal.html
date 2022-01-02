@@ -60,8 +60,10 @@
     <script src="{{{base}}}plugin/notes/notes.js"></script>
     <script src="{{{base}}}plugin/math/math.js"></script>
 	<script src="{{{base}}}plugin/mermaid/mermaid.js"></script>
-	<script src="{{{base}}}plugin/chalkboard/plugin.js"></script>
 	<script src="{{{base}}}plugin/customcontrols/plugin.js"></script>
+	{{#enableChalkboard}}
+	<script src="{{{base}}}plugin/chalkboard/plugin.js"></script>
+	{{/enableChalkboard}}
 
     <script>
       function extend() {
@@ -91,17 +93,22 @@
           RevealNotes,
           RevealMath,
 		  RevealMermaid,
-		  RevealChalkboard, 
 		  RevealCustomControls,
+		  {{#enableChalkboard}}
+		  RevealChalkboard, 
+		  {{/enableChalkboard}}
         ],
 
 		customcontrols: {
 			controls: [
+				{{#enableOverview}}
 				{id: 'toggle-overview',
 				title: 'Toggle overview (O)',
 				icon: '<i class="fa fa-th"></i>',
 				action: 'Reveal.toggleOverview();'
 				},
+				{{/enableOverview}}
+				{{#enableChalkboard}}
 				{ icon: '<i class="fa fa-pen-square"></i>',
 				title: 'Toggle chalkboard (B)',
 				action: 'RevealChalkboard.toggleChalkboard();'
@@ -109,7 +116,8 @@
 				{ icon: '<i class="fa fa-pen"></i>',
 				title: 'Toggle notes canvas (C)',
 				action: 'RevealChalkboard.toggleNotesCanvas();'
-				}
+				},
+				{{/enableChalkboard}}
 			]
 		},
       };

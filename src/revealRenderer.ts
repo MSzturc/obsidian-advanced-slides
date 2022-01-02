@@ -17,12 +17,14 @@ export class RevealRenderer {
 	private pluginDirectory: string;
 	private yaml: YamlParser;
 	private exporter: RevealExporter;
+	private utils: ObsidianUtils;
 
 	constructor(utils: ObsidianUtils) {
 		this.pluginDirectory = utils.getPluginDirectory();
 		this.processor = new ObsidianMarkdownPreprocessor(utils);
 		this.yaml = new YamlParser();
 		this.exporter = new RevealExporter(utils);
+		this.utils = utils;
 	}
 
 	async renderFile(filePath: string, renderForExport = false) {
@@ -59,6 +61,10 @@ export class RevealRenderer {
 
 		const cssPaths = this.getCssPaths(options.css);
 
+		const settings = this.utils.getTemplateSettings(yamlOptions);
+
+		const { enableChalkboard, enableOverview } = settings;
+
 		let base = '';
 		if (!ImageCollector.getInstance().shouldCollect()) {
 			base = '/';
@@ -71,6 +77,8 @@ export class RevealRenderer {
 			highlightThemeUrl,
 			cssPaths,
 			base,
+			enableChalkboard,
+			enableOverview,
 			revealOptionsStr: JSON.stringify(revealOptions)
 		});
 

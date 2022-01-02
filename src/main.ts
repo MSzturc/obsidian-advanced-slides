@@ -15,12 +15,16 @@ export interface AdvancedSlidesSettings {
 	port: string;
 	autoReload: boolean;
 	exportDirectory: string;
+	enableOverview: boolean;
+	enableChalkboard: boolean;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	port: '3000',
 	autoReload: true,
-	exportDirectory: '/export'
+	exportDirectory: '/export',
+	enableChalkboard: false,
+	enableOverview: false,
 }
 
 
@@ -36,9 +40,8 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 		await this.loadSettings();
 
-		if (!this.obsidianUtils) {
-			this.obsidianUtils = new ObsidianUtils(this.app, this.settings);
-		}
+		this.obsidianUtils = new ObsidianUtils(this.app, this.settings);
+
 
 		const pluginDirectory = this.obsidianUtils.getPluginDirectory();
 		const distDirectory = this.obsidianUtils.getDistDirectory();
@@ -285,5 +288,30 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 						await this.plugin.saveSettings();
 					}, 750))
 			})
+
+
+		containerEl.createEl('h2', { text: 'Plugins' });
+
+		new Setting(containerEl)
+			.setName('Overview')
+			.setDesc('Should the slides contain an overview Button?')
+			.addToggle(value => value
+				.setValue(this.plugin.settings.enableOverview)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.enableOverview = value;
+					await this.plugin.saveSettings();
+				}, 750)));
+
+		new Setting(containerEl)
+			.setName('Chalkboard')
+			.setDesc('Should the slides contain a chalkboard ?')
+			.addToggle(value => value
+				.setValue(this.plugin.settings.enableChalkboard)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.enableChalkboard = value;
+					await this.plugin.saveSettings();
+				}, 750)));
+
+
 	}
 }

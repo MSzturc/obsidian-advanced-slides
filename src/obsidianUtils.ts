@@ -1,4 +1,5 @@
 import { readFileSync } from "fs-extra";
+import _ from "lodash";
 import { App, FileSystemAdapter } from "obsidian";
 import path from "path";
 import { ImageCollector } from "./imageCollector";
@@ -37,6 +38,15 @@ export class ObsidianUtils {
 
 	getExportDirectory(): string {
 		return path.join(this.getVaultDirectory(), this.settings.exportDirectory);
+	}
+
+	getTemplateSettings(options: any) {
+		const properties = ['enableOverview', 'enableChalkboard'];
+
+		const globalSettings = _.pick(this.settings, properties);
+		const slideSettings = _.pick(options, properties);
+
+		return _.defaults({}, globalSettings, slideSettings);
 	}
 
 	/** TODO: Refactoring ************************** */
