@@ -53,8 +53,12 @@ export class ObsidianUtils {
 	}
 
 	findFile(imagePath: string) {
+		const expDir = this.settings.exportDirectory.startsWith("/")
+			? this.settings.exportDirectory.substring(1)
+			: this.settings.exportDirectory
+
 		const imgFile = this.app.vault.getFiles()
-			.filter(item => item.path.contains(imagePath))
+			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
 			.first();
 
 		if (imgFile) {
@@ -65,10 +69,13 @@ export class ObsidianUtils {
 	}
 
 	findImageEx(filePath: string) {
+		const expDir = this.settings.exportDirectory.startsWith("/")
+			? this.settings.exportDirectory.substring(1)
+			: this.settings.exportDirectory
 
 		let imagePath = filePath + '.svg';
 		let imgFile = this.app.vault.getFiles()
-			.filter(item => item.path.contains(imagePath))
+			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
 			.first();
 
 		if (imgFile) {
@@ -76,7 +83,7 @@ export class ObsidianUtils {
 		}
 
 		imagePath = filePath + '.png';
-		imgFile = this.app.vault.getFiles().filter(item => item.path.contains(imagePath)).first();
+		imgFile = this.app.vault.getFiles().filter(item => item.path.contains(imagePath) && !item.path.contains(expDir)).first();
 
 		if (imgFile) {
 			return imagePath;
