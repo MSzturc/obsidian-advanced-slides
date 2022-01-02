@@ -1,7 +1,7 @@
 +++
 title = "Chalkboard"
 description = ""
-weight = 2
+weight = 3
 +++
 
 With this plugin you can add a chalkboard to slides. The plugin provides two possibilities to include handwritten notes to your presentation:
