@@ -6,6 +6,9 @@
 	<link rel="stylesheet" href="{{"revealjs/lib/css/zenburn.css"|relURL}}">
 	<link rel="stylesheet" href="{{"revealjs/css/layout.css"|relURL}}">
 
+
+    <link rel="stylesheet" href="{{"css/all.min.css"|relURL}}">
+
 	<div class="reveal">
 	<div class="slides">
 		{{ .Inner }}
@@ -14,6 +17,7 @@
 
 	<script async src="{{"/revealjs/lib/js/head.min.js"|relURL}}"></script>
 	<script async src="{{"/revealjs/js/reveal.js"|relURL}}"></script>
+	
 	<script>
 	function initSlides() {
 		Reveal.initialize({
