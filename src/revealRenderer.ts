@@ -59,12 +59,18 @@ export class RevealRenderer {
 
 		const cssPaths = this.getCssPaths(options.css);
 
+		let base = '';
+		if (!ImageCollector.getInstance().shouldCollect()) {
+			base = '/';
+		}
+
 		const context = Object.assign(options, {
 			title,
 			slides,
 			themeUrl,
 			highlightThemeUrl,
 			cssPaths,
+			base,
 			revealOptionsStr: JSON.stringify(revealOptions)
 		});
 

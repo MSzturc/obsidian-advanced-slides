@@ -1,6 +1,7 @@
 import { readFileSync } from "fs-extra";
 import { App, FileSystemAdapter } from "obsidian";
 import path from "path";
+import { ImageCollector } from "./imageCollector";
 import { AdvancedSlidesSettings } from "./main";
 
 
@@ -61,8 +62,13 @@ export class ObsidianUtils {
 			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
 			.first();
 
+		let base = '';
+		if (!ImageCollector.getInstance().shouldCollect()) {
+			base = '/';
+		}
+
 		if (imgFile) {
-			return imgFile.path;
+			return base + imgFile.path;
 		} else {
 			return imagePath;
 		}
@@ -78,15 +84,20 @@ export class ObsidianUtils {
 			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
 			.first();
 
+		let base = '';
+		if (!ImageCollector.getInstance().shouldCollect()) {
+			base = '/';
+		}
+
 		if (imgFile) {
-			return imagePath;
+			return base+ imagePath;
 		}
 
 		imagePath = filePath + '.png';
 		imgFile = this.app.vault.getFiles().filter(item => item.path.contains(imagePath) && !item.path.contains(expDir)).first();
 
 		if (imgFile) {
-			return imagePath;
+			return base + imagePath;
 		}
 		return null;
 	}
