@@ -77,7 +77,7 @@ export class ImageProcessor {
 		const isIcon = this.isIcon(filePath);
 
 		if(isIcon){
-			return `<i class="${filePath}"></i>`;
+			return `<i class="${filePath}" ${this.parser.buildAttributes(comment)}></i>`;
 		} else {
 
 			if(ImageCollector.getInstance().shouldCollect()){
