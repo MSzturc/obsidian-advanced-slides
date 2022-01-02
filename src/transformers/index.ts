@@ -1,3 +1,4 @@
+import { BackgroundImageTransformer } from "./backgroundImageTransformer";
 import { BackgroundTransformer } from "./backgroundTransformer";
 import { BorderTransformer } from "./borderTransformer";
 import { ClassMappingTransformer } from "./classMappingTransformer";
@@ -126,7 +127,7 @@ class AttributeTransformers {
 		this.allTransformers.push(new StyleMappingTransformer('filter','filter'));
 		this.allTransformers.push(new RotateTransformer());
 		this.allTransformers.push(new GridTransformer());
-
+		this.allTransformers.push(new BackgroundImageTransformer());
 		
 	}
 
