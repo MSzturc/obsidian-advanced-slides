@@ -46,7 +46,7 @@ export class ObsidianUtils {
 		const globalSettings = _.pick(this.settings, properties);
 		const slideSettings = _.pick(options, properties);
 
-		return _.defaults({}, globalSettings, slideSettings);
+		return _.defaults({}, slideSettings, globalSettings);
 	}
 
 	/** TODO: Refactoring ************************** */
