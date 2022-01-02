@@ -74,17 +74,32 @@ export class ImageProcessor {
 		let [, alt, filePath, commentString] = this.markdownImageRegex.exec(line);
 		const comment = this.parser.parseLine(commentString) ?? this.parser.buildComment('element');
 
-		if(ImageCollector.getInstance().shouldCollect()){
-			ImageCollector.getInstance().addImage(filePath);
-		}
+		const isIcon = this.isIcon(filePath);
 
-		if (filePath.startsWith('file:/')) {
-			filePath = this.transformAbsoluteFilePath(filePath);
-		}
+		if(isIcon){
+			return `<i class="${filePath}"></i>`;
+		} else {
 
-		const imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}></img>`;
-		const pHtml = `<p ${this.parser.buildAttributes(this.parser.buildComment('element', ['line-height: 0'], ['reset-paragraph']))}>${imageHtml}</p>\n`;
-		return pHtml;
+			if(ImageCollector.getInstance().shouldCollect()){
+				ImageCollector.getInstance().addImage(filePath);
+			}
+	
+			if (filePath.startsWith('file:/')) {
+				filePath = this.transformAbsoluteFilePath(filePath);
+			}
+	
+			const imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}></img>`;
+			const pHtml = `<p ${this.parser.buildAttributes(this.parser.buildComment('element', ['line-height: 0'], ['reset-paragraph']))}>${imageHtml}</p>\n`;
+			return pHtml;
+		}
+	}
+
+	private isIcon(path: string){
+		return path.startsWith('fas')
+		|| path.startsWith('far')
+		|| path.startsWith('fal')
+		|| path.startsWith('fad')
+		|| path.startsWith('fab');
 	}
 
 	private transformAbsoluteFilePath(path: string) {
