@@ -58,7 +58,7 @@ export class ObsidianUtils {
 			.first();
 
 		if (imgFile) {
-			return '/' + imgFile.path;
+			return imgFile.path;
 		} else {
 			return imagePath;
 		}
