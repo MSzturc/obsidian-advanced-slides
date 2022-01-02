@@ -16,7 +16,7 @@ export class RevealRenderer {
 	private processor: ObsidianMarkdownPreprocessor;
 	private pluginDirectory: string;
 	private yaml: YamlParser;
-	private exporter : RevealExporter;
+	private exporter: RevealExporter;
 
 	constructor(utils: ObsidianUtils) {
 		this.pluginDirectory = utils.getPluginDirectory();
@@ -37,7 +37,7 @@ export class RevealRenderer {
 
 		if (renderForExport) {
 			ImageCollector.getInstance().disable();
-			await this.exporter.export(filePath, rendered,ImageCollector.getInstance().getAll());
+			await this.exporter.export(filePath, rendered, ImageCollector.getInstance().getAll());
 		}
 
 		return rendered;
@@ -94,7 +94,7 @@ export class RevealRenderer {
 			themePath => basename(themePath).replace(extname(themePath), '') === theme
 		);
 
-		return highlightTheme ? '/' + highlightTheme : '/' + theme;
+		return highlightTheme ? highlightTheme : theme;
 	}
 
 	private getThemeUrl(theme: string) {
@@ -109,7 +109,7 @@ export class RevealRenderer {
 			themePath => basename(themePath).replace(extname(themePath), '') === theme
 		);
 
-		return revealTheme ? '/' + revealTheme : '/' + theme;
+		return revealTheme ? revealTheme : theme;
 	}
 
 	private async getTemplate() {
