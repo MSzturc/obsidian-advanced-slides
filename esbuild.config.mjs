@@ -2,6 +2,9 @@ import esbuild from "esbuild";
 import process from "process";
 import builtins from 'builtin-modules';
 import copy from 'esbuild-plugin-copy';
+import extra from "fs-extra";
+import fs from "fs";
+import path from "path";
 import { sassPlugin } from 'esbuild-sass-plugin';
 import { readdir } from "fs";
 import { basename } from "path";
@@ -12,12 +15,11 @@ const staticAssetsPlugin = {
     setup(build) {
         build.onLoad({ filter: /.+/ }, (args) => {
             return {
-                watchFiles: ['styles.css', 'src/scss/layout.scss'],
+                watchFiles: ['styles.css', 'esbuild.config.mjs'],
             };
         });
     },
 };
-
 
 const banner =
     `/*
@@ -29,139 +31,179 @@ if you want to view the source, please visit the github repository of this plugi
 const prod = (process.argv[2] === 'production');
 const TEST_VAULT = 'test-vault/.obsidian/plugins/obsidian-advanced-slides';
 
-esbuild.build({
-        banner: {
-            js: banner,
-        },
-        entryPoints: ['src/main.ts'],
-        bundle: true,
-        external: ['obsidian', 'electron', ...builtins],
-        format: 'cjs',
-        watch: !prod,
-        target: 'es2020',
-        logLevel: "info",
-        sourcemap: prod ? false : 'inline',
-        treeShaking: true,
-        outfile: TEST_VAULT + '/main.js',
-        plugins: [
-            staticAssetsPlugin,
-            copy.default({
-                assets: {
-                    from: ['manifest.json', 'styles.css', 'distVersion.json'],
-                    to: ['.'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['src/template/*'],
-                    to: ['./template/'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/reveal.js/dist/*'],
-                    to: ['./dist'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['src/scss/theme/source/fonts/league-gothic/*'],
-                    to: ['./dist/theme/fonts/league-gothic'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['src/scss/theme/source/fonts/source-sans-pro/*'],
-                    to: ['./dist/theme/fonts/source-sans-pro'],
-                }
-            }),
-			copy.default({
-                assets: {
-                    from: ['src/scss/theme/source/fonts/lato/*'],
-                    to: ['./dist/theme/fonts/lato'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/reveal.js/plugin/highlight/*'],
-                    to: ['./plugin/highlight'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/reveal.js/plugin/markdown/*'],
-                    to: ['./plugin/markdown'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/reveal.js/plugin/math/*'],
-                    to: ['./plugin/math'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/reveal.js/plugin/notes/*'],
-                    to: ['./plugin/notes'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/reveal.js/plugin/search/*'],
-                    to: ['./plugin/search'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/reveal.js/plugin/zoom/*'],
-                    to: ['./plugin/zoom'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/reveal.js-mermaid-plugin/plugin/mermaid/*'],
-                    to: ['./plugin/mermaid'],
-                }
-            }),
-            copy.default({
-                assets: {
-                    from: ['node_modules/highlight.js/styles/vs2015.css'],
-                    to: ['./css'],
-                }
-            }),
-            copy.default({
-                assets: prod ? {} : {
-                    from: ['.hotreload'],
-                    to: ['.'],
-                },
-            }),
-        ],
-    }).then(buildScss('src/scss/layout/main.scss',TEST_VAULT + '/css/layout.css'))
-	.then(buildScss('src/scss/theme/source/mattropolis.scss',TEST_VAULT + '/css/mattropolis.css'))
-	.then(buildAllThemes('src/scss/theme/source/'))
-    .catch(() => process.exit(1));
+function build() {
+    esbuild.build({
+            banner: {
+                js: banner,
+            },
+            entryPoints: ['src/main.ts'],
+            bundle: true,
+            external: ['obsidian', 'electron', ...builtins],
+            format: 'cjs',
+            watch: !prod,
+            target: 'es2020',
+            logLevel: "info",
+            sourcemap: prod ? false : 'inline',
+            treeShaking: true,
+            outfile: TEST_VAULT + '/main.js',
+            plugins: [
+                staticAssetsPlugin,
+                copy.default({
+                    assets: {
+                        from: ['manifest.json', 'styles.css', 'distVersion.json'],
+                        to: ['.'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['src/template/*'],
+                        to: ['./template/'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js/dist/*'],
+                        to: ['./dist'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['src/scss/theme/source/fonts/league-gothic/*'],
+                        to: ['./dist/theme/fonts/league-gothic'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['src/scss/theme/source/fonts/source-sans-pro/*'],
+                        to: ['./dist/theme/fonts/source-sans-pro'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['src/scss/theme/source/fonts/lato/*'],
+                        to: ['./dist/theme/fonts/lato'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js/plugin/highlight/*'],
+                        to: ['./plugin/highlight'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js/plugin/markdown/*'],
+                        to: ['./plugin/markdown'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js/plugin/math/*'],
+                        to: ['./plugin/math'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js/plugin/notes/*'],
+                        to: ['./plugin/notes'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js/plugin/search/*'],
+                        to: ['./plugin/search'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js/plugin/zoom/*'],
+                        to: ['./plugin/zoom'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/reveal.js-mermaid-plugin/plugin/mermaid/*'],
+                        to: ['./plugin/mermaid'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/highlight.js/styles/vs2015.css'],
+                        to: ['./css'],
+                    }
+                }),
+                copy.default({
+                    assets: prod ? {} : {
+                        from: ['.hotreload'],
+                        to: ['.'],
+                    },
+                }),
+            ],
+        }).then(buildScss('src/scss/layout/main.scss', TEST_VAULT + '/css/layout.css'))
+        .then(buildScss('src/scss/theme/source/mattropolis.scss', TEST_VAULT + '/css/mattropolis.css'))
+        .then(buildAllThemes('src/scss/theme/source/'))
+        .catch(() => process.exit(1));
+}
 
-function buildAllThemes(themeDir){
-	readdir(themeDir, function (err, files){
-		files.forEach(function (file) {
-			if(file.endsWith('.scss')){
-				const source = themeDir + file;
-				const target = TEST_VAULT + '/dist/theme/' + basename(file).replaceAll('.scss','.css');
-				buildScss(source,target);
-			}
-		});
-	});
+function buildAllThemes(themeDir) {
+    readdir(themeDir, function(err, files) {
+        files.forEach(function(file) {
+            if (file.endsWith('.scss')) {
+                const source = themeDir + file;
+                const target = TEST_VAULT + '/dist/theme/' + basename(file).replaceAll('.scss', '.css');
+                buildScss(source, target);
+            }
+        });
+    });
 }
 
 function buildScss(source, target) {
-	return esbuild.build({
-		entryPoints: [
-			source,
-		],
-			outfile: target,
-		plugins: [
-			sassPlugin(),
-		]
-	});
+    return esbuild.build({
+        entryPoints: [
+            source,
+        ],
+        outfile: target,
+        plugins: [
+            sassPlugin(),
+            staticAssetsPlugin
+        ]
+    });
 }
 
+
+
+
+build();
+
+function flatten(lists) {
+    return lists.reduce((a, b) => a.concat(b), []);
+}
+
+function getDirectories(srcpath) {
+    return fs.readdirSync(srcpath)
+        .map(file => path.join(srcpath, file))
+        .filter(path => fs.statSync(path).isDirectory());
+}
+
+function getDirectoriesRecursive(srcpath) {
+    return [srcpath, ...flatten(getDirectories(srcpath).map(getDirectoriesRecursive))];
+}
+
+const scssDirs = getDirectoriesRecursive('src/scss');
+const templateDirs = getDirectoriesRecursive('src/template');
+
+if (!prod) {
+    let fsTimeout;
+    const watchDirs = [...scssDirs, ...templateDirs];
+    watchDirs.forEach((dirName) => {
+        extra.watch(dirName, (event, fileName) => {
+            if (!fsTimeout) {
+                console.log(`Changes detected in ${dirName}`);
+                fsTimeout = setTimeout(function() {
+                    fsTimeout = null;
+                }, 100);
+                build();
+            }
+        });
+    });
+}
