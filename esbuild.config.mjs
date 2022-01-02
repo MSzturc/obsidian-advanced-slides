@@ -132,6 +132,12 @@ function build() {
                         to: ['./css'],
                     }
                 }),
+				copy.default({
+                    assets: {
+                        from: ['node_modules/@fortawesome/fontawesome-free/js/all.min.js'],
+                        to: ['./dist/fontawesome'],
+                    }
+                }),
                 copy.default({
                     assets: prod ? {} : {
                         from: ['.hotreload'],
