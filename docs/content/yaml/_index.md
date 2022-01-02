@@ -22,6 +22,7 @@ enableLinks | Enable backlinks in slides | true / false | false
 theme | Sets the theme | [see theme docs]({{%relref "themes"%}}) | black
 highlightTheme | Sets the highlight theme | [see theme docs]({{%relref "themes"%}}) | zenburn
 css | Adds further css files |  | []
+enableOverview | Shows the Overview Button on the bottom right corner of the slide | true / false | false
 controls | Display presentation control arrows | true / false | true
 controlsLayout | Determines where controls appear | edges / bottom-right | bottom-right
 progress | Display a presentation progress bar | true / false | true
