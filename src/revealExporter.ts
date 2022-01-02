@@ -27,6 +27,7 @@ export class RevealExporter {
 		await copy(path.join(this.pluginDirectory, 'dist'), path.join(folderDir, 'dist'));
 		await copy(path.join(this.pluginDirectory, 'plugin'), path.join(folderDir, 'plugin'));
 
+		window.open('file://' + folderDir);
 	}
 
 }
