@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Plugins on Advaced Slides Documentation</title>
+    <link>https://mszturc.github.io/obsidian-advanced-slides/plugins/</link>
+    <description>Recent content in Plugins on Advaced Slides Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://mszturc.github.io/obsidian-advanced-slides/plugins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Menu</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/plugins/menu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/menu/</guid>
+      <description>A slideout menu plugin for Advanced Slides to quickly jump to any slide by title.</description>
+    </item>
+    
+    <item>
+      <title>Overview</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/plugins/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/overview/</guid>
+      <description>Press the »ESC« or »O« keys to toggle the overview mode on and off. While you&amp;rsquo;re in this mode, you can still navigate between slides, as if you were at 1,000 feet above your presentation. You could also activate Overview Mode by pressing the Overview Button on the bottom right corner.</description>
+    </item>
+    
+    <item>
+      <title>Chalkboard</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/plugins/chalkboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/chalkboard/</guid>
+      <description>With this plugin you can add a chalkboard to slides. The plugin provides two possibilities to include handwritten notes to your presentation:
+ you can make notes directly on the slides, e.g. to comment on certain aspects, you can open a chalkboard on which you can make notes.  The main use case in mind when implementing the plugin is classroom usage in which you may want to explain some course content and quickly need to make some notes.</description>
+    </item>
+    
+  </channel>
+</rss>
