@@ -24,6 +24,7 @@ export interface AdvancedSlidesSettings {
 	theme: string;
 	highlightTheme: string;
 	transition: string;
+	transitionSpeed: string;
 	controls: boolean;
 	progress: boolean;
 	slideNumber: boolean;
@@ -39,6 +40,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	theme: 'black',
 	highlightTheme: 'zenburn',
 	transition: 'slide',
+	transitionSpeed: 'default',
 	controls: true,
 	progress: true,
 	slideNumber: false,
@@ -339,15 +341,34 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 		new Setting(containerEl)
 			.setName('Transition Style')
 			.setDesc('How should the transition between slides look like?')
-			.addSearch((cb) => {
-				new GenericTextSuggester(this.app, cb.inputEl, ['none', 'fade', 'slide', 'convex', 'concave', 'zoom']);
+			.addDropdown((cb) => {
 				cb
-					.setPlaceholder("slide")
-					.setValue(this.plugin.settings.transition)
-					.onChange(_.debounce(async (value) => {
-						this.plugin.settings.transition = value;
-						await this.plugin.saveSettings();
-					}, 750))
+				.addOption('none','none')
+				.addOption('fade','fade')
+				.addOption('slide','slide')
+				.addOption('convex','convex')
+				.addOption('concave','concave')
+				.addOption('zoom','zoom')					
+				.setValue(this.plugin.settings.transition)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.transition = value;
+					await this.plugin.saveSettings();
+				}, 750))
+			})
+
+		new Setting(containerEl)
+			.setName('Transition Speed')
+			.setDesc('How fast should the transition between two slides be?')
+			.addDropdown((cb) => {
+				cb
+				.addOption('slow','slow')
+				.addOption('normal','default')
+				.addOption('fast','fast')					
+				.setValue(this.plugin.settings.transitionSpeed)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.transitionSpeed = value;
+					await this.plugin.saveSettings();
+				}, 750))
 			})
 
 		containerEl.createEl('h2', { text: 'Plugins' });
