@@ -28,6 +28,10 @@ Short Syntax
 HTML Synthax
 
  	<i color="coral" class="fas fa-envelope fa-4x"/>
+
+ShortCode Synthax
+
+	:fas_envelope:
  
 ---
 
