@@ -22,7 +22,7 @@ export class RevealRenderer {
 	constructor(utils: ObsidianUtils) {
 		this.pluginDirectory = utils.getPluginDirectory();
 		this.processor = new ObsidianMarkdownPreprocessor(utils);
-		this.yaml = new YamlParser();
+		this.yaml = new YamlParser(utils.getSettings());
 		this.exporter = new RevealExporter(utils);
 		this.utils = utils;
 	}
@@ -61,7 +61,7 @@ export class RevealRenderer {
 
 		const cssPaths = this.getCssPaths(options.css);
 
-		const settings = this.utils.getTemplateSettings(yamlOptions);
+		const settings = this.yaml.getTemplateSettings(yamlOptions);
 
 		const { enableChalkboard, enableOverview, enableMenu } = settings;
 

@@ -10,6 +10,7 @@ import JSZip from 'jszip';
 import _ from 'lodash';
 import { ObsidianUtils } from './obsidianUtils';
 import { FolderSuggest } from './suggesters/FolderSuggester';
+import { ThemeSuggest } from './suggesters/ThemeSuggester';
 
 export interface AdvancedSlidesSettings {
 	port: string;
@@ -18,6 +19,8 @@ export interface AdvancedSlidesSettings {
 	enableOverview: boolean;
 	enableChalkboard: boolean;
 	enableMenu: boolean;
+	theme: string;
+	transition: string;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
@@ -27,6 +30,8 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	enableChalkboard: false,
 	enableOverview: false,
 	enableMenu: false,
+	theme: 'black',
+	transition: 'slide',
 }
 
 
@@ -254,7 +259,7 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 
 		containerEl.empty();
 
-		containerEl.createEl('h2', { text: 'Advanced Slides Settings' });
+		containerEl.createEl('h2', { text: 'General Settings' });
 
 		new Setting(containerEl)
 			.setName('Port')
@@ -291,18 +296,33 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 					}, 750))
 			})
 
+		containerEl.createEl('h2', { text: 'Slide Settings' });
+
+		new Setting(containerEl)
+			.setName('Theme')
+			.setDesc('Which theme should be used for your slides?')
+			.addSearch((cb) => {
+				new ThemeSuggest(this.app, cb.inputEl);
+				cb
+					.setPlaceholder("File")
+					.setValue(this.plugin.settings.theme)
+					.onChange(_.debounce(async (value) => {
+						this.plugin.settings.theme = value;
+						await this.plugin.saveSettings();
+					}, 750))
+			})
 
 		containerEl.createEl('h2', { text: 'Plugins' });
 
 		new Setting(containerEl)
-		.setName('Menu')
-		.setDesc('Should the slides contain a menu button?')
-		.addToggle(value => value
-			.setValue(this.plugin.settings.enableMenu)
-			.onChange(_.debounce(async (value) => {
-				this.plugin.settings.enableMenu = value;
-				await this.plugin.saveSettings();
-			}, 750)));
+			.setName('Menu')
+			.setDesc('Should the slides contain a menu button?')
+			.addToggle(value => value
+				.setValue(this.plugin.settings.enableMenu)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.enableMenu = value;
+					await this.plugin.saveSettings();
+				}, 750)));
 
 		new Setting(containerEl)
 			.setName('Overview')

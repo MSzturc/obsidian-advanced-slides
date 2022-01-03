@@ -2,11 +2,22 @@ import { loadFront } from "yaml-front-matter";
 
 import _ from "lodash"
 import defaults from "./defaults.json";
+import { AdvancedSlidesSettings } from "./main";
 
 export class YamlParser {
 
+	private settings: AdvancedSlidesSettings;
+
+	constructor(settings: AdvancedSlidesSettings) {
+		this.settings = settings;
+	}
+
 	getSlideOptions(options: unknown) {
-		return _.defaults({}, options, defaults);
+
+		const properties = ['theme'];
+		const globalSettings = _.pick(this.settings, properties);
+
+		return _.defaults({}, options, globalSettings, defaults);
 	}
 
 	getSlidifyOptions(options: unknown) {
@@ -17,6 +28,15 @@ export class YamlParser {
 	getRevealOptions(options: unknown) {
 		const revealProps = ['width', 'height', 'margin', 'minScale', 'maxScale', 'controls', 'controlsTutorial', 'controlsLayout', 'controlsBackArrows', 'progress', 'slideNumber', 'showSlideNumber', 'hashOneBasedIndex', 'hash', 'respondToHashChanges', 'history', 'keyboard', 'keyboardCondition', 'disableLayout', 'overview', 'center', 'touch', 'loop', 'rtl', 'navigationMode', 'shuffle', 'fragments', 'fragmentInURL', 'embedded', 'help', 'pause', 'showNotes', 'autoPlayMedia', 'preloadIframes', 'autoAnimate', 'autoAnimateMatcher', 'autoAnimateEasing', 'autoAnimateDuration', 'autoAnimateUnmatched', 'autoSlide', 'autoSlideStoppable', 'autoSlideMethod', 'defaultTiming', 'mouseWheel', 'previewLinks', 'postMessage', 'postMessageEvents', 'focusBodyOnPageVisibilityChange', 'transition', 'transitionSpeed', 'backgroundTransition', 'pdfMaxPagesPerSlide', 'pdfSeparateFragments', 'pdfPageHeightOffset', 'viewDistance', 'mobileViewDistance', 'display', 'hideInactiveCursor', 'hideCursorTime'];
 		return _.pick(options, revealProps)
+	}
+
+	getTemplateSettings(options: unknown) {
+		const properties = ['enableOverview', 'enableChalkboard', 'enableMenu'];
+
+		const globalSettings = _.pick(this.settings, properties);
+		const slideSettings = _.pick(options, properties);
+
+		return _.defaults({}, slideSettings, globalSettings);
 	}
 
 	parseYamlFrontMatter(input: string): { yamlOptions: unknown; markdown: string; } {
