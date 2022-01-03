@@ -12,6 +12,7 @@ import { ObsidianUtils } from './obsidianUtils';
 import { FolderSuggest } from './suggesters/FolderSuggester';
 import { ThemeSuggest } from './suggesters/ThemeSuggester';
 import { GenericTextSuggester } from './suggesters/GenericTextSuggester';
+import { HighlightThemeSuggest } from './suggesters/HighlightThemeSuggester';
 
 export interface AdvancedSlidesSettings {
 	port: string;
@@ -21,6 +22,7 @@ export interface AdvancedSlidesSettings {
 	enableChalkboard: boolean;
 	enableMenu: boolean;
 	theme: string;
+	highlightTheme: string;
 	transition: string;
 }
 
@@ -32,6 +34,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	enableOverview: false,
 	enableMenu: false,
 	theme: 'black',
+	highlightTheme: 'zenburn',
 	transition: 'slide',
 }
 
@@ -309,6 +312,20 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 					.setValue(this.plugin.settings.theme)
 					.onChange(_.debounce(async (value) => {
 						this.plugin.settings.theme = value;
+						await this.plugin.saveSettings();
+					}, 750))
+			})
+
+		new Setting(containerEl)
+			.setName('Highlight Theme')
+			.setDesc('Which highlight theme should be used for your slides?')
+			.addSearch((cb) => {
+				new HighlightThemeSuggest(this.app, cb.inputEl);
+				cb
+					.setPlaceholder("zenburn")
+					.setValue(this.plugin.settings.highlightTheme)
+					.onChange(_.debounce(async (value) => {
+						this.plugin.settings.highlightTheme = value;
 						await this.plugin.saveSettings();
 					}, 750))
 			})
