@@ -25,6 +25,7 @@ export interface AdvancedSlidesSettings {
 	highlightTheme: string;
 	transition: string;
 	controls: boolean;
+	progress: boolean;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
@@ -38,6 +39,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	highlightTheme: 'zenburn',
 	transition: 'slide',
 	controls: true,
+	progress: true,
 }
 
 
@@ -355,6 +357,16 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 				.setValue(this.plugin.settings.controls)
 				.onChange(_.debounce(async (value) => {
 					this.plugin.settings.controls = value;
+					await this.plugin.saveSettings();
+				}, 750)));
+
+		new Setting(containerEl)
+			.setName('Progress Bar')
+			.setDesc('Display presentation progress bar?')
+			.addToggle(value => value
+				.setValue(this.plugin.settings.progress)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.progress = value;
 					await this.plugin.saveSettings();
 				}, 750)));
 
