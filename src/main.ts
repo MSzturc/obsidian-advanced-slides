@@ -11,7 +11,6 @@ import _ from 'lodash';
 import { ObsidianUtils } from './obsidianUtils';
 import { FolderSuggest } from './suggesters/FolderSuggester';
 import { ThemeSuggest } from './suggesters/ThemeSuggester';
-import { GenericTextSuggester } from './suggesters/GenericTextSuggester';
 import { HighlightThemeSuggest } from './suggesters/HighlightThemeSuggester';
 
 export interface AdvancedSlidesSettings {
@@ -106,7 +105,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 
 		try {
-			this.registerView(REVEAL_PREVIEW_VIEW, (leaf) => new RevealPreviewView(leaf, this.revealServer.getUrl()));
+			this.registerView(REVEAL_PREVIEW_VIEW, (leaf) => new RevealPreviewView(leaf, this.revealServer.getUrl(), this.settings));
 
 			this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
 

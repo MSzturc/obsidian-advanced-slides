@@ -1,4 +1,5 @@
 import { ItemView, MarkdownView, Menu, WorkspaceLeaf } from 'obsidian';
+import { AdvancedSlidesSettings } from './main';
 import { Options } from './options';
 import { YamlParser } from './yamlParser';
 
@@ -11,10 +12,10 @@ export class RevealPreviewView extends ItemView {
 	private urlRegex = /#\/(\d*)(?:\/(\d*))?(?:\/(\d*))?/;
 	private yaml: YamlParser;
 
-	constructor(leaf: WorkspaceLeaf, home: URL) {
+	constructor(leaf: WorkspaceLeaf, home: URL, settings: AdvancedSlidesSettings) {
 		super(leaf);
 		this.home = home;
-		this.yaml = new YamlParser();
+		this.yaml = new YamlParser(settings);
 
 		this.addAction('slides', 'Open in Browser', () => {
 			window.open(home);
@@ -75,7 +76,7 @@ export class RevealPreviewView extends ItemView {
 
 	getTargetLine(url: URL, source: string): number {
 		const pageString = url.href.substring(url.href.lastIndexOf('#'));
-		const [, h, v, s] = this.urlRegex.exec(pageString);
+		const [, h, v] = this.urlRegex.exec(pageString);
 		const { yamlOptions, markdown } = this.yaml.parseYamlFrontMatter(source);
 		const separators = this.yaml.getSlideOptions(yamlOptions);
 		const yamlLength = source.indexOf(markdown);
