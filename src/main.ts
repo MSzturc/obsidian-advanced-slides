@@ -26,6 +26,7 @@ export interface AdvancedSlidesSettings {
 	transition: string;
 	controls: boolean;
 	progress: boolean;
+	slideNumber: boolean;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
@@ -40,6 +41,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	transition: 'slide',
 	controls: true,
 	progress: true,
+	slideNumber: false,
 }
 
 
@@ -367,6 +369,16 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 				.setValue(this.plugin.settings.progress)
 				.onChange(_.debounce(async (value) => {
 					this.plugin.settings.progress = value;
+					await this.plugin.saveSettings();
+				}, 750)));
+
+		new Setting(containerEl)
+			.setName('Slide Numbers')
+			.setDesc('Display the page number of the current slide?')
+			.addToggle(value => value
+				.setValue(this.plugin.settings.slideNumber)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.slideNumber = value;
 					await this.plugin.saveSettings();
 				}, 750)));
 
