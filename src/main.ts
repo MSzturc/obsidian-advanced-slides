@@ -11,6 +11,7 @@ import _ from 'lodash';
 import { ObsidianUtils } from './obsidianUtils';
 import { FolderSuggest } from './suggesters/FolderSuggester';
 import { ThemeSuggest } from './suggesters/ThemeSuggester';
+import { GenericTextSuggester } from './suggesters/GenericTextSuggester';
 
 export interface AdvancedSlidesSettings {
 	port: string;
@@ -304,10 +305,24 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 			.addSearch((cb) => {
 				new ThemeSuggest(this.app, cb.inputEl);
 				cb
-					.setPlaceholder("File")
+					.setPlaceholder("black")
 					.setValue(this.plugin.settings.theme)
 					.onChange(_.debounce(async (value) => {
 						this.plugin.settings.theme = value;
+						await this.plugin.saveSettings();
+					}, 750))
+			})
+
+		new Setting(containerEl)
+			.setName('Transition Style')
+			.setDesc('How should the transition between slides look like?')
+			.addSearch((cb) => {
+				new GenericTextSuggester(this.app, cb.inputEl, ['none', 'fade', 'slide', 'convex', 'concave', 'zoom']);
+				cb
+					.setPlaceholder("slide")
+					.setValue(this.plugin.settings.transition)
+					.onChange(_.debounce(async (value) => {
+						this.plugin.settings.transition = value;
 						await this.plugin.saveSettings();
 					}, 750))
 			})

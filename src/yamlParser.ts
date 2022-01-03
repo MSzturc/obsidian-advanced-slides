@@ -13,10 +13,7 @@ export class YamlParser {
 	}
 
 	getSlideOptions(options: unknown) {
-
-		const properties = ['theme'];
-		const globalSettings = _.pick(this.settings, properties);
-
+		const globalSettings = _.omitBy(this.settings, _.isEmpty);
 		return _.defaults({}, options, globalSettings, defaults);
 	}
 
@@ -27,7 +24,9 @@ export class YamlParser {
 
 	getRevealOptions(options: unknown) {
 		const revealProps = ['width', 'height', 'margin', 'minScale', 'maxScale', 'controls', 'controlsTutorial', 'controlsLayout', 'controlsBackArrows', 'progress', 'slideNumber', 'showSlideNumber', 'hashOneBasedIndex', 'hash', 'respondToHashChanges', 'history', 'keyboard', 'keyboardCondition', 'disableLayout', 'overview', 'center', 'touch', 'loop', 'rtl', 'navigationMode', 'shuffle', 'fragments', 'fragmentInURL', 'embedded', 'help', 'pause', 'showNotes', 'autoPlayMedia', 'preloadIframes', 'autoAnimate', 'autoAnimateMatcher', 'autoAnimateEasing', 'autoAnimateDuration', 'autoAnimateUnmatched', 'autoSlide', 'autoSlideStoppable', 'autoSlideMethod', 'defaultTiming', 'mouseWheel', 'previewLinks', 'postMessage', 'postMessageEvents', 'focusBodyOnPageVisibilityChange', 'transition', 'transitionSpeed', 'backgroundTransition', 'pdfMaxPagesPerSlide', 'pdfSeparateFragments', 'pdfPageHeightOffset', 'viewDistance', 'mobileViewDistance', 'display', 'hideInactiveCursor', 'hideCursorTime'];
-		return _.pick(options, revealProps)
+		const globalSettings = _.pick(_.omitBy(this.settings, _.isEmpty), revealProps);
+		const slideSettings = _.pick(options, revealProps);
+		return _.defaults({}, slideSettings, globalSettings);
 	}
 
 	getTemplateSettings(options: unknown) {
