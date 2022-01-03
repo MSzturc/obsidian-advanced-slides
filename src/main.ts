@@ -24,6 +24,7 @@ export interface AdvancedSlidesSettings {
 	theme: string;
 	highlightTheme: string;
 	transition: string;
+	controls: boolean;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
@@ -36,6 +37,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	theme: 'black',
 	highlightTheme: 'zenburn',
 	transition: 'slide',
+	controls: true,
 }
 
 
@@ -347,8 +349,18 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 		containerEl.createEl('h2', { text: 'Plugins' });
 
 		new Setting(containerEl)
+			.setName('Controls')
+			.setDesc('Display presentation control arrows?')
+			.addToggle(value => value
+				.setValue(this.plugin.settings.controls)
+				.onChange(_.debounce(async (value) => {
+					this.plugin.settings.controls = value;
+					await this.plugin.saveSettings();
+				}, 750)));
+
+		new Setting(containerEl)
 			.setName('Menu')
-			.setDesc('Should the slides contain a menu button?')
+			.setDesc('Display presentation menu button?')
 			.addToggle(value => value
 				.setValue(this.plugin.settings.enableMenu)
 				.onChange(_.debounce(async (value) => {
@@ -358,7 +370,7 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName('Overview')
-			.setDesc('Should the slides contain an overview button?')
+			.setDesc('Display presentation  overview button?')
 			.addToggle(value => value
 				.setValue(this.plugin.settings.enableOverview)
 				.onChange(_.debounce(async (value) => {

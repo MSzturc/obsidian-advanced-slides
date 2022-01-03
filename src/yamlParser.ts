@@ -13,7 +13,7 @@ export class YamlParser {
 	}
 
 	getSlideOptions(options: unknown) {
-		const globalSettings = _.omitBy(this.settings, _.isEmpty);
+		const globalSettings = _.omitBy(this.settings, (v) => _.isNil(v) || v === '');
 		return _.defaults({}, options, globalSettings, defaults);
 	}
 
