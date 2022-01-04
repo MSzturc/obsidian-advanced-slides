@@ -1,4 +1,4 @@
-import { Plugin, addIcon, TAbstractFile, PluginSettingTab, App, Setting } from 'obsidian';
+import { Plugin, addIcon, TAbstractFile, PluginSettingTab, App, Setting, MarkdownView, EditorSuggest, Editor, EditorPosition, EditorSuggestContext, EditorSuggestTriggerInfo, TFile } from 'obsidian';
 import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
@@ -108,6 +108,8 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			this.registerView(REVEAL_PREVIEW_VIEW, (leaf) => new RevealPreviewView(leaf, this.revealServer.getUrl(), this.settings));
 
 			this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
+
+			this.registerEditorSuggest(new LineSelectionListener(this.app, this));
 
 			addIcon("slides", ICON_DATA);
 			addIcon("refresh", REFRESH_ICON);
@@ -253,6 +255,35 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		await this.saveData(this.settings);
 		this.onunload();
 		this.onload();
+	}
+}
+
+
+class LineSelectionListener extends EditorSuggest<string> {
+
+	private plugin: AdvancedSlidesPlugin;
+
+	constructor(app: App, plugin: AdvancedSlidesPlugin){
+		super(app);
+		this.plugin = plugin;
+	}
+
+	onTrigger(cursor: EditorPosition, editor: Editor, file: TFile): EditorSuggestTriggerInfo {
+		const instance = this.plugin.getViewInstance();
+
+		if(instance){
+			instance.onLineChanged(cursor.line);
+		}
+		return null;
+	}
+	getSuggestions(context: EditorSuggestContext): string[] | Promise<string[]> {
+		throw new Error('Method not implemented.');
+	}
+	renderSuggestion(value: string, el: HTMLElement): void {
+		throw new Error('Method not implemented.');
+	}
+	selectSuggestion(value: string, evt: MouseEvent | KeyboardEvent): void {
+		throw new Error('Method not implemented.');
 	}
 }
 

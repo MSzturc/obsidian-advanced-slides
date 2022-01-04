@@ -45,7 +45,7 @@ export class RevealPreviewView extends ItemView {
 				.setTitle("Export as html")
 				.onClick(() => {
 					const url = new URL(this.url);
-					url.searchParams.append("export","true");
+					url.searchParams.append("export", "true");
 					this.setUrl(url.toString());
 				});
 		});
@@ -54,7 +54,7 @@ export class RevealPreviewView extends ItemView {
 
 	onMessage(msg: MessageEvent) {
 
-		if(msg.data.includes('?export')){
+		if (msg.data.includes('?export')) {
 			this.setUrl(msg.data.split('?')[0])
 			return;
 		}
@@ -72,6 +72,44 @@ export class RevealPreviewView extends ItemView {
 			view.editor.setCursor({ line: line, ch: 0 });
 		}
 
+	}
+
+	onLineChanged(line: number) {
+		const view = this.app.workspace.getActiveViewOfType(MarkdownView);
+		const viewContent = this.containerEl.children[1];
+		const iframe = viewContent.getElementsByTagName('iframe')[0];
+
+		if (view && iframe) {
+			const [x, y] = this.getTargetSlide(line, view.data);
+			iframe.contentWindow.postMessage(`${x}|${y}`, this.url);
+		}
+	}
+
+	getTargetSlide(line: number, source: string): [number, number] {
+
+		const { yamlOptions, markdown } = this.yaml.parseYamlFrontMatter(source);
+		const separators = this.yaml.getSlideOptions(yamlOptions);
+		const yamlLength = source.indexOf(markdown);
+		const offset = source.substring(0, yamlLength).split(/^/gm).length;
+		const slides = this.getSlideLines(markdown, separators);
+
+		const cursorPosition = line - (offset > 0 ? offset - 1 : 0);
+
+		let resultKey = null;
+		for (const [key, value] of slides.entries()) {
+			if (value <= cursorPosition) {
+				resultKey = key;
+			} else {
+				break;
+			}
+		}
+
+		if (resultKey) {
+			const keys = resultKey.split(',');
+			return [Number.parseInt(keys[0]), Number.parseInt(keys[1])];
+		} else {
+			return [0, 0];
+		}
 	}
 
 	getTargetLine(url: URL, source: string): number {

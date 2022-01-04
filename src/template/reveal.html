@@ -21,15 +21,24 @@
     <script defer src="{{{base}}}dist/fontawesome/all.min.js"></script>
 
 	<script type="text/javascript">
+		var forgetPop = true;
 		function onPopState(event) {
-			parent.postMessage(event.target.location.href, "app://obsidian.md");
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
         }
 		window.onpopstate = onPopState;
 		window.onmessage = event => {
 			if(event.data == "reload"){
 				window.document.location.reload();
 			}
+			const pages = event.data.split('|');
+			forgetPop = true;
+			Reveal.slide( pages[0], pages[1], 0 );
 		}
+
 
 		document.onreadystatechange = () => {
 			if (document.readyState === 'complete') {
