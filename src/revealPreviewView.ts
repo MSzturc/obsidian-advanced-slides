@@ -81,7 +81,7 @@ export class RevealPreviewView extends ItemView {
 
 		if (view && iframe) {
 			const [x, y] = this.getTargetSlide(line, view.data);
-			iframe.contentWindow.postMessage(`${x}|${y}`, this.url);
+			iframe.contentWindow.postMessage(`{"method":"setState","args":[{"indexh":${x},"indexv":${y},"paused":false}]}`, this.url);
 		}
 	}
 
