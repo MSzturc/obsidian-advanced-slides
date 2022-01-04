@@ -20,12 +20,21 @@ Obsidian URI links
 [Link to note](obsidian://open?vault=MainVault&file=MyNote.md)
 
 ---
-
+<!-- .slide: id="InternalLinks" -->
 Internal Links
 
 This [[Internal link]] will be displayed as normal text
 
 This [[Internal link|Link]] will use its alias for displaying
+
+---
+
+Slide Links
+
+You can link between slides, [like this](#/1/0).
+
+Or by slide id, [like this](#InternalLinks).
+
 
 ```
 
@@ -51,6 +60,14 @@ Internal Links
 This Internal link will be displayed as normal text
 
 This Link will use its alias for displaying
+
+---
+
+Slide Links
+
+You can link between slides, [like this](#/1/0).
+
+Or by slide id, [like this](#/2/0).
 
 ___
 
