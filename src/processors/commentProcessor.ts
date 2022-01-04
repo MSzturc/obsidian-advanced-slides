@@ -9,8 +9,8 @@ export class CommentProcessor {
 		return markdown
 			.split('\n')
 			.map((line) => {
-				if (line.includes('<!--')) {
-					return line.replace(this.readCommentRegex, 
+				if (this.parser.lineHasComment(line)) {
+					return line.replace(this.readCommentRegex,
 						this.parser.commentToString(this.parser.parseLine(line)));
 				} else {
 					return line;

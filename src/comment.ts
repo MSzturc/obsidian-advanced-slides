@@ -85,8 +85,8 @@ export class CommentParser {
 		return Comment.of(type, style, clazz, attributes);
 	}
 
-	private lineHasComment(line: string): boolean {
-		return line?.includes("<!--") && line?.includes("-->");
+	lineHasComment(line: string): boolean {
+		return this.parseRegex.test(line);
 	}
 
 	private readCommentStringFromLine(line: string): string {
