@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/processors/autoClosingProcessor.ts</title>
+    <title>Code coverage report for src/processors/iconsProcessor.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -19,7 +19,7 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/processors</a> autoClosingProcessor.ts</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">src/processors</a> iconsProcessor.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
@@ -78,9 +78,7 @@
 <a name='L13'></a><a href='#L13'>13</a>
 <a name='L14'></a><a href='#L14'>14</a>
 <a name='L15'></a><a href='#L15'>15</a>
-<a name='L16'></a><a href='#L16'>16</a>
-<a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L16'></a><a href='#L16'>16</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">58x</span>
@@ -95,25 +93,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-export class AutoClosingProcessor {
+export class IconsProcessor {
 &nbsp;
-	private regex = /&lt;(\s*?([\w]*)[^&gt;]*?)\/(?&lt;=\/)&gt;/gm;
+	private regex = /:(fas|far|fal|fad|fab)_([\w]+):/g;
 &nbsp;
 	process(markdown: string){
-		return this.transformBlock(markdown);
+		return this.transformIconShortcode(markdown);
 	}
 &nbsp;
-	transformBlock(markdown: string) {
-		markdown = markdown.replaceAll(this.regex, `&lt;$1&gt;&lt;/$2&gt;`);
+	transformIconShortcode(markdown: string) {
+		markdown = markdown.replaceAll(this.regex, `![]($1 fa-$2)`);
 		return markdown;
 	}
 &nbsp;
 }
-&nbsp;
-&nbsp;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
