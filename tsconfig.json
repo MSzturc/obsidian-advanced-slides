@@ -1,6 +1,5 @@
 {
 	"extends": "@tsconfig/node16/tsconfig.json",
-	
 	"compilerOptions": {
 		"strict": false,
 		"baseUrl": ".",
@@ -14,4 +13,9 @@
 			"ES2021"
 		]
 	},
+	"exclude": [
+		"node_modules",
+		"docs",
+		"test-vault"
+	]
 }
