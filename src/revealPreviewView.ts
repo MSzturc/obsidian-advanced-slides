@@ -6,7 +6,7 @@ import { YamlParser } from './yamlParser';
 export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
 
 export class RevealPreviewView extends ItemView {
-	private url = 'about:blank';
+	url = 'about:blank';
 	private home: URL;
 
 	private urlRegex = /#\/(\d*)(?:\/(\d*))?(?:\/(\d*))?/;

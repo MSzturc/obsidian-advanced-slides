@@ -271,6 +271,10 @@ class LineSelectionListener extends EditorSuggest<string> {
 	onTrigger(cursor: EditorPosition, editor: Editor, file: TFile): EditorSuggestTriggerInfo {
 		const instance = this.plugin.getViewInstance();
 
+		if(instance.url == 'about:blank'){
+			this.plugin.showView();
+		}
+
 		if(instance){
 			instance.onLineChanged(cursor.line);
 		}
