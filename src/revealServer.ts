@@ -39,9 +39,8 @@ export class RevealServer {
 		});
 
 		this._app.get(/(\w+\.md)/, async (req, res) => {
-
 			this.filePath = path.join(this._baseDirectory, decodeURI(req.url.split('?')[0]));
-			const markup = await this._revealRenderer.renderFile(this.filePath, req.query.export != undefined);
+			const markup = await this._revealRenderer.renderFile(this.filePath, req.query);
 			res.send(markup);
 		});
 
@@ -49,8 +48,7 @@ export class RevealServer {
 			if (this.filePath === null) {
 				res.send("Open Presentation Preview in Obsidian first!");
 			}
-
-			const markup = await this._revealRenderer.renderFile(this.filePath);
+			const markup = await this._revealRenderer.renderFile(this.filePath, req.query);
 			res.send(markup);
 		});
 

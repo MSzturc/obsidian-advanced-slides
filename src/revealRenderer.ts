@@ -10,6 +10,7 @@ import { ObsidianUtils } from "./obsidianUtils";
 import { YamlParser } from "./yamlParser";
 import { ImageCollector } from "./imageCollector";
 import { RevealExporter } from "./revealExporter";
+import _ from "lodash";
 
 export class RevealRenderer {
 
@@ -27,7 +28,20 @@ export class RevealRenderer {
 		this.utils = utils;
 	}
 
-	async renderFile(filePath: string, renderForExport = false) {
+	async renderFile(filePath: string, params: any) {
+
+		let renderForExport = false;
+		let renderForPrint = false;
+
+		if (!_.isEmpty(params)) {
+			if (_.has(params, 'export')) {
+				renderForExport = params?.export;
+			}
+
+			if (_.has(params, 'print-pdf')) {
+				renderForPrint = true;
+			}
+		}
 
 		if (renderForExport) {
 			ImageCollector.getInstance().reset();
@@ -35,7 +49,7 @@ export class RevealRenderer {
 		}
 
 		const content = (await readFile(filePath.toString())).toString();
-		const rendered = await this.render(content);
+		const rendered = await this.render(content, renderForPrint);
 
 		if (renderForExport) {
 			ImageCollector.getInstance().disable();
@@ -45,9 +59,9 @@ export class RevealRenderer {
 		return rendered;
 	}
 
-	async render(input: string) {
+	async render(input: string, renderForPrint: boolean) {
 		const { yamlOptions, markdown } = this.yaml.parseYamlFrontMatter(input);
-		const options = this.yaml.getSlideOptions(yamlOptions);
+		const options = this.yaml.getSlideOptions(yamlOptions,renderForPrint);
 		const revealOptions = this.yaml.getRevealOptions(options);
 
 		const { title } = options;
@@ -61,8 +75,9 @@ export class RevealRenderer {
 
 		const cssPaths = this.getCssPaths(options.css);
 
-		const settings = this.yaml.getTemplateSettings(yamlOptions);
+		const settings = this.yaml.getTemplateSettings(options);
 
+		const { enableCustomControls } = options;
 		const { enableChalkboard, enableOverview, enableMenu } = settings;
 
 		let base = '';
@@ -77,6 +92,7 @@ export class RevealRenderer {
 			highlightThemeUrl,
 			cssPaths,
 			base,
+			enableCustomControls,
 			enableChalkboard,
 			enableOverview,
 			enableMenu,

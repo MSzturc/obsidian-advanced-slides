@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="{{{base}}}{{{themeUrl}}}" id="theme" />
     <link rel="stylesheet" href="{{{base}}}{{{highlightThemeUrl}}}" />
 	<link rel="stylesheet" href="{{{base}}}css/layout.css" />
+	{{#enableCustomControls}}
 	<link rel="stylesheet" href="{{{base}}}plugin/customcontrols/style.css">
+	{{/enableCustomControls}}
 	{{#enableChalkboard}}
 	<link rel="stylesheet" href="{{{base}}}plugin/chalkboard/style.css">
 	{{/enableChalkboard}}
@@ -71,7 +73,9 @@
 	{{#enableMenu}}
 	<script src="{{{base}}}plugin/menu/menu.js"></script>
 	{{/enableMenu}}
+	{{#enableCustomControls}}
 	<script src="{{{base}}}plugin/customcontrols/plugin.js"></script>
+	{{/enableCustomControls}}
 	{{#enableChalkboard}}
 	<script src="{{{base}}}plugin/chalkboard/plugin.js"></script>
 	{{/enableChalkboard}}
@@ -104,7 +108,9 @@
           RevealNotes,
           RevealMath,
 		  RevealMermaid,
+		  {{#enableCustomControls}}
 		  RevealCustomControls,
+	      {{/enableCustomControls}}
 		  {{#enableMenu}}
 		  RevealMenu,
 		  {{/enableMenu}}
@@ -113,6 +119,7 @@
 		  {{/enableChalkboard}}
         ],
 
+		{{#enableCustomControls}}
 		customcontrols: {
 			controls: [
 				{{#enableOverview}}
@@ -134,6 +141,7 @@
 				{{/enableChalkboard}}
 			]
 		},
+		{{/enableCustomControls}}
 		{{#enableMenu}}
 		menu: {
 			loadIcons: false

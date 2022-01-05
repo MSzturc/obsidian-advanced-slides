@@ -10,5 +10,6 @@
 	"width": 960,
 	"height": 700,
 	"margin": 0.04,
-	"transition": "slide"
+	"transition": "slide",
+	"enableCustomControls": true
 }

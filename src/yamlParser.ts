@@ -12,9 +12,23 @@ export class YamlParser {
 		this.settings = settings;
 	}
 
-	getSlideOptions(options: unknown) {
+	getSlideOptions(options: unknown, print: boolean) {
 		const globalSettings = _.omitBy(this.settings, (v) => _.isNil(v) || v === '');
-		return _.defaults({}, options, globalSettings, defaults);
+		if(print){
+			return _.defaults(this.getPrintOptions(), options, globalSettings, defaults);
+		} else {
+			return _.defaults({}, options, globalSettings, defaults);
+		}
+	}
+
+	private getPrintOptions(){
+		return {
+			enableOverview: false,
+			enableChalkboard: false,
+			enableMenu: false,
+			enableCustomControls: false,
+			controls: false
+		}
 	}
 
 	getSlidifyOptions(options: unknown) {
@@ -30,7 +44,7 @@ export class YamlParser {
 	}
 
 	getTemplateSettings(options: unknown) {
-		const properties = ['enableOverview', 'enableChalkboard', 'enableMenu'];
+		const properties = ['enableOverview', 'enableChalkboard', 'enableMenu', 'enableCustomControls'];
 
 		const globalSettings = _.pick(this.settings, properties);
 		const slideSettings = _.pick(options, properties);
