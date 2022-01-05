@@ -1,5 +1,4 @@
-import { emptyDir, copy } from "fs-extra";
-import { writeFile } from "fs/promises";
+import { emptyDir, copy, writeFile } from "fs-extra";
 import path from "path";
 import { ObsidianUtils } from "./obsidianUtils";
 
