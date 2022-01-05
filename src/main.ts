@@ -263,7 +263,7 @@ class LineSelectionListener extends EditorSuggest<string> {
 
 	private plugin: AdvancedSlidesPlugin;
 
-	constructor(app: App, plugin: AdvancedSlidesPlugin){
+	constructor(app: App, plugin: AdvancedSlidesPlugin) {
 		super(app);
 		this.plugin = plugin;
 	}
@@ -271,11 +271,10 @@ class LineSelectionListener extends EditorSuggest<string> {
 	onTrigger(cursor: EditorPosition, editor: Editor, file: TFile): EditorSuggestTriggerInfo {
 		const instance = this.plugin.getViewInstance();
 
-		if(instance.url == 'about:blank'){
-			this.plugin.showView();
-		}
-
-		if(instance){
+		if (instance) {
+			if (instance.url == 'about:blank') {
+				this.plugin.showView();
+			}
 			instance.onLineChanged(cursor.line);
 		}
 		return null;
@@ -377,17 +376,17 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 			.setDesc('How should the transition between slides look like?')
 			.addDropdown((cb) => {
 				cb
-				.addOption('none','none')
-				.addOption('fade','fade')
-				.addOption('slide','slide')
-				.addOption('convex','convex')
-				.addOption('concave','concave')
-				.addOption('zoom','zoom')					
-				.setValue(this.plugin.settings.transition)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.transition = value;
-					await this.plugin.saveSettings();
-				}, 750))
+					.addOption('none', 'none')
+					.addOption('fade', 'fade')
+					.addOption('slide', 'slide')
+					.addOption('convex', 'convex')
+					.addOption('concave', 'concave')
+					.addOption('zoom', 'zoom')
+					.setValue(this.plugin.settings.transition)
+					.onChange(_.debounce(async (value) => {
+						this.plugin.settings.transition = value;
+						await this.plugin.saveSettings();
+					}, 750))
 			})
 
 		new Setting(containerEl)
@@ -395,14 +394,14 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 			.setDesc('How fast should the transition between two slides be?')
 			.addDropdown((cb) => {
 				cb
-				.addOption('slow','slow')
-				.addOption('normal','default')
-				.addOption('fast','fast')					
-				.setValue(this.plugin.settings.transitionSpeed)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.transitionSpeed = value;
-					await this.plugin.saveSettings();
-				}, 750))
+					.addOption('slow', 'slow')
+					.addOption('normal', 'default')
+					.addOption('fast', 'fast')
+					.setValue(this.plugin.settings.transitionSpeed)
+					.onChange(_.debounce(async (value) => {
+						this.plugin.settings.transitionSpeed = value;
+						await this.plugin.saveSettings();
+					}, 750))
 			})
 
 		containerEl.createEl('h2', { text: 'Plugins' });
