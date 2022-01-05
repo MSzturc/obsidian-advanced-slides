@@ -152,7 +152,7 @@ export class RevealRenderer {
 			if (this.isValidUrl(css)) {
 				return css;
 			}
-			return '/' + css;
+			return css;
 		});
 	}
 }
