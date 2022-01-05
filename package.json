@@ -8,7 +8,9 @@
 		"build": "node esbuild.config.mjs production",
 		"test": "jest",
 		"coverage": "jest --coverage",
-		"lint": "eslint --fix --ext .ts ."
+		"lint": "eslint --fix --ext .ts .",
+		"docs": "cd docs && hugo serve",
+		"all": "node esbuild.config.mjs & cd docs && hugo serve"
 	},
 	"repository": "git@github.com:MSzturc/obsidian-advanced-slides.git",
 	"author": "Matthäus Szturc",
