@@ -154,7 +154,7 @@ export class RevealRenderer {
 	}
 
 	private getCssPaths(css: string | string[]) {
-		let input: string[]
+		let input: string[] = [];
 		if (!css) {
 			return input;
 		}
