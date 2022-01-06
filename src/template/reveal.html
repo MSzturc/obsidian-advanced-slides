@@ -39,8 +39,36 @@
 			forgetPop = true;
 		}
 
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			const size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
 
 		document.onreadystatechange = () => {
+			fitElements();
 			if (document.readyState === 'complete') {
 				if (window.location.href.indexOf("?export") != -1){
 					parent.postMessage(event.target.location.href, "app://obsidian.md");
