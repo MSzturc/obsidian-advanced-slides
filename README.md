@@ -38,6 +38,7 @@ Advanced Slides is the perfect slide deck extension for <a href="https://obsidia
 - Live Preview while editing your slides
 - Themes allow you to change the appearance of your slides
 - Annotations allow you to change the style of your slides
+- Export slides as PDF Documents or as HTML Presentations
 - **Full support of the Obsidian Markdown Syntax**
 
 ---
