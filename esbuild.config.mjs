@@ -104,6 +104,84 @@ function build() {
                 }),
                 copy.default({
                     assets: {
+                        from: ['node_modules/mathjax/es5/tex-mml-chtml.js'],
+                        to: ['./plugin/math/mathjax'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/a11y/*'],
+                        to: ['./plugin/math/mathjax/a11y'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/adaptors/*'],
+                        to: ['./plugin/math/mathjax/adaptors'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/input/*'],
+                        to: ['./plugin/math/mathjax/input'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/input/mml/*'],
+                        to: ['./plugin/math/mathjax/input/mml'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/input/mml/extensions/*'],
+                        to: ['./plugin/math/mathjax/input/mml/extensions'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/input/tex/extensions/*'],
+                        to: ['./plugin/math/mathjax/input/tex/extensions'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/output/*'],
+                        to: ['./plugin/math/mathjax/output'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/output/chtml/fonts/*'],
+                        to: ['./plugin/math/mathjax/output/chtml/fonts'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/output/chtml/fonts/woff-v2/*'],
+                        to: ['./plugin/math/mathjax/output/chtml/fonts/woff-v2'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/sre/*'],
+                        to: ['./plugin/math/mathjax/sre'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/sre/mathmaps/*'],
+                        to: ['./plugin/math/mathjax/sre/mathmaps'],
+                    }
+                }),
+                copy.default({
+                    assets: {
+                        from: ['node_modules/mathjax/es5/ui/*'],
+                        to: ['./plugin/math/mathjax/ui'],
+                    }
+                }),
+                copy.default({
+                    assets: {
                         from: ['node_modules/reveal.js/plugin/notes/*'],
                         to: ['./plugin/notes'],
                     }

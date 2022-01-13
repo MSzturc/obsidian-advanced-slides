@@ -134,7 +134,7 @@
           RevealHighlight,
           RevealZoom,
           RevealNotes,
-          RevealMath,
+          RevealMath.MathJax3,
 		  RevealMermaid,
 		  {{#enableCustomControls}}
 		  RevealCustomControls,
@@ -146,6 +146,10 @@
 		  RevealChalkboard, 
 		  {{/enableChalkboard}}
         ],
+
+		mathjax3: {
+			mathjax: '{{{base}}}plugin/math/mathjax/tex-mml-chtml.js',
+		},
 
 		{{#enableCustomControls}}
 		customcontrols: {
