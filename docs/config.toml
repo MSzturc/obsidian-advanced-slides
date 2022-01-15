@@ -2,7 +2,7 @@ baseURL = "https://mszturc.github.io/obsidian-advanced-slides/"
 
 languageCode = "en-us"
 DefaultContentLanguage = "en"
-title = "Advaced Slides Documentation"
+title = "Advanced Slides Documentation"
 theme = "docdock"
 pygmentsCodeFences = true
 pygmentsStyle = "monokailight"
