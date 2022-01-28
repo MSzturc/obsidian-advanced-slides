@@ -2,7 +2,7 @@ import { CommentParser, Comment } from "src/comment";
 import { YamlStore } from "src/yamlStore";
 import { getSlideOptions } from "./testUtils";
 
-test('Parse Coment', () => {
+test('Parse Comment', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 	const parser = new CommentParser();
 
@@ -17,7 +17,7 @@ test('Parse Coment', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment', () => {
+test('Parse Comment', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -48,7 +48,7 @@ test('Empty Slide comment', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment', () => {
+test('Parse Comment', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -65,7 +65,7 @@ test('Parse Coment', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment', () => {
+test('Parse Comment', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -80,7 +80,7 @@ test('Parse Coment', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment with bg property', () => {
+test('Parse Comment with bg property', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -97,7 +97,7 @@ test('Parse Coment with bg property', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment with bg property', () => {
+test('Parse Comment with bg property', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -110,12 +110,12 @@ test('Parse Coment with bg property', () => {
 		[],
 		['has-dark-background'],
 		new Map<string, string>([["data-background-color","black"]])
-	
+
 	);
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Merge Coment', () => {
+test('Merge Comment', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -143,7 +143,7 @@ test('Invalid input', () => {
 	expect(parsed).toBeNull();
 });
 
-test('Parse Coment with pad property', () => {
+test('Parse Comment with pad property', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -158,7 +158,7 @@ test('Parse Coment with pad property', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment with animate property', () => {
+test('Parse Comment with animate property', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -174,7 +174,7 @@ test('Parse Coment with animate property', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment with fragment property', () => {
+test('Parse Comment with fragment property', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -191,7 +191,7 @@ test('Parse Coment with fragment property', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment with opacity property', () => {
+test('Parse Comment with opacity property', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -206,7 +206,7 @@ test('Parse Coment with opacity property', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment with border property', () => {
+test('Parse Comment with border property', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -221,7 +221,7 @@ test('Parse Coment with border property', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment with rotate property', () => {
+test('Parse Comment with rotate property', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
@@ -237,7 +237,7 @@ test('Parse Coment with rotate property', () => {
 
 });
 
-test('Parse Coment with rotate property', () => {
+test('Parse Comment with rotate property', () => {
 	YamlStore.getInstance().options = getSlideOptions({})
 
 	const parser = new CommentParser();
