@@ -69,6 +69,18 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 
 ---
 
+# Fragmented unordered list with ignored code block
+
+- First
+- Second<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->
+
+\`\`\`diff
+- ignored block text 1
++ ignored block text 2
+\`\`\`
+
+---
+
 # Ordered list
 
 1. First

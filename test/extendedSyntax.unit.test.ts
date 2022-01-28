@@ -211,7 +211,7 @@ note: this is not! Only the speaker might see this text.
 - and this bulletpoint
 - or this picture
 
-![](https://picsum.photos/id/1005/250/250) 
+![](https://picsum.photos/id/1005/250/250)
 `;
 
 	const { options, markdown } = prepare(input);
@@ -237,6 +237,18 @@ test('Extended Markdown Syntax >  Fragmented list', () => {
 + First
 + Second
 + Third
+
+---
+
+# Fragmented unordered list with ignored code block
+
+- First
++ Second
+
+\`\`\`diff
+- ignored block text 1
++ ignored block text 2
+\`\`\`
 
 ---
 
