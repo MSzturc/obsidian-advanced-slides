@@ -1,6 +1,6 @@
 import { CommentParser, Comment } from "src/comment";
 
-test('Parse Coment', () => {
+test('Parse Comment', () => {
 
 	const parser = new CommentParser();
 
@@ -15,7 +15,7 @@ test('Parse Coment', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment', () => {
+test('Parse Comment', () => {
 
 	const parser = new CommentParser();
 
@@ -30,7 +30,7 @@ test('Parse Coment', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment', () => {
+test('Parse Comment', () => {
 
 	const parser = new CommentParser();
 
@@ -46,7 +46,7 @@ test('Parse Coment', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment', () => {
+test('Parse Comment', () => {
 
 	const parser = new CommentParser();
 
@@ -60,7 +60,7 @@ test('Parse Coment', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
-test('Parse Coment with bg property', () => {
+test('Parse Comment with bg property', () => {
 
 	const parser = new CommentParser();
 
