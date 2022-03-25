@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Advaced Slides Documentation</title>
+    <title>Advanced Slides Documentation</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-01-13T22:50:09 UTC">
-<title>Split Component :: Advaced Slides Documentation</title>
+<meta name="revised" content="2022-03-25T10:40:26 UTC">
+<title>Split Component :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
 <link href="/obsidian-advanced-slides/css/font-awesome.min.css" rel="stylesheet">
@@ -45,7 +45,7 @@
       
 	
   
-    <a class="baselink" href="https://mszturc.github.io/obsidian-advanced-slides/">Advaced Slides Documentation</a>
+    <a class="baselink" href="https://mszturc.github.io/obsidian-advanced-slides/">Advanced Slides Documentation</a>
   
 
 
@@ -440,65 +440,65 @@
 <h3 id="attributes">Attributes</h3>
 <h4 id="even">even</h4>
 <p>By setting the even attribute the Content of the split element gets divided evenly:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">even</span><span style="color:#111">&gt;</span>
-
-![](https://picsum.photos/id/1005/250/250) 
-![](https://picsum.photos/id/1010/250/250) 
-![](https://picsum.photos/id/1025/250/250) 
-<span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
-</code></pre></div><p><strong>Example:</strong> In a split with 3 children every child takes 1/3 of the availible width of the slide</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">even</span><span style="color:#111">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1005/250/250) 
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1010/250/250) 
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1025/250/250) 
+</span></span><span style="display:flex;"><span><span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
+</span></span></code></pre></div><p><strong>Example:</strong> In a split with 3 children every child takes 1/3 of the availible width of the slide</p>
 <h4 id="gap">gap</h4>
 <p>By adding the gap attribute there will be a gap between each element:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">even</span> <span style="color:#75af00">gap</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;3&#34;</span><span style="color:#111">&gt;</span>
-
-<span style="font-weight:bold">**Lorem Ipsum**</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s
-
-when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-
-into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-<span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
-</code></pre></div><p><strong>Example:</strong> In this split is a gap of 3em between each element</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">even</span> <span style="color:#75af00">gap</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;3&#34;</span><span style="color:#111">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**Lorem Ipsum**</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+</span></span><span style="display:flex;"><span><span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
+</span></span></code></pre></div><p><strong>Example:</strong> In this split is a gap of 3em between each element</p>
 <h4 id="left--right">left &amp; right</h4>
 <p>If you want to split a slide proportionally you can do that with left and right attributes. Left and right represent the proportions of the slide columns:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">left</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;2&#34;</span> <span style="color:#75af00">right</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;1&#34;</span> <span style="color:#75af00">gap</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;2&#34;</span><span style="color:#111">&gt;</span>
-
-<span style="font-weight:bold">**Lorem Ipsum**</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s
-when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-	
-into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
-<span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
-</code></pre></div><p><strong>Example:</strong> In this split the left elements width is twice as big as the width of the right element</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">left</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;2&#34;</span> <span style="color:#75af00">right</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;1&#34;</span> <span style="color:#75af00">gap</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;2&#34;</span><span style="color:#111">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">**Lorem Ipsum**</span> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever since the 1500s
+</span></span><span style="display:flex;"><span>when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+</span></span><span style="display:flex;"><span>	
+</span></span><span style="display:flex;"><span>into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem
+</span></span><span style="display:flex;"><span><span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
+</span></span></code></pre></div><p><strong>Example:</strong> In this split the left elements width is twice as big as the width of the right element</p>
 <h4 id="wrap">wrap</h4>
 <p>By adding a wrap attribute you can define after how many children an new row should start:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">wrap</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;4&#34;</span><span style="color:#111">&gt;</span>
-
-![](https://picsum.photos/id/1010/250/250) 
-
-![](https://picsum.photos/id/1011/250/250) 
-
-![](https://picsum.photos/id/1012/250/250) 
-
-![](https://picsum.photos/id/1013/250/250) 
-
-![](https://picsum.photos/id/1014/250/250) 
-
-![](https://picsum.photos/id/1015/250/250) 
-<span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
-</code></pre></div><p><strong>Example:</strong> This split has 2 rows. The first one has 4 pictures in it, the second one the other 2.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">wrap</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;4&#34;</span><span style="color:#111">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1010/250/250) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1011/250/250) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1012/250/250) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1013/250/250) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1014/250/250) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1015/250/250) 
+</span></span><span style="display:flex;"><span><span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
+</span></span></code></pre></div><p><strong>Example:</strong> This split has 2 rows. The first one has 4 pictures in it, the second one the other 2.</p>
 <h3 id="no-margin">no-margin</h3>
 <p>By adding no margin attribute automatic gaps between rows and column gets removed:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md"><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">no-margin</span><span style="color:#111">&gt;</span>
-
-![](https://picsum.photos/id/1001/250/250) 
-![](https://picsum.photos/id/1002/250/250) 
-![](https://picsum.photos/id/1003/250/250) 
-![](https://picsum.photos/id/1004/250/250) 
-![](https://picsum.photos/id/1005/250/250) 
-![](https://picsum.photos/id/1006/250/250) 
-![](https://picsum.photos/id/1009/250/250) 
-![](https://picsum.photos/id/1008/250/250) 
-<span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
-</code></pre></div><p><strong>Example:</strong> This split has no gaps between rows and columns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#111">&lt;</span><span style="color:#f92672">split</span> <span style="color:#75af00">no-margin</span><span style="color:#111">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1001/250/250) 
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1002/250/250) 
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1003/250/250) 
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1004/250/250) 
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1005/250/250) 
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1006/250/250) 
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1009/250/250) 
+</span></span><span style="display:flex;"><span>![](https://picsum.photos/id/1008/250/250) 
+</span></span><span style="display:flex;"><span><span style="color:#111">&lt;/</span><span style="color:#f92672">split</span><span style="color:#111">&gt;</span>
+</span></span></code></pre></div><p><strong>Example:</strong> This split has no gaps between rows and columns.</p>
 <h2 id="split-component-in-action">Split Component in Action</h2>
 <iframe id="slideFrame" src="/obsidian-advanced-slides/none.html" style="width:100%;height:30em; border:0px"></iframe>
 

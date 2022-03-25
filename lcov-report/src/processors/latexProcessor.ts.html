@@ -135,29 +135,20 @@
 <a name='L70'></a><a href='#L70'>70</a>
 <a name='L71'></a><a href='#L71'>71</a>
 <a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a>
-<a name='L77'></a><a href='#L77'>77</a>
-<a name='L78'></a><a href='#L78'>78</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
+<a name='L73'></a><a href='#L73'>73</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">116x</span>
+<span class="cline-any cline-yes">118x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -170,7 +161,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -179,20 +171,19 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">717x</span>
+<span class="cline-any cline-yes">741x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">717x</span>
+<span class="cline-any cline-yes">741x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -209,21 +200,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">57x</span>
+<span class="cline-any cline-yes">58x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">&nbsp;
-export class LatexProcessor {
-&nbsp;
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">export class LatexProcessor {
 	private singleLine = /\$(.*?)\$/g;
 &nbsp;
 	process(markdown: string) {
-&nbsp;
 		const withoutEscapedCharaters = this.markEscapedCharacters(markdown);
 		const processedMultiline = this.processMultiLine(withoutEscapedCharaters);
 		const multiWithoutEscapedCharaters = this.markEscapedCharacters(processedMultiline);
@@ -233,32 +220,32 @@ export class LatexProcessor {
 	}
 &nbsp;
 	private markEscapedCharacters(markdown: string) {
-&nbsp;
-		return markdown
-			//Escaped $ signs
-			.replaceAll('\\$', '~~d~~')
-			//Multiline in backticks
-			.replaceAll(/`\$\$/gm, '~~s~~')
-			.replaceAll(/\$\$`/gm, '~~e~~')
-			//Singleline in backticks
-			.replaceAll(/`\$/gm, '~~ss~~')
-			.replaceAll(/\$`/gm, '~~se~~');
+		return (
+			markdown
+				//Escaped $ signs
+				.replaceAll('\\$', '~~d~~')
+				//Multiline in backticks
+				.replaceAll(/`\$\$/gm, '~~s~~')
+				.replaceAll(/\$\$`/gm, '~~e~~')
+				//Singleline in backticks
+				.replaceAll(/`\$/gm, '~~ss~~')
+				.replaceAll(/\$`/gm, '~~se~~')
+		);
 	}
 &nbsp;
 	private unmarkEscapedCharacters(markdown: string) {
-&nbsp;
 		return markdown
-		.replaceAll('~~d~~', '\\$')
-		.replaceAll('~~e~~', '$$$$`')
-		.replaceAll('~~s~~', '`$$$$')
-		.replaceAll('~~ss~~', '`$')
-		.replaceAll('~~se~~', '$$`');
+			.replaceAll('~~d~~', '\\$')
+			.replaceAll('~~e~~', '$$$$`')
+			.replaceAll('~~s~~', '`$$$$')
+			.replaceAll('~~ss~~', '`$')
+			.replaceAll('~~se~~', '$$`');
 	}
 &nbsp;
 	private processSingleLine(markdown: string) {
 		return markdown
 			.split('\n')
-			.map((line) =&gt; {
+			.map(line =&gt; {
 				if (line.includes('$')) {
 					line = line.replaceAll(this.singleLine, '`$$$1$$`');
 				}
@@ -268,7 +255,6 @@ export class LatexProcessor {
 	}
 &nbsp;
 	private processMultiLine(markdown: string) {
-&nbsp;
 		if (markdown.includes('$$')) {
 			return markdown
 				.split('$$')
@@ -279,12 +265,12 @@ export class LatexProcessor {
 						return '`' + line + '`';
 					}
 				})
-				.map((line) =&gt; {
+				.map(line =&gt; {
 					//Replace all empty lines in multiline LaTex expressions
-					return line.replaceAll(/^\s*[\r\n]/gm,'');
-				}) 
-				.join('$$').slice(1, -1);
-&nbsp;
+					return line.replaceAll(/^\s*[\r\n]/gm, '');
+				})
+				.join('$$')
+				.slice(1, -1);
 		}
 		return markdown;
 	}
@@ -292,7 +278,6 @@ export class LatexProcessor {
 	private isOdd(number: number) {
 		return number &amp; 1;
 	}
-&nbsp;
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -301,7 +286,7 @@ export class LatexProcessor {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Thu Jan 13 2022 22:51:07 GMT+0000 (Coordinated Universal Time)
+                at Fri Mar 25 2022 10:41:12 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

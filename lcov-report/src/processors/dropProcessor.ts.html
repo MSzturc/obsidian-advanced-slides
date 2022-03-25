@@ -106,40 +106,36 @@
 <a name='L41'></a><a href='#L41'>41</a>
 <a name='L42'></a><a href='#L42'>42</a>
 <a name='L43'></a><a href='#L43'>43</a>
-<a name='L44'></a><a href='#L44'>44</a>
-<a name='L45'></a><a href='#L45'>45</a>
-<a name='L46'></a><a href='#L46'>46</a>
-<a name='L47'></a><a href='#L47'>47</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
+<a name='L44'></a><a href='#L44'>44</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">81x</span>
+<span class="cline-any cline-yes">59x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">82x</span>
+<span class="cline-any cline-yes">83x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">84x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-yes">30x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">52x</span>
+<span class="cline-any cline-yes">54x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">58x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,10 +149,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CommentParser } from "src/comment";
-import { Options } from "src/options";
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { CommentParser } from 'src/comment';
+import { Options } from 'src/options';
 &nbsp;
 export class DropProcessor {
 	private dropRegex = /drop="[^"]+"/;
@@ -169,10 +163,10 @@ export class DropProcessor {
 &nbsp;
 		markdown
 			.split(new RegExp(options.separator, 'gmi'))
-			.map((slidegroup) =&gt; {
+			.map(slidegroup =&gt; {
 				return slidegroup
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
-					.map((slide) =&gt; {
+					.map(slide =&gt; {
 						if (this.dropRegex.test(slide)) {
 							const newSlide = this.transformSlide(slide);
 							output = output.split(slide).join(newSlide);
@@ -188,18 +182,15 @@ export class DropProcessor {
 	}
 &nbsp;
 	transformSlide(slide: string) {
-&nbsp;
-		<span class="missing-if-branch" title="if path not taken" >I</span>if(this.slideCommentRegex.test(slide)){
+		<span class="missing-if-branch" title="if path not taken" >I</span>if (this.slideCommentRegex.test(slide)) {
 			const [match] = <span class="cstat-no" title="statement not covered" >this.slideCommentRegex.exec(slide);</span>
 			const comment = <span class="cstat-no" title="statement not covered" >this.parser.parseLine(match);</span>
-<span class="cstat-no" title="statement not covered" >			comment.addClass("drop");</span>
-<span class="cstat-no" title="statement not covered" >			return slide.replace(this.slideCommentRegex,this.parser.commentToString(comment));</span>
+<span class="cstat-no" title="statement not covered" >			comment.addClass('drop');</span>
+<span class="cstat-no" title="statement not covered" >			return slide.replace(this.slideCommentRegex, this.parser.commentToString(comment));</span>
 		} else {
-			return slide + '\n&lt;!-- .slide: class="drop" --&gt;\n'
+			return slide + '\n&lt;!-- .slide: class="drop" --&gt;\n';
 		}
-&nbsp;
 	}
-&nbsp;
 }
 &nbsp;</pre></td></tr></table></pre>
 
@@ -208,7 +199,7 @@ export class DropProcessor {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Thu Jan 13 2022 22:51:07 GMT+0000 (Coordinated Universal Time)
+                at Fri Mar 25 2022 10:41:12 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

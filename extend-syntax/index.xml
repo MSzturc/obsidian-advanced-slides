@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Extended Syntax on Advaced Slides Documentation</title>
+    <title>Extended Syntax on Advanced Slides Documentation</title>
     <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/</link>
-    <description>Recent content in Extended Syntax on Advaced Slides Documentation</description>
+    <description>Recent content in Extended Syntax on Advanced Slides Documentation</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -13,7 +13,7 @@
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slides/</guid>
       <description>To create a horizontal slide use three dashes surrounded by two blank lines. To create vertical slides use two dashes surrounded by two blank lines:
-# Slide 1 --- # Slide 2.1 -- # Slide 2.2  # Slide 1 --- # Slide 2.1 -- # Slide 2.2       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;</description>
+# Slide 1  ---  # Slide 2.1  --  # Slide 2.2  # Slide 1 --- # Slide 2.1 -- # Slide 2.2       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;</description>
     </item>
     
     <item>
@@ -22,7 +22,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/</guid>
-      <description>text with border &amp;lt;!-- element class=&amp;#34;with-border&amp;#34; --&amp;gt; text with background &amp;lt;!-- element style=&amp;#34;background:blue&amp;#34; --&amp;gt; text with attribute &amp;lt;!-- element data-toggle=&amp;#34;modal&amp;#34; --&amp;gt; </description>
+      <description>text with border &amp;lt;!-- element class=&amp;#34;with-border&amp;#34; --&amp;gt;  text with background &amp;lt;!-- element style=&amp;#34;background:blue&amp;#34; --&amp;gt;  text with attribute &amp;lt;!-- element data-toggle=&amp;#34;modal&amp;#34; --&amp;gt; </description>
     </item>
     
     <item>
@@ -32,10 +32,9 @@
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slideannotations/</guid>
       <description>You can pass style or class properties for the whole slide by annotating it:
-&amp;lt;!-- .slide: style=&amp;#34;background-color: coral;&amp;#34; --&amp;gt; # Header with coral background color Paragraph has coral background color, too! --- &amp;lt;!-- .slide: style=&amp;#34;background-color: green;&amp;#34; --&amp;gt; - All Bullet points - have green - background color  Header with coral background color Paragraph has coral background color, too!
+&amp;lt;!-- .slide: style=&amp;#34;background-color: coral;&amp;#34; --&amp;gt;  # Header with coral background color  Paragraph has coral background color, too!  ---  &amp;lt;!-- .slide: style=&amp;#34;background-color: green;&amp;#34; --&amp;gt;  - All Bullet points - have green - background color  Header with coral background color Paragraph has coral background color, too!
   All Bullet points
- have green
- background color</description>
+ have green</description>
     </item>
     
     <item>
@@ -45,7 +44,7 @@
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/blockcomment/</guid>
       <description>You can use block comments to group parts of your slide. By annotating the block all items inside this block gets the properties of the annotation:
-::: block #### Header _and_ Paragraph content *in same block* ::: --- no color ::: block &amp;lt;!-- element style=&amp;#34;background-color: red;&amp;#34; --&amp;gt; everything inside this block has red background color ::: block &amp;lt;!-- element style=&amp;#34;background-color: blue;&amp;#34; --&amp;gt; blue ::: red ::: no color  Header and Paragraph content in same block</description>
+::: block  #### Header _and_ Paragraph content *in same block*  :::  ---  no color  ::: block &amp;lt;!-- element style=&amp;#34;background-color: red;&amp;#34; --&amp;gt;  everything inside this block has red background color  ::: block &amp;lt;!-- element style=&amp;#34;background-color: blue;&amp;#34; --&amp;gt;  blue  :::  red  :::  no color  Header and Paragraph content in same block</description>
     </item>
     
     <item>
@@ -54,7 +53,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragments/</guid>
-      <description>Fragments are used to highlight or incrementally reveal individual elements on a slide. Every element with the class fragment will be stepped through before moving on to the next slide. The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment. A list of all possible fragment types could be found here Fade in &amp;lt;!-- element class=&amp;#34;fragment&amp;#34; --&amp;gt; Fade out &amp;lt;!</description>
+      <description>Fragments are used to highlight or incrementally reveal individual elements on a slide. Every element with the class fragment will be stepped through before moving on to the next slide. The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment. A list of all possible fragment types could be found here Fade in &amp;lt;!-- element class=&amp;#34;fragment&amp;#34; --&amp;gt;  Fade out &amp;lt;!</description>
     </item>
     
     <item>
@@ -64,7 +63,7 @@
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</guid>
       <description>you may define css styles inside your markdown:
-by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{ border: 1px solid red; } &amp;lt;/style&amp;gt; styled text &amp;lt;!-- element class=&amp;#34;with-border&amp;#34; --&amp;gt;   styled text       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;true&#34; , transition: &#34;concave&#34;, dependencies: [ { src: &#39;\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js&#34;&#39;, condition: function() { return !document.body.classList; } }, { src: &#39;\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.</description>
+by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; 	.with-border{ 	border: 1px solid red; 	} &amp;lt;/style&amp;gt;  styled text &amp;lt;!-- element class=&amp;#34;with-border&amp;#34; --&amp;gt;   styled text       function initSlides() { Reveal.initialize({ embedded : true, controls : &#34;true&#34;, center: true ,	history: false , progress: &#34;true&#34; , transition: &#34;concave&#34;, dependencies: [ { src: &#39;\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js&#34;&#39;, condition: function() { return !</description>
     </item>
     
     <item>
@@ -74,7 +73,7 @@ by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; .with-border{
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</guid>
       <description>you can change the background by annotating the slide:
-&amp;lt;!-- .slide: data-background=&amp;#34;aquamarine&amp;#34; --&amp;gt; ## Slide with text based background --- &amp;lt;!-- .slide: data-background=&amp;#34;#ff0000&amp;#34; --&amp;gt; ## Slide with hex based background --- &amp;lt;!-- .slide: data-background=&amp;#34;rgb(70, 70, 255)&amp;#34; --&amp;gt; ## Slide with rgb based background --- &amp;lt;!-- .slide: data-background=&amp;#34;hsla(315, 100%, 50%, 1)&amp;#34; --&amp;gt; ## Slide with hsl based background --- # Slide without background --- &amp;lt;!-- .slide: data-background-image=&amp;#34;https://picsum.photos/seed/picsum/800/600&amp;#34; --&amp;gt; ## Slide with image background --- &amp;lt;!</description>
+&amp;lt;!-- .slide: data-background=&amp;#34;aquamarine&amp;#34; --&amp;gt; ## Slide with text based background ---  &amp;lt;!-- .slide: data-background=&amp;#34;#ff0000&amp;#34; --&amp;gt; ## Slide with hex based background  ---  &amp;lt;!-- .slide: data-background=&amp;#34;rgb(70, 70, 255)&amp;#34; --&amp;gt; ## Slide with rgb based background  ---  &amp;lt;!-- .slide: data-background=&amp;#34;hsla(315, 100%, 50%, 1)&amp;#34; --&amp;gt; ## Slide with hsl based background  ---  # Slide without background  ---  &amp;lt;!</description>
     </item>
     
     <item>
@@ -95,7 +94,7 @@ The notes window also gives you a preview of the next upcoming slide so it may b
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragmentedlists/</guid>
       <description>Based on the Fragments concept Advanced Slides introduced a convention to automatically add fragment annotation to bullet points of ordered and unordered lists. By using + or ) as indicator for a list, the list will be automatically displayed as a fragmented list.
-# Unordered list - First - Second - Third --- # Fragmented unordered list - Permanent + First + Second + Third --- # Ordered list 1. First 2.</description>
+# Unordered list  - First - Second - Third  ---  # Fragmented unordered list  - Permanent + First + Second + Third  ---  # Ordered list  1.</description>
     </item>
     
     <item>
@@ -104,7 +103,7 @@ The notes window also gives you a preview of the next upcoming slide so it may b
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/excalidraw/</guid>
-      <description> It’s required to activate Auto-Export SVG / PNG in Excalidraw Settings. #### Excalidraw support ![[Sample.excalidraw|100]] ![[Sample.excalidraw]] &amp;lt;!-- element style=&amp;#34;width:300px; height:400px&amp;#34; --&amp;gt; </description>
+      <description> It’s required to activate Auto-Export SVG / PNG in Excalidraw Settings. #### Excalidraw support  ![[Sample.excalidraw|100]]  ![[Sample.excalidraw]] &amp;lt;!-- element style=&amp;#34;width:300px; height:400px&amp;#34; --&amp;gt; </description>
     </item>
     
     <item>
@@ -114,7 +113,7 @@ The notes window also gives you a preview of the next upcoming slide so it may b
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fontawesome/</guid>
       <description>You can add Icons to your slide with the following markdown:
-&amp;lt;!-- .slide: bg=&amp;#34;white&amp;#34;--&amp;gt; ![](fab fa-font-awesome fa-4x) ## Icons --- &amp;lt;!-- .slide: bg=&amp;#34;white&amp;#34;--&amp;gt; ### Basic Syntax ![](fas fa-envelope fa-4x)&amp;lt;!-- .element: color=&amp;#34;coral&amp;#34;--&amp;gt; Short Syntax ![](fas fa-envelope fa-4x)&amp;lt;!-- .element: color=&amp;#34;coral&amp;#34;--&amp;gt; HTML Synthax &amp;lt;i color=&amp;#34;coral&amp;#34; class=&amp;#34;fas fa-envelope fa-4x&amp;#34;/&amp;gt; ShortCode Synthax :fas_envelope: --- # Sizing &amp;lt;i class=&amp;#34;fas fa-camera fa-xs&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-sm&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-lg&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-2x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-5x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-7x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; --- # Rotating Icons &amp;lt;i class=&amp;#34;fas fa-snowboarding&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-rotate-90&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-rotate-180&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-rotate-270&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-flip-horizontal&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-flip-vertical&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-flip-both&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; --- # Animating Icons &amp;lt;i class=&amp;#34;fas fa-spinner fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-circle-notch fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-sync fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-cog fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-spinner fa-pulse fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-stroopwafel fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; --- #### Bordered + Pulled Icons &amp;lt;i class=&amp;#34;fas fa-quote-left fa-2x fa-pull-left&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; Gatsby believed in the green light, the orgastic future that year by year recedes before us.</description>
+ &amp;lt;!-- .slide: bg=&amp;#34;white&amp;#34;--&amp;gt;  ![](fab fa-font-awesome fa-4x)  ## Icons  ---  &amp;lt;!-- .slide: bg=&amp;#34;white&amp;#34;--&amp;gt; ### Basic Syntax  ![](fas fa-envelope fa-4x)&amp;lt;!-- .element: color=&amp;#34;coral&amp;#34;--&amp;gt;  Short Syntax  	![](fas fa-envelope fa-4x)&amp;lt;!-- .element: color=&amp;#34;coral&amp;#34;--&amp;gt;  HTML Synthax   &amp;lt;i color=&amp;#34;coral&amp;#34; class=&amp;#34;fas fa-envelope fa-4x&amp;#34;/&amp;gt;  ShortCode Synthax  	:fas_envelope:  ---  # Sizing  &amp;lt;i class=&amp;#34;fas fa-camera fa-xs&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-sm&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-lg&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-2x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-5x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-camera fa-7x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;  ---  # Rotating Icons  &amp;lt;i class=&amp;#34;fas fa-snowboarding&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-rotate-90&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-rotate-180&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-rotate-270&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-flip-horizontal&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-flip-vertical&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-snowboarding fa-flip-both&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;  ---   # Animating Icons  &amp;lt;i class=&amp;#34;fas fa-spinner fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-circle-notch fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-sync fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-cog fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-spinner fa-pulse fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt; &amp;lt;i class=&amp;#34;fas fa-stroopwafel fa-spin fa-3x&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;   ---  #### Bordered + Pulled Icons  &amp;lt;i class=&amp;#34;fas fa-quote-left fa-2x fa-pull-left&amp;#34;&amp;gt;&amp;lt;/i&amp;gt;  Gatsby believed in the green light, the orgastic future that year by year recedes before us.</description>
     </item>
     
   </channel>
