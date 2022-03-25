@@ -246,6 +246,22 @@ test('Basic Markdown Syntax > Footnotes', () => {
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Basic Markdown Syntax > Footnotes in Tables', () => {
+	const input = `| Table     | Col 1 | Col 2 | Col 3 |
+	| --------- | ----- | ----- | ----- |
+	| Footnotes | [^1]  | [^2]  | [^3]  | 
+	
+	[^1]: fn1
+	[^2]: fn2
+	[^3]: fn3
+`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
 test('Basic Markdown Syntax > Math', () => {
 	const input = `$$\begin{vmatrix}a & b\\
 c & d

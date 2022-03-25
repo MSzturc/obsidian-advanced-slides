@@ -1,7 +1,7 @@
 import { Options } from '../options';
 
 export class FootnoteProcessor {
-	private regex = /\[\^([^\]]*)]/gim;
+	private regex = /\[\^([^\]]*)]/im;
 
 	process(markdown: string, options: Options) {
 		let output = markdown;

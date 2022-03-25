@@ -33,6 +33,22 @@ exports[`Basic Markdown Syntax > Footnotes 1`] = `
 "
 `;
 
+exports[`Basic Markdown Syntax > Footnotes in Tables 1`] = `
+"| Table     | Col 1 | Col 2 | Col 3 |
+	| --------- | ----- | ----- | ----- |
+| Footnotes |<sup id=\\"fnref:1\\" role=\\"doc-noteref\\">1</sup>|<sup id=\\"fnref:2\\" role=\\"doc-noteref\\">2</sup>|<sup id=\\"fnref:3\\" role=\\"doc-noteref\\">3</sup>|
+	
+
+
+
+
+<div class=\\"footnotes\\" role=\\"doc-endnotes\\">
+<ol>
+<li id=\\"fn:1\\" role=\\"doc-endnote\\"><p>fn1&nbsp;</p></li><li id=\\"fn:2\\" role=\\"doc-endnote\\"><p>fn2&nbsp;</p></li><li id=\\"fn:3\\" role=\\"doc-endnote\\"><p>fn3&nbsp;</p></li></ol>
+</div>
+"
+`;
+
 exports[`Basic Markdown Syntax > Headers 1`] = `
 "# This is a heading 1
 ## This is a heading 2
