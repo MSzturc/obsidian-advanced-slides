@@ -1,10 +1,9 @@
 export class ImageCollector {
-
 	private images = new Set<string>();
 	private isCollecting = false;
 
 	private static instance: ImageCollector;
-	private constructor() { }
+	private constructor() {}
 
 	public static getInstance(): ImageCollector {
 		if (!ImageCollector.instance) {
@@ -33,7 +32,7 @@ export class ImageCollector {
 		this.isCollecting = false;
 	}
 
-	public shouldCollect() : boolean {
+	public shouldCollect(): boolean {
 		return this.isCollecting;
 	}
 }

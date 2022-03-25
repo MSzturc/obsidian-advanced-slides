@@ -1,13 +1,10 @@
-import { ObsidianMarkdownPreprocessor } from "src/obsidianMarkdownPreprocessor";
-import { when } from "ts-mockito";
-import { MockedObsidianUtils, obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
-import { prepare } from "./testUtils";
-
+import { ObsidianMarkdownPreprocessor } from 'src/obsidianMarkdownPreprocessor';
+import { when } from 'ts-mockito';
+import { MockedObsidianUtils, obsidianUtils as utilsInstance } from './__mocks__/mockObsidianUtils';
+import { prepare } from './testUtils';
 
 test('Basic Markdown Syntax > Headers', () => {
-
-	const input =
-		`# This is a heading 1
+	const input = `# This is a heading 1
 ## This is a heading 2
 ### This is a heading 3 
 #### This is a heading 4
@@ -21,9 +18,7 @@ test('Basic Markdown Syntax > Headers', () => {
 });
 
 test('Basic Markdown Syntax > Text style', () => {
-
-	const input =
-		`*This text will be italic*
+	const input = `*This text will be italic*
 
 _This will also be italic_
 
@@ -48,9 +43,7 @@ Any word wrapped with two equal signs (like ==this==) will appear as highlighted
 });
 
 test('Basic Markdown Syntax > Lists', () => {
-
-	const input =
-		`- Item 1
+	const input = `- Item 1
 - Item 2
 	- Item 2a
 	- Item 2b
@@ -71,28 +64,24 @@ test('Basic Markdown Syntax > Lists', () => {
 });
 
 test('Basic Markdown Syntax > Images', () => {
-
 	//TODO: bugfix getAbsolutePath
-	when(MockedObsidianUtils.getAbsolutePath("Image.jpg.md")).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath('Image.jpg.md')).thenCall(arg => {
 		return null;
 	});
 
-	when(MockedObsidianUtils.getAbsolutePath("Image.jpg|100.md")).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath('Image.jpg|100.md')).thenCall(arg => {
 		return null;
 	});
 
-	when(MockedObsidianUtils.getAbsolutePath('Image.jpg|300x100 <!-- element style="object-fit: cover" -->.md')).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath('Image.jpg|300x100 <!-- element style="object-fit: cover" -->.md')).thenCall(arg => {
 		return null;
 	});
 
-	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall( (arg) => {
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall(arg => {
 		return '/documentation/Image.jpg';
 	});
 
-	
-
-	const input =
-		`
+	const input = `
 Insert image with standard markdown syntax
 
 ![Image](https://picsum.photos/id/1006/500/300)
@@ -130,9 +119,7 @@ Scale image to a width of 300x100 px
 });
 
 test('Basic Markdown Syntax > Links', () => {
-
-	const input =
-`External Links
+	const input = `External Links
 
 http://obsidian.md - automatic!
 
@@ -163,9 +150,7 @@ This [[Internal link|Link]] will use its alias for displaying
 });
 
 test('Basic Markdown Syntax > Links', () => {
-
-	const input =
-`---
+	const input = `---
 enableLinks: true
 ---
 
@@ -184,16 +169,15 @@ This [[Internal link|Link]] will use its alias for displaying
 });
 
 test('Basic Markdown Syntax > Embeds', () => {
-
-	when(MockedObsidianUtils.getAbsolutePath("Obsidian.md")).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath('Obsidian.md')).thenCall(arg => {
 		return 'path/to/Obsidian.md';
 	});
 
-	when(MockedObsidianUtils.parseFile("path/to/Obsidian.md",'Link')).thenCall( (arg) => {
+	when(MockedObsidianUtils.parseFile('path/to/Obsidian.md', 'Link')).thenCall(arg => {
 		return 'Link to Obsidian Homepage: http://obsidian.md';
 	});
 
-	when(MockedObsidianUtils.parseFile("path/to/Obsidian.md",null)).thenCall( (arg) => {
+	when(MockedObsidianUtils.parseFile('path/to/Obsidian.md', null)).thenCall(arg => {
 		return `# Notes about Obsidian
 A knowledge base that works on local Markdown files
 
@@ -201,8 +185,7 @@ A knowledge base that works on local Markdown files
 Link to Obsidian Homepage: http://obsidian.md`;
 	});
 
-	const input =
-`![[Obsidian]]
+	const input = `![[Obsidian]]
 
 ---
 
@@ -216,9 +199,7 @@ Link to Obsidian Homepage: http://obsidian.md`;
 });
 
 test('Basic Markdown Syntax > Blockquotes', () => {
-
-	const input =
-`> Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
+	const input = `> Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
 
 - Doug Engelbart, 1961
 `;
@@ -230,9 +211,7 @@ test('Basic Markdown Syntax > Blockquotes', () => {
 });
 
 test('Basic Markdown Syntax > Inline Code', () => {
-
-	const input =
-`### Text inside \`backticks\` on a line will be formatted like code.
+	const input = `### Text inside \`backticks\` on a line will be formatted like code.
 `;
 
 	const { options, markdown } = prepare(input);
@@ -242,9 +221,7 @@ test('Basic Markdown Syntax > Inline Code', () => {
 });
 
 test('Basic Markdown Syntax > Tables', () => {
-
-	const input =
-`First Header | Second Header
+	const input = `First Header | Second Header
 ------------ | ------------
 Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
@@ -257,9 +234,7 @@ Content in the first column | Content in the second column
 });
 
 test('Basic Markdown Syntax > Footnotes', () => {
-
-	const input =
-`Here's a simple footnote[^1]
+	const input = `Here's a simple footnote[^1]
 
 [^1]: meaningful!
 
@@ -272,9 +247,7 @@ test('Basic Markdown Syntax > Footnotes', () => {
 });
 
 test('Basic Markdown Syntax > Math', () => {
-
-	const input =
-`$$\begin{vmatrix}a & b\\
+	const input = `$$\begin{vmatrix}a & b\\
 c & d
 end{vmatrix}=ad-bc$$
 
@@ -287,9 +260,7 @@ You can also do inline math like $s^{-2}_{n}sum_{i=1}^{n}$`;
 });
 
 test('Basic Markdown Syntax > Mermaid', () => {
-
-	const input =
-`---
+	const input = `---
 theme: beige
 highlightTheme: css/vs2015.css
 

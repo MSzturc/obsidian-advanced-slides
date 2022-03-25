@@ -1,12 +1,10 @@
-import { readFileSync } from "fs-extra";
-import { App, FileSystemAdapter } from "obsidian";
-import path from "path";
-import { ImageCollector } from "./imageCollector";
-import { AdvancedSlidesSettings } from "./main";
-
+import { readFileSync } from 'fs-extra';
+import { App, FileSystemAdapter } from 'obsidian';
+import path from 'path';
+import { ImageCollector } from './imageCollector';
+import { AdvancedSlidesSettings } from './main';
 
 export class ObsidianUtils {
-
 	private app: App;
 	private fileSystem: FileSystemAdapter;
 	private settings: AdvancedSlidesSettings;
@@ -39,30 +37,32 @@ export class ObsidianUtils {
 		return path.join(this.getVaultDirectory(), this.settings.exportDirectory);
 	}
 
-	getSettings() : AdvancedSlidesSettings {
+	getSettings(): AdvancedSlidesSettings {
 		return this.settings;
 	}
 
 	/** TODO: Refactoring ************************** */
 
 	getAbsolutePath(filename: string): string {
-		const markdownFile = this.app.vault.getMarkdownFiles().filter((item: { path: string | any[]; }) => {
-			return item.path.contains(filename)
-		}
-		).first();
-		if (markdownFile)
-			return this.fileSystem.getFullPath(markdownFile.path);
+		const markdownFile = this.app.vault
+			.getMarkdownFiles()
+			.filter((item: { path: string | any[] }) => {
+				return item.path.contains(filename);
+			})
+			.first();
+		if (markdownFile) return this.fileSystem.getFullPath(markdownFile.path);
 		else {
 			return null;
 		}
 	}
 
 	findFile(imagePath: string) {
-		const expDir = this.settings.exportDirectory.startsWith("/")
+		const expDir = this.settings.exportDirectory.startsWith('/')
 			? this.settings.exportDirectory.substring(1)
-			: this.settings.exportDirectory
+			: this.settings.exportDirectory;
 
-		const imgFile = this.app.vault.getFiles()
+		const imgFile = this.app.vault
+			.getFiles()
 			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
 			.first();
 
@@ -79,12 +79,13 @@ export class ObsidianUtils {
 	}
 
 	findImageEx(filePath: string) {
-		const expDir = this.settings.exportDirectory.startsWith("/")
+		const expDir = this.settings.exportDirectory.startsWith('/')
 			? this.settings.exportDirectory.substring(1)
-			: this.settings.exportDirectory
+			: this.settings.exportDirectory;
 
 		let imagePath = filePath + '.svg';
-		let imgFile = this.app.vault.getFiles()
+		let imgFile = this.app.vault
+			.getFiles()
 			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
 			.first();
 
@@ -94,11 +95,14 @@ export class ObsidianUtils {
 		}
 
 		if (imgFile) {
-			return base+ imagePath;
+			return base + imagePath;
 		}
 
 		imagePath = filePath + '.png';
-		imgFile = this.app.vault.getFiles().filter(item => item.path.contains(imagePath) && !item.path.contains(expDir)).first();
+		imgFile = this.app.vault
+			.getFiles()
+			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
+			.first();
 
 		if (imgFile) {
 			return base + imagePath;
@@ -107,19 +111,16 @@ export class ObsidianUtils {
 	}
 
 	parseFile(file: string, header: string) {
-
 		const fileContent = readFileSync(file, { encoding: 'utf-8' });
 
 		if (header === null) {
 			return fileContent.replace(this.yamlRegex, '');
 		} else {
-
 			const lines = fileContent.split('\n');
 
 			let startIdx = null;
 			let endIdx = null;
 			for (let i = 0; i < lines.length; i++) {
-
 				if (startIdx != null && lines[i].startsWith('#')) {
 					endIdx = i;
 					break;
@@ -131,7 +132,7 @@ export class ObsidianUtils {
 			}
 
 			if (startIdx === null) {
-				return "![[" + file + "#" + header + "]]";
+				return '![[' + file + '#' + header + ']]';
 			}
 
 			if (endIdx === null) {
@@ -141,6 +142,4 @@ export class ObsidianUtils {
 			}
 		}
 	}
-
-
 }

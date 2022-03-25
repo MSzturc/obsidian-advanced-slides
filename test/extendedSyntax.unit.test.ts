@@ -1,13 +1,10 @@
-import { ObsidianMarkdownPreprocessor } from "src/obsidianMarkdownPreprocessor";
-import { when } from "ts-mockito";
-import { prepare } from "./testUtils";
-import { MockedObsidianUtils, obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
-
+import { ObsidianMarkdownPreprocessor } from 'src/obsidianMarkdownPreprocessor';
+import { when } from 'ts-mockito';
+import { prepare } from './testUtils';
+import { MockedObsidianUtils, obsidianUtils as utilsInstance } from './__mocks__/mockObsidianUtils';
 
 test('Extended Markdown Syntax > Horizontal / Vertical Slides', () => {
-
-	const input =
-`# Slide 1
+	const input = `# Slide 1
 
 ---
 
@@ -25,9 +22,7 @@ test('Extended Markdown Syntax > Horizontal / Vertical Slides', () => {
 });
 
 test('Extended Markdown Syntax >  Element Annotations', () => {
-
-	const input =
-`text with border <!-- element class="with-border" -->
+	const input = `text with border <!-- element class="with-border" -->
 
 text with background <!-- element style="background:blue" -->
 
@@ -41,9 +36,7 @@ text with attribute <!-- element data-toggle="modal" -->
 });
 
 test('Extended Markdown Syntax >  Slide Annotations', () => {
-
-	const input =
-`<!-- slide style="background-color: coral;" -->
+	const input = `<!-- slide style="background-color: coral;" -->
 
 # Header with coral background color
 
@@ -65,9 +58,7 @@ Paragraph has coral background color, too!
 });
 
 test('Extended Markdown Syntax >  Block Comments', () => {
-
-	const input =
-`::: block
+	const input = `::: block
 
 #### Header
 _and_
@@ -104,9 +95,7 @@ no color
 });
 
 test('Extended Markdown Syntax >  Fragments', () => {
-
-	const input =
-`Fade in <!-- element class="fragment" -->
+	const input = `Fade in <!-- element class="fragment" -->
 
 Fade out <!-- element class="fragment fade-out" -->
 
@@ -132,9 +121,7 @@ Slide up while fading in <!-- element class="fragment fade-up" -->
 });
 
 test('Extended Markdown Syntax >  Inline Styling', () => {
-
-	const input =
-`<style>
+	const input = `<style>
 .with-border{
 	border: 1px solid red;
 }
@@ -150,9 +137,7 @@ styled text <!-- element class="with-border" -->
 });
 
 test('Extended Markdown Syntax >  Slide Backgrounds', () => {
-
-	const input =
-`<!-- slide data-background="aquamarine" -->
+	const input = `<!-- slide data-background="aquamarine" -->
 ## Slide with text based background
 ---
 
@@ -199,9 +184,7 @@ See [reveal backgrounds](https://revealjs.com/backgrounds/)
 });
 
 test('Extended Markdown Syntax >  Speaker Notes', () => {
-
-	const input =
-`## My Slide
+	const input = `## My Slide
 
 This is part of my Presentation
 
@@ -221,9 +204,7 @@ note: this is not! Only the speaker might see this text.
 });
 
 test('Extended Markdown Syntax >  Fragmented list', () => {
-
-	const input =
-`# Unordered list
+	const input = `# Unordered list
 
 - First
 - Second
@@ -275,17 +256,15 @@ test('Extended Markdown Syntax >  Fragmented list', () => {
 });
 
 test('Extended Markdown Syntax >  Excalidraw support', () => {
-
-	when(MockedObsidianUtils.findImageEx('Sample.excalidraw')).thenCall( (arg) => {
+	when(MockedObsidianUtils.findImageEx('Sample.excalidraw')).thenCall(arg => {
 		return 'Sample.excalidraw.svg';
 	});
 
-	when(MockedObsidianUtils.findFile('Sample.excalidraw.svg')).thenCall( (arg) => {
+	when(MockedObsidianUtils.findFile('Sample.excalidraw.svg')).thenCall(arg => {
 		return 'path/to/Sample.excalidraw.svg';
 	});
 
-	const input =
-`#### Excalidraw support
+	const input = `#### Excalidraw support
 
 ![[Sample.excalidraw|100]]
 

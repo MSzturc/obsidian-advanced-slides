@@ -1,7 +1,6 @@
-import { Properties } from "./transformers";
+import { Properties } from './transformers';
 
 export class Comment extends Properties {
-
 	type: string;
 
 	constructor(type: string, attributes: Map<string, string>) {
@@ -10,31 +9,33 @@ export class Comment extends Properties {
 		this.type = type;
 	}
 
-	public static of(type: string, style: string[] = [], clazz: string[] = [], attributes: Map<string, string> = new Map<string, string>()): Comment {
-
-
+	public static of(
+		type: string,
+		style: string[] = [],
+		clazz: string[] = [],
+		attributes: Map<string, string> = new Map<string, string>(),
+	): Comment {
 		if (clazz && clazz.length > 0) {
-
-			const classValue = attributes.get("class");
+			const classValue = attributes.get('class');
 
 			if (classValue) {
-				const split = classValue.split(" ");
+				const split = classValue.split(' ');
 				split.push(...clazz);
-				attributes.set("class", split.join(" "));
+				attributes.set('class', split.join(' '));
 			} else {
-				attributes.set("class", clazz.join(" "));
+				attributes.set('class', clazz.join(' '));
 			}
 		}
 
 		if (style && style.length > 0) {
-			const styleValue = attributes.get("style");
+			const styleValue = attributes.get('style');
 
 			if (styleValue) {
-				const split = styleValue.split(";").map((value) => value.trim());
+				const split = styleValue.split(';').map(value => value.trim());
 				split.push(...style);
-				attributes.set("style", split.join("; "));
+				attributes.set('style', split.join('; '));
 			} else {
-				attributes.set("style", style.join("; "));
+				attributes.set('style', style.join('; '));
 			}
 		}
 
@@ -43,7 +44,6 @@ export class Comment extends Properties {
 }
 
 export class CommentParser {
-
 	private readCommentRegex = /<!--.*-->/;
 	private parseRegex = /<!--\s*(?:\.)?(element|slide):?\s*(.*)-->/;
 	private parsePropertiesRegex = /([^=]*)\s*=\s*"([^"]*)"\s*|([^=]*)\s*=\s*'([^']*)'\s*/g;
@@ -53,20 +53,17 @@ export class CommentParser {
 	}
 
 	buildAttributes(comment: Comment): string {
-
 		const styles = comment.getStyles();
 		const classes = comment.getClasses();
 
-		const stylesString = (styles.length > 0) ? `style="${styles}" ` : '';
-		const classesString = (classes.length > 0) ? `class="${classes}" ` : '';
+		const stylesString = styles.length > 0 ? `style="${styles}" ` : '';
+		const classesString = classes.length > 0 ? `class="${classes}" ` : '';
 
 		return `${stylesString}${classesString}${comment.getAttributes()}`.trim();
 	}
 
 	parseLine(line: string): Comment {
-		return this.lineHasComment(line)
-			? this.parseComment(this.readCommentStringFromLine(line))
-			: null;
+		return this.lineHasComment(line) ? this.parseComment(this.readCommentStringFromLine(line)) : null;
 	}
 
 	parseComment(comment: string): Comment {
@@ -76,12 +73,17 @@ export class CommentParser {
 
 			return new Comment(type, attributes);
 		} catch (ex) {
-			console.log("ERROR: Cannot parse comment: " + comment);
+			console.log('ERROR: Cannot parse comment: ' + comment);
 			return null;
 		}
 	}
 
-	buildComment(type: string, style: string[] = [], clazz: string[] = [], attributes: Map<string, string> = new Map<string, string>()): Comment {
+	buildComment(
+		type: string,
+		style: string[] = [],
+		clazz: string[] = [],
+		attributes: Map<string, string> = new Map<string, string>(),
+	): Comment {
 		return Comment.of(type, style, clazz, attributes);
 	}
 
@@ -114,11 +116,9 @@ export class CommentParser {
 					attributes.set(key, value);
 				}
 			});
-
 		}
 
 		attributes.delete(undefined);
 		return attributes;
 	}
-
 }

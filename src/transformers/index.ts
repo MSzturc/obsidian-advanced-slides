@@ -1,17 +1,16 @@
-import { BackgroundImageTransformer } from "./backgroundImageTransformer";
-import { BackgroundTransformer } from "./backgroundTransformer";
-import { BorderTransformer } from "./borderTransformer";
-import { ClassMappingTransformer } from "./classMappingTransformer";
-import { ClassTransformer } from "./classTransformer";
-import { FragmentTransformer } from "./fragmentTransformer";
-import { GridTransformer } from "./gridTransformer";
-import { PaddingTransformer } from "./paddingTransformer";
-import { RotateTransformer } from "./rotateTransformer";
-import { StyleMappingTransformer } from "./styleMappingTransformer";
-import { StyleTransformer } from "./styleTransformer";
+import { BackgroundImageTransformer } from './backgroundImageTransformer';
+import { BackgroundTransformer } from './backgroundTransformer';
+import { BorderTransformer } from './borderTransformer';
+import { ClassMappingTransformer } from './classMappingTransformer';
+import { ClassTransformer } from './classTransformer';
+import { FragmentTransformer } from './fragmentTransformer';
+import { GridTransformer } from './gridTransformer';
+import { PaddingTransformer } from './paddingTransformer';
+import { RotateTransformer } from './rotateTransformer';
+import { StyleMappingTransformer } from './styleMappingTransformer';
+import { StyleTransformer } from './styleTransformer';
 
 export interface AttributeTransformer {
-
 	transform(element: Properties): void;
 }
 
@@ -50,9 +49,9 @@ export class Properties {
 		return this.style.has(name);
 	}
 
-	public addAttribute(key: string, value: string, update=true): Properties {
+	public addAttribute(key: string, value: string, update = true): Properties {
 		this.attributes.set(key, value);
-		if(update){
+		if (update) {
 			this.transformer.transform(this);
 		}
 		return this;
@@ -85,7 +84,6 @@ export class Properties {
 	}
 
 	public getStyles(): string {
-
 		const result = Array<string>();
 
 		for (const [key, value] of this.style) {
@@ -96,11 +94,10 @@ export class Properties {
 	}
 
 	public getAttributes(): string {
-
 		const result = Array<string>();
 
 		for (const [key, value] of this.attributes) {
-			if(key == "onTarget"){
+			if (key == 'onTarget') {
 				continue;
 			}
 			result.push(`${key}="${value}"`);
@@ -108,11 +105,9 @@ export class Properties {
 
 		return result.join(' ');
 	}
-
 }
 
 class AttributeTransformers {
-
 	private allTransformers: Array<AttributeTransformer> = new Array<AttributeTransformer>();
 
 	constructor() {
@@ -122,17 +117,15 @@ class AttributeTransformers {
 		this.allTransformers.push(new PaddingTransformer());
 		this.allTransformers.push(new ClassMappingTransformer('animate'));
 		this.allTransformers.push(new FragmentTransformer());
-		this.allTransformers.push(new StyleMappingTransformer('opacity','opacity'));
+		this.allTransformers.push(new StyleMappingTransformer('opacity', 'opacity'));
 		this.allTransformers.push(new BorderTransformer());
-		this.allTransformers.push(new StyleMappingTransformer('filter','filter'));
+		this.allTransformers.push(new StyleMappingTransformer('filter', 'filter'));
 		this.allTransformers.push(new RotateTransformer());
 		this.allTransformers.push(new GridTransformer());
 		this.allTransformers.push(new BackgroundImageTransformer());
-		
 	}
 
 	transform(element: Properties) {
-
 		for (let x = 0; x < this.allTransformers.length; x++) {
 			const transformer = this.allTransformers[x];
 			transformer.transform(element);

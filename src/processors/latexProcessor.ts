@@ -1,10 +1,7 @@
-
 export class LatexProcessor {
-
 	private singleLine = /\$(.*?)\$/g;
 
 	process(markdown: string) {
-
 		const withoutEscapedCharaters = this.markEscapedCharacters(markdown);
 		const processedMultiline = this.processMultiLine(withoutEscapedCharaters);
 		const multiWithoutEscapedCharaters = this.markEscapedCharacters(processedMultiline);
@@ -14,32 +11,32 @@ export class LatexProcessor {
 	}
 
 	private markEscapedCharacters(markdown: string) {
-
-		return markdown
-			//Escaped $ signs
-			.replaceAll('\\$', '~~d~~')
-			//Multiline in backticks
-			.replaceAll(/`\$\$/gm, '~~s~~')
-			.replaceAll(/\$\$`/gm, '~~e~~')
-			//Singleline in backticks
-			.replaceAll(/`\$/gm, '~~ss~~')
-			.replaceAll(/\$`/gm, '~~se~~');
+		return (
+			markdown
+				//Escaped $ signs
+				.replaceAll('\\$', '~~d~~')
+				//Multiline in backticks
+				.replaceAll(/`\$\$/gm, '~~s~~')
+				.replaceAll(/\$\$`/gm, '~~e~~')
+				//Singleline in backticks
+				.replaceAll(/`\$/gm, '~~ss~~')
+				.replaceAll(/\$`/gm, '~~se~~')
+		);
 	}
 
 	private unmarkEscapedCharacters(markdown: string) {
-
 		return markdown
-		.replaceAll('~~d~~', '\\$')
-		.replaceAll('~~e~~', '$$$$`')
-		.replaceAll('~~s~~', '`$$$$')
-		.replaceAll('~~ss~~', '`$')
-		.replaceAll('~~se~~', '$$`');
+			.replaceAll('~~d~~', '\\$')
+			.replaceAll('~~e~~', '$$$$`')
+			.replaceAll('~~s~~', '`$$$$')
+			.replaceAll('~~ss~~', '`$')
+			.replaceAll('~~se~~', '$$`');
 	}
 
 	private processSingleLine(markdown: string) {
 		return markdown
 			.split('\n')
-			.map((line) => {
+			.map(line => {
 				if (line.includes('$')) {
 					line = line.replaceAll(this.singleLine, '`$$$1$$`');
 				}
@@ -49,7 +46,6 @@ export class LatexProcessor {
 	}
 
 	private processMultiLine(markdown: string) {
-
 		if (markdown.includes('$$')) {
 			return markdown
 				.split('$$')
@@ -60,12 +56,12 @@ export class LatexProcessor {
 						return '`' + line + '`';
 					}
 				})
-				.map((line) => {
+				.map(line => {
 					//Replace all empty lines in multiline LaTex expressions
-					return line.replaceAll(/^\s*[\r\n]/gm,'');
-				}) 
-				.join('$$').slice(1, -1);
-
+					return line.replaceAll(/^\s*[\r\n]/gm, '');
+				})
+				.join('$$')
+				.slice(1, -1);
 		}
 		return markdown;
 	}
@@ -73,5 +69,4 @@ export class LatexProcessor {
 	private isOdd(number: number) {
 		return number & 1;
 	}
-
 }

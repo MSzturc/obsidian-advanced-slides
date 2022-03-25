@@ -1,7 +1,6 @@
-import { AttributeTransformer, Properties } from ".";
+import { AttributeTransformer, Properties } from '.';
 
 export class PaddingTransformer implements AttributeTransformer {
-
 	transform(element: Properties) {
 		const value = element.getAttribute('pad');
 		if (value != undefined) {

@@ -1,8 +1,7 @@
-import { YamlStore } from "src/yamlStore";
-import { AttributeTransformer, Properties } from ".";
+import { YamlStore } from 'src/yamlStore';
+import { AttributeTransformer, Properties } from '.';
 
 export class GridTransformer implements AttributeTransformer {
-
 	private maxWidth: number;
 	private maxHeight: number;
 
@@ -11,7 +10,8 @@ export class GridTransformer implements AttributeTransformer {
 		this.maxHeight = YamlStore.getInstance().options.height;
 	}
 
-	private gridAttributeRegex = /^(?:(-?\d*(?:px)?)(?:\s|x)(-?\d*(?:px)?)|(center|top|bottom|left|right|topleft|topright|bottomleft|bottomright))$/m;
+	private gridAttributeRegex =
+		/^(?:(-?\d*(?:px)?)(?:\s|x)(-?\d*(?:px)?)|(center|top|bottom|left|right|topleft|topright|bottomleft|bottomright))$/m;
 
 	transform(element: Properties) {
 		const drop = element.getAttribute('drop');
@@ -21,7 +21,6 @@ export class GridTransformer implements AttributeTransformer {
 			const grid = this.read(drag, drop);
 
 			if (grid != undefined) {
-
 				const left = this.leftOf(grid);
 				const top = this.topOf(grid);
 				const height = this.heightOf(grid);
@@ -46,14 +45,14 @@ export class GridTransformer implements AttributeTransformer {
 				}
 
 				switch (flow) {
-					case "row":
+					case 'row':
 						element.addStyle('display', 'flex');
 						element.addStyle('flex-direction', 'row');
 						element.addStyle('align-items', alignItems);
 						element.addStyle('justify-content', justifyCtx);
 						element.addClass('flex-even');
 						break;
-					case "col":
+					case 'col':
 					default:
 						element.addStyle('display', 'flex');
 						element.addStyle('flex-direction', 'column');
@@ -70,63 +69,62 @@ export class GridTransformer implements AttributeTransformer {
 	}
 
 	getAlignment(input: string, flow: string): [string, string, string] {
-
 		const direction = flow ?? 'col';
 
 		switch (input) {
-			case "topleft":
-				if (direction == "col") {
+			case 'topleft':
+				if (direction == 'col') {
 					return ['left', 'flex-start', 'flex-start'];
 				} else {
 					return ['left', 'flex-start', 'space-evenly'];
 				}
-			case "topright":
-				if (direction == "col") {
+			case 'topright':
+				if (direction == 'col') {
 					return ['right', 'flex-end', 'flex-start'];
 				} else {
 					return ['right', 'flex-start', 'space-evenly'];
 				}
-			case "bottomright":
-				if (direction == "col") {
+			case 'bottomright':
+				if (direction == 'col') {
 					return ['right', 'flex-end', 'flex-end'];
 				} else {
 					return ['right', 'flex-end', 'space-evenly'];
 				}
-			case "bottomleft":
-				if (direction == "col") {
+			case 'bottomleft':
+				if (direction == 'col') {
 					return ['left', 'flex-start', 'flex-end'];
 				} else {
 					return ['left', 'flex-end', 'space-evenly'];
 				}
-			case "left":
-				if (direction == "col") {
+			case 'left':
+				if (direction == 'col') {
 					return ['left', 'flex-start', 'space-evenly'];
 				} else {
 					return ['left', 'center', 'space-evenly'];
 				}
-			case "right":
-				if (direction == "col") {
+			case 'right':
+				if (direction == 'col') {
 					return ['right', 'flex-end', 'space-evenly'];
 				} else {
 					return ['right', 'center', 'space-evenly'];
 				}
-			case "top":
-				if (direction == "col") {
+			case 'top':
+				if (direction == 'col') {
 					return [undefined, 'center', 'flex-start'];
 				} else {
 					return [undefined, 'flex-start', 'space-evenly'];
 				}
-			case "bottom":
-				if (direction == "col") {
+			case 'bottom':
+				if (direction == 'col') {
 					return [undefined, 'center', 'flex-end'];
 				} else {
 					return [undefined, 'flex-end', 'space-evenly'];
 				}
 
-			case "block":
-			case "justify":
+			case 'block':
+			case 'justify':
 				return ['justify', 'center', 'space-evenly'];
-			case "center":
+			case 'center':
 			default:
 				// align - alignItems - justifyContent
 				return [undefined, 'center', 'space-evenly'];
@@ -134,7 +132,6 @@ export class GridTransformer implements AttributeTransformer {
 	}
 
 	read(drag: string, drop: string): Map<string, number> {
-
 		try {
 			const result = new Map<string, number>();
 
@@ -173,30 +170,29 @@ export class GridTransformer implements AttributeTransformer {
 		if (input.toLowerCase().endsWith('px')) {
 			return Number(input.toLowerCase().replace('px', ''));
 		} else {
-			return max / 100 * Number(input);
+			return (max / 100) * Number(input);
 		}
 	}
 
 	getXYof(name: string, width: number, height: number): [number, number] {
-
 		switch (name) {
-			case "topleft":
+			case 'topleft':
 				return [0, 0];
-			case "topright":
+			case 'topright':
 				return [this.maxWidth - width, 0];
-			case "bottomleft":
+			case 'bottomleft':
 				return [0, this.maxHeight - height];
-			case "bottomright":
+			case 'bottomright':
 				return [this.maxWidth - width, this.maxHeight - height];
-			case "left":
+			case 'left':
 				return [0, (this.maxHeight - height) / 2];
-			case "right":
+			case 'right':
 				return [this.maxWidth - width, (this.maxHeight - height) / 2];
-			case "top":
+			case 'top':
 				return [(this.maxWidth - width) / 2, 0];
-			case "bottom":
+			case 'bottom':
 				return [(this.maxWidth - width) / 2, this.maxHeight - height];
-			case "center":
+			case 'center':
 				return [(this.maxWidth - width) / 2, (this.maxHeight - height) / 2];
 			default:
 				return [0, 0];
@@ -205,7 +201,7 @@ export class GridTransformer implements AttributeTransformer {
 
 	leftOf(grid: Map<string, number>): string {
 		if (grid.get('x') < 0) {
-			return (this.maxWidth + grid.get('x') - grid.get('width')) + 'px';
+			return this.maxWidth + grid.get('x') - grid.get('width') + 'px';
 		} else {
 			return grid.get('x') + 'px';
 		}
@@ -213,7 +209,7 @@ export class GridTransformer implements AttributeTransformer {
 
 	topOf(grid: Map<string, number>): string {
 		if (grid.get('y') < 0) {
-			return (this.maxHeight + grid.get('y') - grid.get('height')) + 'px';
+			return this.maxHeight + grid.get('y') - grid.get('height') + 'px';
 		} else {
 			return grid.get('y') + 'px';
 		}

@@ -1,4 +1,4 @@
-import { CommentParser } from "src/comment";
+import { CommentParser } from 'src/comment';
 
 export class CommentProcessor {
 	private readCommentRegex = /<!--.*-->/;
@@ -8,15 +8,13 @@ export class CommentProcessor {
 	process(markdown: string) {
 		return markdown
 			.split('\n')
-			.map((line) => {
+			.map(line => {
 				if (this.parser.lineHasComment(line)) {
-					return line.replace(this.readCommentRegex,
-						this.parser.commentToString(this.parser.parseLine(line)));
+					return line.replace(this.readCommentRegex, this.parser.commentToString(this.parser.parseLine(line)));
 				} else {
 					return line;
 				}
 			})
 			.join('\n');
 	}
-
 }

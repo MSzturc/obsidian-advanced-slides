@@ -1,9 +1,8 @@
-import { Options } from "../options";
-import { Properties } from "src/transformers";
+import { Options } from '../options';
+import { Properties } from 'src/transformers';
 
 export class GridProcessor {
-
-	private gridRegex = /<\s*grid([^>]+)>(.*?)<\/grid>/sg;
+	private gridRegex = /<\s*grid([^>]+)>(.*?)<\/grid>/gs;
 	private gridPropertiesRegex = /([^=]*)\s*=\s*"([^"]*)"\s*|([^=]*)\s*=\s*'([^']*)'\s*/g;
 
 	process(markdown: string, options: Options) {
@@ -11,10 +10,10 @@ export class GridProcessor {
 
 		markdown
 			.split(new RegExp(options.separator, 'gmi'))
-			.map((slidegroup) => {
+			.map(slidegroup => {
 				return slidegroup
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
-					.map((slide) => {
+					.map(slide => {
 						if (this.gridRegex.test(slide)) {
 							const newSlide = this.transformSlide(slide);
 							output = output.split(slide).join(newSlide);
@@ -71,5 +70,4 @@ export class GridProcessor {
 
 		return result;
 	}
-
 }

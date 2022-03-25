@@ -1,11 +1,9 @@
-import { Options } from "../options";
+import { Options } from '../options';
 
 export class FootnoteProcessor {
-
-	private regex = /\[\^([^\]]*)]/gmi;
+	private regex = /\[\^([^\]]*)]/gim;
 
 	process(markdown: string, options: Options) {
-
 		let output = markdown;
 
 		markdown
@@ -28,24 +26,22 @@ export class FootnoteProcessor {
 	}
 
 	transformFootNotes(markdown: string) {
-
 		let input = markdown;
 		let noteIdx = 1;
 
 		const footNotes = new Map();
 
 		let reResult: RegExpExecArray;
-		while (reResult = this.regex.exec(input)) {
-
+		while ((reResult = this.regex.exec(input))) {
 			input = input
 				.split('\n')
 				.map((line, index) => {
 					if (line.includes(reResult[0])) {
-						if (line.includes(reResult[0] + ": ")) {
+						if (line.includes(reResult[0] + ': ')) {
 							if (!footNotes.has(reResult[1])) {
-								footNotes.set(reResult[1], line.split(reResult[0] + ": ")[1]);
+								footNotes.set(reResult[1], line.split(reResult[0] + ': ')[1]);
 							}
-							return "";
+							return '';
 						} else {
 							const split = line.split(reResult[0]);
 
@@ -56,14 +52,11 @@ export class FootnoteProcessor {
 							noteIdx = noteIdx + 1;
 
 							return result;
-
 						}
 					}
 					return line;
 				})
 				.join('\n');
-
-
 		}
 
 		let footNotesBlock = '';
@@ -74,13 +67,9 @@ export class FootnoteProcessor {
 			footNotesBlock += '<li id="fn:' + key + '" role="doc-endnote"><p>' + value + '&nbsp;</p></li>';
 		});
 
-
 		footNotesBlock += '</ol>\n';
 		footNotesBlock += '</div>\n';
 
 		return input + '\n' + footNotesBlock;
 	}
-
 }
-
-

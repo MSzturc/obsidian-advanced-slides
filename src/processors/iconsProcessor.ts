@@ -1,9 +1,7 @@
-
 export class IconsProcessor {
-
 	private regex = /:(fas|far|fal|fad|fab)_([\w]+):/g;
 
-	process(markdown: string){
+	process(markdown: string) {
 		return this.transformIconShortcode(markdown);
 	}
 
@@ -11,5 +9,4 @@ export class IconsProcessor {
 		markdown = markdown.replaceAll(this.regex, `![]($1 fa-$2)`);
 		return markdown;
 	}
-
 }

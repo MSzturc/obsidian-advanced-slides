@@ -1,4 +1,17 @@
-import { Plugin, addIcon, TAbstractFile, PluginSettingTab, App, Setting, EditorSuggest, Editor, EditorPosition, EditorSuggestContext, EditorSuggestTriggerInfo, TFile } from 'obsidian';
+import {
+	Plugin,
+	addIcon,
+	TAbstractFile,
+	PluginSettingTab,
+	App,
+	Setting,
+	EditorSuggest,
+	Editor,
+	EditorPosition,
+	EditorSuggestContext,
+	EditorSuggestTriggerInfo,
+	TFile,
+} from 'obsidian';
 import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
 import { RevealServer } from './revealServer';
@@ -43,8 +56,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	controls: true,
 	progress: true,
 	slideNumber: false,
-}
-
+};
 
 export default class AdvancedSlidesPlugin extends Plugin {
 	settings: AdvancedSlidesSettings;
@@ -55,11 +67,9 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	private target: string;
 
 	async onload() {
-
 		await this.loadSettings();
 
 		this.obsidianUtils = new ObsidianUtils(this.app, this.settings);
-
 
 		const pluginDirectory = this.obsidianUtils.getPluginDirectory();
 		const distDirectory = this.obsidianUtils.getDistDirectory();
@@ -75,66 +85,63 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				.on('end', () => {
 					buf = Buffer.concat(bufs);
 					const zip = new JSZip();
-					zip.loadAsync(buf).then((contents) => {
-
-						Object.keys(contents.files).forEach(function (filename) {
-							if (!contents.files[filename].dir) {
-								zip.file(filename).async('nodebuffer').then(function (content) {
-									const dest = path.join(pluginDirectory, filename);
-									outputFileSync(dest, content);
-								});
-							}
-
+					zip
+						.loadAsync(buf)
+						.then(contents => {
+							Object.keys(contents.files).forEach(function (filename) {
+								if (!contents.files[filename].dir) {
+									zip
+										.file(filename)
+										.async('nodebuffer')
+										.then(function (content) {
+											const dest = path.join(pluginDirectory, filename);
+											outputFileSync(dest, content);
+										});
+								}
+							});
+						})
+						.catch(error => {
+							console.log(error);
 						});
-					}).catch((error) => {
-						console.log(error);
-					});
-
 				})
-				.on('error', (error) => {
+				.on('error', error => {
 					console.log(error);
 				})
-				.on('data', (d) => {
+				.on('data', d => {
 					bufs.push(d);
-				})
-
+				});
 		}
 
 		this.revealServer = new RevealServer(this.obsidianUtils, this.settings.port);
 		this.revealServer.start();
 
-
 		try {
-			this.registerView(REVEAL_PREVIEW_VIEW, (leaf) => new RevealPreviewView(leaf, this.revealServer.getUrl(), this.settings));
+			this.registerView(REVEAL_PREVIEW_VIEW, leaf => new RevealPreviewView(leaf, this.revealServer.getUrl(), this.settings));
 
-			this.registerEvent(this.app.vault.on("modify", this.onChange.bind(this)));
+			this.registerEvent(this.app.vault.on('modify', this.onChange.bind(this)));
 
 			this.registerEditorSuggest(new LineSelectionListener(this.app, this));
 
-			addIcon("slides", ICON_DATA);
-			addIcon("refresh", REFRESH_ICON);
+			addIcon('slides', ICON_DATA);
+			addIcon('refresh', REFRESH_ICON);
 
-			this.addRibbonIcon("slides", "Show Slide Preview", async () => {
+			this.addRibbonIcon('slides', 'Show Slide Preview', async () => {
 				await this.showView();
 			});
 
 			this.addCommand({
 				id: 'open-advanced-slides-preview',
 				name: 'Show Slide Preview',
-				hotkeys: [
-					{ modifiers: ["Mod", "Shift"], key: "E" },
-				],
+				hotkeys: [{ modifiers: ['Mod', 'Shift'], key: 'E' }],
 				callback: async () => {
 					await this.toggleView();
-				}
+				},
 			});
 
 			this.addCommand({
 				id: 'reload-advanced-slides-preview',
 				name: 'Reload Slide Preview',
-				hotkeys: [
-					{ modifiers: ["Mod", "Shift"], key: "R" },
-				],
+				hotkeys: [{ modifiers: ['Mod', 'Shift'], key: 'R' }],
 				callback: () => {
 					const instance = this.getViewInstance();
 
@@ -142,12 +149,11 @@ export default class AdvancedSlidesPlugin extends Plugin {
 						return;
 					}
 					instance.onChange();
-				}
+				},
 			});
 
 			this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
-		} catch (err) { }
-
+		} catch (err) {}
 	}
 
 	getViewInstance(): RevealPreviewView {
@@ -172,7 +178,6 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	onChange(file: TAbstractFile) {
-
 		if (!this.settings.autoReload) {
 			return;
 		}
@@ -186,7 +191,6 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		if (file.path.startsWith(this.target)) {
 			instance.onChange();
 		}
-
 	}
 
 	async toggleView() {
@@ -195,18 +199,15 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		if (instance) {
 			this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
 			instance.onClose();
-		}
-		else {
+		} else {
 			this.showView();
 		}
 	}
 
 	async showView() {
-
 		const targetDocument = this.app.workspace.getActiveFile().path;
 
-		if (targetDocument.startsWith(this.target)
-			&& this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW).length > 0) {
+		if (targetDocument.startsWith(this.target) && this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW).length > 0) {
 			return;
 		}
 
@@ -232,9 +233,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			active: false,
 		});
 
-		this.app.workspace.revealLeaf(
-			this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW)[0]
-		);
+		this.app.workspace.revealLeaf(this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW)[0]);
 	}
 
 	onunload() {
@@ -258,9 +257,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 }
 
-
 class LineSelectionListener extends EditorSuggest<string> {
-
 	private plugin: AdvancedSlidesPlugin;
 
 	constructor(app: App, plugin: AdvancedSlidesPlugin) {
@@ -290,7 +287,6 @@ class LineSelectionListener extends EditorSuggest<string> {
 	}
 }
 
-
 class AdvancedSlidesSettingTab extends PluginSettingTab {
 	plugin: AdvancedSlidesPlugin;
 
@@ -309,163 +305,184 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 		new Setting(containerEl)
 			.setName('Port')
 			.setDesc('On which port should Advanced Slides run? (default: 3000)')
-			.addText(text => text
-				.setPlaceholder('3000')
-				.setValue(this.plugin.settings.port)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.port = value;
-					await this.plugin.saveSettings();
-				}, 750)));
+			.addText(text =>
+				text
+					.setPlaceholder('3000')
+					.setValue(this.plugin.settings.port)
+					.onChange(
+						_.debounce(async value => {
+							this.plugin.settings.port = value;
+							await this.plugin.saveSettings();
+						}, 750),
+					),
+			);
 
 		new Setting(containerEl)
 			.setName('Auto Reload')
 			.setDesc('Should the slide preview window be updated when a change in source file is detected?')
-			.addToggle(value => value
-				.setValue(this.plugin.settings.autoReload)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.autoReload = value;
-					await this.plugin.saveSettings();
-				}, 750)));
+			.addToggle(value =>
+				value.setValue(this.plugin.settings.autoReload).onChange(
+					_.debounce(async value => {
+						this.plugin.settings.autoReload = value;
+						await this.plugin.saveSettings();
+					}, 750),
+				),
+			);
 
 		new Setting(containerEl)
 			.setName('Export Directory')
 			.setDesc('Where should Advanced Slides export presentations?')
-			.addSearch((cb) => {
+			.addSearch(cb => {
 				new FolderSuggest(this.app, cb.inputEl);
-				cb
-					.setPlaceholder("Folder")
+				cb.setPlaceholder('Folder')
 					.setValue(this.plugin.settings.exportDirectory)
-					.onChange(_.debounce(async (value) => {
-						this.plugin.settings.exportDirectory = value;
-						await this.plugin.saveSettings();
-					}, 750))
-			})
+					.onChange(
+						_.debounce(async value => {
+							this.plugin.settings.exportDirectory = value;
+							await this.plugin.saveSettings();
+						}, 750),
+					);
+			});
 
 		containerEl.createEl('h2', { text: 'Slide Settings' });
 
 		new Setting(containerEl)
 			.setName('Theme')
 			.setDesc('Which theme should be used for your slides?')
-			.addSearch((cb) => {
+			.addSearch(cb => {
 				new ThemeSuggest(this.app, cb.inputEl);
-				cb
-					.setPlaceholder("black")
+				cb.setPlaceholder('black')
 					.setValue(this.plugin.settings.theme)
-					.onChange(_.debounce(async (value) => {
-						this.plugin.settings.theme = value;
-						await this.plugin.saveSettings();
-					}, 750))
-			})
+					.onChange(
+						_.debounce(async value => {
+							this.plugin.settings.theme = value;
+							await this.plugin.saveSettings();
+						}, 750),
+					);
+			});
 
 		new Setting(containerEl)
 			.setName('Highlight Theme')
 			.setDesc('Which highlight theme should be used for your slides?')
-			.addSearch((cb) => {
+			.addSearch(cb => {
 				new HighlightThemeSuggest(this.app, cb.inputEl);
-				cb
-					.setPlaceholder("zenburn")
+				cb.setPlaceholder('zenburn')
 					.setValue(this.plugin.settings.highlightTheme)
-					.onChange(_.debounce(async (value) => {
-						this.plugin.settings.highlightTheme = value;
-						await this.plugin.saveSettings();
-					}, 750))
-			})
+					.onChange(
+						_.debounce(async value => {
+							this.plugin.settings.highlightTheme = value;
+							await this.plugin.saveSettings();
+						}, 750),
+					);
+			});
 
 		new Setting(containerEl)
 			.setName('Transition Style')
 			.setDesc('How should the transition between slides look like?')
-			.addDropdown((cb) => {
-				cb
-					.addOption('none', 'none')
+			.addDropdown(cb => {
+				cb.addOption('none', 'none')
 					.addOption('fade', 'fade')
 					.addOption('slide', 'slide')
 					.addOption('convex', 'convex')
 					.addOption('concave', 'concave')
 					.addOption('zoom', 'zoom')
 					.setValue(this.plugin.settings.transition)
-					.onChange(_.debounce(async (value) => {
-						this.plugin.settings.transition = value;
-						await this.plugin.saveSettings();
-					}, 750))
-			})
+					.onChange(
+						_.debounce(async value => {
+							this.plugin.settings.transition = value;
+							await this.plugin.saveSettings();
+						}, 750),
+					);
+			});
 
 		new Setting(containerEl)
 			.setName('Transition Speed')
 			.setDesc('How fast should the transition between two slides be?')
-			.addDropdown((cb) => {
-				cb
-					.addOption('slow', 'slow')
+			.addDropdown(cb => {
+				cb.addOption('slow', 'slow')
 					.addOption('normal', 'default')
 					.addOption('fast', 'fast')
 					.setValue(this.plugin.settings.transitionSpeed)
-					.onChange(_.debounce(async (value) => {
-						this.plugin.settings.transitionSpeed = value;
-						await this.plugin.saveSettings();
-					}, 750))
-			})
+					.onChange(
+						_.debounce(async value => {
+							this.plugin.settings.transitionSpeed = value;
+							await this.plugin.saveSettings();
+						}, 750),
+					);
+			});
 
 		containerEl.createEl('h2', { text: 'Plugins' });
 
 		new Setting(containerEl)
 			.setName('Controls')
 			.setDesc('Display presentation control arrows?')
-			.addToggle(value => value
-				.setValue(this.plugin.settings.controls)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.controls = value;
-					await this.plugin.saveSettings();
-				}, 750)));
+			.addToggle(value =>
+				value.setValue(this.plugin.settings.controls).onChange(
+					_.debounce(async value => {
+						this.plugin.settings.controls = value;
+						await this.plugin.saveSettings();
+					}, 750),
+				),
+			);
 
 		new Setting(containerEl)
 			.setName('Progress Bar')
 			.setDesc('Display presentation progress bar?')
-			.addToggle(value => value
-				.setValue(this.plugin.settings.progress)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.progress = value;
-					await this.plugin.saveSettings();
-				}, 750)));
+			.addToggle(value =>
+				value.setValue(this.plugin.settings.progress).onChange(
+					_.debounce(async value => {
+						this.plugin.settings.progress = value;
+						await this.plugin.saveSettings();
+					}, 750),
+				),
+			);
 
 		new Setting(containerEl)
 			.setName('Slide Numbers')
 			.setDesc('Display the page number of the current slide?')
-			.addToggle(value => value
-				.setValue(this.plugin.settings.slideNumber)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.slideNumber = value;
-					await this.plugin.saveSettings();
-				}, 750)));
+			.addToggle(value =>
+				value.setValue(this.plugin.settings.slideNumber).onChange(
+					_.debounce(async value => {
+						this.plugin.settings.slideNumber = value;
+						await this.plugin.saveSettings();
+					}, 750),
+				),
+			);
 
 		new Setting(containerEl)
 			.setName('Menu')
 			.setDesc('Display presentation menu button?')
-			.addToggle(value => value
-				.setValue(this.plugin.settings.enableMenu)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.enableMenu = value;
-					await this.plugin.saveSettings();
-				}, 750)));
+			.addToggle(value =>
+				value.setValue(this.plugin.settings.enableMenu).onChange(
+					_.debounce(async value => {
+						this.plugin.settings.enableMenu = value;
+						await this.plugin.saveSettings();
+					}, 750),
+				),
+			);
 
 		new Setting(containerEl)
 			.setName('Overview')
 			.setDesc('Display presentation  overview button?')
-			.addToggle(value => value
-				.setValue(this.plugin.settings.enableOverview)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.enableOverview = value;
-					await this.plugin.saveSettings();
-				}, 750)));
+			.addToggle(value =>
+				value.setValue(this.plugin.settings.enableOverview).onChange(
+					_.debounce(async value => {
+						this.plugin.settings.enableOverview = value;
+						await this.plugin.saveSettings();
+					}, 750),
+				),
+			);
 
 		new Setting(containerEl)
 			.setName('Chalkboard')
 			.setDesc('Should the slides contain a chalkboard ?')
-			.addToggle(value => value
-				.setValue(this.plugin.settings.enableChalkboard)
-				.onChange(_.debounce(async (value) => {
-					this.plugin.settings.enableChalkboard = value;
-					await this.plugin.saveSettings();
-				}, 750)));
-
-
+			.addToggle(value =>
+				value.setValue(this.plugin.settings.enableChalkboard).onChange(
+					_.debounce(async value => {
+						this.plugin.settings.enableChalkboard = value;
+						await this.plugin.saveSettings();
+					}, 750),
+				),
+			);
 	}
 }

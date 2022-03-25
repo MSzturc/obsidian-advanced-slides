@@ -1,7 +1,6 @@
-import { AttributeTransformer, Properties } from ".";
+import { AttributeTransformer, Properties } from '.';
 
 export class RotateTransformer implements AttributeTransformer {
-
 	transform(element: Properties) {
 		const value = element.getAttribute('rotate');
 		if (value != undefined) {

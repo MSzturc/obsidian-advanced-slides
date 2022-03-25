@@ -1,8 +1,8 @@
 // Credits go to Liam's Periodic Notes Plugin: https://github.com/liamcain/obsidian-periodic-notes
-import { FileSystemAdapter } from "obsidian";
-import path from "path";
-import fs from "fs";
-import { TextInputSuggest } from "./Suggest";
+import { FileSystemAdapter } from 'obsidian';
+import path from 'path';
+import fs from 'fs';
+import { TextInputSuggest } from './Suggest';
 
 export class HighlightThemeSuggest extends TextInputSuggest<string> {
 	getSuggestions(inputStr: string): string[] {
@@ -21,25 +21,23 @@ export class HighlightThemeSuggest extends TextInputSuggest<string> {
 		const lowerCaseInputStr = inputStr.toLowerCase();
 
 		allFiles.forEach((file: string) => {
-			if (
-				file.toLowerCase().includes(lowerCaseInputStr)
-			) {
+			if (file.toLowerCase().includes(lowerCaseInputStr)) {
 				files.push(file);
 			}
 		});
 		return files;
 	}
 
-	formatCss(input: Set<string>){
+	formatCss(input: Set<string>) {
 		return Array.of(...input)
-		.filter((value) => value.endsWith('.css'))
-		.map((value) => 'css/' + value);
+			.filter(value => value.endsWith('.css'))
+			.map(value => 'css/' + value);
 	}
 
-	formatTheme(input: Set<string>){
+	formatTheme(input: Set<string>) {
 		return Array.of(...input)
-		.filter((value) => value.endsWith('.css'))
-		.map((value) => value.replaceAll('.css',''));
+			.filter(value => value.endsWith('.css'))
+			.map(value => value.replaceAll('.css', ''));
 	}
 
 	getFiles(directories: string[]) {
@@ -60,7 +58,7 @@ export class HighlightThemeSuggest extends TextInputSuggest<string> {
 
 	selectSuggestion(file: string): void {
 		this.inputEl.value = file;
-		this.inputEl.trigger("input");
+		this.inputEl.trigger('input');
 		this.close();
 	}
 }

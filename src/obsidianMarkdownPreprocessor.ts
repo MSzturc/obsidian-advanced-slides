@@ -1,24 +1,23 @@
-import { BlockProcessor } from "./processors/blockProcessor";
-import { ExcalidrawProcessor } from "./processors/excalidrawProcessor";
-import { FootnoteProcessor } from "./processors/footNoteProcessor";
-import { FormatProcessor } from "./processors/formatProcessor";
-import { FragmentProcessor } from "./processors/fragmentProcessor";
-import { GridProcessor } from "./processors/gridProcessor";
-import { ImageProcessor } from "./processors/imageProcessor";
-import { InternalLinkProcessor } from "./processors/internalLinkProcessor";
-import { LatexProcessor } from "./processors/latexProcessor";
-import { MermaidProcessor } from "./processors/mermaidProcessor";
-import { MultipleFileProcessor } from "./processors/multipleFileProcessor";
-import { ObsidianUtils } from "./obsidianUtils";
-import { Options } from "./options";
-import { CommentProcessor } from "./processors/commentProcessor";
-import { DropProcessor } from "./processors/dropProcessor";
-import { YamlStore } from "./yamlStore";
-import { AutoClosingProcessor } from "./processors/autoClosingProcessor";
-import { IconsProcessor } from "./processors/iconsProcessor";
+import { BlockProcessor } from './processors/blockProcessor';
+import { ExcalidrawProcessor } from './processors/excalidrawProcessor';
+import { FootnoteProcessor } from './processors/footNoteProcessor';
+import { FormatProcessor } from './processors/formatProcessor';
+import { FragmentProcessor } from './processors/fragmentProcessor';
+import { GridProcessor } from './processors/gridProcessor';
+import { ImageProcessor } from './processors/imageProcessor';
+import { InternalLinkProcessor } from './processors/internalLinkProcessor';
+import { LatexProcessor } from './processors/latexProcessor';
+import { MermaidProcessor } from './processors/mermaidProcessor';
+import { MultipleFileProcessor } from './processors/multipleFileProcessor';
+import { ObsidianUtils } from './obsidianUtils';
+import { Options } from './options';
+import { CommentProcessor } from './processors/commentProcessor';
+import { DropProcessor } from './processors/dropProcessor';
+import { YamlStore } from './yamlStore';
+import { AutoClosingProcessor } from './processors/autoClosingProcessor';
+import { IconsProcessor } from './processors/iconsProcessor';
 
 export class ObsidianMarkdownPreprocessor {
-
 	private multipleFileProcessor: MultipleFileProcessor;
 	private blockProcessor: BlockProcessor;
 	private imageProcessor: ImageProcessor;
@@ -71,9 +70,4 @@ export class ObsidianMarkdownPreprocessor {
 		const afterCommentProcessor = this.commentProcessor.process(afterGridProcessor);
 		return afterCommentProcessor;
 	}
-
-
-
 }
-
-

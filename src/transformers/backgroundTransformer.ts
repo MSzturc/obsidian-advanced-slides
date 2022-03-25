@@ -1,8 +1,7 @@
-import Color from "color";
-import { AttributeTransformer, Properties } from ".";
+import Color from 'color';
+import { AttributeTransformer, Properties } from '.';
 
 export class BackgroundTransformer implements AttributeTransformer {
-
 	transform(element: Properties) {
 		const bg = element.getAttribute('bg');
 
@@ -20,7 +19,7 @@ export class BackgroundTransformer implements AttributeTransformer {
 
 				element.deleteAttribute('bg');
 				const target = element.getAttribute('onTarget');
-				if (target && target == "slide") {
+				if (target && target == 'slide') {
 					element.addAttribute('data-background-color', bg);
 				} else {
 					element.addStyle('background-color', bg);
@@ -28,11 +27,10 @@ export class BackgroundTransformer implements AttributeTransformer {
 			} else {
 				element.deleteAttribute('bg');
 				const target = element.getAttribute('onTarget');
-				if (target && target == "slide") {
+				if (target && target == 'slide') {
 					element.addAttribute('data-background-image', bg);
-				} 
+				}
 			}
-
 		}
 	}
 

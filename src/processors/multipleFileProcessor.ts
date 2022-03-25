@@ -1,11 +1,10 @@
-import { ObsidianUtils } from "../obsidianUtils";
+import { ObsidianUtils } from '../obsidianUtils';
 
 export class MultipleFileProcessor {
-
 	private utils: ObsidianUtils;
 
 	private regex = /!\[\[(.*)\]\]/gm;
-	private excalidrawRegex = /(.*\.excalidraw)/i
+	private excalidrawRegex = /(.*\.excalidraw)/i;
 
 	constructor(utils: ObsidianUtils) {
 		this.utils = utils;
@@ -15,15 +14,14 @@ export class MultipleFileProcessor {
 		return markdown
 			.split('\n')
 			.map((line, index) => {
-				if (this.regex.test(line))
-					return this.transformLine(line);
+				if (this.regex.test(line)) return this.transformLine(line);
 				return line;
 			})
 			.join('\n');
 	}
 
 	private transformLine(line: string) {
-		let filePath: string = line.replace("![[", "").replace("]]", "");
+		let filePath: string = line.replace('![[', '').replace(']]', '');
 		let header: string = null;
 
 		if (filePath.includes('#')) {
@@ -42,16 +40,14 @@ export class MultipleFileProcessor {
 	}
 
 	getMarkdownFile(line: string) {
-		if (this.excalidrawRegex.test(line)){
+		if (this.excalidrawRegex.test(line)) {
 			return null; // Do not import excalidraw files
 		}
 
 		let file = line;
-		if (!line.toLowerCase().endsWith(".md")) {
-			file = file + ".md";
+		if (!line.toLowerCase().endsWith('.md')) {
+			file = file + '.md';
 		}
 		return this.utils.getAbsolutePath(file);
 	}
 }
-
-

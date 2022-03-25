@@ -1,9 +1,7 @@
-
 export class AutoClosingProcessor {
-
 	private regex = /<(\s*?([\w]*)[^>]*?)\/(?<=\/)>/gm;
 
-	process(markdown: string){
+	process(markdown: string) {
 		return this.transformBlock(markdown);
 	}
 
@@ -11,7 +9,4 @@ export class AutoClosingProcessor {
 		markdown = markdown.replaceAll(this.regex, `<$1></$2>`);
 		return markdown;
 	}
-
 }
-
-

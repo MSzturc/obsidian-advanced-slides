@@ -1,10 +1,8 @@
-import { emptyDir, copy, writeFile } from "fs-extra";
-import path from "path";
-import { ObsidianUtils } from "./obsidianUtils";
-
+import { emptyDir, copy, writeFile } from 'fs-extra';
+import path from 'path';
+import { ObsidianUtils } from './obsidianUtils';
 
 export class RevealExporter {
-
 	private pluginDirectory: string;
 	private exportDirectory: string;
 	private vaultDirectory: string;
@@ -16,7 +14,6 @@ export class RevealExporter {
 	}
 
 	public async export(filePath: string, html: string, imgList: string[]) {
-
 		const ext = path.extname(filePath);
 		const folderName = path.basename(filePath).replaceAll(ext, '');
 		const folderDir = path.join(this.exportDirectory, folderName);
@@ -29,7 +26,7 @@ export class RevealExporter {
 		await copy(path.join(this.pluginDirectory, 'plugin'), path.join(folderDir, 'plugin'));
 
 		for (const img of imgList) {
-			if(img.startsWith("http")){
+			if (img.startsWith('http')) {
 				continue;
 			}
 			await copy(path.join(this.vaultDirectory, img), path.join(folderDir, img));
@@ -37,5 +34,4 @@ export class RevealExporter {
 
 		window.open('file://' + folderDir);
 	}
-
 }

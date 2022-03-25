@@ -1,13 +1,10 @@
-import { ObsidianMarkdownPreprocessor } from "src/obsidianMarkdownPreprocessor";
-import { when } from "ts-mockito";
-import { prepare } from "./testUtils";
-import { MockedObsidianUtils, obsidianUtils as utilsInstance} from "./__mocks__/mockObsidianUtils";
-
+import { ObsidianMarkdownPreprocessor } from 'src/obsidianMarkdownPreprocessor';
+import { when } from 'ts-mockito';
+import { prepare } from './testUtils';
+import { MockedObsidianUtils, obsidianUtils as utilsInstance } from './__mocks__/mockObsidianUtils';
 
 test('Grid Component > Basic Syntax', () => {
-
-	const input =
-`<grid drag="60 55" drop="5 10" style="background-color: coral;">
+	const input = `<grid drag="60 55" drop="5 10" style="background-color: coral;">
 ### Left
 </grid>
 
@@ -26,9 +23,7 @@ test('Grid Component > Basic Syntax', () => {
 });
 
 test('Grid Component > Basic Syntax', () => {
-
-	const input =
-`<grid drag="60 55" drop="5 10" style="background-color: coral;">
+	const input = `<grid drag="60 55" drop="5 10" style="background-color: coral;">
 ### Left
 </grid>
 
@@ -47,9 +42,7 @@ test('Grid Component > Basic Syntax', () => {
 });
 
 test('Grid Component > Position by Name', () => {
-
-	const input =
-`<grid drag="40 30" drop="topleft" style="background-color: red;">
+	const input = `<grid drag="40 30" drop="topleft" style="background-color: red;">
 ### Top Left
 </grid>
 
@@ -68,9 +61,7 @@ test('Grid Component > Position by Name', () => {
 });
 
 test('Grid Component > Position Coordinates', () => {
-
-	const input =
-`<grid drag="40 50" drop="10 15" style="background-color: orange;">
+	const input = `<grid drag="40 50" drop="10 15" style="background-color: orange;">
 ### Positive X, Y
 </grid>
 
@@ -93,17 +84,15 @@ test('Grid Component > Position Coordinates', () => {
 });
 
 test('Grid Component > Column Flow', () => {
-
-	when(MockedObsidianUtils.getAbsolutePath("Image.jpg.md")).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath('Image.jpg.md')).thenCall(arg => {
 		return null;
 	});
 
-	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall( (arg) => {
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall(arg => {
 		return '/documentation/Image.jpg';
 	});
 
-	const input =
-`<grid  drag="40 100" drop="center" style="background-color: coral;" flow="col">
+	const input = `<grid  drag="40 100" drop="center" style="background-color: coral;" flow="col">
 ### Lorem
 ![[Image.jpg]]
 ### Ipsum
@@ -116,17 +105,15 @@ test('Grid Component > Column Flow', () => {
 });
 
 test('Grid Component > Row Flow', () => {
-
-	when(MockedObsidianUtils.getAbsolutePath("Image.jpg.md")).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath('Image.jpg.md')).thenCall(arg => {
 		return null;
 	});
 
-	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall( (arg) => {
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall(arg => {
 		return '/documentation/Image.jpg';
 	});
 
-	const input =
-`<grid  drag="100 40" drop="center" style="background-color: coral;" flow="row">
+	const input = `<grid  drag="100 40" drop="center" style="background-color: coral;" flow="row">
 ### Lorem
 ![[Image.jpg]]
 ### Ipsum
@@ -139,9 +126,7 @@ test('Grid Component > Row Flow', () => {
 });
 
 test('Grid Component > Attributes > Background', () => {
-
-	const input =
-`<grid  drag="55 50" drop="topright" bg="orange">
+	const input = `<grid  drag="55 50" drop="topright" bg="orange">
 ### Make
 </grid>
 
@@ -160,9 +145,7 @@ test('Grid Component > Attributes > Background', () => {
 });
 
 test('Grid Component > Attributes > Border', () => {
-
-	const input =
-`<grid  drag="30 25" drop="left" border="thick dotted blue">
+	const input = `<grid  drag="30 25" drop="left" border="thick dotted blue">
 thick dotted blue
 </grid>
 
@@ -181,17 +164,15 @@ thick dotted blue
 });
 
 test('Grid Component > Attributes > Filter', () => {
-
-	when(MockedObsidianUtils.getAbsolutePath("Image.jpg.md")).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath('Image.jpg.md')).thenCall(arg => {
 		return null;
 	});
 
-	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall( (arg) => {
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall(arg => {
 		return '/documentation/Image.jpg';
 	});
 
-	const input =
-`<grid  drag="30 25" drop="5 15" bg="#B565A7" filter="blur(10px)">
+	const input = `<grid  drag="30 25" drop="5 15" bg="#B565A7" filter="blur(10px)">
 Text is too blurry
 </grid>
 
@@ -206,9 +187,7 @@ Text is too blurry
 });
 
 test('Grid Component > Attributes > Rotate', () => {
-
-	const input =
-`<grid  drag="30 25" drop="top" bg="#B565A7" rotate="-10">
+	const input = `<grid  drag="30 25" drop="top" bg="#B565A7" rotate="-10">
 Hello
 </grid>
 
@@ -223,17 +202,15 @@ World!
 });
 
 test('Grid Component > Attributes > Padding', () => {
-
-	when(MockedObsidianUtils.getAbsolutePath("Image.jpg|800.md")).thenCall( (arg) => {
+	when(MockedObsidianUtils.getAbsolutePath('Image.jpg|800.md')).thenCall(arg => {
 		return null;
 	});
 
-	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall( (arg) => {
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall(arg => {
 		return '/documentation/Image.jpg';
 	});
 
-	const input =
-`<grid  drag="50 50" drop="topleft" bg="orange" pad="0 50px">
+	const input = `<grid  drag="50 50" drop="topleft" bg="orange" pad="0 50px">
 ###### Lorem Ipsum wasnt simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book here there
 </grid>
 
@@ -248,9 +225,7 @@ test('Grid Component > Attributes > Padding', () => {
 });
 
 test('Grid Component > Attributes > Padding', () => {
-
-	const input =
-`<grid drag="60 55" drop="5 10" bg="red">
+	const input = `<grid drag="60 55" drop="5 10" bg="red">
 ### Fragments:
 + Right
 + Bottom
@@ -271,9 +246,7 @@ Bottom Grid
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="row" pad="0 50px" align="left">
+	const input = `<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="row" pad="0 50px" align="left">
 ![](https://picsum.photos/id/978/150/200)
 ![](https://picsum.photos/id/996/150/200)
 ![](https://picsum.photos/id/1011/150/200)
@@ -286,9 +259,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="col" pad="0 50px" align="left">
+	const input = `<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="col" pad="0 50px" align="left">
 ![](https://picsum.photos/id/978/150/200)
 ![](https://picsum.photos/id/996/150/200)
 ![](https://picsum.photos/id/1011/150/200)
@@ -301,9 +272,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="row" pad="0 50px" align="right">
+	const input = `<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="row" pad="0 50px" align="right">
 ![](https://picsum.photos/id/978/150/200)
 ![](https://picsum.photos/id/996/150/200)
 ![](https://picsum.photos/id/1011/150/200)
@@ -316,9 +285,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="col" pad="0 50px" align="right">
+	const input = `<grid drag="100 70" drop="0 30" bg="#EEB73F" flow="col" pad="0 50px" align="right">
 ![](https://picsum.photos/id/978/150/200)
 ![](https://picsum.photos/id/996/150/200)
 ![](https://picsum.photos/id/1011/150/200)
@@ -331,9 +298,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="top">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="top">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -346,9 +311,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="top">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="top">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -361,9 +324,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="bottom">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="bottom">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -376,9 +337,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="bottom">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="bottom">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -391,9 +350,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="center">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="center">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -406,9 +363,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="center">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="center">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -421,9 +376,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="topleft">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="topleft">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -436,9 +389,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="topleft">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="topleft">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -451,9 +402,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="topright">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="topright">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -466,9 +415,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="topright">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="topright">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -481,9 +428,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="bottomright">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="bottomright">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -496,9 +441,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="bottomright">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="bottomright">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -511,9 +454,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="bottomleft">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="col" pad="50px" align="bottomleft">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)
@@ -526,9 +467,7 @@ test('Grid Component > Attributes > Alignment', () => {
 });
 
 test('Grid Component > Attributes > Alignment', () => {
-
-	const input =
-`<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="bottomleft">
+	const input = `<grid drag="100 100" drop="0 0" bg="#EEB73F" flow="row" pad="50px" align="bottomleft">
 ![](https://picsum.photos/id/978/150/150)
 ![](https://picsum.photos/id/996/150/150)
 ![](https://picsum.photos/id/1011/150/150)

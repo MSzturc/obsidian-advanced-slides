@@ -1,12 +1,11 @@
-import express from "express";
+import express from 'express';
 import path from 'path';
-import { Server } from "http";
-import { RevealRenderer } from "./revealRenderer";
-import { Notice } from "obsidian";
-import { ObsidianUtils } from "./obsidianUtils";
+import { Server } from 'http';
+import { RevealRenderer } from './revealRenderer';
+import { Notice } from 'obsidian';
+import { ObsidianUtils } from './obsidianUtils';
 
 export class RevealServer {
-
 	private _app: express.Application;
 	private _port = 3000;
 	private _server: Server;
@@ -32,7 +31,6 @@ export class RevealServer {
 	}
 
 	start() {
-
 		['plugin', 'dist', 'css'].forEach(dir => {
 			// @ts-ignore:
 			this._app.use('/' + dir, this._staticDir(path.join(this._pluginDirectory, dir)));
@@ -46,7 +44,7 @@ export class RevealServer {
 
 		this._app.get('/', async (req, res) => {
 			if (this.filePath === null) {
-				res.send("Open Presentation Preview in Obsidian first!");
+				res.send('Open Presentation Preview in Obsidian first!');
 			}
 			const markup = await this._revealRenderer.renderFile(this.filePath, req.query);
 			res.send(markup);
@@ -59,22 +57,18 @@ export class RevealServer {
 
 		this._app.use(this._staticDir(this._baseDirectory));
 
-		this._server = this._app.listen(this._port, '127.0.0.1', () => {
-			// tslint:disable-next-line:no-console
-			console.log(`server started at http://localhost:${this._port}`);
-		}).on('error', (err) => {
-			new Notice(`Port ${this._port} already used!`);
-		});
-
-
-
+		this._server = this._app
+			.listen(this._port, '127.0.0.1', () => {
+				// tslint:disable-next-line:no-console
+				console.log(`server started at http://localhost:${this._port}`);
+			})
+			.on('error', err => {
+				new Notice(`Port ${this._port} already used!`);
+			});
 	}
 
 	stop() {
 		this._server.close();
 		console.log(`server stopped`);
 	}
-
 }
-
-

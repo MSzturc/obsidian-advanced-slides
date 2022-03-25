@@ -3,7 +3,7 @@ import { AdvancedSlidesSettings } from './main';
 import { Options } from './options';
 import { YamlParser } from './yamlParser';
 
-export const REVEAL_PREVIEW_VIEW = "reveal-preview-view";
+export const REVEAL_PREVIEW_VIEW = 'reveal-preview-view';
 
 export class RevealPreviewView extends ItemView {
 	url = 'about:blank';
@@ -25,37 +25,36 @@ export class RevealPreviewView extends ItemView {
 			this.reloadIframe();
 		});
 
-		window.addEventListener("message", this.onMessage.bind(this));
+		window.addEventListener('message', this.onMessage.bind(this));
 	}
 
 	onMoreOptionsMenu(menu: Menu): void {
-
 		super.onMoreOptionsMenu(menu);
 
 		menu.addSeparator();
-		menu.addItem((item) => {
-			item.setIcon("document")
-				.setTitle("Print Presentation")
+		menu.addItem(item => {
+			item
+				.setIcon('document')
+				.setTitle('Print Presentation')
 				.onClick(() => {
 					window.open(this.home.toString() + '?print-pdf');
 				});
 		});
-		menu.addItem((item) => {
-			item.setIcon("install")
-				.setTitle("Export as html")
+		menu.addItem(item => {
+			item
+				.setIcon('install')
+				.setTitle('Export as html')
 				.onClick(() => {
 					const url = new URL(this.url);
-					url.searchParams.append("export", "true");
+					url.searchParams.append('export', 'true');
 					this.setUrl(url.toString());
 				});
 		});
-
 	}
 
 	onMessage(msg: MessageEvent) {
-
 		if (msg.data.includes('?export')) {
-			this.setUrl(msg.data.split('?')[0])
+			this.setUrl(msg.data.split('?')[0]);
 			return;
 		}
 
@@ -63,7 +62,7 @@ export class RevealPreviewView extends ItemView {
 
 		const url = new URL(msg.data);
 		let filename = decodeURI(url.pathname);
-		filename = filename.substring(filename.lastIndexOf("/") + 1);
+		filename = filename.substring(filename.lastIndexOf('/') + 1);
 
 		const view = this.app.workspace.getActiveViewOfType(MarkdownView);
 		if (view && view.file.name.includes(filename)) {
@@ -71,7 +70,6 @@ export class RevealPreviewView extends ItemView {
 			view.editor.setCursor(view.editor.lastLine());
 			view.editor.setCursor({ line: line, ch: 0 });
 		}
-
 	}
 
 	onLineChanged(line: number) {
@@ -86,7 +84,6 @@ export class RevealPreviewView extends ItemView {
 	}
 
 	getTargetSlide(line: number, source: string): [number, number] {
-
 		const { yamlOptions, markdown } = this.yaml.parseYamlFrontMatter(source);
 		const separators = this.yaml.getSlideOptions(yamlOptions);
 		const yamlLength = source.indexOf(markdown);
@@ -128,7 +125,6 @@ export class RevealPreviewView extends ItemView {
 	}
 
 	getSlideLines(source: string, separators: Options) {
-
 		let store = new Map<number, string>();
 
 		const l = this.getIdxOfRegex(/^/gm, source);
@@ -158,16 +154,17 @@ export class RevealPreviewView extends ItemView {
 
 		store.set(0, 'h');
 
-		store = new Map([...store].sort((a, b) => {
-			return a[0] - b[0];
-		}));
+		store = new Map(
+			[...store].sort((a, b) => {
+				return a[0] - b[0];
+			}),
+		);
 
 		const result = new Map<string, number>();
 
 		let hV = -1;
 		let vV = 0;
 		for (const [key, value] of store.entries()) {
-
 			if (value == 'h') {
 				hV++;
 				vV = 0;
@@ -202,7 +199,7 @@ export class RevealPreviewView extends ItemView {
 	}
 
 	getDisplayText() {
-		return "Slide Preview";
+		return 'Slide Preview';
 	}
 
 	setUrl(url: string, rerender = true) {
@@ -217,7 +214,7 @@ export class RevealPreviewView extends ItemView {
 	}
 
 	async onClose() {
-		window.removeEventListener("message", this.onMessage);
+		window.removeEventListener('message', this.onMessage);
 	}
 
 	private reloadIframe() {
@@ -227,19 +224,16 @@ export class RevealPreviewView extends ItemView {
 	}
 
 	private renderView() {
-
 		const viewContent = this.containerEl.children[1];
 
 		viewContent.empty();
 		viewContent.addClass('reveal-preview-view');
-		viewContent.createEl("iframe",
-			{
-				attr: {
-					// @ts-ignore:
-					src: this.url,
-					sandbox: 'allow-scripts allow-same-origin'
-
-				}
-			});
+		viewContent.createEl('iframe', {
+			attr: {
+				// @ts-ignore:
+				src: this.url,
+				sandbox: 'allow-scripts allow-same-origin',
+			},
+		});
 	}
 }

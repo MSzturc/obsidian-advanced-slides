@@ -1,5 +1,5 @@
-import { CommentParser } from "src/comment";
-import { Options } from "src/options";
+import { CommentParser } from 'src/comment';
+import { Options } from 'src/options';
 
 export class DropProcessor {
 	private dropRegex = /drop="[^"]+"/;
@@ -12,10 +12,10 @@ export class DropProcessor {
 
 		markdown
 			.split(new RegExp(options.separator, 'gmi'))
-			.map((slidegroup) => {
+			.map(slidegroup => {
 				return slidegroup
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
-					.map((slide) => {
+					.map(slide => {
 						if (this.dropRegex.test(slide)) {
 							const newSlide = this.transformSlide(slide);
 							output = output.split(slide).join(newSlide);
@@ -31,16 +31,13 @@ export class DropProcessor {
 	}
 
 	transformSlide(slide: string) {
-
-		if(this.slideCommentRegex.test(slide)){
+		if (this.slideCommentRegex.test(slide)) {
 			const [match] = this.slideCommentRegex.exec(slide);
 			const comment = this.parser.parseLine(match);
-			comment.addClass("drop");
-			return slide.replace(this.slideCommentRegex,this.parser.commentToString(comment));
+			comment.addClass('drop');
+			return slide.replace(this.slideCommentRegex, this.parser.commentToString(comment));
 		} else {
-			return slide + '\n<!-- .slide: class="drop" -->\n'
+			return slide + '\n<!-- .slide: class="drop" -->\n';
 		}
-
 	}
-
 }

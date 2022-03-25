@@ -1,19 +1,18 @@
-import { readFile } from "fs-extra";
+import { readFile } from 'fs-extra';
 import { join, basename, extname } from 'path';
-import { glob } from "glob";
-import Mustache from "mustache";
-import { md } from "./markdown";
+import { glob } from 'glob';
+import Mustache from 'mustache';
+import { md } from './markdown';
 
-import defaults from "./defaults.json";
-import { ObsidianMarkdownPreprocessor } from "./obsidianMarkdownPreprocessor";
-import { ObsidianUtils } from "./obsidianUtils";
-import { YamlParser } from "./yamlParser";
-import { ImageCollector } from "./imageCollector";
-import { RevealExporter } from "./revealExporter";
-import _ from "lodash";
+import defaults from './defaults.json';
+import { ObsidianMarkdownPreprocessor } from './obsidianMarkdownPreprocessor';
+import { ObsidianUtils } from './obsidianUtils';
+import { YamlParser } from './yamlParser';
+import { ImageCollector } from './imageCollector';
+import { RevealExporter } from './revealExporter';
+import _ from 'lodash';
 
 export class RevealRenderer {
-
 	private processor: ObsidianMarkdownPreprocessor;
 	private pluginDirectory: string;
 	private yaml: YamlParser;
@@ -29,7 +28,6 @@ export class RevealRenderer {
 	}
 
 	async renderFile(filePath: string, params: any) {
-
 		let renderForExport = false;
 		let renderForPrint = false;
 
@@ -61,7 +59,7 @@ export class RevealRenderer {
 
 	async render(input: string, renderForPrint: boolean) {
 		const { yamlOptions, markdown } = this.yaml.parseYamlFrontMatter(input);
-		const options = this.yaml.getSlideOptions(yamlOptions,renderForPrint);
+		const options = this.yaml.getSlideOptions(yamlOptions, renderForPrint);
 		const revealOptions = this.yaml.getRevealOptions(options);
 
 		const { title } = options;
@@ -96,7 +94,7 @@ export class RevealRenderer {
 			enableChalkboard,
 			enableOverview,
 			enableMenu,
-			revealOptionsStr: JSON.stringify(revealOptions)
+			revealOptionsStr: JSON.stringify(revealOptions),
 		});
 
 		const template = await this.getTemplate();
@@ -114,31 +112,29 @@ export class RevealRenderer {
 	}
 
 	private getHighlightThemeUrl(theme: string) {
-
 		if (this.isValidUrl(theme)) {
 			return theme;
 		}
 
-		const highlightThemes = glob.sync('plugin/highlight/*.css', { cwd: this.pluginDirectory });
+		const highlightThemes = glob.sync('plugin/highlight/*.css', {
+			cwd: this.pluginDirectory,
+		});
 
-		const highlightTheme = highlightThemes.find(
-			themePath => basename(themePath).replace(extname(themePath), '') === theme
-		);
+		const highlightTheme = highlightThemes.find(themePath => basename(themePath).replace(extname(themePath), '') === theme);
 
 		return highlightTheme ? highlightTheme : theme;
 	}
 
 	private getThemeUrl(theme: string) {
-
 		if (this.isValidUrl(theme)) {
 			return theme;
 		}
 
-		const revealThemes = glob.sync('dist/theme/*.css', { cwd: this.pluginDirectory });
+		const revealThemes = glob.sync('dist/theme/*.css', {
+			cwd: this.pluginDirectory,
+		});
 
-		const revealTheme = revealThemes.find(
-			themePath => basename(themePath).replace(extname(themePath), '') === theme
-		);
+		const revealTheme = revealThemes.find(themePath => basename(themePath).replace(extname(themePath), '') === theme);
 
 		return revealTheme ? revealTheme : theme;
 	}
