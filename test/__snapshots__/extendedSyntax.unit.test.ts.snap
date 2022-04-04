@@ -63,16 +63,16 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 # Fragmented unordered list
 
 - Permanent
-- First<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->
-- Second<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" -->
-- Third<!-- .element: class=\\"fragment\\" data-fragment-index=\\"3\\" -->
+- &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" --> First
+- &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" --> Second
+- &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"3\\" --> Third
 
 ---
 
 # Fragmented unordered list with ignored code block
 
 - First
-- Second<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->
+- &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" --> Second
 
 \`\`\`diff
 - ignored block text 1
@@ -92,9 +92,9 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 # Fragmented ordered list
 
 1. Permanent
-1. Second<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->
-1. Third<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" -->
-1. Fourth<!-- .element: class=\\"fragment\\" data-fragment-index=\\"3\\" -->
+1. &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" --> Second
+1. &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" --> Third
+1. &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"3\\" --> Fourth
 "
 `;
 
