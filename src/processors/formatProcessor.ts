@@ -4,11 +4,25 @@ export class FormatProcessor {
 	private commentRegex = /%%([^%]*)%%/gm;
 
 	process(markdown: string) {
-		return markdown
-			.replaceAll(this.boldRegex, (sub, args) => {
-				return `**${args.trim()}**`;
+
+		let insideCodeBlock = false;
+
+		return markdown.split('\n')
+			.map((line) => {
+				if (line.indexOf('```') > 0) {
+					insideCodeBlock = !insideCodeBlock;
+				}
+
+				if (insideCodeBlock) {
+					return line;
+				}
+				else {
+					return line
+						.replaceAll(this.boldRegex, (sub, args) => `**${args.trim()}**`)
+						.replaceAll(this.markRegex, '<mark>$1</mark>')
+						.replaceAll(this.commentRegex, '');
+				}
 			})
-			.replaceAll(this.markRegex, '<mark>$1</mark>')
-			.replaceAll(this.commentRegex, '');
+			.join('\n');
 	}
 }
