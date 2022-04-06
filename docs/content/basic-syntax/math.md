@@ -1,7 +1,7 @@
 +++
 title = "Math"
 description = ""
-weight = 11
+weight = 12
 +++
 
 ```md
