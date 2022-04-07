@@ -40,6 +40,7 @@ export interface AdvancedSlidesSettings {
 	controls: boolean;
 	progress: boolean;
 	slideNumber: boolean;
+	showGrid: boolean;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
@@ -56,6 +57,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	controls: true,
 	progress: true,
 	slideNumber: false,
+	showGrid: false,
 };
 
 export default class AdvancedSlidesPlugin extends Plugin {
@@ -153,7 +155,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			});
 
 			this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
-		} catch (err) {}
+		} catch (err) { }
 	}
 
 	getViewInstance(): RevealPreviewView {

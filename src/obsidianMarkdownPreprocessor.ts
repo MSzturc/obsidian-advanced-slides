@@ -16,6 +16,7 @@ import { DropProcessor } from './processors/dropProcessor';
 import { YamlStore } from './yamlStore';
 import { AutoClosingProcessor } from './processors/autoClosingProcessor';
 import { IconsProcessor } from './processors/iconsProcessor';
+import { DebugViewProcessor } from './processors/debugViewProcessor';
 
 export class ObsidianMarkdownPreprocessor {
 	private multipleFileProcessor: MultipleFileProcessor;
@@ -33,6 +34,7 @@ export class ObsidianMarkdownPreprocessor {
 	private dropProcessor: DropProcessor;
 	private autoClosingProcessor: AutoClosingProcessor;
 	private iconsProcessor: IconsProcessor;
+	private debugViewProcessor: DebugViewProcessor;
 
 	constructor(utils: ObsidianUtils) {
 		this.multipleFileProcessor = new MultipleFileProcessor(utils);
@@ -50,11 +52,13 @@ export class ObsidianMarkdownPreprocessor {
 		this.dropProcessor = new DropProcessor();
 		this.autoClosingProcessor = new AutoClosingProcessor();
 		this.iconsProcessor = new IconsProcessor();
+		this.debugViewProcessor = new DebugViewProcessor();
 	}
 	process(markdown: string, options: Options) {
 		YamlStore.getInstance().options = options;
 		const afterMultipleFileProcessor = this.multipleFileProcessor.process(markdown);
-		const afterAutoClosingProcessor = this.autoClosingProcessor.process(afterMultipleFileProcessor);
+		const afterDebugViewProcessor = this.debugViewProcessor.process(afterMultipleFileProcessor, options);
+		const afterAutoClosingProcessor = this.autoClosingProcessor.process(afterDebugViewProcessor);
 		const afterIconsProcessor = this.iconsProcessor.process(afterAutoClosingProcessor);
 		const afterDropProcessor = this.dropProcessor.process(afterIconsProcessor, options);
 		const afterMermaidProcessor = this.mermaidProcessor.process(afterDropProcessor);

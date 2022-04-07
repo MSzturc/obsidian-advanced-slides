@@ -21,6 +21,11 @@ export class RevealPreviewView extends ItemView {
 			window.open(home);
 		});
 
+		this.addAction('grid', 'Show Grid', () => {
+			settings.showGrid = !settings.showGrid;
+			this.reloadIframe();
+		});
+
 		this.addAction('refresh', 'Refresh Slides', () => {
 			this.reloadIframe();
 		});
