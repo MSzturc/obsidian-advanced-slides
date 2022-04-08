@@ -6,7 +6,7 @@
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-04-08T21:29:20 UTC">
-<title>Block Comments :: Advanced Slides Documentation</title>
+<title>CodeBlocks :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
 <link href="/obsidian-advanced-slides/css/font-awesome.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 
     
   </head>
-  <body data-url="/obsidian-advanced-slides/extend-syntax/blockcomment/">
+  <body data-url="/obsidian-advanced-slides/basic-syntax/codeblocks/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -382,7 +382,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/extend-syntax/blockComment.md" target="blank">
+      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/basic-syntax/codeBlocks.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -402,7 +402,7 @@
 
 
 
- <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/'>Extended Syntax</a> > Block Comments
+ <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/'>Basic Markdown Syntax</a> > CodeBlocks
 
  
 
@@ -425,7 +425,7 @@
 
 <div id="body-inner">
   
-    <h1>Block Comments</h1>
+    <h1>CodeBlocks</h1>
   
 
 
@@ -433,127 +433,14 @@
     
     
     
-    <p>You can use block comments to group parts of your slide. By annotating the block all items inside this block gets the properties of the annotation:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>::: block
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>#### Header
-</span></span><span style="display:flex;"><span>_and_
-</span></span><span style="display:flex;"><span>Paragraph content
-</span></span><span style="display:flex;"><span><span style="font-style:italic">*in same block*</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>:::
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>no color
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>::: block <span style="color:#75715e">&lt;!-- element style=&#34;background-color: red;&#34; --&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>everything inside this block has red background color
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>::: block <span style="color:#75715e">&lt;!-- element style=&#34;background-color: blue;&#34; --&gt;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>blue
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>:::
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>red
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>:::
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>no color
-</span></span></code></pre></div><iframe id="slideFrame" src="/obsidian-advanced-slides/none.html" style="width:100%;height:30em; border:0px"></iframe>
-
-<div id="slideContent">
-	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/reveal.css">
-	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/theme/black.css" id="theme">
-	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/lib/css/zenburn.css">
-	<link rel="stylesheet" href="/obsidian-advanced-slides/revealjs/css/layout.css">
-
-
-    <link rel="stylesheet" href="/obsidian-advanced-slides/css/all.min.css">
-
-	<div class="reveal">
-	<div class="slides">
-		
-
-<section><div class="block">
-
-<h4 id="header">Header</h4>
-<p><em>and</em>
-Paragraph content
-<em>in same block</em></p>
-</div>
-</section>
-
-<section><p>no color</p>
-<div class="block" style="background-color: red;"> <!-- -->
-
-<p>everything inside this block has red background color</p>
-<div class="block" style="background-color: blue;"> <!-- -->
-
-<p>blue</p>
-</div>
-
-<p>red</p>
-</div>
-
-<p>no color</p>
-</section>
-
-
-	</div>
-	</div>
-
-	<script async src="/obsidian-advanced-slides/revealjs/lib/js/head.min.js"></script>
-	<script async src="/obsidian-advanced-slides/revealjs/js/reveal.js"></script>
-	
-	<script>
-	function initSlides() {
-		Reveal.initialize({
-		      	embedded : true,
-
-		        controls : "true", 
- 				center: true ,		
-		        history: false ,
-		        progress: "true" ,
-		        transition: "concave",
-
-		        
-		        
-		        dependencies: [
-		          { src: '\/obsidian-advanced-slides\/revealjs\/lib\/js\/classList.js"', condition: function() { return !document.body.classList; } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/markdown\/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/highlight\/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/zoom-js\/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-		          { src: '\/obsidian-advanced-slides\/revealjs\/plugin\/notes\/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-		        ]
-		      });
-	}
-	</script>
-</div>
-<li><a href="#" onclick="slideFullScreen();">See it fullscreen</a></li>
-
-<script type="text/javascript">
-var toto = document.getElementById('slideContent').innerHTML
-document.getElementById('slideFrame').contentWindow.document.write(document.getElementById('slideContent').innerHTML); 
-document.getElementById('slideContent').remove();
-document.addEventListener("DOMContentLoaded",function(){
-	  setTimeout(function () {
-      document.getElementById('slideFrame').contentWindow.initSlides() ;
-    }, 2000);
-});
-
-
-function slideFullScreen() {
-	document.open();
-	document.write(toto);
-	document.close();
-	initSlides()
-}
-</script>
-
+    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```js [1-2|3|4]
+</span></span><span style="display:flex;"><span>    let a = 1;
+</span></span><span style="display:flex;"><span>    let b = 2;
+</span></span><span style="display:flex;"><span>    let c = x =&gt; 1 + 2 + x;
+</span></span><span style="display:flex;"><span>    c(3);
+</span></span><span style="display:flex;"><span>    ```
+</span></span></code></pre></div><p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/codeblock.png" alt="CodeBlock"></p>
 
 
     

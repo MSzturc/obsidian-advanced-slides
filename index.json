@@ -46,7 +46,7 @@
 	"title": "Basic Markdown Syntax",
 	"tags": [],
 	"description": "",
-	"content": "Index\n Headers \n Text style \n Lists \n Images \n Links \n Embeds \n Blockquotes \n Inline Code \n Tables \n Footnotes \n Math \n Mermaid \n "
+	"content": "Index\n Headers \n Text style \n Lists \n Images \n Links \n Embeds \n Blockquotes \n Inline Code \n Tables \n CodeBlocks \n Footnotes \n Math \n Mermaid \n "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/",
@@ -231,6 +231,13 @@
 	"content": "First Header | Second Header ------------ | ------------ Content from cell 1 | Content from cell 2 Content in the first column | Content in the second column "
 },
 {
+	"uri": "https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/codeblocks/",
+	"title": "CodeBlocks",
+	"tags": [],
+	"description": "",
+	"content": " ```js [1-2|3|4]  let a = 1;  let b = 2;  let c = x =\u0026gt; 1 + 2 + x;  c(3);  ``` "
+},
+{
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/excalidraw/",
 	"title": "Excalidraw support",
 	"tags": [],
@@ -284,7 +291,7 @@
 	"title": "Credits",
 	"tags": [],
 	"description": "contributors and packages used by Advanced Slides",
-	"content": "github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 385 commits   @actions-user 33 commits   @miluoshi 2 commits   @Michael-Beukman 1 commits   @code-factor 1 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  "
+	"content": "github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 390 commits   @actions-user 34 commits   @miluoshi 2 commits   @Michael-Beukman 1 commits   @code-factor 1 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/tags/",

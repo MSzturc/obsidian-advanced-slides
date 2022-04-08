@@ -90,6 +90,15 @@
     </item>
     
     <item>
+      <title>CodeBlocks</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/codeblocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/codeblocks/</guid>
+      <description> ```js [1-2|3|4]  let a = 1;  let b = 2;  let c = x =&amp;gt; 1 + 2 + x;  c(3);  ``` </description>
+    </item>
+    
+    <item>
       <title>Footnotes</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/footnotes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
