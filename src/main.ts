@@ -207,7 +207,11 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	async showView() {
-		const targetDocument = this.app.workspace.getActiveFile().path;
+		const targetDocument = this.app.workspace.getActiveFile()?.path;
+
+		if (!targetDocument) {
+			return;
+		}
 
 		if (targetDocument.startsWith(this.target) && this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW).length > 0) {
 			return;
