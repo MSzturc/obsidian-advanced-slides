@@ -66,7 +66,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	private revealServer: RevealServer;
 	private obsidianUtils: ObsidianUtils;
 
-	private target: string;
+	private target: TAbstractFile;
 
 	async onload() {
 		await this.loadSettings();
@@ -190,7 +190,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			return;
 		}
 
-		if (file.path.startsWith(this.target)) {
+		if (file == this.target) {
 			instance.onChange();
 		}
 	}
@@ -207,13 +207,13 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	async showView() {
-		const targetDocument = this.app.workspace.getActiveFile()?.path;
+		const targetDocument = this.app.workspace.getActiveFile();
 
 		if (!targetDocument) {
 			return;
 		}
 
-		if (targetDocument.startsWith(this.target) && this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW).length > 0) {
+		if (targetDocument == this.target && this.app.workspace.getLeavesOfType(REVEAL_PREVIEW_VIEW).length > 0) {
 			return;
 		}
 
@@ -221,7 +221,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		await this.activateView();
 
 		const url = this.revealServer.getUrl();
-		url.pathname = targetDocument;
+		url.pathname = this.target.path;
 
 		this.openUrl(url);
 	}
