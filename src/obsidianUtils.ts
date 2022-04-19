@@ -62,17 +62,35 @@ export class ObsidianUtils {
 			base = '/';
 		}
 
-		const activeFile = this.app.workspace.getActiveFile().path;
-		const allLinks = this.app.metadataCache.resolvedLinks;
-		const fileLinks = allLinks[activeFile];
+		const activeFile = this.app.workspace.getActiveFile()?.path;
+		if (activeFile) {
+			const allLinks = this.app.metadataCache.resolvedLinks;
+			const fileLinks = allLinks[activeFile];
 
-		for (const key in fileLinks) {
-			if (key.contains(imagePath)) {
-				return base + key;
+			for (const key in fileLinks) {
+				if (key.contains(imagePath)) {
+					return base + key;
+				}
+
+			}
+		} else {
+			const expDir = this.settings.exportDirectory.startsWith('/')
+				? this.settings.exportDirectory.substring(1)
+				: this.settings.exportDirectory;
+
+			const imgFile = this.app.vault
+				.getFiles()
+				.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
+				.first();
+
+			if (imgFile) {
+				return base + imgFile.path;
+			} else {
+				return imagePath;
+
+
 			}
 		}
-
-		return imagePath;
 	}
 
 	findImageEx(filePath: string) {
