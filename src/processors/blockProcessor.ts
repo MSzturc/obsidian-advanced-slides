@@ -4,7 +4,7 @@ export class BlockProcessor {
 	}
 
 	transformBlock(markdown: string) {
-		markdown = markdown.replaceAll('::: block', '<div class="block">');
+		markdown = markdown.replaceAll('::: block', '<div class="block">\n');
 		markdown = markdown.replaceAll(':::', '</div>');
 		return markdown;
 	}
