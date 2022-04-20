@@ -1,7 +1,6 @@
 
 .align-left {
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     p {
         text-align: left;
@@ -10,7 +9,6 @@
 
 .align-center {
     display: flex;
-    flex-direction: column;
     align-items: center;
     p {
         text-align: center;
@@ -19,7 +17,6 @@
 
 .align-right {
     display: flex;
-    flex-direction: column;
     align-items: flex-end;
     p {
         text-align: right;
