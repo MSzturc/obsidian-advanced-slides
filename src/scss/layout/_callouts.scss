@@ -1,0 +1,64 @@
+
+
+.callout-color1 {
+    --callout-color: 108, 192, 245;
+}
+.callout-color2 {
+    --callout-color: 109, 197, 217;
+}
+.callout-color3 {
+    --callout-color: 113, 208, 136;
+}
+.callout-color4 {
+    --callout-color: 160, 224, 107;
+}
+.callout-color5 {
+    --callout-color: 238, 177, 91;
+}
+.callout-color6 {
+    --callout-color: 234, 136, 133;
+}
+.callout-color7 {
+    --callout-color: 230, 98, 121;
+}
+.callout-color8 {
+    --callout-color: 152, 126, 243;
+}
+.callout-color9 {
+    --callout-color: 182, 182, 182;
+}
+.callout-color-default {
+    --callout-color: 129, 167, 244;
+}
+
+.callout {
+    border-left: 4px solid rgb(var(--callout-color));
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 1em 0;
+}
+
+.callout-title {
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+    background-color: rgba(var(--callout-color), 0.3);
+}
+
+.callout-icon {
+    flex: 0 0 auto;
+    display: flex;
+    align-self: center;
+    color: rgb(var(--callout-color));
+}
+
+.callout-title-inner {
+    flex: 1 1 0;
+    font-weight: 700;
+}
+
+.callout-content {
+    overflow-x: auto;
+    padding: 5px 15px;
+}
+
