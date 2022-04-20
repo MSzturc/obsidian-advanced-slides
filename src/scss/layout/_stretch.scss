@@ -1,0 +1,25 @@
+
+.stretch-column > * {
+	flex: 1;
+	height: 1%;
+	width: 100%;
+}
+
+.stretch-row > * {
+	flex: 1;
+	height: 100%;
+	width: 1%;
+}
+
+.stretch-column > p > img,
+.stretch-row > p > img,
+.stretch-column > p > video,
+.stretch-row > p > video,
+.stretch-column > p > iframe,
+.stretch-row > p > iframe {
+	height: 100%;
+	width: 100%;
+	max-width: 100% !important;
+	max-height: 100% !important;
+	object-fit: cover;
+}
