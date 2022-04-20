@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="{{ now.Format "2006-01-02T15:04:05 MST" }}">
-<title>{{ .Title }} :: {{ .Site.Title }}</title>
+<title>{{ .Title }}{{ if ne .Title .Site.Title }} &mdash; {{ .Site.Title }}{{ end }}</title>
 <link rel="shortcut icon" href="{{"images/favicon.png" | relURL}}" type="image/x-icon" />
 <link href="{{"css/nucleus.css" | relURL}}" rel="stylesheet">
 <link href="{{"css/font-awesome.min.css" | relURL}}" rel="stylesheet">
