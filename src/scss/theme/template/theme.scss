@@ -50,7 +50,6 @@
 	color: var(--r-heading-color);
 
 	font-family: var(--r-heading-font);
-	font-weight: var(--r-heading-font-weight);
 	line-height: var(--r-heading-line-height);
 	letter-spacing: var(--r-heading-letter-spacing);
 
@@ -66,6 +65,13 @@
 .reveal h4 {font-size: var(--r-heading4-size); }
 .reveal h5 {font-size: var(--r-heading5-size); }
 .reveal h6 {font-size: var(--r-heading6-size); }
+
+.reveal h1 {font-weight: var(--r-heading1-font-weight); }
+.reveal h2 {font-weight: var(--r-heading2-font-weight); }
+.reveal h3 {font-weight: var(--r-heading3-font-weight); }
+.reveal h4 {font-weight: var(--r-heading4-font-weight); }
+.reveal h5 {font-weight: var(--r-heading5-font-weight); }
+.reveal h6 {font-weight: var(--r-heading6-font-weight); }
 
 .reveal h1 {
 	text-shadow: var(--r-heading1-text-shadow);

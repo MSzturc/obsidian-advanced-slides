@@ -21,6 +21,14 @@ $headingLetterSpacing: normal;
 $headingTextTransform: uppercase;
 $headingTextShadow: none;
 $headingFontWeight: normal;
+
+$heading1FontWeight: $headingFontWeight !default;
+$heading2FontWeight: $headingFontWeight !default;
+$heading3FontWeight: $headingFontWeight !default;
+$heading4FontWeight: $headingFontWeight !default;
+$heading5FontWeight: $headingFontWeight !default;
+$heading6FontWeight: $headingFontWeight !default;
+
 $heading1TextShadow: $headingTextShadow;
 
 $heading1Size: 3.77em;
