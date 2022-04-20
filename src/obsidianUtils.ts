@@ -73,24 +73,25 @@ export class ObsidianUtils {
 				}
 
 			}
-		} else {
-			const expDir = this.settings.exportDirectory.startsWith('/')
-				? this.settings.exportDirectory.substring(1)
-				: this.settings.exportDirectory;
-
-			const imgFile = this.app.vault
-				.getFiles()
-				.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
-				.first();
-
-			if (imgFile) {
-				return base + imgFile.path;
-			} else {
-				return imagePath;
-
-
-			}
 		}
+
+		const expDir = this.settings.exportDirectory.startsWith('/')
+			? this.settings.exportDirectory.substring(1)
+			: this.settings.exportDirectory;
+
+		const imgFile = this.app.vault
+			.getFiles()
+			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
+			.first();
+
+		if (imgFile) {
+			return base + imgFile.path;
+		} else {
+			return imagePath;
+
+
+		}
+
 	}
 
 	findImageEx(filePath: string) {
