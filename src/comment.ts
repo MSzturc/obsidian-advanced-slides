@@ -46,7 +46,7 @@ export class Comment extends Properties {
 export class CommentParser {
 	private readCommentRegex = /<!--.*-->/;
 	private parseRegex = /<!--\s*(?:\.)?(element|slide):?\s*(.*)-->/;
-	private parsePropertiesRegex = /([^=]*)\s*=\s*"([^"]*)"\s*|([^=]*)\s*=\s*'([^']*)'\s*/g;
+	private parsePropertiesRegex = /([^=]*)\s*=\s*"([^"]*)"\s*|([^=]*)\s*=\s*'([^']*)'\s*|([^ ]*)\s*/g;
 
 	commentToString(comment: Comment): string {
 		return `<!-- .${comment.type}: ${this.buildAttributes(comment)} -->`;
@@ -114,6 +114,11 @@ export class CommentParser {
 				if (groupIndex == 2 || groupIndex == 4) {
 					value = match;
 					attributes.set(key, value);
+				}
+				if (groupIndex == 5) {
+					if (match) {
+						attributes.set(match, 'true');
+					}
 				}
 			});
 		}

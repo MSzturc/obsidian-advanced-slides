@@ -86,6 +86,19 @@ test('Parse Comment with bg property', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
+test('Parse Slide Attribute without Value', () => {
+	YamlStore.getInstance().options = getSlideOptions({});
+	const parser = new CommentParser();
+
+	const input = `<!-- slide data-auto-animate -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of('slide', [], [], new Map<string, string>([
+		['data-auto-animate', 'true']
+	]));
+	expect(parsed).toStrictEqual(expected);
+});
+
 test('Merge Comment', () => {
 	YamlStore.getInstance().options = getSlideOptions({});
 
