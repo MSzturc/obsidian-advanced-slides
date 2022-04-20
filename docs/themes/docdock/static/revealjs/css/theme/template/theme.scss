@@ -48,7 +48,6 @@ body {
 	color: $headingColor;
 
 	font-family: $headingFont;
-	font-weight: $headingFontWeight;
 	line-height: $headingLineHeight;
 	letter-spacing: $headingLetterSpacing;
 
@@ -57,6 +56,14 @@ body {
 
 	word-wrap: break-word;
 }
+
+
+.reveal h1 {font-weight: $headingFontWeight; }
+.reveal h2 {font-weight: $headingFontWeight; }
+.reveal h3 {font-weight: $headingFontWeight; }
+.reveal h4 {font-weight: $headingFontWeight; }
+.reveal h5 {font-weight: $headingFontWeight; }
+.reveal h6 {font-weight: $headingFontWeight; }
 
 .reveal h1 {font-size: $heading1Size; }
 .reveal h2 {font-size: $heading2Size; }
