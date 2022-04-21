@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Themes &mdash; Advanced Slides Documentation</title>
+    <title>Slide Animation &mdash; Advanced Slides Documentation</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-04-21T15:05:57 UTC">
-<title>Themes :: Advanced Slides Documentation</title>
+<title>Slide Animation :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
 <link href="/obsidian-advanced-slides/css/font-awesome.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 
     
   </head>
-  <body data-url="/obsidian-advanced-slides/themes/">
+  <body data-url="/obsidian-advanced-slides/extend-syntax/slideanimation/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -396,7 +396,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/themes/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/extend-syntax/slideAnimation.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -413,7 +413,12 @@
 
 
 
- <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > Themes
+
+
+
+ <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/'>Extended Syntax</a> > Slide Animation
+
+ 
 
  
 
@@ -434,7 +439,7 @@
 
 <div id="body-inner">
   
-    <h1>Themes</h1>
+    <h1>Slide Animation</h1>
   
 
 
@@ -442,55 +447,19 @@
     
     
     
-
-<p>Advanced Slides comes with a varity of diffrent themes built in:</p>
-<ul>
-<li>black (default)</li>
-<li>white</li>
-<li>league</li>
-<li>beige</li>
-<li>sky</li>
-<li>night</li>
-<li>serif</li>
-<li>simple</li>
-<li>solarized</li>
-<li>blood</li>
-<li>moon</li>
-<li>css/mattropolis.css</li>
-</ul>
-<p>To activate a theme simply add a theme property in the frontmatter section of your slides:</p>
-<pre><code>---
-theme: night
-
----
-</code></pre>
-<p>if you want to use a custum theme you can do it! Just place the theme in the plugins directory and load them from there.</p>
-<p><strong>Example:</strong></p>
-<p>If your theme file name is <strong>my-theme.css</strong> place it inside your Vaults directory in  <code>.obsidian/plugins/obsidian-advanced-slides/css/</code> subfolder and load it by adding the following line on top of your slides markdown file:</p>
-<pre><code>---
-theme: css/my-theme.css
-
----
-</code></pre>
-<p>You can also load a custom theme directly from the Internet:</p>
-<pre><code>---
-theme: https://revealjs-themes.dzello.com/css/theme/robot-lung.css
-
----
-</code></pre>
-<h1 id="highlight-themes">Highlight Themes</h1>
-<p>All you have learned so far about custom themes could be applied to highlight themes as well. Highlight Themes define how codeblock elements should look. To activate a highlight theme simply add a highlightTheme property in the frontmatter section of your slides:</p>
-<pre><code>---
-highlightTheme: monokai
-
----
-</code></pre>
-<p>By default advanced slides comes with a varity of diffrent highlight themes:</p>
-<ul>
-<li>zenburn (default)</li>
-<li>monokai</li>
-<li>css/vs2015.css</li>
-</ul>
+    <p>Advanced Slides can automatically animate elements across slides. All you need to do is add <code>data-auto-animate</code> to two adjacent slide annotationsand Auto-Animate will animate all matching elements between the two.</p>
+<p>Here&rsquo;s a simple example to give you a better idea of how it can be used:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- .slide: data-auto-animate --&gt;</span>
+</span></span><span style="display:flex;"><span># Title
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- .slide: data-auto-animate --&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Title
+</span></span><span style="display:flex;"><span>##### **Subtitle**
+</span></span><span style="display:flex;"><span>###### *Author - 2022* 
+</span></span></code></pre></div>
+<div class="alert alert-info" role="alert">To learn more about Auto-Animation visit <a href="https://revealjs.com/auto-animate/">reveal.js Documentation</a></div>
 
 
 

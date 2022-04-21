@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Themes &mdash; Advanced Slides Documentation</title>
+    <title>Callouts &mdash; Advanced Slides Documentation</title>
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="revised" content="2022-04-21T15:05:57 UTC">
-<title>Themes :: Advanced Slides Documentation</title>
+<title>Callouts :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
 <link href="/obsidian-advanced-slides/css/font-awesome.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
 
     
   </head>
-  <body data-url="/obsidian-advanced-slides/themes/">
+  <body data-url="/obsidian-advanced-slides/basic-syntax/callouts/">
     
       <div id="headermain"></div>
 <nav id="sidebar" class="showVisitedLinks">
@@ -396,7 +396,7 @@
       
       
     <div id="top-github-link">
-      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/themes/_index.md" target="blank">
+      <a class="github-link" href="https://github.com/MSzturc/obsidian-advanced-slides/edit/main/docs/content/basic-syntax/callouts.md" target="blank">
         <i class="fa fa-code-fork"></i>
         Improve this page
       </a>
@@ -413,7 +413,12 @@
 
 
 
- <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > Themes
+
+
+
+ <a href='https://mszturc.github.io/obsidian-advanced-slides/'>Advanced Slides Documentation</a> > <a href='https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/'>Basic Markdown Syntax</a> > Callouts
+
+ 
 
  
 
@@ -434,7 +439,7 @@
 
 <div id="body-inner">
   
-    <h1>Themes</h1>
+    <h1>Callouts</h1>
   
 
 
@@ -442,56 +447,30 @@
     
     
     
-
-<p>Advanced Slides comes with a varity of diffrent themes built in:</p>
-<ul>
-<li>black (default)</li>
-<li>white</li>
-<li>league</li>
-<li>beige</li>
-<li>sky</li>
-<li>night</li>
-<li>serif</li>
-<li>simple</li>
-<li>solarized</li>
-<li>blood</li>
-<li>moon</li>
-<li>css/mattropolis.css</li>
-</ul>
-<p>To activate a theme simply add a theme property in the frontmatter section of your slides:</p>
-<pre><code>---
-theme: night
-
----
-</code></pre>
-<p>if you want to use a custum theme you can do it! Just place the theme in the plugins directory and load them from there.</p>
-<p><strong>Example:</strong></p>
-<p>If your theme file name is <strong>my-theme.css</strong> place it inside your Vaults directory in  <code>.obsidian/plugins/obsidian-advanced-slides/css/</code> subfolder and load it by adding the following line on top of your slides markdown file:</p>
-<pre><code>---
-theme: css/my-theme.css
-
----
-</code></pre>
-<p>You can also load a custom theme directly from the Internet:</p>
-<pre><code>---
-theme: https://revealjs-themes.dzello.com/css/theme/robot-lung.css
-
----
-</code></pre>
-<h1 id="highlight-themes">Highlight Themes</h1>
-<p>All you have learned so far about custom themes could be applied to highlight themes as well. Highlight Themes define how codeblock elements should look. To activate a highlight theme simply add a highlightTheme property in the frontmatter section of your slides:</p>
-<pre><code>---
-highlightTheme: monokai
-
----
-</code></pre>
-<p>By default advanced slides comes with a varity of diffrent highlight themes:</p>
-<ul>
-<li>zenburn (default)</li>
-<li>monokai</li>
-<li>css/vs2015.css</li>
-</ul>
-
+    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">[!tip] This tip has a custom Header
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">This is an Tip with a custom Title
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#75715e">&lt;!-- element style=&#34;width:40%&#34;--&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">
+</span></span></span><span style="display:flex;"><span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">[!warning] 
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">This warning is aligned left
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#75715e">&lt;!-- element style=&#34;width:20%;font-size:24px&#34; align=&#34;left&#34;--&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#111">&lt;</span><span style="color:#f92672">br</span><span style="color:#111">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">
+</span></span></span><span style="display:flex;"><span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">[!error] 
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">Callouts support manipulation through annotations
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#75715e">&lt;!-- element style=&#34;width:20%;font-size:24px&#34; rotate=&#34;15&#34;--&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span> <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;30 30&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;11 68&#34;</span> <span style="color:#75af00">style</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;font-size:36px&#34;</span><span style="color:#111">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">[!example]
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">Here is an Example for an Callout in a Slide. Callouts support dark and white backgrounds and could be sized by annotations
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#111">&lt;</span><span style="color:#f92672">grid</span> <span style="color:#75af00">drag</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;50 100&#34;</span> <span style="color:#75af00">drop</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;50 0&#34;</span> <span style="color:#75af00">bg</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;white&#34;</span> <span style="color:#75af00">pad</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;50px&#34;</span> <span style="color:#75af00">style</span><span style="color:#f92672">=</span><span style="color:#d88200">&#34;font-size:36px&#34;</span><span style="color:#111">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">[!example]
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#00a8c8">&gt; </span><span style="font-style:italic">Here is an Example for an Callout in a Slide. Callouts support dark and white backgrounds and could be sized by annotations
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="color:#111">&lt;/</span><span style="color:#f92672">grid</span><span style="color:#111">&gt;</span>
+</span></span></code></pre></div><p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/callouts.png" alt="Callouts"></p>
 
 
     

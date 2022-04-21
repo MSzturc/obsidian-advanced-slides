@@ -125,5 +125,14 @@
       <description>--- theme: beige highlightTheme: css/vs2015.css  ---  ```mermaid sequenceDiagram  Alice-&amp;gt;&amp;gt;+John: Hello John, how are you?  Alice-&amp;gt;&amp;gt;+John: John, can you hear me?  John--&amp;gt;&amp;gt;-Alice: Hi Alice, I can hear you!  John--&amp;gt;&amp;gt;-Alice: I feel great!  ``` </description>
     </item>
     
+    <item>
+      <title>Callouts</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/callouts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/callouts/</guid>
+      <description>&amp;gt; [!tip] This tip has a custom Header &amp;gt; This is an Tip with a custom Title &amp;lt;!-- element style=&amp;#34;width:40%&amp;#34;--&amp;gt; &amp;gt; [!warning] &amp;gt; This warning is aligned left &amp;lt;!-- element style=&amp;#34;width:20%;font-size:24px&amp;#34; align=&amp;#34;left&amp;#34;--&amp;gt;  &amp;lt;br&amp;gt; &amp;gt; [!error] &amp;gt; Callouts support manipulation through annotations &amp;lt;!-- element style=&amp;#34;width:20%;font-size:24px&amp;#34; rotate=&amp;#34;15&amp;#34;--&amp;gt;  &amp;lt;grid drag=&amp;#34;30 30&amp;#34; drop=&amp;#34;11 68&amp;#34; style=&amp;#34;font-size:36px&amp;#34;&amp;gt; &amp;gt; [!example] &amp;gt; Here is an Example for an Callout in a Slide. Callouts support dark and white backgrounds and could be sized by annotations &amp;lt;/grid&amp;gt;  &amp;lt;grid drag=&amp;#34;50 100&amp;#34; drop=&amp;#34;50 0&amp;#34; bg=&amp;#34;white&amp;#34; pad=&amp;#34;50px&amp;#34; style=&amp;#34;font-size:36px&amp;#34;&amp;gt; &amp;gt; [!</description>
+    </item>
+    
   </channel>
 </rss>

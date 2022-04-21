@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.29% </span>
+                <span class="strong">93.96% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>108/111</span>
+                <span class='fraction'>109/116</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">95.16% </span>
+                <span class="strong">89.39% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>59/62</span>
+                <span class='fraction'>59/66</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.29% </span>
+                <span class="strong">93.96% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>108/111</span>
+                <span class='fraction'>109/116</span>
             </div>
         
             
@@ -288,7 +288,18 @@
 <a name='L223'></a><a href='#L223'>223</a>
 <a name='L224'></a><a href='#L224'>224</a>
 <a name='L225'></a><a href='#L225'>225</a>
-<a name='L226'></a><a href='#L226'>226</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+<a name='L226'></a><a href='#L226'>226</a>
+<a name='L227'></a><a href='#L227'>227</a>
+<a name='L228'></a><a href='#L228'>228</a>
+<a name='L229'></a><a href='#L229'>229</a>
+<a name='L230'></a><a href='#L230'>230</a>
+<a name='L231'></a><a href='#L231'>231</a>
+<a name='L232'></a><a href='#L232'>232</a>
+<a name='L233'></a><a href='#L233'>233</a>
+<a name='L234'></a><a href='#L234'>234</a>
+<a name='L235'></a><a href='#L235'>235</a>
+<a name='L236'></a><a href='#L236'>236</a>
+<a name='L237'></a><a href='#L237'>237</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
@@ -296,16 +307,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">324x</span>
-<span class="cline-any cline-yes">324x</span>
+<span class="cline-any cline-yes">326x</span>
+<span class="cline-any cline-yes">326x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">324x</span>
+<span class="cline-any cline-yes">326x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">339x</span>
-<span class="cline-any cline-yes">339x</span>
+<span class="cline-any cline-yes">341x</span>
+<span class="cline-any cline-yes">341x</span>
 <span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">48x</span>
@@ -335,6 +346,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">48x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">48x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">10x</span>
 <span class="cline-any cline-yes">10x</span>
@@ -409,6 +424,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -550,13 +572,17 @@ export class GridTransformer implements AttributeTransformer {
 				element.addStyle('width', width);
 &nbsp;
 				const flow = element.getAttribute('flow');
-				const [align, alignItems, justifyContent] = this.getAlignment(element.getAttribute('align'), flow);
+				const [align, alignItems, justifyContent, stretch] = this.getAlignment(element.getAttribute('align'), flow);
 				const justifyCtx = element.getAttribute('justify-content') ?? justifyContent;
 &nbsp;
 				element.deleteAttribute('align');
 &nbsp;
 				if (align) {
 					element.addAttribute('align', align, false);
+				}
+&nbsp;
+				<span class="missing-if-branch" title="if path not taken" >I</span>if (stretch) {
+<span class="cstat-no" title="statement not covered" >					element.addClass(stretch);</span>
 				}
 &nbsp;
 				switch (flow) {
@@ -583,66 +609,73 @@ export class GridTransformer implements AttributeTransformer {
 		}
 	}
 &nbsp;
-	getAlignment(input: string, flow: string): [string, string, string] {
+	getAlignment(input: string, flow: string): [string, string, string, string] {
 		const direction = flow ?? 'col';
 &nbsp;
 		switch (input) {
 			case 'topleft':
 				if (direction == 'col') {
-					return ['left', 'flex-start', 'flex-start'];
+					return ['left', 'flex-start', 'flex-start', undefined];
 				} else {
-					return ['left', 'flex-start', 'space-evenly'];
+					return ['left', 'flex-start', 'space-evenly', undefined];
 				}
 			case 'topright':
 				if (direction == 'col') {
-					return ['right', 'flex-end', 'flex-start'];
+					return ['right', 'flex-end', 'flex-start', undefined];
 				} else {
-					return ['right', 'flex-start', 'space-evenly'];
+					return ['right', 'flex-start', 'space-evenly', undefined];
 				}
 			case 'bottomright':
 				if (direction == 'col') {
-					return ['right', 'flex-end', 'flex-end'];
+					return ['right', 'flex-end', 'flex-end', undefined];
 				} else {
-					return ['right', 'flex-end', 'space-evenly'];
+					return ['right', 'flex-end', 'space-evenly', undefined];
 				}
 			case 'bottomleft':
 				if (direction == 'col') {
-					return ['left', 'flex-start', 'flex-end'];
+					return ['left', 'flex-start', 'flex-end', undefined];
 				} else {
-					return ['left', 'flex-end', 'space-evenly'];
+					return ['left', 'flex-end', 'space-evenly', undefined];
 				}
 			case 'left':
 				if (direction == 'col') {
-					return ['left', 'flex-start', 'space-evenly'];
+					return ['left', 'flex-start', 'space-evenly', undefined];
 				} else {
-					return ['left', 'center', 'space-evenly'];
+					return ['left', 'center', 'space-evenly', undefined];
 				}
 			case 'right':
 				if (direction == 'col') {
-					return ['right', 'flex-end', 'space-evenly'];
+					return ['right', 'flex-end', 'space-evenly', undefined];
 				} else {
-					return ['right', 'center', 'space-evenly'];
+					return ['right', 'center', 'space-evenly', undefined];
 				}
 			case 'top':
 				if (direction == 'col') {
-					return [undefined, 'center', 'flex-start'];
+					return [undefined, 'center', 'flex-start', undefined];
 				} else {
-					return [undefined, 'flex-start', 'space-evenly'];
+					return [undefined, 'flex-start', 'space-evenly', undefined];
 				}
 			case 'bottom':
 				if (direction == 'col') {
-					return [undefined, 'center', 'flex-end'];
+					return [undefined, 'center', 'flex-end', undefined];
 				} else {
-					return [undefined, 'flex-end', 'space-evenly'];
+					return [undefined, 'flex-end', 'space-evenly', undefined];
 				}
 &nbsp;
-<span class="branch-8 cbranch-no" title="branch not covered" >			case 'block':</span>
-<span class="branch-9 cbranch-no" title="branch not covered" >			case 'justify':</span>
-<span class="cstat-no" title="statement not covered" >				return ['justify', 'center', 'space-evenly'];</span>
+<span class="branch-8 cbranch-no" title="branch not covered" >			case 'stretch':</span>
+<span class="cstat-no" title="statement not covered" >				if (direction == 'col') {</span>
+<span class="cstat-no" title="statement not covered" >					return [undefined, 'center', 'space-evenly', 'stretch-column'];</span>
+				} else {
+<span class="cstat-no" title="statement not covered" >					return [undefined, 'center', 'space-evenly', 'stretch-row'];</span>
+				}
+&nbsp;
+<span class="branch-9 cbranch-no" title="branch not covered" >			case 'block':</span>
+<span class="branch-10 cbranch-no" title="branch not covered" >			case 'justify':</span>
+<span class="cstat-no" title="statement not covered" >				return ['justify', 'center', 'space-evenly', undefined];</span>
 			case 'center':
 			default:
 				// align - alignItems - justifyContent
-				return [undefined, 'center', 'space-evenly'];
+				return [undefined, 'center', 'space-evenly', undefined];
 		}
 	}
 &nbsp;
@@ -745,7 +778,7 @@ export class GridTransformer implements AttributeTransformer {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Tue Apr 19 2022 13:08:56 GMT+0000 (Coordinated Universal Time)
+                at Thu Apr 21 2022 15:06:46 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
