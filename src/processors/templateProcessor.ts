@@ -5,6 +5,7 @@ import { Options } from 'src/options';
 export class TemplateProcessor {
 	private slideCommentRegex = /<!--\s*(?:\.)?slide.*-->/;
 	private templateCommentRegex = /<!--\s*(?:\.)?slide.*template="\[\[([^\]]+)\].*-->/;
+	private propertyRegex = /:::\s(.*)\s*([^:::]*:::.*)/g;
 
 	private utils: ObsidianUtils;
 	private parser = new CommentParser();
@@ -36,14 +37,37 @@ export class TemplateProcessor {
 	}
 
 	transformSlide(slide: string) {
-		if (this.templateCommentRegex.test(slide)) {
-			const [, file] = this.templateCommentRegex.exec(slide);
-			const templateFile = this.utils.findFile(file);
-			const absoluteTemplateFile = this.utils.absolute(templateFile);
-			const templateContent = this.utils.parseFile(absoluteTemplateFile, null);
-			return templateContent.replaceAll(/<<<Content>>>/g, slide);
-		} else {
+		try {
+			if (this.templateCommentRegex.test(slide)) {
+				const [, file] = this.templateCommentRegex.exec(slide);
+				const templateFile = this.utils.findFile(file);
+				const absoluteTemplateFile = this.utils.absolute(templateFile);
+				let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
+				templateContent = templateContent.replaceAll('<% content %>', slide);
+
+				this.propertyRegex.lastIndex = 0;
+
+				let m;
+				while ((m = this.propertyRegex.exec(slide)) !== null) {
+					if (m.index === this.propertyRegex.lastIndex) {
+						this.propertyRegex.lastIndex++;
+					}
+					let [match, name, content] = m;
+
+					if (name == 'block') continue;
+
+					content = '::: block\n' + content;
+					name = '<% ' + name + ' %>';
+					templateContent = templateContent.replaceAll(name, content);
+					templateContent = templateContent.replaceAll(match, '');
+				}
+				return templateContent;
+			} else {
+				return slide;
+			}
+		} catch (error) {
 			return slide;
 		}
+
 	}
 }
