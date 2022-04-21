@@ -7,6 +7,8 @@ export class TemplateProcessor {
 	private templateCommentRegex = /<!--\s*(?:\.)?slide.*template="\[\[([^\]]+)\].*-->/;
 	private propertyRegex = /:::\s([^\n]+)\s*(.*?:::[^\n]*)/sg;
 
+	private optionalRegex = /<%\?.*%>/g;
+
 	private utils: ObsidianUtils;
 	private parser = new CommentParser();
 
@@ -57,8 +59,18 @@ export class TemplateProcessor {
 					if (name == 'block') continue;
 
 					content = '::: block\n' + content;
+					const optionalName = '<%? ' + name + ' %>';
 					name = '<% ' + name + ' %>';
+					templateContent = templateContent.replaceAll(optionalName, content);
 					templateContent = templateContent.replaceAll(name, content);
+					templateContent = templateContent.replaceAll(match, '');
+				}
+				//Remove optional template variables
+				while ((m = this.optionalRegex.exec(templateContent)) !== null) {
+					if (m.index === this.optionalRegex.lastIndex) {
+						this.optionalRegex.lastIndex++;
+					}
+					const [match] = m;
 					templateContent = templateContent.replaceAll(match, '');
 				}
 				return templateContent;
