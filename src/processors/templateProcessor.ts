@@ -5,7 +5,7 @@ import { Options } from 'src/options';
 export class TemplateProcessor {
 	private slideCommentRegex = /<!--\s*(?:\.)?slide.*-->/;
 	private templateCommentRegex = /<!--\s*(?:\.)?slide.*template="\[\[([^\]]+)\].*-->/;
-	private propertyRegex = /:::\s(.*)\s*([^:::]*:::.*)/g;
+	private propertyRegex = /:::\s([^\n]+)\s*(.*?:::[^\n]*)/sg;
 
 	private utils: ObsidianUtils;
 	private parser = new CommentParser();
