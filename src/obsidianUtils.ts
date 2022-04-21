@@ -56,6 +56,13 @@ export class ObsidianUtils {
 		}
 	}
 
+	absolute(relativePath: string) {
+		if (relativePath) return this.fileSystem.getFullPath(relativePath);
+		else {
+			return null;
+		}
+	}
+
 	findFile(imagePath: string) {
 		let base = '';
 		if (!ImageCollector.getInstance().shouldCollect()) {
@@ -88,8 +95,6 @@ export class ObsidianUtils {
 			return base + imgFile.path;
 		} else {
 			return imagePath;
-
-
 		}
 
 	}
