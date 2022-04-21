@@ -3,6 +3,7 @@
 exports[`Extended Markdown Syntax >  Block Comments 1`] = `
 "<div class=\\"block\\">
 
+
 #### Header
 _and_
 Paragraph content
@@ -14,11 +15,13 @@ Paragraph content
 
 no color
 
-<div class=\\"block\\"> <!-- .element: style=\\"background-color: red\\" -->
+<div class=\\"block\\">
+ <!-- .element: style=\\"background-color: red\\" -->
 
 everything inside this block has red background color
 
-<div class=\\"block\\"> <!-- .element: style=\\"background-color: blue\\" -->
+<div class=\\"block\\">
+ <!-- .element: style=\\"background-color: blue\\" -->
 
 blue
 
