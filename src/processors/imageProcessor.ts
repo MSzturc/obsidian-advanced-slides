@@ -10,6 +10,7 @@ export class ImageProcessor {
 	private markdownImageRegex = /^[ ]{0,3}!\[([^\]]*)\]\((.*?)\)\s?(<!--.*-->)?/im;
 
 	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|svg))\|?([^\]]*)??\]\]\s?(<!--.*-->)?/i;
+	private obsidianImageReferenceRegex = /\[\[(.*(?:jpg|png|jpeg|gif|bmp|svg))\|?([^\]]*)??\]\]/i;
 
 	constructor(utils: ObsidianUtils) {
 		this.utils = utils;
@@ -24,6 +25,10 @@ export class ImageProcessor {
 				if (this.obsidianImageRegex.test(line)) {
 					return this.transformImageString(line);
 				}
+				// Transform referenced images to absolute paths (ex. in bg annotation)
+				if (this.obsidianImageReferenceRegex.test(line)) {
+					return this.transformImageReferenceString(line);
+				}
 				return line;
 			})
 			.map(line => {
@@ -35,6 +40,11 @@ export class ImageProcessor {
 				}
 			})
 			.join('\n');
+	}
+	transformImageReferenceString(line: string): string {
+		const [match, image] = this.obsidianImageReferenceRegex.exec(line);
+		const filePath = this.utils.findFile(image);
+		return line.replaceAll(match, filePath);
 	}
 
 	private transformImageString(line: string) {
