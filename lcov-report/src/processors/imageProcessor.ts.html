@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.18% </span>
+                <span class="strong">86% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>41/44</span>
+                <span class='fraction'>43/50</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">86.95% </span>
+                <span class="strong">83.33% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>20/23</span>
+                <span class='fraction'>20/24</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">90% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>9/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">93.18% </span>
+                <span class="strong">86% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>41/44</span>
+                <span class='fraction'>43/50</span>
             </div>
         
             
@@ -167,7 +167,17 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a>
+<a name='L107'></a><a href='#L107'>107</a>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a>
+<a name='L113'></a><a href='#L113'>113</a>
+<a name='L114'></a><a href='#L114'>114</a>
+<a name='L115'></a><a href='#L115'>115</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -178,6 +188,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-yes">59x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -193,6 +204,10 @@
 <span class="cline-any cline-yes">662x</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">653x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">653x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -204,6 +219,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -283,6 +303,7 @@ export class ImageProcessor {
 	private markdownImageRegex = /^[ ]{0,3}!\[([^\]]*)\]\((.*?)\)\s?(&lt;!--.*--&gt;)?/im;
 &nbsp;
 	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|svg))\|?([^\]]*)??\]\]\s?(&lt;!--.*--&gt;)?/i;
+	private obsidianImageReferenceRegex = /\[\[(.*(?:jpg|png|jpeg|gif|bmp|svg))\|?([^\]]*)??\]\]/i;
 &nbsp;
 	constructor(utils: ObsidianUtils) {
 		this.utils = utils;
@@ -297,6 +318,10 @@ export class ImageProcessor {
 				if (this.obsidianImageRegex.test(line)) {
 					return this.transformImageString(line);
 				}
+				// Transform referenced images to absolute paths (ex. in bg annotation)
+				<span class="missing-if-branch" title="if path not taken" >I</span>if (this.obsidianImageReferenceRegex.test(line)) {
+<span class="cstat-no" title="statement not covered" >					return this.transformImageReferenceString(line);</span>
+				}
 				return line;
 			})
 			.map(line =&gt; {
@@ -308,6 +333,11 @@ export class ImageProcessor {
 				}
 			})
 			.join('\n');
+	}
+<span class="fstat-no" title="function not covered" >	transformImageReferenceString(</span>line: string): string {
+		const [match, image] = <span class="cstat-no" title="statement not covered" >this.obsidianImageReferenceRegex.exec(line);</span>
+		const filePath = <span class="cstat-no" title="statement not covered" >this.utils.findFile(image);</span>
+<span class="cstat-no" title="statement not covered" >		return line.replaceAll(match, filePath);</span>
 	}
 &nbsp;
 	private transformImageString(line: string) {
@@ -382,7 +412,7 @@ export class ImageProcessor {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Thu Apr 21 2022 15:06:46 GMT+0000 (Coordinated Universal Time)
+                at Mon Apr 25 2022 12:53:23 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>

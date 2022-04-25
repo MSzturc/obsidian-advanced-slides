@@ -73,7 +73,7 @@ by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; 	.with-border
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</guid>
       <description>you can change the background by annotating the slide:
-&amp;lt;!-- .slide: data-background=&amp;#34;aquamarine&amp;#34; --&amp;gt; ## Slide with text based background ---  &amp;lt;!-- .slide: data-background=&amp;#34;#ff0000&amp;#34; --&amp;gt; ## Slide with hex based background  ---  &amp;lt;!-- .slide: data-background=&amp;#34;rgb(70, 70, 255)&amp;#34; --&amp;gt; ## Slide with rgb based background  ---  &amp;lt;!-- .slide: data-background=&amp;#34;hsla(315, 100%, 50%, 1)&amp;#34; --&amp;gt; ## Slide with hsl based background  ---  # Slide without background  ---  &amp;lt;!</description>
+&amp;lt;!-- slide bg=&amp;#34;aquamarine&amp;#34; --&amp;gt; ## Slide with text based background ---  &amp;lt;!-- slide bg=&amp;#34;#ff0000&amp;#34; --&amp;gt; ## Slide with hex based background  ---  &amp;lt;!-- slide bg=&amp;#34;rgb(70, 70, 255)&amp;#34; --&amp;gt; ## Slide with rgb based background  ---  &amp;lt;!-- slide bg=&amp;#34;hsla(315, 100%, 50%, 1)&amp;#34; --&amp;gt; ## Slide with hsl based background  ---  # Slide without background  ---  &amp;lt;!</description>
     </item>
     
     <item>

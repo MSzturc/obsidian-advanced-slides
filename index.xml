@@ -40,7 +40,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/menu/</guid>
-      <description>A slideout menu plugin for Advanced Slides to quickly jump to any slide by title.</description>
+      <description>A slideout menu plugin for Advanced Slides to quickly jump to any slide by title.
+To enable Menu you have to enable the Plugin in Advanced Slides Settings </description>
     </item>
     
     <item>
@@ -82,7 +83,8 @@ Concept Grid layouts drag-and-drop is used to size and position content of your 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/overview/</guid>
-      <description>Press the »ESC« or »O« keys to toggle the overview mode on and off. While you&amp;rsquo;re in this mode, you can still navigate between slides, as if you were at 1,000 feet above your presentation. You could also activate Overview Mode by pressing the Overview Button on the bottom right corner.</description>
+      <description>Press the »ESC« or »O« keys to toggle the overview mode on and off. While you&amp;rsquo;re in this mode, you can still navigate between slides, as if you were at 1,000 feet above your presentation. You could also activate Overview Mode by pressing the Overview Button on the bottom right corner.
+To enable Overview you have to enable the Plugin in Advanced Slides Settings </description>
     </item>
     
     <item>
@@ -218,7 +220,7 @@ by using the &amp;lt;style&amp;gt; compoment &amp;lt;style&amp;gt; 	.with-border
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</guid>
       <description>you can change the background by annotating the slide:
-&amp;lt;!-- .slide: data-background=&amp;#34;aquamarine&amp;#34; --&amp;gt; ## Slide with text based background ---  &amp;lt;!-- .slide: data-background=&amp;#34;#ff0000&amp;#34; --&amp;gt; ## Slide with hex based background  ---  &amp;lt;!-- .slide: data-background=&amp;#34;rgb(70, 70, 255)&amp;#34; --&amp;gt; ## Slide with rgb based background  ---  &amp;lt;!-- .slide: data-background=&amp;#34;hsla(315, 100%, 50%, 1)&amp;#34; --&amp;gt; ## Slide with hsl based background  ---  # Slide without background  ---  &amp;lt;!</description>
+&amp;lt;!-- slide bg=&amp;#34;aquamarine&amp;#34; --&amp;gt; ## Slide with text based background ---  &amp;lt;!-- slide bg=&amp;#34;#ff0000&amp;#34; --&amp;gt; ## Slide with hex based background  ---  &amp;lt;!-- slide bg=&amp;#34;rgb(70, 70, 255)&amp;#34; --&amp;gt; ## Slide with rgb based background  ---  &amp;lt;!-- slide bg=&amp;#34;hsla(315, 100%, 50%, 1)&amp;#34; --&amp;gt; ## Slide with hsl based background  ---  # Slide without background  ---  &amp;lt;!</description>
     </item>
     
     <item>
@@ -336,12 +338,57 @@ Here&amp;rsquo;s a simple example to give you a better idea of how it can be use
     </item>
     
     <item>
+      <title></title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/chalkboard/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/chalkboard/readme/</guid>
+      <description>Chalkboard With this plugin you can add a chalkboard to reveal.js. The plugin provides two possibilities to include handwritten notes to your presentation:
+ you can make notes directly on the slides, e.g. to comment on certain aspects, you can open a chalkboard or whiteboard on which you can make notes.  The main use case in mind when implementing the plugin is classroom usage in which you may want to explain some course content and quickly need to make some notes.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/customcontrols/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/customcontrols/readme/</guid>
+      <description>Custom controls This plugin allows to add responsive custom controls to reveal.js which allow arbitrary positioning, layout, and behaviour of the controls.
+Check out the live demo
+Installation Copy the files plugin.js and style.css into the plugin folder of your reveal.js presentation, i.e. plugin/customcontrols and load the plugin as shown below.
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;plugin/customcontrols/style.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;plugin/customcontrols/plugin.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;  &amp;lt;script&amp;gt;  Reveal.initialize({  // ...  plugins: [ RevealCustomControls ],  // .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/menu/contributing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/menu/contributing/</guid>
+      <description>Contributing Bug Reports When reporting a bug make sure to include information about which browser and operating system you are on as well as the necessary steps to reproduce the issue. If possible please include a link to a sample presentation where the bug can be tested.
+Pull Requests  Should follow the coding style of the file you work in Should be made towards the dev branch Should be submitted from a feature/topic branch (not your master)  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/menu/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/menu/readme/</guid>
+      <description>reveal.js-menu A slideout menu plugin for Reveal.js to quickly jump to any slide by title. Also optionally change the theme and set the default transition. Check out the live demo
+Installation Bower Download and install the package in your project:
+bower install reveal.js-menu
+Add the plugin to your presentation, as below.
+&amp;lt;script src=&amp;#34;bower_components/reveal.js-menu/menu.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;  Reveal.initialize({  plugins: [ RevealMenu ]  }); &amp;lt;/script&amp;gt; npm Download and install the package in your project:</description>
+    </item>
+    
+    <item>
       <title>Credits</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/credits/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 410 commits   @actions-user 36 commits   @miluoshi 2 commits   @Michael-Beukman 1 commits   @code-factor 1 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 428 commits   @actions-user 38 commits   @miluoshi 2 commits   @Michael-Beukman 1 commits   @code-factor 1 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
     </item>
     
   </channel>

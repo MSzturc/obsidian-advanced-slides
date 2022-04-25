@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-04-21T15:05:57 UTC">
+<meta name="revised" content="2022-04-25T12:52:40 UTC">
 <title>Slide Backgrounds :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -311,6 +311,12 @@
     </li>
         </ul>
     </li>
+    <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/templates/" class="dd-item
+        ">
+      <div>
+      <a href="/obsidian-advanced-slides/templates/"><i class='fa fa-code' ></i> Templates</a><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+    </li>
     <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/themes/" class="dd-item
         ">
       <div>
@@ -347,6 +353,42 @@
         <div>
           <a href="/obsidian-advanced-slides/plugins/chalkboard/">
             Chalkboard
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/examples/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/obsidian-advanced-slides/examples/">Examples</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/chalkboard/readme/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/examples/consult/plugin/chalkboard/readme/">
+            
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/customcontrols/readme/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/examples/consult/plugin/customcontrols/readme/">
+            
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/menu/contributing/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/examples/consult/plugin/menu/contributing/">
+            
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/menu/readme/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/examples/consult/plugin/menu/readme/">
+            
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
@@ -448,21 +490,21 @@
     
     
     <p>you can change the background by annotating the slide:</p>
-<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- .slide: data-background=&#34;aquamarine&#34; --&gt;</span>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- slide bg=&#34;aquamarine&#34; --&gt;</span>
 </span></span><span style="display:flex;"><span>## Slide with text based background
 </span></span><span style="display:flex;"><span>---
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- .slide: data-background=&#34;#ff0000&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- slide bg=&#34;#ff0000&#34; --&gt;</span>
 </span></span><span style="display:flex;"><span>## Slide with hex based background
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>---
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- .slide: data-background=&#34;rgb(70, 70, 255)&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- slide bg=&#34;rgb(70, 70, 255)&#34; --&gt;</span>
 </span></span><span style="display:flex;"><span>## Slide with rgb based background
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>---
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- .slide: data-background=&#34;hsla(315, 100%, 50%, 1)&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- slide bg=&#34;hsla(315, 100%, 50%, 1)&#34; --&gt;</span>
 </span></span><span style="display:flex;"><span>## Slide with hsl based background
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>---
@@ -471,17 +513,17 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>---
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- .slide: data-background-image=&#34;https://picsum.photos/seed/picsum/800/600&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- slide bg=&#34;https://picsum.photos/seed/picsum/800/600&#34; --&gt;</span>
 </span></span><span style="display:flex;"><span>## Slide with image background
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>---
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- slide bg=&#34;https://picsum.photos/seed/picsum/800/600&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- slide bg=&#34;[[image.jpg]]&#34; --&gt;</span>
 </span></span><span style="display:flex;"><span>## Slide with image background #2
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>---
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- .slide: data-background-image=&#34;https://picsum.photos/seed/picsum/800/600&#34; data-background-opacity=&#34;0.5&#34; --&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- slide bg=&#34;https://picsum.photos/seed/picsum/800/600&#34; data-background-opacity=&#34;0.5&#34; --&gt;</span>
 </span></span><span style="display:flex;"><span>## with opacity
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>0.5 ≙ 50% opacity
@@ -506,19 +548,19 @@
 	<div class="slides">
 		
 
-<section data-background="aquamarine" class="has-light-background present">
+<section bg="aquamarine" class="has-light-background present">
 <h2 id="slide-with-text-based-background">Slide with text based background</h2>
 </section>
 
-<section data-background="#ff0000" class="has-dark-background">
+<section bg="#ff0000" class="has-dark-background">
 <h2 id="slide-with-hex-based-background">Slide with hex based background</h2>
 </section>
 
-<section data-background="rgb(70, 70, 255)" class="has-dark-background">
+<section bg="rgb(70, 70, 255)" class="has-dark-background">
 <h2 id="slide-with-rgb-based-background">Slide with rgb based background</h2>
 </section>
 
-<section data-background="hsla(315, 100%, 50%, 1)" class="has-dark-background">
+<section bg="hsla(315, 100%, 50%, 1)" class="has-dark-background">
 <h2 id="slide-with-hsl-based-background">Slide with hsl based background</h2>
 </section>
 

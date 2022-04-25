@@ -12,7 +12,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/menu/</guid>
-      <description>A slideout menu plugin for Advanced Slides to quickly jump to any slide by title.</description>
+      <description>A slideout menu plugin for Advanced Slides to quickly jump to any slide by title.
+To enable Menu you have to enable the Plugin in Advanced Slides Settings </description>
     </item>
     
     <item>
@@ -21,7 +22,8 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/overview/</guid>
-      <description>Press the »ESC« or »O« keys to toggle the overview mode on and off. While you&amp;rsquo;re in this mode, you can still navigate between slides, as if you were at 1,000 feet above your presentation. You could also activate Overview Mode by pressing the Overview Button on the bottom right corner.</description>
+      <description>Press the »ESC« or »O« keys to toggle the overview mode on and off. While you&amp;rsquo;re in this mode, you can still navigate between slides, as if you were at 1,000 feet above your presentation. You could also activate Overview Mode by pressing the Overview Button on the bottom right corner.
+To enable Overview you have to enable the Plugin in Advanced Slides Settings </description>
     </item>
     
     <item>

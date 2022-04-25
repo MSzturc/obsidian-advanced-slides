@@ -46,21 +46,23 @@
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/links/</loc>
   </url><url>
-    <loc>https://mszturc.github.io/obsidian-advanced-slides/themes/</loc>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/templates/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/embeds/</loc>
   </url><url>
-    <loc>https://mszturc.github.io/obsidian-advanced-slides/yaml/</loc>
-  </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/inlinestyling/</loc>
+  </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/themes/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/blockquotes/</loc>
   </url><url>
-    <loc>https://mszturc.github.io/obsidian-advanced-slides/plugins/</loc>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/yaml/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/inlinecode/</loc>
+  </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/plugins/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/speakernotes/</loc>
   </url><url>
@@ -84,11 +86,21 @@
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/callouts/</loc>
   </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/chalkboard/readme/</loc>
+  </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/customcontrols/readme/</loc>
+  </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/menu/contributing/</loc>
+  </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/menu/readme/</loc>
+  </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/categories/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/credits/</loc>
+  </url><url>
+    <loc>https://mszturc.github.io/obsidian-advanced-slides/examples/</loc>
   </url><url>
     <loc>https://mszturc.github.io/obsidian-advanced-slides/tags/</loc>
   </url>
