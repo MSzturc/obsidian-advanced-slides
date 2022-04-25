@@ -1,7 +1,7 @@
 +++
 title = "Themes"
 description = ""
-weight = 5
+weight = 6
 alwaysopen = false
 pre ="<i class='fa fa-paint-brush' ></i> "
 +++
@@ -19,6 +19,7 @@ Advanced Slides comes with a varity of diffrent themes built in:
 - solarized
 - blood
 - moon
+- consult
 - css/mattropolis.css
 
 To activate a theme simply add a theme property in the frontmatter section of your slides:
