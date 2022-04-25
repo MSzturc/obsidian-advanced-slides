@@ -8,14 +8,11 @@ pre ="<i class='fa fa-wrench' ></i> "
 The following steps are here to help you to install Advanced Slides Plugin for Obsidian. If you never installed a plguin at all, we strongly suggest you to read the guideline on Community Plugins. [Obsidian Documentation on Community Plugins](https://help.obsidian.md/Advanced+topics/Community+plugins).
 <!--more-->
 
-## with BRAT
-* Add `MSzturc/obsidian-advanced-slides` to the beta Plugins in BRAT
+## With Community Plugins
+* Search for `Advanced Slides` in Community Plugins and hit `install` and `enable`
 
-## manually
-* Download obsidian-advanced-slides.zip from [github](https://github.com/MSzturc/obsidian-advanced-slides/releases), extract it in your Vault in  `/.obsidian/plugins/obsidian-advanced-slides/` folder.
+{{%alert%}} While Installation Advanced Slides will download the runtime to create & display Slide Presentations. Make sure that your VPN/Proxy allows https connections on `github.com`.{{%/alert%}}
 
-## Community Plugins
-* A [pull request](https://github.com/obsidianmd/obsidian-releases/pull/682) for inclusion in the community plugins has been made, but is still waiting to be accepted.
 
 ## Configuration
 
