@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title></title>
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/consult.css" id="theme" />
+    <link rel="stylesheet" href="css/vs2015.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="plugin/customcontrols/style.css">
+	<link rel="stylesheet" href="plugin/chalkboard/style.css">
+
+
+    <script defer src="dist/fontawesome/all.min.js"></script>
+
+	<script type="text/javascript">
+		var forgetPop = true;
+		function onPopState(event) {
+			if(forgetPop){
+				forgetPop = false;
+			} else {
+				parent.postMessage(event.target.location.href, "app://obsidian.md");
+			}
+        }
+		window.onpopstate = onPopState;
+		window.onmessage = event => {
+			if(event.data == "reload"){
+				window.document.location.reload();
+			}
+			forgetPop = true;
+		}
+
+		function fitElements(){
+			const itemsToFit = document.getElementsByClassName('fitText');
+			for (const item in itemsToFit) {
+				if (Object.hasOwnProperty.call(itemsToFit, item)) {
+					var element = itemsToFit[item];
+					fitElement(element,1, 1000);
+					element.classList.remove('fitText');
+				}
+			}
+		}
+
+		function fitElement(element, start, end){
+
+			const size = (end + start) / 2;
+			element.style.fontSize = `${size}px`;
+
+			if(Math.abs(start - end) < 1){
+				return;
+			}
+
+			if(element.scrollHeight > element.offsetHeight){
+				fitElement(element, start, size);
+			} else {
+				fitElement(element, size, end);
+			}		
+		}
+
+
+		document.onreadystatechange = () => {
+			fitElements();
+			if (document.readyState === 'complete') {
+				if (window.location.href.indexOf("?export") != -1){
+					parent.postMessage(event.target.location.href, "app://obsidian.md");
+				}
+				if (window.location.href.indexOf("print-pdf") != -1){
+					let stateCheck = setInterval(() => {
+						clearInterval(stateCheck);
+						window.print();
+					}, 250);
+				}
+			}
+	};
+
+
+        </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template"><!-- .slide: class="has-light-background drop" data-background-color="white" -->
+<div class="reset-margin stretch-column" style="position: absolute; left: 0px; top: 0px; height: 297px; min-height: 297px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Consult/assets/Title-Wide.png" alt="" ></img></p>
+
+</div>
+
+<div class="reset-margin stretch-column" style="position: absolute; left: 0px; top: 378px; height: 135px; min-height: 135px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+
+<!-- .slide: template="tpl-con-title" -->
+
+## Basisprozesse beim Beraten und Entscheiden in Teams
+<div class="block">
+
+#### Matthäus Szturc
+</div>
+
+
+</div>
+
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="has-light-background reset-margin" style="background-color: white; padding: 0 20px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 54px; min-height: 54px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### _**Agenda**_
+</div>
+</div>
+
+<div class="has-light-background reset-margin" style="border-radius: 15px; background-color: white; position: absolute; left: 28.799999999999997px; top: 81px; height: 378px; min-height: 378px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 48px; top: 91.80000000000001px; height: 356.40000000000003px; min-height: 356.40000000000003px; width: 864px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<!-- .slide: class="drop" template="tpl-con-default-box" -->
+
+
+
+<div class="block">
+
+1.  Wie wichtig sind Team-Meetings?
+2.  Die Basisprozesse bein Problemlösen ind Team-Meetings
+3.  Mindfulness beim Umgang mit den Basisprozessen beim Problemlösen
+4.  Übungen
+5.  Quellenhinweise
+</div><!-- .element: style="font-size: 18px; font-weight: 600; line-height: 1.7; padding: 20px 0; box-sizing: border-box" -->
+
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="reset-margin" style="background: radial-gradient(#EBC04C, #E07E36); position: absolute; left: 0px; top: 0px; height: 540px; min-height: 540px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+
+<!-- .slide: class="drop" template="tpl-con-splash" -->
+
+# **1. Wie wichtig sind<br>Team-Meetings**
+
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="has-light-background reset-margin" style="background-color: white; padding: 0 20px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 54px; min-height: 54px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### **Meine Erfahrungen mit Besprechungen in Gruppen I**
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 48px; top: 91.80000000000001px; height: 356.40000000000003px; min-height: 356.40000000000003px; width: 864px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+<!-- .slide: class="drop" template="tpl-con-default-slide" -->
+
+
+
+Selbst-Assessment: Bitte schreibe Deine Einschätzung auf:
+
+
+|                                              | Wie viel Zeit verbringst Du ungefähr in Gruppen- Besprechungen: wöchentlich, monatlich? 0% - 100% | Wie zufriedenstellend verlaufen diese Besprechungen? 0% - 100% | Wie hoch ist der Energielevel der TeilnehmerInnen 0% - 100% |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | ----------------------------------------------------------- |
+| Teammeetings mit meinem Vorgesetzten         |                                                                                                   |                                                                |                                                             |
+| Teammeetings mit meinen Mitarbeiter:innen    |                                                                                                   |                                                                |                                                             |
+| Teammeetings mit anderen Kollegen, Kunden... |                                                                                                   |                                                                |                                                             |
+
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="has-light-background reset-margin" style="background-color: white; padding: 0 20px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 54px; min-height: 54px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### **Meine Erfahrungen mit Besprechungen in Gruppen II**
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 48px; top: 91.80000000000001px; height: 356.40000000000003px; min-height: 356.40000000000003px; width: 864px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+<!-- .slide: class="drop" template="tpl-con-default-slide" -->
+
+
+
+Wie viel Zeit wird in den Teambesprechungen verwendet für Information, Beratung, Entscheidungsfindung?
+
+
+|                                              | Informationsprozesse<br>Ziel: Wissen weitergeben 0% - 100% | Beratungsprozesse<br>Ziel: Situationen einschätzen und beurteilen 0% - 100% | Prozesse der Entscheidungfindung<br>Ziel: Handeln 0% - 100% |
+| -------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| Teammeetings mit meinem Vorgesetzten         |                                                           |                                                                            |                                                             |
+| Teammeetings mit meinen Mitarbeiter:innen    |                                                           |                                                                            |                                                             |
+| Teammeetings mit anderen Kollegen, Kunden... |                                                           |                                                                            |                                                             |
+
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="reset-margin" style="background: radial-gradient(#EBC04C, #E07E36); position: absolute; left: 0px; top: 0px; height: 540px; min-height: 540px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+
+<!-- .slide: class="drop" template="tpl-con-splash" -->
+
+# **2. Die Basisprozesse beim Beraten und Entscheiden**
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="has-light-background reset-margin" style="background-color: white; padding: 0 20px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 54px; min-height: 54px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### _**Die Basisprozesse in Team-Meetings**_
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 48px; top: 91.80000000000001px; height: 356.40000000000003px; min-height: 356.40000000000003px; width: 864px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+<!-- .slide: class="drop" template="tpl-con-default-slide" -->
+
+
+
+</div>block
+<p style="line-height: 0" class="reset-paragraph"><img src="Consult/assets/Basisprozess.png" alt="" ></img></p>
+
+</div><!-- .element: style="height: 85%" align="center" -->
+
+
+
+
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+###### Quelle: Ballreich, R.: Problemlösen im Dialog.<br>In: Agogik Nr. 4, December 2000. P. 1-68
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="has-light-background reset-margin" style="background-color: white; padding: 0 20px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 54px; min-height: 54px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### _**Die Basisprozesse bein Problemlösen in Team-Meetings**_
+</div>
+</div>
+
+<div class="has-light-background reset-margin" style="border-radius: 15px; background-color: white; position: absolute; left: 662.4px; top: 81px; height: 405px; min-height: 405px; width: 268.8px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 672px; top: 91.80000000000001px; height: 383.40000000000003px; min-height: 383.40000000000003px; width: 249.6px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+**Organisatorisch-methodische Prozesse**
+- Den äußeren Rahmen gestalten: Raum, Zeit, Teilnehmer, Technik, Verpflegung
+- Besprechungsthemen planen: Einladung, Agenda
+- Moderation
+- Protokoll, Monitoring der
+Umsetzungsschritte
+**Denkprozesse**
+- Informationsprozesse
+- Beratungsprozesse
+- Entscheidungsprozess
+**Psychosoziale Prozesse**
+- Team-Klima
+- Gesprächskultur
+- Begegnungskultur
+- Konfliktkultur
+- Gruppendynamische Prozesse
+**Lernprozesse**
+- Lernen durch Prozess-Wahrnehmung und Prozess-Reflexion
+
+</div><!-- .element: style="font-size: 13px" class="small-indent" align="left" -->
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 28.799999999999997px; top: 81px; height: 378px; min-height: 378px; width: 614.4px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Consult/assets/Basisprozess.png" alt="" ></img></p>
+
+</div>
+
+</div>
+
+
+<!-- .slide: class="drop" template="tpl-con-2-1-box" -->
+
+
+
+
+
+<style>
+
+.small-indent > ul { 
+   padding-left: 1em;
+}
+
+</style>
+
+
+
+
+
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+###### Quelle: Ballreich, R.: Problemlösen im Dialog. In: Agogik Nr. 4, December 2000. P. 1-68
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="reset-margin" style="background: radial-gradient(#EBC04C, #E07E36); position: absolute; left: 0px; top: 0px; height: 540px; min-height: 540px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+
+<!-- .slide: class="drop" template="tpl-con-splash" -->
+
+# **3. Mindfulness beim Umgang mit den Basisprozessen beim Beraten und Entscheiden in Teams**<!-- .element: style="padding: 25px; box-sizing: border-box" -->
+
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="has-light-background reset-margin" style="background-color: white; padding: 0 20px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 54px; min-height: 54px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### _**Mindfulness im Umgang mit den Basisprozessen beim Problemlösen**_
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 28.799999999999997px; top: 81px; height: 378px; min-height: 378px; width: 518.4px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+<p style="line-height: 0" class="reset-paragraph"><img src="Consult/assets/ReizReaktion.png" alt="" ></img></p>
+
+</div><!-- .element: style="padding: 0 0 0 20px; box-sizing: border-box" -->
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 576px; top: 81px; height: 378px; min-height: 378px; width: 345.59999999999997px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+<div class="block">
+
+1. Die Basisprozesse unterscheiden und dabei die einzelnen Prozesse im Kontext des Ganzen sehen
+
+2. Jeden Prozess in seiner Entfaltung differenziert beobachten und die Gestaltungsmuster verstehen
+
+3. Die Wechselwirkungen zwischen den einzelnen Prozessen beobachten und verstehen
+
+4. Bewusste Gestaltung jedes Prozesses durch situativ passende Methoden
+</div><!-- .element: style="padding: 80px 0; box-sizing: border-box" -->
+
+</div>
+
+
+<!-- .slide: class="drop" template="tpl-con-3-2" -->
+
+
+
+
+
+
+
+
+
+
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+###### Quelle: Ballreich, R. (2009): Wege aus der Stressfalle. In: Ballreich, R./Held, W./Leschke, M. (2009): Stress-Balance. S. 6-60. Esslingen
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="reset-margin" style="background: radial-gradient(#EBC04C, #E07E36); position: absolute; left: 0px; top: 0px; height: 540px; min-height: 540px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+
+
+<!-- .slide: class="drop" template="tpl-con-splash" -->
+
+# **4. Übungen**
+
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="has-light-background reset-margin" style="background-color: white; padding: 0 20px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 54px; min-height: 54px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### _**Übung 1: Untersuchung der drei Basisprozesse**_
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 48px; top: 91.80000000000001px; height: 356.40000000000003px; min-height: 356.40000000000003px; width: 864px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+<!-- .slide: class="drop" template="tpl-con-default-slide" -->
+
+
+
+<div class="block">
+
+1.  Klärt bitte die Moderationsverantwortung und schafft Euch eine Arbeitsumgebung<br><br>
+3.  Untersucht bitte anhand der nachfolgend abgebildeten Matrix die Stärken und Schwächen von typischen Meetings, die ihr erlebt habt. Tragt dazu Stichworte zusammen und visualisiert Euer Gespräch auf der Pinnwand in der Matrix<br><br>
+4. Nutzt bitte die Dreischrittmethode und die dazugehörenden Einstellungen und Haltungen
+</div>
+
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section><section  data-markdown><script type="text/template"><div class="has-light-background reset-margin" style="background-color: white; padding: 0 20px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 54px; min-height: 54px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly" align="left">
+
+ <div class="block">
+
+### _**Untersuchung typischer Meetings**_
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 48px; top: 91.80000000000001px; height: 356.40000000000003px; min-height: 356.40000000000003px; width: 864px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start" align="left">
+
+
+
+<!-- .slide: class="drop" template="tpl-con-default-slide" -->
+
+
+
+| Die drei Basisprozesse in Meetings                                                                                          | Wie haben wir die **organisatorisch- methodischen Prozesse** gestaltet? | Wie haben wir die **Denkprozesse** gestaltet? | Wie haben wir die **psychosozialen Prozesse** gestaltet? | Wie haben wir die **Lernprozesse** gestaltet? |
+| --------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------- | -------------------------------------------------------- | --------------------------------------------- | 
+| **Positiver Blick**: Was war positiv daran, wie die drei Prozessebenen gestaltet wurden?                                    |                                                                         |                                               |                                                          |                                               |
+| **Kritischer Blick**: Was war nicht so positiv daran, wie die drei Prozessebenen gestaltet wurden?                          |                                                                         |                                               |                                                          |                                               |
+| **Kreativer Blick**: Was könnte konkret getan werden, um die Qualität der drei Basisprozesse in den Meetings zu verbessern? |                                                                         |                                               |                                                          |                                               |
+
+
+
+
+
+
+
+</div>
+
+<style>
+.horizontal_dotted_line{
+  border-bottom: 2px dotted gray;
+} 
+} 
+</style>
+
+<div class="horizontal_dotted_line reset-margin" style="position: absolute; left: 28.799999999999997px; top: 507.6px; height: 0px; min-height: 0px; width: 902.4px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+</div>
+
+<div class="reset-margin" style="padding: 0 30px; box-sizing: border-box; position: absolute; left: 0px; top: 345.6px; height: 162px; min-height: 162px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end" align="left">
+
+<div class="block">
+
+###### Quelle: Ballreich, R. (2009): Wege aus der Stressfalle. In: Ballreich, R./Held, W./Leschke, M. (2009): Stress-Balance. S. 6-60. Esslingen
+</div>
+</div>
+
+<div class="reset-margin" style="position: absolute; left: 0px; top: 507.6px; height: 32.400000000000006px; min-height: 32.400000000000006px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly" >
+
+###### © 2022 Lernende Organisation<!-- .element: style="font-weight: 300" -->
+</div></script></section></div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script src="plugin/zoom/zoom.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/math/math.js"></script>
+	<script src="plugin/mermaid/mermaid.js"></script>
+	<script src="plugin/menu/menu.js"></script>
+	<script src="plugin/customcontrols/plugin.js"></script>
+	<script src="plugin/chalkboard/plugin.js"></script>
+
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath.MathJax3,
+		  RevealMermaid,
+		  RevealCustomControls,
+		  RevealMenu,
+		  RevealChalkboard, 
+        ],
+
+		mathjax3: {
+			mathjax: 'plugin/math/mathjax/tex-mml-chtml.js',
+		},
+
+		customcontrols: {
+			controls: [
+				{id: 'toggle-overview',
+				title: 'Toggle overview (O)',
+				icon: '<i class="fa fa-th"></i>',
+				action: 'Reveal.toggleOverview();'
+				},
+				{ icon: '<i class="fa fa-pen-square"></i>',
+				title: 'Toggle chalkboard (B)',
+				action: 'RevealChalkboard.toggleChalkboard();'
+				},
+				{ icon: '<i class="fa fa-pen"></i>',
+				title: 'Toggle notes canvas (C)',
+				action: 'RevealChalkboard.toggleNotesCanvas();'
+				},
+			]
+		},
+		menu: {
+			loadIcons: false
+		}
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"width":960,"height":540,"margin":0,"maxScale":4,"controls":true,"progress":true,"slideNumber":true,"transition":"fade","transitionSpeed":"normal"}, queryOptions);
+    </script>
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
