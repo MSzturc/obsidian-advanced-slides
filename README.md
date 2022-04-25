@@ -51,6 +51,11 @@ Advanced Slides is the perfect slide deck extension for <a href="https://obsidia
 - 🌈 [Up Next](https://github.com/MSzturc/obsidian-advanced-slides/projects/1)
 
 --- 
+
+<div align="center">
+
+If you like Advanced Slides and want to support my work, I would appreciate a <a href="https://github.com/sponsors/MSzturc">donation</a>
+</div>
 <div align="center">
   MIT licensed | Copyright © 2021 Matthäus Szturc
 </div>
