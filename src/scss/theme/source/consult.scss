@@ -1,0 +1,58 @@
+/**
+ * Mattropolis theme for reveal.js.
+ *
+ * Copyright (C) 2021 Matthäus Szturc, https://github.com/MSzturc
+ */
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #E6E7E7;
+
+$mainColor: #595C5D;
+$headingColor: #595C5D;
+
+$mainFontSize: 16px;
+    
+$mainFont: 'Calibri', Helvetica, sans-serif;
+$headingFont: 'Calibri', Helvetica, sans-serif;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: #42affa;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 3.75em;
+$heading2Size: 1.875em;
+$heading3Size: 1.5em;
+$heading4Size: 1.0em;
+$heading5Size: 0.75em;
+$heading6Size: 0.625em;
+
+$heading5FontWeight: 400;
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color(#595C5D);
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.reveal table th, .reveal table td {
+    vertical-align: top;
+}
+
+.reveal table th, .reveal table td {
+    border-left: 1px solid;
+}
+
+.reveal table th:first-child, .reveal table td:first-child {
+    border-left: 0;
+}
+
