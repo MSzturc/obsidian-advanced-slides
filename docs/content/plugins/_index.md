@@ -1,7 +1,7 @@
 +++
 title = "Plugins"
 description = ""
-weight = 7
+weight = 8
 alwaysopen = false
 pre ="<i class='fa fa-plug' ></i> "
 +++

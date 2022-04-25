@@ -1,7 +1,7 @@
 +++
 title = "Frontmatter Options"
 description = ""
-weight = 6
+weight = 7
 alwaysopen = false
 pre ="<i class='fa fa-hashtag' ></i> "
 +++
