@@ -7,6 +7,121 @@ exports[`Basic Markdown Syntax > Blockquotes 1`] = `
 "
 `;
 
+exports[`Basic Markdown Syntax > Callouts 1`] = `
+"<div class=\\"callout callout-color2\\">
+<div class=\\"callout-title\\">
+<div class=\\"callout-icon\\">
+
+<i class=\\"fas fa-fire-alt\\" ></i>
+
+</div>
+<div class=\\"callout-title-inner\\">
+
+This tip has a custom Header
+
+</div>
+</div>
+<div class=\\"callout-content\\">
+
+This is an Tip with a custom Title
+
+</div>
+</div>
+	<!-- .element: style=\\"width: 40%\\" -->
+	
+<div class=\\"callout callout-color5\\">
+<div class=\\"callout-title\\">
+<div class=\\"callout-icon\\">
+
+<i class=\\"fas fa-exclamation-triangle\\" ></i>
+
+</div>
+<div class=\\"callout-title-inner\\">
+
+Warning
+
+</div>
+</div>
+<div class=\\"callout-content\\">
+
+This warning is aligned left
+
+</div>
+</div>
+	<!-- .element: style=\\"width: 20%; font-size: 24px\\" align=\\"left\\" -->
+	
+	<br>
+	
+<div class=\\"callout callout-color7\\">
+<div class=\\"callout-title\\">
+<div class=\\"callout-icon\\">
+
+<i class=\\"fas fa-bolt\\" ></i>
+
+</div>
+<div class=\\"callout-title-inner\\">
+
+Error
+
+</div>
+</div>
+<div class=\\"callout-content\\">
+
+Callouts support manipulation through annotations
+
+</div>
+</div>
+	<!-- .element: style=\\"width: 20%; font-size: 24px; transform: rotate(15deg)\\" -->
+	
+	<div class=\\"reset-margin\\" style=\\"font-size: 36px; position: absolute; left: 105.6px; top: 476px; height: 210px; min-height: 210px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+
+<div class=\\"callout callout-color8\\">
+<div class=\\"callout-title\\">
+<div class=\\"callout-icon\\">
+
+<i class=\\"fas fa-list\\" ></i>
+
+</div>
+<div class=\\"callout-title-inner\\">
+
+Example
+
+</div>
+</div>
+<div class=\\"callout-content\\">
+
+Here is an Example for an Callout in a Slide. Callouts support dark and white backgrounds and could be sized by annotations
+
+</div>
+</div>
+	</div>
+	
+	<div class=\\"has-light-background reset-margin\\" style=\\"font-size: 36px; background-color: white; padding: 50px; box-sizing: border-box; position: absolute; left: 480px; top: 0px; height: 700px; min-height: 700px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+
+<div class=\\"callout callout-color9\\">
+<div class=\\"callout-title\\">
+<div class=\\"callout-icon\\">
+
+<i class=\\"fas fa-quote-left\\" ></i>
+
+</div>
+<div class=\\"callout-title-inner\\">
+
+Cite
+
+</div>
+</div>
+<div class=\\"callout-content\\">
+
+Here is an Cite for an Callout in a Slide. Callouts support dark and white backgrounds and could be sized by annotations
+
+</div>
+</div>
+	</div>
+<!-- .slide: class=\\"drop\\" -->
+"
+`;
+
 exports[`Basic Markdown Syntax > Embeds 1`] = `
 "# Notes about Obsidian
 A knowledge base that works on local Markdown files
