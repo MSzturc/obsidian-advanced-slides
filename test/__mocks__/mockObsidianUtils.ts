@@ -21,4 +21,12 @@ when(MockedObsidianUtils.parseFile(anyString(), anything())).thenCall((arg1, arg
 
 when(MockedObsidianUtils.getVaultName()).thenReturn('test-vault');
 
+when(MockedObsidianUtils.findFile('template')).thenReturn('templateMock');
+
+when(MockedObsidianUtils.absolute('templateMock')).thenReturn('template');
+
+when(MockedObsidianUtils.parseFile('template', anything())).thenCall(arg => {
+	throw new Error('Parameter not mocked: ' + arg);
+});
+
 export const obsidianUtils: ObsidianUtils = instance(MockedObsidianUtils);
