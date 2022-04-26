@@ -478,3 +478,28 @@ test('Grid Component > Attributes > Alignment', () => {
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
+
+test('Grid Component > Attributes > Alignment > Stretch > Row', () => {
+	const input = `<grid drag="100 45" drop="top" flow="row" align="stretch">
+	![](https://picsum.photos/id/978/150/150)
+	![](https://picsum.photos/id/978/150/150)
+	![](https://picsum.photos/id/978/150/150)
+	</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+test('Grid Component > Attributes > Alignment > Stretch > Col', () => {
+	const input = `<grid drag="100 55" drop="bottom" flow="col" align="stretch">
+	![](https://picsum.photos/id/978/150/150)
+	![](https://picsum.photos/id/978/150/150)
+	</grid>`;
+
+	const { options, markdown } = prepare(input);
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
