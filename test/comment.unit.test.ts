@@ -86,6 +86,18 @@ test('Parse Comment with bg property', () => {
 	expect(parsed).toStrictEqual(expected);
 });
 
+test('Parse Comment with bg image property', () => {
+	YamlStore.getInstance().options = getSlideOptions({});
+
+	const parser = new CommentParser();
+
+	const input = `<!-- slide bg="[[Image.png]]" -->`;
+	const parsed = parser.parseLine(input);
+
+	const expected = Comment.of('slide', [], [], new Map<string, string>([['data-background-image', '[[Image.png]]']]));
+	expect(parsed).toStrictEqual(expected);
+});
+
 test('Parse Slide Attribute without Value', () => {
 	YamlStore.getInstance().options = getSlideOptions({});
 	const parser = new CommentParser();
