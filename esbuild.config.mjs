@@ -62,6 +62,12 @@ function build() {
                 }),
                 copy.default({
                     assets: {
+                        from: ['src/autoComplete/*'],
+                        to: ['./autoComplete/'],
+                    }
+                }),
+                copy.default({
+                    assets: {
                         from: ['node_modules/reveal.js/dist/*'],
                         to: ['./dist'],
                     }

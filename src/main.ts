@@ -155,7 +155,33 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			});
 
 			this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
+
+
+			this.app.workspace.onLayoutReady(() => {
+				this.activateAutoComplete();
+			});
+
+			// eslint-disable-next-line no-empty
 		} catch (err) { }
+	}
+	async activateAutoComplete() {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		const vcAPI = (this.app as any).plugins.plugins["various-complements"];
+		if (vcAPI) {
+			try {
+				const dictRegistered = await vcAPI.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "absent");
+				if (!dictRegistered) {
+					vcAPI.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
+					vcAPI.settings.maxNumberOfSuggestions = 15;
+					vcAPI.settings.enableCustomDictionaryComplement = true;
+					vcAPI.settings.caretLocationSymbolAfterComplement = "<CARET>";
+				}
+
+				// eslint-disable-next-line no-empty
+			} catch (err) {
+				console.error(err);
+			}
+		}
 	}
 
 	getViewInstance(): RevealPreviewView {
