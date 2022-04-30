@@ -439,7 +439,7 @@ This guide provides a quick reference to the full set of attributes that can be 
 - **drop**="x y | topleft | top | topright | left | center | right | bottomleft | bottom | bottomright"
 - **flow**="col | row"
 - **bg**="color name | #425232 | rgb(255, 99, 71) | hsl(0, 100%, 50%)"
-- **pad**="all sides | top bottom | top right bottom left"
+- **pad**="all sides | vertical horizontal | top right bottom left"
 - **align**="left | right | center | justify | block | top | bottom | topleft | topright | bottomleft | bottomright | stretch"
 - **border**="width style color"
 - **animate**="fadeIn | fadeOut | slideRightIn | slideLeftIn | slideUpIn | slideDownIn | slideRightOut | slideLeftOut | slideUpOut | slideDownOut | scaleUp | scaleUpOut | scaleDown | scaleDownOut | slower | faster"
