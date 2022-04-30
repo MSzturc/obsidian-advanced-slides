@@ -169,7 +169,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		const vcAPI = (this.app as any).plugins.plugins["various-complements"];
 		if (vcAPI) {
 			try {
-				const dictRegistered = await vcAPI.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "absent");
+				const dictRegistered = await vcAPI.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
 				if (!dictRegistered) {
 					vcAPI.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
 					vcAPI.settings.maxNumberOfSuggestions = 15;
