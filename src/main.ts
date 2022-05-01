@@ -166,17 +166,17 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 	async activateAutoComplete() {
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		const vcAPI = (this.app as any).plugins.plugins["various-complements"];
-		if (vcAPI) {
+		const vcPlugin = (this.app as any).plugins.plugins["various-complements"];
+		if (vcPlugin) {
 			try {
-				if (vcAPI.api.isFeatureSupported('ensureCustomDictionaryPath')) {
-					const dictRegistered = await vcAPI.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
+				if (vcPlugin.api.isFeatureSupported('ensureCustomDictionaryPath')) {
+					const dictRegistered = await vcPlugin.api.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
 					if (!dictRegistered) {
-						vcAPI.api.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
-						vcAPI.settings.maxNumberOfSuggestions = 15;
-						vcAPI.settings.enableCustomDictionaryComplement = true;
-						vcAPI.settings.insertAfterCompletion = false;
-						vcAPI.settings.caretLocationSymbolAfterComplement = "<CARET>";
+						vcPlugin.api.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
+						vcPlugin.settings.maxNumberOfSuggestions = 15;
+						vcPlugin.settings.enableCustomDictionaryComplement = true;
+						vcPlugin.settings.insertAfterCompletion = false;
+						vcPlugin.settings.caretLocationSymbolAfterComplement = "<CARET>";
 					}
 				}
 				// eslint-disable-next-line no-empty
