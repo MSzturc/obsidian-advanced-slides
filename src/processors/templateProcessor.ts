@@ -59,8 +59,8 @@ export class TemplateProcessor {
 					if (name == 'block') continue;
 
 					content = '::: block\n' + content;
-					const optionalName = '<%? ' + name + ' %>';
-					name = '<% ' + name + ' %>';
+					const optionalName = '<%? ' + name.trim() + ' %>';
+					name = '<% ' + name.trim() + ' %>';
 					templateContent = templateContent.replaceAll(optionalName, content);
 					templateContent = templateContent.replaceAll(name, content);
 					templateContent = templateContent.replaceAll(match, '');
