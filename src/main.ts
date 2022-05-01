@@ -175,6 +175,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 						vcAPI.api.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
 						vcAPI.settings.maxNumberOfSuggestions = 15;
 						vcAPI.settings.enableCustomDictionaryComplement = true;
+						vcAPI.settings.insertAfterCompletion = false;
 						vcAPI.settings.caretLocationSymbolAfterComplement = "<CARET>";
 					}
 				}
