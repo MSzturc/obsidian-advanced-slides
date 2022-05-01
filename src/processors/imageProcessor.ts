@@ -9,8 +9,8 @@ export class ImageProcessor {
 
 	private markdownImageRegex = /^[ ]{0,3}!\[([^\]]*)\]\((.*?)\)\s?(<!--.*-->)?/im;
 
-	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|svg))\s*\|?\s*([^\]]*)??\]\]\s?(<!--.*-->)?/i;
-	private obsidianImageReferenceRegex = /\[\[(.*(?:jpg|png|jpeg|gif|bmp|svg))\|?([^\]]*)??\]\]/i;
+	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|webp|svg))\s*\|?\s*([^\]]*)??\]\]\s?(<!--.*-->)?/i;
+	private obsidianImageReferenceRegex = /\[\[(.*(?:jpg|png|jpeg|webp|gif|bmp|svg))\|?([^\]]*)??\]\]/i;
 
 	constructor(utils: ObsidianUtils) {
 		this.utils = utils;
