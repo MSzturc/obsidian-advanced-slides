@@ -52,6 +52,8 @@ exports[`Template with variable set 1`] = `
 
 # Hello
 </div>
+
+
 		</div>
 		"
 `;
