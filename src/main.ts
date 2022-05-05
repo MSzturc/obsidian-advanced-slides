@@ -25,6 +25,7 @@ import { ObsidianUtils } from './obsidianUtils';
 import { FolderSuggest } from './suggesters/FolderSuggester';
 import { ThemeSuggest } from './suggesters/ThemeSuggester';
 import { HighlightThemeSuggest } from './suggesters/HighlightThemeSuggester';
+import { AutoCompleteSuggest } from './suggesters/AutoCompleteSuggester';
 
 export interface AdvancedSlidesSettings {
 	port: string;
@@ -159,6 +160,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 			this.app.workspace.onLayoutReady(() => {
 				this.activateAutoComplete();
+				this.registerEditorSuggest(new AutoCompleteSuggest(this.app));
 			});
 
 			// eslint-disable-next-line no-empty
