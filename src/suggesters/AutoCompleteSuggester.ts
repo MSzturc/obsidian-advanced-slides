@@ -1722,7 +1722,6 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
             if (ctx.query.startsWith('<!-- element') || ctx.query.startsWith('<!-- .element:')) {
                 return elementData;
             }
-            return [{ value: 'insideComment' }];
         }
 
         if (ctx.query.startsWith('<') && ctx.query.endsWith('>')) {
@@ -1733,11 +1732,13 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
             if (ctx.query.startsWith('<split')) {
                 return splitData;
             }
-
-            return [{ value: 'insideComponent' }];
         }
 
-        return suggestionData.filter((x) => x.value.toLowerCase().contains(ctx.query.toLowerCase()));
+        if (ctx.query.trim().startsWith("</")) {
+            return [];
+        } else {
+            return suggestionData.filter((x) => x.value.toLowerCase().contains(ctx.query.toLowerCase()));
+        }
     }
     renderSuggestion(element: SuggestResult, el: HTMLElement) {
         let text;
