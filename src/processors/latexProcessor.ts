@@ -56,10 +56,6 @@ export class LatexProcessor {
 						return '`' + line + '`';
 					}
 				})
-				.map(line => {
-					//Replace all empty lines in multiline LaTex expressions
-					return line.replaceAll(/^\s*[\r\n]/gm, '');
-				})
 				.join('$$')
 				.slice(1, -1);
 		}
