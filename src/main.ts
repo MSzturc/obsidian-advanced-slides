@@ -42,6 +42,7 @@ export interface AdvancedSlidesSettings {
 	progress: boolean;
 	slideNumber: boolean;
 	showGrid: boolean;
+	autoComplete: string;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
@@ -59,6 +60,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	progress: true,
 	slideNumber: false,
 	showGrid: false,
+	autoComplete: 'always'
 };
 
 export default class AdvancedSlidesPlugin extends Plugin {
@@ -66,6 +68,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 	private revealServer: RevealServer;
 	private obsidianUtils: ObsidianUtils;
+	private autoCompleteSuggester: AutoCompleteSuggest;
 
 	private target: TAbstractFile;
 
@@ -76,6 +79,14 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 		const pluginDirectory = this.obsidianUtils.getPluginDirectory();
 		const distDirectory = this.obsidianUtils.getDistDirectory();
+
+		if (this.autoCompleteSuggester) {
+			if (this.settings.autoComplete == "always") {
+				this.autoCompleteSuggester.activate();
+			} else {
+				this.autoCompleteSuggester.deactivate();
+			}
+		}
 
 		if (!existsSync(distDirectory) || this.isOldVersion(pluginDirectory)) {
 			//Download binary
@@ -159,33 +170,18 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 
 			this.app.workspace.onLayoutReady(() => {
-				this.activateAutoComplete();
-				this.registerEditorSuggest(new AutoCompleteSuggest(this.app));
+				this.autoCompleteSuggester = new AutoCompleteSuggest(this.app);
+
+				if (this.settings.autoComplete == "always") {
+					this.autoCompleteSuggester.activate();
+				} else {
+					this.autoCompleteSuggester.deactivate();
+				}
+				this.registerEditorSuggest(this.autoCompleteSuggester);
 			});
 
 			// eslint-disable-next-line no-empty
 		} catch (err) { }
-	}
-	async activateAutoComplete() {
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		const vcPlugin = (this.app as any).plugins.plugins["various-complements"];
-		if (vcPlugin) {
-			try {
-				if (vcPlugin.api.isFeatureSupported('ensureCustomDictionaryPath')) {
-					const dictRegistered = await vcPlugin.api.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
-					if (!dictRegistered) {
-						vcPlugin.api.ensureCustomDictionaryPath(".obsidian/plugins/obsidian-advanced-slides/autoComplete/dict.md", "present");
-						vcPlugin.settings.maxNumberOfSuggestions = 15;
-						vcPlugin.settings.enableCustomDictionaryComplement = true;
-						vcPlugin.settings.insertAfterCompletion = false;
-						vcPlugin.settings.caretLocationSymbolAfterComplement = "<CARET>";
-					}
-				}
-				// eslint-disable-next-line no-empty
-			} catch (err) {
-				console.error(err);
-			}
-		}
 	}
 
 	getViewInstance(): RevealPreviewView {
@@ -231,7 +227,13 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		if (instance) {
 			this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
 			instance.onClose();
+			if (this.settings.autoComplete == "inPreview") {
+				this.autoCompleteSuggester.deactivate();
+			}
 		} else {
+			if (this.settings.autoComplete != "never") {
+				this.autoCompleteSuggester.activate();
+			}
 			this.showView();
 		}
 	}
@@ -364,6 +366,22 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 					}, 750),
 				),
 			);
+
+		new Setting(containerEl)
+			.setName('Auto Complete')
+			.setDesc('Do you want to auto-complete inputs?')
+			.addDropdown(cb => {
+				cb.addOption('always', 'Always')
+					.addOption('inPreview', 'only in Slide Preview')
+					.addOption('never', 'Never')
+					.setValue(this.plugin.settings.autoComplete)
+					.onChange(
+						_.debounce(async value => {
+							this.plugin.settings.autoComplete = value;
+							await this.plugin.saveSettings();
+						}, 750),
+					);
+			});
 
 		new Setting(containerEl)
 			.setName('Export Directory')

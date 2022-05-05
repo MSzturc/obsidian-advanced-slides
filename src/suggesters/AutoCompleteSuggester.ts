@@ -1474,7 +1474,22 @@ const elementData = [
 
 export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
 
+    isActive = false;
+
+
+    activate() {
+        this.isActive = true;
+    }
+
+    deactivate() {
+        this.isActive = false;
+    }
+
     getSuggestions(ctx: EditorSuggestContext) {
+
+        if (!this.isActive) {
+            return [];
+        }
 
         if (ctx.query.length <= 0) {
             return [];
