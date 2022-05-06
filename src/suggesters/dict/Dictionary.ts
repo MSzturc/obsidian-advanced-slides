@@ -17,4 +17,13 @@ export interface DictionaryMap {
     children: DictionaryTreeEntry[];
 }
 
+export interface DictionaryMapEntry {
+    property: string;
+    dictionary: DictionaryMap;
+}
+
+export interface DictionaryRoot {
+    parent: Dictionary;
+    children: DictionaryMapEntry[];
+}
 

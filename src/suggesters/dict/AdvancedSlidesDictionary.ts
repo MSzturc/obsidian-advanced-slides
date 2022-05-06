@@ -1,6 +1,6 @@
-import { Dictionary, DictionaryMap } from "./Dictionary";
+import { Dictionary, DictionaryMap, DictionaryRoot } from "./Dictionary";
 
-export const suggestionData: Dictionary = [
+const suggestionData: Dictionary = [
     {
         value: '<grid >\n\n</grid>',
         description: '<grid>',
@@ -1437,7 +1437,7 @@ const elementData: Dictionary = [
 ];
 
 
-export const gridMap: DictionaryMap = {
+const gridMap: DictionaryMap = {
     parent: gridData,
     children: [
         {
@@ -1497,7 +1497,7 @@ export const gridMap: DictionaryMap = {
     ]
 };
 
-export const splitMap: DictionaryMap = {
+const splitMap: DictionaryMap = {
     parent: splitData,
     children: [
         {
@@ -1519,7 +1519,7 @@ export const splitMap: DictionaryMap = {
     ]
 };
 
-export const slideMap: DictionaryMap = {
+const slideMap: DictionaryMap = {
     parent: slideData,
     children: [
         {
@@ -1534,7 +1534,7 @@ export const slideMap: DictionaryMap = {
     ]
 };
 
-export const elementMap: DictionaryMap = {
+const elementMap: DictionaryMap = {
     parent: elementData,
     children: [
         {
@@ -1576,6 +1576,28 @@ export const elementMap: DictionaryMap = {
         {
             property: "frag",
             dictionary: fragData
+        },
+    ]
+}
+
+export const dict: DictionaryRoot = {
+    parent: suggestionData,
+    children: [
+        {
+            property: "grid",
+            dictionary: gridMap
+        },
+        {
+            property: "split",
+            dictionary: splitMap
+        },
+        {
+            property: "slide",
+            dictionary: slideMap
+        },
+        {
+            property: "element",
+            dictionary: elementMap
         },
     ]
 }

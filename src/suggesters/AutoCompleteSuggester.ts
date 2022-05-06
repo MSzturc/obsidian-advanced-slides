@@ -6,7 +6,7 @@ import {
     EditorSuggestTriggerInfo,
     TFile
 } from "obsidian";
-import { elementMap, gridMap, slideMap, splitMap, suggestionData } from "./dict/AdvancedSlidesDictionary";
+import { dict } from "./dict/AdvancedSlidesDictionary";
 
 interface SuggestResult {
     value: string;
@@ -65,18 +65,17 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
             // eslint-disable-next-line no-empty
         } catch (error) { }
 
-        console.log(`json: ${JSON.stringify(json)}`);
-
-
         if (json) {
-            if (json.tag.value == "grid") {
+            const tag = dict.children.filter((x) => x.property == json.tag.value);
+            if (tag && tag.length > 0) {
+                const map = tag.first().dictionary;
                 if (json.value.value != null && json.value.value.length == 0) {
-                    const result = gridMap.children.filter((x) => x.property == json.property.value);
+                    const result = map.children.filter((x) => x.property == json.property.value);
                     if (result && result.length > 0) {
                         return result.first().dictionary;
                     }
                 } else if (json.value.value) {
-                    const result = gridMap.children.filter((x) => x.property == json.property.value);
+                    const result = map.children.filter((x) => x.property == json.property.value);
                     if (result && result.length > 0) {
                         const dict = result.first();
                         if (dict.filter) {
@@ -88,97 +87,18 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
                 }
                 else {
                     if (json.property.value) {
-                        return gridMap.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
+                        return map.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
                     } else {
-                        return gridMap.parent;
+                        return map.parent;
                     }
                 }
-            } else if (json.tag.value == "split") {
-                if (json.value.value != null) {
-                    const result = splitMap.children.filter((x) => x.property == json.property.value);
-                    if (result && result.length > 0) {
-                        return result.first().dictionary;
-                    }
-                }
-                else if (json.property.value) {
-                    return splitMap.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
-                } else {
-                    return splitMap.parent;
-                }
-            } else if (json.tag.value == "slide") {
-                if (json.value.value != null && json.value.value.length == 0) {
-                    const result = slideMap.children.filter((x) => x.property == json.property.value);
-                    if (result && result.length > 0) {
-                        return result.first().dictionary;
-                    }
-                } else if (json.value.value) {
-                    const result = slideMap.children.filter((x) => x.property == json.property.value);
-                    if (result && result.length > 0) {
-                        const dict = result.first();
-                        if (dict.filter) {
-                            return dict.dictionary.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                        } else {
-                            return result.first().dictionary;
-                        }
-                    }
-                }
-                else {
-                    if (json.property.value) {
-                        return slideMap.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
-                    } else {
-                        return slideMap.parent;
-                    }
-                }
-            } else if (json.tag.value == "element") {
-                if (json.value.value != null && json.value.value.length == 0) {
-                    const result = elementMap.children.filter((x) => x.property == json.property.value);
-                    if (result && result.length > 0) {
-                        return result.first().dictionary;
-                    }
-                } else if (json.value.value) {
-                    const result = elementMap.children.filter((x) => x.property == json.property.value);
-                    if (result && result.length > 0) {
-                        const dict = result.first();
-                        if (dict.filter) {
-                            return dict.dictionary.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                        } else {
-                            return result.first().dictionary;
-                        }
-                    }
-                }
-                else {
-                    if (json.property.value) {
-                        return elementMap.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
-                    } else {
-                        return elementMap.parent;
-                    }
-                }
-            }
-        }
-
-        if (ctx.query.startsWith('<!--')) {
-            if (ctx.query.startsWith('<!-- slide') || ctx.query.startsWith('<!-- .slide:')) {
-                return slideMap.parent;
-            }
-            if (ctx.query.startsWith('<!-- element') || ctx.query.startsWith('<!-- .element:')) {
-                return elementMap.parent;
-            }
-        }
-
-        if (ctx.query.startsWith('<') && ctx.query.endsWith('>')) {
-            if (ctx.query.startsWith('<grid')) {
-                return gridMap.parent;
-            }
-
-            if (ctx.query.startsWith('<split')) {
-                return splitMap.parent;
             }
         }
 
         if (ctx.query.trim().startsWith("</")) {
             return [];
         } else {
-            return suggestionData.filter((x) => x.value.toLowerCase().contains(ctx.query.toLowerCase()));
+            return dict.parent.filter((x) => x.value.toLowerCase().contains(ctx.query.toLowerCase()));
         }
     }
     renderSuggestion(element: SuggestResult, el: HTMLElement) {
@@ -258,51 +178,19 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
     ): EditorSuggestTriggerInfo | null {
 
         const selectedLine = editor.getLine(cursor.line);
-        let cursorPosition = cursor.ch;
+        const cursorPosition = cursor.ch;
 
-        const insideTag = this.getTag(selectedLine, cursorPosition);
-
-        if (insideTag) {
-            switch (insideTag.tag.value) {
-                case 'element':
-                case 'slide':
-                case 'split':
-                case 'grid':
-                    return {
-                        start: { line: cursor.line, ch: cursor.ch },
-                        end: { line: cursor.line, ch: cursor.ch },
-                        query: JSON.stringify(insideTag),
-                    }
-                default:
-                    return {
-                        start: { line: cursor.line, ch: insideTag.start },
-                        end: { line: cursor.line, ch: insideTag.end },
-                        query: insideTag.line,
-                    }
+        const tag = this.getTag(selectedLine, cursorPosition);
+        if (tag) {
+            return {
+                start: { line: cursor.line, ch: cursor.ch },
+                end: { line: cursor.line, ch: cursor.ch },
+                query: JSON.stringify(tag),
             }
         }
 
-        let startPosition = 0;
-        let endPosition = selectedLine.length;
-
-        const separators = [' '];
-
-        while (cursorPosition >= 0) {
-            if (separators.contains(selectedLine[cursorPosition])) {
-                cursorPosition++;
-                startPosition = cursorPosition;
-                break;
-            }
-            cursorPosition--;
-        }
-
-        while (cursorPosition <= selectedLine.length) {
-            if (separators.contains(selectedLine[cursorPosition])) {
-                endPosition = cursorPosition;
-                break;
-            }
-            cursorPosition++;
-        }
+        const startPosition = selectedLine.substring(0, cursorPosition).lastIndexOf(' ') + 1;
+        const endPosition = selectedLine.substring(cursorPosition).indexOf(' ') + cursorPosition;
 
         const range = editor.getRange(
             { line: cursor.line, ch: startPosition },
