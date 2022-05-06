@@ -205,6 +205,20 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
         return matchData;
     }
 
+    readTag(selectedLine: string) {
+        const regex = /(?!.*<)!?-?-?\s?\.?(\w*)\s/;
+        if (regex.test(selectedLine)) {
+            const result = regex.exec(selectedLine);
+            if (result) {
+                return {
+                    start: result.index,
+                    end: result.index + result[1].length,
+                    value: result[1]
+                }
+            }
+        }
+    }
+
     getTag(selectedLine: string, cursorPosition: number) {
         const startIdx = selectedLine.substring(0, cursorPosition).lastIndexOf('<');
         let endIdx = selectedLine.substring(0, cursorPosition).lastIndexOf('>');
