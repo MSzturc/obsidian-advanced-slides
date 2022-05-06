@@ -6,7 +6,7 @@ import {
     EditorSuggestTriggerInfo,
     TFile
 } from "obsidian";
-import { alignData, animateData, bgData, borderData, dragData, dropData, elementData, filterData, flowData, fragData, gapData, gridData, leftData, opacityData, padData, rightData, rotateData, slideBgData, slideData, splitData, suggestionData, wrapData } from "./dict/AdvancedSlidesDictionary";
+import { elementMap, gridMap, slideMap, splitMap, suggestionData } from "./dict/AdvancedSlidesDictionary";
 
 interface SuggestResult {
     value: string;
@@ -35,8 +35,6 @@ type Parameters = {
     end: number,
     line: string,
 };
-
-
 
 export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
 
@@ -72,195 +70,87 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
 
         if (json) {
             if (json.tag.value == "grid") {
-
                 if (json.value.value != null && json.value.value.length == 0) {
-                    if (json.property.value == "drag") {
-                        return dragData;
-                    }
-                    if (json.property.value == "drop") {
-                        return dropData;
-                    }
-                    if (json.property.value == "flow") {
-                        return flowData;
-                    }
-                    if (json.property.value == "bg") {
-                        return bgData;
-                    }
-                    if (json.property.value == "pad") {
-                        return padData;
-                    }
-                    if (json.property.value == "align") {
-                        return alignData;
-                    }
-                    if (json.property.value == "border") {
-                        return borderData;
-                    }
-                    if (json.property.value == "animate") {
-                        return animateData;
-                    }
-                    if (json.property.value == "opacity") {
-                        return opacityData;
-                    }
-                    if (json.property.value == "rotate") {
-                        return rotateData;
-                    }
-                    if (json.property.value == "filter") {
-                        return filterData;
-                    }
-                    if (json.property.value == "frag") {
-                        return fragData;
+                    const result = gridMap.children.filter((x) => x.property == json.property.value);
+                    if (result && result.length > 0) {
+                        return result.first().dictionary;
                     }
                 } else if (json.value.value) {
-                    if (json.property.value == "drag") {
-                        return dragData;
-                    }
-                    if (json.property.value == "drop") {
-                        return dropData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "flow") {
-                        return flowData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "bg") {
-                        return bgData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "pad") {
-                        return padData;
-                    }
-                    if (json.property.value == "align") {
-                        return alignData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "border") {
-                        return borderData;
-                    }
-                    if (json.property.value == "animate") {
-                        return animateData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "opacity") {
-                        return opacityData;
-                    }
-                    if (json.property.value == "rotate") {
-                        return rotateData;
-                    }
-                    if (json.property.value == "filter") {
-                        return filterData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "frag") {
-                        return fragData;
+                    const result = gridMap.children.filter((x) => x.property == json.property.value);
+                    if (result && result.length > 0) {
+                        const dict = result.first();
+                        if (dict.filter) {
+                            return dict.dictionary.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
+                        } else {
+                            return result.first().dictionary;
+                        }
                     }
                 }
                 else {
                     if (json.property.value) {
-                        return gridData.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
+                        return gridMap.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
                     } else {
-                        return gridData;
+                        return gridMap.parent;
                     }
                 }
             } else if (json.tag.value == "split") {
                 if (json.value.value != null) {
-                    if (json.property.value == "gap") {
-                        return gapData;
-                    }
-                    if (json.property.value == "left") {
-                        return leftData;
-                    }
-                    if (json.property.value == "right") {
-                        return rightData;
-                    }
-                    if (json.property.value == "wrap") {
-                        return wrapData;
+                    const result = splitMap.children.filter((x) => x.property == json.property.value);
+                    if (result && result.length > 0) {
+                        return result.first().dictionary;
                     }
                 }
                 else if (json.property.value) {
-                    return splitData.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
+                    return splitMap.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
                 } else {
-                    return splitData;
+                    return splitMap.parent;
                 }
             } else if (json.tag.value == "slide") {
                 if (json.value.value != null && json.value.value.length == 0) {
-                    if (json.property.value == "bg") {
-                        return slideBgData;
-                    }
-                    if (json.property.value == "data-background-opacity") {
-                        return opacityData;
+                    const result = slideMap.children.filter((x) => x.property == json.property.value);
+                    if (result && result.length > 0) {
+                        return result.first().dictionary;
                     }
                 } else if (json.value.value) {
-                    if (json.property.value == "bg") {
-                        return slideBgData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "data-background-opacity") {
-                        return opacityData;
+                    const result = slideMap.children.filter((x) => x.property == json.property.value);
+                    if (result && result.length > 0) {
+                        const dict = result.first();
+                        if (dict.filter) {
+                            return dict.dictionary.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
+                        } else {
+                            return result.first().dictionary;
+                        }
                     }
                 }
                 else {
                     if (json.property.value) {
-                        return slideData.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
+                        return slideMap.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
                     } else {
-                        return slideData;
+                        return slideMap.parent;
                     }
                 }
             } else if (json.tag.value == "element") {
                 if (json.value.value != null && json.value.value.length == 0) {
-                    if (json.property.value == "bg") {
-                        return bgData;
-                    }
-                    if (json.property.value == "pad") {
-                        return padData;
-                    }
-                    if (json.property.value == "align") {
-                        return alignData;
-                    }
-                    if (json.property.value == "border") {
-                        return borderData;
-                    }
-                    if (json.property.value == "animate") {
-                        return animateData;
-                    }
-                    if (json.property.value == "opacity") {
-                        return opacityData;
-                    }
-                    if (json.property.value == "rotate") {
-                        return rotateData;
-                    }
-                    if (json.property.value == "filter") {
-                        return filterData;
-                    }
-                    if (json.property.value == "frag") {
-                        return fragData;
+                    const result = elementMap.children.filter((x) => x.property == json.property.value);
+                    if (result && result.length > 0) {
+                        return result.first().dictionary;
                     }
                 } else if (json.value.value) {
-                    if (json.property.value == "bg") {
-                        return bgData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "pad") {
-                        return padData;
-                    }
-                    if (json.property.value == "align") {
-                        return alignData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "border") {
-                        return borderData;
-                    }
-                    if (json.property.value == "animate") {
-                        return animateData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "opacity") {
-                        return opacityData;
-                    }
-                    if (json.property.value == "rotate") {
-                        return rotateData;
-                    }
-                    if (json.property.value == "filter") {
-                        return filterData.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
-                    }
-                    if (json.property.value == "frag") {
-                        return fragData;
+                    const result = elementMap.children.filter((x) => x.property == json.property.value);
+                    if (result && result.length > 0) {
+                        const dict = result.first();
+                        if (dict.filter) {
+                            return dict.dictionary.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
+                        } else {
+                            return result.first().dictionary;
+                        }
                     }
                 }
                 else {
                     if (json.property.value) {
-                        return elementData.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
+                        return elementMap.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
                     } else {
-                        return elementData;
+                        return elementMap.parent;
                     }
                 }
             }
@@ -268,20 +158,20 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
 
         if (ctx.query.startsWith('<!--')) {
             if (ctx.query.startsWith('<!-- slide') || ctx.query.startsWith('<!-- .slide:')) {
-                return slideData;
+                return slideMap.parent;
             }
             if (ctx.query.startsWith('<!-- element') || ctx.query.startsWith('<!-- .element:')) {
-                return elementData;
+                return elementMap.parent;
             }
         }
 
         if (ctx.query.startsWith('<') && ctx.query.endsWith('>')) {
             if (ctx.query.startsWith('<grid')) {
-                return gridData;
+                return gridMap.parent;
             }
 
             if (ctx.query.startsWith('<split')) {
-                return splitData;
+                return splitMap.parent;
             }
         }
 

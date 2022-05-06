@@ -1,4 +1,4 @@
-import { Dictionary } from "./Dictionary";
+import { Dictionary, DictionaryMap } from "./Dictionary";
 
 export const suggestionData: Dictionary = [
     {
@@ -43,7 +43,7 @@ export const suggestionData: Dictionary = [
     },
 ];
 
-export const gridData: Dictionary = [
+const gridData: Dictionary = [
     {
         value: 'drag=""',
         description: 'drag="<width> <height>"',
@@ -114,13 +114,13 @@ export const gridData: Dictionary = [
     },
 ];
 
-export const dragData: Dictionary = [
+const dragData: Dictionary = [
     {
         value: '<width> <height>',
     }
 ];
 
-export const dropData: Dictionary = [
+const dropData: Dictionary = [
     {
         value: '<x> <y>',
     },
@@ -153,7 +153,7 @@ export const dropData: Dictionary = [
     }
 ];
 
-export const flowData: Dictionary = [
+const flowData: Dictionary = [
     {
         value: 'row',
     },
@@ -162,7 +162,7 @@ export const flowData: Dictionary = [
     }
 ];
 
-export const bgData: Dictionary = [
+const bgData: Dictionary = [
     {
         "value": "#425232",
         "description": "<#425232>"
@@ -627,7 +627,7 @@ export const bgData: Dictionary = [
     }
 ];
 
-export const padData: Dictionary = [
+const padData: Dictionary = [
     {
         value: '<top> <right> <bottom> <left>',
     },
@@ -642,7 +642,7 @@ export const padData: Dictionary = [
     }
 ];
 
-export const alignData: Dictionary = [
+const alignData: Dictionary = [
     {
         "value": "left"
     },
@@ -681,13 +681,13 @@ export const alignData: Dictionary = [
     }
 ];
 
-export const borderData: Dictionary = [
+const borderData: Dictionary = [
     {
         value: '<width> <style> <color>',
     }
 ];
 
-export const animateData: Dictionary = [
+const animateData: Dictionary = [
     {
         value: '<type> (<slower | faster>)',
     }, {
@@ -734,19 +734,19 @@ export const animateData: Dictionary = [
     }
 ];
 
-export const opacityData: Dictionary = [
+const opacityData: Dictionary = [
     {
         value: '<0.0...1.0>',
     }
 ];
 
-export const rotateData: Dictionary = [
+const rotateData: Dictionary = [
     {
         value: '<0...360>',
     }
 ];
 
-export const filterData: Dictionary = [
+const filterData: Dictionary = [
     {
         "value": "blur(10px)",
         "description": "blur"
@@ -781,13 +781,13 @@ export const filterData: Dictionary = [
     }
 ];
 
-export const fragData: Dictionary = [
+const fragData: Dictionary = [
     {
         value: '<index>',
     }
 ];
 
-export const splitData: Dictionary = [
+const splitData: Dictionary = [
     {
         value: 'even ',
         description: 'even',
@@ -828,31 +828,31 @@ export const splitData: Dictionary = [
     },
 ];
 
-export const gapData: Dictionary = [
+const gapData: Dictionary = [
     {
         value: '<size>',
     }
 ];
 
-export const leftData: Dictionary = [
+const leftData: Dictionary = [
     {
         value: '<size>',
     }
 ];
 
-export const rightData: Dictionary = [
+const rightData: Dictionary = [
     {
         value: '<size>',
     }
 ];
 
-export const wrapData: Dictionary = [
+const wrapData: Dictionary = [
     {
         value: '<amount>',
     }
 ];
 
-export const slideData: Dictionary = [
+const slideData: Dictionary = [
     {
         value: 'style=""',
         offset: 7,
@@ -886,7 +886,7 @@ export const slideData: Dictionary = [
     },
 ];
 
-export const slideBgData: Dictionary = [
+const slideBgData: Dictionary = [
 
     {
         "value": "#425232",
@@ -1360,7 +1360,7 @@ export const slideBgData: Dictionary = [
     }
 ];
 
-export const elementData: Dictionary = [
+const elementData: Dictionary = [
     {
         value: 'style=""',
         offset: 7,
@@ -1435,3 +1435,147 @@ export const elementData: Dictionary = [
         offset: 6,
     },
 ];
+
+
+export const gridMap: DictionaryMap = {
+    parent: gridData,
+    children: [
+        {
+            property: "drag",
+            dictionary: dragData
+        },
+        {
+            property: "drop",
+            dictionary: dropData,
+            filter: true
+        },
+        {
+            property: "flow",
+            dictionary: flowData,
+            filter: true
+        },
+        {
+            property: "bg",
+            dictionary: bgData,
+            filter: true
+        },
+        {
+            property: "pad",
+            dictionary: padData,
+        },
+        {
+            property: "align",
+            dictionary: alignData,
+            filter: true
+        },
+        {
+            property: "border",
+            dictionary: borderData
+        },
+        {
+            property: "animate",
+            dictionary: animateData,
+            filter: true
+        },
+        {
+            property: "opacity",
+            dictionary: opacityData
+        },
+        {
+            property: "rotate",
+            dictionary: rotateData
+        },
+        {
+            property: "filter",
+            dictionary: filterData,
+            filter: true
+        },
+        {
+            property: "frag",
+            dictionary: fragData
+        },
+    ]
+};
+
+export const splitMap: DictionaryMap = {
+    parent: splitData,
+    children: [
+        {
+            property: "gap",
+            dictionary: gapData
+        },
+        {
+            property: "left",
+            dictionary: leftData
+        },
+        {
+            property: "right",
+            dictionary: rightData
+        },
+        {
+            property: "wrap",
+            dictionary: wrapData
+        },
+    ]
+};
+
+export const slideMap: DictionaryMap = {
+    parent: slideData,
+    children: [
+        {
+            property: "bg",
+            dictionary: slideBgData,
+            filter: true
+        },
+        {
+            property: "data-background-opacity",
+            dictionary: opacityData
+        },
+    ]
+};
+
+export const elementMap: DictionaryMap = {
+    parent: elementData,
+    children: [
+        {
+            property: "bg",
+            dictionary: bgData,
+            filter: true
+        },
+        {
+            property: "pad",
+            dictionary: padData,
+        },
+        {
+            property: "align",
+            dictionary: alignData,
+            filter: true
+        },
+        {
+            property: "border",
+            dictionary: borderData
+        },
+        {
+            property: "animate",
+            dictionary: animateData,
+            filter: true
+        },
+        {
+            property: "opacity",
+            dictionary: opacityData
+        },
+        {
+            property: "rotate",
+            dictionary: rotateData
+        },
+        {
+            property: "filter",
+            dictionary: filterData,
+            filter: true
+        },
+        {
+            property: "frag",
+            dictionary: fragData
+        },
+    ]
+}
