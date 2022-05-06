@@ -220,32 +220,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
     }
 
     getTag(selectedLine: string, cursorPosition: number) {
-        const startIdx = selectedLine.substring(0, cursorPosition).lastIndexOf('<');
-        let endIdx = selectedLine.substring(0, cursorPosition).lastIndexOf('>');
-
-        //Filter tags that are already closed
-        if (startIdx < 0 || endIdx > startIdx) return null;
-
-        endIdx = selectedLine.indexOf('>', cursorPosition);
-        if (endIdx < 0) {
-            endIdx = selectedLine.length;
-        } else {
-            endIdx++;
-        }
-
-        //Determain Tag name
-        let tag;
-
-        let offset = 1;
-        if (selectedLine.substring(startIdx).startsWith('<!--')) {
-            offset = 5;
-        }
-        const tagStart = selectedLine.substring(startIdx + offset).length - selectedLine.substring(startIdx + offset).trimStart().length + offset + startIdx;
-        const tagEnd = selectedLine.indexOf(' ', tagStart + 1);
-
-        if (tagEnd > 0) {
-            tag = selectedLine.substring(tagStart, tagEnd);
-        }
+        const tag = this.readTag(selectedLine);
 
         //Determain Property
         let property;
@@ -258,15 +233,6 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
         let valEnd;
 
         if (tag) {
-
-            if (tag.startsWith('.')) {
-                tag = tag.substring(1);
-            }
-
-            if (tag.endsWith(':')) {
-                tag = tag.substring(0, tag.length - 1);
-            }
-
             const regex = /\s(\w+[\w-]*)=?((?:"|')([^(?:"|')]*)(?:"|'))?/g;
             regex.lastIndex = 0;
 
@@ -311,11 +277,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
             }
 
             return {
-                tag: {
-                    start: tagStart,
-                    end: tagEnd,
-                    value: tag
-                },
+                tag: tag,
                 property: {
                     start: propStart,
                     end: propEnd,
@@ -325,10 +287,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
                     start: valStart,
                     end: valEnd,
                     value: propValue
-                },
-                start: startIdx,
-                end: endIdx,
-                line: selectedLine.substring(startIdx, endIdx),
+                }
             }
         }
 
