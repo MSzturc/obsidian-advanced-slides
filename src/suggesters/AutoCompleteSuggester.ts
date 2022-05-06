@@ -190,7 +190,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
         }
 
         const startPosition = selectedLine.substring(0, cursorPosition).lastIndexOf(' ') + 1;
-        const endPosition = selectedLine.substring(cursorPosition).indexOf(' ') + cursorPosition;
+        const endPosition = selectedLine.substring(cursorPosition).indexOf(' ') + cursorPosition + 1;
 
         const range = editor.getRange(
             { line: cursor.line, ch: startPosition },
