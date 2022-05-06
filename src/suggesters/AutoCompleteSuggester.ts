@@ -1698,7 +1698,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
             }
         }
 
-        if (ctx.query.startsWith('<!--') && ctx.query.endsWith('>')) {
+        if (ctx.query.startsWith('<!--')) {
             if (ctx.query.startsWith('<!-- slide') || ctx.query.startsWith('<!-- .slide:')) {
                 return slideData;
             }
