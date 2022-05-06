@@ -1476,7 +1476,6 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
 
     isActive = false;
 
-
     activate() {
         this.isActive = true;
     }
@@ -1589,20 +1588,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
                     }
                 }
             } else if (json.tag.value == "split") {
-                if (json.value.value != null && json.value.value.length == 0) {
-                    if (json.property.value == "gap") {
-                        return gapData;
-                    }
-                    if (json.property.value == "left") {
-                        return leftData;
-                    }
-                    if (json.property.value == "right") {
-                        return rightData;
-                    }
-                    if (json.property.value == "wrap") {
-                        return wrapData;
-                    }
-                } else if (json.value.value) {
+                if (json.value.value != null) {
                     if (json.property.value == "gap") {
                         return gapData;
                     }
@@ -1616,13 +1602,10 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
                         return wrapData;
                     }
                 }
-                else {
-
-                    if (json.property.value) {
-                        return splitData.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
-                    } else {
-                        return splitData;
-                    }
+                else if (json.property.value) {
+                    return splitData.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
+                } else {
+                    return splitData;
                 }
             } else if (json.tag.value == "slide") {
                 if (json.value.value != null && json.value.value.length == 0) {
