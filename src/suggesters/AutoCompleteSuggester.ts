@@ -1907,7 +1907,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
                 tag = tag.substring(0, tag.length - 1);
             }
 
-            const regex = /\s(\w+[\w-]+)=?((?:"|')([^(?:"|')]*)(?:"|'))?/g;
+            const regex = /\s(\w+[\w-]*)=?((?:"|')([^(?:"|')]*)(?:"|'))?/g;
             regex.lastIndex = 0;
 
             let m;
