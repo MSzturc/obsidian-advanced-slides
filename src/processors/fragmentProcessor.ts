@@ -60,7 +60,7 @@ export class FragmentProcessor {
 		}
 		
 		// See here: https://github.com/hakimel/reveal.js/issues/1848. This makes sure that reveals work when dealing with formatting in the list (e.g. bold / italic / code, etc.)
-		const extra_replacement = "&shy;" + this.parser.commentToString(comment) + " ";
+		const extra_replacement = "&shy;" + this.parser.commentToString(comment);
 		line = line.replaceAll("+ ", "- " + extra_replacement);
 		line = line.replaceAll(this.orderedListRegex, "1. " + extra_replacement);
 
