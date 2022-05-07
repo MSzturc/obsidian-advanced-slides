@@ -7,14 +7,7 @@ import {
     TFile
 } from "obsidian";
 import { dict } from "./dict/AdvancedSlidesDictionary";
-import { byInput } from "./dict/Dictionary";
-
-interface SuggestResult {
-    value: string;
-    description?: string;
-    aliases?: string[];
-    offset?: number;
-}
+import { byInput, DictionaryEntry } from "./dict/Dictionary";
 
 type Parameters = {
     tag: {
@@ -37,7 +30,7 @@ type Parameters = {
     line: string,
 };
 
-export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
+export class AutoCompleteSuggest extends EditorSuggest<DictionaryEntry> {
 
     isActive = false;
 
@@ -102,7 +95,10 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
             return dict.parent.filter(byInput(ctx.query));
         }
     }
-    renderSuggestion(element: SuggestResult, el: HTMLElement) {
+    renderSuggestion(element: DictionaryEntry, el: HTMLElement) {
+
+        console.log(`element: ${JSON.stringify(element)}`);
+
         let text;
         if (element.description) {
             text = element.description;
@@ -111,7 +107,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
         }
         el.createSpan({ text });
     }
-    selectSuggestion(element: SuggestResult, evt: MouseEvent | KeyboardEvent): void {
+    selectSuggestion(element: DictionaryEntry, evt: MouseEvent | KeyboardEvent): void {
         if (!this.context) return;
 
         const cursor = this.context.editor.getCursor();
