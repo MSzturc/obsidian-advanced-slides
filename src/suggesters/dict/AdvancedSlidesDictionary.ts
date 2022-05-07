@@ -37,8 +37,10 @@ const suggestionData: Dictionary = [
         offset: 11,
     },
     {
+        name: 'small',
         value: '<span style="font-size:small"></span>',
         description: 'small',
+        strategy: 'startsWith',
         offset: 30,
     },
 ];

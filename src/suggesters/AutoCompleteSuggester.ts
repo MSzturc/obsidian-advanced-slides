@@ -7,6 +7,7 @@ import {
     TFile
 } from "obsidian";
 import { dict } from "./dict/AdvancedSlidesDictionary";
+import { byInput } from "./dict/Dictionary";
 
 interface SuggestResult {
     value: string;
@@ -79,7 +80,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
                     if (result && result.length > 0) {
                         const dict = result.first();
                         if (dict.filter) {
-                            return dict.dictionary.filter((x) => x.value.toLowerCase().contains(json.value.value.toLowerCase()));
+                            return dict.dictionary.filter(byInput(json.value.value));
                         } else {
                             return result.first().dictionary;
                         }
@@ -87,7 +88,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
                 }
                 else {
                     if (json.property.value) {
-                        return map.parent.filter((x) => x.value.toLowerCase().contains(json.property.value.toLowerCase()));
+                        return map.parent.filter(byInput(json.property.value));
                     } else {
                         return map.parent;
                     }
@@ -98,7 +99,7 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
         if (ctx.query.trim().startsWith("</")) {
             return [];
         } else {
-            return dict.parent.filter((x) => x.value.toLowerCase().contains(ctx.query.toLowerCase()));
+            return dict.parent.filter(byInput(ctx.query));
         }
     }
     renderSuggestion(element: SuggestResult, el: HTMLElement) {
@@ -293,3 +294,4 @@ export class AutoCompleteSuggest extends EditorSuggest<SuggestResult> {
 
     }
 }
+
