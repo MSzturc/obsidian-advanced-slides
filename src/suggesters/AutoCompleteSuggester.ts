@@ -200,9 +200,11 @@ export class AutoCompleteSuggest extends EditorSuggest<DictionaryEntry> {
     }
 
     readTag(selectedLine: string) {
-        const regex = /(?!.*<)!?-?-?\s?\.?(\w*)\s/;
-        if (regex.test(selectedLine)) {
-            const result = regex.exec(selectedLine);
+        const line = selectedLine.substring(selectedLine.lastIndexOf('<'));
+        const regex = /<!?-?-?\s?\.?(\w*)\s/;
+
+        if (regex.test(line)) {
+            const result = regex.exec(line);
             if (result) {
                 return {
                     start: result.index,
