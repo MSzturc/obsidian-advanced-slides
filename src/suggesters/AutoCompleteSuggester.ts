@@ -96,9 +96,6 @@ export class AutoCompleteSuggest extends EditorSuggest<DictionaryEntry> {
         }
     }
     renderSuggestion(element: DictionaryEntry, el: HTMLElement) {
-
-        console.log(`element: ${JSON.stringify(element)}`);
-
         let text;
         if (element.description) {
             text = element.description;
@@ -234,7 +231,7 @@ export class AutoCompleteSuggest extends EditorSuggest<DictionaryEntry> {
             regex.lastIndex = 0;
 
             let m;
-            while ((m = regex.exec(selectedLine)) !== null) {
+            while ((m = regex.exec(selectedLine.substring(0, firstFromPosition(selectedLine, cursorPosition, ["'", '"'])))) !== null) {
                 if (m.index === regex.lastIndex) {
                     regex.lastIndex++;
                 }
@@ -289,5 +286,17 @@ export class AutoCompleteSuggest extends EditorSuggest<DictionaryEntry> {
         }
 
     }
+}
+
+function firstFromPosition(target: string, position: number, tokens: string[]): number {
+    let result = target.length;
+
+    for (const token of tokens) {
+        const pos = target.indexOf(token, position);
+        if (pos != -1) {
+            result = result < pos ? result : pos;
+        }
+    }
+    return result + 1;
 }
 
