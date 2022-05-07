@@ -345,8 +345,8 @@ exports[`Grid Component > Attributes > Padding 2`] = `
 "<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: red; position: absolute; left: 48px; top: 70px; height: 385px; min-height: 385px; width: 576px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
 ### Fragments:
-- &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" --> Right
-- &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" --> Bottom
+- &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->Right
+- &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" -->Bottom
 </div>
 
 <div class=\\"has-dark-background fragment reset-margin\\" style=\\"background-color: green; position: absolute; left: 672px; top: 70px; height: 385px; min-height: 385px; width: 240px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" data-fragment-index=\\"1\\">
