@@ -1,7 +1,7 @@
 import esbuild from "esbuild";
 import process from "process";
 import builtins from 'builtin-modules';
-import copy from 'esbuild-plugin-copy';
+import { copy } from 'esbuild-plugin-copy';
 import extra from "fs-extra";
 import fs from "fs";
 import path from "path";
@@ -48,205 +48,94 @@ function build() {
             outfile: TEST_VAULT + '/main.js',
             plugins: [
                 staticAssetsPlugin,
-                copy.default({
+                copy({
                     assets: {
                         from: ['manifest.json', 'styles.css', 'distVersion.json'],
                         to: ['.'],
                     }
                 }),
-                copy.default({
+                copy({
                     assets: {
-                        from: ['src/template/*'],
-                        to: ['./template/'],
+                        from: ['src/template/**/*'],
+                        to: ['./template/*']
                     }
                 }),
-                copy.default({
-                    assets: {
-                        from: ['src/autoComplete/*'],
-                        to: ['./autoComplete/'],
-                    }
-                }),
-                copy.default({
+                copy({
                     assets: {
                         from: ['node_modules/reveal.js/dist/*'],
-                        to: ['./dist'],
+                        to: ['./dist/*'],
                     }
                 }),
-                copy.default({
+                copy({
                     assets: {
                         from: ['src/scss/theme/source/fonts/league-gothic/*'],
-                        to: ['./dist/theme/fonts/league-gothic'],
+                        to: ['./dist/theme/fonts/league-gothic/*'],
                     }
                 }),
-                copy.default({
+                copy({
                     assets: {
                         from: ['src/scss/theme/source/fonts/source-sans-pro/*'],
-                        to: ['./dist/theme/fonts/source-sans-pro'],
+                        to: ['./dist/theme/fonts/source-sans-pro/*'],
                     }
                 }),
-                copy.default({
+                copy({
                     assets: {
                         from: ['src/scss/theme/source/fonts/lato/*'],
-                        to: ['./dist/theme/fonts/lato'],
+                        to: ['./dist/theme/fonts/lato/*'],
                     }
                 }),
-                copy.default({
+                copy({
                     assets: {
-                        from: ['node_modules/reveal.js/plugin/highlight/*'],
-                        to: ['./plugin/highlight'],
+                        from: ['node_modules/reveal.js/plugin/**/*'],
+                        to: ['./plugin'],
+                        keepStructure: true
                     }
                 }),
-                copy.default({
+                copy({
                     assets: {
-                        from: ['node_modules/reveal.js/plugin/markdown/*'],
-                        to: ['./plugin/markdown'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/reveal.js/plugin/math/*'],
-                        to: ['./plugin/math'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/tex-mml-chtml.js'],
+                        from: ['node_modules/mathjax/es5/**/*'],
                         to: ['./plugin/math/mathjax'],
+                        keepStructure: true
                     }
                 }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/a11y/*'],
-                        to: ['./plugin/math/mathjax/a11y'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/adaptors/*'],
-                        to: ['./plugin/math/mathjax/adaptors'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/input/*'],
-                        to: ['./plugin/math/mathjax/input'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/input/mml/*'],
-                        to: ['./plugin/math/mathjax/input/mml'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/input/mml/extensions/*'],
-                        to: ['./plugin/math/mathjax/input/mml/extensions'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/input/tex/extensions/*'],
-                        to: ['./plugin/math/mathjax/input/tex/extensions'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/output/*'],
-                        to: ['./plugin/math/mathjax/output'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/output/chtml/fonts/*'],
-                        to: ['./plugin/math/mathjax/output/chtml/fonts'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/output/chtml/fonts/woff-v2/*'],
-                        to: ['./plugin/math/mathjax/output/chtml/fonts/woff-v2'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/sre/*'],
-                        to: ['./plugin/math/mathjax/sre'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/sre/mathmaps/*'],
-                        to: ['./plugin/math/mathjax/sre/mathmaps'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/ui/*'],
-                        to: ['./plugin/math/mathjax/ui'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/reveal.js/plugin/notes/*'],
-                        to: ['./plugin/notes'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/reveal.js/plugin/search/*'],
-                        to: ['./plugin/search'],
-                    }
-                }),
-                copy.default({
-                    assets: {
-                        from: ['node_modules/reveal.js/plugin/zoom/*'],
-                        to: ['./plugin/zoom'],
-                    }
-                }),
-                copy.default({
+                copy({
                     assets: {
                         from: ['node_modules/reveal.js-mermaid-plugin/plugin/mermaid/*'],
-                        to: ['./plugin/mermaid'],
+                        to: ['./plugin/mermaid/*'],
                     }
                 }),
-                copy.default({
+                copy({
                     assets: {
                         from: ['node_modules/highlight.js/styles/vs2015.css'],
-                        to: ['./css'],
+                        to: ['./css/*'],
                     }
                 }),
-				copy.default({
+                copy({
                     assets: {
                         from: ['node_modules/@fortawesome/fontawesome-free/js/all.min.js'],
-                        to: ['./dist/fontawesome'],
+                        to: ['./dist/fontawesome/*'],
                     }
                 }),
-				copy.default({
+                copy({
                     assets: {
-                        from: ['node_modules/reveal.js-plugins/chalkboard/*'],
+                        from: ['node_modules/reveal.js-plugins/chalkboard/**/*'],
                         to: ['./plugin/chalkboard'],
+                        keepStructure: true
                     }
                 }),
-				copy.default({
-                    assets: {
-                        from: ['node_modules/reveal.js-plugins/chalkboard/img/*'],
-                        to: ['./plugin/chalkboard/img'],
-                    }
-                }),
-				copy.default({
+				copy({
                     assets: {
                         from: ['node_modules/reveal.js-plugins/customcontrols/*'],
-                        to: ['./plugin/customcontrols'],
+                        to: ['./plugin/customcontrols/*'],
                     }
                 }),
-				copy.default({
+				copy({
                     assets: {
                         from: ['node_modules/reveal.js-menu/*'],
-                        to: ['./plugin/menu'],
+                        to: ['./plugin/menu/*'],
                     }
                 }),
-                copy.default({
+                copy({
                     assets: prod ? {} : {
                         from: ['.hotreload'],
                         to: ['.'],
