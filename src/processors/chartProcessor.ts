@@ -63,7 +63,17 @@ export class ChartProcessor {
 }
 function transform(labels: string): string {
 	return "[" + labels.substring(1, labels.length - 1)
-		.split(',').map((label) => `"${label}"`)
+		.split(',')
+		.map((label) => {
+			let value = label.trim();
+			if (value.startsWith("'") || value.startsWith('"')) {
+				value = value.substring(1);
+			}
+			if (value.endsWith("'") || value.endsWith('"')) {
+				value = value.substring(0, value.length - 1);
+			}
+			return `"${value.trim()}"`;
+		})
 		.join(",") + "]";
 }
 
