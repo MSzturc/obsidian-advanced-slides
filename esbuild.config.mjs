@@ -136,6 +136,19 @@ function build() {
                     }
                 }),
                 copy({
+                    assets: {
+                        from: ['node_modules/reveal.js-plugins/chart/**/*'],
+                        to: ['./plugin/chart'],
+                        keepStructure: true
+                    }
+                }),
+                copy({
+                    assets: {
+                        from: ['node_modules/chart.js/dist/chart.min.js'],
+                        to: ['./plugin/chart/*'],
+                    }
+                }),
+                copy({
                     assets: prod ? {} : {
                         from: ['.hotreload'],
                         to: ['.'],
