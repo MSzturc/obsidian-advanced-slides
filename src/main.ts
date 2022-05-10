@@ -219,12 +219,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 	readParameters(src: string): EmbeddedSlideParameters {
 		const params = load(src) as EmbeddedSlideParameters;
-
-		params.slide = this.app.vault
-			.getMarkdownFiles()
-			.filter((x) => x.path.contains(params.slide))
-			.first()
-			.path;
+		params.slide = this.obsidianUtils.findFile(params.slide);
 		return params;
 	}
 
