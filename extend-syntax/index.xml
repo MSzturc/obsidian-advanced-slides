@@ -127,5 +127,16 @@ Here&amp;rsquo;s a simple example to give you a better idea of how it can be use
 &amp;lt;!-- .slide: data-auto-animate --&amp;gt; # Title  --- &amp;lt;!-- .slide: data-auto-animate --&amp;gt;  # Title ##### **Subtitle** ###### *Author - 2022*  To learn more about Auto-Animation visit reveal.</description>
     </item>
     
+    <item>
+      <title>Charts support</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/charts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/charts/</guid>
+      <description>Advanced Slides allows to add charts using Obsidian Charts plugin syntax or Reveal.js Charts syntax.
+Obsidian Charts Example: Currently the following features are not supported:
+ Dataview Integration Chart from Table   ```chart  type: bar  labels: [Monday,Tuesday,Wednesday,Thursday,Friday, Saturday, Sunday, &amp;#34;next Week&amp;#34;, &amp;#34;next Month&amp;#34;]  series:  - title: Title 1  data: [1,2,3,4,5,6,7,8,9]  - title: Title 2  data: [5,4,3,2,1,0,-1,-2,-3]  ``` You can find more examples in the Obsidian Charts Dokumentation</description>
+    </item>
+    
   </channel>
 </rss>

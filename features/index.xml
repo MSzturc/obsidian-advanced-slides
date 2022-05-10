@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Features on Advanced Slides Documentation</title>
+    <link>https://mszturc.github.io/obsidian-advanced-slides/features/</link>
+    <description>Recent content in Features on Advanced Slides Documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://mszturc.github.io/obsidian-advanced-slides/features/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Auto Completion</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/features/autocomplete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/features/autocomplete/</guid>
+      <description>Your browser does not support the video tag. </description>
+    </item>
+    
+    <item>
+      <title>Embed Slides</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/features/embedslide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/features/embedslide/</guid>
+      <description>Embed Slides into Obsidian Note By using slide code blocks you are able to embed an slide into an obsidian note. As parameter you have to specify the reference to the slides and the page you want to dislay
+Example ```slide { 	slide: [[Presentation]], 	page: 7 }  ```  When using horizontal &amp;amp; vertical slides you can specify a page as following: 3/6
+This would show the 6th vertical slide on the 3rd horizontal position.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-05-09T11:52:27 UTC">
+<meta name="revised" content="2022-05-10T20:52:10 UTC">
 <title>Templates :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -287,6 +287,35 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/charts/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/extend-syntax/charts/">
+            Charts support
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+        </ul>
+    </li>
+    <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/features/" class="dd-item haschildren
+        ">
+      <div>
+      <a href="/obsidian-advanced-slides/features/"><i class='fa fa-star' ></i> Features</a><i class="fa fa-angle-right fa-lg category-icon"></i><i class="fa fa-circle-thin read-icon"></i>
+      </div>
+        <ul>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/features/autocomplete/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/features/autocomplete/">
+            Auto Completion
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/features/embedslide/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/features/embedslide/">
+            Embed Slides
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
     <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/layout/" class="dd-item haschildren
@@ -470,10 +499,10 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#quick-example">Quick Example</a></li>
+        <li><a href="#example-using-a-simple-slide-template">Example: Using a simple slide template</a></li>
         <li><a href="#optional-variables">Optional Variables</a></li>
         <li><a href="#advanced-example">Advanced example</a></li>
-        <li><a href="#template-in-action">Template in Action</a></li>
+        <li><a href="#using-templates-in-a-presentation">Using templates in a presentation</a></li>
         <li><a href="#the-rendered-slide">The rendered Slide</a></li>
       </ul>
     </li>
@@ -497,16 +526,16 @@
     
     
 
-<p>Advanced Slides comes with a template language that lets you create slides based on templates.</p>
-<p>With templates, you are be able to create layouts and structures that could be used in multiple slides and therefore reduce boilerplate code.</p>
-<h3 id="quick-example">Quick Example</h3>
-<p>The following template file named <code>tpl-footer</code> defines an slide structure with a main content area and a footer:</p>
+<p>Advanced Slides allows you to design individual slides based on slide templates. Each slide template can have a unique layout and structure that you can draw upon repeatedly over the presentation. Using slide templates makes creating presentations that use different layout formats across different slides easy and fast. Also, slide templates reduce redundant code (aka boilerplate code) in your md presentation document.</p>
+<h3 id="example-using-a-simple-slide-template">Example: Using a simple slide template</h3>
+<p>The following slide template defines a slide structure that has a main content area as well as a footer. It shall be named <code>tpl-footer</code> and can be stored as a regular md note anywhere within the Obsidian vault you are using to make the presentation.</p>
 <pre tabindex="0"><code>&lt;% content %&gt;
 
 &lt;grid drag=&#34;100 6&#34; drop=&#34;bottom&#34;&gt;
 &lt;% footer %&gt;
 &lt;/grid&gt;
-</code></pre><p>To use our new created template we simply reference it in an slide annotation:</p>
+</code></pre><p>Once we have created this slide template we can reference it in our presentation by making a slide annotation in the following manner:</p>
+<h4 id="how-to-use-templates">How to use templates</h4>
 <pre tabindex="0"><code>&lt;!-- slide template=&#34;[[tpl-footer]]&#34; --&gt;
 
 # This header will be part of the content section defined in the template
@@ -520,7 +549,7 @@ To place a text into the footer section you have to create a block comment with 
 #### This header will be placed in the footer section of the template
 :::
 </code></pre><h3 id="optional-variables">Optional Variables</h3>
-<p>By default every variable in a template has to be set by a block comment in the slide. Otherwise there will be placed a dummy text into the variable that reminds you to create a block comment for this variable. But there are szenarios where you dont want this behaviour (ex. when you have a citation line in the footer of your template and the has no references you want to notice). Therefore you can create a section in the template and add a <code>?</code> in it&rsquo;s definition:</p>
+<p>By default, every variable in a slide template has to be set by a block comment in the slide. Otherwise, a dummy text will be placed into the variable that reminds you to create a block comment for this variable. But there are scenarios where you don&rsquo;t want this behaviour, such as when you have a citation line in the footer of your template, but you don&rsquo;t need to reference any citations. Therefore you can create a section in the template and add a <code>?</code> in its definition:</p>
 <pre tabindex="0"><code>&lt;% content %&gt;
 
 &lt;grid drag=&#34;100 6&#34; drop=&#34;bottom&#34;&gt;
@@ -528,7 +557,7 @@ To place a text into the footer section you have to create a block comment with 
 &lt;/grid&gt;
 </code></pre><p>The footer markup won&rsquo;t be visible until you create a footer block comment inside of your slide.</p>
 <h3 id="advanced-example">Advanced example</h3>
-<p>this template will create a slide with a header bar ontop, 2 columns where we place content and a footer bar in the bottom with a citation line over it.</p>
+<p>The following slide template is called <code>tpl-con-2-1-box</code>. It creates a slide structure with a narrow header bar at the top end of the slide, 2 broad  columns at the center of the slide as well as a footer bar with a citation line in the bottom of the slide.</p>
 <pre tabindex="0"><code>&lt;grid drag=&#34;100 10&#34; drop=&#34;top&#34; bg=&#34;white&#34; align=&#34;left&#34; pad=&#34;0 20px&#34;&gt;
  &lt;% title %&gt;
 &lt;/grid&gt;
@@ -566,7 +595,7 @@ To place a text into the footer section you have to create a block comment with 
 &lt;grid drag=&#34;100 6&#34; drop=&#34;bottom&#34;&gt;
 ###### © 2022 Advanced Slides&lt;!-- element style=&#34;font-weight:300&#34; --&gt;
 &lt;/grid&gt;
-</code></pre><h3 id="template-in-action">Template in Action</h3>
+</code></pre><h3 id="using-templates-in-a-presentation">Using templates in a presentation</h3>
 <pre tabindex="0"><code>---
 theme: consult
 height: 540

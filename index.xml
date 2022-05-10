@@ -7,6 +7,15 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://mszturc.github.io/obsidian-advanced-slides/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Auto Completion</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/features/autocomplete/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/features/autocomplete/</guid>
+      <description>Your browser does not support the video tag. </description>
+    </item>
+    
+    <item>
       <title>Headers</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/heading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -63,6 +72,17 @@ gap By adding the gap attribute there will be a gap between each element:</descr
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/</guid>
       <description>text with border &amp;lt;!-- element class=&amp;#34;with-border&amp;#34; --&amp;gt;  text with background &amp;lt;!-- element style=&amp;#34;background:blue&amp;#34; --&amp;gt;  text with attribute &amp;lt;!-- element data-toggle=&amp;#34;modal&amp;#34; --&amp;gt; </description>
+    </item>
+    
+    <item>
+      <title>Embed Slides</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/features/embedslide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/features/embedslide/</guid>
+      <description>Embed Slides into Obsidian Note By using slide code blocks you are able to embed an slide into an obsidian note. As parameter you have to specify the reference to the slides and the page you want to dislay
+Example ```slide { 	slide: [[Presentation]], 	page: 7 }  ```  When using horizontal &amp;amp; vertical slides you can specify a page as following: 3/6
+This would show the 6th vertical slide on the 3rd horizontal position.</description>
     </item>
     
     <item>
@@ -320,6 +340,17 @@ Here&amp;rsquo;s a simple example to give you a better idea of how it can be use
     </item>
     
     <item>
+      <title>Charts support</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/charts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/charts/</guid>
+      <description>Advanced Slides allows to add charts using Obsidian Charts plugin syntax or Reveal.js Charts syntax.
+Obsidian Charts Example: Currently the following features are not supported:
+ Dataview Integration Chart from Table   ```chart  type: bar  labels: [Monday,Tuesday,Wednesday,Thursday,Friday, Saturday, Sunday, &amp;#34;next Week&amp;#34;, &amp;#34;next Month&amp;#34;]  series:  - title: Title 1  data: [1,2,3,4,5,6,7,8,9]  - title: Title 2  data: [5,4,3,2,1,0,-1,-2,-3]  ``` You can find more examples in the Obsidian Charts Dokumentation</description>
+    </item>
+    
+    <item>
       <title>Mermaid</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/mermaid/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -388,7 +419,7 @@ Add the plugin to your presentation, as below.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/credits/</guid>
-      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 470 commits   @actions-user 41 commits   @miluoshi 2 commits   @rxian 2 commits   @Michael-Beukman 1 commits   @code-factor 1 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
+      <description>github contributors .ghContributors{ display:flex; flex-flow: wrap; align-content: flex-start } .ghContributors  div{ width: 50% ; display: inline-flex; margin-bottom: 5px; } .ghContributors  div label{ padding-left: 4px ; } .ghContributors  div span{ font-size: x-small; padding-left: 4px ; }   @MSzturc 483 commits   @actions-user 41 commits   @miluoshi 2 commits   @rxian 2 commits   @Michael-Beukman 1 commits   @code-factor 1 commits   Packages and libraries  obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework  </description>
     </item>
     
   </channel>
