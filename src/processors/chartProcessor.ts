@@ -150,7 +150,7 @@ export class ChartProcessor {
 					}
 
 
-					const canvas = `<canvas style="height:${options.height}px" data-chart="${type}" >\n<!--\n${JSON.stringify(chart)}-->\n</canvas>`
+					const canvas = `<canvas style="max-height:${options.height}px" data-chart="${type}" >\n<!--\n${JSON.stringify(chart)}-->\n</canvas>`
 
 
 					console.log(`canvas: ${canvas}`);
