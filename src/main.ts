@@ -26,6 +26,13 @@ import { FolderSuggest } from './suggesters/FolderSuggester';
 import { ThemeSuggest } from './suggesters/ThemeSuggester';
 import { HighlightThemeSuggest } from './suggesters/HighlightThemeSuggester';
 import { AutoCompleteSuggest } from './suggesters/AutoCompleteSuggester';
+import { load } from 'js-yaml';
+
+
+interface EmbeddedSlideParameters {
+	slide: string;
+	page?: number;
+}
 
 export interface AdvancedSlidesSettings {
 	port: string;
@@ -180,8 +187,45 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				this.registerEditorSuggest(this.autoCompleteSuggester);
 			});
 
+			this.registerMarkdownCodeBlockProcessor("slide", async (src, el) => {
+
+				try {
+					const parameters = this.readParameters(src);
+					const page = parameters.page ? `${parameters.page}` : '0';
+					const url = `http://localhost:${this.settings.port}/embed/${parameters.slide}#/${page}`;
+
+					console.log(`url: ${url}`);
+
+					const viewContent = el.createDiv();
+
+					viewContent.empty();
+					viewContent.addClass('reveal-preview-view');
+
+					viewContent.createEl('iframe', {
+						attr: {
+							src: url,
+							sandbox: 'allow-scripts allow-same-origin',
+						},
+					});
+
+				} catch (e) {
+					el.createEl("h2", { text: "Parameters invalid: " + e.message });
+				}
+			});
+
 			// eslint-disable-next-line no-empty
 		} catch (err) { }
+	}
+
+	readParameters(src: string): EmbeddedSlideParameters {
+		const params = load(src) as EmbeddedSlideParameters;
+
+		params.slide = this.app.vault
+			.getMarkdownFiles()
+			.filter((x) => x.path.contains(params.slide))
+			.first()
+			.path;
+		return params;
 	}
 
 	getViewInstance(): RevealPreviewView {
