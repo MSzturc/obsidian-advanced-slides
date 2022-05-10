@@ -67,7 +67,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	progress: true,
 	slideNumber: false,
 	showGrid: false,
-	autoComplete: 'always'
+	autoComplete: 'inPreview'
 };
 
 export default class AdvancedSlidesPlugin extends Plugin {
