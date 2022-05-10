@@ -30,6 +30,7 @@ export class RevealRenderer {
 	async renderFile(filePath: string, params: any) {
 		let renderForExport = false;
 		let renderForPrint = false;
+		let renderForEmbed = false;
 
 		if (!_.isEmpty(params)) {
 			if (_.has(params, 'export')) {
@@ -38,6 +39,11 @@ export class RevealRenderer {
 
 			if (_.has(params, 'print-pdf')) {
 				renderForPrint = true;
+			}
+
+			if (_.has(params, 'embed')) {
+				renderForEmbed = params?.embed;
+				console.log(`renderForEmbed: ${renderForEmbed}`);
 			}
 		}
 

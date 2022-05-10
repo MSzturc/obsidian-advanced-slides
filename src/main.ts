@@ -192,9 +192,9 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				try {
 					const parameters = this.readParameters(src);
 					const page = parameters.page ? `${parameters.page}` : '0';
-					const url = `http://localhost:${this.settings.port}/embed/${parameters.slide}#/${page}`;
 
-					console.log(`url: ${url}`);
+					const url = new URL(`http://localhost:${this.settings.port}/embed/${parameters.slide}#/${page}`);
+					url.searchParams.append('embed', 'true');
 
 					const viewContent = el.createDiv();
 
@@ -203,7 +203,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 					viewContent.createEl('iframe', {
 						attr: {
-							src: url,
+							src: url.toString(),
 							sandbox: 'allow-scripts allow-same-origin',
 						},
 					});
