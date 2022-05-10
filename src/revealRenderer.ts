@@ -43,7 +43,6 @@ export class RevealRenderer {
 
 			if (_.has(params, 'embed')) {
 				renderForEmbed = params?.embed;
-				console.log(`renderForEmbed: ${renderForEmbed}`);
 			}
 		}
 
@@ -53,7 +52,7 @@ export class RevealRenderer {
 		}
 
 		const content = (await readFile(filePath.toString())).toString();
-		const rendered = await this.render(content, renderForPrint);
+		const rendered = await this.render(content, renderForPrint, renderForEmbed);
 
 		if (renderForExport) {
 			ImageCollector.getInstance().disable();
@@ -63,7 +62,7 @@ export class RevealRenderer {
 		return rendered;
 	}
 
-	async render(input: string, renderForPrint: boolean) {
+	async render(input: string, renderForPrint: boolean, renderEmbedded: boolean) {
 		const { yamlOptions, markdown } = this.yaml.parseYamlFrontMatter(input);
 		const options = this.yaml.getSlideOptions(yamlOptions, renderForPrint);
 		const revealOptions = this.yaml.getRevealOptions(options);
@@ -103,7 +102,7 @@ export class RevealRenderer {
 			revealOptionsStr: JSON.stringify(revealOptions),
 		});
 
-		const template = await this.getTemplate();
+		const template = await this.getTemplate(renderEmbedded);
 		const result = Mustache.render(template, context);
 		return result;
 	}
@@ -145,8 +144,15 @@ export class RevealRenderer {
 		return revealTheme ? revealTheme : theme;
 	}
 
-	private async getTemplate() {
-		const templateFile = join(this.pluginDirectory, defaults.template);
+	private async getTemplate(embed = false) {
+		let templateFile;
+
+		if (embed) {
+			templateFile = join(this.pluginDirectory, 'template/embed.html');
+		} else {
+			templateFile = join(this.pluginDirectory, defaults.template);
+		}
+
 		const content = (await readFile(templateFile.toString())).toString();
 		return content;
 	}
