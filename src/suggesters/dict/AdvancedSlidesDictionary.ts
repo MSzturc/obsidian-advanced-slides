@@ -22,8 +22,10 @@ const suggestionData: Dictionary = [
         offset: 11,
     },
     {
+        name: 'element',
         value: '<!-- element  -->',
         description: '@element',
+        strategy: 'startsWith',
         offset: 13,
     },
     {
@@ -42,6 +44,13 @@ const suggestionData: Dictionary = [
         description: 'small',
         strategy: 'startsWith',
         offset: 30,
+    },
+    {
+        name: 'embed',
+        value: '```slide\n{\n	slide: [[]],\n	page: 0\n}\n```',
+        description: '@embed',
+        strategy: 'startsWith',
+        offset: 21,
     },
 ];
 
