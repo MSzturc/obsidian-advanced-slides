@@ -77,6 +77,11 @@ export class ImageProcessor {
 	private htmlify(line: string) {
 		// eslint-disable-next-line prefer-const
 		let [, alt, filePath, commentString] = this.markdownImageRegex.exec(line);
+
+		if (alt.contains('|')) {
+			commentString = this.buildComment(alt.split('|')[1], commentString) ?? '';
+		}
+
 		const comment = this.parser.parseLine(commentString) ?? this.parser.buildComment('element');
 
 		const isIcon = this.isIcon(filePath);
