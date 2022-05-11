@@ -23,6 +23,7 @@ export class FormatProcessor {
 						.replaceAll(this.commentRegex, '');
 				}
 			})
-			.join('\n');
+			.join('\n')
+			.replaceAll(this.commentRegex, '');
 	}
 }
