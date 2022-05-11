@@ -27,6 +27,7 @@ Insert image with obsidian markdown syntax
 Scale image to a width of 100 px
 
 ![[Image.jpg|100]]
+![Image|100](https://picsum.photos/id/1006/500/300)
 
 ---
 
