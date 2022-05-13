@@ -78,7 +78,7 @@ export class ImageProcessor {
 		// eslint-disable-next-line prefer-const
 		let [, alt, filePath, commentString] = this.markdownImageRegex.exec(line);
 
-		if (alt.contains('|')) {
+		if (alt && alt.includes('|')) {
 			commentString = this.buildComment(alt.split('|')[1], commentString) ?? '';
 		}
 
