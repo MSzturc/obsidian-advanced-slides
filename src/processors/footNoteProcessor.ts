@@ -70,6 +70,17 @@ export class FootnoteProcessor {
 		footNotesBlock += '</ol>\n';
 		footNotesBlock += '</div>\n';
 
-		return input + '\n' + footNotesBlock;
+		const footnotePlaceholder = '<%? footnotes %>';
+
+		console.log(`input: ${input}`);
+
+		if (input.contains(footnotePlaceholder)) {
+			console.log(`true: ${true}`);
+			return input.replaceAll(footnotePlaceholder, footNotesBlock);
+		} else {
+			return input + '\n' + footNotesBlock;
+		}
+
+
 	}
 }
