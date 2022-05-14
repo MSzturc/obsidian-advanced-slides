@@ -1,8 +1,12 @@
 import { CommentParser } from 'src/comment';
 import { ObsidianUtils } from 'src/obsidianUtils';
 import { Options } from 'src/options';
+import { MultipleFileProcessor } from './multipleFileProcessor';
 
 export class TemplateProcessor {
+
+	private multipleFileProcessor: MultipleFileProcessor;
+
 	private slideCommentRegex = /<!--\s*(?:\.)?slide.*-->/;
 	private templateCommentRegex = /<!--\s*(?:\.)?slide.*(template="\[\[([^\]]+)\]\]"\s*).*-->/;
 	private propertyRegex = /:::\s([^\n]+)\s*(.*?:::[^\n]*)/sg;
@@ -14,6 +18,7 @@ export class TemplateProcessor {
 
 	constructor(utils: ObsidianUtils) {
 		this.utils = utils;
+		this.multipleFileProcessor = new MultipleFileProcessor(utils);
 	}
 
 	process(markdown: string, options: Options) {
@@ -45,6 +50,7 @@ export class TemplateProcessor {
 				const templateFile = this.utils.findFile(file);
 				const absoluteTemplateFile = this.utils.absolute(templateFile);
 				let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
+				templateContent = this.multipleFileProcessor.process(templateContent);
 				templateContent = templateContent.replaceAll('<% content %>', slide);
 
 				this.propertyRegex.lastIndex = 0;
