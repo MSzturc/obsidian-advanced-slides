@@ -143,7 +143,11 @@ exports[`Basic Markdown Syntax > Footnotes 1`] = `
 
 <div class=\\"footnotes\\" role=\\"doc-endnotes\\">
 <ol>
-<li id=\\"fn:1\\" role=\\"doc-endnote\\"><p>meaningful!&nbsp;</p></li></ol>
+<li id=\\"fn:1\\" role=\\"doc-endnote\\"><p>
+
+meaningful!
+
+</p></li></ol>
 </div>
 "
 `;
@@ -159,7 +163,19 @@ exports[`Basic Markdown Syntax > Footnotes in Tables 1`] = `
 
 <div class=\\"footnotes\\" role=\\"doc-endnotes\\">
 <ol>
-<li id=\\"fn:1\\" role=\\"doc-endnote\\"><p>fn1&nbsp;</p></li><li id=\\"fn:2\\" role=\\"doc-endnote\\"><p>fn2&nbsp;</p></li><li id=\\"fn:3\\" role=\\"doc-endnote\\"><p>fn3&nbsp;</p></li></ol>
+<li id=\\"fn:1\\" role=\\"doc-endnote\\"><p>
+
+fn1
+
+</p></li><li id=\\"fn:2\\" role=\\"doc-endnote\\"><p>
+
+fn2
+
+</p></li><li id=\\"fn:3\\" role=\\"doc-endnote\\"><p>
+
+fn3
+
+</p></li></ol>
 </div>
 "
 `;
