@@ -4,7 +4,7 @@ import { Options } from 'src/options';
 
 export class TemplateProcessor {
 	private slideCommentRegex = /<!--\s*(?:\.)?slide.*-->/;
-	private templateCommentRegex = /<!--\s*(?:\.)?slide.*template="\[\[([^\]]+)\].*-->/;
+	private templateCommentRegex = /<!--\s*(?:\.)?slide.*(template="\[\[([^\]]+)\]\]"\s*).*-->/;
 	private propertyRegex = /:::\s([^\n]+)\s*(.*?:::[^\n]*)/sg;
 
 	private optionalRegex = /<%\?.*%>/g;
@@ -41,7 +41,7 @@ export class TemplateProcessor {
 	transformSlide(slide: string) {
 		try {
 			if (this.templateCommentRegex.test(slide)) {
-				const [, file] = this.templateCommentRegex.exec(slide);
+				const [, templateProperty, file] = this.templateCommentRegex.exec(slide);
 				const templateFile = this.utils.findFile(file);
 				const absoluteTemplateFile = this.utils.absolute(templateFile);
 				let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
@@ -73,6 +73,9 @@ export class TemplateProcessor {
 					const [match] = m;
 					templateContent = templateContent.replaceAll(match, '');
 				}
+
+				templateContent = templateContent.replaceAll(templateProperty, '');
+
 				return templateContent;
 			} else {
 				return slide;
