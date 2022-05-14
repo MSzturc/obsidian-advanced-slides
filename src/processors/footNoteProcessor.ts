@@ -72,10 +72,7 @@ export class FootnoteProcessor {
 
 		const footnotePlaceholder = '<%? footnotes %>';
 
-		console.log(`input: ${input}`);
-
-		if (input.contains(footnotePlaceholder)) {
-			console.log(`true: ${true}`);
+		if (input.includes(footnotePlaceholder)) {
 			return input.replaceAll(footnotePlaceholder, footNotesBlock);
 		} else {
 			return input + '\n' + footNotesBlock;
