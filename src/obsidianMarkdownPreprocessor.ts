@@ -65,9 +65,21 @@ export class ObsidianMarkdownPreprocessor {
 	}
 	process(markdown: string, options: Options) {
 		YamlStore.getInstance().options = options;
-		const afterMultipleFileProcessor = this.multipleFileProcessor.process(markdown);
-		const afterTemplateProcessor = this.templateProcessor.process(afterMultipleFileProcessor, options);
-		const afterDebugViewProcessor = this.debugViewProcessor.process(afterTemplateProcessor, options);
+
+
+		let before = markdown;
+		let after;
+
+
+		while (before != after) {
+			if (after) {
+				before = after;
+			}
+			const afterMultipleFileProcessor = this.multipleFileProcessor.process(before);
+			after = this.templateProcessor.process(afterMultipleFileProcessor, options);
+		}
+
+		const afterDebugViewProcessor = this.debugViewProcessor.process(after, options);
 		const afterAutoClosingProcessor = this.autoClosingProcessor.process(afterDebugViewProcessor);
 		const afterCalloutProcessor = this.calloutProcessor.process(afterAutoClosingProcessor);
 		const afterIconsProcessor = this.iconsProcessor.process(afterCalloutProcessor);
