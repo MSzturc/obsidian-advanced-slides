@@ -33,13 +33,19 @@ export class TemplateProcessor {
 
 						let newSlide = slide;
 						if (this.templateCommentRegex.test(slide)) {
-							while (this.templateCommentRegex.test(newSlide)) {
-								newSlide = this.transformSlide(newSlide);
+							try {
+								while (this.templateCommentRegex.test(newSlide)) {
+									newSlide = this.transformSlide(newSlide);
+								}
+								newSlide = newSlide.replaceAll(this.emptySlideCommentRegex, '');
+								newSlide = this.computeVariables(newSlide);
+								output = output.split(slide).join(newSlide);
+								return newSlide;
+							} catch (error) {
+								console.log('Cannot process template: ' + error);
+								return slide;
 							}
-							newSlide = newSlide.replaceAll(this.emptySlideCommentRegex, '');
-							newSlide = this.computeVariables(newSlide);
-							output = output.split(slide).join(newSlide);
-							return newSlide;
+
 						}
 						return slide;
 					})
@@ -50,22 +56,17 @@ export class TemplateProcessor {
 	}
 
 	transformSlide(slide: string) {
-		try {
-			if (this.templateCommentRegex.test(slide)) {
-				const [, templateProperty, file] = this.templateCommentRegex.exec(slide);
-				const templateFile = this.utils.findFile(file);
-				const absoluteTemplateFile = this.utils.absolute(templateFile);
-				let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
-				templateContent = this.multipleFileProcessor.process(templateContent);
-				templateContent = templateContent.replaceAll('<% content %>', slide.replaceAll(templateProperty, ''));
-				return templateContent;
-			} else {
-				return slide;
-			}
-		} catch (error) {
+		if (this.templateCommentRegex.test(slide)) {
+			const [, templateProperty, file] = this.templateCommentRegex.exec(slide);
+			const templateFile = this.utils.findFile(file);
+			const absoluteTemplateFile = this.utils.absolute(templateFile);
+			let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
+			templateContent = this.multipleFileProcessor.process(templateContent);
+			templateContent = templateContent.replaceAll('<% content %>', slide.replaceAll(templateProperty, ''));
+			return templateContent;
+		} else {
 			return slide;
 		}
-
 	}
 
 	computeVariables(slide: string): string {

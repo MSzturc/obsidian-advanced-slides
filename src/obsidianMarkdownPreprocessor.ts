@@ -70,13 +70,19 @@ export class ObsidianMarkdownPreprocessor {
 		let before = markdown;
 		let after;
 
-
+		let circuitCounter = 0;
 		while (before != after) {
+			circuitCounter++;
 			if (after) {
 				before = after;
 			}
 			const afterMultipleFileProcessor = this.multipleFileProcessor.process(before);
 			after = this.templateProcessor.process(afterMultipleFileProcessor, options);
+
+			if (circuitCounter > 9) {
+				console.log('WARNING: Circuit in template hierarchy detected!');
+				break;
+			}
 		}
 
 		const afterDebugViewProcessor = this.debugViewProcessor.process(after, options);
