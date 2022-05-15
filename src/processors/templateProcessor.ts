@@ -58,6 +58,10 @@ export class TemplateProcessor {
 	transformSlide(slide: string) {
 		if (this.templateCommentRegex.test(slide)) {
 			const [, templateProperty, file] = this.templateCommentRegex.exec(slide);
+			let fileWithExtension = file;
+			if (!fileWithExtension.endsWith('.md')) {
+				fileWithExtension = fileWithExtension + '.md';
+			}
 			const templateFile = this.utils.findFile(file);
 			const absoluteTemplateFile = this.utils.absolute(templateFile);
 			let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
