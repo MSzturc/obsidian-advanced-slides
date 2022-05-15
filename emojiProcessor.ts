@@ -1865,6 +1865,6 @@ export class EmojiProcessor {
 	}
 
 	transformEmoji(markdown: string) {
-		return markdown.replace(/(\:(\w|\+|\-)+\:)(?=|[\!\.\?]|$)/gim, (m: string) => emoji[m] ?? m);
+		return markdown.replace(/(:(\w|\+|-)+:)(?=|[!.?]|$)/gim, (m: string) => emoji[m] ?? m);
 	}
 }
