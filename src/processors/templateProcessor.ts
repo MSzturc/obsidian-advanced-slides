@@ -62,7 +62,7 @@ export class TemplateProcessor {
 			if (!fileWithExtension.endsWith('.md')) {
 				fileWithExtension = fileWithExtension + '.md';
 			}
-			const templateFile = this.utils.findFile(file);
+			const templateFile = this.utils.findFile(fileWithExtension);
 			const absoluteTemplateFile = this.utils.absolute(templateFile);
 			let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
 			templateContent = this.multipleFileProcessor.process(templateContent);
