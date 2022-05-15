@@ -16,7 +16,8 @@ export class GridProcessor {
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
 					.map(slide => {
 						if (this.gridBlockRegex.test(slide)) {
-							const newSlide = this.transformSlide(slide);
+							let newSlide = this.transformSlide(slide);
+							newSlide = this.transformSlide(newSlide);
 							output = output.split(slide).join(newSlide);
 							return newSlide;
 						}
