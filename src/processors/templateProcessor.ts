@@ -7,7 +7,7 @@ export class TemplateProcessor {
 
 	private multipleFileProcessor: MultipleFileProcessor;
 
-	private slideCommentRegex = /<!--\s*(?:\.)?slide.*-->/;
+	private emptySlideCommentRegex = /<!--\s*(?:\.)?slide.*-->/g;
 	private templateCommentRegex = /<!--\s*(?:\.)?slide.*(template="\[\[([^\]]+)\]\]"\s*).*-->/;
 	private propertyRegex = /:::\s([^\n]+)\s*(.*?:::[^\n]*)/sg;
 
@@ -30,8 +30,14 @@ export class TemplateProcessor {
 				return slidegroup
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
 					.map(slide => {
-						if (this.slideCommentRegex.test(slide)) {
-							const newSlide = this.transformSlide(slide);
+
+						let newSlide = slide;
+						if (this.templateCommentRegex.test(slide)) {
+							while (this.templateCommentRegex.test(newSlide)) {
+								newSlide = this.transformSlide(newSlide);
+							}
+							newSlide = newSlide.replaceAll(this.emptySlideCommentRegex, '');
+							newSlide = this.computeVariables(newSlide);
 							output = output.split(slide).join(newSlide);
 							return newSlide;
 						}
@@ -51,37 +57,7 @@ export class TemplateProcessor {
 				const absoluteTemplateFile = this.utils.absolute(templateFile);
 				let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
 				templateContent = this.multipleFileProcessor.process(templateContent);
-				templateContent = templateContent.replaceAll('<% content %>', slide);
-
-				this.propertyRegex.lastIndex = 0;
-
-				let m;
-				while ((m = this.propertyRegex.exec(slide)) !== null) {
-					if (m.index === this.propertyRegex.lastIndex) {
-						this.propertyRegex.lastIndex++;
-					}
-					let [match, name, content] = m;
-
-					if (name == 'block') continue;
-
-					content = '::: block\n' + content;
-					const optionalName = '<%? ' + name.trim() + ' %>';
-					name = '<% ' + name.trim() + ' %>';
-					templateContent = templateContent.replaceAll(optionalName, content);
-					templateContent = templateContent.replaceAll(name, content);
-					templateContent = templateContent.replaceAll(match, '');
-				}
-				//Remove optional template variables
-				while ((m = this.optionalRegex.exec(templateContent)) !== null) {
-					if (m.index === this.optionalRegex.lastIndex) {
-						this.optionalRegex.lastIndex++;
-					}
-					const [match] = m;
-					templateContent = templateContent.replaceAll(match, '');
-				}
-
-				templateContent = templateContent.replaceAll(templateProperty, '');
-
+				templateContent = templateContent.replaceAll('<% content %>', slide.replaceAll(templateProperty, ''));
 				return templateContent;
 			} else {
 				return slide;
@@ -90,5 +66,39 @@ export class TemplateProcessor {
 			return slide;
 		}
 
+	}
+
+	computeVariables(slide: string): string {
+
+		let result = slide;
+		this.propertyRegex.lastIndex = 0;
+
+		let m;
+		while ((m = this.propertyRegex.exec(result)) !== null) {
+			if (m.index === this.propertyRegex.lastIndex) {
+				this.propertyRegex.lastIndex++;
+			}
+
+			// eslint-disable-next-line prefer-const
+			let [match, name, content] = m;
+
+			if (name == 'block') continue;
+
+			content = '::: block\n' + content;
+			const optionalName = '<%? ' + name.trim() + ' %>';
+			name = '<% ' + name.trim() + ' %>';
+			result = result.replaceAll(optionalName, content);
+			result = result.replaceAll(name, content);
+			result = result.replaceAll(match, '');
+		}
+		//Remove optional template variables
+		while ((m = this.optionalRegex.exec(result)) !== null) {
+			if (m.index === this.optionalRegex.lastIndex) {
+				this.optionalRegex.lastIndex++;
+			}
+			const [match] = m;
+			result = result.replaceAll(match, '');
+		}
+		return result;
 	}
 }
