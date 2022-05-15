@@ -16,10 +16,16 @@ export class GridProcessor {
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
 					.map(slide => {
 						if (this.gridBlockRegex.test(slide)) {
-							let newSlide = this.transformSlide(slide);
-							newSlide = this.transformSlide(newSlide);
-							output = output.split(slide).join(newSlide);
-							return newSlide;
+							let before = this.transformSlide(slide);
+							let after;
+							while (after != before) {
+								if (after) {
+									before = after;
+								}
+								after = this.transformSlide(before);
+							}
+							output = output.split(slide).join(after);
+							return after;
 						}
 						return slide;
 					})
