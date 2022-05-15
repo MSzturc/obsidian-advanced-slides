@@ -2,7 +2,8 @@ import { Options } from '../options';
 import { Properties } from 'src/transformers';
 
 export class GridProcessor {
-	private gridRegex = /<\s*grid([^>]+)>(.*?)<\/grid>/gs;
+	private gridBlockRegex = /<\s*grid(?:(?!(<grid|<\/grid>)).)*<\/grid>/gs;
+	private gridRegex = /<\s*grid([^>]+)>(.*?)<\/grid>/s;
 	private gridPropertiesRegex = /([^=]*)\s*=\s*"([^"]*)"\s*|([^=]*)\s*=\s*'([^']*)'\s*/g;
 
 	process(markdown: string, options: Options) {
@@ -14,7 +15,7 @@ export class GridProcessor {
 				return slidegroup
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
 					.map(slide => {
-						if (this.gridRegex.test(slide)) {
+						if (this.gridBlockRegex.test(slide)) {
 							const newSlide = this.transformSlide(slide);
 							output = output.split(slide).join(newSlide);
 							return newSlide;
@@ -30,14 +31,16 @@ export class GridProcessor {
 
 	transformSlide(slide: string) {
 		const result: Map<string, string> = new Map<string, string>();
-		this.gridRegex.lastIndex = 0;
+		this.gridBlockRegex.lastIndex = 0;
 
 		let m;
-		while ((m = this.gridRegex.exec(slide)) !== null) {
-			if (m.index === this.gridRegex.lastIndex) {
-				this.gridRegex.lastIndex++;
+		while ((m = this.gridBlockRegex.exec(slide)) !== null) {
+			if (m.index === this.gridBlockRegex.lastIndex) {
+				this.gridBlockRegex.lastIndex++;
 			}
-			const [match, attr, inner] = m;
+			const gridTag = m[0];
+
+			const [match, attr, inner] = this.gridRegex.exec(gridTag);
 			result.set(match, this.transformGrid(attr, inner));
 		}
 
