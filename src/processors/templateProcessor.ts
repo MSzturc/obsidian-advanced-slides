@@ -79,7 +79,7 @@ export class TemplateProcessor {
 		this.propertyRegex.lastIndex = 0;
 
 		let m;
-		while ((m = this.propertyRegex.exec(result)) !== null) {
+		while ((m = this.propertyRegex.exec(slide)) !== null) {
 			if (m.index === this.propertyRegex.lastIndex) {
 				this.propertyRegex.lastIndex++;
 			}
@@ -101,8 +101,7 @@ export class TemplateProcessor {
 			if (m.index === this.optionalRegex.lastIndex) {
 				this.optionalRegex.lastIndex++;
 			}
-			const [match] = m;
-			result = result.replaceAll(match, '');
+			result = result.replaceAll(m[0], '');
 		}
 		return result;
 	}
