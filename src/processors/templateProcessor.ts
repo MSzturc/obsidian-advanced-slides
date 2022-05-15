@@ -7,7 +7,7 @@ export class TemplateProcessor {
 
 	private multipleFileProcessor: MultipleFileProcessor;
 
-	private emptySlideCommentRegex = /<!--\s*(?:\.)?slide.*-->/g;
+	private emptySlideCommentRegex = /<!--\s*(?:\.)?slide(?::)?\s*-->/g;
 	private templateCommentRegex = /<!--\s*(?:\.)?slide.*(template="\[\[([^\]]+)\]\]"\s*).*-->/;
 	private propertyRegex = /:::\s([^\n]+)\s*(.*?:::[^\n]*)/sg;
 
