@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.59% </span>
+                <span class="strong">90.9% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>50/54</span>
+                <span class='fraction'>50/55</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.45% </span>
+                <span class="strong">90.74% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>49/53</span>
+                <span class='fraction'>49/54</span>
             </div>
         
             
@@ -167,7 +167,8 @@
 <a name='L102'></a><a href='#L102'>102</a>
 <a name='L103'></a><a href='#L103'>103</a>
 <a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+<a name='L105'></a><a href='#L105'>105</a>
+<a name='L106'></a><a href='#L106'>106</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
@@ -204,11 +205,17 @@
 <span class="cline-any cline-yes">97x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">93x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -227,13 +234,8 @@
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -306,13 +308,19 @@ export class TemplateProcessor {
 &nbsp;
 						let newSlide = slide;
 						if (this.templateCommentRegex.test(slide)) {
-							while (this.templateCommentRegex.test(newSlide)) {
-								newSlide = this.transformSlide(newSlide);
+							try {
+								while (this.templateCommentRegex.test(newSlide)) {
+									newSlide = this.transformSlide(newSlide);
+								}
+								newSlide = newSlide.replaceAll(this.emptySlideCommentRegex, '');
+								newSlide = this.computeVariables(newSlide);
+								output = output.split(slide).join(newSlide);
+								return newSlide;
+							} catch (error) {
+<span class="cstat-no" title="statement not covered" >								console.log('Cannot process template: ' + error);</span>
+<span class="cstat-no" title="statement not covered" >								return slide;</span>
 							}
-							newSlide = newSlide.replaceAll(this.emptySlideCommentRegex, '');
-							newSlide = this.computeVariables(newSlide);
-							output = output.split(slide).join(newSlide);
-							return newSlide;
+&nbsp;
 						}
 						return slide;
 					})
@@ -323,22 +331,17 @@ export class TemplateProcessor {
 	}
 &nbsp;
 	transformSlide(slide: string) {
-		try {
-			if (this.templateCommentRegex.test(slide)) {
-				const [, templateProperty, file] = this.templateCommentRegex.exec(slide);
-				const templateFile = this.utils.findFile(file);
-				const absoluteTemplateFile = this.utils.absolute(templateFile);
-				let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
-				templateContent = this.multipleFileProcessor.process(templateContent);
-				templateContent = templateContent.replaceAll('&lt;% content %&gt;', slide.replaceAll(templateProperty, ''));
-				return templateContent;
-			} else <span class="missing-if-branch" title="else path not taken" >E</span>{
-<span class="cstat-no" title="statement not covered" >				return slide;</span>
-			}
-		} catch (error) {
+		if (this.templateCommentRegex.test(slide)) {
+			const [, templateProperty, file] = this.templateCommentRegex.exec(slide);
+			const templateFile = this.utils.findFile(file);
+			const absoluteTemplateFile = this.utils.absolute(templateFile);
+			let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
+			templateContent = this.multipleFileProcessor.process(templateContent);
+			templateContent = templateContent.replaceAll('&lt;% content %&gt;', slide.replaceAll(templateProperty, ''));
+			return templateContent;
+		} else <span class="missing-if-branch" title="else path not taken" >E</span>{
 <span class="cstat-no" title="statement not covered" >			return slide;</span>
 		}
-&nbsp;
 	}
 &nbsp;
 	computeVariables(slide: string): string {
@@ -382,7 +385,7 @@ export class TemplateProcessor {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Sun May 15 2022 08:49:52 GMT+0000 (Coordinated Universal Time)
+                at Sun May 15 2022 09:07:32 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../../prettify.js"></script>
