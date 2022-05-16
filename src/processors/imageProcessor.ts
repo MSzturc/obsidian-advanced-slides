@@ -99,7 +99,7 @@ export class ImageProcessor {
 
 			const imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}></img>`;
 			const pHtml = `<p ${this.parser.buildAttributes(
-				this.parser.buildComment('element', ['line-height: 0'], ['reset-paragraph']),
+				this.parser.buildComment('element', ['line-height: 0'], ['reset-paragraph', 'image-paragraph']),
 			)}>${imageHtml}</p>\n`;
 			return pHtml;
 		}
