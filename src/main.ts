@@ -143,6 +143,17 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 			this.registerEditorSuggest(new LineSelectionListener(this.app, this));
 
+			this.registerMarkdownPostProcessor((element, context) => {
+				const paragraphs = element.querySelectorAll<HTMLParagraphElement>("p");
+				for (let index = 0; index < paragraphs.length; index++) {
+					const paragraph = paragraphs.item(index);
+
+					if (paragraph.innerText.startsWith(":::")) {
+						paragraph.remove();
+					}
+				}
+			});
+
 			addIcon('slides', ICON_DATA);
 			addIcon('refresh', REFRESH_ICON);
 
