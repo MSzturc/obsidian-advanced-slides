@@ -24,11 +24,11 @@ exports[`Grid Component > Attributes > Alignment > Stretch > Row 1`] = `
 exports[`Grid Component > Attributes > Alignment 1`] = `
 "<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0px; top: 210px; height: 490px; min-height: 490px; width: 960px; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -38,11 +38,11 @@ exports[`Grid Component > Attributes > Alignment 1`] = `
 exports[`Grid Component > Attributes > Alignment 2`] = `
 "<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0px; top: 210px; height: 490px; min-height: 490px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -52,11 +52,11 @@ exports[`Grid Component > Attributes > Alignment 2`] = `
 exports[`Grid Component > Attributes > Alignment 3`] = `
 "<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0px; top: 210px; height: 490px; min-height: 490px; width: 960px; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -66,11 +66,11 @@ exports[`Grid Component > Attributes > Alignment 3`] = `
 exports[`Grid Component > Attributes > Alignment 4`] = `
 "<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0px; top: 210px; height: 490px; min-height: 490px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -80,11 +80,11 @@ exports[`Grid Component > Attributes > Alignment 4`] = `
 exports[`Grid Component > Attributes > Alignment 5`] = `
 "<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -94,11 +94,11 @@ exports[`Grid Component > Attributes > Alignment 5`] = `
 exports[`Grid Component > Attributes > Alignment 6`] = `
 "<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -108,11 +108,11 @@ exports[`Grid Component > Attributes > Alignment 6`] = `
 exports[`Grid Component > Attributes > Alignment 7`] = `
 "<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -122,11 +122,11 @@ exports[`Grid Component > Attributes > Alignment 7`] = `
 exports[`Grid Component > Attributes > Alignment 8`] = `
 "<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -136,11 +136,11 @@ exports[`Grid Component > Attributes > Alignment 8`] = `
 exports[`Grid Component > Attributes > Alignment 9`] = `
 "<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -150,11 +150,11 @@ exports[`Grid Component > Attributes > Alignment 9`] = `
 exports[`Grid Component > Attributes > Alignment 10`] = `
 "<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -164,11 +164,11 @@ exports[`Grid Component > Attributes > Alignment 10`] = `
 exports[`Grid Component > Attributes > Alignment 11`] = `
 "<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -178,11 +178,11 @@ exports[`Grid Component > Attributes > Alignment 11`] = `
 exports[`Grid Component > Attributes > Alignment 12`] = `
 "<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -192,11 +192,11 @@ exports[`Grid Component > Attributes > Alignment 12`] = `
 exports[`Grid Component > Attributes > Alignment 13`] = `
 "<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -206,11 +206,11 @@ exports[`Grid Component > Attributes > Alignment 13`] = `
 exports[`Grid Component > Attributes > Alignment 14`] = `
 "<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -220,11 +220,11 @@ exports[`Grid Component > Attributes > Alignment 14`] = `
 exports[`Grid Component > Attributes > Alignment 15`] = `
 "<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -234,11 +234,11 @@ exports[`Grid Component > Attributes > Alignment 15`] = `
 exports[`Grid Component > Attributes > Alignment 16`] = `
 "<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -248,11 +248,11 @@ exports[`Grid Component > Attributes > Alignment 16`] = `
 exports[`Grid Component > Attributes > Alignment 17`] = `
 "<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -262,11 +262,11 @@ exports[`Grid Component > Attributes > Alignment 17`] = `
 exports[`Grid Component > Attributes > Alignment 18`] = `
 "<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -319,7 +319,7 @@ Text is too blurry
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: white; filter: grayscale(); position: absolute; left: 364.79999999999995px; top: 175px; height: 350px; min-height: 350px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -334,7 +334,7 @@ exports[`Grid Component > Attributes > Padding 1`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; padding: 20px; box-sizing: border-box; position: absolute; left: 480px; top: 350px; height: 350px; min-height: 350px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\"></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\"></img></p>
 
 </div>
 <!-- .slide: class=\\"drop\\" -->
@@ -418,7 +418,7 @@ exports[`Grid Component > Column Flow 1`] = `
 "<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 288px; top: 0px; height: 700px; min-height: 700px; width: 384px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
 ### Lorem
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 ### Ipsum
 </div>
@@ -473,7 +473,7 @@ exports[`Grid Component > Row Flow 1`] = `
 "<div class=\\"reset-margin flex-even\\" style=\\"background-color: coral; position: absolute; left: 0px; top: 210px; height: 280px; min-height: 280px; width: 960px; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" >
 
 ### Lorem
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
+<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 ### Ipsum
 </div>
