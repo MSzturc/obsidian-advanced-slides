@@ -117,14 +117,15 @@ The notes window also gives you a preview of the next upcoming slide so it may b
     </item>
     
     <item>
-      <title>Slide Animation</title>
-      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slideanimation/</link>
+      <title>Emojis</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/emojis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slideanimation/</guid>
-      <description>Advanced Slides can automatically animate elements across slides. All you need to do is add data-auto-animate to two adjacent slide annotationsand Auto-Animate will animate all matching elements between the two.
-Here&amp;rsquo;s a simple example to give you a better idea of how it can be used:
-&amp;lt;!-- .slide: data-auto-animate --&amp;gt; # Title  --- &amp;lt;!-- .slide: data-auto-animate --&amp;gt;  # Title ##### **Subtitle** ###### *Author - 2022*  To learn more about Auto-Animation visit reveal.</description>
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/emojis/</guid>
+      <description>You can insert Emoji shortcodes in your slide.
+:smile: =&amp;gt; 😄  Any shortcode you write in your markdown notes will be automatically shown as an emoji in the slide preview.
+If you want to have full support for shortcode&amp;rsquo;s autocompletion or viewing them in reading mode, this plugin is the perfect companion: Obsidian Emoji Shortcodes
+An extensive cheat sheet for every shortcode here </description>
     </item>
     
     <item>
@@ -136,6 +137,17 @@ Here&amp;rsquo;s a simple example to give you a better idea of how it can be use
       <description>Advanced Slides allows to add charts using Obsidian Charts plugin syntax or Reveal.js Charts syntax.
 Obsidian Charts Example: Currently the following features are not supported:
  Dataview Integration Chart from Table   ```chart  type: bar  labels: [Monday,Tuesday,Wednesday,Thursday,Friday, Saturday, Sunday, &amp;#34;next Week&amp;#34;, &amp;#34;next Month&amp;#34;]  series:  - title: Title 1  data: [1,2,3,4,5,6,7,8,9]  - title: Title 2  data: [5,4,3,2,1,0,-1,-2,-3]  ``` You can find more examples in the Obsidian Charts Dokumentation</description>
+    </item>
+    
+    <item>
+      <title>Slide Animation</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slideanimation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slideanimation/</guid>
+      <description>Advanced Slides can automatically animate elements across slides. All you need to do is add data-auto-animate to two adjacent slide annotationsand Auto-Animate will animate all matching elements between the two.
+Here&amp;rsquo;s a simple example to give you a better idea of how it can be used:
+&amp;lt;!-- .slide: data-auto-animate --&amp;gt; # Title  --- &amp;lt;!-- .slide: data-auto-animate --&amp;gt;  # Title ##### **Subtitle** ###### *Author - 2022*  To learn more about Auto-Animation visit reveal.</description>
     </item>
     
   </channel>

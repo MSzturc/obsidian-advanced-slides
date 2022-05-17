@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.14% </span>
+                <span class="strong">97.26% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>68/70</span>
+                <span class='fraction'>71/73</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">97.14% </span>
+                <span class="strong">97.26% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>68/70</span>
+                <span class='fraction'>71/73</span>
             </div>
         
             
@@ -170,7 +170,11 @@
 <a name='L105'></a><a href='#L105'>105</a>
 <a name='L106'></a><a href='#L106'>106</a>
 <a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+<a name='L108'></a><a href='#L108'>108</a>
+<a name='L109'></a><a href='#L109'>109</a>
+<a name='L110'></a><a href='#L110'>110</a>
+<a name='L111'></a><a href='#L111'>111</a>
+<a name='L112'></a><a href='#L112'>112</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -192,6 +196,7 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -215,6 +220,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">66x</span>
 <span class="cline-any cline-yes">66x</span>
 <span class="cline-any cline-yes">66x</span>
 <span class="cline-any cline-yes">66x</span>
@@ -257,6 +264,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">66x</span>
 <span class="cline-any cline-yes">66x</span>
 <span class="cline-any cline-yes">66x</span>
 <span class="cline-any cline-yes">66x</span>
@@ -294,6 +302,7 @@ import { CommentProcessor } from './processors/commentProcessor';
 import { DropProcessor } from './processors/dropProcessor';
 import { YamlStore } from './yamlStore';
 import { AutoClosingProcessor } from './processors/autoClosingProcessor';
+import { EmojiProcessor } from './processors/emojiProcessor';
 import { IconsProcessor } from './processors/iconsProcessor';
 import { DebugViewProcessor } from './processors/debugViewProcessor';
 import { CalloutProcessor } from './processors/calloutProcessor';
@@ -315,6 +324,7 @@ export class ObsidianMarkdownPreprocessor {
 	private commentProcessor: CommentProcessor;
 	private dropProcessor: DropProcessor;
 	private autoClosingProcessor: AutoClosingProcessor;
+	private emojiProcessor: EmojiProcessor;
 	private iconsProcessor: IconsProcessor;
 	private debugViewProcessor: DebugViewProcessor;
 	private calloutProcessor: CalloutProcessor;
@@ -336,6 +346,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.commentProcessor = new CommentProcessor();
 		this.dropProcessor = new DropProcessor();
 		this.autoClosingProcessor = new AutoClosingProcessor();
+		this.emojiProcessor = new EmojiProcessor();
 		this.iconsProcessor = new IconsProcessor();
 		this.debugViewProcessor = new DebugViewProcessor();
 		this.calloutProcessor = new CalloutProcessor();
@@ -367,7 +378,8 @@ export class ObsidianMarkdownPreprocessor {
 		const afterDebugViewProcessor = this.debugViewProcessor.process(after, options);
 		const afterAutoClosingProcessor = this.autoClosingProcessor.process(afterDebugViewProcessor);
 		const afterCalloutProcessor = this.calloutProcessor.process(afterAutoClosingProcessor);
-		const afterIconsProcessor = this.iconsProcessor.process(afterCalloutProcessor);
+		const afterEmojiProcessor = this.emojiProcessor.process(afterCalloutProcessor);
+		const afterIconsProcessor = this.iconsProcessor.process(afterEmojiProcessor);
 		const afterDropProcessor = this.dropProcessor.process(afterIconsProcessor, options);
 		const afterMermaidProcessor = this.mermaidProcessor.process(afterDropProcessor);
 		const afterBlockProcessor = this.blockProcessor.process(afterMermaidProcessor);
@@ -391,7 +403,7 @@ export class ObsidianMarkdownPreprocessor {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Tue May 17 2022 11:09:30 GMT+0000 (Coordinated Universal Time)
+                at Tue May 17 2022 14:59:43 GMT+0000 (Coordinated Universal Time)
             </div>
         </div>
         <script src="../prettify.js"></script>
