@@ -40,7 +40,7 @@
 	"empty_template": "- no changes",
 	"label_extractor": [
 		{
-			"pattern": "^(feature|fix|bugfix|docs|documentation|refactor|revert|build|ci):(.*)",
+			"pattern": "^(feat|feature|fix|bugfix|docs|documentation|refactor|revert|build|ci):(.*)",
 			"target": "$1"
 		}
 	],
