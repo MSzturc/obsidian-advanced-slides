@@ -15,6 +15,7 @@ import { CommentProcessor } from './processors/commentProcessor';
 import { DropProcessor } from './processors/dropProcessor';
 import { YamlStore } from './yamlStore';
 import { AutoClosingProcessor } from './processors/autoClosingProcessor';
+import { EmojiProcessor } from './processors/emojiProcessor';
 import { IconsProcessor } from './processors/iconsProcessor';
 import { DebugViewProcessor } from './processors/debugViewProcessor';
 import { CalloutProcessor } from './processors/calloutProcessor';
@@ -36,6 +37,7 @@ export class ObsidianMarkdownPreprocessor {
 	private commentProcessor: CommentProcessor;
 	private dropProcessor: DropProcessor;
 	private autoClosingProcessor: AutoClosingProcessor;
+	private emojiProcessor: EmojiProcessor;
 	private iconsProcessor: IconsProcessor;
 	private debugViewProcessor: DebugViewProcessor;
 	private calloutProcessor: CalloutProcessor;
@@ -57,6 +59,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.commentProcessor = new CommentProcessor();
 		this.dropProcessor = new DropProcessor();
 		this.autoClosingProcessor = new AutoClosingProcessor();
+		this.emojiProcessor = new EmojiProcessor();
 		this.iconsProcessor = new IconsProcessor();
 		this.debugViewProcessor = new DebugViewProcessor();
 		this.calloutProcessor = new CalloutProcessor();
@@ -88,7 +91,8 @@ export class ObsidianMarkdownPreprocessor {
 		const afterDebugViewProcessor = this.debugViewProcessor.process(after, options);
 		const afterAutoClosingProcessor = this.autoClosingProcessor.process(afterDebugViewProcessor);
 		const afterCalloutProcessor = this.calloutProcessor.process(afterAutoClosingProcessor);
-		const afterIconsProcessor = this.iconsProcessor.process(afterCalloutProcessor);
+		const afterEmojiProcessor = this.emojiProcessor.process(afterCalloutProcessor);
+		const afterIconsProcessor = this.iconsProcessor.process(afterEmojiProcessor);
 		const afterDropProcessor = this.dropProcessor.process(afterIconsProcessor, options);
 		const afterMermaidProcessor = this.mermaidProcessor.process(afterDropProcessor);
 		const afterBlockProcessor = this.blockProcessor.process(afterMermaidProcessor);

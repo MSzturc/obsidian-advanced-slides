@@ -1,7 +1,7 @@
 +++
 title = "Slide Animation"
 description = ""
-weight = 12
+weight = 15
 +++
 
 Advanced Slides can automatically animate elements across slides. All you need to do is add `data-auto-animate` to two adjacent slide annotationsand Auto-Animate will animate all matching elements between the two.
