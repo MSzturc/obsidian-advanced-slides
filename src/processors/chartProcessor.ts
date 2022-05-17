@@ -152,9 +152,6 @@ export class ChartProcessor {
 
 					const canvas = `<canvas style="max-height:${options.height}px" data-chart="${type}" >\n<!--\n${JSON.stringify(chart)}-->\n</canvas>`
 
-
-					console.log(`canvas: ${canvas}`);
-
 					const result = before.trimEnd() + '\n' + canvas + '\n' + after.trimStart();
 					return this.transformChart(result, options);
 
