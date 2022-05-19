@@ -40,6 +40,7 @@ function build() {
             bundle: true,
             external: ['obsidian', 'electron', ...builtins],
             format: 'cjs',
+            minify: prod,
             watch: !prod,
             target: 'es2020',
             logLevel: "info",
