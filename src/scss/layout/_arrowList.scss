@@ -1,0 +1,26 @@
+.arrowList ul {
+	margin: 0;
+}
+
+.arrowList li {
+	display: grid;
+	grid-template-columns: 1em auto;
+	align-items: center;
+	padding: 0;
+}
+
+.arrowList li:first-child {
+	padding-top: 0.5em;
+}
+
+.arrowList li:last-child {
+	padding-bottom: 0.5em
+}
+
+.arrowList li:before {
+	content: '▶';
+	font-size: 0.75em;
+	color: var(--r-main-color);
+	top: 0.1em;
+	position: relative;
+}

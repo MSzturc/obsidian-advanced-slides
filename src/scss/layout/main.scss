@@ -3,21 +3,24 @@
 @import '_animation.scss';
 @import '_callouts.scss';
 @import '_stretch.scss';
+@import '_arrowList.scss';
 
 :root {
 	--dbg-size: 0;
 }
 
-.dbg, .dbg * {
+.dbg,
+.dbg * {
 	--dbg-size: 1px;
-    border: 1px solid red;
+	border: 1px solid red;
 }
 
-.reset-margin, .reset-margin > * {
+.reset-margin,
+.reset-margin>* {
 	--r-block-margin: 0;
 	--r-heading-margin: 0;
 }
 
-.flex-even > * {
+.flex-even>* {
 	flex: 1;
 }
