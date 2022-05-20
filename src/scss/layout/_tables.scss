@@ -1,0 +1,9 @@
+.wideTable,
+.wideTable>table {
+	width: 100%;
+}
+
+.noBorder td,
+th {
+	border: none !important;
+}
