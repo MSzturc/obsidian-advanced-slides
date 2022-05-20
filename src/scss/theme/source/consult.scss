@@ -16,16 +16,20 @@ $mainColor: #595C5D;
 $headingColor: #595C5D;
 
 $mainFontSize: 16px;
-    
-$mainFont: 'Calibri', Helvetica, sans-serif;
-$headingFont: 'Calibri', Helvetica, sans-serif;
+
+$mainFont: 'Calibri',
+Helvetica,
+sans-serif;
+$headingFont: 'Calibri',
+Helvetica,
+sans-serif;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
 $headingTextTransform: none;
 $headingFontWeight: 600;
 $linkColor: #42affa;
-$linkColorHover: lighten( $linkColor, 15% );
-$selectionBackgroundColor: lighten( $linkColor, 25% );
+$linkColorHover: lighten($linkColor, 15%);
+$selectionBackgroundColor: lighten($linkColor, 25%);
 
 $heading1Size: 3.75em;
 $heading2Size: 1.875em;
@@ -45,29 +49,39 @@ $heading6FontWeight: 400;
 @import "../template/theme";
 // ---------------------------------------------
 
-.reveal table th, .reveal table td {
-    vertical-align: top;
+.reveal table th,
+.reveal table td {
+	vertical-align: top;
 }
 
-.reveal table th, .reveal table td {
-    border-left: 1px solid;
+.reveal table th,
+.reveal table td {
+	border-left: 1px solid;
 }
 
-.reveal table th:first-child, .reveal table td:first-child {
-    border-left: 0;
+.reveal table th:first-child,
+.reveal table td:first-child {
+	border-left: 0;
 }
 
-ul, ol {
+ul,
+ol {
 	margin: 0;
-    padding: 0;
+	padding: 0;
 }
 
-ul > li, ol > li {
-    padding-bottom: 0.625em;
+ul>li,
+ol>li {
+	padding-bottom: 0.625em;
 }
 
-li > ul, li > ol {
-    padding-top: 0.625em;
+li>ul,
+li>ol {
+	padding-top: 0.625em;
 }
 
-
+.compressedList>ol>li,
+.compressedList>ul>li:not(:last-child),
+.compressedList *>ul>li:not(:last-child) {
+	padding: 0;
+}
