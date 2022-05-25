@@ -52,8 +52,8 @@ export class ObsidianUtils {
 
 	/** TODO: Refactoring ************************** */
 
-	getAbsolutePath(filename: string): string {
-		const markdownFile = this.getTFile(filename);
+	getAbsolutePath(relativePath: string): string {
+		const markdownFile = this.getTFile(relativePath);
 		return this.absolute(markdownFile?.path);
 	}
 
