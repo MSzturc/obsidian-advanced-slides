@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs-extra';
-import { App, FileSystemAdapter } from 'obsidian';
+import { App, FileSystemAdapter, TFile } from 'obsidian';
 import path from 'path';
 import { ImageCollector } from './imageCollector';
 import { AdvancedSlidesSettings } from './main';
@@ -41,16 +41,19 @@ export class ObsidianUtils {
 		return this.settings;
 	}
 
-	/** TODO: Refactoring ************************** */
-
-	getAbsolutePath(filename: string): string {
-		const markdownFile = this.app.vault
+	private getTFile(filename: string): TFile | undefined {
+		return this.app.vault
 			.getFiles()
 			.filter(item => {
 				return item.path.contains(filename);
 			})
 			.first();
+	}
 
+	/** TODO: Refactoring ************************** */
+
+	getAbsolutePath(filename: string): string {
+		const markdownFile = this.getTFile(filename);
 		return this.absolute(markdownFile?.path);
 	}
 
