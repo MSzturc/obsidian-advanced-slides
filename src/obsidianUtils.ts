@@ -161,7 +161,6 @@ export class ObsidianUtils {
 					result = lines.slice(resolved.start.line).join('\n');
 				}
 				result = result.replaceAll(/\^[^\n]+/g, "");
-				console.log(`result: ${result}`);
 				return result;
 			} else {
 				return '![[' + relativeFilePath + '#' + header + ']]';
