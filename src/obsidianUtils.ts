@@ -1,5 +1,5 @@
 import { readFileSync } from 'fs-extra';
-import { App, FileSystemAdapter, TFile } from 'obsidian';
+import { App, FileSystemAdapter, resolveSubpath, TFile } from 'obsidian';
 import path from 'path';
 import { ImageCollector } from './imageCollector';
 import { AdvancedSlidesSettings } from './main';
@@ -133,35 +133,29 @@ export class ObsidianUtils {
 	}
 
 	parseFile(relativeFilePath: string, header: string) {
-		const absoluteFilePath = this.getAbsolutePath(relativeFilePath);
+		const tfile = this.getTFile(relativeFilePath);
+		const absoluteFilePath = this.absolute(tfile?.path);
 		const fileContent = readFileSync(absoluteFilePath, { encoding: 'utf-8' });
 
 		if (header === null) {
 			return fileContent.replace(this.yamlRegex, '');
+		} else if (header.startsWith('^')) {
+			return "";
 		} else {
+
 			const lines = fileContent.split('\n');
+			const cache = this.app.metadataCache.getFileCache(tfile);
+			const resolved = resolveSubpath(cache, header);
 
-			let startIdx = null;
-			let endIdx = null;
-			for (let i = 0; i < lines.length; i++) {
-				if (startIdx != null && lines[i].startsWith('#')) {
-					endIdx = i;
-					break;
+			if (resolved && resolved.start && resolved.start.line) {
+				if (resolved.end && resolved.end.line) {
+					return lines.slice(resolved.start.line, resolved.end.line).join('\n');
+				} else {
+					return lines.slice(resolved.start.line).join('\n');
 				}
 
-				if (lines[i].includes(header)) {
-					startIdx = i;
-				}
-			}
-
-			if (startIdx === null) {
-				return '![[' + relativeFilePath + '#' + header + ']]';
-			}
-
-			if (endIdx === null) {
-				return lines.slice(startIdx).join('\n');
 			} else {
-				return lines.slice(startIdx, endIdx).join('\n');
+				return '![[' + relativeFilePath + '#' + header + ']]';
 			}
 		}
 	}
