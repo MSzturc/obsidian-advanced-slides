@@ -30,13 +30,19 @@ export class MultipleFileProcessor {
 			header = split[1];
 		}
 
-		const res = this.getMarkdownFile(link);
+		const fileName = this.getMarkdownFile(link);
 
-		if (res === null) {
+		if (fileName === null) {
 			return line;
 		}
 
-		return this.process(this.utils.parseFile(res, header));
+		const filePath = this.utils.getAbsolutePath(fileName);
+
+		if (filePath === null) {
+			return line;
+		}
+
+		return this.process(this.utils.parseFile(filePath, header));
 	}
 
 	private getMarkdownFile(line: string) {
@@ -48,6 +54,6 @@ export class MultipleFileProcessor {
 		if (!line.toLowerCase().endsWith('.md')) {
 			file = file + '.md';
 		}
-		return this.utils.getAbsolutePath(file);
+		return file;
 	}
 }
