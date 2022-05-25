@@ -45,8 +45,8 @@ export class ObsidianUtils {
 
 	getAbsolutePath(filename: string): string {
 		const markdownFile = this.app.vault
-			.getMarkdownFiles()
-			.filter((item: { path: string | any[] }) => {
+			.getFiles()
+			.filter(item => {
 				return item.path.contains(filename);
 			})
 			.first();
