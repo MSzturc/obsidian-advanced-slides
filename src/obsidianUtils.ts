@@ -140,10 +140,11 @@ export class ObsidianUtils {
 		}
 
 		const absoluteFilePath = this.absolute(tfile?.path);
-		const fileContent = readFileSync(absoluteFilePath, { encoding: 'utf-8' });
+		let fileContent = readFileSync(absoluteFilePath, { encoding: 'utf-8' });
+		fileContent = fileContent.replace(this.yamlRegex, '');
 
 		if (header === null) {
-			return fileContent.replace(this.yamlRegex, '');
+			return fileContent;
 		} else {
 			const lines = fileContent.split('\n');
 			const cache = this.app.metadataCache.getFileCache(tfile);
