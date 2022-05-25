@@ -131,8 +131,8 @@ export class ObsidianUtils {
 		return null;
 	}
 
-	parseFile(file: string, header: string) {
-		const fileContent = readFileSync(file, { encoding: 'utf-8' });
+	parseFile(absoluteFilePath: string, header: string) {
+		const fileContent = readFileSync(absoluteFilePath, { encoding: 'utf-8' });
 
 		if (header === null) {
 			return fileContent.replace(this.yamlRegex, '');
@@ -153,7 +153,7 @@ export class ObsidianUtils {
 			}
 
 			if (startIdx === null) {
-				return '![[' + file + '#' + header + ']]';
+				return '![[' + absoluteFilePath + '#' + header + ']]';
 			}
 
 			if (endIdx === null) {
