@@ -50,10 +50,8 @@ export class ObsidianUtils {
 				return item.path.contains(filename);
 			})
 			.first();
-		if (markdownFile) return this.fileSystem.getFullPath(markdownFile.path);
-		else {
-			return null;
-		}
+
+		return this.absolute(markdownFile?.path);
 	}
 
 	absolute(relativePath: string) {
