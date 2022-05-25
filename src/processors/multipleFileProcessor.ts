@@ -36,7 +36,14 @@ export class MultipleFileProcessor {
 			return line;
 		}
 
-		return this.process(this.utils.parseFile(fileName, header));
+		const content = this.utils.parseFile(fileName, header);
+
+		if (content) {
+			return this.process(content);
+		} else {
+			return line;
+		}
+
 	}
 
 	private getMarkdownFile(line: string) {

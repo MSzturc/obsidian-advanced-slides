@@ -134,26 +134,35 @@ export class ObsidianUtils {
 
 	parseFile(relativeFilePath: string, header: string) {
 		const tfile = this.getTFile(relativeFilePath);
+
+		if (!tfile) {
+			return null;
+		}
+
 		const absoluteFilePath = this.absolute(tfile?.path);
 		const fileContent = readFileSync(absoluteFilePath, { encoding: 'utf-8' });
 
 		if (header === null) {
 			return fileContent.replace(this.yamlRegex, '');
-		} else if (header.startsWith('^')) {
-			return "";
 		} else {
-
 			const lines = fileContent.split('\n');
 			const cache = this.app.metadataCache.getFileCache(tfile);
 			const resolved = resolveSubpath(cache, header);
 
 			if (resolved && resolved.start && resolved.start.line) {
+				let result = "";
 				if (resolved.end && resolved.end.line) {
-					return lines.slice(resolved.start.line, resolved.end.line).join('\n');
+					if (resolved.end.line == resolved.start.line) {
+						result = lines.slice(resolved.start.line, resolved.end.line + 1).join('\n');
+					} else {
+						result = lines.slice(resolved.start.line, resolved.end.line).join('\n');
+					}
 				} else {
-					return lines.slice(resolved.start.line).join('\n');
+					result = lines.slice(resolved.start.line).join('\n');
 				}
-
+				result = result.replaceAll(/\^[^\n]+/g, "");
+				console.log(`result: ${result}`);
+				return result;
 			} else {
 				return '![[' + relativeFilePath + '#' + header + ']]';
 			}
