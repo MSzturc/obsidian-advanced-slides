@@ -39,7 +39,7 @@ export class MultipleFileProcessor {
 		return this.process(this.utils.parseFile(res, header));
 	}
 
-	getMarkdownFile(line: string) {
+	private getMarkdownFile(line: string) {
 		if (this.excalidrawRegex.test(line)) {
 			return null; // Do not import excalidraw files
 		}
