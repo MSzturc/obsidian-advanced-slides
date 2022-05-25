@@ -169,15 +169,12 @@ This [[Internal link|Link]] will use its alias for displaying
 });
 
 test('Basic Markdown Syntax > Embeds', () => {
-	when(MockedObsidianUtils.getAbsolutePath('Obsidian.md')).thenCall(arg => {
-		return 'path/to/Obsidian.md';
-	});
 
-	when(MockedObsidianUtils.parseFile('path/to/Obsidian.md', 'Link')).thenCall(arg => {
+	when(MockedObsidianUtils.parseFile('Obsidian.md', 'Link')).thenCall(arg => {
 		return 'Link to Obsidian Homepage: http://obsidian.md';
 	});
 
-	when(MockedObsidianUtils.parseFile('path/to/Obsidian.md', null)).thenCall(arg => {
+	when(MockedObsidianUtils.parseFile('Obsidian.md', null)).thenCall(arg => {
 		return `# Notes about Obsidian
 A knowledge base that works on local Markdown files
 

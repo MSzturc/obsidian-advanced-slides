@@ -4,6 +4,7 @@ export class MultipleFileProcessor {
 	private utils: ObsidianUtils;
 
 	private regex = /!\[\[(.*)\]\]/gm;
+	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|webp|svg))\s*\|?\s*([^\]]*)??\]\]\s?(<!--.*-->)?/i;
 	private excalidrawRegex = /(.*\.excalidraw)/i;
 
 	constructor(utils: ObsidianUtils) {
@@ -14,7 +15,9 @@ export class MultipleFileProcessor {
 		return markdown
 			.split('\n')
 			.map((line, index) => {
-				if (this.regex.test(line)) return this.transformLine(line);
+				if (this.regex.test(line) && !this.obsidianImageRegex.test(line)) {
+					return this.transformLine(line);
+				}
 				return line;
 			})
 			.join('\n');

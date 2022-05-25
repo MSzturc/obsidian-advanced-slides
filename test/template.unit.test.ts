@@ -5,7 +5,7 @@ import { MockedObsidianUtils, obsidianUtils as utilsInstance } from './__mocks__
 
 test('Template only with content', () => {
 
-	when(MockedObsidianUtils.parseFile('template', null)).thenCall(arg => {
+	when(MockedObsidianUtils.parseFile('template.md', null)).thenCall(arg => {
 		return `
 		# Before
 		<% content %>
@@ -26,7 +26,7 @@ test('Template only with content', () => {
 
 test('Template with variable not set', () => {
 
-	when(MockedObsidianUtils.parseFile('template', null)).thenCall(arg => {
+	when(MockedObsidianUtils.parseFile('template.md', null)).thenCall(arg => {
 		return `
 		<% content %>
 		# After<grid drag="100 6" drop="bottom">
@@ -48,7 +48,7 @@ test('Template with variable not set', () => {
 
 test('Template with invisible variable not set', () => {
 
-	when(MockedObsidianUtils.parseFile('template', null)).thenCall(arg => {
+	when(MockedObsidianUtils.parseFile('template.md', null)).thenCall(arg => {
 		return `
 		<% content %>
 		# After<grid drag="100 6" drop="bottom">
@@ -70,7 +70,7 @@ test('Template with invisible variable not set', () => {
 
 test('Template with variable set', () => {
 
-	when(MockedObsidianUtils.parseFile('template', null)).thenCall(arg => {
+	when(MockedObsidianUtils.parseFile('template.md', null)).thenCall(arg => {
 		return `
 		<% content %>
 		# After<grid drag="100 6" drop="bottom">
