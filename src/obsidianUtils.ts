@@ -132,7 +132,8 @@ export class ObsidianUtils {
 		return null;
 	}
 
-	parseFile(absoluteFilePath: string, header: string) {
+	parseFile(relativeFilePath: string, header: string) {
+		const absoluteFilePath = this.getAbsolutePath(relativeFilePath);
 		const fileContent = readFileSync(absoluteFilePath, { encoding: 'utf-8' });
 
 		if (header === null) {
@@ -154,7 +155,7 @@ export class ObsidianUtils {
 			}
 
 			if (startIdx === null) {
-				return '![[' + absoluteFilePath + '#' + header + ']]';
+				return '![[' + relativeFilePath + '#' + header + ']]';
 			}
 
 			if (endIdx === null) {

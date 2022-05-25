@@ -62,9 +62,7 @@ export class TemplateProcessor {
 			if (!fileWithExtension.endsWith('.md')) {
 				fileWithExtension = fileWithExtension + '.md';
 			}
-			const templateFile = this.utils.findFile(fileWithExtension);
-			const absoluteTemplateFile = this.utils.absolute(templateFile);
-			let templateContent = this.utils.parseFile(absoluteTemplateFile, null);
+			let templateContent = this.utils.parseFile(fileWithExtension, null);
 			templateContent = this.multipleFileProcessor.process(templateContent);
 			templateContent = templateContent.replaceAll('<% content %>', slide.replaceAll(templateProperty, ''));
 			return templateContent;

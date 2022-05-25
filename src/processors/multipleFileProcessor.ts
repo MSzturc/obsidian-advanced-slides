@@ -36,13 +36,7 @@ export class MultipleFileProcessor {
 			return line;
 		}
 
-		const filePath = this.utils.getAbsolutePath(fileName);
-
-		if (filePath === null) {
-			return line;
-		}
-
-		return this.process(this.utils.parseFile(filePath, header));
+		return this.process(this.utils.parseFile(fileName, header));
 	}
 
 	private getMarkdownFile(line: string) {
