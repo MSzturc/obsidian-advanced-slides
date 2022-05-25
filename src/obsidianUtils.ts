@@ -9,7 +9,7 @@ export class ObsidianUtils {
 	private fileSystem: FileSystemAdapter;
 	private settings: AdvancedSlidesSettings;
 
-	private yamlRegex = /^---[^-]*---/;
+	private yamlRegex = /^---.*?---\n(.*?)($|---)/s;
 
 	constructor(app: App, settings: AdvancedSlidesSettings) {
 		this.app = app;
@@ -140,11 +140,15 @@ export class ObsidianUtils {
 		}
 
 		const absoluteFilePath = this.absolute(tfile?.path);
-		let fileContent = readFileSync(absoluteFilePath, { encoding: 'utf-8' });
-		fileContent = fileContent.replace(this.yamlRegex, '');
+		const fileContent = readFileSync(absoluteFilePath, { encoding: 'utf-8' });
 
 		if (header === null) {
-			return fileContent;
+			if (this.yamlRegex.test(fileContent)) {
+				return this.yamlRegex.exec(fileContent)[1];
+			}
+			else {
+				return fileContent;
+			}
 		} else {
 			const lines = fileContent.split('\n');
 			const cache = this.app.metadataCache.getFileCache(tfile);
