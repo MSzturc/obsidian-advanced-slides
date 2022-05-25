@@ -21,16 +21,16 @@ export class MultipleFileProcessor {
 	}
 
 	private transformLine(line: string) {
-		let filePath: string = line.replace('![[', '').replace(']]', '');
+		let link: string = line.replace('![[', '').replace(']]', '');
 		let header: string = null;
 
-		if (filePath.includes('#')) {
-			const split = filePath.split('#');
-			filePath = split[0];
+		if (link.includes('#')) {
+			const split = link.split('#');
+			link = split[0];
 			header = split[1];
 		}
 
-		const res = this.getMarkdownFile(filePath);
+		const res = this.getMarkdownFile(link);
 
 		if (res === null) {
 			return line;
