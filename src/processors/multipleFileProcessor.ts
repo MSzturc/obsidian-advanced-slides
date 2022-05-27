@@ -24,7 +24,13 @@ export class MultipleFileProcessor {
 	}
 
 	private transformLine(line: string) {
-		let link: string = line.replace('![[', '').replace(']]', '');
+
+		let comment = '';
+		if (line.includes('<!--')) {
+			comment = line.substring(line.indexOf('<!--'));
+		}
+
+		let link: string = line.replace('![[', '').replace(']]', '').replace(comment, '').trim();
 		let header: string = null;
 
 		if (link.includes('#')) {
@@ -42,7 +48,12 @@ export class MultipleFileProcessor {
 		const content = this.utils.parseFile(fileName, header);
 
 		if (content) {
-			return this.process(content);
+			if (comment.length > 0) {
+				return this.process(content + comment);
+			} else {
+				return this.process(content);
+			}
+
 		} else {
 			return line;
 		}
