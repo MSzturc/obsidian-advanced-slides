@@ -256,7 +256,7 @@ test('Extended Markdown Syntax >  Fragmented list', () => {
 });
 
 test('Extended Markdown Syntax >  Excalidraw support', () => {
-	when(MockedObsidianUtils.findImageEx('Sample.excalidraw')).thenCall(arg => {
+	when(MockedObsidianUtils.findFile('Sample.excalidraw')).thenCall(arg => {
 		return 'Sample.excalidraw.svg';
 	});
 

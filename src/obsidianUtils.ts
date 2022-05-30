@@ -50,8 +50,6 @@ export class ObsidianUtils {
 			.first();
 	}
 
-	/** TODO: Refactoring ************************** */
-
 	getAbsolutePath(relativePath: string): string {
 		const markdownFile = this.getTFile(relativePath);
 		return this.absolute(markdownFile?.path);
@@ -64,72 +62,57 @@ export class ObsidianUtils {
 		}
 	}
 
-	findFile(imagePath: string) {
+	findFile(path: string) {
 		let base = '';
 		if (!ImageCollector.getInstance().shouldCollect()) {
 			base = '/';
 		}
 
-		const activeFile = this.app.workspace.getActiveFile()?.path;
-		if (activeFile) {
-			const allLinks = this.app.metadataCache.resolvedLinks;
-			const fileLinks = allLinks[activeFile];
+		const expDir = this.settings.exportDirectory.startsWith('/')
+			? this.settings.exportDirectory.substring(1)
+			: this.settings.exportDirectory;
 
-			for (const key in fileLinks) {
-				if (key.contains(imagePath)) {
-					return base + key;
+		const allFiles = this.app.vault.getFiles();
+		const filesNotInExportDir = allFiles.filter(item => !item.path.contains(expDir));
+		const allHits = filesNotInExportDir.filter(item => item.path.contains(path));
+
+		let file: TFile = null;
+
+		// Only one match
+		if (allHits.length == 1) {
+			file = allHits.first();
+		}
+
+		// Workaround for Excalidraw images
+		if (!file && path.toLowerCase().endsWith('.excalidraw')) {
+			let hit = allHits.filter(x => x.path.contains(path + '.svg'));
+			if (hit) {
+				file = hit.first();
+			} else {
+				hit = allHits.filter(x => x.path.contains(path + '.png'));
+				if (hit) {
+					file = hit.first();
 				}
-
 			}
 		}
 
-		const expDir = this.settings.exportDirectory.startsWith('/')
-			? this.settings.exportDirectory.substring(1)
-			: this.settings.exportDirectory;
+		// Find file most similar to search term
+		if (!file && allHits.length > 1) {
+			let score = 0;
+			for (const hit of allHits) {
+				const currentScore = this.similarity(path, hit.path);
+				if (currentScore > score) {
+					score = currentScore;
+					file = hit;
+				}
+			}
+		}
 
-		const imgFile = this.app.vault
-			.getFiles()
-			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
-			.first();
-
-		if (imgFile) {
-			return base + imgFile.path;
+		if (file) {
+			return base + file.path;
 		} else {
-			return imagePath;
+			return path;
 		}
-
-	}
-
-	findImageEx(filePath: string) {
-		let base = '';
-		if (!ImageCollector.getInstance().shouldCollect()) {
-			base = '/';
-		}
-
-		const expDir = this.settings.exportDirectory.startsWith('/')
-			? this.settings.exportDirectory.substring(1)
-			: this.settings.exportDirectory;
-
-		let imagePath = filePath + '.svg';
-		let imgFile = this.app.vault
-			.getFiles()
-			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
-			.first();
-
-		if (imgFile) {
-			return base + imagePath;
-		}
-
-		imagePath = filePath + '.png';
-		imgFile = this.app.vault
-			.getFiles()
-			.filter(item => item.path.contains(imagePath) && !item.path.contains(expDir))
-			.first();
-
-		if (imgFile) {
-			return base + imagePath;
-		}
-		return null;
 	}
 
 	parseFile(relativeFilePath: string, header: string) {
@@ -172,4 +155,46 @@ export class ObsidianUtils {
 			}
 		}
 	}
+
+	similarity(s1: string, s2: string): number {
+		let longer = s1;
+		let shorter = s2;
+		if (s1.length < s2.length) {
+			longer = s2;
+			shorter = s1;
+		}
+		const longerLength = longer.length;
+		if (longerLength == 0) {
+			return 1.0;
+		}
+		return (longerLength - this.editDistance(longer, shorter)) / longerLength;
+	}
+
+	editDistance(s1: string, s2: string): number {
+		s1 = s1.toLowerCase();
+		s2 = s2.toLowerCase();
+
+		const costs = [];
+		for (let i = 0; i <= s1.length; i++) {
+			let lastValue = i;
+			for (let j = 0; j <= s2.length; j++) {
+				if (i == 0)
+					costs[j] = j;
+				else {
+					if (j > 0) {
+						let newValue = costs[j - 1];
+						if (s1.charAt(i - 1) != s2.charAt(j - 1))
+							newValue = Math.min(Math.min(newValue, lastValue),
+								costs[j]) + 1;
+						costs[j - 1] = lastValue;
+						lastValue = newValue;
+					}
+				}
+			}
+			if (i > 0)
+				costs[s2.length] = lastValue;
+		}
+		return costs[s2.length];
+	}
+
 }

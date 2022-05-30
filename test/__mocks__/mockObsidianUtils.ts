@@ -11,10 +11,6 @@ when(MockedObsidianUtils.findFile(anyString())).thenCall(arg => {
 	throw new Error('ObsidianUtils.findFile->Parameter not mocked: ' + arg);
 });
 
-when(MockedObsidianUtils.findImageEx(anyString())).thenCall(arg => {
-	throw new Error('ObsidianUtils.findImageEx->Parameter not mocked: ' + arg);
-});
-
 when(MockedObsidianUtils.parseFile(anyString(), anything())).thenCall((arg1, arg2) => {
 	throw new Error('ObsidianUtils.parseFile->Parameter not mocked: ' + arg1 + ' - ' + arg2);
 });
