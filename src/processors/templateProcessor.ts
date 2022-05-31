@@ -1,11 +1,13 @@
 import { CommentParser } from 'src/comment';
 import { ObsidianUtils } from 'src/obsidianUtils';
 import { Options } from 'src/options';
+import { FootnoteProcessor } from './footNoteProcessor';
 import { MultipleFileProcessor } from './multipleFileProcessor';
 
 export class TemplateProcessor {
 
 	private multipleFileProcessor: MultipleFileProcessor;
+	private footnoteProcessor: FootnoteProcessor;
 
 	private emptySlideCommentRegex = /<!--\s*(?:\.)?slide(?::)?\s*-->/g;
 	private templateCommentRegex = /<!--\s*(?:\.)?slide.*(template="\[\[([^\]]+)\]\]"\s*).*-->/;
@@ -19,6 +21,7 @@ export class TemplateProcessor {
 	constructor(utils: ObsidianUtils) {
 		this.utils = utils;
 		this.multipleFileProcessor = new MultipleFileProcessor(utils);
+		this.footnoteProcessor = new FootnoteProcessor();
 	}
 
 	process(markdown: string, options: Options) {
@@ -90,10 +93,11 @@ export class TemplateProcessor {
 			content = '::: block\n' + content;
 			const optionalName = '<%? ' + name.trim() + ' %>';
 			name = '<% ' + name.trim() + ' %>';
-			result = result.replaceAll(optionalName, content);
+			result = result.replaceAll(optionalName, content + '\n' + optionalName);
 			result = result.replaceAll(name, content);
 			result = result.replaceAll(match, '');
 		}
+		result = this.footnoteProcessor.transformFootNotes(result);
 		//Remove optional template variables
 		while ((m = this.optionalRegex.exec(result)) !== null) {
 			if (m.index === this.optionalRegex.lastIndex) {
