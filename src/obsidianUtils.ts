@@ -41,13 +41,48 @@ export class ObsidianUtils {
 		return this.settings;
 	}
 
-	private getTFile(filename: string): TFile | undefined {
-		return this.app.vault
-			.getFiles()
-			.filter(item => {
-				return item.path.contains(filename);
-			})
-			.first();
+	private getTFile(filename: string): TFile | null {
+		const expDir = this.settings.exportDirectory.startsWith('/')
+			? this.settings.exportDirectory.substring(1)
+			: this.settings.exportDirectory;
+
+		const allFiles = this.app.vault.getFiles();
+		const filesNotInExportDir = allFiles.filter(item => !item.path.contains(expDir));
+		const allHits = filesNotInExportDir.filter(item => item.path.contains(filename));
+
+		let file: TFile = null;
+
+		// Only one match
+		if (allHits.length == 1) {
+			file = allHits.first();
+		}
+
+		// Workaround for Excalidraw images
+		if (!file && filename.toLowerCase().endsWith('.excalidraw')) {
+			let hit = allHits.filter(x => x.path.contains(filename + '.svg'));
+			if (hit) {
+				file = hit.first();
+			} else {
+				hit = allHits.filter(x => x.path.contains(filename + '.png'));
+				if (hit) {
+					file = hit.first();
+				}
+			}
+		}
+
+		// Find file most similar to search term
+		if (!file && allHits.length > 1) {
+			let score = 0;
+			for (const hit of allHits) {
+				const currentScore = this.similarity(filename, hit.path);
+				if (currentScore > score) {
+					score = currentScore;
+					file = hit;
+				}
+			}
+		}
+
+		return file;
 	}
 
 	getAbsolutePath(relativePath: string): string {
@@ -67,47 +102,7 @@ export class ObsidianUtils {
 		if (!ImageCollector.getInstance().shouldCollect()) {
 			base = '/';
 		}
-
-		const expDir = this.settings.exportDirectory.startsWith('/')
-			? this.settings.exportDirectory.substring(1)
-			: this.settings.exportDirectory;
-
-		const allFiles = this.app.vault.getFiles();
-		const filesNotInExportDir = allFiles.filter(item => !item.path.contains(expDir));
-		const allHits = filesNotInExportDir.filter(item => item.path.contains(path));
-
-		let file: TFile = null;
-
-		// Only one match
-		if (allHits.length == 1) {
-			file = allHits.first();
-		}
-
-		// Workaround for Excalidraw images
-		if (!file && path.toLowerCase().endsWith('.excalidraw')) {
-			let hit = allHits.filter(x => x.path.contains(path + '.svg'));
-			if (hit) {
-				file = hit.first();
-			} else {
-				hit = allHits.filter(x => x.path.contains(path + '.png'));
-				if (hit) {
-					file = hit.first();
-				}
-			}
-		}
-
-		// Find file most similar to search term
-		if (!file && allHits.length > 1) {
-			let score = 0;
-			for (const hit of allHits) {
-				const currentScore = this.similarity(path, hit.path);
-				if (currentScore > score) {
-					score = currentScore;
-					file = hit;
-				}
-			}
-		}
-
+		const file: TFile = this.getTFile(path);
 		if (file) {
 			return base + file.path;
 		} else {
