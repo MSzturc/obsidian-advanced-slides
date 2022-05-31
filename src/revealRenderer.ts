@@ -52,11 +52,12 @@ export class RevealRenderer {
 		}
 
 		const content = (await readFile(filePath.toString())).toString();
-		const rendered = await this.render(content, renderForPrint, renderForEmbed);
+		let rendered = await this.render(content, renderForPrint, renderForEmbed);
 
 		if (renderForExport) {
 			ImageCollector.getInstance().disable();
 			await this.exporter.export(filePath, rendered, ImageCollector.getInstance().getAll());
+			rendered = await this.render(content, renderForPrint, renderForEmbed);
 		}
 
 		return rendered;
