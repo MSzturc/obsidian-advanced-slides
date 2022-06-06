@@ -13,7 +13,7 @@
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/chalkboard/readme/</guid>
       <description>Chalkboard With this plugin you can add a chalkboard to reveal.js. The plugin provides two possibilities to include handwritten notes to your presentation:
- you can make notes directly on the slides, e.g. to comment on certain aspects, you can open a chalkboard or whiteboard on which you can make notes.  The main use case in mind when implementing the plugin is classroom usage in which you may want to explain some course content and quickly need to make some notes.</description>
+you can make notes directly on the slides, e.g. to comment on certain aspects, you can open a chalkboard or whiteboard on which you can make notes. The main use case in mind when implementing the plugin is classroom usage in which you may want to explain some course content and quickly need to make some notes.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@
       <description>Custom controls This plugin allows to add responsive custom controls to reveal.js which allow arbitrary positioning, layout, and behaviour of the controls.
 Check out the live demo
 Installation Copy the files plugin.js and style.css into the plugin folder of your reveal.js presentation, i.e. plugin/customcontrols and load the plugin as shown below.
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;plugin/customcontrols/style.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;plugin/customcontrols/plugin.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt;  &amp;lt;script&amp;gt;  Reveal.initialize({  // ...  plugins: [ RevealCustomControls ],  // .</description>
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;plugin/customcontrols/style.css&amp;#34;&amp;gt; &amp;lt;script src=&amp;#34;plugin/customcontrols/plugin.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; Reveal.initialize({ // ... plugins: [ RevealCustomControls ], // ... }); &amp;lt;/script&amp;gt; Note, without configuration you need to add</description>
     </item>
     
     <item>
@@ -35,7 +35,7 @@ Installation Copy the files plugin.js and style.css into the plugin folder of yo
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/examples/consult/plugin/menu/contributing/</guid>
       <description>Contributing Bug Reports When reporting a bug make sure to include information about which browser and operating system you are on as well as the necessary steps to reproduce the issue. If possible please include a link to a sample presentation where the bug can be tested.
-Pull Requests  Should follow the coding style of the file you work in Should be made towards the dev branch Should be submitted from a feature/topic branch (not your master)  </description>
+Pull Requests Should follow the coding style of the file you work in Should be made towards the dev branch Should be submitted from a feature/topic branch (not your master) </description>
     </item>
     
     <item>
@@ -48,7 +48,7 @@ Pull Requests  Should follow the coding style of the file you work in Should be 
 Installation Bower Download and install the package in your project:
 bower install reveal.js-menu
 Add the plugin to your presentation, as below.
-&amp;lt;script src=&amp;#34;bower_components/reveal.js-menu/menu.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt;  Reveal.initialize({  plugins: [ RevealMenu ]  }); &amp;lt;/script&amp;gt; npm Download and install the package in your project:</description>
+&amp;lt;script src=&amp;#34;bower_components/reveal.js-menu/menu.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; &amp;lt;script&amp;gt; Reveal.initialize({ plugins: [ RevealMenu ] }); &amp;lt;/script&amp;gt; npm Download and install the package in your project:</description>
     </item>
     
   </channel>
