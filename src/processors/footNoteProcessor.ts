@@ -26,6 +26,11 @@ export class FootnoteProcessor {
 	}
 
 	transformFootNotes(markdown: string) {
+
+		if (!this.regex.test(markdown)) {
+			return markdown;
+		}
+
 		let input = markdown;
 		let noteIdx = 1;
 
