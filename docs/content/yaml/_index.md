@@ -38,7 +38,7 @@ showNotes | Flags if speaker notes should be visible to all viewers | true / fal
 autoSlide | Controls automatic progression to the next slide | number (in milliseconds) | 0
 transition | Transition style | none / fade / slide / convex / concave / zoom | true
 transitionSpeed | Transition speed | default / fast / slow | default
-
+bg | Sets a default background for all slides | [see slide background docs]({{%relref "slideBackground"%}}) | '#ffffff'
 
 <br>
 
