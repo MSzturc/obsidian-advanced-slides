@@ -11,4 +11,5 @@ export type Options = {
 	height: number;
 	margin: number;
 	showGrid: boolean;
+	bg: string;
 };

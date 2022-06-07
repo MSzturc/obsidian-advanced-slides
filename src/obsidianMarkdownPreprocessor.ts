@@ -21,6 +21,7 @@ import { DebugViewProcessor } from './processors/debugViewProcessor';
 import { CalloutProcessor } from './processors/calloutProcessor';
 import { TemplateProcessor } from './processors/templateProcessor';
 import { ChartProcessor } from './processors/chartProcessor';
+import { DefaultBackgroundProcessor } from './processors/defaultBackgroundProcessor';
 
 export class ObsidianMarkdownPreprocessor {
 	private multipleFileProcessor: MultipleFileProcessor;
@@ -43,6 +44,7 @@ export class ObsidianMarkdownPreprocessor {
 	private calloutProcessor: CalloutProcessor;
 	private templateProcessor: TemplateProcessor;
 	private chartProcessor: ChartProcessor;
+	private defaultBackgroundProcessor: DefaultBackgroundProcessor;
 
 	constructor(utils: ObsidianUtils) {
 		this.multipleFileProcessor = new MultipleFileProcessor(utils);
@@ -65,6 +67,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.calloutProcessor = new CalloutProcessor();
 		this.templateProcessor = new TemplateProcessor(utils);
 		this.chartProcessor = new ChartProcessor();
+		this.defaultBackgroundProcessor = new DefaultBackgroundProcessor();
 	}
 	process(markdown: string, options: Options) {
 		YamlStore.getInstance().options = options;
@@ -90,7 +93,8 @@ export class ObsidianMarkdownPreprocessor {
 
 		const afterDebugViewProcessor = this.debugViewProcessor.process(after, options);
 		const afterAutoClosingProcessor = this.autoClosingProcessor.process(afterDebugViewProcessor);
-		const afterCalloutProcessor = this.calloutProcessor.process(afterAutoClosingProcessor);
+		const defaultBackgroundProcessor = this.defaultBackgroundProcessor.process(afterAutoClosingProcessor, options);
+		const afterCalloutProcessor = this.calloutProcessor.process(defaultBackgroundProcessor);
 		const afterEmojiProcessor = this.emojiProcessor.process(afterCalloutProcessor);
 		const afterIconsProcessor = this.iconsProcessor.process(afterEmojiProcessor);
 		const afterDropProcessor = this.dropProcessor.process(afterIconsProcessor, options);
