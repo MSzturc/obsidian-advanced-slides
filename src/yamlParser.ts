@@ -115,10 +115,18 @@ export class YamlParser {
 		yamlOptions: unknown;
 		markdown: string;
 	} {
-		const document = loadFront(input.replace(/^\uFEFF/, ''));
-		return {
-			yamlOptions: _.omit(document, '__content'),
-			markdown: document.__content || input,
-		};
+		try {
+			const document = loadFront(input.replace(/^\uFEFF/, ''));
+			return {
+				yamlOptions: _.omit(document, '__content'),
+				markdown: document.__content || input,
+			};
+		} catch (error) {
+			return {
+				yamlOptions: {},
+				markdown: input,
+			};
+		}
+
 	}
 }
