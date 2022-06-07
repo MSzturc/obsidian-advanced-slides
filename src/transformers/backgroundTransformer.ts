@@ -20,6 +20,8 @@ export class BackgroundTransformer implements AttributeTransformer {
 				element.deleteAttribute('bg');
 				const target = element.getAttribute('onTarget');
 				if (target && target == 'slide') {
+					element.deleteAttribute('data-background-image');
+					element.deleteAttribute('data-background-color');
 					element.addAttribute('data-background-color', bg);
 				} else {
 					element.addStyle('background-color', bg);
@@ -28,6 +30,8 @@ export class BackgroundTransformer implements AttributeTransformer {
 				element.deleteAttribute('bg');
 				const target = element.getAttribute('onTarget');
 				if (target && target == 'slide') {
+					element.deleteAttribute('data-background-color');
+					element.deleteAttribute('data-background-image');
 					element.addAttribute('data-background-image', bg);
 				}
 			}
