@@ -37,8 +37,15 @@ export class TemplateProcessor {
 						let newSlide = slide;
 						if (this.templateCommentRegex.test(slide)) {
 							try {
+								let circuitCounter = 0;
 								while (this.templateCommentRegex.test(newSlide)) {
+									circuitCounter++;
 									newSlide = this.transformSlide(newSlide);
+
+									if (circuitCounter > 9) {
+										console.log('WARNING: Circuit in template hierarchy detected!');
+										break;
+									}
 								}
 								newSlide = newSlide.replaceAll(this.emptySlideCommentRegex, '');
 								newSlide = this.computeVariables(newSlide);
