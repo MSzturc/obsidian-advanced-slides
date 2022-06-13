@@ -38,6 +38,9 @@ To place a text into the footer section you have to create a block comment with 
 :::
 ```
 
+Note that every template _must_ contain a `<% content %>` variable _even if it is not used_ in the slide content.
+
+
 ### Optional Variables
 
 By default, every variable in a slide template has to be set by a block comment in the slide. Otherwise, a dummy text will be placed into the variable that reminds you to create a block comment for this variable. But there are scenarios where you don't want this behaviour, such as when you have a citation line in the footer of your template, but you don't need to reference any citations. Therefore you can create a section in the template and add a `?` in its definition:
