@@ -303,9 +303,15 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		await this.activateView();
 
 		const url = this.revealServer.getUrl();
-		url.pathname = this.target.path;
+		url.pathname = this.fixedEncodeURIComponent(this.target.path);
 
 		this.openUrl(url);
+	}
+
+	private fixedEncodeURIComponent(str: string) {
+		return encodeURIComponent(str).replace(/[!'()*]/g, function (c) {
+			return '%' + c.charCodeAt(0).toString(16);
+		});
 	}
 
 	private async openUrl(url: URL) {
