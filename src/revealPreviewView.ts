@@ -237,7 +237,7 @@ export class RevealPreviewView extends ItemView {
 			attr: {
 				// @ts-ignore:
 				src: this.url,
-				sandbox: 'allow-scripts allow-same-origin',
+				sandbox: 'allow-scripts allow-same-origin allow-popups',
 			},
 		});
 	}

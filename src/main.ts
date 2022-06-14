@@ -215,7 +215,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 					viewContent.createEl('iframe', {
 						attr: {
 							src: url.toString(),
-							sandbox: 'allow-scripts allow-same-origin',
+							sandbox: 'allow-scripts allow-same-origin allow-popups',
 						},
 					});
 
