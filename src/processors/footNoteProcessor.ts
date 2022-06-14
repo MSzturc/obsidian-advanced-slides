@@ -69,7 +69,7 @@ export class FootnoteProcessor {
 		footNotesBlock += '<ol>\n';
 
 		footNotes.forEach((value, key) => {
-			footNotesBlock += '<li id="fn:' + key + '" role="doc-endnote"><p>\n\n' + value + '\n\n</p></li>';
+			footNotesBlock += '<li id="fn:' + key + '" role="doc-endnote" class="footnote"><p>\n\n' + value + '\n\n</p></li>';
 		});
 
 		footNotesBlock += '</ol>\n';
