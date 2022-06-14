@@ -375,7 +375,7 @@
 	"title": "Credits",
 	"tags": [],
 	"description": "contributors and packages used by Advanced Slides",
-	"content": "github contributors @MSzturc 563 commits @actions-user 74 commits @Coffelius 3 commits @rxian 3 commits @miluoshi 2 commits @Michael-Beukman 1 commits @Plexipop 1 commits @scokobro 1 commits @code-factor 1 commits Packages and libraries obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework "
+	"content": "github contributors @MSzturc 566 commits @actions-user 75 commits @Coffelius 3 commits @rxian 3 commits @miluoshi 2 commits @Michael-Beukman 1 commits @Plexipop 1 commits @scokobro 1 commits @code-factor 1 commits Packages and libraries obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/examples/",
