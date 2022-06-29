@@ -7,7 +7,7 @@ export class ImageProcessor {
 	private utils: ObsidianUtils;
 	private parser: CommentParser;
 
-	private markdownImageRegex = /^[ ]{0,3}!\[([^\]]*)\]\((.*?)\)\s?(<!--.*-->)?/im;
+	private markdownImageRegex = /^[ ]{0,3}!\[([^\]]*)\]\((.*(?:jpg|png|jpeg|gif|bmp|webp|svg))\)\s?(<!--.*-->)?/im;
 
 	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|webp|svg))\s*\|?\s*([^\]]*)??\]\]\s?(<!--.*-->)?/i;
 	private obsidianImageReferenceRegex = /\[\[(.*(?:jpg|png|jpeg|webp|gif|bmp|svg))\|?([^\]]*)??\]\]/i;
