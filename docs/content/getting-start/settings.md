@@ -2,7 +2,7 @@
 title = "Settings"
 description = ""
 weight = 2
-pre ="<i class='fa fa-gears' ></i> "
+pre ="<i class='fa fa-gears' style='margin-right:5px' ></i> "
 +++
 
 The settings can be found under Advanced Slides Section inside Plugin Settings. The settings can be found by clicking the gear in the bottom left corner, or by hitting `Ctrl/Cmd-,`.

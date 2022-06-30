@@ -1,8 +1,8 @@
 +++
-title = "First Steps"
+title = "Write your first Slide"
 description = ""
 weight = 3
-pre ="<i class='fa fa-send' ></i> "
+pre ="<i class='fa fa-send' style='margin-right:5px' ></i> "
 +++
 
 Step by Step guide to create your first Presentation
