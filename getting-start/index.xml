@@ -26,12 +26,22 @@
     </item>
     
     <item>
-      <title>First Steps</title>
+      <title>Write your first Slide</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/getting-start/firststeps/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/getting-start/firststeps/</guid>
       <description>&lt;p&gt;Step by Step guide to create your first Presentation&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Learn more</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/getting-start/learnmore/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/getting-start/learnmore/</guid>
+      <description>Learn more about the Advanced Slides from the following pages:
+Advanced Slides Basics How to use Advanced Slides plugin 用Obsidian做PPT，我是认真的 Advanced Slides 专业PPT制作课程来了 Building layouts Advanced Slides Advanced Using Templates in Advanced Slides Advanced Slides in Action Rust Talks by No Boilerplate Videos Source Talk: Use It or Lose It by Nicole van der Hoeven Video Slides CSS Course by RemyDekor Slides Deck: Estimating The Hemodynamic Response Function by Lynne J Williams Slides Source Deck: Basisprozesse beim Beraten und Entscheiden in Teams by Matthäus Szturc Slides Source </description>
     </item>
     
   </channel>
