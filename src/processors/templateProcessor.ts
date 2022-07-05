@@ -34,23 +34,28 @@ export class TemplateProcessor {
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
 					.map(slide => {
 
-						let newSlide = slide;
+						const newSlide = slide;
 						if (this.templateCommentRegex.test(slide)) {
 							try {
+
+								// eslint-disable-next-line prefer-const
+								let [md, notes] = this.extractNotes(newSlide);
+
 								let circuitCounter = 0;
-								while (this.templateCommentRegex.test(newSlide)) {
+								while (this.templateCommentRegex.test(md)) {
 									circuitCounter++;
-									newSlide = this.transformSlide(newSlide);
+									md = this.transformSlide(md);
 
 									if (circuitCounter > 9) {
 										console.log('WARNING: Circuit in template hierarchy detected!');
 										break;
 									}
 								}
-								newSlide = newSlide.replaceAll(this.emptySlideCommentRegex, '');
-								newSlide = this.computeVariables(newSlide);
-								output = output.split(slide).join(newSlide);
-								return newSlide;
+								md = md.replaceAll(this.emptySlideCommentRegex, '');
+								md = this.computeVariables(md);
+								md += notes;
+								output = output.split(slide).join(md);
+								return md;
 							} catch (error) {
 								console.log('Cannot process template: ' + error);
 								return slide;
@@ -63,6 +68,15 @@ export class TemplateProcessor {
 			})
 			.join(options.separator);
 		return output;
+	}
+
+	extractNotes(input: string): [string, string] {
+		const spliceIdx = input.indexOf('note:');
+		if (spliceIdx > 0) {
+			return [input.substring(0, spliceIdx), input.substring(spliceIdx)];
+		} else {
+			return [input, ''];
+		}
 	}
 
 	transformSlide(slide: string) {
