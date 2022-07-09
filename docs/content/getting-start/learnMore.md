@@ -32,3 +32,18 @@ Learn more about the Advanced Slides from the following pages:
 - Deck: Basisprozesse beim Beraten und Entscheiden in Teams by Matthäus Szturc
     - {{%icon fa-address-card%}} [Slides](https://mszturc.github.io/obsidian-advanced-slides/examples/consult)
     - {{%icon fa-github%}} [Source](https://raw.githubusercontent.com/MSzturc/advanced-slides-consult-template/main/Presentation.md)
+- Deck: Digital Culture Analyse 21
+    - {{%icon fa-address-card%}} [Slides](https://digitalculture2122.github.io/)
+    - {{%icon fa-paint-brush%}} [Template](https://forum.obsidian.md/t/advanced-slides-snippets-showcases/29529/2?u=mszturc)
+- Deck: The four Daggers
+    - {{%icon fa-address-card%}} [Slides](https://o-oayda.github.io/four-daggers-presentation/)
+- Deckset about Juggling by Marc Bielert
+    - {{%icon fa-address-card%}} [Slides](https://abhuva.github.io/presentations/#/)
+- Deck: Hydrothermal Venture
+    - {{%icon fa-address-card%}} [Slides](https://zxspectrummy.github.io/vent-map/#/)
+- Deck: ML Ops Examples by Sam Foreman
+    - {{%icon fa-address-card%}} [Slides](https://saforem2.github.io/mlops/#/)
+    - {{%icon fa-github%}} [Source](https://raw.githubusercontent.com/saforem2/mlops/main/slides.md)
+- Deck: Scientific Data Science by Sam Foreman
+    - {{%icon fa-address-card%}} [Slides](https://saforem2.github.io/anl-job-talk/#/)
+    - {{%icon fa-github%}} [Source](https://raw.githubusercontent.com/saforem2/anl-job-talk/main/slides.md)
