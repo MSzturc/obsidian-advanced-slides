@@ -39,7 +39,25 @@ autoSlide | Controls automatic progression to the next slide | number (in millis
 transition | Transition style | none / fade / slide / convex / concave / zoom | true
 transitionSpeed | Transition speed | default / fast / slow | default
 bg | Sets a default background for all slides | [see slide background docs]({{%relref "slideBackground"%}}) | '#ffffff'
+markdown | Sets options for marked | (see note below) | (see note below)
 
 <br>
 
 {{%alert%}}You can find more possible parameters [here](https://revealjs.com/config/){{%/alert%}}
+
+{{%alert%}}
+[marked](https://marked.js.org/) is the Markdown parser used by reveal.js.
+The complete set of marked options is [here](https://marked.js.org/using_advanced#options).
+
+The default value of `markdown`:
+```yaml
+markdown:
+  gfm: true
+  mangle: true
+  pedantic: false
+  smartLists: false
+  smartypants: false
+```
+
+Other marked options exist, but should not be used with the Advanced Slides plugin.
+{{%/alert%}}
