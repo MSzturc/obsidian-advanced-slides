@@ -135,7 +135,7 @@ export class ObsidianUtils {
 
 			if (resolved && resolved.start && resolved.start.line != null) {
 				let result = "";
-				if (resolved.end && resolved.end.line) {
+				if (resolved.end && resolved.end.line != null) {
 					if (resolved.end.line == resolved.start.line) {
 						result = lines.slice(resolved.start.line, resolved.end.line + 1).join('\n');
 					} else {
