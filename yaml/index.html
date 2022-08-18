@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-07-05T19:13:08 UTC">
+<meta name="revised" content="2022-08-18T11:22:19 UTC">
 <title>Frontmatter Options :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -674,11 +674,30 @@
 <td><a href="/obsidian-advanced-slides/extend-syntax/slidebackground/">see slide background docs</a></td>
 <td>&lsquo;#ffffff&rsquo;</td>
 </tr>
+<tr>
+<td>markdown</td>
+<td>Sets options for marked</td>
+<td>(see note below)</td>
+<td>(see note below)</td>
+</tr>
 </tbody>
 </table>
 <br>
 
 <div class="alert alert-info" role="alert">You can find more possible parameters <a href="https://revealjs.com/config/">here</a></div>
+
+
+<div class="alert alert-info" role="alert"><p><a href="https://marked.js.org/">marked</a> is the Markdown parser used by reveal.js.
+The complete set of marked options is <a href="https://marked.js.org/using_advanced#options">here</a>.</p>
+<p>The default value of <code>markdown</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">markdown</span><span style="color:#111">:</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">gfm</span><span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">mangle</span><span style="color:#111">:</span> <span style="color:#00a8c8">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">pedantic</span><span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">smartLists</span><span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">smartypants</span><span style="color:#111">:</span> <span style="color:#00a8c8">false</span>
+</span></span></code></pre></div><p>Other marked options exist, but should not be used with the Advanced Slides plugin.</p>
+</div>
 
 
 
