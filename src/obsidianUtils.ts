@@ -1,3 +1,4 @@
+import { lstat } from 'fs';
 import { readFileSync } from 'fs-extra';
 import { App, FileSystemAdapter, resolveSubpath, TFile } from 'obsidian';
 import path from 'path';
@@ -132,7 +133,7 @@ export class ObsidianUtils {
 			const cache = this.app.metadataCache.getFileCache(tfile);
 			const resolved = resolveSubpath(cache, header);
 
-			if (resolved && resolved.start && resolved.start.line) {
+			if (resolved && resolved.start && resolved.start.line != null) {
 				let result = "";
 				if (resolved.end && resolved.end.line) {
 					if (resolved.end.line == resolved.start.line) {
