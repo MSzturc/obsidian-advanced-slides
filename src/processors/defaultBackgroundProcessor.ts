@@ -16,9 +16,13 @@ export class DefaultBackgroundProcessor {
 					return slidegroup
 						.split(new RegExp(options.verticalSeparator, 'gmi'))
 						.map(slide => {
-							const newSlide = this.transformSlide(slide, options?.bg);
-							output = output.split(slide).join(newSlide);
-							return newSlide;
+							if (slide) {
+								const newSlide = this.transformSlide(slide, options?.bg);
+								output = output.split(slide).join(newSlide);
+								return newSlide;
+							} else {
+								return slide;
+							}
 						})
 						.join(options.verticalSeparator);
 				})
