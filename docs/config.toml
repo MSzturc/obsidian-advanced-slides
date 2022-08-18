@@ -11,8 +11,6 @@ defaultContentLanguage = "en"
 defaultContentLanguageInSubdir= false
 enableMissingTranslationPlaceholders = false
 
-ignorefiles = [ "examples/.*" ]
-
 [markup]
 [markup.goldmark.renderer]
 unsafe = true
