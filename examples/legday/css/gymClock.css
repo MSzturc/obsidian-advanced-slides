@@ -1,0 +1,315 @@
+#countdown {
+    width: 25vmin;
+    height: 25vmin;
+    box-shadow: 0 0 0 0.625vmin, inset 1.25vmin 1.25vmin 2.5vmin rgba(0, 0, 0, 0.125), 1.25vmin 1.25vmin 2.5vmin rgba(0, 0, 0, 0.125);
+    font-size: 12.5vmin;
+    text-shadow: 1.25vmin 1.25vmin 2.5vmin rgba(0, 0, 0, 0.125);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+#countdown:before {
+    content: "40";
+    animation: 60s 1s infinite timer_countdown, 1s 0.875s infinite timer_beat;
+}
+
+@keyframes timer_beat {
+
+    40%,
+    80% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale(1.125);
+    }
+}
+
+@keyframes timer_countdown {
+    0% {
+        content: "40";
+    }
+
+    1.6666666667% {
+        content: "39";
+    }
+
+    3.3333333333% {
+        content: "38";
+    }
+
+    5% {
+        content: "37";
+    }
+
+    6.6666666667% {
+        content: "36";
+    }
+
+    8.3333333333% {
+        content: "35";
+    }
+
+    10% {
+        content: "34";
+    }
+
+    11.6666666667% {
+        content: "33";
+    }
+
+    13.3333333333% {
+        content: "32";
+    }
+
+    15% {
+        content: "31";
+    }
+
+    16.6666666667% {
+        content: "30";
+    }
+
+    18.3333333333% {
+        content: "29";
+    }
+
+    20% {
+        content: "28";
+    }
+
+    21.6666666667% {
+        content: "27";
+    }
+
+    23.3333333333% {
+        content: "26";
+    }
+
+    25% {
+        content: "25";
+    }
+
+    26.6666666667% {
+        content: "24";
+    }
+
+    28.3333333333% {
+        content: "23";
+    }
+
+    30% {
+        content: "22";
+    }
+
+    31.6666666667% {
+        content: "21";
+    }
+
+    33.3333333333% {
+        content: "10";
+    }
+
+    35% {
+        content: "19";
+    }
+
+    36.6666666667% {
+        content: "18";
+    }
+
+    38.3333333333% {
+        content: "17";
+    }
+
+    40% {
+        content: "16";
+    }
+
+    41.6666666667% {
+        content: "15";
+    }
+
+    43.3333333333% {
+        content: "14";
+    }
+
+    45% {
+        content: "13";
+    }
+
+    46.6666666667% {
+        content: "12";
+    }
+
+    48.3333333333% {
+        content: "11";
+    }
+
+    50% {
+        content: "10";
+    }
+
+    51.6666666667% {
+        content: "9";
+    }
+
+    53.3333333333% {
+        content: "8";
+    }
+
+    55% {
+        content: "7";
+    }
+
+    56.6666666667% {
+        content: "6";
+    }
+
+    58.3333333333% {
+        content: "5";
+    }
+
+    60% {
+        content: "4";
+    }
+
+    61.6666666667% {
+        content: "3";
+    }
+
+    63.3333333333% {
+        content: "2";
+    }
+
+    65% {
+        content: "1";
+    }
+
+    66.6666666667% {
+        content: "20";
+    }
+
+    68.3333333333% {
+        content: "19";
+    }
+
+    70% {
+        content: "18";
+    }
+
+    71.6666666667% {
+        content: "17";
+    }
+
+    73.3333333333% {
+        content: "16";
+    }
+
+    75% {
+        content: "15";
+    }
+
+    76.6666666667% {
+        content: "14";
+    }
+
+    78.3333333333% {
+        content: "13";
+    }
+
+    80% {
+        content: "12";
+    }
+
+    81.6666666667% {
+        content: "11";
+    }
+
+    83.3333333333% {
+        content: "10";
+    }
+
+    85% {
+        content: "9";
+    }
+
+    86.6666666667% {
+        content: "8";
+    }
+
+    88.3333333333% {
+        content: "7";
+    }
+
+    90% {
+        content: "6";
+    }
+
+    91.6666666667% {
+        content: "5";
+    }
+
+    93.3333333333% {
+        content: "4";
+    }
+
+    95% {
+        content: "3";
+    }
+
+    96.6666666667% {
+        content: "2";
+    }
+
+    98.3333333333% {
+        content: "1";
+    }
+
+    100% {
+        content: "0";
+    }
+}
+
+#countdown:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.125);
+    animation: 60s 1s linear infinite timer_indicator;
+}
+
+@keyframes timer_indicator {
+    0% {
+        background-color: rgba(0, 0, 0, 0.125);
+        transform: translateY(0%);
+    }
+
+    65% {
+        background-color: rgba(0, 0, 0, 0.125);
+        transform: translateY(100%);
+    }
+
+    65.8% {
+        background-color: rgba(95, 179, 213, 0.625);
+        transform: translateY(0%);
+    }
+
+    100% {
+        background-color: rgba(95, 179, 213, 0.625);
+        transform: translateY(100%);
+    }
+}
