@@ -1,0 +1,374 @@
+#work {
+    width: 25vmin;
+    height: 25vmin;
+    box-shadow: 0 0 0 0.625vmin, inset 1.25vmin 1.25vmin 2.5vmin rgba(0, 0, 0, 0.125), 1.25vmin 1.25vmin 2.5vmin rgba(0, 0, 0, 0.125);
+    font-size: 12.5vmin;
+    text-shadow: 1.25vmin 1.25vmin 2.5vmin rgba(0, 0, 0, 0.125);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+#work:before {
+    content: "40";
+    animation: 40s 1s forwards work_countdown, 1s 0.875s 40 work_beat;
+}
+
+@keyframes work_beat {
+
+    40%,
+    80% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale(1.125);
+    }
+}
+
+@keyframes work_countdown {
+    0% {
+        content: "40";
+    }
+
+    2.5% {
+        content: "39";
+    }
+
+    5% {
+        content: "38";
+    }
+
+    7.5% {
+        content: "37";
+    }
+
+    10% {
+        content: "36";
+    }
+
+    12.5% {
+        content: "35";
+    }
+
+    15% {
+        content: "34";
+    }
+
+    17.5% {
+        content: "33";
+    }
+
+    20% {
+        content: "32";
+    }
+
+    22.5% {
+        content: "31";
+    }
+
+    25% {
+        content: "30";
+    }
+
+    27.5% {
+        content: "29";
+    }
+
+    30% {
+        content: "28";
+    }
+
+    32.5% {
+        content: "27";
+    }
+
+    35% {
+        content: "26";
+    }
+
+    37.5% {
+        content: "25";
+    }
+
+    40% {
+        content: "24";
+    }
+
+    42.5% {
+        content: "23";
+    }
+
+    45% {
+        content: "22";
+    }
+
+    47.5% {
+        content: "21";
+    }
+
+    50% {
+        content: "20";
+    }
+
+    52.5% {
+        content: "19";
+    }
+
+    55% {
+        content: "18";
+    }
+
+    57.5% {
+        content: "17";
+    }
+
+    60% {
+        content: "16";
+    }
+
+    62.5% {
+        content: "15";
+    }
+
+    65% {
+        content: "14";
+    }
+
+    67.5% {
+        content: "13";
+    }
+
+    70% {
+        content: "12";
+    }
+
+    72.5% {
+        content: "11";
+    }
+
+    75% {
+        content: "10";
+    }
+
+    77.5% {
+        content: "9";
+    }
+
+    80% {
+        content: "8";
+    }
+
+    82.5% {
+        content: "7";
+    }
+
+    85% {
+        content: "6";
+    }
+
+    87.5% {
+        content: "5";
+    }
+
+    90% {
+        content: "4";
+    }
+
+    92.5% {
+        content: "3";
+    }
+
+    95% {
+        content: "2";
+    }
+
+    97.5% {
+        content: "1";
+    }
+
+    100% {
+        content: "0";
+    }
+}
+
+#work:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.125);
+    animation: 40s 1s linear forwards work_indicator;
+}
+
+@keyframes work_indicator {
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#countdown {
+    width: 25vmin;
+    height: 25vmin;
+    box-shadow: 0 0 0 0.625vmin, inset 1.25vmin 1.25vmin 2.5vmin rgba(0, 0, 0, 0.125), 1.25vmin 1.25vmin 2.5vmin rgba(0, 0, 0, 0.125);
+    font-size: 12.5vmin;
+    text-shadow: 1.25vmin 1.25vmin 2.5vmin rgba(0, 0, 0, 0.125);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+#countdown:before {
+    content: "20";
+    animation: 20s 1s forwards timer_countdown, 1s 0.875s 20 timer_beat;
+}
+
+@keyframes timer_beat {
+
+    40%,
+    80% {
+        transform: none;
+    }
+
+    50% {
+        transform: scale(1.125);
+    }
+}
+
+@keyframes timer_countdown {
+    0% {
+        content: "20";
+    }
+
+    5% {
+        content: "19";
+    }
+
+    10% {
+        content: "18";
+    }
+
+    15% {
+        content: "17";
+    }
+
+    20% {
+        content: "16";
+    }
+
+    25% {
+        content: "15";
+    }
+
+    30% {
+        content: "14";
+    }
+
+    35% {
+        content: "13";
+    }
+
+    40% {
+        content: "12";
+    }
+
+    45% {
+        content: "11";
+    }
+
+    50% {
+        content: "10";
+    }
+
+    55% {
+        content: "9";
+    }
+
+    60% {
+        content: "8";
+    }
+
+    65% {
+        content: "7";
+    }
+
+    70% {
+        content: "6";
+    }
+
+    75% {
+        content: "5";
+    }
+
+    80% {
+        content: "4";
+    }
+
+    85% {
+        content: "3";
+    }
+
+    90% {
+        content: "2";
+    }
+
+    95% {
+        content: "1";
+    }
+
+    100% {
+        content: "0";
+    }
+}
+
+#countdown:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(95, 179, 213, 0.625);
+    animation: 20s 1s linear forwards timer_indicator;
+}
+
+@keyframes timer_indicator {
+    100% {
+        transform: translateY(100%);
+    }
+}
