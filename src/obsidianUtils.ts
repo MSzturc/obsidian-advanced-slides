@@ -129,27 +129,49 @@ export class ObsidianUtils {
 				return fileContent;
 			}
 		} else {
-			const lines = fileContent.split('\n');
 			const cache = this.app.metadataCache.getFileCache(tfile);
 			const resolved = resolveSubpath(cache, header);
 
 			if (resolved && resolved.start && resolved.start.line != null) {
-				let result = "";
 				if (resolved.end && resolved.end.line != null) {
-					if (resolved.end.line == resolved.start.line) {
-						result = lines.slice(resolved.start.line, resolved.end.line + 1).join('\n');
-					} else {
-						result = lines.slice(resolved.start.line, resolved.end.line).join('\n');
-					}
+					return this.substring(fileContent, resolved.start.line, resolved.start.col, resolved.end.line, resolved.end.col);
 				} else {
-					result = lines.slice(resolved.start.line).join('\n');
+					return this.substring(fileContent, resolved.start.line, resolved.start.col, -1, -1);
 				}
-				result = result.replaceAll(/\^[^\n]+/g, "");
-				return result;
+
 			} else {
 				return '![[' + relativeFilePath + '#' + header + ']]';
 			}
 		}
+	}
+
+	substring(input: string, startLine: number, startColumn: number, endLine: number, endColumn: number): string {
+		let result = "";
+		const lines = input.split('\n');
+
+		let eline = lines.length;
+		if (endLine > -1) {
+			eline = endLine;
+		}
+
+		for (let index = startLine; index <= eline; index++) {
+			const line = lines[index];
+			if (line) {
+				if (index == startLine) {
+					result += line.substring(startColumn) + '\n';
+				} else if (index == eline) {
+					let endLine = line;
+					if (endColumn > -1) {
+						endLine = line.substring(0, endColumn);
+					}
+					result += endLine.substring(0, endLine.lastIndexOf('^')) + '\n';
+				} else {
+					result += line + '\n';
+				}
+			}
+		}
+
+		return result;
 	}
 
 	similarity(s1: string, s2: string): number {
