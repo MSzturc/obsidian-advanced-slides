@@ -196,6 +196,14 @@ export default class AdvancedSlidesPlugin extends Plugin {
 					this.autoCompleteSuggester.deactivate();
 				}
 				this.registerEditorSuggest(this.autoCompleteSuggester);
+
+				const instance = this.getViewInstance();
+
+				if (instance) {
+					if (instance.url == 'about:blank') {
+						this.showView();
+					}
+				}
 			});
 
 			this.registerMarkdownCodeBlockProcessor("slide", async (src, el) => {
