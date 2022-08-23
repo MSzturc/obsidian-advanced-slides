@@ -9,7 +9,7 @@ export class FormatProcessor {
 
 		return markdown.split('\n')
 			.map((line) => {
-				if (line.indexOf('```') > 0) {
+				if (line.indexOf('```') > -1) {
 					insideCodeBlock = !insideCodeBlock;
 				}
 
