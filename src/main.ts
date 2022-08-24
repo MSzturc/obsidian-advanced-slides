@@ -41,6 +41,7 @@ export interface AdvancedSlidesSettings {
 	enableOverview: boolean;
 	enableChalkboard: boolean;
 	enableMenu: boolean;
+	enableTimeBar: boolean;
 	theme: string;
 	highlightTheme: string;
 	transition: string;
@@ -59,6 +60,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	enableChalkboard: false,
 	enableOverview: false,
 	enableMenu: false,
+	enableTimeBar: false,
 	theme: 'black',
 	highlightTheme: 'zenburn',
 	transition: 'slide',
@@ -599,6 +601,18 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 				value.setValue(this.plugin.settings.enableChalkboard).onChange(
 					_.debounce(async value => {
 						this.plugin.settings.enableChalkboard = value;
+						await this.plugin.saveSettings();
+					}, 750),
+				),
+			);
+
+		new Setting(containerEl)
+			.setName('Elapsed Time Bar')
+			.setDesc('Display elapsed time bar?')
+			.addToggle(value =>
+				value.setValue(this.plugin.settings.enableTimeBar).onChange(
+					_.debounce(async value => {
+						this.plugin.settings.enableTimeBar = value;
 						await this.plugin.saveSettings();
 					}, 750),
 				),

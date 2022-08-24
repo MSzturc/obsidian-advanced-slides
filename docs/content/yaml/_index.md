@@ -40,6 +40,8 @@ transition | Transition style | none / fade / slide / convex / concave / zoom | 
 transitionSpeed | Transition speed | default / fast / slow | default
 bg | Sets a default background for all slides | [see slide background docs]({{%relref "slideBackground"%}}) | '#ffffff'
 markdown | Sets options for marked | (see note below) | (see note below)
+enableTimeBar | Activates elapsing timer bar for slides | true / false | false
+timeForPresentation | Sets the time for elapsing timer in seconds | number | 120
 
 <br>
 

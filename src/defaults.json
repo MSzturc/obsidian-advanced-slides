@@ -11,5 +11,6 @@
 	"height": 700,
 	"margin": 0.04,
 	"transition": "slide",
-	"enableCustomControls": true
+	"enableCustomControls": true,
+	"timeForPresentation": 120
 }

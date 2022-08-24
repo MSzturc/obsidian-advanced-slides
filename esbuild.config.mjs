@@ -150,6 +150,12 @@ function build() {
                     }
                 }),
                 copy({
+                    assets: {
+                        from: ['node_modules/reveal.js-elapsed-time-bar/plugin/elapsed-time-bar/elapsed-time-bar.js'],
+                        to: ['./plugin/elapsed-time-bar/*'],
+                    }
+                }),
+                copy({
                     assets: prod ? {} : {
                         from: ['.hotreload'],
                         to: ['.'],
