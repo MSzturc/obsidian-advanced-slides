@@ -164,7 +164,10 @@ export class ObsidianUtils {
 					if (endColumn > -1) {
 						endLine = line.substring(0, endColumn);
 					}
-					result += endLine.substring(0, endLine.lastIndexOf('^')) + '\n';
+					if (endLine.includes('^')) {
+						endLine = endLine.substring(0, endLine.lastIndexOf('^'));
+					}
+					result += endLine + '\n';
 				} else {
 					result += line + '\n';
 				}
