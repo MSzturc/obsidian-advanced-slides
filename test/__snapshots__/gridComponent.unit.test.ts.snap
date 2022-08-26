@@ -312,7 +312,7 @@ thick dotted blue
 `;
 
 exports[`Grid Component > Attributes > Filter 1`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #B565A7; filter: blur(10px); position: absolute; left: 48px; top: 105px; height: 175px; min-height: 175px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #B565A7; filter: blur(10px); position: absolute; left: 48px; top: 105px; height: 175px; min-height: 175px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
 Text is too blurry
 </div>
@@ -363,7 +363,7 @@ Bottom Grid
 `;
 
 exports[`Grid Component > Attributes > Rotate 1`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #B565A7; transform: rotate(-10deg); position: absolute; left: 336px; top: 0px; height: 175px; min-height: 175px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #B565A7; transform: rotate(-10deg); position: absolute; left: 336px; top: 0px; height: 175px; min-height: 175px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
 Hello
 </div>
