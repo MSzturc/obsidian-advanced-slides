@@ -7,9 +7,9 @@ export class ImageProcessor {
 	private utils: ObsidianUtils;
 	private parser: CommentParser;
 
-	private markdownImageRegex = /^[ ]{0,3}!\[([^\]]*)\]\((.*(?:jpg|png|jpeg|gif|bmp|webp|svg)?)\)\s?(<!--.*-->)?/im;
+	private markdownImageRegex = /^[ ]{0,3}!\[([^\]]*)\]\((.*(?:jpg|png|jpeg|gif|bmp|webp|svg)?)\)\s?(<!--.*-->)?/gim;
 
-	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|webp|svg))\s*\|?\s*([^\]]*)??\]\]\s?(<!--.*-->)?/i;
+	private obsidianImageRegex = /!\[\[(.*?(?:jpg|png|jpeg|gif|bmp|webp|svg))\s*\|?\s*([^\]]*)??\]\]\s?(<!--.*-->)?/ig;
 	private obsidianImageReferenceRegex = /\[\[(.*?(?:jpg|png|jpeg|webp|gif|bmp|svg))\|?([^\]]*)??\]\]/gi;
 
 	constructor(utils: ObsidianUtils) {
@@ -61,12 +61,23 @@ export class ImageProcessor {
 	}
 
 	private transformImageString(line: string) {
-		const [, image, ext, comment] = this.obsidianImageRegex.exec(line);
 
-		const filePath = this.utils.findFile(image);
-		const commentAsString = this.buildComment(ext, comment) ?? '';
+		let result = "";
 
-		return `![](${filePath}) ${commentAsString}`;
+		let m;
+		this.obsidianImageRegex.lastIndex = 0;
+
+		while ((m = this.obsidianImageRegex.exec(line)) !== null) {
+			if (m.index === this.obsidianImageRegex.lastIndex) {
+				this.obsidianImageRegex.lastIndex++;
+			}
+			const [, image, ext, comment] = m;
+
+			const filePath = this.utils.findFile(image);
+			const commentAsString = this.buildComment(ext, comment) ?? '';
+			result = result + `\n![](${filePath}) ${commentAsString}`;
+		}
+		return result;
 	}
 
 	private buildComment(ext: string, commentAsString: string) {
@@ -88,34 +99,51 @@ export class ImageProcessor {
 	}
 
 	private htmlify(line: string) {
-		// eslint-disable-next-line prefer-const
-		let [, alt, filePath, commentString] = this.markdownImageRegex.exec(line);
 
-		if (alt && alt.includes('|')) {
-			commentString = this.buildComment(alt.split('|')[1], commentString) ?? '';
-		}
+		let result = "";
 
-		const comment = this.parser.parseLine(commentString) ?? this.parser.buildComment('element');
+		let m;
+		this.markdownImageRegex.lastIndex = 0;
 
-		const isIcon = this.isIcon(filePath);
+		while ((m = this.markdownImageRegex.exec(line)) !== null) {
+			if (m.index === this.markdownImageRegex.lastIndex) {
+				this.markdownImageRegex.lastIndex++;
+			}
+			// eslint-disable-next-line prefer-const
+			let [, alt, filePath, commentString] = m;
 
-		if (isIcon) {
-			return `<i class="${filePath}" ${this.parser.buildAttributes(comment)}></i>`;
-		} else {
-			if (ImageCollector.getInstance().shouldCollect()) {
-				ImageCollector.getInstance().addImage(filePath);
+			if (alt && alt.includes('|')) {
+				commentString = this.buildComment(alt.split('|')[1], commentString) ?? '';
 			}
 
-			if (filePath.startsWith('file:/')) {
-				filePath = this.transformAbsoluteFilePath(filePath);
+			const comment = this.parser.parseLine(commentString) ?? this.parser.buildComment('element');
+
+			const isIcon = this.isIcon(filePath);
+
+			if (result.length > 0) {
+				result = result + '\n';
 			}
 
-			const imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}></img>`;
-			const pHtml = `<p ${this.parser.buildAttributes(
-				this.parser.buildComment('element', ['line-height: 0'], ['reset-paragraph', 'image-paragraph']),
-			)}>${imageHtml}</p>\n`;
-			return pHtml;
+			if (isIcon) {
+				result = result + `<i class="${filePath}" ${this.parser.buildAttributes(comment)}></i>`;
+			} else {
+				if (ImageCollector.getInstance().shouldCollect()) {
+					ImageCollector.getInstance().addImage(filePath);
+				}
+
+				if (filePath.startsWith('file:/')) {
+					filePath = this.transformAbsoluteFilePath(filePath);
+				}
+
+				const imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}></img>`;
+				const pHtml = `<p ${this.parser.buildAttributes(
+					this.parser.buildComment('element', ['line-height: 0'], ['reset-paragraph', 'image-paragraph']),
+				)}>${imageHtml}</p>\n`;
+				result = result + pHtml;
+			}
+
 		}
+		return result;
 	}
 
 	private isIcon(path: string) {
