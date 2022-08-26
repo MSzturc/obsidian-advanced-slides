@@ -110,10 +110,10 @@ export class TemplateProcessor {
 			let [match, name, content] = m;
 
 			if (name.includes('<!--')) {
-				name = name.substring(0, name.indexOf('<!--')).trim();
+				name = name.substring(0, name.indexOf('<!--'));
 			}
 
-			if (name == 'block') continue;
+			if (name.trim() == 'block') continue;
 
 			content = '::: block\n' + content;
 			const optionalName = '<%? ' + name.trim() + ' %>';
