@@ -12,15 +12,24 @@ export class FormatProcessor {
 				if (line.indexOf('```') > -1) {
 					insideCodeBlock = !insideCodeBlock;
 				}
-
 				if (insideCodeBlock) {
 					return line;
 				}
 				else {
-					return line
-						.replaceAll(this.boldRegex, (sub, args) => `**${args.trim()}**`)
-						.replaceAll(this.markRegex, '<mark>$1</mark>')
-						.replaceAll(this.commentRegex, '');
+					const split = line.split('`');
+					if (split.length > 1) {
+						for (let i = 0; i < split.length; i = i + 2) {
+							split[i] = split[i].replaceAll(this.boldRegex, (sub, args) => `**${args.trim()}**`)
+								.replaceAll(this.markRegex, '<mark>$1</mark>')
+								.replaceAll(this.commentRegex, '');
+						}
+						return split.join('`');
+					} else {
+						return line
+							.replaceAll(this.boldRegex, (sub, args) => `**${args.trim()}**`)
+							.replaceAll(this.markRegex, '<mark>$1</mark>')
+							.replaceAll(this.commentRegex, '');
+					}
 				}
 			})
 			.join('\n')
