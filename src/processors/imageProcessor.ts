@@ -10,7 +10,7 @@ export class ImageProcessor {
 	private markdownImageRegex = /^[ ]{0,3}!\[([^\]]*)\]\((.*(?:jpg|png|jpeg|gif|bmp|webp|svg)?)\)\s?(<!--.*-->)?/im;
 
 	private obsidianImageRegex = /!\[\[(.*(?:jpg|png|jpeg|gif|bmp|webp|svg))\s*\|?\s*([^\]]*)??\]\]\s?(<!--.*-->)?/i;
-	private obsidianImageReferenceRegex = /\[\[(.*(?:jpg|png|jpeg|webp|gif|bmp|svg))\|?([^\]]*)??\]\]/i;
+	private obsidianImageReferenceRegex = /\[\[(.*?(?:jpg|png|jpeg|webp|gif|bmp|svg))\|?([^\]]*)??\]\]/gi;
 
 	constructor(utils: ObsidianUtils) {
 		this.utils = utils;
@@ -42,9 +42,22 @@ export class ImageProcessor {
 			.join('\n');
 	}
 	transformImageReferenceString(line: string): string {
-		const [match, image] = this.obsidianImageReferenceRegex.exec(line);
-		const filePath = this.utils.findFile(image);
-		return line.replaceAll(match, filePath);
+		let result = line;
+
+		let m;
+		this.obsidianImageReferenceRegex.lastIndex = 0;
+
+		while ((m = this.obsidianImageReferenceRegex.exec(result)) !== null) {
+			if (m.index === this.obsidianImageReferenceRegex.lastIndex) {
+				this.obsidianImageReferenceRegex.lastIndex++;
+			}
+
+			const [match, image] = m;
+			const filePath = this.utils.findFile(image);
+			result = result.replaceAll(match, filePath);
+		}
+
+		return result;
 	}
 
 	private transformImageString(line: string) {
