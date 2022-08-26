@@ -45,7 +45,7 @@
 		"reveal.js-menu": "^2.1.0",
 		"reveal.js-mermaid-plugin": "^0.0.2",
 		"reveal.js-plugins": "^4.1.5",
-		"reveal.js-elapsed-time-bar": "tkrkt/reveal.js-elapsed-time-bar",
+		"reveal.js-elapsed-time-bar": "https://github.com/tkrkt/reveal.js-elapsed-time-bar.git",
 		"sass": "^1.45.1",
 		"ts-jest": "^27.1.2",
 		"ts-mockito": "^2.6.1",
