@@ -22,6 +22,7 @@ import { CalloutProcessor } from './processors/calloutProcessor';
 import { TemplateProcessor } from './processors/templateProcessor';
 import { ChartProcessor } from './processors/chartProcessor';
 import { DefaultBackgroundProcessor } from './processors/defaultBackgroundProcessor';
+import { ReferenceProcessor } from './processors/referenceProcessor';
 
 export class ObsidianMarkdownPreprocessor {
 	private multipleFileProcessor: MultipleFileProcessor;
@@ -45,6 +46,7 @@ export class ObsidianMarkdownPreprocessor {
 	private templateProcessor: TemplateProcessor;
 	private chartProcessor: ChartProcessor;
 	private defaultBackgroundProcessor: DefaultBackgroundProcessor;
+	private referenceProcessor: ReferenceProcessor;
 
 	constructor(utils: ObsidianUtils) {
 		this.multipleFileProcessor = new MultipleFileProcessor(utils);
@@ -68,6 +70,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.templateProcessor = new TemplateProcessor(utils);
 		this.chartProcessor = new ChartProcessor();
 		this.defaultBackgroundProcessor = new DefaultBackgroundProcessor();
+		this.referenceProcessor = new ReferenceProcessor();
 	}
 	process(markdown: string, options: Options) {
 		YamlStore.getInstance().options = options;
@@ -110,6 +113,7 @@ export class ObsidianMarkdownPreprocessor {
 		const afterGridProcessor = this.gridProcessor.process(afterFragmentProcessor, options);
 		const afterCommentProcessor = this.commentProcessor.process(afterGridProcessor);
 		const afterChartProcessor = this.chartProcessor.process(afterCommentProcessor, options);
-		return afterChartProcessor;
+		const afterReferenceProcessor = this.referenceProcessor.process(afterChartProcessor);
+		return afterReferenceProcessor;
 	}
 }
