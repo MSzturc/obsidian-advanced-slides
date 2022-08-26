@@ -53,7 +53,7 @@
 	"title": "Basic Markdown Syntax",
 	"tags": [],
 	"description": "",
-	"content": "Index\nHeaders Text style Lists Images Links Embeds Blockquotes Inline Code Tables CodeBlocks Footnotes Math Mermaid Callouts "
+	"content": "Index\nHeaders Text style Lists Images Video Links Embeds Blockquotes Inline Code Tables CodeBlocks Footnotes Math Mermaid Callouts "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/classes/",
@@ -140,6 +140,13 @@
 	"content": "You can use block comments to group parts of your slide. By annotating the block all items inside this block gets the properties of the annotation:\n::: block #### Header _and_ Paragraph content *in same block* ::: --- no color ::: block \u0026lt;!-- element style=\u0026#34;background-color: red;\u0026#34; --\u0026gt; everything inside this block has red background color ::: block \u0026lt;!-- element style=\u0026#34;background-color: blue;\u0026#34; --\u0026gt; blue ::: red ::: no color Header and Paragraph content in same block\nno color\neverything inside this block has red background color\nblue\nred\nno color\nSee it fullscreen "
 },
 {
+	"uri": "https://mszturc.github.io/obsidian-advanced-slides/plugins/elapsetimebar/",
+	"title": "Elapsed Time Bar",
+	"tags": [],
+	"description": "",
+	"content": "A plugin adding a progress bar based on the elapsed time, that helps you keeping the time in presentations.\nTo set the time for presentation add a timeForPresentation property into your slides frontmatter with the time you want to present in seconds.\nTo enable Elapsed Time Bar you have to enable the Plugin in Advanced Slides Settings "
+},
+{
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/features/",
 	"title": "Features",
 	"tags": [],
@@ -159,6 +166,13 @@
 	"tags": [],
 	"description": "",
 	"content": "Learn more about the Advanced Slides from the following pages:\nAdvanced Slides Basics How to use Advanced Slides plugin 用Obsidian做PPT，我是认真的 Advanced Slides 专业PPT制作课程来了 Building layouts Advanced Slides Advanced Using Templates in Advanced Slides Advanced Slides in Action Rust Talks by No Boilerplate Videos Source Talk: Use It or Lose It by Nicole van der Hoeven Video Slides CSS Course by RemyDekor Slides Deck: Estimating The Hemodynamic Response Function by Lynne J Williams Slides Source Deck: Basisprozesse beim Beraten und Entscheiden in Teams by Matthäus Szturc Slides Source Deck: Digital Culture Analyse 21 Slides Template Deck: The four Daggers Slides Deckset about Juggling by Marc Bielert Slides Deck: Hydrothermal Venture Slides Deck: ML Ops Examples by Sam Foreman Slides Source Deck: Scientific Data Science by Sam Foreman Slides Source "
+},
+{
+	"uri": "https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/video/",
+	"title": "Video",
+	"tags": [],
+	"description": "",
+	"content": " Insert video as an HTML video tag \u0026lt;video data-autoplay controls\u0026gt;\u0026lt;source src=\u0026#34;Attachments/my_video_file.mp4\u0026#34; type=\u0026#34;video/mp4\u0026#34;\u0026gt;\u0026lt;/video\u0026gt; --- Set the size of the video \u0026lt;video data-autoplay controls width=\u0026#34;800\u0026#34; height=\u0026#34;600\u0026#34;\u0026gt;\u0026lt;source src=\u0026#34;Attachments/my_video_file.mp4\u0026#34; type=\u0026#34;video/mp4\u0026#34;\u0026gt;\u0026lt;/video\u0026gt; References:\nhttps://forum.obsidian.md/t/advanced-slides-create-markdown-based-reveal-js-presentations-in-obsidian/28243/42 https://www.w3schools.com/tags/tag_video.asp Insert video as an HTML video tag\nSet the size of the video\nSee it fullscreen "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragments/",
@@ -228,7 +242,7 @@
 	"title": "Frontmatter Options",
 	"tags": [],
 	"description": "",
-	"content": "You can customize many setting for your current slide deck by adding one or more of the following properties into the frontmatter section of your slide:\nName Description Possible Values Default Value width Sets the width of the presentation number 960 height Sets the width of the presentation number 700: margin Empty space around the content number 0.04: minScale Bounds for smallest possible scale to apply to content number 0.2 maxScale Bounds for largest possible scale to apply to content number 2.0 notesSeparator Sets the note delimiter string note: separator Sets the slide separator string ^( ?| )\u0026mdash;( ?| )$ verticalSeparator Sets the vertical slide separator string ^( ?| )\u0026ndash;( ?| )$ enableLinks Enable backlinks in slides true / false false theme Sets the theme see theme docs black highlightTheme Sets the highlight theme see theme docs zenburn css Adds further css files [] enableOverview Shows the Overview Button on the bottom right corner of the slide true / false false enableChalkboard Activates the chalkboard for slides true / false false controls Display presentation control arrows true / false true controlsLayout Determines where controls appear edges / bottom-right bottom-right progress Display a presentation progress bar true / false true slideNumber Display the page number of the current slide see reveal.js docs false overview Enable the slide overview mode true / false true center Vertical centering of slides true / false true loop Loop the presentation true / false false rtl Change the presentation direction to be RTL true / false false shuffle Randomizes the order of slides each time the presentation loads true / false false fragments Turns fragments on and off globally true / false true showNotes Flags if speaker notes should be visible to all viewers true / false false autoSlide Controls automatic progression to the next slide number (in milliseconds) 0 transition Transition style none / fade / slide / convex / concave / zoom true transitionSpeed Transition speed default / fast / slow default bg Sets a default background for all slides see slide background docs \u0026lsquo;#ffffff\u0026rsquo; markdown Sets options for marked (see note below) (see note below) You can find more possible parameters here marked is the Markdown parser used by reveal.js. The complete set of marked options is here.\nThe default value of markdown:\nmarkdown: gfm: true mangle: true pedantic: false smartLists: false smartypants: false Other marked options exist, but should not be used with the Advanced Slides plugin.\n"
+	"content": "You can customize many setting for your current slide deck by adding one or more of the following properties into the frontmatter section of your slide:\nName Description Possible Values Default Value width Sets the width of the presentation number 960 height Sets the width of the presentation number 700: margin Empty space around the content number 0.04: minScale Bounds for smallest possible scale to apply to content number 0.2 maxScale Bounds for largest possible scale to apply to content number 2.0 notesSeparator Sets the note delimiter string note: separator Sets the slide separator string ^( ?| )\u0026mdash;( ?| )$ verticalSeparator Sets the vertical slide separator string ^( ?| )\u0026ndash;( ?| )$ enableLinks Enable backlinks in slides true / false false theme Sets the theme see theme docs black highlightTheme Sets the highlight theme see theme docs zenburn css Adds further css files [] enableOverview Shows the Overview Button on the bottom right corner of the slide true / false false enableChalkboard Activates the chalkboard for slides true / false false controls Display presentation control arrows true / false true controlsLayout Determines where controls appear edges / bottom-right bottom-right progress Display a presentation progress bar true / false true slideNumber Display the page number of the current slide see reveal.js docs false overview Enable the slide overview mode true / false true center Vertical centering of slides true / false true loop Loop the presentation true / false false rtl Change the presentation direction to be RTL true / false false shuffle Randomizes the order of slides each time the presentation loads true / false false fragments Turns fragments on and off globally true / false true showNotes Flags if speaker notes should be visible to all viewers true / false false autoSlide Controls automatic progression to the next slide number (in milliseconds) 0 transition Transition style none / fade / slide / convex / concave / zoom true transitionSpeed Transition speed default / fast / slow default bg Sets a default background for all slides see slide background docs \u0026lsquo;#ffffff\u0026rsquo; markdown Sets options for marked (see note below) (see note below) enableTimeBar Activates elapsing timer bar for slides true / false false timeForPresentation Sets the time for elapsing timer in seconds number 120 You can find more possible parameters here marked is the Markdown parser used by reveal.js. The complete set of marked options is here.\nThe default value of markdown:\nmarkdown: gfm: true mangle: true pedantic: false smartLists: false smartypants: false Other marked options exist, but should not be used with the Advanced Slides plugin.\n"
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slidebackground/",
@@ -249,7 +263,7 @@
 	"title": "Plugins",
 	"tags": [],
 	"description": "",
-	"content": "Advanced Slides comes with a varity of diffrent plugins built in:\nMenu Overview Chalkboard "
+	"content": "Advanced Slides comes with a varity of diffrent plugins built in:\nMenu Overview Chalkboard Elapsed Time Bar "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/speakernotes/",
@@ -424,7 +438,7 @@
 	"title": "Credits",
 	"tags": [],
 	"description": "contributors and packages used by Advanced Slides",
-	"content": "github contributors @MSzturc 589 commits @actions-user 85 commits @Coffelius 3 commits @rxian 3 commits @miluoshi 2 commits @jacobmarble 1 commits @Michael-Beukman 1 commits @Plexipop 1 commits @scokobro 1 commits @code-factor 1 commits Packages and libraries obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework "
+	"content": "github contributors @MSzturc 606 commits @actions-user 86 commits @Coffelius 3 commits @rxian 3 commits @miluoshi 2 commits @jacobmarble 1 commits @axelson 1 commits @Michael-Beukman 1 commits @Plexipop 1 commits @scokobro 1 commits @code-factor 1 commits Packages and libraries obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/tags/",

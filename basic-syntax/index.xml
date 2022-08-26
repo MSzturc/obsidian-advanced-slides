@@ -45,6 +45,18 @@ This text will be bold</description>
     </item>
     
     <item>
+      <title>Video</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/video/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/video/</guid>
+      <description> Insert video as an HTML video tag &amp;lt;video data-autoplay controls&amp;gt;&amp;lt;source src=&amp;#34;Attachments/my_video_file.mp4&amp;#34; type=&amp;#34;video/mp4&amp;#34;&amp;gt;&amp;lt;/video&amp;gt; --- Set the size of the video &amp;lt;video data-autoplay controls width=&amp;#34;800&amp;#34; height=&amp;#34;600&amp;#34;&amp;gt;&amp;lt;source src=&amp;#34;Attachments/my_video_file.mp4&amp;#34; type=&amp;#34;video/mp4&amp;#34;&amp;gt;&amp;lt;/video&amp;gt; References:
+https://forum.obsidian.md/t/advanced-slides-create-markdown-based-reveal-js-presentations-in-obsidian/28243/42 https://www.w3schools.com/tags/tag_video.asp Insert video as an HTML video tag
+Set the size of the video
+See it fullscreen </description>
+    </item>
+    
+    <item>
       <title>Links</title>
       <link>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/links/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

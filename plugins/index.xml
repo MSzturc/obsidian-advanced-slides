@@ -36,5 +36,16 @@ To enable Overview you have to enable the Plugin in Advanced Slides Settings </d
 you can make notes directly on the slides, e.g. to comment on certain aspects, you can open a chalkboard on which you can make notes. The main use case in mind when implementing the plugin is classroom usage in which you may want to explain some course content and quickly need to make some notes.</description>
     </item>
     
+    <item>
+      <title>Elapsed Time Bar</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/plugins/elapsetimebar/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/elapsetimebar/</guid>
+      <description>A plugin adding a progress bar based on the elapsed time, that helps you keeping the time in presentations.
+To set the time for presentation add a timeForPresentation property into your slides frontmatter with the time you want to present in seconds.
+To enable Elapsed Time Bar you have to enable the Plugin in Advanced Slides Settings </description>
+    </item>
+    
   </channel>
 </rss>
