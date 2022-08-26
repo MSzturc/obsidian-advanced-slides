@@ -109,6 +109,10 @@ export class TemplateProcessor {
 			// eslint-disable-next-line prefer-const
 			let [match, name, content] = m;
 
+			if (name.includes('<!--')) {
+				name = name.substring(0, name.indexOf('<!--')).trim();
+			}
+
 			if (name == 'block') continue;
 
 			content = '::: block\n' + content;
