@@ -186,6 +186,11 @@ exports[`Extended Markdown Syntax >  Slide Backgrounds 1`] = `
 
 ---
 
+<!-- .slide: data-background-image=\\"/documentation/Image.jpg\\" -->
+## Slide with image background #2
+
+---
+
 <!-- .slide: data-background-image=\\"https://picsum.photos/seed/picsum/800/600\\" data-background-opacity=\\"0.5\\" -->
 ## with opacity
 

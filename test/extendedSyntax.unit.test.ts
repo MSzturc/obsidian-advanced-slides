@@ -137,6 +137,11 @@ styled text <!-- element class="with-border" -->
 });
 
 test('Extended Markdown Syntax >  Slide Backgrounds', () => {
+
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall(arg => {
+		return '/documentation/Image.jpg';
+	});
+
 	const input = `<!-- slide data-background="aquamarine" -->
 ## Slide with text based background
 ---
@@ -162,6 +167,11 @@ test('Extended Markdown Syntax >  Slide Backgrounds', () => {
 
 <!-- slide data-background-image="https://picsum.photos/seed/picsum/800/600" -->
 ## Slide with image background
+
+---
+
+<!-- slide bg="[[Image.jpg]]" -->
+## Slide with image background #2
 
 ---
 
