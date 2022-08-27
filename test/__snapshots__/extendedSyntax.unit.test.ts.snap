@@ -93,6 +93,15 @@ no color
 "
 `;
 
+exports[`Extended Markdown Syntax >  Chart support > Extended Settings 1`] = `
+"
+<canvas style=\\"max-height:700px\\" data-chart=\\"bar\\" >
+<!--
+{\\"data\\":{\\"datasets\\":[{\\"data\\":[1,2,3,4,5,6,7,8,9],\\"label\\":\\"Title 1\\",\\"backgroundColor\\":\\"#4285f4\\"},{\\"data\\":[5,4,3,2,1,0,-1,-2,-3],\\"label\\":\\"Title 2\\",\\"backgroundColor\\":\\"#ea4335\\"}],\\"labels\\":[\\"Monday\\",\\"Tuesday\\",\\"Wednesday\\",\\"Thursday\\",\\"Friday\\",\\"Saturday\\",\\"Sunday\\",\\"next Week\\",\\"next Month\\"]},\\"options\\":{\\"elements\\":{\\"bar\\":{\\"spanGaps\\":true,\\"tension\\":0.5}},\\"scales\\":{\\"y\\":{\\"beginAtZero\\":true,\\"stacked\\":true},\\"x\\":{\\"stacked\\":true}},\\"plugins\\":{\\"legend\\":{\\"display\\":false,\\"position\\":\\"left\\"}}}}-->
+</canvas>
+"
+`;
+
 exports[`Extended Markdown Syntax >  Chart support > Illegal Input 1`] = `
 "
 	
