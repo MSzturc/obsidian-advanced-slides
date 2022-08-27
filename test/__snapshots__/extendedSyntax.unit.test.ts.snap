@@ -1,5 +1,56 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Advanced Slides Feature >  Show Debug Grid 1`] = `
+"## My Slide
+
+This slide shows the debug view feature
+
+
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 70px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 140px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 210px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 280px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 350px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 420px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 490px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 560px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 630px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 96px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 192px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 288px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 384px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 480px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 576px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 672px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 768px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 864px; top: 0px; height: 700px; min-height: 700px; width: 96px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+</div>
+
+<!-- .slide: class=\\"drop\\" -->
+"
+`;
+
 exports[`Extended Markdown Syntax >  Block Comments 1`] = `
 "<div class=\\"block\\">
 

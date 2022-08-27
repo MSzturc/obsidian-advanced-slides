@@ -285,3 +285,17 @@ test('Extended Markdown Syntax >  Excalidraw support', () => {
 
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
+
+test('Advanced Slides Feature >  Show Debug Grid', () => {
+	const input = `## My Slide
+
+This slide shows the debug view feature
+
+`;
+
+	const { options, markdown } = prepare(input);
+	options.showGrid = true;
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
