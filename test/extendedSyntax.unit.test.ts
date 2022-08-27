@@ -193,6 +193,24 @@ See [reveal backgrounds](https://revealjs.com/backgrounds/)
 	return expect(sut.process(markdown, options)).toMatchSnapshot();
 });
 
+test('Extended Markdown Syntax >  Default Background', () => {
+
+	when(MockedObsidianUtils.findFile('Image.jpg')).thenCall(arg => {
+		return '/documentation/Image.jpg';
+	});
+
+	const input = `
+## Slide with default Background
+`;
+
+	const { options, markdown } = prepare(input);
+	options.bg = '[[Image.jpg]]'
+	const sut = new ObsidianMarkdownPreprocessor(utilsInstance);
+
+	return expect(sut.process(markdown, options)).toMatchSnapshot();
+});
+
+
 test('Extended Markdown Syntax >  Speaker Notes', () => {
 	const input = `## My Slide
 

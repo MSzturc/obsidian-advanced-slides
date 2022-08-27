@@ -127,6 +127,14 @@ exports[`Extended Markdown Syntax >  Chart support 1`] = `
 "
 `;
 
+exports[`Extended Markdown Syntax >  Default Background 1`] = `
+"
+## Slide with default Background
+
+<!-- .slide: data-background-image=\\"/documentation/Image.jpg\\" -->
+"
+`;
+
 exports[`Extended Markdown Syntax >  Element Annotations 1`] = `
 "text with border <!-- .element: class=\\"with-border\\" -->
 
