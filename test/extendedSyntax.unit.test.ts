@@ -199,8 +199,25 @@ test('Extended Markdown Syntax >  Default Background', () => {
 		return '/documentation/Image.jpg';
 	});
 
+	when(MockedObsidianUtils.findFile('Slide.jpg')).thenCall(arg => {
+		return '/documentation/Slide.jpg';
+	});
+
 	const input = `
 ## Slide with default Background
+
+---
+
+<!-- slide bg="[[Slide.jpg]]" -->
+
+## Slide with overloaded Background
+
+---
+
+<!-- slide class="titleSlide" -->
+
+## Slide without overloaded Background
+
 `;
 
 	const { options, markdown } = prepare(input);

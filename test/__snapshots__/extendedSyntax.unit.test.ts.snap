@@ -132,6 +132,19 @@ exports[`Extended Markdown Syntax >  Default Background 1`] = `
 ## Slide with default Background
 
 <!-- .slide: data-background-image=\\"/documentation/Image.jpg\\" -->
+
+---
+
+<!-- .slide: data-background-image=\\"/documentation/Slide.jpg\\" -->
+
+## Slide with overloaded Background
+
+---
+
+<!-- .slide: class=\\"titleSlide\\" data-background-image=\\"/documentation/Image.jpg\\" -->
+
+## Slide without overloaded Background
+
 "
 `;
 
