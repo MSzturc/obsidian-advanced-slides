@@ -50,6 +50,7 @@ export class TemplateProcessor {
 									}
 								}
 								md = md.replaceAll(this.emptySlideCommentRegex, '');
+								md = md.trim();
 								md = this.computeVariables(md);
 								md += notes;
 								output = output.split(slide).join(md);
