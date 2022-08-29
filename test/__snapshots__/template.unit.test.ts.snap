@@ -1,51 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Template only with content 1`] = `
-"
-		# Before
+"# Before
 		
 
 	# MyContent
 
-		# After
-		"
+		# After"
 `;
 
 exports[`Template with invisible variable not set 1`] = `
-"
-		
-
-	# MyContent
+"# MyContent
 
 		# After<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 658px; height: 42px; min-height: 42px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
 		
 		</div>
-		
 <!-- .slide: class=\\"drop\\" -->
 "
 `;
 
 exports[`Template with variable not set 1`] = `
-"
-		
-
-	# MyContent
+"# MyContent
 
 		# After<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 658px; height: 42px; min-height: 42px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
 		<% footer %>
 		</div>
-		
 <!-- .slide: class=\\"drop\\" -->
 "
 `;
 
 exports[`Template with variable set 1`] = `
-"
-		
-
-# MyContent
+"# MyContent
 
 
 	
@@ -59,7 +46,6 @@ exports[`Template with variable set 1`] = `
 
 
 		</div>
-		
 <!-- .slide: class=\\"drop\\" -->
 "
 `;
