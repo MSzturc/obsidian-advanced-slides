@@ -15,19 +15,23 @@ export class DropProcessor {
 				return slidegroup
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
 					.map(slide => {
-						const newSlide = this.transformSlide(slide);
-						const split = output.split(slide);
-						if (split.length == 2) {
-							output = split.join(newSlide);
+						if (slide.trim().length > 0) {
+							const newSlide = this.transformSlide(slide);
+							const split = output.split(slide);
+							if (split.length == 2) {
+								output = split.join(newSlide);
+
+							} else {
+								const right = split.splice(1).join(slide);
+								const left = split[0];
+								const both = [left, right];
+								output = both.join(newSlide);
+							}
+							return newSlide;
 						} else {
-							const right = split.splice(1).join(slide);
-							const left = split[0];
-							const both = [left, right];
-							output = both.join(newSlide);
+							return slide;
 						}
 
-						output = output.split(slide).join(newSlide);
-						return newSlide;
 					})
 					.join(options.verticalSeparator);
 			})
