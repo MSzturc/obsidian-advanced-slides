@@ -138,7 +138,7 @@ export class GridTransformer implements AttributeTransformer {
 			case 'center':
 			default:
 				// align - alignItems - justifyContent
-				return [undefined, 'center', 'space-evenly', undefined];
+				return [undefined, 'center', 'center', undefined];
 		}
 	}
 
