@@ -11,7 +11,13 @@ export class DebugViewProcessor {
 					return slidegroup
 						.split(new RegExp(options.verticalSeparator, 'gmi'))
 						.map((slide, index) => {
-							const newSlide = this.addDebugCode(slide);
+
+							const [md, notes] = this.extractNotes(slide);
+
+							let newSlide = this.addDebugCode(md);
+							if (notes.length > 0) {
+								newSlide += '\n\n' + notes;
+							}
 							output = output.replace(slide, newSlide);
 							return newSlide;
 						})
@@ -48,5 +54,14 @@ export class DebugViewProcessor {
 		gridBlock += '<grid drag="10 100" drop="90 0" border="thin dotted blue"/>\n';
 
 		return markdown + '\n' + gridBlock;
+	}
+
+	extractNotes(input: string): [string, string] {
+		const spliceIdx = input.indexOf('note:');
+		if (spliceIdx > 0) {
+			return [input.substring(0, spliceIdx), input.substring(spliceIdx)];
+		} else {
+			return [input, ''];
+		}
 	}
 }
