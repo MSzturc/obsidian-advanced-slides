@@ -75,8 +75,7 @@ export class ObsidianMarkdownPreprocessor {
 	process(markdown: string, options: Options) {
 		YamlStore.getInstance().options = options;
 
-
-		let before = markdown;
+		let before = this.trimEnding(markdown, options);
 		let after;
 
 		let circuitCounter = 0;
@@ -143,6 +142,29 @@ export class ObsidianMarkdownPreprocessor {
 
 		return afterReferenceProcessor;
 	}
+	trimEnding(markdown: string, options: Options): string {
+
+		const input = markdown + '\n';
+
+		let m;
+		if ((m = new RegExp(options.separator, 'gmi').exec(input)) !== null) {
+			const [match] = m;
+
+			if (input.endsWith(match)) {
+				return input.substring(0, input.lastIndexOf(match));
+			}
+		}
+
+		if ((m = new RegExp(options.verticalSeparator, 'gmi').exec(input)) !== null) {
+			const [match] = m;
+
+			if (input.endsWith(match)) {
+				return input.substring(0, input.lastIndexOf(match));
+			}
+		}
+
+		return markdown;
+	}
 
 	log(name: string, before: string, after: string) {
 		if (before != after) {
@@ -150,3 +172,4 @@ export class ObsidianMarkdownPreprocessor {
 		}
 	}
 }
+
