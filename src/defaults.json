@@ -12,5 +12,6 @@
 	"margin": 0.04,
 	"transition": "slide",
 	"enableCustomControls": true,
-	"timeForPresentation": 120
+	"timeForPresentation": 120,
+	"log": false
 }

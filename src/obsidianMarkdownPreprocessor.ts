@@ -114,6 +114,39 @@ export class ObsidianMarkdownPreprocessor {
 		const afterCommentProcessor = this.commentProcessor.process(afterGridProcessor);
 		const afterChartProcessor = this.chartProcessor.process(afterCommentProcessor, options);
 		const afterReferenceProcessor = this.referenceProcessor.process(afterChartProcessor);
+
+		if (options.log) {
+			this.log('markdown', '', markdown);
+			this.log('merge & template', markdown, after);
+			this.log('afterDebugViewProcessor', after, afterDebugViewProcessor);
+			this.log('afterAutoClosingProcessor', afterDebugViewProcessor, afterAutoClosingProcessor);
+			this.log('defaultBackgroundProcessor', afterAutoClosingProcessor, defaultBackgroundProcessor);
+			this.log('afterCalloutProcessor', defaultBackgroundProcessor, afterCalloutProcessor);
+			this.log('afterEmojiProcessor', afterCalloutProcessor, afterEmojiProcessor);
+			this.log('afterIconsProcessor', afterEmojiProcessor, afterIconsProcessor);
+			this.log('afterDropProcessor', afterIconsProcessor, afterDropProcessor);
+			this.log('afterMermaidProcessor', afterDropProcessor, afterMermaidProcessor);
+			this.log('afterBlockProcessor', afterMermaidProcessor, afterBlockProcessor);
+			this.log('afterFootNoteProcessor', afterBlockProcessor, afterFootNoteProcessor);
+			this.log('afterExcalidrawProcessor', afterFootNoteProcessor, afterExcalidrawProcessor);
+			this.log('afterImageProcessor', afterExcalidrawProcessor, afterImageProcessor);
+			this.log('afterInternalLinkProcessor', afterImageProcessor, afterInternalLinkProcessor);
+			this.log('afterLatexProcessor', afterInternalLinkProcessor, afterLatexProcessor);
+			this.log('afterFormatProcessor', afterLatexProcessor, afterFormatProcessor);
+			this.log('afterFragmentProcessor', afterFormatProcessor, afterFragmentProcessor);
+			this.log('afterGridProcessor', afterFragmentProcessor, afterGridProcessor);
+			this.log('afterCommentProcessor', afterGridProcessor, afterCommentProcessor);
+			this.log('afterChartProcessor', afterCommentProcessor, afterChartProcessor);
+			this.log('afterReferenceProcessor', afterChartProcessor, afterReferenceProcessor);
+
+		}
+
 		return afterReferenceProcessor;
+	}
+
+	log(name: string, before: string, after: string) {
+		if (before != after) {
+			console.log(`${name}: ${after}`);
+		}
 	}
 }
