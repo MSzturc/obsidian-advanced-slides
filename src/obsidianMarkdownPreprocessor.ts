@@ -99,8 +99,7 @@ export class ObsidianMarkdownPreprocessor {
 		const afterCalloutProcessor = this.calloutProcessor.process(defaultBackgroundProcessor);
 		const afterEmojiProcessor = this.emojiProcessor.process(afterCalloutProcessor);
 		const afterIconsProcessor = this.iconsProcessor.process(afterEmojiProcessor);
-		const afterDropProcessor = this.dropProcessor.process(afterIconsProcessor, options);
-		const afterMermaidProcessor = this.mermaidProcessor.process(afterDropProcessor);
+		const afterMermaidProcessor = this.mermaidProcessor.process(afterIconsProcessor);
 		const afterBlockProcessor = this.blockProcessor.process(afterMermaidProcessor);
 		const afterFootNoteProcessor = this.footnoteProcessor.process(afterBlockProcessor, options);
 		const afterExcalidrawProcessor = this.excalidrawProcessor.process(afterFootNoteProcessor);
@@ -109,7 +108,8 @@ export class ObsidianMarkdownPreprocessor {
 		const afterLatexProcessor = this.latexProcessor.process(afterInternalLinkProcessor);
 		const afterFormatProcessor = this.formatProcessor.process(afterLatexProcessor);
 		const afterFragmentProcessor = this.fragmentProcessor.process(afterFormatProcessor, options);
-		const afterGridProcessor = this.gridProcessor.process(afterFragmentProcessor, options);
+		const afterDropProcessor = this.dropProcessor.process(afterFragmentProcessor, options);
+		const afterGridProcessor = this.gridProcessor.process(afterDropProcessor, options);
 		const afterCommentProcessor = this.commentProcessor.process(afterGridProcessor);
 		const afterChartProcessor = this.chartProcessor.process(afterCommentProcessor, options);
 		const afterReferenceProcessor = this.referenceProcessor.process(afterChartProcessor);
@@ -123,8 +123,7 @@ export class ObsidianMarkdownPreprocessor {
 			this.log('afterCalloutProcessor', defaultBackgroundProcessor, afterCalloutProcessor);
 			this.log('afterEmojiProcessor', afterCalloutProcessor, afterEmojiProcessor);
 			this.log('afterIconsProcessor', afterEmojiProcessor, afterIconsProcessor);
-			this.log('afterDropProcessor', afterIconsProcessor, afterDropProcessor);
-			this.log('afterMermaidProcessor', afterDropProcessor, afterMermaidProcessor);
+			this.log('afterMermaidProcessor', afterIconsProcessor, afterMermaidProcessor);
 			this.log('afterBlockProcessor', afterMermaidProcessor, afterBlockProcessor);
 			this.log('afterFootNoteProcessor', afterBlockProcessor, afterFootNoteProcessor);
 			this.log('afterExcalidrawProcessor', afterFootNoteProcessor, afterExcalidrawProcessor);
@@ -133,7 +132,8 @@ export class ObsidianMarkdownPreprocessor {
 			this.log('afterLatexProcessor', afterInternalLinkProcessor, afterLatexProcessor);
 			this.log('afterFormatProcessor', afterLatexProcessor, afterFormatProcessor);
 			this.log('afterFragmentProcessor', afterFormatProcessor, afterFragmentProcessor);
-			this.log('afterGridProcessor', afterFragmentProcessor, afterGridProcessor);
+			this.log('afterDropProcessor', afterFragmentProcessor, afterDropProcessor);
+			this.log('afterGridProcessor', afterDropProcessor, afterGridProcessor);
 			this.log('afterCommentProcessor', afterGridProcessor, afterCommentProcessor);
 			this.log('afterChartProcessor', afterCommentProcessor, afterChartProcessor);
 			this.log('afterReferenceProcessor', afterChartProcessor, afterReferenceProcessor);
