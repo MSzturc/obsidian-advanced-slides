@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-advanced-slides",
-	"version": "1.16.6",
+	"version": "1.17.0",
 	"description": "Create markdown-based presentations in Obsidian",
 	"main": "src/main.ts",
 	"scripts": {
