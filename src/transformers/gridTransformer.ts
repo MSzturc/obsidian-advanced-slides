@@ -14,11 +14,78 @@ export class GridTransformer implements AttributeTransformer {
 		/^(?:(-?\d*(?:px)?)(?:\s*|x)(-?\d*(?:px)?)|(center|top|bottom|left|right|topleft|topright|bottomleft|bottomright))$/m;
 
 	transform(element: Properties) {
+
+		if (element.getAttribute('absolute') == 'true') {
+			this.transformAbsolute(element);
+		} else {
+			this.transformRelative(element);
+		}
+	}
+
+	transformRelative(element: Properties) {
+		const drop = element.getAttribute('drop');
+
+		if (drop != undefined) {
+			const drag = element.getAttribute('drag') ?? '50 100';
+
+			const grid = this.readRelative(drag, drop);
+
+			if (grid != undefined) {
+				element.addClass('reset-margin');
+				element.addStyle('position', 'absolute');
+				element.addStyle('height', grid.get('height') + '%');
+				element.addStyle('width', grid.get('width') + '%');
+				element.addStyle('left', grid.get('x') + '%');
+				element.addStyle('top', grid.get('y') + '%');
+
+				const flow = element.getAttribute('flow');
+				const [align, alignItems, justifyContent, stretch] = this.getAlignment(element.getAttribute('align'), flow);
+				const justifyCtx = element.getAttribute('justify-content') ?? justifyContent;
+
+				element.deleteAttribute('align');
+
+				if (align) {
+					element.addAttribute('align', align, false);
+				}
+
+				if (stretch) {
+					element.addClass(stretch);
+				}
+
+				switch (flow) {
+					case 'row':
+						element.addStyle('display', 'flex');
+						element.addStyle('flex-direction', 'row');
+						element.addStyle('align-items', alignItems);
+						element.addStyle('justify-content', justifyCtx);
+						element.addClass('flex-even');
+						break;
+					case 'col':
+					default:
+						element.addStyle('display', 'flex');
+						element.addStyle('flex-direction', 'column');
+						element.addStyle('align-items', alignItems);
+						element.addStyle('justify-content', justifyCtx);
+						break;
+				}
+				element.deleteAttribute('flow');
+				element.deleteAttribute('justify-content');
+
+			}
+
+			element.deleteAttribute('drag');
+			element.deleteAttribute('drop');
+		}
+
+	}
+
+	transformAbsolute(element: Properties) {
+
 		const drop = element.getAttribute('drop');
 		if (drop != undefined) {
 			const drag = element.getAttribute('drag') ?? '480px 700px';
 
-			const grid = this.read(drag, drop);
+			const grid = this.readAbsolute(drag, drop);
 
 			if (grid != undefined) {
 				const left = this.leftOf(grid);
@@ -142,7 +209,46 @@ export class GridTransformer implements AttributeTransformer {
 		}
 	}
 
-	read(drag: string, drop: string): Map<string, number> {
+	readRelative(drag: string, drop: string): Map<string, number> {
+		try {
+			const result = new Map<string, number>();
+
+			const [, width, height] = this.gridAttributeRegex.exec(drag);
+			const [, x, y, name] = this.gridAttributeRegex.exec(drop);
+
+			if (width) {
+				result.set('width', this.toRelativeValue(this.maxWidth, width));
+			}
+
+			if (height) {
+				result.set('height', this.toRelativeValue(this.maxHeight, height));
+			}
+
+
+			if (name) {
+
+				const [nx, ny] = this.relativeOf(name, result.get('width'), result.get('height'));
+
+				result.set('x', nx);
+				result.set('y', ny);
+			} else {
+				if (x) {
+					result.set('x', Number(x));
+				}
+
+				if (y) {
+					result.set('y', Number(y));
+				}
+			}
+
+
+			return result;
+		} catch (ex) {
+			return undefined;
+		}
+	}
+
+	readAbsolute(drag: string, drop: string): Map<string, number> {
 		try {
 			const result = new Map<string, number>();
 
@@ -177,6 +283,14 @@ export class GridTransformer implements AttributeTransformer {
 		}
 	}
 
+	toRelativeValue(max: number, input: string): number {
+		if (input.toLowerCase().endsWith('px')) {
+			return Number(input.toLowerCase().replace('px', '')) / max * 100;
+		} else {
+			return Number(input);
+		}
+	}
+
 	toPixel(max: number, input: string): number {
 		if (input.toLowerCase().endsWith('px')) {
 			return Number(input.toLowerCase().replace('px', ''));
@@ -205,6 +319,32 @@ export class GridTransformer implements AttributeTransformer {
 				return [(this.maxWidth - width) / 2, this.maxHeight - height];
 			case 'center':
 				return [(this.maxWidth - width) / 2, (this.maxHeight - height) / 2];
+			default:
+				return [0, 0];
+		}
+	}
+
+	relativeOf(name: string, width: number, height: number): [number, number] {
+
+		switch (name) {
+			case 'topleft':
+				return [0, 0];
+			case 'topright':
+				return [100 - width, 0];
+			case 'bottomleft':
+				return [0, 100 - height];
+			case 'bottomright':
+				return [100 - width, 100 - height];
+			case 'left':
+				return [0, (100 - height) / 2];
+			case 'right':
+				return [100 - width, (100 - height) / 2];
+			case 'top':
+				return [(100 - width) / 2, 0];
+			case 'bottom':
+				return [(100 - width) / 2, 100 - height];
+			case 'center':
+				return [(100 - width) / 2, (100 - height) / 2];
 			default:
 				return [0, 0];
 		}

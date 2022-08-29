@@ -60,7 +60,7 @@ export class DropProcessor {
 			outSlideComment = '<!-- .slide: class="drop" -->';
 		}
 
-		let out = `${outSlideComment}\n<grid drag="100 100" drop="0 0">\n${outMd}\n</grid>`;
+		let out = `${outSlideComment}\n<grid absolute="true" drag="100 100" drop="0 0">\n${outMd}\n</grid>`;
 
 		if (notes.length > 0) {
 			out += '\n\n' + notes;
