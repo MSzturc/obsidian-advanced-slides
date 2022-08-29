@@ -33,13 +33,11 @@ export class TemplateProcessor {
 				return slidegroup
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
 					.map(slide => {
-
-						const newSlide = slide;
 						if (this.templateCommentRegex.test(slide)) {
 							try {
 
 								// eslint-disable-next-line prefer-const
-								let [md, notes] = this.extractNotes(newSlide);
+								let [md, notes] = this.extractNotes(slide);
 
 								let circuitCounter = 0;
 								while (this.templateCommentRegex.test(md)) {
