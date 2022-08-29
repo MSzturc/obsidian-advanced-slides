@@ -1,14 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Basic Markdown Syntax > Blockquotes 1`] = `
-"> Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+> Human beings face ever more complex and urgent problems, and their effectiveness in dealing with these problems is a matter that is critical to the stability and continued progress of society.
 
 - Doug Engelbart, 1961
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Callouts 1`] = `
-"<div class=\\"callout callout-color2\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"callout callout-color2\\">
 <div class=\\"callout-title\\">
 <div class=\\"callout-icon\\">
 
@@ -73,7 +79,7 @@ Callouts support manipulation through annotations
 </div>
 	<!-- .element: style=\\"width: 20%; font-size: 24px; transform: rotate(15deg)\\" -->
 	
-	<div class=\\"reset-margin\\" style=\\"font-size: 36px; position: absolute; left: 105.6px; top: 476px; height: 210px; min-height: 210px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+	<div class=\\"reset-margin\\" style=\\"font-size: 36px; position: absolute; height: 30%; width: 30%; left: 11%; top: 68%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 <div class=\\"callout callout-color8\\">
 <div class=\\"callout-title\\">
@@ -96,7 +102,7 @@ Here is an Example for an Callout in a Slide. Callouts support dark and white ba
 </div>
 	</div>
 	
-	<div class=\\"has-light-background reset-margin\\" style=\\"font-size: 36px; background-color: white; padding: 50px; box-sizing: border-box; position: absolute; left: 480px; top: 0px; height: 700px; min-height: 700px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+	<div class=\\"has-light-background reset-margin\\" style=\\"font-size: 36px; background-color: white; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 50%; left: 50%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 <div class=\\"callout callout-color9\\">
 <div class=\\"callout-title\\">
@@ -118,17 +124,21 @@ Here is an Cite for an Callout in a Slide. Callouts support dark and white backg
 </div>
 </div>
 	</div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Embeds 1`] = `
-"# Notes about Obsidian
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+# Notes about Obsidian
 A knowledge base that works on local Markdown files
 
-# Link
-Link to Obsidian Homepage: http://obsidian.md
+# Link<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
+Link to Obsidian Homepage: http://obsidian.md
+</div></div>
 ---
 
 Link to Obsidian Homepage: http://obsidian.md
@@ -136,7 +146,10 @@ Link to Obsidian Homepage: http://obsidian.md
 `;
 
 exports[`Basic Markdown Syntax > Footnotes 1`] = `
-"Here's a simple footnote<sup id=\\"fnref:1\\" role=\\"doc-noteref\\">1</sup>
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+Here's a simple footnote<sup id=\\"fnref:1\\" role=\\"doc-noteref\\">1</sup>
 
 
 
@@ -149,11 +162,14 @@ meaningful!
 
 </p></li></ol>
 </div>
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Footnotes in Tables 1`] = `
-"| Table     | Col 1 | Col 2 | Col 3 |
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+| Table     | Col 1 | Col 2 | Col 3 |
 	| --------- | ----- | ----- | ----- |
 | Footnotes |<sup id=\\"fnref:1\\" role=\\"doc-noteref\\">1</sup>|<sup id=\\"fnref:2\\" role=\\"doc-noteref\\">2</sup>|<sup id=\\"fnref:3\\" role=\\"doc-noteref\\">3</sup>|
 	
@@ -177,126 +193,152 @@ fn3
 
 </p></li></ol>
 </div>
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Headers 1`] = `
-"# This is a heading 1
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+# This is a heading 1
 ## This is a heading 2
 ### This is a heading 3 
 #### This is a heading 4
 ##### This is a heading 5
-###### This is a heading 6"
+###### This is a heading 6
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Images 1`] = `
-"
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
 Insert image with standard markdown syntax
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1006/500/300\\" alt=\\"Image\\" ></img></p>
-
-
+</div>
 ---
+<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 Insert image that lies outside of your vault
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/localFileSlash/Users/testUser/Desktop/howToUse.png\\" alt=\\"Image\\" ></img></p>
-
-
+</div>
 ---
+<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 Insert image with obsidian markdown syntax
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
-
-
+</div>
 ---
+<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 Scale image to a width of 100 px
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 100px\\"></img></p>
-
-
+</div>
 ---
+<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 Scale image to a width of 300x100 px
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: cover; width: 300px; height: 100px\\"></img></p>
-
-
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Inline Code 1`] = `
-"### Text inside \`backticks\` on a line will be formatted like code.
-"
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+### Text inside \`backticks\` on a line will be formatted like code.
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Links 1`] = `
-"External Links
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+External Links
 
 http://obsidian.md - automatic!
 
 [Obsidian](http://obsidian.md)
-
+</div>
 ---
+<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 Obsidian URI links
 
 [Link to note](obsidian://open?path=D:%2Fpath%2Fto%2Ffile.md)
 
 [Link to note](obsidian://open?vault=MainVault&file=MyNote.md)
-
+</div>
 ---
+<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 Internal Links
 
 This Internal link will be displayed as normal text
 
 This Link will use its alias for displaying
-
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Links 2`] = `
-"
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 Internal Links
 
 This [Internal link](obsidian://open?vault=test-vault&file=Internal%20link) will be displayed as normal text
 
 This [Link](obsidian://open?vault=test-vault&file=Internal%20link) will use its alias for displaying
-
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Lists 1`] = `
-"- Item 1
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+- Item 1
 - Item 2
 	- Item 2a
 	- Item 2b
-
+</div>
 ---
+<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 1. Item 1
 1. Item 2
 1. Item 3
    1. Item 3a
    1. Item 3b
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Math 1`] = `
-"\`$$egin{vmatrix}a & b\\\\
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+\`$$egin{vmatrix}a & b\\\\
 c & d
 end{vmatrix}=ad-bc$$\`
 
-You can also do inline math like \`$s^{-2}_{n}sum_{i=1}^{n}$\`"
+You can also do inline math like \`$s^{-2}_{n}sum_{i=1}^{n}$\`
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Mermaid 1`] = `
-"
-
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"mermaid\\">
 sequenceDiagram
@@ -306,19 +348,25 @@ sequenceDiagram
     John-->>-Alice: I feel great!
 
 </div>
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Tables 1`] = `
-"First Header | Second Header
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+First Header | Second Header
 ------------ | ------------
 Content from cell 1 | Content from cell 2
 Content in the first column | Content in the second column
-"
+</div>"
 `;
 
 exports[`Basic Markdown Syntax > Text style 1`] = `
-"*This text will be italic*
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+*This text will be italic*
 
 _This will also be italic_
 
@@ -329,10 +377,13 @@ _This will also be italic_
 
 
 _You **can** combine them_
-
+</div>
 ---
+<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 Any word wrapped with two tildes (like ~~this~~) will appear crossed out.
 
-Any word wrapped with two equal signs (like <mark>this</mark>) will appear as highlighted."
+Any word wrapped with two equal signs (like <mark>this</mark>) will appear as highlighted.
+</div>"
 `;

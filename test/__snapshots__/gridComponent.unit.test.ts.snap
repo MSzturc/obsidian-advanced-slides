@@ -1,28 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Grid Component > Attributes > Alignment > Stretch > Col 1`] = `
-"<div class=\\"reset-margin stretch-column\\" style=\\"position: absolute; left: 0px; top: 315px; height: 385px; min-height: 385px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"reset-margin stretch-column\\" style=\\"position: absolute; height: 55%; width: 100%; left: 0%; top: 45%; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
 
 	![](https://picsum.photos/id/978/150/150)
 	![](https://picsum.photos/id/978/150/150)
 	</div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment > Stretch > Row 1`] = `
-"<div class=\\"reset-margin stretch-row flex-even\\" style=\\"position: absolute; left: 0px; top: 0px; height: 315px; min-height: 315px; width: 960px; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"reset-margin stretch-row flex-even\\" style=\\"position: absolute; height: 45%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" >
 
 	![](https://picsum.photos/id/978/150/150)
 	![](https://picsum.photos/id/978/150/150)
 	![](https://picsum.photos/id/978/150/150)
 	</div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 1`] = `
-"<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0px; top: 210px; height: 490px; min-height: 490px; width: 960px; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"left\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; height: 70%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"left\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
@@ -31,12 +38,14 @@ exports[`Grid Component > Attributes > Alignment 1`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 2`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0px; top: 210px; height: 490px; min-height: 490px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; height: 70%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
@@ -45,12 +54,14 @@ exports[`Grid Component > Attributes > Alignment 2`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 3`] = `
-"<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0px; top: 210px; height: 490px; min-height: 490px; width: 960px; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"right\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; height: 70%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"right\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
@@ -59,12 +70,14 @@ exports[`Grid Component > Attributes > Alignment 3`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 4`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0px; top: 210px; height: 490px; min-height: 490px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; height: 70%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
 
@@ -73,12 +86,14 @@ exports[`Grid Component > Attributes > Alignment 4`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 5`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: flex-start\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start\\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -87,12 +102,14 @@ exports[`Grid Component > Attributes > Alignment 5`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 6`] = `
-"<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -101,12 +118,14 @@ exports[`Grid Component > Attributes > Alignment 6`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 7`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end\\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -115,12 +134,14 @@ exports[`Grid Component > Attributes > Alignment 7`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 8`] = `
-"<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -129,12 +150,14 @@ exports[`Grid Component > Attributes > Alignment 8`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 9`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -143,12 +166,14 @@ exports[`Grid Component > Attributes > Alignment 9`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 10`] = `
-"<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: center; justify-content: center\\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -157,12 +182,14 @@ exports[`Grid Component > Attributes > Alignment 10`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 11`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start\\" align=\\"left\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start\\" align=\\"left\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -171,12 +198,14 @@ exports[`Grid Component > Attributes > Alignment 11`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 12`] = `
-"<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -185,12 +214,14 @@ exports[`Grid Component > Attributes > Alignment 12`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 13`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start\\" align=\\"right\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start\\" align=\\"right\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -199,12 +230,14 @@ exports[`Grid Component > Attributes > Alignment 13`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 14`] = `
-"<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"right\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"right\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -213,12 +246,14 @@ exports[`Grid Component > Attributes > Alignment 14`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 15`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end\\" align=\\"right\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end\\" align=\\"right\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -227,12 +262,14 @@ exports[`Grid Component > Attributes > Alignment 15`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 16`] = `
-"<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -241,12 +278,14 @@ exports[`Grid Component > Attributes > Alignment 16`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 17`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end\\" align=\\"left\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end\\" align=\\"left\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -255,12 +294,14 @@ exports[`Grid Component > Attributes > Alignment 17`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Alignment 18`] = `
-"<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"left\\">
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"left\\">
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
 
@@ -269,214 +310,237 @@ exports[`Grid Component > Attributes > Alignment 18`] = `
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Background 1`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; position: absolute; left: 432px; top: 0px; height: 350px; min-height: 350px; width: 528px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; position: absolute; height: 50%; width: 55%; left: 45%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Make
 </div>
 
-<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: rgb(0,0,0); position: absolute; left: 0px; top: 350px; height: 350px; min-height: 350px; width: 528px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: rgb(0,0,0); position: absolute; height: 50%; width: 55%; left: 0%; top: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Noise
 </div>
 
-<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: green; transform: rotate(-15deg); position: absolute; left: 360px; top: 280px; height: 140px; min-height: 140px; width: 240px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: green; transform: rotate(-15deg); position: absolute; height: 20%; width: 25%; left: 37.5%; top: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### some
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Border 1`] = `
-"<div class=\\"reset-margin\\" style=\\"border: thick dotted blue; box-sizing: border-box; position: absolute; left: 0px; top: 262.5px; height: 175px; min-height: 175px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"reset-margin\\" style=\\"border: thick dotted blue; box-sizing: border-box; position: absolute; height: 25%; width: 30%; left: 0%; top: 37.5%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 thick dotted blue
 </div>
 
-<div class=\\"reset-margin\\" style=\\"border: 4px solid white; box-sizing: border-box; position: absolute; left: 336px; top: 262.5px; height: 175px; min-height: 175px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"border: 4px solid white; box-sizing: border-box; position: absolute; height: 25%; width: 30%; left: 35%; top: 37.5%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 20px solid white
 </div>
 
-<div class=\\"reset-margin\\" style=\\"border: medium dashed red; box-sizing: border-box; position: absolute; left: 672px; top: 262.5px; height: 175px; min-height: 175px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"border: medium dashed red; box-sizing: border-box; position: absolute; height: 25%; width: 30%; left: 70%; top: 37.5%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 thick dotted blue
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Filter 1`] = `
-"<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #B565A7; filter: blur(10px); position: absolute; left: 48px; top: 105px; height: 175px; min-height: 175px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #B565A7; filter: blur(10px); position: absolute; height: 25%; width: 30%; left: 5%; top: 15%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 Text is too blurry
 </div>
 
-<div class=\\"has-light-background reset-margin\\" style=\\"background-color: white; filter: grayscale(); position: absolute; left: 364.79999999999995px; top: 175px; height: 350px; min-height: 350px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: white; filter: grayscale(); position: absolute; height: 50%; width: 50%; left: -12%; top: -25%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Padding 1`] = `
-"<div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0px; top: 0px; height: 350px; min-height: 350px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; padding: 0 50px; box-sizing: border-box; position: absolute; height: 50%; width: 50%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ###### Lorem Ipsum wasnt simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book here there
 </div>
 
-<div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; padding: 20px; box-sizing: border-box; position: absolute; left: 480px; top: 350px; height: 350px; min-height: 350px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; padding: 20px; box-sizing: border-box; position: absolute; height: 50%; width: 50%; left: 50%; top: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\"></img></p>
 
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Padding 2`] = `
-"<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: red; position: absolute; left: 48px; top: 70px; height: 385px; min-height: 385px; width: 576px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: red; position: absolute; height: 55%; width: 60%; left: 5%; top: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Fragments:
 - &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"1\\" -->Right
 - &shy;<!-- .element: class=\\"fragment\\" data-fragment-index=\\"2\\" -->Bottom
 </div>
 
-<div class=\\"has-dark-background fragment reset-margin\\" style=\\"background-color: green; position: absolute; left: 672px; top: 70px; height: 385px; min-height: 385px; width: 240px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" data-fragment-index=\\"1\\">
+<div class=\\"has-dark-background fragment reset-margin\\" style=\\"background-color: green; position: absolute; height: 55%; width: 25%; left: -5%; top: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" data-fragment-index=\\"1\\">
 
 Right Grid
 </div>
 
-<div class=\\"has-light-background fragment reset-margin\\" style=\\"background-color: gray; position: absolute; left: 48px; top: 490px; height: 140px; min-height: 140px; width: 864px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" data-fragment-index=\\"2\\">
+<div class=\\"has-light-background fragment reset-margin\\" style=\\"background-color: gray; position: absolute; height: 20%; width: 90%; left: 5%; top: -10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" data-fragment-index=\\"2\\">
 
 Bottom Grid
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Attributes > Rotate 1`] = `
-"<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #B565A7; transform: rotate(-10deg); position: absolute; left: 336px; top: 0px; height: 175px; min-height: 175px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #B565A7; transform: rotate(-10deg); position: absolute; height: 25%; width: 30%; left: 35%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 Hello
 </div>
 
-<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #D65076; transform: rotate(40deg); position: absolute; left: 576px; top: 525px; height: 175px; min-height: 175px; width: 384px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #D65076; transform: rotate(40deg); position: absolute; height: 25%; width: 40%; left: 60%; top: 75%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 World!
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Basic Syntax 1`] = `
-"<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 48px; top: 70px; height: 385px; min-height: 385px; width: 576px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; height: 55%; width: 60%; left: 5%; top: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Left
 </div>
 
-<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 672px; top: 70px; height: 385px; min-height: 385px; width: 240px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; height: 55%; width: 25%; left: 70%; top: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Right
 </div>
 
-<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 48px; top: 490px; height: 140px; min-height: 140px; width: 864px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; height: 20%; width: 90%; left: 5%; top: 70%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Bottom
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Basic Syntax 2`] = `
-"<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 48px; top: 70px; height: 385px; min-height: 385px; width: 576px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; height: 55%; width: 60%; left: 5%; top: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Left
 </div>
 
-<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 672px; top: 70px; height: 385px; min-height: 385px; width: 240px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; height: 55%; width: 25%; left: -5%; top: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Right
 </div>
 
-<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 48px; top: 490px; height: 140px; min-height: 140px; width: 864px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; height: 20%; width: 90%; left: 5%; top: -10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Bottom
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Column Flow 1`] = `
-"<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 288px; top: 0px; height: 700px; min-height: 700px; width: 384px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; height: 100%; width: 40%; left: 30%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Lorem
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 ### Ipsum
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Position Coordinates 1`] = `
-"<div class=\\"reset-margin\\" style=\\"background-color: orange; position: absolute; left: 96px; top: 105px; height: 350px; min-height: 350px; width: 384px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"reset-margin\\" style=\\"background-color: orange; position: absolute; height: 50%; width: 40%; left: 10%; top: 15%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Positive X, Y
 </div>
 
-<div class=\\"reset-margin\\" style=\\"background-color: red; position: absolute; left: 632px; top: 40px; height: 210px; min-height: 210px; width: 288px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"background-color: red; position: absolute; height: 30%; width: 30%; left: NaN%; top: NaN%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Negative X, Positive Y
 </div>
 
-<div class=\\"reset-margin\\" style=\\"background-color: blue; position: absolute; left: 528px; top: 280px; height: 280px; min-height: 280px; width: 384px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"background-color: blue; position: absolute; height: 40%; width: 40%; left: -5%; top: -20%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Negative X, Y
 </div>
 
-<div class=\\"reset-margin\\" style=\\"background-color: green; position: absolute; left: 0px; top: 595px; height: 70px; min-height: 70px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"background-color: green; position: absolute; height: 10%; width: 100%; left: 0%; top: -5%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Positive X, Negative Y
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Position by Name 1`] = `
-"<div class=\\"reset-margin\\" style=\\"background-color: red; position: absolute; left: 0px; top: 0px; height: 210px; min-height: 210px; width: 384px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"reset-margin\\" style=\\"background-color: red; position: absolute; height: 30%; width: 40%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Top Left
 </div>
 
-<div class=\\"reset-margin\\" style=\\"background-color: green; position: absolute; left: 480px; top: 0px; height: 700px; min-height: 700px; width: 480px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"background-color: green; position: absolute; height: 100%; width: 50%; left: 50%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Right Default Size
 </div>
 
-<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 96px; top: 490px; height: 210px; min-height: 210px; width: 768px; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" >
+<div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; height: 30%; width: 80%; left: 10%; top: 70%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Bottom
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
 
 exports[`Grid Component > Row Flow 1`] = `
-"<div class=\\"reset-margin flex-even\\" style=\\"background-color: coral; position: absolute; left: 0px; top: 210px; height: 280px; min-height: 280px; width: 960px; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" >
+"<!-- .slide: class=\\"drop\\" -->
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+
+<div class=\\"reset-margin flex-even\\" style=\\"background-color: coral; position: absolute; height: 40%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: row; align-items: center; justify-content: center\\" >
 
 ### Lorem
 <p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
 
 ### Ipsum
 </div>
-<!-- .slide: class=\\"drop\\" -->
-"
+</div>"
 `;
