@@ -27,6 +27,8 @@ export class TemplateProcessor {
 	process(markdown: string, options: Options) {
 		let output = markdown;
 
+		markdown += '\n';
+
 		markdown
 			.split(new RegExp(options.separator, 'gmi'))
 			.map(slidegroup => {
