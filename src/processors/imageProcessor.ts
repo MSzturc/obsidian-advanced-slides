@@ -152,9 +152,9 @@ export class ImageProcessor {
 								break;
 							case 'stretch':
 								comment.addStyle('align-self', 'stretch');
-								if (!comment.hasStyle('object-fit')) {
-									comment.addStyle('object-fit', 'cover');
-								}
+								comment.addStyle('object-fit', 'cover');
+								comment.addStyle('height', '100%');
+								comment.addStyle('width', '100%');
 								break;
 							default:
 								break;

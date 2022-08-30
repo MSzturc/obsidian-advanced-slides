@@ -60,8 +60,6 @@ export class GridTransformer implements AttributeTransformer {
 			const [align, alignItems, justifyContent, stretch] = this.getAlignment(element.getAttribute('align'), flow);
 			const justifyCtx = element.getAttribute('justify-content') ?? justifyContent;
 
-			element.deleteAttribute('align');
-
 			if (align) {
 				element.addAttribute('align', align, false);
 			}
