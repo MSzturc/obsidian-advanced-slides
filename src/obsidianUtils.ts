@@ -1,4 +1,3 @@
-import { lstat } from 'fs';
 import { readFileSync } from 'fs-extra';
 import { App, FileSystemAdapter, resolveSubpath, TFile } from 'obsidian';
 import path from 'path';
