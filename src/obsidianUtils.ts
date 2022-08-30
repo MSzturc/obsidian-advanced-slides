@@ -110,8 +110,8 @@ export class ObsidianUtils {
 		}
 	}
 
-	parseFile(relativeFilePath: string, header: string) {
-		const tfile = this.getTFile(relativeFilePath);
+	parseFile(filename: string, header: string) {
+		const tfile = this.getTFile(filename);
 
 		if (!tfile) {
 			return null;
@@ -139,7 +139,7 @@ export class ObsidianUtils {
 				}
 
 			} else {
-				return '![[' + relativeFilePath + '#' + header + ']]';
+				return '![[' + filename + '#' + header + ']]';
 			}
 		}
 	}
