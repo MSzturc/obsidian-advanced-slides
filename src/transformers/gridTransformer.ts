@@ -33,14 +33,7 @@ export class GridTransformer implements AttributeTransformer {
 
 		if (drop != undefined) {
 			const drag = element.getAttribute('drag') ?? defaultDrop;
-
-			let grid;
-			//TODO: read combined maybe?
-			if (isAbsolute) {
-				grid = this.readAbsolute(drag, drop);
-			} else {
-				grid = this.readRelative(drag, drop)
-			}
+			const grid = this.read(drag, drop, isAbsolute);
 
 			if (grid != undefined) {
 				const left = this.leftOf(grid) + defaultUnit;
@@ -168,78 +161,51 @@ export class GridTransformer implements AttributeTransformer {
 		}
 	}
 
-	readRelative(drag: string, drop: string): Map<string, number> {
+	read(drag: string, drop: string, isAbsolute: boolean): Map<string, number> {
 		try {
 			const result = new Map<string, number>();
 
-			result.set('maxWidth', 100);
-			result.set('maxHeight', 100);
+			if (isAbsolute) {
+				result.set('maxWidth', this.maxWidth);
+				result.set('maxHeight', this.maxHeight);
+				return this.readValues(drag, drop, result, this.toPixel, this.getXYof);
 
-			const [, width, height] = this.gridAttributeRegex.exec(drag);
-			const [, x, y, name] = this.gridAttributeRegex.exec(drop);
-
-			if (width) {
-				result.set('width', this.toRelativeValue(this.maxWidth, width));
-			}
-
-			if (height) {
-				result.set('height', this.toRelativeValue(this.maxHeight, height));
-			}
-
-
-			if (name) {
-
-				const [nx, ny] = this.relativeOf(name, result.get('width'), result.get('height'));
-
-				result.set('x', nx);
-				result.set('y', ny);
 			} else {
-				if (x) {
-					result.set('x', Number(x));
-				}
-
-				if (y) {
-					result.set('y', Number(y));
-				}
+				result.set('maxWidth', 100);
+				result.set('maxHeight', 100);
+				return this.readValues(drag, drop, result, this.toRelativeValue, this.relativeOf);
 			}
-
-
-			return result;
 		} catch (ex) {
 			return undefined;
 		}
 	}
 
-	readAbsolute(drag: string, drop: string): Map<string, number> {
-		try {
-			const result = new Map<string, number>();
+	readValues(drag: string, drop: string, result: Map<string, number>, valueTransformer: (max: number, input: string) => number, textTransformer: (name: string, width: number, height: number) => [number, number]): Map<string, number> {
 
+		try {
 			const [, width, height] = this.gridAttributeRegex.exec(drag);
 			const [, x, y, name] = this.gridAttributeRegex.exec(drop);
 
-			result.set('maxWidth', this.maxWidth);
-			result.set('maxHeight', this.maxHeight);
-
 			if (width) {
-				result.set('width', this.toPixel(this.maxWidth, width));
+				result.set('width', valueTransformer(result.get('maxWidth'), width));
 			}
 
 			if (height) {
-				result.set('height', this.toPixel(this.maxHeight, height));
+				result.set('height', valueTransformer(result.get('maxHeight'), height));
 			}
 
 			if (name) {
-				const [nx, ny] = this.getXYof(name, result.get('width'), result.get('height'));
+				const [nx, ny] = textTransformer(name, result.get('width'), result.get('height'));
 
 				result.set('x', nx);
 				result.set('y', ny);
 			} else {
 				if (x) {
-					result.set('x', this.toPixel(this.maxWidth, x));
+					result.set('x', valueTransformer(result.get('maxWidth'), x));
 				}
 
 				if (y) {
-					result.set('y', this.toPixel(this.maxHeight, y));
+					result.set('y', valueTransformer(result.get('maxHeight'), y));
 				}
 			}
 			return result;
@@ -317,7 +283,7 @@ export class GridTransformer implements AttributeTransformer {
 
 	leftOf(grid: Map<string, number>): number {
 		if (grid.get('x') < 0) {
-			return this.maxWidth + grid.get('x') - grid.get('width');
+			return grid.get('maxWidth') + grid.get('x') - grid.get('width');
 		} else {
 			return grid.get('x');
 		}
@@ -325,7 +291,7 @@ export class GridTransformer implements AttributeTransformer {
 
 	topOf(grid: Map<string, number>): number {
 		if (grid.get('y') < 0) {
-			return this.maxHeight + grid.get('y') - grid.get('height');
+			return grid.get('maxHeight') + grid.get('y') - grid.get('height');
 		} else {
 			return grid.get('y');
 		}
