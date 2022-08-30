@@ -93,7 +93,8 @@ export class ObsidianMarkdownPreprocessor {
 			}
 		}
 
-		const afterDebugViewProcessor = this.debugViewProcessor.process(after, options);
+		const afterReferenceProcessor = this.referenceProcessor.process(after);
+		const afterDebugViewProcessor = this.debugViewProcessor.process(afterReferenceProcessor, options);
 		const afterAutoClosingProcessor = this.autoClosingProcessor.process(afterDebugViewProcessor);
 		const defaultBackgroundProcessor = this.defaultBackgroundProcessor.process(afterAutoClosingProcessor, options);
 		const afterCalloutProcessor = this.calloutProcessor.process(defaultBackgroundProcessor);
@@ -112,12 +113,12 @@ export class ObsidianMarkdownPreprocessor {
 		const afterGridProcessor = this.gridProcessor.process(afterDropProcessor, options);
 		const afterCommentProcessor = this.commentProcessor.process(afterGridProcessor);
 		const afterChartProcessor = this.chartProcessor.process(afterCommentProcessor, options);
-		const afterReferenceProcessor = this.referenceProcessor.process(afterChartProcessor);
 
 		if (options.log) {
 			this.log('markdown', '', markdown);
 			this.log('merge & template', markdown, after);
-			this.log('afterDebugViewProcessor', after, afterDebugViewProcessor);
+			this.log('afterReferenceProcessor', after, afterReferenceProcessor);
+			this.log('afterDebugViewProcessor', afterReferenceProcessor, afterDebugViewProcessor);
 			this.log('afterAutoClosingProcessor', afterDebugViewProcessor, afterAutoClosingProcessor);
 			this.log('defaultBackgroundProcessor', afterAutoClosingProcessor, defaultBackgroundProcessor);
 			this.log('afterCalloutProcessor', defaultBackgroundProcessor, afterCalloutProcessor);
@@ -136,11 +137,10 @@ export class ObsidianMarkdownPreprocessor {
 			this.log('afterGridProcessor', afterDropProcessor, afterGridProcessor);
 			this.log('afterCommentProcessor', afterGridProcessor, afterCommentProcessor);
 			this.log('afterChartProcessor', afterCommentProcessor, afterChartProcessor);
-			this.log('afterReferenceProcessor', afterChartProcessor, afterReferenceProcessor);
 
 		}
 
-		return afterReferenceProcessor;
+		return afterChartProcessor;
 	}
 	trimEnding(markdown: string, options: Options): string {
 
