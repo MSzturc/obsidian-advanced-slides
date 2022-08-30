@@ -239,7 +239,7 @@ Insert image with obsidian markdown syntax
 
 Scale image to a width of 100 px
 
-<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 100px; object-fit: scale-down\\">
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 100px; object-fit: fill\\">
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
@@ -247,7 +247,7 @@ Scale image to a width of 100 px
 
 Scale image to a width of 300x100 px
 
-<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: cover; width: 300px; height: 100px\\">
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: fill; width: 300px; height: 100px\\">
 </div>"
 `;
 

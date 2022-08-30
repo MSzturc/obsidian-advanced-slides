@@ -135,6 +135,10 @@ export class ImageProcessor {
 					filePath = this.transformAbsoluteFilePath(filePath);
 				}
 
+				if (comment.hasStyle('width')) {
+					comment.addStyle('object-fit', 'fill');
+				}
+
 				if (!comment.hasStyle('align-self')) {
 					if (comment.hasAttribute('align')) {
 

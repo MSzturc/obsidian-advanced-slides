@@ -328,7 +328,7 @@ exports[`Grid Component > Attributes > Padding 1`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; padding: 20px; box-sizing: border-box; position: absolute; left: 50%; top: 50%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
-<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px; object-fit: scale-down\\">
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px; object-fit: fill\\">
 </div>
 </div>"
 `;

@@ -171,9 +171,9 @@ exports[`Extended Markdown Syntax >  Excalidraw support 1`] = `
 
 #### Excalidraw support
 
-<img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 100px; object-fit: scale-down\\">
+<img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 100px; object-fit: fill\\">
 
-<img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 300px; height: 400px; object-fit: scale-down\\">
+<img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 300px; height: 400px; object-fit: fill\\">
 </div>"
 `;
 
