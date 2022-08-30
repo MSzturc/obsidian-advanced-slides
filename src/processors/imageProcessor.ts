@@ -135,11 +135,39 @@ export class ImageProcessor {
 					filePath = this.transformAbsoluteFilePath(filePath);
 				}
 
-				const imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}></img>`;
-				const pHtml = `<p ${this.parser.buildAttributes(
-					this.parser.buildComment('element', ['line-height: 0'], ['reset-paragraph', 'image-paragraph']),
-				)}>${imageHtml}</p>\n`;
-				result = result + pHtml;
+				if (!comment.hasStyle('align-self')) {
+					if (comment.hasAttribute('align')) {
+
+						const align = comment.getAttribute('align');
+
+						switch (align) {
+							case 'left':
+								comment.addStyle('align-self', 'start');
+								break;
+							case 'right':
+								comment.addStyle('align-self', 'end');
+								break;
+							case 'center':
+								comment.addStyle('align-self', 'center');
+								break;
+							case 'stretch':
+								comment.addStyle('align-self', 'stretch');
+								if (!comment.hasStyle('object-fit')) {
+									comment.addStyle('object-fit', 'cover');
+								}
+								break;
+							default:
+								break;
+						}
+						comment.deleteAttribute('align');
+					}
+				}
+
+				if (!comment.hasStyle('object-fit')) {
+					comment.addStyle('object-fit', 'scale-down');
+				}
+				const imageHtml = `<img src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)}>`;
+				result = result + imageHtml;
 			}
 
 		}
