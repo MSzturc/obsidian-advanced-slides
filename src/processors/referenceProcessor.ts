@@ -1,7 +1,7 @@
 
 export class ReferenceProcessor {
 
-	private refRegex = /\^[\w-]+/g;
+	private refRegex = /\^[\w-]+\s/g;
 
 	process(markdown: string) {
 		return markdown.replaceAll(this.refRegex, '');
