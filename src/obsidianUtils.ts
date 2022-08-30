@@ -59,11 +59,11 @@ export class ObsidianUtils {
 
 		// Workaround for Excalidraw images
 		if (!file && filename.toLowerCase().endsWith('.excalidraw')) {
-			let hit = allHits.filter(x => x.path.contains(filename + '.svg'));
+			let hit = filesNotInExportDir.filter(x => x.path.contains(filename + '.svg'));
 			if (hit) {
 				file = hit.first();
 			} else {
-				hit = allHits.filter(x => x.path.contains(filename + '.png'));
+				hit = filesNotInExportDir.filter(x => x.path.contains(filename + '.png'));
 				if (hit) {
 					file = hit.first();
 				}
