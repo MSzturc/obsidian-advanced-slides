@@ -48,7 +48,7 @@ export class ObsidianUtils {
 
 		const allFiles = this.app.vault.getFiles();
 		const filesNotInExportDir = allFiles.filter(item => !item.path.contains(expDir));
-		const allHits = filesNotInExportDir.filter(item => item.path.contains(filename));
+		const allHits = filesNotInExportDir.filter(item => item.name == filename);
 
 		let file: TFile = null;
 
