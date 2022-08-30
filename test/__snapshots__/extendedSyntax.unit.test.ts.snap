@@ -2,59 +2,59 @@
 
 exports[`Advanced Slides Feature >  Show Debug Grid 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## My Slide
 
 This slide shows the debug view feature
 
 
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 10%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 20%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 20%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 40%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 50%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 60%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 60%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 70%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 70%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 80%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 80%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 10%; width: 100%; left: 0%; top: 90%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 90%; height: 10%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 10%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 10%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 20%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 20%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 30%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 30%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 40%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 40%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 50%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 60%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 60%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 70%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 70%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 80%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 80%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
-<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; height: 100%; width: 10%; left: 90%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"reset-margin\\" style=\\"border: thin dotted blue; box-sizing: border-box; position: absolute; left: 90%; top: 0%; height: 100%; width: 10%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 </div>
 </div>"
 `;
 
 exports[`Extended Markdown Syntax >  Block Comments 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"block\\">
 
@@ -67,7 +67,7 @@ Paragraph content
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 no color
 
@@ -99,7 +99,7 @@ no color
 
 exports[`Extended Markdown Syntax >  Chart support > Extended Settings 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 <canvas style=\\"max-height:700px\\" data-chart=\\"bar\\" >
 <!--
 {\\"data\\":{\\"datasets\\":[{\\"data\\":[1,2,3,4,5,6,7,8,9],\\"label\\":\\"Title 1\\",\\"backgroundColor\\":\\"#4285f4\\"},{\\"data\\":[5,4,3,2,1,0,-1,-2,-3],\\"label\\":\\"Title 2\\",\\"backgroundColor\\":\\"#ea4335\\"}],\\"labels\\":[\\"Monday\\",\\"Tuesday\\",\\"Wednesday\\",\\"Thursday\\",\\"Friday\\",\\"Saturday\\",\\"Sunday\\",\\"next Week\\",\\"next Month\\"]},\\"options\\":{\\"elements\\":{\\"bar\\":{\\"spanGaps\\":true,\\"tension\\":0.5}},\\"scales\\":{\\"y\\":{\\"beginAtZero\\":true,\\"stacked\\":true},\\"x\\":{\\"stacked\\":true}},\\"plugins\\":{\\"legend\\":{\\"display\\":false,\\"position\\":\\"left\\"}}}}-->
@@ -109,7 +109,7 @@ exports[`Extended Markdown Syntax >  Chart support > Extended Settings 1`] = `
 
 exports[`Extended Markdown Syntax >  Chart support > Illegal Input 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 \`\`\`chart
     type: bar
@@ -125,7 +125,7 @@ exports[`Extended Markdown Syntax >  Chart support > Illegal Input 1`] = `
 
 exports[`Extended Markdown Syntax >  Chart support 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 <canvas style=\\"max-height:700px\\" data-chart=\\"bar\\" >
 <!--
 {\\"data\\":{\\"datasets\\":[{\\"data\\":[1,2,3,4,5,6,7,8,9],\\"label\\":\\"Title 1\\",\\"backgroundColor\\":\\"#4285f4\\"},{\\"data\\":[5,4,3,2,1,0,-1,-2,-3],\\"label\\":\\"Title 2\\",\\"backgroundColor\\":\\"#ea4335\\"}],\\"labels\\":[\\"Monday\\",\\"Tuesday\\",\\"Wednesday\\",\\"Thursday\\",\\"Friday\\",\\"Saturday\\",\\"Sunday\\",\\"next Week\\",\\"next Month\\"]},\\"options\\":{\\"elements\\":{\\"bar\\":{}}}}-->
@@ -135,19 +135,19 @@ exports[`Extended Markdown Syntax >  Chart support 1`] = `
 
 exports[`Extended Markdown Syntax >  Default Background 1`] = `
 "<!-- .slide: class=\\"drop\\" data-background-image=\\"/documentation/Image.jpg\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## Slide with default Background
 </div>
 ---
 <!-- .slide: class=\\"drop\\" data-background-image=\\"/documentation/Slide.jpg\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## Slide with overloaded Background
 </div>
 ---
 <!-- .slide: class=\\"titleSlide drop\\" data-background-image=\\"/documentation/Image.jpg\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## Slide without overloaded Background
 </div>"
@@ -155,7 +155,7 @@ exports[`Extended Markdown Syntax >  Default Background 1`] = `
 
 exports[`Extended Markdown Syntax >  Element Annotations 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 text with border <!-- .element: class=\\"with-border\\" -->
 
@@ -167,7 +167,7 @@ text with attribute <!-- .element: data-toggle=\\"modal\\" -->
 
 exports[`Extended Markdown Syntax >  Excalidraw support 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 #### Excalidraw support
 
@@ -179,7 +179,7 @@ exports[`Extended Markdown Syntax >  Excalidraw support 1`] = `
 
 exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Unordered list
 
@@ -189,7 +189,7 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Fragmented unordered list
 
@@ -200,7 +200,7 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Fragmented unordered list with ignored code block
 
@@ -214,7 +214,7 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Ordered list
 
@@ -224,7 +224,7 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Fragmented ordered list
 
@@ -237,7 +237,7 @@ exports[`Extended Markdown Syntax >  Fragmented list 1`] = `
 
 exports[`Extended Markdown Syntax >  Fragments 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 Fade in <!-- .element: class=\\"fragment\\" -->
 
@@ -251,7 +251,7 @@ Slide up while fading in <!-- .element: class=\\"fragment fade-up\\" -->
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 - Permanent item
 - Appear Fourth <!-- .element: class=\\"fragment\\" data-fragment-index=\\"4\\" -->
@@ -263,7 +263,7 @@ Slide up while fading in <!-- .element: class=\\"fragment fade-up\\" -->
 
 exports[`Extended Markdown Syntax >  Inline Styling 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <style>
 .with-border{
@@ -277,7 +277,7 @@ styled text <!-- .element: class=\\"with-border\\" -->
 
 exports[`Extended Markdown Syntax >  Slide Annotations 1`] = `
 "<!-- .slide: style=\\"background-color: coral\\" class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Header with coral background color
 
@@ -285,7 +285,7 @@ Paragraph has coral background color, too!
 </div>
 ---
 <!-- .slide: style=\\"background-color: green\\" class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 - All Bullet points
 - have green
@@ -295,49 +295,49 @@ Paragraph has coral background color, too!
 
 exports[`Extended Markdown Syntax >  Slide Backgrounds 1`] = `
 "<!-- .slide: class=\\"drop\\" data-background=\\"aquamarine\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## Slide with text based background
 </div>
 ---
 <!-- .slide: class=\\"drop\\" data-background=\\"#ff0000\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## Slide with hex based background
 </div>
 ---
 <!-- .slide: class=\\"drop\\" data-background=\\"rgb(70, 70, 255)\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## Slide with rgb based background
 </div>
 ---
 <!-- .slide: class=\\"drop\\" data-background=\\"hsla(315, 100%, 50%, 1)\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## Slide with hsl based background
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Slide without background
 </div>
 ---
 <!-- .slide: class=\\"drop\\" data-background-image=\\"https://picsum.photos/seed/picsum/800/600\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## Slide with image background
 </div>
 ---
 <!-- .slide: class=\\"drop\\" data-background-image=\\"/documentation/Image.jpg\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## Slide with image background #2
 </div>
 ---
 <!-- .slide: class=\\"drop\\" data-background-image=\\"https://picsum.photos/seed/picsum/800/600\\" data-background-opacity=\\"0.5\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## with opacity
 
@@ -345,7 +345,7 @@ exports[`Extended Markdown Syntax >  Slide Backgrounds 1`] = `
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## More options:
 
@@ -355,7 +355,7 @@ See [reveal backgrounds](https://revealjs.com/backgrounds/)
 
 exports[`Extended Markdown Syntax >  Speaker Notes 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 ## My Slide
 
@@ -373,19 +373,19 @@ note: this is not! Only the speaker might see this text.
 
 exports[`Extended Markdown Syntax > Horizontal / Vertical Slides 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Slide 1
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Slide 2.1
 </div>
 --
 <!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Slide 2.2
 </div>"

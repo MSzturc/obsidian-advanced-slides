@@ -15,91 +15,50 @@ export class GridTransformer implements AttributeTransformer {
 
 	transform(element: Properties) {
 
-		if (element.getAttribute('absolute') == 'true') {
-			this.transformAbsolute(element);
-		} else {
-			this.transformRelative(element);
-		}
-	}
+		let defaultDrop;
+		let defaultUnit;
 
-	transformRelative(element: Properties) {
+		const isAbsolute = element.getAttribute('absolute') == 'true';
+
+		if (isAbsolute) {
+			defaultDrop = '480px 700px';
+			defaultUnit = 'px';
+		} else {
+			//TODO: percentage
+			defaultDrop = '50 100';
+			defaultUnit = '%';
+		}
+
 		const drop = element.getAttribute('drop');
 
 		if (drop != undefined) {
-			const drag = element.getAttribute('drag') ?? '50 100';
+			const drag = element.getAttribute('drag') ?? defaultDrop;
 
-			const grid = this.readRelative(drag, drop);
-
-			if (grid != undefined) {
-				element.addClass('reset-margin');
-				element.addStyle('position', 'absolute');
-				element.addStyle('height', grid.get('height') + '%');
-				element.addStyle('width', grid.get('width') + '%');
-				element.addStyle('left', grid.get('x') + '%');
-				element.addStyle('top', grid.get('y') + '%');
-
-				const flow = element.getAttribute('flow');
-				const [align, alignItems, justifyContent, stretch] = this.getAlignment(element.getAttribute('align'), flow);
-				const justifyCtx = element.getAttribute('justify-content') ?? justifyContent;
-
-				element.deleteAttribute('align');
-
-				if (align) {
-					element.addAttribute('align', align, false);
-				}
-
-				if (stretch) {
-					element.addClass(stretch);
-				}
-
-				switch (flow) {
-					case 'row':
-						element.addStyle('display', 'flex');
-						element.addStyle('flex-direction', 'row');
-						element.addStyle('align-items', alignItems);
-						element.addStyle('justify-content', justifyCtx);
-						element.addClass('flex-even');
-						break;
-					case 'col':
-					default:
-						element.addStyle('display', 'flex');
-						element.addStyle('flex-direction', 'column');
-						element.addStyle('align-items', alignItems);
-						element.addStyle('justify-content', justifyCtx);
-						break;
-				}
-				element.deleteAttribute('flow');
-				element.deleteAttribute('justify-content');
-
+			let grid;
+			//TODO: read combined maybe?
+			if (isAbsolute) {
+				grid = this.readAbsolute(drag, drop);
+			} else {
+				grid = this.readRelative(drag, drop)
 			}
 
-			element.deleteAttribute('drag');
-			element.deleteAttribute('drop');
-		}
-
-	}
-
-	transformAbsolute(element: Properties) {
-
-		const drop = element.getAttribute('drop');
-		if (drop != undefined) {
-			const drag = element.getAttribute('drag') ?? '480px 700px';
-
-			const grid = this.readAbsolute(drag, drop);
-
 			if (grid != undefined) {
-				const left = this.leftOf(grid);
-				const top = this.topOf(grid);
-				const height = this.heightOf(grid);
-				const width = this.widthOf(grid);
+				const left = this.leftOf(grid) + defaultUnit;
+				const top = this.topOf(grid) + defaultUnit;
+				const height = this.heightOf(grid) + defaultUnit;
+				const width = this.widthOf(grid) + defaultUnit;
 
 				element.addClass('reset-margin');
 				element.addStyle('position', 'absolute');
 				element.addStyle('left', left);
 				element.addStyle('top', top);
 				element.addStyle('height', height);
-				element.addStyle('min-height', height);
 				element.addStyle('width', width);
+
+				//TODO: Weshalb sonderlocke für absolute?
+				if (isAbsolute) {
+					element.addStyle('min-height', height);
+				}
 
 				const flow = element.getAttribute('flow');
 				const [align, alignItems, justifyContent, stretch] = this.getAlignment(element.getAttribute('align'), flow);
@@ -213,6 +172,9 @@ export class GridTransformer implements AttributeTransformer {
 		try {
 			const result = new Map<string, number>();
 
+			result.set('maxWidth', 100);
+			result.set('maxHeight', 100);
+
 			const [, width, height] = this.gridAttributeRegex.exec(drag);
 			const [, x, y, name] = this.gridAttributeRegex.exec(drop);
 
@@ -254,6 +216,9 @@ export class GridTransformer implements AttributeTransformer {
 
 			const [, width, height] = this.gridAttributeRegex.exec(drag);
 			const [, x, y, name] = this.gridAttributeRegex.exec(drop);
+
+			result.set('maxWidth', this.maxWidth);
+			result.set('maxHeight', this.maxHeight);
 
 			if (width) {
 				result.set('width', this.toPixel(this.maxWidth, width));
@@ -350,27 +315,27 @@ export class GridTransformer implements AttributeTransformer {
 		}
 	}
 
-	leftOf(grid: Map<string, number>): string {
+	leftOf(grid: Map<string, number>): number {
 		if (grid.get('x') < 0) {
-			return this.maxWidth + grid.get('x') - grid.get('width') + 'px';
+			return this.maxWidth + grid.get('x') - grid.get('width');
 		} else {
-			return grid.get('x') + 'px';
+			return grid.get('x');
 		}
 	}
 
-	topOf(grid: Map<string, number>): string {
+	topOf(grid: Map<string, number>): number {
 		if (grid.get('y') < 0) {
-			return this.maxHeight + grid.get('y') - grid.get('height') + 'px';
+			return this.maxHeight + grid.get('y') - grid.get('height');
 		} else {
-			return grid.get('y') + 'px';
+			return grid.get('y');
 		}
 	}
 
-	heightOf(grid: Map<string, number>): string {
-		return grid.get('height') + 'px';
+	heightOf(grid: Map<string, number>): number {
+		return grid.get('height');
 	}
 
-	widthOf(grid: Map<string, number>): string {
-		return grid.get('width') + 'px';
+	widthOf(grid: Map<string, number>): number {
+		return grid.get('width');
 	}
 }

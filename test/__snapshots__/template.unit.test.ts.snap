@@ -2,7 +2,7 @@
 
 exports[`Template only with content 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # Before
 		
@@ -15,11 +15,11 @@ exports[`Template only with content 1`] = `
 
 exports[`Template with invisible variable not set 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # MyContent
 
-		# After<div class=\\"reset-margin\\" style=\\"position: absolute; height: 6%; width: 100%; left: 0%; top: 94%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+		# After<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0%; top: 94%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 		
 		</div>
@@ -28,11 +28,11 @@ exports[`Template with invisible variable not set 1`] = `
 
 exports[`Template with variable not set 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # MyContent
 
-		# After<div class=\\"reset-margin\\" style=\\"position: absolute; height: 6%; width: 100%; left: 0%; top: 94%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+		# After<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0%; top: 94%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 		<% footer %>
 		</div>
@@ -41,14 +41,14 @@ exports[`Template with variable not set 1`] = `
 
 exports[`Template with variable set 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; min-height: 700px; width: 960px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 # MyContent
 
 
 	
 
-		# After<div class=\\"reset-margin\\" style=\\"position: absolute; height: 6%; width: 100%; left: 0%; top: 94%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+		# After<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0%; top: 94%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 		<div class=\\"block\\">
 
