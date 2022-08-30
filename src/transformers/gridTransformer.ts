@@ -24,7 +24,6 @@ export class GridTransformer implements AttributeTransformer {
 			defaultDrop = '480px 700px';
 			defaultUnit = 'px';
 		} else {
-			//TODO: percentage
 			defaultDrop = '50 100';
 			defaultUnit = '%';
 		}
@@ -48,7 +47,6 @@ export class GridTransformer implements AttributeTransformer {
 				element.addStyle('height', height);
 				element.addStyle('width', width);
 
-				//TODO: Weshalb sonderlocke für absolute?
 				if (isAbsolute) {
 					element.addStyle('min-height', height);
 				}
