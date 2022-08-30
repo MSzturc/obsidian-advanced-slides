@@ -40,7 +40,10 @@ export class GridTransformer implements AttributeTransformer {
 				const height = this.heightOf(grid) + defaultUnit;
 				const width = this.widthOf(grid) + defaultUnit;
 
-				element.addClass('reset-margin');
+				if (!isAbsolute) {
+					element.addClass('reset-margin');
+				}
+
 				element.addStyle('position', 'absolute');
 				element.addStyle('left', left);
 				element.addStyle('top', top);
