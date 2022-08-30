@@ -50,43 +50,46 @@ export class GridTransformer implements AttributeTransformer {
 				if (isAbsolute) {
 					element.addStyle('min-height', height);
 				}
-
-				const flow = element.getAttribute('flow');
-				const [align, alignItems, justifyContent, stretch] = this.getAlignment(element.getAttribute('align'), flow);
-				const justifyCtx = element.getAttribute('justify-content') ?? justifyContent;
-
-				element.deleteAttribute('align');
-
-				if (align) {
-					element.addAttribute('align', align, false);
-				}
-
-				if (stretch) {
-					element.addClass(stretch);
-				}
-
-				switch (flow) {
-					case 'row':
-						element.addStyle('display', 'flex');
-						element.addStyle('flex-direction', 'row');
-						element.addStyle('align-items', alignItems);
-						element.addStyle('justify-content', justifyCtx);
-						element.addClass('flex-even');
-						break;
-					case 'col':
-					default:
-						element.addStyle('display', 'flex');
-						element.addStyle('flex-direction', 'column');
-						element.addStyle('align-items', alignItems);
-						element.addStyle('justify-content', justifyCtx);
-						break;
-				}
-				element.deleteAttribute('flow');
-				element.deleteAttribute('justify-content');
 			}
 			element.deleteAttribute('drag');
 			element.deleteAttribute('drop');
 		}
+
+		if (element.getAttribute('align') || drop) {
+			const flow = element.getAttribute('flow');
+			const [align, alignItems, justifyContent, stretch] = this.getAlignment(element.getAttribute('align'), flow);
+			const justifyCtx = element.getAttribute('justify-content') ?? justifyContent;
+
+			element.deleteAttribute('align');
+
+			if (align) {
+				element.addAttribute('align', align, false);
+			}
+
+			if (stretch) {
+				element.addClass(stretch);
+			}
+
+			switch (flow) {
+				case 'row':
+					element.addStyle('display', 'flex');
+					element.addStyle('flex-direction', 'row');
+					element.addStyle('align-items', alignItems);
+					element.addStyle('justify-content', justifyCtx);
+					element.addClass('flex-even');
+					break;
+				case 'col':
+				default:
+					element.addStyle('display', 'flex');
+					element.addStyle('flex-direction', 'column');
+					element.addStyle('align-items', alignItems);
+					element.addStyle('justify-content', justifyCtx);
+					break;
+			}
+			element.deleteAttribute('flow');
+			element.deleteAttribute('justify-content');
+		}
+
 	}
 
 	getAlignment(input: string, flow: string): [string, string, string, string] {
