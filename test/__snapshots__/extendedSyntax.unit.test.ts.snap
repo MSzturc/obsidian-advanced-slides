@@ -171,10 +171,9 @@ exports[`Extended Markdown Syntax >  Excalidraw support 1`] = `
 
 #### Excalidraw support
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 100px\\"></img></p>
+<img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 100px; object-fit: scale-down\\">
 
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 300px; height: 400px\\"></img></p>
+<img src=\\"path/to/Sample.excalidraw.svg\\" alt=\\"\\" style=\\"width: 300px; height: 400px; object-fit: scale-down\\">
 </div>"
 `;
 
@@ -368,8 +367,7 @@ note: this is not! Only the speaker might see this text.
 - and this bulletpoint
 - or this picture
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1005/250/250\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/1005/250/250\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 "
 `;
 

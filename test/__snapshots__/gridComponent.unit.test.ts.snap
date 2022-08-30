@@ -31,12 +31,9 @@ exports[`Grid Component > Attributes > Alignment 1`] = `
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; height: 70%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -47,12 +44,9 @@ exports[`Grid Component > Attributes > Alignment 2`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; height: 70%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -63,12 +57,9 @@ exports[`Grid Component > Attributes > Alignment 3`] = `
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; height: 70%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -79,12 +70,9 @@ exports[`Grid Component > Attributes > Alignment 4`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; height: 70%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/200\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -95,12 +83,9 @@ exports[`Grid Component > Attributes > Alignment 5`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -111,12 +96,9 @@ exports[`Grid Component > Attributes > Alignment 6`] = `
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -127,12 +109,9 @@ exports[`Grid Component > Attributes > Alignment 7`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -143,12 +122,9 @@ exports[`Grid Component > Attributes > Alignment 8`] = `
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -159,12 +135,9 @@ exports[`Grid Component > Attributes > Alignment 9`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -175,12 +148,9 @@ exports[`Grid Component > Attributes > Alignment 10`] = `
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: center; justify-content: center\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -191,12 +161,9 @@ exports[`Grid Component > Attributes > Alignment 11`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -207,12 +174,9 @@ exports[`Grid Component > Attributes > Alignment 12`] = `
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -223,12 +187,9 @@ exports[`Grid Component > Attributes > Alignment 13`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -239,12 +200,9 @@ exports[`Grid Component > Attributes > Alignment 14`] = `
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -255,12 +213,9 @@ exports[`Grid Component > Attributes > Alignment 15`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -271,12 +226,9 @@ exports[`Grid Component > Attributes > Alignment 16`] = `
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -287,12 +239,9 @@ exports[`Grid Component > Attributes > Alignment 17`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -303,12 +252,9 @@ exports[`Grid Component > Attributes > Alignment 18`] = `
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; height: 100%; width: 100%; left: 0%; top: 0%; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"left\\">
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" ></img></p>
-
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" ></img></p>
-
+<img src=\\"https://picsum.photos/id/978/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/996/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
+<img src=\\"https://picsum.photos/id/1011/150/150\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -366,8 +312,7 @@ Text is too blurry
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: white; filter: grayscale(); position: absolute; height: 50%; width: 50%; left: -12%; top: -25%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
-
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -383,8 +328,7 @@ exports[`Grid Component > Attributes > Padding 1`] = `
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; padding: 20px; box-sizing: border-box; position: absolute; height: 50%; width: 50%; left: 50%; top: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px\\"></img></p>
-
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 800px; object-fit: scale-down\\">
 </div>
 </div>"
 `;
@@ -477,8 +421,7 @@ exports[`Grid Component > Column Flow 1`] = `
 <div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; height: 100%; width: 40%; left: 30%; top: 0%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Lorem
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
-
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 ### Ipsum
 </div>
 </div>"
@@ -538,8 +481,7 @@ exports[`Grid Component > Row Flow 1`] = `
 <div class=\\"reset-margin flex-even\\" style=\\"background-color: coral; position: absolute; height: 40%; width: 100%; left: 0%; top: 30%; display: flex; flex-direction: row; align-items: center; justify-content: center\\" >
 
 ### Lorem
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
-
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 ### Ipsum
 </div>
 </div>"

@@ -215,7 +215,7 @@ exports[`Basic Markdown Syntax > Images 1`] = `
 
 Insert image with standard markdown syntax
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"https://picsum.photos/id/1006/500/300\\" alt=\\"Image\\" ></img></p>
+<img src=\\"https://picsum.photos/id/1006/500/300\\" alt=\\"Image\\" style=\\"object-fit: scale-down\\">
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
@@ -223,7 +223,7 @@ Insert image with standard markdown syntax
 
 Insert image that lies outside of your vault
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/localFileSlash/Users/testUser/Desktop/howToUse.png\\" alt=\\"Image\\" ></img></p>
+<img src=\\"/localFileSlash/Users/testUser/Desktop/howToUse.png\\" alt=\\"Image\\" style=\\"object-fit: scale-down\\">
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
@@ -231,7 +231,7 @@ Insert image that lies outside of your vault
 
 Insert image with obsidian markdown syntax
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" ></img></p>
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: scale-down\\">
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
@@ -239,7 +239,7 @@ Insert image with obsidian markdown syntax
 
 Scale image to a width of 100 px
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 100px\\"></img></p>
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"width: 100px; object-fit: scale-down\\">
 </div>
 ---
 <!-- .slide: class=\\"drop\\" -->
@@ -247,7 +247,7 @@ Scale image to a width of 100 px
 
 Scale image to a width of 300x100 px
 
-<p style=\\"line-height: 0\\" class=\\"reset-paragraph image-paragraph\\"><img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: cover; width: 300px; height: 100px\\"></img></p>
+<img src=\\"/documentation/Image.jpg\\" alt=\\"\\" style=\\"object-fit: cover; width: 300px; height: 100px\\">
 </div>"
 `;
 
