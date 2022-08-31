@@ -16,8 +16,7 @@
 	border: 1px solid red;
 }
 
-.reset-margin,
-.reset-margin>* {
+.reset-margin {
 	--r-block-margin: 0;
 	--r-heading-margin: 0;
 }
