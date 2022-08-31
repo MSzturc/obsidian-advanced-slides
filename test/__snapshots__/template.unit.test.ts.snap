@@ -19,7 +19,7 @@ exports[`Template with invisible variable not set 1`] = `
 
 # MyContent
 
-		# After<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0%; top: 94%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+		# After<div class=\\"\\" style=\\"position: absolute; left: 0%; top: 94%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 		
 		</div>
@@ -32,7 +32,7 @@ exports[`Template with variable not set 1`] = `
 
 # MyContent
 
-		# After<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0%; top: 94%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+		# After<div class=\\"\\" style=\\"position: absolute; left: 0%; top: 94%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 		<% footer %>
 		</div>
@@ -48,7 +48,7 @@ exports[`Template with variable set 1`] = `
 
 	
 
-		# After<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0%; top: 94%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+		# After<div class=\\"\\" style=\\"position: absolute; left: 0%; top: 94%; height: 6%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 		<div class=\\"block\\">
 

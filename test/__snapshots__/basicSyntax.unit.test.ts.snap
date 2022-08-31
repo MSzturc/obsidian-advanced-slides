@@ -79,7 +79,7 @@ Callouts support manipulation through annotations
 </div>
 	<!-- .element: style=\\"width: 20%; font-size: 24px; transform: rotate(15deg)\\" -->
 	
-	<div class=\\"reset-margin\\" style=\\"font-size: 36px; position: absolute; left: 11%; top: 68%; height: 30%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+	<div class=\\"\\" style=\\"font-size: 36px; position: absolute; left: 11%; top: 68%; height: 30%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 <div class=\\"callout callout-color8\\">
 <div class=\\"callout-title\\">
@@ -102,7 +102,7 @@ Here is an Example for an Callout in a Slide. Callouts support dark and white ba
 </div>
 	</div>
 	
-	<div class=\\"has-light-background reset-margin\\" style=\\"font-size: 36px; background-color: white; padding: 50px; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+	<div class=\\"has-light-background\\" style=\\"font-size: 36px; background-color: white; padding: 50px; box-sizing: border-box; position: absolute; left: 50%; top: 0%; height: 100%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 <div class=\\"callout callout-color9\\">
 <div class=\\"callout-title\\">
