@@ -2,7 +2,7 @@
 
 exports[`Split Component > even 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <split even>
 
@@ -15,7 +15,7 @@ exports[`Split Component > even 1`] = `
 
 exports[`Split Component > gap 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <split even gap=\\"3\\">
 
@@ -30,7 +30,7 @@ into electronic typesetting, remaining essentially unchanged. It was popularised
 
 exports[`Split Component > left & right 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <split left=\\"2\\" right=\\"1\\" gap=\\"2\\">
 
@@ -44,7 +44,7 @@ into electronic typesetting, remaining essentially unchanged. It was popularised
 
 exports[`Split Component > no-margin 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <split no-margin>
 
@@ -62,7 +62,7 @@ exports[`Split Component > no-margin 1`] = `
 
 exports[`Split Component > wrap 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <split wrap=\\"4\\">
 

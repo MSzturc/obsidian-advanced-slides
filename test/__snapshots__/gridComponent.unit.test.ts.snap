@@ -2,7 +2,7 @@
 
 exports[`Grid Component > Attributes > Alignment > Stretch > Col 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"reset-margin stretch-column\\" style=\\"position: absolute; left: 0%; top: 45%; height: 55%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly\\" align=\\"stretch\\">
 
@@ -14,7 +14,7 @@ exports[`Grid Component > Attributes > Alignment > Stretch > Col 1`] = `
 
 exports[`Grid Component > Attributes > Alignment > Stretch > Row 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"reset-margin stretch-row flex-even\\" style=\\"position: absolute; left: 0%; top: 0%; height: 45%; width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"stretch\\">
 
@@ -27,7 +27,7 @@ exports[`Grid Component > Attributes > Alignment > Stretch > Row 1`] = `
 
 exports[`Grid Component > Attributes > Alignment 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 70%; width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"left\\">
 
@@ -40,7 +40,7 @@ exports[`Grid Component > Attributes > Alignment 1`] = `
 
 exports[`Grid Component > Attributes > Alignment 2`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 70%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
 
@@ -53,7 +53,7 @@ exports[`Grid Component > Attributes > Alignment 2`] = `
 
 exports[`Grid Component > Attributes > Alignment 3`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 70%; width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: space-evenly\\" align=\\"right\\">
 
@@ -66,7 +66,7 @@ exports[`Grid Component > Attributes > Alignment 3`] = `
 
 exports[`Grid Component > Attributes > Alignment 4`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0%; top: 30%; height: 70%; width: 100%; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
 
@@ -79,7 +79,7 @@ exports[`Grid Component > Attributes > Alignment 4`] = `
 
 exports[`Grid Component > Attributes > Alignment 5`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start\\" align=\\"top\\">
 
@@ -92,7 +92,7 @@ exports[`Grid Component > Attributes > Alignment 5`] = `
 
 exports[`Grid Component > Attributes > Alignment 6`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"top\\">
 
@@ -105,7 +105,7 @@ exports[`Grid Component > Attributes > Alignment 6`] = `
 
 exports[`Grid Component > Attributes > Alignment 7`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-end\\" align=\\"bottom\\">
 
@@ -118,7 +118,7 @@ exports[`Grid Component > Attributes > Alignment 7`] = `
 
 exports[`Grid Component > Attributes > Alignment 8`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"bottom\\">
 
@@ -131,7 +131,7 @@ exports[`Grid Component > Attributes > Alignment 8`] = `
 
 exports[`Grid Component > Attributes > Alignment 9`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" align=\\"center\\">
 
@@ -144,7 +144,7 @@ exports[`Grid Component > Attributes > Alignment 9`] = `
 
 exports[`Grid Component > Attributes > Alignment 10`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center\\" align=\\"center\\">
 
@@ -157,7 +157,7 @@ exports[`Grid Component > Attributes > Alignment 10`] = `
 
 exports[`Grid Component > Attributes > Alignment 11`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-start\\" align=\\"left\\">
 
@@ -170,7 +170,7 @@ exports[`Grid Component > Attributes > Alignment 11`] = `
 
 exports[`Grid Component > Attributes > Alignment 12`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"left\\">
 
@@ -183,7 +183,7 @@ exports[`Grid Component > Attributes > Alignment 12`] = `
 
 exports[`Grid Component > Attributes > Alignment 13`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-start\\" align=\\"right\\">
 
@@ -196,7 +196,7 @@ exports[`Grid Component > Attributes > Alignment 13`] = `
 
 exports[`Grid Component > Attributes > Alignment 14`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly\\" align=\\"right\\">
 
@@ -209,7 +209,7 @@ exports[`Grid Component > Attributes > Alignment 14`] = `
 
 exports[`Grid Component > Attributes > Alignment 15`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: flex-end; justify-content: flex-end\\" align=\\"right\\">
 
@@ -222,7 +222,7 @@ exports[`Grid Component > Attributes > Alignment 15`] = `
 
 exports[`Grid Component > Attributes > Alignment 16`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"right\\">
 
@@ -235,7 +235,7 @@ exports[`Grid Component > Attributes > Alignment 16`] = `
 
 exports[`Grid Component > Attributes > Alignment 17`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end\\" align=\\"left\\">
 
@@ -248,7 +248,7 @@ exports[`Grid Component > Attributes > Alignment 17`] = `
 
 exports[`Grid Component > Attributes > Alignment 18`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin flex-even\\" style=\\"background-color: #EEB73F; padding: 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 100%; width: 100%; display: flex; flex-direction: row; align-items: flex-end; justify-content: space-evenly\\" align=\\"left\\">
 
@@ -261,7 +261,7 @@ exports[`Grid Component > Attributes > Alignment 18`] = `
 
 exports[`Grid Component > Attributes > Background 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; position: absolute; left: 45%; top: 0%; height: 50%; width: 55%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -282,7 +282,7 @@ exports[`Grid Component > Attributes > Background 1`] = `
 
 exports[`Grid Component > Attributes > Border 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"reset-margin\\" style=\\"border: thick dotted blue; box-sizing: border-box; position: absolute; left: 0%; top: 37.5%; height: 25%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -303,7 +303,7 @@ thick dotted blue
 
 exports[`Grid Component > Attributes > Filter 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #B565A7; filter: blur(10px); position: absolute; left: 5%; top: 15%; height: 25%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -319,7 +319,7 @@ Text is too blurry
 
 exports[`Grid Component > Attributes > Padding 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-light-background reset-margin\\" style=\\"background-color: orange; padding: 0 50px; box-sizing: border-box; position: absolute; left: 0%; top: 0%; height: 50%; width: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -335,7 +335,7 @@ exports[`Grid Component > Attributes > Padding 1`] = `
 
 exports[`Grid Component > Attributes > Padding 2`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-dark-background reset-margin\\" style=\\"background-color: red; position: absolute; left: 5%; top: 10%; height: 55%; width: 60%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -358,7 +358,7 @@ Bottom Grid
 
 exports[`Grid Component > Attributes > Rotate 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"has-dark-background reset-margin\\" style=\\"background-color: #B565A7; transform: rotate(-10deg); position: absolute; left: 35%; top: 0%; height: 25%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -374,7 +374,7 @@ World!
 
 exports[`Grid Component > Basic Syntax 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 5%; top: 10%; height: 55%; width: 60%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -395,7 +395,7 @@ exports[`Grid Component > Basic Syntax 1`] = `
 
 exports[`Grid Component > Basic Syntax 2`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 5%; top: 10%; height: 55%; width: 60%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -416,7 +416,7 @@ exports[`Grid Component > Basic Syntax 2`] = `
 
 exports[`Grid Component > Column Flow 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"reset-margin\\" style=\\"background-color: coral; position: absolute; left: 30%; top: 0%; height: 100%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -429,7 +429,7 @@ exports[`Grid Component > Column Flow 1`] = `
 
 exports[`Grid Component > Position Coordinates 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"reset-margin\\" style=\\"background-color: orange; position: absolute; left: 10%; top: 15%; height: 50%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -455,7 +455,7 @@ exports[`Grid Component > Position Coordinates 1`] = `
 
 exports[`Grid Component > Position by Name 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"reset-margin\\" style=\\"background-color: red; position: absolute; left: 0%; top: 0%; height: 30%; width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
@@ -476,7 +476,7 @@ exports[`Grid Component > Position by Name 1`] = `
 
 exports[`Grid Component > Row Flow 1`] = `
 "<!-- .slide: class=\\"drop\\" -->
-<div class=\\"reset-margin\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
+<div class=\\"\\" style=\\"position: absolute; left: 0px; top: 0px; height: 700px; width: 960px; min-height: 700px; display: flex; flex-direction: column; align-items: center; justify-content: center\\" absolute=\\"true\\">
 
 <div class=\\"reset-margin flex-even\\" style=\\"background-color: coral; position: absolute; left: 0%; top: 30%; height: 40%; width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center\\" >
 
