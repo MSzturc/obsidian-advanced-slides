@@ -10,6 +10,17 @@ export class DefaultBackgroundProcessor {
 		let output = markdown;
 
 		if (options?.bg) {
+
+			if (options?.bg == 'transparent' || options?.bg == 'rgba(0,0,0,0)') {
+
+				output = `<style>
+body {
+	background-color: rgba(0,0,0,0) !important;
+}
+</style>
+` + output;
+			}
+
 			markdown
 				.split(new RegExp(options.separator, 'gmi'))
 				.map(slidegroup => {

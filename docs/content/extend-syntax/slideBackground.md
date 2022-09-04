@@ -88,3 +88,36 @@ See [reveal backgrounds](https://revealjs.com/backgrounds/)
 
 {{</revealhtml>}}
 
+
+
+You can change the background of all slides by adding the following frontmatter:
+
+```md
+---
+bg: red
+---
+```
+
+```md
+---
+bg: '#ff0000'
+---
+```
+
+```md
+---
+bg: rgb(70, 70, 255)
+---
+```
+
+You can also set the background to transparent for all slides. This is especially useful if you want to use your slides as overlay source for OBS.
+
+```md
+---
+bg: transparent
+---
+```
+
+### See in action:
+<video controls width="320" height="240"><source src="https://cdn.discordapp.com/attachments/840286238928797736/1014391376248573952/slides-in-obs.mp4" type="video/mp4"></video>
+
