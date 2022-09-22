@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-08-31T18:23:24 UTC">
+<meta name="revised" content="2022-09-22T22:56:58 UTC">
 <title>Slide Backgrounds :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -23,12 +23,19 @@
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ECZM2ME8WC"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'G-ECZM2ME8WC');
+	function gtag() {
+		dataLayer.push(arguments);
+	}
+	gtag('js', new Date());
+
+	gtag('config', 'G-ECZM2ME8WC');
+
 </script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2611785902487157"
+	crossorigin="anonymous"></script>
 
     
   </head>
@@ -560,7 +567,15 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#see-in-action">See in action:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
         </div>
     </div>
     
@@ -722,6 +737,22 @@ function slideFullScreen() {
 }
 </script>
 
+<p>You can change the background of all slides by adding the following frontmatter:</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>bg: red
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>bg: &#39;#ff0000&#39;
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>bg: rgb(70, 70, 255)
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><p>You can also set the background to transparent for all slides. This is especially useful if you want to use your slides as overlay source for OBS.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>bg: transparent
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div><h3 id="see-in-action">See in action:</h3>
+<p><video controls width="320" height="240"><source src="https://cdn.discordapp.com/attachments/840286238928797736/1014391376248573952/slides-in-obs.mp4" type="video/mp4"></video></p>
 
 
     
