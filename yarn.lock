@@ -5785,6 +5785,10 @@
   "resolved" "https://registry.npmjs.org/reusify/-/reusify-1.0.4.tgz"
   "version" "1.0.4"
 
+"reveal-pointer@https://github.com/burnpiro/reveal-pointer.git":
+  "resolved" "git+ssh://git@github.com/burnpiro/reveal-pointer.git#f4dc3fb456b2764ae2ac0f5103d0c76851e22b1e"
+  "version" "0.1.4"
+
 "reveal.js-elapsed-time-bar@https://github.com/tkrkt/reveal.js-elapsed-time-bar.git":
   "resolved" "git+ssh://git@github.com/tkrkt/reveal.js-elapsed-time-bar.git#18feb157254da59d64c391b7f36dc4d5e87230b6"
   "version" "0.1.0"

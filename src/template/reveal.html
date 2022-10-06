@@ -16,6 +16,10 @@
 	<link rel="stylesheet" href="{{{base}}}plugin/chalkboard/style.css">
 	{{/enableChalkboard}}
 
+	{{#enablePointer}}
+	<link rel="stylesheet" href="{{{base}}}plugin/reveal-pointer/pointer.css" />
+	{{/enablePointer}}
+
 	{{#cssPaths}}
     <link rel="stylesheet" href="{{{base}}}{{{.}}}" />
     {{/cssPaths}}
@@ -113,6 +117,9 @@
 	{{#enableChalkboard}}
 	<script src="{{{base}}}plugin/chalkboard/plugin.js"></script>
 	{{/enableChalkboard}}
+	{{#enablePointer}}
+	<script src="{{{base}}}plugin/reveal-pointer/pointer.js"></script>
+	{{/enablePointer}}
 	{{#timeForPresentation}}
 	{{#enableTimeBar}}
 	<script src="{{{base}}}plugin/elapsed-time-bar/elapsed-time-bar.js"></script>
@@ -177,6 +184,9 @@
 		  {{#enableMenu}}
 		  RevealMenu,
 		  {{/enableMenu}}
+		  {{#enablePointer}}
+	      RevealPointer
+	      {{/enablePointer}}
 		  {{#enableChalkboard}}
 		  RevealChalkboard, 
 		  {{/enableChalkboard}}

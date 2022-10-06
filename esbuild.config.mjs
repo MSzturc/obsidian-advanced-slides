@@ -33,144 +33,156 @@ const TEST_VAULT = 'test-vault/.obsidian/plugins/obsidian-advanced-slides';
 
 function build() {
     esbuild.build({
-            banner: {
-                js: banner,
-            },
-            entryPoints: ['src/main.ts'],
-            bundle: true,
-            external: ['obsidian', 'electron', ...builtins],
-            format: 'cjs',
-            minify: prod,
-            watch: !prod,
-            target: 'es2020',
-            logLevel: "info",
-            sourcemap: prod ? false : 'inline',
-            treeShaking: true,
-            outfile: TEST_VAULT + '/main.js',
-            plugins: [
-                staticAssetsPlugin,
-                copy({
-                    assets: {
-                        from: ['manifest.json', 'styles.css', 'distVersion.json'],
-                        to: ['.'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['src/template/**/*'],
-                        to: ['./template/*']
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/reveal.js/dist/*'],
-                        to: ['./dist/*'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['src/scss/theme/source/fonts/league-gothic/*'],
-                        to: ['./dist/theme/fonts/league-gothic/*'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['src/scss/theme/source/fonts/source-sans-pro/*'],
-                        to: ['./dist/theme/fonts/source-sans-pro/*'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['src/scss/theme/source/fonts/lato/*'],
-                        to: ['./dist/theme/fonts/lato/*'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/reveal.js/plugin/**/*'],
-                        to: ['./plugin'],
-                        keepStructure: true
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/mathjax/es5/**/*'],
-                        to: ['./plugin/math/mathjax'],
-                        keepStructure: true
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/reveal.js-mermaid-plugin/plugin/mermaid/*'],
-                        to: ['./plugin/mermaid/*'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/highlight.js/styles/vs2015.css'],
-                        to: ['./css/*'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/@fortawesome/fontawesome-free/js/all.min.js'],
-                        to: ['./dist/fontawesome/*'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/reveal.js-plugins/chalkboard/**/*'],
-                        to: ['./plugin/chalkboard'],
-                        keepStructure: true
-                    }
-                }),
-				copy({
-                    assets: {
-                        from: ['node_modules/reveal.js-plugins/customcontrols/*'],
-                        to: ['./plugin/customcontrols/*'],
-                    }
-                }),
-				copy({
-                    assets: {
-                        from: ['node_modules/reveal.js-menu/*'],
-                        to: ['./plugin/menu/*'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/reveal.js-plugins/chart/**/*'],
-                        to: ['./plugin/chart'],
-                        keepStructure: true
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/chart.js/dist/chart.min.js'],
-                        to: ['./plugin/chart/*'],
-                    }
-                }),
-                copy({
-                    assets: {
-                        from: ['node_modules/reveal.js-elapsed-time-bar/plugin/elapsed-time-bar/elapsed-time-bar.js'],
-                        to: ['./plugin/elapsed-time-bar/*'],
-                    }
-                }),
-                copy({
-                    assets: prod ? {} : {
-                        from: ['.hotreload'],
-                        to: ['.'],
-                    },
-                }),
-            ],
-        }).then(buildScss('src/scss/layout/main.scss', TEST_VAULT + '/css/layout.css'))
+        banner: {
+            js: banner,
+        },
+        entryPoints: ['src/main.ts'],
+        bundle: true,
+        external: ['obsidian', 'electron', ...builtins],
+        format: 'cjs',
+        minify: prod,
+        watch: !prod,
+        target: 'es2020',
+        logLevel: "info",
+        sourcemap: prod ? false : 'inline',
+        treeShaking: true,
+        outfile: TEST_VAULT + '/main.js',
+        plugins: [
+            staticAssetsPlugin,
+            copy({
+                assets: {
+                    from: ['manifest.json', 'styles.css', 'distVersion.json'],
+                    to: ['.'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['src/template/**/*'],
+                    to: ['./template/*']
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal.js/dist/*'],
+                    to: ['./dist/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['src/scss/theme/source/fonts/league-gothic/*'],
+                    to: ['./dist/theme/fonts/league-gothic/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['src/scss/theme/source/fonts/source-sans-pro/*'],
+                    to: ['./dist/theme/fonts/source-sans-pro/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['src/scss/theme/source/fonts/lato/*'],
+                    to: ['./dist/theme/fonts/lato/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal.js/plugin/**/*'],
+                    to: ['./plugin'],
+                    keepStructure: true
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/mathjax/es5/**/*'],
+                    to: ['./plugin/math/mathjax'],
+                    keepStructure: true
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal.js-mermaid-plugin/plugin/mermaid/*'],
+                    to: ['./plugin/mermaid/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/highlight.js/styles/vs2015.css'],
+                    to: ['./css/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/@fortawesome/fontawesome-free/js/all.min.js'],
+                    to: ['./dist/fontawesome/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal.js-plugins/chalkboard/**/*'],
+                    to: ['./plugin/chalkboard'],
+                    keepStructure: true
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal.js-plugins/customcontrols/*'],
+                    to: ['./plugin/customcontrols/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal.js-menu/*'],
+                    to: ['./plugin/menu/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal.js-plugins/chart/**/*'],
+                    to: ['./plugin/chart'],
+                    keepStructure: true
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/chart.js/dist/chart.min.js'],
+                    to: ['./plugin/chart/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal.js-elapsed-time-bar/plugin/elapsed-time-bar/elapsed-time-bar.js'],
+                    to: ['./plugin/elapsed-time-bar/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal-pointer/dist/pointer.js'],
+                    to: ['./plugin/reveal-pointer/*'],
+                }
+            }),
+            copy({
+                assets: {
+                    from: ['node_modules/reveal-pointer/dist/pointer.css'],
+                    to: ['./plugin/reveal-pointer/*'],
+                }
+            }),
+            copy({
+                assets: prod ? {} : {
+                    from: ['.hotreload'],
+                    to: ['.'],
+                },
+            }),
+        ],
+    }).then(buildScss('src/scss/layout/main.scss', TEST_VAULT + '/css/layout.css'))
         .then(buildScss('src/scss/theme/source/mattropolis.scss', TEST_VAULT + '/css/mattropolis.css'))
         .then(buildAllThemes('src/scss/theme/source/'))
         .catch(() => process.exit(1));
 }
 
 function buildAllThemes(themeDir) {
-    readdir(themeDir, function(err, files) {
-        files.forEach(function(file) {
+    readdir(themeDir, function (err, files) {
+        files.forEach(function (file) {
             if (file.endsWith('.scss')) {
                 const source = themeDir + file;
                 const target = TEST_VAULT + '/dist/theme/' + basename(file).replaceAll('.scss', '.css');
@@ -222,7 +234,7 @@ if (!prod) {
         extra.watch(dirName, (event, fileName) => {
             if (!fsTimeout) {
                 console.log(`Changes detected in ${dirName}`);
-                fsTimeout = setTimeout(function() {
+                fsTimeout = setTimeout(function () {
                     fsTimeout = null;
                 }, 100);
                 build();

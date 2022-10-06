@@ -25,6 +25,7 @@ export class YamlParser {
 			enableOverview: false,
 			enableChalkboard: false,
 			enableMenu: false,
+			enablePointer: false,
 			enableCustomControls: false,
 			enableTimeBar: false,
 			controls: false,
@@ -105,7 +106,7 @@ export class YamlParser {
 	}
 
 	getTemplateSettings(options: unknown) {
-		const properties = ['enableOverview', 'enableChalkboard', 'enableMenu', 'enableCustomControls', 'enableTimeBar'];
+		const properties = ['enableOverview', 'enableChalkboard', 'enableMenu', 'enableCustomControls', 'enableTimeBar', 'enablePointer'];
 
 		const globalSettings = _.pick(this.settings, properties);
 		const slideSettings = _.pick(options, properties);

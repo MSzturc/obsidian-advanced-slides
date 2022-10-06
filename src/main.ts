@@ -41,6 +41,7 @@ export interface AdvancedSlidesSettings {
 	enableOverview: boolean;
 	enableChalkboard: boolean;
 	enableMenu: boolean;
+	enablePointer: boolean;
 	enableTimeBar: boolean;
 	theme: string;
 	highlightTheme: string;
@@ -60,6 +61,7 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	enableChalkboard: false,
 	enableOverview: false,
 	enableMenu: false,
+	enablePointer: false,
 	enableTimeBar: false,
 	theme: 'black',
 	highlightTheme: 'zenburn',
@@ -613,6 +615,18 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 				value.setValue(this.plugin.settings.enableTimeBar).onChange(
 					_.debounce(async value => {
 						this.plugin.settings.enableTimeBar = value;
+						await this.plugin.saveSettings();
+					}, 750),
+				),
+			);
+
+		new Setting(containerEl)
+			.setName('Laser Pointer')
+			.setDesc('Changes your mouse into a laser pointer (Toggle with Q)')
+			.addToggle(value =>
+				value.setValue(this.plugin.settings.enablePointer).onChange(
+					_.debounce(async value => {
+						this.plugin.settings.enablePointer = value;
 						await this.plugin.saveSettings();
 					}, 750),
 				),
