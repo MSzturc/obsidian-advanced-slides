@@ -4,10 +4,12 @@ import { AttributeTransformer, Properties } from '.';
 export class GridTransformer implements AttributeTransformer {
 	private maxWidth: number;
 	private maxHeight: number;
+	private isCenter: boolean;
 
 	constructor() {
 		this.maxWidth = YamlStore.getInstance().options.width;
 		this.maxHeight = YamlStore.getInstance().options.height;
+		this.isCenter = YamlStore.getInstance().options.center;
 	}
 
 	private gridAttributeRegex =
@@ -82,6 +84,10 @@ export class GridTransformer implements AttributeTransformer {
 					element.addStyle('align-items', alignItems);
 					element.addStyle('justify-content', justifyCtx);
 					break;
+			}
+
+			if (this.isCenter != undefined && !this.isCenter) {
+				element.addStyle('align-items', 'start');
 			}
 			element.deleteAttribute('flow');
 			element.deleteAttribute('justify-content');

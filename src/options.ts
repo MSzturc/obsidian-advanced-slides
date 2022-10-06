@@ -12,5 +12,6 @@ export type Options = {
 	margin: number;
 	showGrid: boolean;
 	bg: string;
+	center: boolean;
 	log: boolean;
 };
