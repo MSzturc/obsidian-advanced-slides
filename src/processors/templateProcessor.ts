@@ -89,7 +89,7 @@ export class TemplateProcessor {
 			}
 			let templateContent = this.utils.parseFile(fileWithExtension, null);
 			templateContent = this.multipleFileProcessor.process(templateContent);
-			templateContent = templateContent.replaceAll('<% content %>', slide.replaceAll(templateProperty, ''));
+			templateContent = templateContent.split('<% content %>').join(slide.replaceAll(templateProperty, ''));
 			return templateContent;
 		} else {
 			return slide;
