@@ -14,4 +14,5 @@ export type Options = {
 	bg: string;
 	center: boolean;
 	log: boolean;
+	defaultTemplate: string;
 };

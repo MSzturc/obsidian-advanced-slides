@@ -13,6 +13,8 @@ export class TemplateProcessor {
 	private templateCommentRegex = /<!--\s*(?:\.)?slide.*(template="\[\[([^\]]+)\]\]"\s*).*-->/;
 	private propertyRegex = /:::\s([^\n]+)\s*(.*?:::[^\n]*)/sg;
 
+	private slideCommentRegex = /<!--\s*(?:\.)?slide.*-->/;
+
 	private optionalRegex = /<%\?.*%>/g;
 
 	private utils: ObsidianUtils;
@@ -25,9 +27,36 @@ export class TemplateProcessor {
 	}
 
 	process(markdown: string, options: Options) {
-		let output = markdown;
+		let input = markdown;
 
-		markdown
+		if (options.defaultTemplate != null) {
+
+			markdown
+				.split(new RegExp(options.separator, 'gmi'))
+				.map(slidegroup => {
+					return slidegroup
+						.split(new RegExp(options.verticalSeparator, 'gmi'))
+						.map(slide => {
+							if (this.slideCommentRegex.test(slide)) {
+								const [slideAnnotation] = this.slideCommentRegex.exec(slide);
+								const comment = this.parser.parseLine(slideAnnotation);
+								if (!comment.hasAttribute('template')) {
+									comment.addAttribute('template', options.defaultTemplate, false);
+								}
+								input = input.split(slide).join(slide.split(slideAnnotation).join(this.parser.commentToString(comment)));
+							} else {
+								input = input.split(slide).join(`<!-- slide template="${options.defaultTemplate}" -->\n` + slide);
+							}
+							return slide;
+						})
+						.join(options.verticalSeparator);
+				})
+				.join(options.separator);
+		}
+
+		let output = input;
+
+		input
 			.split(new RegExp(options.separator, 'gmi'))
 			.map(slidegroup => {
 				return slidegroup

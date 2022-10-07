@@ -87,6 +87,9 @@ export class ObsidianMarkdownPreprocessor {
 			const afterMultipleFileProcessor = this.multipleFileProcessor.process(before);
 			after = this.templateProcessor.process(afterMultipleFileProcessor, options);
 
+			//Remove default templates after first pass
+			options.defaultTemplate = null;
+
 			if (circuitCounter > 9) {
 				console.log('WARNING: Circuit in template hierarchy detected!');
 				break;
