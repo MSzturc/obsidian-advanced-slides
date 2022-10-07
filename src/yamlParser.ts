@@ -99,6 +99,7 @@ export class YamlParser {
 			'hideInactiveCursor',
 			'hideCursorTime',
 			'markdown',
+			'mermaid'
 		];
 		const globalSettings = _.pick(_.omitBy(this.settings, _.isEmpty), revealProps);
 		const slideSettings = _.pick(options, revealProps);
