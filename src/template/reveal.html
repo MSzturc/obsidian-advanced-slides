@@ -156,8 +156,9 @@
 	}
 
 	var bgColor = getComputedStyle(document.documentElement).getPropertyValue('--r-background-color').trim();
+	var isLight = isLight(bgColor);
 
-	if(isLight(bgColor)){
+	if(isLight){
 		document.body.classList.add('has-light-background');
 	} else {
 		document.body.classList.add('has-dark-background');
@@ -211,6 +212,10 @@
 		  pedantic: false,
 		  smartLists: false,
 		  smartypants: false,
+		},
+
+		mermaid: {
+			theme: isLight ? 'default' : 'dark',
 		},
 
 		{{#enableCustomControls}}

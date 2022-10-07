@@ -5800,10 +5800,10 @@
   "resolved" "https://registry.npmjs.org/reveal.js-menu/-/reveal.js-menu-2.1.0.tgz"
   "version" "2.1.0"
 
-"reveal.js-mermaid-plugin@^0.0.3":
-  "integrity" "sha512-9bmycto26MWXX8KpNJSwYb7YyGW3NI6M3QmL0iBr3VM8hb3TkU57lJ3POLc+lacGowg/H0lVOC4pQYY3249foA=="
-  "resolved" "https://registry.npmjs.org/reveal.js-mermaid-plugin/-/reveal.js-mermaid-plugin-0.0.3.tgz"
-  "version" "0.0.3"
+"reveal.js-mermaid-plugin@^1.0.0":
+  "integrity" "sha512-AGwin9D93IALLZKt7gxcBIn0om0P+XXmX/T66n+gq87DOqalnSABYbuOldjy7kQBKLMaORx4249C5QFQhvBdBg=="
+  "resolved" "https://registry.npmjs.org/reveal.js-mermaid-plugin/-/reveal.js-mermaid-plugin-1.0.0.tgz"
+  "version" "1.0.0"
 
 "reveal.js-plugins@^4.1.5":
   "integrity" "sha512-adbokVdKhXlPx+zyP+ot6sF21QVHfENucYE40C2pn1oDkihaZfo34CpgK3Rd/B3nlFX/1Xgrd/rw09QgkeDZfw=="
