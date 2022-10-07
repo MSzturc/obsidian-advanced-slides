@@ -155,3 +155,11 @@ Umsetzungsschritte
 ![Slide](https://mszturc.github.io/obsidian-advanced-slides/images/templateSlide.png)
 
 
+### Default Template
+You can define a default Template that will be applied to all slides of a deck by adding the `defaultTemplate` frontmatter property to your yaml:
+
+```
+---
+defaultTemplate: "[[tpl-footer]]"
+---
+```

@@ -42,7 +42,7 @@ bg | Sets a default background for all slides | [see slide background docs]({{%r
 markdown | Sets options for marked | (see note below) | (see note below)
 enableTimeBar | Activates elapsing timer bar for slides | true / false | false
 timeForPresentation | Sets the time for elapsing timer in seconds | number | 120
-
+defaultTemplate | Sets a template that will be applied to all slides | [see template docs]({{%relref "templates/_index.md#default-template"%}}) | null
 <br>
 
 {{%alert%}}You can find more possible parameters [here](https://revealjs.com/config/){{%/alert%}}
