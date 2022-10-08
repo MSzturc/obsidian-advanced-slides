@@ -18,6 +18,8 @@ Learn more about the Advanced Slides from the following pages:
 - {{%icon fa-book%}} [Using Templates in Advanced Slides](https://github.com/MSzturc/advanced-slides-consult-template)
 
 ### Advanced Slides in Action
+- SaturdayShowcase: A weekly format where the Advanced Slides developers feature presentations of their users:
+    - {{%icon fa-twitter%}} [Curated List](https://twitter.com/search?q=%23SaturdayShowcase%20%40AdvancedSlides&src=typed_query&f=live)
 - Rust Talks by No Boilerplate
     - {{%icon fa-youtube%}} [Videos](https://www.youtube.com/watch?v=IA4q0lzmyfM&list=PLZaoyhMXgBzoM9bfb5pyUOT3zjnaDdSEP)
     - {{%icon fa-github%}} [Source](https://github.com/0atman/noboilerplate/tree/main/scripts)
