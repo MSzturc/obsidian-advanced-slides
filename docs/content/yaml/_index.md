@@ -36,7 +36,7 @@ shuffle | Randomizes the order of slides each time the presentation loads | true
 fragments | Turns fragments on and off globally | true / false | true
 showNotes | Flags if speaker notes should be visible to all viewers | true / false | false
 autoSlide | Controls automatic progression to the next slide | number (in milliseconds) | 0
-transition | Transition style | none / fade / slide / convex / concave / zoom | true
+transition | Transition style | none / fade / slide / convex / concave / zoom | slide
 transitionSpeed | Transition speed | default / fast / slow | default
 bg | Sets a default background for all slides | [see slide background docs]({{%relref "slideBackground"%}}) | '#ffffff'
 markdown | Sets options for marked | (see note below) | (see note below)
