@@ -417,8 +417,7 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 			.setDesc('How should slide previews be displayed?')
 			.addDropdown(cb => {
 				cb.addOption('tab', 'as Tab')
-					.addOption('split', 'as Workspace Panel')
-					.addOption('window', 'as new Window')
+					.addOption('split', 'split Workspace')
 					.setValue(this.plugin.settings.paneMode)
 					.onChange(
 						_.debounce(async value => {
