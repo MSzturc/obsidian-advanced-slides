@@ -11,6 +11,7 @@ import {
 	EditorSuggestContext,
 	EditorSuggestTriggerInfo,
 	TFile,
+	PaneType,
 } from 'obsidian';
 import { ICON_DATA, REFRESH_ICON } from './constants';
 import { RevealPreviewView, REVEAL_PREVIEW_VIEW } from './revealPreviewView';
@@ -52,6 +53,7 @@ export interface AdvancedSlidesSettings {
 	slideNumber: boolean;
 	showGrid: boolean;
 	autoComplete: string;
+	paneMode: PaneType;
 }
 
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
@@ -71,7 +73,8 @@ const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	progress: true,
 	slideNumber: false,
 	showGrid: false,
-	autoComplete: 'inPreview'
+	autoComplete: 'inPreview',
+	paneMode: 'split'
 };
 
 export default class AdvancedSlidesPlugin extends Plugin {
@@ -335,7 +338,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	async activateView() {
 		this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
 
-		await this.app.workspace.getLeaf(true).setViewState({
+		await this.app.workspace.getLeaf(this.settings.paneMode).setViewState({
 			type: REVEAL_PREVIEW_VIEW,
 			active: false,
 		});
@@ -408,6 +411,22 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 		containerEl.empty();
 
 		containerEl.createEl('h2', { text: 'General Settings' });
+
+		new Setting(containerEl)
+			.setName('Slide Preview Mode')
+			.setDesc('How should slide previews be displayed?')
+			.addDropdown(cb => {
+				cb.addOption('tab', 'as Tab')
+					.addOption('split', 'as Workspace Panel')
+					.addOption('window', 'as new Window')
+					.setValue(this.plugin.settings.paneMode)
+					.onChange(
+						_.debounce(async value => {
+							this.plugin.settings.paneMode = value;
+							await this.plugin.saveSettings();
+						}, 750),
+					);
+			});
 
 		new Setting(containerEl)
 			.setName('Port')

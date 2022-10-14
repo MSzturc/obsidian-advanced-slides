@@ -40,7 +40,7 @@
 		"highlight.js": "^11.3.1",
 		"jest": "^27.4.5",
 		"mathjax": "^3.2.0",
-		"obsidian": "^0.12.17",
+		"obsidian": "^0.16.3",
 		"reveal.js": "^4.2.1",
 		"reveal.js-menu": "^2.1.0",
 		"reveal.js-mermaid-plugin": "^1.0.0",
