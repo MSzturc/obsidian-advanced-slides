@@ -175,7 +175,7 @@ export class ImageProcessor {
 			}
 
 		}
-		return result;
+		return result + '\n';
 	}
 
 	private isIcon(path: string) {
