@@ -243,14 +243,12 @@ export default class AdvancedSlidesPlugin extends Plugin {
 			});
 
 
-
-
 			const prevDate = this.settings.motm;
 			const parts = prevDate.split(/[- :]/);
 			const currentdate = new Date()
 			const cur_month = currentdate.toISOString().split(/[- :]/)[1];
 
-			if (parts || (parts.length < 2) || parts[1] !== cur_month) {
+			if (!parts || (parts.length < 2) || parts[1] !== cur_month) {
 
 				this.settings.motm = currentdate.toISOString();
 				await this.saveData(this.settings);
