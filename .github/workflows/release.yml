@@ -23,11 +23,13 @@ jobs:
           node-version: '17'
       - name: Setup yarn
         run: npm install -g yarn
-      - name: Setup dependencies
+      - name: Update version
+        id: version
         run: |
           git config --global url."https://github.com".insteadOf git://github.com
           git config --global url."https://".insteadOf git://
-          yarn
+      - name: Setup dependencies
+        run: yarn
       - name: Build advanced slides
         run: npm run build
       - name: Test advanced slides
