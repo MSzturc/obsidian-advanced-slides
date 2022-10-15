@@ -29,6 +29,9 @@ jobs:
       - name: set config 2
         id: config-2
         run: git config --global url."https://".insteadOf git://
+      - name: set config 3
+        id: config-3
+        run: git config --global url."https://github.com/".insteadOf ssh://git@github.com
       - name: Setup dependencies
         run: yarn
       - name: Build advanced slides
