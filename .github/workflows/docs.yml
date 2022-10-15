@@ -32,8 +32,9 @@ jobs:
       - name: Setup yarn
         run: npm install -g yarn
       - name: Setup dependencies
-        run: yarn
-
+        run: |
+          git config --global url."https://github.com".insteadOf git://github.com
+          yarn
       - name: Create coverage summary
         run: |
           SUMMARY="$(yarn test --coverage --coverageReporters=text-summary | tail -3 | head -1)"
