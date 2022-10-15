@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-22T23:37:40 UTC">
+<meta name="revised" content="2022-10-15T21:05:18 UTC">
 <title>Templates :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -488,6 +488,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/plugins/pointer/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/plugins/pointer/">
+            Laser Pointer
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
 
@@ -571,6 +578,7 @@
         <li><a href="#advanced-example">Advanced example</a></li>
         <li><a href="#using-templates-in-a-presentation">Using templates in a presentation</a></li>
         <li><a href="#the-rendered-slide">The rendered Slide</a></li>
+        <li><a href="#default-template">Default Template</a></li>
       </ul>
     </li>
   </ul>
@@ -722,7 +730,12 @@ Umsetzungsschritte
 :::
 </code></pre><h3 id="the-rendered-slide">The rendered Slide</h3>
 <p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/templateSlide.png" alt="Slide"></p>
-
+<h3 id="default-template">Default Template</h3>
+<p>You can define a default Template that will be applied to all slides of a deck by adding the <code>defaultTemplate</code> frontmatter property to your yaml:</p>
+<pre tabindex="0"><code>---
+defaultTemplate: &#34;[[tpl-footer]]&#34;
+---
+</code></pre>
 
 
     

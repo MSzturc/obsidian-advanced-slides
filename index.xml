@@ -207,7 +207,7 @@ To enable Elapsed Time Bar you have to enable the Plugin in Advanced Slides Sett
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/getting-start/learnmore/</guid>
       <description>Learn more about the Advanced Slides from the following pages:
-Advanced Slides Basics How to use Advanced Slides plugin 用Obsidian做PPT，我是认真的 Advanced Slides 专业PPT制作课程来了 Building layouts Advanced Slides Advanced Using Templates in Advanced Slides Advanced Slides in Action Rust Talks by No Boilerplate Videos Source Talk: Use It or Lose It by Nicole van der Hoeven Video Slides CSS Course by RemyDekor Slides Deck: Estimating The Hemodynamic Response Function by Lynne J Williams Slides Source Deck: Basisprozesse beim Beraten und Entscheiden in Teams by Matthäus Szturc Slides Source Deck: Digital Culture Analyse 21 Slides Template Deck: The four Daggers Slides Deckset about Juggling by Marc Bielert Slides Deck: Hydrothermal Venture Slides Deck: ML Ops Examples by Sam Foreman Slides Source Deck: Scientific Data Science by Sam Foreman Slides Source </description>
+Advanced Slides Basics How to use Advanced Slides plugin 用Obsidian做PPT，我是认真的 Advanced Slides 专业PPT制作课程来了 Building layouts Advanced Slides Advanced Using Templates in Advanced Slides Advanced Slides in Action SaturdayShowcase: A weekly format where the Advanced Slides developers feature presentations of their users: Curated List Rust Talks by No Boilerplate Videos Source Talk: Use It or Lose It by Nicole van der Hoeven Video Slides CSS Course by RemyDekor Slides Deck: Estimating The Hemodynamic Response Function by Lynne J Williams Slides Source Deck: Basisprozesse beim Beraten und Entscheiden in Teams by Matthäus Szturc Slides Source Deck: Digital Culture Analyse 21 Slides Template Deck: The four Daggers Slides Deckset about Juggling by Marc Bielert Slides Deck: Hydrothermal Venture Slides Deck: ML Ops Examples by Sam Foreman Slides Source Deck: Scientific Data Science by Sam Foreman Slides Source </description>
     </item>
     
     <item>
@@ -229,6 +229,16 @@ See it fullscreen </description>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/fragments/</guid>
       <description>Fragments are used to highlight or incrementally reveal individual elements on a slide. Every element with the class fragment will be stepped through before moving on to the next slide. The default fragment style is to start out invisible and fade in. This style can be changed by appending a different class to the fragment. A list of all possible fragment types could be found here Fade in &amp;lt;!-- element class=&amp;#34;fragment&amp;#34; --&amp;gt; Fade out &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>Laser Pointer</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/plugins/pointer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/pointer/</guid>
+      <description>A plugin that changes your mouse pointer into a laser pointer. To activate laser pointer press &amp;lsquo;Q&amp;rsquo; Button
+To enable Laser Pointer you have to enable the Plugin in Advanced Slides Settings </description>
     </item>
     
     <item>
@@ -384,7 +394,7 @@ An extensive cheat sheet for every shortcode here </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/mermaid/</guid>
-      <description>--- theme: beige highlightTheme: css/vs2015.css --- ```mermaid sequenceDiagram Alice-&amp;gt;&amp;gt;+John: Hello John, how are you? Alice-&amp;gt;&amp;gt;+John: John, can you hear me? John--&amp;gt;&amp;gt;-Alice: Hi Alice, I can hear you! John--&amp;gt;&amp;gt;-Alice: I feel great! ``` </description>
+      <description>--- theme: beige highlightTheme: css/vs2015.css --- ```mermaid sequenceDiagram Alice-&amp;gt;&amp;gt;+John: Hello John, how are you? Alice-&amp;gt;&amp;gt;+John: John, can you hear me? John--&amp;gt;&amp;gt;-Alice: Hi Alice, I can hear you! John--&amp;gt;&amp;gt;-Alice: I feel great! ``` --- theme: beige highlightTheme: css/vs2015.css --- #### Gitgraph Diagrams support ```mermaid gitGraph commit commit branch develop checkout develop commit commit checkout main merge develop commit commit ``` Mermaid Configuration It&amp;rsquo;s possivle to overload the default mermaid configuration to change the behaviour / layout of the rendered mermaid diagrams.</description>
     </item>
     
     <item>
@@ -528,7 +538,7 @@ Add the plugin to your presentation, as below.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/credits/</guid>
-      <description>github contributors @MSzturc 656 commits @actions-user 96 commits @Coffelius 3 commits @rxian 3 commits @miluoshi 2 commits @jacobmarble 1 commits @axelson 1 commits @Michael-Beukman 1 commits @Plexipop 1 commits @scokobro 1 commits @code-factor 1 commits Packages and libraries obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework </description>
+      <description>github contributors @MSzturc 675 commits @actions-user 96 commits @Coffelius 3 commits @rxian 3 commits @miluoshi 2 commits @jacobmarble 1 commits @axelson 1 commits @Michael-Beukman 1 commits @Plexipop 1 commits @scokobro 1 commits @code-factor 1 commits Packages and libraries obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework </description>
     </item>
     
   </channel>

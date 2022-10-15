@@ -47,5 +47,15 @@ To set the time for presentation add a timeForPresentation property into your sl
 To enable Elapsed Time Bar you have to enable the Plugin in Advanced Slides Settings </description>
     </item>
     
+    <item>
+      <title>Laser Pointer</title>
+      <link>https://mszturc.github.io/obsidian-advanced-slides/plugins/pointer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mszturc.github.io/obsidian-advanced-slides/plugins/pointer/</guid>
+      <description>A plugin that changes your mouse pointer into a laser pointer. To activate laser pointer press &amp;lsquo;Q&amp;rsquo; Button
+To enable Laser Pointer you have to enable the Plugin in Advanced Slides Settings </description>
+    </item>
+    
   </channel>
 </rss>

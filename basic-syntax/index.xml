@@ -136,7 +136,7 @@ See it fullscreen </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/mermaid/</guid>
-      <description>--- theme: beige highlightTheme: css/vs2015.css --- ```mermaid sequenceDiagram Alice-&amp;gt;&amp;gt;+John: Hello John, how are you? Alice-&amp;gt;&amp;gt;+John: John, can you hear me? John--&amp;gt;&amp;gt;-Alice: Hi Alice, I can hear you! John--&amp;gt;&amp;gt;-Alice: I feel great! ``` </description>
+      <description>--- theme: beige highlightTheme: css/vs2015.css --- ```mermaid sequenceDiagram Alice-&amp;gt;&amp;gt;+John: Hello John, how are you? Alice-&amp;gt;&amp;gt;+John: John, can you hear me? John--&amp;gt;&amp;gt;-Alice: Hi Alice, I can hear you! John--&amp;gt;&amp;gt;-Alice: I feel great! ``` --- theme: beige highlightTheme: css/vs2015.css --- #### Gitgraph Diagrams support ```mermaid gitGraph commit commit branch develop checkout develop commit commit checkout main merge develop commit commit ``` Mermaid Configuration It&amp;rsquo;s possivle to overload the default mermaid configuration to change the behaviour / layout of the rendered mermaid diagrams.</description>
     </item>
     
     <item>

@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-09-22T23:37:40 UTC">
+<meta name="revised" content="2022-10-15T21:05:18 UTC">
 <title>Mermaid :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -488,6 +488,13 @@
           </a><i class="fa fa-circle-thin read-icon"></i>
         </div>
     </li>
+      <li data-nav-id="https://mszturc.github.io/obsidian-advanced-slides/plugins/pointer/" class="dd-item">
+        <div>
+          <a href="/obsidian-advanced-slides/plugins/pointer/">
+            Laser Pointer
+          </a><i class="fa fa-circle-thin read-icon"></i>
+        </div>
+    </li>
         </ul>
     </li>
 
@@ -567,7 +574,15 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
         </div>
     </div>
     
@@ -612,6 +627,42 @@
 </span></span><span style="display:flex;"><span>    John--&gt;&gt;-Alice: I feel great!
 </span></span><span style="display:flex;"><span>    ```
 </span></span></code></pre></div><p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/mermaid.png" alt="Mermaid"></p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>theme: beige
+</span></span><span style="display:flex;"><span>highlightTheme: css/vs2015.css
+</span></span><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#### Gitgraph Diagrams support
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>```mermaid
+</span></span><span style="display:flex;"><span>    gitGraph
+</span></span><span style="display:flex;"><span>       commit
+</span></span><span style="display:flex;"><span>       commit
+</span></span><span style="display:flex;"><span>       branch develop
+</span></span><span style="display:flex;"><span>       checkout develop
+</span></span><span style="display:flex;"><span>       commit
+</span></span><span style="display:flex;"><span>       commit
+</span></span><span style="display:flex;"><span>       checkout main
+</span></span><span style="display:flex;"><span>       merge develop
+</span></span><span style="display:flex;"><span>       commit
+</span></span><span style="display:flex;"><span>       commit
+</span></span><span style="display:flex;"><span>    ```
+</span></span></code></pre></div><p><img src="https://mszturc.github.io/obsidian-advanced-slides/images/gitgraph.png" alt="Gitgraph"></p>
+<h4 id="mermaid-configuration">Mermaid Configuration</h4>
+<p>It&rsquo;s possivle to overload the default mermaid configuration to change the behaviour / layout of the rendered mermaid diagrams. Do do this add a mermaid property to yaml as following:</p>
+<p>mermaid:
+themeVariables:
+fontSize: 32px
+theme: &lsquo;forest&rsquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>mermaid:
+</span></span><span style="display:flex;"><span>  themeVariables:
+</span></span><span style="display:flex;"><span>    fontSize: 32px
+</span></span><span style="display:flex;"><span>  theme: &#39;forest&#39;
+</span></span><span style="display:flex;"><span>---
+</span></span></code></pre></div>
+<div class="alert alert-info" role="alert">Read more about mermaid configuration <a href="https://mermaid-js.github.io/mermaid/#/Setup">here</a></div>
+
 
 
     
