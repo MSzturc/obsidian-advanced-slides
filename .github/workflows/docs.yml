@@ -31,10 +31,13 @@ jobs:
           node-version: '17'
       - name: Setup yarn
         run: npm install -g yarn
-      - name: Update git config
-        run: |
-          git config --global url."https://github.com".insteadOf git://github.com
+      - name: set config
+        id: config-1
+        run: git config --global url."https://github.com".insteadOf git://github.com
           git config --global url."https://".insteadOf git://
+      - name: set config 2
+        id: config-2
+        run: git config --global url."https://".insteadOf git://
       - name: Setup dependencies
         run: yarn
       - name: Create coverage summary
