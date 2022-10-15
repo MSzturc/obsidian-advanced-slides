@@ -20,6 +20,7 @@ exports[`Basic Markdown Syntax > Callouts 1`] = `
 
 <i class=\\"fas fa-fire-alt\\" ></i>
 
+
 </div>
 <div class=\\"callout-title-inner\\">
 
@@ -40,6 +41,7 @@ This is an Tip with a custom Title
 <div class=\\"callout-icon\\">
 
 <i class=\\"fas fa-exclamation-triangle\\" ></i>
+
 
 </div>
 <div class=\\"callout-title-inner\\">
@@ -64,6 +66,7 @@ This warning is aligned left
 
 <i class=\\"fas fa-bolt\\" ></i>
 
+
 </div>
 <div class=\\"callout-title-inner\\">
 
@@ -87,6 +90,7 @@ Callouts support manipulation through annotations
 
 <i class=\\"fas fa-list\\" ></i>
 
+
 </div>
 <div class=\\"callout-title-inner\\">
 
@@ -109,6 +113,7 @@ Here is an Example for an Callout in a Slide. Callouts support dark and white ba
 <div class=\\"callout-icon\\">
 
 <i class=\\"fas fa-quote-left\\" ></i>
+
 
 </div>
 <div class=\\"callout-title-inner\\">
