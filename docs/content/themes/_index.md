@@ -29,7 +29,7 @@ To activate a theme simply add a theme property in the frontmatter section of yo
 
 	---
 
-if you want to use a custum theme you can do it! Just place the theme in the plugins directory and load them from there.
+If you want to use a custom theme you can do that! Just place the theme in the plugins directory and load them from there.
 
 **Example:** 
 
@@ -56,7 +56,7 @@ All you have learned so far about custom themes could be applied to highlight th
 
 	---
 
-By default advanced slides comes with a varity of diffrent highlight themes:
+By default advanced slides comes with a variety of different highlight themes:
 
 - zenburn (default)
 - monokai
