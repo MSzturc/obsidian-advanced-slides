@@ -13,11 +13,9 @@ export class YamlParser {
 
 	getSlideOptions(options: unknown, print = false) {
 		const globalSettings = _.omitBy(this.settings, v => _.isNil(v) || v === '');
-		if (print) {
-			return _.defaults(this.getPrintOptions(), options, globalSettings, defaults);
-		} else {
-			return _.defaults({}, options, globalSettings, defaults);
-		}
+		const printOptions = print ? this.getPrintOptions() : {};
+
+		return _.defaults(printOptions, options, globalSettings, defaults)
 	}
 
 	private getPrintOptions() {
