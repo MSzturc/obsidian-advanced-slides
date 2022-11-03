@@ -120,25 +120,15 @@ export class RevealRenderer {
 	}
 
 	private getHighlightThemeUrl(theme: string) {
-		if (this.isValidUrl(theme)) {
-			return theme;
-		}
-
-		const highlightThemes = glob.sync('plugin/highlight/*.css', {
-			cwd: this.pluginDirectory,
-		});
-
-		const highlightTheme = highlightThemes.find(themePath => basename(themePath).replace(extname(themePath), '') === theme);
-
-		return highlightTheme ? highlightTheme : theme;
+		return this.getThemeUrl(theme, 'plugin/highlight/*.css');
 	}
 
-	private getThemeUrl(theme: string) {
+	private getThemeUrl(theme: string, globPattern = 'dist/theme/*.css') {
 		if (this.isValidUrl(theme)) {
 			return theme;
 		}
 
-		const revealThemes = glob.sync('dist/theme/*.css', {
+		const revealThemes = glob.sync(globPattern, {
 			cwd: this.pluginDirectory,
 		});
 
@@ -148,16 +138,10 @@ export class RevealRenderer {
 	}
 
 	private async getTemplate(embed = false) {
-		let templateFile;
+		const relativePath = embed ? 'template/embed.html' : defaults.template;
+		const templateFile = join(this.pluginDirectory, relativePath);
 
-		if (embed) {
-			templateFile = join(this.pluginDirectory, 'template/embed.html');
-		} else {
-			templateFile = join(this.pluginDirectory, defaults.template);
-		}
-
-		const content = (await readFile(templateFile.toString())).toString();
-		return content;
+		return (await readFile(templateFile.toString())).toString();
 	}
 
 	private slidify(markdown: string, slidifyOptions: unknown) {
