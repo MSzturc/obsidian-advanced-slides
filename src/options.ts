@@ -4,6 +4,7 @@ export type Options = {
 	template: string;
 	separator: string;
 	verticalSeparator: string;
+	notesSeparator: string;
 	enableLinks: boolean;
 	title: string;
 	css: string | string[];

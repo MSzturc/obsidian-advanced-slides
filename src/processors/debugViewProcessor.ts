@@ -12,7 +12,7 @@ export class DebugViewProcessor {
 						.split(new RegExp(options.verticalSeparator, 'gmi'))
 						.map((slide, index) => {
 
-							const [md, notes] = this.extractNotes(slide);
+							const [md, notes] = this.extractNotes(slide, options);
 
 							let newSlide = this.addDebugCode(md);
 							if (notes.length > 0) {
@@ -56,8 +56,14 @@ export class DebugViewProcessor {
 		return markdown + '\n' + gridBlock;
 	}
 
-	extractNotes(input: string): [string, string] {
-		const spliceIdx = input.indexOf('note:');
+	extractNotes(input: string, options: Options): [string, string] {
+
+		let noteSeparator = 'note:';
+		if (options.notesSeparator && options.notesSeparator.length > 0) {
+			noteSeparator = options.notesSeparator;
+		}
+
+		const spliceIdx = input.indexOf(noteSeparator);
 		if (spliceIdx > 0) {
 			return [input.substring(0, spliceIdx), input.substring(spliceIdx)];
 		} else {

@@ -66,7 +66,7 @@ export class TemplateProcessor {
 							try {
 
 								// eslint-disable-next-line prefer-const
-								let [md, notes] = this.extractNotes(slide);
+								let [md, notes] = this.extractNotes(slide, options);
 
 								let circuitCounter = 0;
 								while (this.templateCommentRegex.test(md)) {
@@ -100,8 +100,14 @@ export class TemplateProcessor {
 		return output;
 	}
 
-	extractNotes(input: string): [string, string] {
-		const spliceIdx = input.indexOf('note:');
+	extractNotes(input: string, options: Options): [string, string] {
+
+		let noteSeparator = 'note:';
+		if (options.notesSeparator && options.notesSeparator.length > 0) {
+			noteSeparator = options.notesSeparator;
+		}
+
+		const spliceIdx = input.indexOf(noteSeparator);
 		if (spliceIdx > 0) {
 			return [input.substring(0, spliceIdx), input.substring(spliceIdx)];
 		} else {

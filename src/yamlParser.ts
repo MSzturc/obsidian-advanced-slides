@@ -31,7 +31,7 @@ export class YamlParser {
 	}
 
 	getSlidifyOptions(options: unknown) {
-		const slidifyProps = ['separator', 'verticalSeparator'];
+		const slidifyProps = ['separator', 'verticalSeparator', 'notesSeparator'];
 		return _.pick(options, slidifyProps);
 	}
 

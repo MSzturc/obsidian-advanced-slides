@@ -16,7 +16,7 @@ export class DropProcessor {
 					.split(new RegExp(options.verticalSeparator, 'gmi'))
 					.map(slide => {
 						if (slide.trim().length > 0) {
-							const newSlide = this.transformSlide(slide);
+							const newSlide = this.transformSlide(slide, options);
 							const split = output.split(slide);
 							if (split.length == 2) {
 								output = split.join(newSlide);
@@ -40,8 +40,8 @@ export class DropProcessor {
 		return output;
 	}
 
-	transformSlide(slide: string) {
-		const [md, notes] = this.extractNotes(slide);
+	transformSlide(slide: string, options: Options) {
+		const [md, notes] = this.extractNotes(slide, options);
 
 		let outMd, outSlideComment;
 
@@ -68,8 +68,14 @@ export class DropProcessor {
 		return out;
 	}
 
-	extractNotes(input: string): [string, string] {
-		const spliceIdx = input.indexOf('note:');
+	extractNotes(input: string, options: Options): [string, string] {
+
+		let noteSeparator = 'note:';
+		if (options.notesSeparator && options.notesSeparator.length > 0) {
+			noteSeparator = options.notesSeparator;
+		}
+
+		const spliceIdx = input.indexOf(noteSeparator);
 		if (spliceIdx > 0) {
 			return [input.substring(0, spliceIdx), input.substring(spliceIdx)];
 		} else {
