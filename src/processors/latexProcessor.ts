@@ -34,15 +34,6 @@ export class LatexProcessor {
 	}
 
 	private processSingleLine(markdown: string) {
-
-		let insideCodeBlock = false;
-		if (markdown.indexOf('```') > -1) {
-			insideCodeBlock = !insideCodeBlock;
-		}
-		if (insideCodeBlock) {
-			return markdown;
-		}
-
 		return markdown
 			.split('\n')
 			.map(line => {
