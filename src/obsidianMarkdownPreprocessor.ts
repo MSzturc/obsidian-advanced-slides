@@ -23,6 +23,7 @@ import { TemplateProcessor } from './processors/templateProcessor';
 import { ChartProcessor } from './processors/chartProcessor';
 import { DefaultBackgroundProcessor } from './processors/defaultBackgroundProcessor';
 import { ReferenceProcessor } from './processors/referenceProcessor';
+import { SkipSlideProcessor } from './processors/skipSlideProcessor';
 
 export class ObsidianMarkdownPreprocessor {
 	private multipleFileProcessor: MultipleFileProcessor;
@@ -47,6 +48,7 @@ export class ObsidianMarkdownPreprocessor {
 	private chartProcessor: ChartProcessor;
 	private defaultBackgroundProcessor: DefaultBackgroundProcessor;
 	private referenceProcessor: ReferenceProcessor;
+	private skipSlideProcessor: SkipSlideProcessor;
 
 	constructor(utils: ObsidianUtils) {
 		this.multipleFileProcessor = new MultipleFileProcessor(utils);
@@ -71,6 +73,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.chartProcessor = new ChartProcessor();
 		this.defaultBackgroundProcessor = new DefaultBackgroundProcessor();
 		this.referenceProcessor = new ReferenceProcessor();
+		this.skipSlideProcessor = new SkipSlideProcessor();
 	}
 	process(markdown: string, options: Options) {
 		YamlStore.getInstance().options = options;
@@ -96,7 +99,8 @@ export class ObsidianMarkdownPreprocessor {
 			}
 		}
 
-		const afterReferenceProcessor = this.referenceProcessor.process(after);
+		const afterSkipSlideProcessor = this.skipSlideProcessor.process(after, options);
+		const afterReferenceProcessor = this.referenceProcessor.process(afterSkipSlideProcessor);
 		const afterDebugViewProcessor = this.debugViewProcessor.process(afterReferenceProcessor, options);
 		const afterAutoClosingProcessor = this.autoClosingProcessor.process(afterDebugViewProcessor);
 		const defaultBackgroundProcessor = this.defaultBackgroundProcessor.process(afterAutoClosingProcessor, options);
@@ -120,7 +124,8 @@ export class ObsidianMarkdownPreprocessor {
 		if (options.log) {
 			this.log('markdown', '', markdown);
 			this.log('merge & template', markdown, after);
-			this.log('afterReferenceProcessor', after, afterReferenceProcessor);
+			this.log('afterSkipSlideProcessor', after, afterSkipSlideProcessor);
+			this.log('afterReferenceProcessor', afterSkipSlideProcessor, afterReferenceProcessor);
 			this.log('afterDebugViewProcessor', afterReferenceProcessor, afterDebugViewProcessor);
 			this.log('afterAutoClosingProcessor', afterDebugViewProcessor, afterAutoClosingProcessor);
 			this.log('defaultBackgroundProcessor', afterAutoClosingProcessor, defaultBackgroundProcessor);

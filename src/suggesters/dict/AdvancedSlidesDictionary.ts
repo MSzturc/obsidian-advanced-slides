@@ -751,6 +751,18 @@ const opacityData: Dictionary = [
     }
 ];
 
+const skipData: Dictionary = [
+    {
+        value: 'true',
+        description: "true"
+    }, {
+        value: 'false',
+        description: "false"
+    },
+];
+
+
+
 const rotateData: Dictionary = [
     {
         value: '<0...360>',
@@ -894,6 +906,11 @@ const slideData: Dictionary = [
     {
         value: 'data-auto-animate ',
         offset: 18,
+    },
+    {
+        value: 'skip=""',
+        description: 'skip="<true | false>"',
+        offset: 6,
     },
 ];
 
@@ -1541,6 +1558,10 @@ const slideMap: DictionaryMap = {
         {
             property: "data-background-opacity",
             dictionary: opacityData
+        },
+        {
+            property: "skip",
+            dictionary: skipData
         },
     ]
 };
