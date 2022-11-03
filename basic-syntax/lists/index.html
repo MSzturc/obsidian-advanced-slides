@@ -5,7 +5,7 @@
     
       <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="revised" content="2022-10-15T22:10:01 UTC">
+<meta name="revised" content="2022-11-03T19:07:08 UTC">
 <title>Lists :: Advanced Slides Documentation</title>
 <link rel="shortcut icon" href="/obsidian-advanced-slides/images/favicon.png" type="image/x-icon" />
 <link href="/obsidian-advanced-slides/css/nucleus.css" rel="stylesheet">
@@ -574,7 +574,13 @@
     
     <div class="progress">
         <div class="wrapper">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#unordered-lists">Unordered Lists</a></li>
+    <li><a href="#ordered-lists">Ordered Lists</a></li>
+    <li><a href="#nesting-lists-and-content">Nesting Lists and Content</a></li>
+  </ul>
+</nav>
         </div>
     </div>
     
@@ -605,7 +611,16 @@
 </script>
     
     
-    <div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#00a8c8">-</span> Item 1
+    <p>Add ordered (numbered) and unordered lists to slides to present information as bullet points.</p>
+<h2 id="unordered-lists">Unordered Lists</h2>
+<p>To create an unordered list, start the line with <code>*</code> or <code>-</code>.
+Alternatively, you can also use <code>+</code> to create a <a href="/obsidian-advanced-slides/extend-syntax/fragmentedlists/">Unordered Fragmented List</a></p>
+<h2 id="ordered-lists">Ordered Lists</h2>
+<p>To create an ordered list, start the line with any number, followed by a dot and a space. The slide will show the correct numbers in the list.
+Alternatively, you can also start the line with any number, followed by a <code>)</code> to create a <a href="/obsidian-advanced-slides/extend-syntax/fragmentedlists/">Ordered Fragmented List</a></p>
+<h2 id="nesting-lists-and-content">Nesting Lists and Content</h2>
+<p>To nest lists or other content inside a list item, indent it with spaces or tabs.</p>
+<div class="highlight"><pre tabindex="0" style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span><span style="color:#00a8c8">-</span> Item 1
 </span></span><span style="display:flex;"><span><span style="color:#00a8c8">-</span> Item 2
 </span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">-</span> Item 2a
 </span></span><span style="display:flex;"><span>	<span style="color:#00a8c8">-</span> Item 2b

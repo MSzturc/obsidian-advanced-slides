@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.65% </span>
+                <span class="strong">75.63% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>87/115</span>
+                <span class='fraction'>90/119</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75.65% </span>
+                <span class="strong">75.63% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>87/115</span>
+                <span class='fraction'>90/119</span>
             </div>
         
             
@@ -241,7 +241,12 @@
 <a name='L176'></a><a href='#L176'>176</a>
 <a name='L177'></a><a href='#L177'>177</a>
 <a name='L178'></a><a href='#L178'>178</a>
-<a name='L179'></a><a href='#L179'>179</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
+<a name='L179'></a><a href='#L179'>179</a>
+<a name='L180'></a><a href='#L180'>180</a>
+<a name='L181'></a><a href='#L181'>181</a>
+<a name='L182'></a><a href='#L182'>182</a>
+<a name='L183'></a><a href='#L183'>183</a>
+<a name='L184'></a><a href='#L184'>184</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
@@ -266,6 +271,7 @@
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -292,6 +298,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">71x</span>
 <span class="cline-any cline-yes">71x</span>
 <span class="cline-any cline-yes">71x</span>
 <span class="cline-any cline-yes">71x</span>
@@ -359,8 +367,10 @@
 <span class="cline-any cline-yes">71x</span>
 <span class="cline-any cline-yes">71x</span>
 <span class="cline-any cline-yes">71x</span>
+<span class="cline-any cline-yes">71x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">71x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -444,6 +454,7 @@ import { TemplateProcessor } from './processors/templateProcessor';
 import { ChartProcessor } from './processors/chartProcessor';
 import { DefaultBackgroundProcessor } from './processors/defaultBackgroundProcessor';
 import { ReferenceProcessor } from './processors/referenceProcessor';
+import { SkipSlideProcessor } from './processors/skipSlideProcessor';
 &nbsp;
 export class ObsidianMarkdownPreprocessor {
 	private multipleFileProcessor: MultipleFileProcessor;
@@ -468,6 +479,7 @@ export class ObsidianMarkdownPreprocessor {
 	private chartProcessor: ChartProcessor;
 	private defaultBackgroundProcessor: DefaultBackgroundProcessor;
 	private referenceProcessor: ReferenceProcessor;
+	private skipSlideProcessor: SkipSlideProcessor;
 &nbsp;
 	constructor(utils: ObsidianUtils) {
 		this.multipleFileProcessor = new MultipleFileProcessor(utils);
@@ -492,6 +504,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.chartProcessor = new ChartProcessor();
 		this.defaultBackgroundProcessor = new DefaultBackgroundProcessor();
 		this.referenceProcessor = new ReferenceProcessor();
+		this.skipSlideProcessor = new SkipSlideProcessor();
 	}
 	process(markdown: string, options: Options) {
 		YamlStore.getInstance().options = options;
@@ -517,7 +530,8 @@ export class ObsidianMarkdownPreprocessor {
 			}
 		}
 &nbsp;
-		const afterReferenceProcessor = this.referenceProcessor.process(after);
+		const afterSkipSlideProcessor = this.skipSlideProcessor.process(after, options);
+		const afterReferenceProcessor = this.referenceProcessor.process(afterSkipSlideProcessor);
 		const afterDebugViewProcessor = this.debugViewProcessor.process(afterReferenceProcessor, options);
 		const afterAutoClosingProcessor = this.autoClosingProcessor.process(afterDebugViewProcessor);
 		const defaultBackgroundProcessor = this.defaultBackgroundProcessor.process(afterAutoClosingProcessor, options);
@@ -541,7 +555,8 @@ export class ObsidianMarkdownPreprocessor {
 		<span class="missing-if-branch" title="if path not taken" >I</span>if (options.log) {
 <span class="cstat-no" title="statement not covered" >			this.log('markdown', '', markdown);</span>
 <span class="cstat-no" title="statement not covered" >			this.log('merge &amp; template', markdown, after);</span>
-<span class="cstat-no" title="statement not covered" >			this.log('afterReferenceProcessor', after, afterReferenceProcessor);</span>
+<span class="cstat-no" title="statement not covered" >			this.log('afterSkipSlideProcessor', after, afterSkipSlideProcessor);</span>
+<span class="cstat-no" title="statement not covered" >			this.log('afterReferenceProcessor', afterSkipSlideProcessor, afterReferenceProcessor);</span>
 <span class="cstat-no" title="statement not covered" >			this.log('afterDebugViewProcessor', afterReferenceProcessor, afterDebugViewProcessor);</span>
 <span class="cstat-no" title="statement not covered" >			this.log('afterAutoClosingProcessor', afterDebugViewProcessor, afterAutoClosingProcessor);</span>
 <span class="cstat-no" title="statement not covered" >			this.log('defaultBackgroundProcessor', afterAutoClosingProcessor, defaultBackgroundProcessor);</span>
@@ -604,7 +619,7 @@ export class ObsidianMarkdownPreprocessor {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Oct 15 2022 22:10:51 GMT+0000 (Coordinated Universal Time)
+                at Thu Nov 03 2022 19:08:14 GMT+0000 (Coordinated Universal Time)
             </div>
         <script src="../prettify.js"></script>
         <script>

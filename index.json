@@ -116,7 +116,7 @@
 	"title": "Lists",
 	"tags": [],
 	"description": "",
-	"content": "- Item 1 - Item 2 - Item 2a - Item 2b --- 1. Item 1 1. Item 2 1. Item 3 1. Item 3a 1. Item 3b Item 1 Item 2 Item 2a Item 2b Item 1 Item 2 Item 3 Item 3a Item 3b See it fullscreen "
+	"content": "Add ordered (numbered) and unordered lists to slides to present information as bullet points.\nUnordered Lists To create an unordered list, start the line with * or -. Alternatively, you can also use + to create a Unordered Fragmented List\nOrdered Lists To create an ordered list, start the line with any number, followed by a dot and a space. The slide will show the correct numbers in the list. Alternatively, you can also start the line with any number, followed by a ) to create a Ordered Fragmented List\nNesting Lists and Content To nest lists or other content inside a list item, indent it with spaces or tabs.\n- Item 1 - Item 2 - Item 2a - Item 2b --- 1. Item 1 1. Item 2 1. Item 3 1. Item 3a 1. Item 3b Item 1 Item 2 Item 2a Item 2b Item 1 Item 2 Item 3 Item 3a Item 3b See it fullscreen "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/extend-syntax/slideannotations/",
@@ -235,7 +235,7 @@
 	"title": "Themes",
 	"tags": [],
 	"description": "",
-	"content": "Advanced Slides comes with a varity of diffrent themes built in:\nblack (default) white league beige sky night serif simple solarized blood moon consult css/mattropolis.css To activate a theme simply add a theme property in the frontmatter section of your slides:\n--- theme: night --- if you want to use a custum theme you can do it! Just place the theme in the plugins directory and load them from there.\nExample:\nIf your theme file name is my-theme.css place it inside your Vaults directory in .obsidian/plugins/obsidian-advanced-slides/css/ subfolder and load it by adding the following line on top of your slides markdown file:\n--- theme: css/my-theme.css --- You can also load a custom theme directly from the Internet:\n--- theme: https://revealjs-themes.dzello.com/css/theme/robot-lung.css --- Highlight Themes All you have learned so far about custom themes could be applied to highlight themes as well. Highlight Themes define how codeblock elements should look. To activate a highlight theme simply add a highlightTheme property in the frontmatter section of your slides:\n--- highlightTheme: monokai --- By default advanced slides comes with a varity of diffrent highlight themes:\nzenburn (default) monokai css/vs2015.css "
+	"content": "Advanced Slides comes with a varity of diffrent themes built in:\nblack (default) white league beige sky night serif simple solarized blood moon consult css/mattropolis.css To activate a theme simply add a theme property in the frontmatter section of your slides:\n--- theme: night --- If you want to use a custom theme you can do that! Just place the theme in the plugins directory and load them from there.\nExample:\nIf your theme file name is my-theme.css place it inside your Vaults directory in .obsidian/plugins/obsidian-advanced-slides/css/ subfolder and load it by adding the following line on top of your slides markdown file:\n--- theme: css/my-theme.css --- You can also load a custom theme directly from the Internet:\n--- theme: https://revealjs-themes.dzello.com/css/theme/robot-lung.css --- Highlight Themes All you have learned so far about custom themes could be applied to highlight themes as well. Highlight Themes define how codeblock elements should look. To activate a highlight theme simply add a highlightTheme property in the frontmatter section of your slides:\n--- highlightTheme: monokai --- By default advanced slides comes with a variety of different highlight themes:\nzenburn (default) monokai css/vs2015.css "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/basic-syntax/blockquotes/",
@@ -445,7 +445,7 @@
 	"title": "Credits",
 	"tags": [],
 	"description": "contributors and packages used by Advanced Slides",
-	"content": "github contributors @MSzturc 686 commits @actions-user 98 commits @Coffelius 3 commits @rxian 3 commits @miluoshi 2 commits @jacobmarble 1 commits @axelson 1 commits @Michael-Beukman 1 commits @Plexipop 1 commits @scokobro 1 commits @code-factor 1 commits Packages and libraries obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework "
+	"content": "github contributors @MSzturc 698 commits @actions-user 99 commits @Coffelius 3 commits @rxian 3 commits @miluoshi 2 commits @fnumatic 2 commits @jacobmarble 1 commits @axelson 1 commits @Joxtacy 1 commits @maksim77 1 commits @Michael-Beukman 1 commits @Plexipop 1 commits @scokobro 1 commits @code-factor 1 commits Packages and libraries obsidian - A knowledge base that works on local Markdown files reveal-js - The HTML Presentation Framework mermaid - generation of diagram and flowchart from text in a similar manner as markdown font awesome - the iconic font and CSS framework "
 },
 {
 	"uri": "https://mszturc.github.io/obsidian-advanced-slides/tags/",
