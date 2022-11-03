@@ -32,8 +32,6 @@ export class SkipSlideProcessor {
 					.join(options.verticalSeparator);
 			})
 			.join(options.separator);
-
-		console.log(output);
 		return output;
 	}
 }
