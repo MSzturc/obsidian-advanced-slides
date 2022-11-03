@@ -38,13 +38,13 @@ export class RevealServer {
 
 		this._app.get('/embed/*', async (req, res) => {
 			const file = req.originalUrl.replace('/embed', '');
-			const filePath = path.join(this._baseDirectory, decodeURI(file.split('?')[0]));
+			const filePath = path.join(this._baseDirectory, decodeURIComponent(file.split('?')[0]));
 			const markup = await this._revealRenderer.renderFile(filePath, req.query);
 			res.send(markup);
 		});
 
 		this._app.get(/(\w+\.md)/, async (req, res) => {
-			this.filePath = path.join(this._baseDirectory, decodeURI(req.url.split('?')[0]));
+			this.filePath = path.join(this._baseDirectory, decodeURIComponent(req.url.split('?')[0]));
 			const markup = await this._revealRenderer.renderFile(this.filePath, req.query);
 			res.send(markup);
 		});
