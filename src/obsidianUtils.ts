@@ -155,7 +155,7 @@ export class ObsidianUtils {
 
 		for (let index = startLine; index <= eline; index++) {
 			const line = lines[index];
-			if (line) {
+			if (line != null) {
 				if (index == startLine) {
 					result += line.substring(startColumn) + '\n';
 				} else if (index == eline) {
