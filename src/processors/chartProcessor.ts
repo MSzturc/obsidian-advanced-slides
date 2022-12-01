@@ -27,6 +27,8 @@ export class ChartProcessor {
 	private legendRegex = /(legend):\s(.*)/;
 	private legendPositionRegex = /(legendPosition):\s(.*)/;
 	private stackedRegex = /(stacked):\s(.*)/;
+	private heightRegex = /(height):\s(.*)/;
+	private useThemeColorsRegex = /(useThemeColors):\s(.*)/;
 
 	private colorMap = ["#4285f4", "#ea4335", "#fbbc05", "#34a853", "#673ab7", "#cccccc", "#777777"]
 
@@ -44,6 +46,7 @@ export class ChartProcessor {
 			if (endIdx < 0) {
 				return markdown;
 			}
+			let colorMap=[...this.colorMap];
 
 			const before = markdown.substring(0, startIdx);
 			const after = markdown.substring(endIdx + 3);
@@ -59,7 +62,21 @@ export class ChartProcessor {
 					},
 					options: { elements: {} }
 				};
+				
+				if (this.useThemeColorsRegex.test(chartMarkup)){
+					const [, key, value] = this.useThemeColorsRegex.exec(chartMarkup);
 
+					if (value.trim() == "true"){
+						for (let i=0;i<7;i++){
+							let style=getComputedStyle(document.body).getPropertyValue("--chart-color-"+(i+1));
+							if (style != "") {
+								colorMap[i]=style;
+							}
+							
+						}
+					}
+
+				}
 				if (this.labelRegex.test(chartMarkup)) {
 					const [, labels] = this.labelRegex.exec(chartMarkup);
 					chart.data.labels = parseLabels(labels);
@@ -75,7 +92,7 @@ export class ChartProcessor {
 						}
 						const [, title, data] = m;
 
-						chart.data.datasets.push({ data: JSON.parse(data), label: title, backgroundColor: this.colorMap[i] })
+						chart.data.datasets.push({ data: JSON.parse(data), label: title, backgroundColor: colorMap[i] })
 						i++;
 					}
 
@@ -146,6 +163,11 @@ export class ChartProcessor {
 
 						chart.options.scales.x[key] = JSON.parse(value);
 						chart.options.scales.y[key] = JSON.parse(value);
+
+					}
+					if (this.heightRegex.test(chartMarkup)){
+						const [, key, value] = this.heightRegex.exec(chartMarkup);
+						options.height = +value;
 
 					}
 
