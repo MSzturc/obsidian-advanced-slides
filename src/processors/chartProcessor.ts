@@ -46,7 +46,7 @@ export class ChartProcessor {
 			if (endIdx < 0) {
 				return markdown;
 			}
-			let colorMap=[...this.colorMap];
+			const colorMap=[...this.colorMap];
 
 			const before = markdown.substring(0, startIdx);
 			const after = markdown.substring(endIdx + 3);
@@ -64,11 +64,11 @@ export class ChartProcessor {
 				};
 				
 				if (this.useThemeColorsRegex.test(chartMarkup)){
-					const [, key, value] = this.useThemeColorsRegex.exec(chartMarkup);
+					const [, , value] = this.useThemeColorsRegex.exec(chartMarkup);
 
 					if (value.trim() == "true"){
 						for (let i=0;i<7;i++){
-							let style=getComputedStyle(document.body).getPropertyValue("--chart-color-"+(i+1));
+							const style=getComputedStyle(document.body).getPropertyValue("--chart-color-"+(i+1));
 							if (style != "") {
 								colorMap[i]=style;
 							}
@@ -166,7 +166,7 @@ export class ChartProcessor {
 
 					}
 					if (this.heightRegex.test(chartMarkup)){
-						const [, key, value] = this.heightRegex.exec(chartMarkup);
+						const [, , value] = this.heightRegex.exec(chartMarkup);
 						options.height = +value;
 
 					}
