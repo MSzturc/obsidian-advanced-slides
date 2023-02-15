@@ -310,7 +310,6 @@ export default class AdvancedSlidesPlugin extends Plugin {
 	}
 
 	hideView() {
-		console.log(`hideView: ${""}`);
 		if (this.settings.autoComplete == "inPreview") {
 			this.autoCompleteSuggester.deactivate();
 		}
