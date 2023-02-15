@@ -247,7 +247,12 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 	readParameters(src: string): EmbeddedSlideParameters {
 		const params = load(src) as EmbeddedSlideParameters;
-		params.slide = this.obsidianUtils.findFile(params.slide);
+		const slide = this.obsidianUtils.findFile(params.slide.toString());
+		if (slide && slide.endsWith('.md')) {
+			params.slide = slide;
+		} else if (slide) {
+			params.slide = slide + '.md';
+		}
 		return params;
 	}
 
