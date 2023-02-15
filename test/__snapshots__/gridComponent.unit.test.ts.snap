@@ -493,7 +493,7 @@ exports[`Grid Component > Position Coordinates 1`] = `
 ### Positive X, Y
 </div>
 
-<div class=\\"\\" style=\\"background-color: red; position: absolute; left: 30%; top: 40%; height: 30%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
+<div class=\\"\\" style=\\"background-color: red; position: absolute; left: 65.83333333333333%; top: 5.714285714285714%; height: 30%; width: 30%; display: flex; flex-direction: column; align-items: center; justify-content: center\\" >
 
 ### Negative X, Positive Y
 </div>
