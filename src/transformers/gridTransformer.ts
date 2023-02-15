@@ -169,47 +169,50 @@ export class GridTransformer implements AttributeTransformer {
 		try {
 			const result = new Map<string, number>();
 
+			result.set('slideWidth', this.maxWidth);
+			result.set('slideHeight', this.maxHeight);
+
 			if (isAbsolute) {
 				result.set('maxWidth', this.maxWidth);
 				result.set('maxHeight', this.maxHeight);
-				return this.readValues(drag, drop, result, this.toPixel, this.getXYof);
+				return this.readValues(drag, drop, result, this.toPixel);
 
 			} else {
 				result.set('maxWidth', 100);
 				result.set('maxHeight', 100);
-				return this.readValues(drag, drop, result, this.toRelativeValue, this.relativeOf);
+				return this.readValues(drag, drop, result, this.toRelativeValue);
 			}
 		} catch (ex) {
 			return undefined;
 		}
 	}
 
-	readValues(drag: string, drop: string, result: Map<string, number>, valueTransformer: (max: number, input: string) => number, textTransformer: (name: string, width: number, height: number) => [number, number]): Map<string, number> {
+	readValues(drag: string, drop: string, result: Map<string, number>, valueTransformer: (max: number, input: string) => number): Map<string, number> {
 
 		try {
 			const [, width, height] = this.gridAttributeRegex.exec(drag);
 			const [, x, y, name] = this.gridAttributeRegex.exec(drop);
 
 			if (width) {
-				result.set('width', valueTransformer(result.get('maxWidth'), width));
+				result.set('width', valueTransformer(result.get('slideWidth'), width));
 			}
 
 			if (height) {
-				result.set('height', valueTransformer(result.get('maxHeight'), height));
+				result.set('height', valueTransformer(result.get('slideHeight'), height));
 			}
 
 			if (name) {
-				const [nx, ny] = textTransformer(name, result.get('width'), result.get('height'));
+				const [nx, ny] = this.getXYof(name, result.get('width'), result.get('height'), result.get('maxWidth'), result.get('maxHeight'));
 
 				result.set('x', nx);
 				result.set('y', ny);
 			} else {
 				if (x) {
-					result.set('x', valueTransformer(result.get('maxWidth'), x));
+					result.set('x', valueTransformer(result.get('slideWidth'), x));
 				}
 
 				if (y) {
-					result.set('y', valueTransformer(result.get('maxHeight'), y));
+					result.set('y', valueTransformer(result.get('slideHeight'), y));
 				}
 			}
 			return result;
@@ -220,7 +223,7 @@ export class GridTransformer implements AttributeTransformer {
 
 	toRelativeValue(max: number, input: string): number {
 		if (input.toLowerCase().endsWith('px')) {
-			return Number(input.toLowerCase().replace('px', '')) / max * 100;
+			return Number(input.toLowerCase().replace('px', '').trim()) / max * 100;
 		} else {
 			return Number(input);
 		}
@@ -228,58 +231,32 @@ export class GridTransformer implements AttributeTransformer {
 
 	toPixel(max: number, input: string): number {
 		if (input.toLowerCase().endsWith('px')) {
-			return Number(input.toLowerCase().replace('px', ''));
+			return Number(input.toLowerCase().replace('px', '').trim());
 		} else {
 			return (max / 100) * Number(input);
 		}
 	}
 
-	getXYof(name: string, width: number, height: number): [number, number] {
+	getXYof(name: string, width: number, height: number, maxWidth: number, maxHeight: number): [number, number] {
 		switch (name) {
 			case 'topleft':
 				return [0, 0];
 			case 'topright':
-				return [this.maxWidth - width, 0];
+				return [maxWidth - width, 0];
 			case 'bottomleft':
-				return [0, this.maxHeight - height];
+				return [0, maxHeight - height];
 			case 'bottomright':
-				return [this.maxWidth - width, this.maxHeight - height];
+				return [maxWidth - width, maxHeight - height];
 			case 'left':
-				return [0, (this.maxHeight - height) / 2];
+				return [0, (maxHeight - height) / 2];
 			case 'right':
-				return [this.maxWidth - width, (this.maxHeight - height) / 2];
+				return [maxWidth - width, (maxHeight - height) / 2];
 			case 'top':
-				return [(this.maxWidth - width) / 2, 0];
+				return [(maxWidth - width) / 2, 0];
 			case 'bottom':
-				return [(this.maxWidth - width) / 2, this.maxHeight - height];
+				return [(maxWidth - width) / 2, maxHeight - height];
 			case 'center':
-				return [(this.maxWidth - width) / 2, (this.maxHeight - height) / 2];
-			default:
-				return [0, 0];
-		}
-	}
-
-	relativeOf(name: string, width: number, height: number): [number, number] {
-
-		switch (name) {
-			case 'topleft':
-				return [0, 0];
-			case 'topright':
-				return [100 - width, 0];
-			case 'bottomleft':
-				return [0, 100 - height];
-			case 'bottomright':
-				return [100 - width, 100 - height];
-			case 'left':
-				return [0, (100 - height) / 2];
-			case 'right':
-				return [100 - width, (100 - height) / 2];
-			case 'top':
-				return [(100 - width) / 2, 0];
-			case 'bottom':
-				return [(100 - width) / 2, 100 - height];
-			case 'center':
-				return [(100 - width) / 2, (100 - height) / 2];
+				return [(maxWidth - width) / 2, (maxHeight - height) / 2];
 			default:
 				return [0, 0];
 		}
