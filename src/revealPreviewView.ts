@@ -8,14 +8,16 @@ export const REVEAL_PREVIEW_VIEW = 'reveal-preview-view';
 export class RevealPreviewView extends ItemView {
 	url = 'about:blank';
 	private home: URL;
+	private onCloseListener: () => void;
 
 	private urlRegex = /#\/(\d*)(?:\/(\d*))?(?:\/(\d*))?/;
 	private yaml: YamlParser;
 
-	constructor(leaf: WorkspaceLeaf, home: URL, settings: AdvancedSlidesSettings) {
+	constructor(leaf: WorkspaceLeaf, home: URL, settings: AdvancedSlidesSettings, onCloseListener: () => void) {
 		super(leaf);
 		this.home = home;
 		this.yaml = new YamlParser(settings);
+		this.onCloseListener = onCloseListener;
 
 		this.addAction('slides', 'Open in Browser', () => {
 			window.open(home);
@@ -220,6 +222,7 @@ export class RevealPreviewView extends ItemView {
 
 	async onClose() {
 		window.removeEventListener('message', this.onMessage);
+		this.onCloseListener();
 	}
 
 	private reloadIframe() {

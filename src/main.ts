@@ -147,7 +147,7 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		this.revealServer.start();
 
 		try {
-			this.registerView(REVEAL_PREVIEW_VIEW, leaf => new RevealPreviewView(leaf, this.revealServer.getUrl(), this.settings));
+			this.registerView(REVEAL_PREVIEW_VIEW, leaf => new RevealPreviewView(leaf, this.revealServer.getUrl(), this.settings, this.hideView.bind(this)));
 
 			this.registerEvent(this.app.vault.on('modify', this.onChange.bind(this)));
 
@@ -298,7 +298,6 @@ export default class AdvancedSlidesPlugin extends Plugin {
 
 		if (instance) {
 			this.app.workspace.detachLeavesOfType(REVEAL_PREVIEW_VIEW);
-			instance.onClose();
 			if (this.settings.autoComplete == "inPreview") {
 				this.autoCompleteSuggester.deactivate();
 			}
@@ -307,6 +306,13 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				this.autoCompleteSuggester.activate();
 			}
 			this.showView();
+		}
+	}
+
+	hideView() {
+		console.log(`hideView: ${""}`);
+		if (this.settings.autoComplete == "inPreview") {
+			this.autoCompleteSuggester.deactivate();
 		}
 	}
 
