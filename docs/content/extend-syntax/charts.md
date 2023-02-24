@@ -26,7 +26,7 @@ Advanced Slides allows to add charts using [Obsidian Charts](https://charts.phib
     ```
 ```
 
-You can find more examples in the [Obsidian Charts Dokumentation](https://charts.phibr0.de/Chart%20Types/)
+You can find more examples in the [Obsidian Charts Documentation](https://charts.phibr0.de/Chart%20Types/)
 
 #### Reveal.js Charts Example
 
@@ -51,5 +51,5 @@ You can find more examples in the [Obsidian Charts Dokumentation](https://charts
 -->
 </canvas>
 ```
-You can find more examples in the [Reveal.js Charts Dokumentation](https://github.com/rajgoel/reveal.js-plugins/tree/master/chart#usage)
+You can find more examples in the [Reveal.js Charts Documentation](https://github.com/rajgoel/reveal.js-plugins/tree/master/chart#usage)
 
