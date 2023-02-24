@@ -49,7 +49,7 @@ highlightTheme: css/vs2015.css
 
 
 #### Mermaid Configuration
-It's possivle to overload the default mermaid configuration to change the behaviour / layout of the rendered mermaid diagrams. Do do this add a mermaid property to yaml as following:
+It's possible to overload the default mermaid configuration to change the behaviour / layout of the rendered mermaid diagrams. To do so, add a mermaid property to yaml as following:
 
 mermaid:
   themeVariables:
