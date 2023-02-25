@@ -39,6 +39,7 @@ interface EmbeddedSlideParameters {
 export interface AdvancedSlidesSettings {
 	port: string;
 	autoReload: boolean;
+	autoStart: boolean;
 	exportDirectory: string;
 	enableOverview: boolean;
 	enableChalkboard: boolean;
@@ -61,6 +62,7 @@ export interface AdvancedSlidesSettings {
 const DEFAULT_SETTINGS: AdvancedSlidesSettings = {
 	port: '3000',
 	autoReload: true,
+	autoStart: true,
 	exportDirectory: '/export',
 	enableChalkboard: false,
 	enableOverview: false,
@@ -144,7 +146,10 @@ export default class AdvancedSlidesPlugin extends Plugin {
 		}
 
 		this.revealServer = new RevealServer(this.obsidianUtils, this.settings.port);
-		this.revealServer.start();
+		if (this.settings.autoStart) {
+			this.revealServer.start();
+		}
+		
 
 		try {
 			this.registerView(REVEAL_PREVIEW_VIEW, leaf => new RevealPreviewView(leaf, this.revealServer.getUrl(), this.settings, this.hideView.bind(this)));
@@ -506,6 +511,20 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 						}, 750),
 					);
 			});
+
+		new Setting(containerEl)
+			.setName('Auto Start Server')
+			.setDesc('Should Advanced Slides Preview server be started at Obsidian startup? (default: true)')
+			.addToggle(value => 
+				value
+					.setValue(this.plugin.settings.autoStart)
+					.onChange(
+						_.debounce(async value => {
+							this.plugin.settings.autoStart = value;
+							await this.plugin.saveSettings();
+						}, 750),
+					),
+			)
 
 		new Setting(containerEl)
 			.setName('Port')
