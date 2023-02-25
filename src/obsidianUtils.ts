@@ -42,13 +42,18 @@ export class ObsidianUtils {
 	}
 
 	private getTFile(filename: string): TFile | null {
+
+		if (filename.startsWith("[[") && filename.endsWith("]]")) {
+			filename = filename.substring(2, filename.length - 2).trim();
+		}
+
 		const expDir = this.settings.exportDirectory.startsWith('/')
 			? this.settings.exportDirectory.substring(1)
 			: this.settings.exportDirectory;
 
 		const allFiles = this.app.vault.getFiles();
 		const filesNotInExportDir = allFiles.filter(item => !item.path.contains(expDir));
-		const allHits = filesNotInExportDir.filter(item => item.name == filename);
+		const allHits = filesNotInExportDir.filter(item => item.path.contains(filename));
 
 		let file: TFile = null;
 
@@ -88,6 +93,14 @@ export class ObsidianUtils {
 	getAbsolutePath(relativePath: string): string {
 		const markdownFile = this.getTFile(relativePath);
 		return this.absolute(markdownFile?.path);
+	}
+
+	getRelativePath(path: string): string | null {
+		if (path == null) {
+			return null;
+		}
+		const file = this.getTFile(path);
+		return file?.path;
 	}
 
 	absolute(relativePath: string) {
