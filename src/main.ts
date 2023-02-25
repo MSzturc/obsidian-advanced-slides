@@ -194,6 +194,23 @@ export default class AdvancedSlidesPlugin extends Plugin {
 				},
 			});
 
+
+			this.addCommand({
+				id: 'stop-server-advanced-slides-preview',
+				name: 'Stop Slide Preview Server',
+				callback: () => {
+					this.revealServer.stop()
+				}
+			});
+
+			this.addCommand({
+				id: 'start-server-advanced-slides-preview',
+				name: 'Start Slide Preview Server',
+				callback: () => {
+					this.revealServer.start()
+				}
+			})
+
 			this.addSettingTab(new AdvancedSlidesSettingTab(this.app, this));
 
 
