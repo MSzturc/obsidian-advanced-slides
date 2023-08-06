@@ -1,16 +1,16 @@
-import { readFile } from 'fs-extra';
-import { join, basename, extname } from 'path';
-import { glob } from 'glob';
-import Mustache from 'mustache';
-import { md } from './markdown';
+import { basename, extname, join } from 'path';
 
-import defaults from './defaults.json';
+import { ImageCollector } from './imageCollector';
+import Mustache from 'mustache';
 import { ObsidianMarkdownPreprocessor } from './obsidianMarkdownPreprocessor';
 import { ObsidianUtils } from './obsidianUtils';
-import { YamlParser } from './yamlParser';
-import { ImageCollector } from './imageCollector';
 import { RevealExporter } from './revealExporter';
+import { YamlParser } from './yamlParser';
 import _ from 'lodash';
+import defaults from './defaults.json';
+import { glob } from 'glob';
+import { md } from './markdown';
+import { readFile } from 'fs-extra';
 
 export class RevealRenderer {
 	private processor: ObsidianMarkdownPreprocessor;
@@ -78,6 +78,7 @@ export class RevealRenderer {
 		const slides = this.slidify(processedMarkdown, slidifyOptions);
 
 		const cssPaths = this.getCssPaths(options.css);
+		const remoteCSSPaths = this.getCssPaths(options.remoteCSS);
 
 		const settings = this.yaml.getTemplateSettings(options);
 
@@ -95,6 +96,7 @@ export class RevealRenderer {
 			themeUrl,
 			highlightThemeUrl,
 			cssPaths,
+			remoteCSSPaths,
 			base,
 			enableCustomControls,
 			enableChalkboard,
