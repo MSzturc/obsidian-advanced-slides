@@ -7,7 +7,7 @@ weight = 14
 
 ```md
 > [!tip] This tip has a custom Header
-> This is an Tip with a custom Title
+> This is a Tip with a custom Title
 <!-- element style="width:40%"-->
 
 > [!warning] 
@@ -22,12 +22,12 @@ weight = 14
 
 <grid drag="30 30" drop="11 68" style="font-size:36px">
 > [!example]
-> Here is an Example for an Callout in a Slide. Callouts support dark and white backgrounds and could be sized by annotations
+> Here is an example for a Callout in a slide. Callouts support dark and white backgrounds and could be sized by annotations
 </grid>
 
 <grid drag="50 100" drop="50 0" bg="white" pad="50px" style="font-size:36px">
 > [!example]
-> Here is an Example for an Callout in a Slide. Callouts support dark and white backgrounds and could be sized by annotations
+> Here is an example for a Callout in a slide. Callouts support dark and white backgrounds and could be sized by annotations
 </grid>
 ```
 
