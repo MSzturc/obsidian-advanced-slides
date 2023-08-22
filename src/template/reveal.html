@@ -23,6 +23,10 @@
 	{{#cssPaths}}
     <link rel="stylesheet" href="{{{base}}}{{{.}}}" />
     {{/cssPaths}}
+    
+	{{#remoteCSSPaths}}
+    <link rel="stylesheet" href="{{{.}}}" />
+    {{/remoteCSSPaths}}
 
     <script defer src="{{{base}}}dist/fontawesome/all.min.js"></script>
 
