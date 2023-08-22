@@ -679,7 +679,7 @@ class AdvancedSlidesSettingTab extends PluginSettingTab {
 
 		new Setting(containerEl)
 			.setName('Chalkboard')
-			.setDesc('Should the slides contain a chalkboard ?')
+			.setDesc('Should the slides contain a chalkboard?')
 			.addToggle(value =>
 				value.setValue(this.plugin.settings.enableChalkboard).onChange(
 					_.debounce(async value => {
