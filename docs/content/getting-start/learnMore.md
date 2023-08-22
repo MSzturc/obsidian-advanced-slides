@@ -49,3 +49,5 @@ Learn more about the Advanced Slides from the following pages:
 - Deck: Scientific Data Science by Sam Foreman
     - {{%icon fa-address-card%}} [Slides](https://saforem2.github.io/anl-job-talk/#/)
     - {{%icon fa-github%}} [Source](https://raw.githubusercontent.com/saforem2/anl-job-talk/main/slides.md)
+- Talk Series: Python for Data Science and Machine Learning in Healthcare (Module at Imperial College London) by Chris Lovejoy
+	- {{%icon fa-address-card%}} [Slides](https://www.chrislovejoy.me/imperial)
