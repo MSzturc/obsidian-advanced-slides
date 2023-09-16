@@ -2,6 +2,7 @@ import { readFileSync } from 'fs-extra';
 import { App, FileSystemAdapter, resolveSubpath, TFile } from 'obsidian';
 import path from 'path';
 import { ImageCollector } from './imageCollector';
+import { VideoCollector } from './videoCollector';
 import { AdvancedSlidesSettings } from './main';
 
 export class ObsidianUtils {
@@ -113,6 +114,9 @@ export class ObsidianUtils {
 	findFile(path: string) {
 		let base = '';
 		if (!ImageCollector.getInstance().shouldCollect()) {
+			base = '/';
+		}
+		if (!VideoCollector.getInstance().shouldCollect()) {
 			base = '/';
 		}
 		const file: TFile = this.getTFile(path);

@@ -5,6 +5,7 @@ import { FormatProcessor } from './processors/formatProcessor';
 import { FragmentProcessor } from './processors/fragmentProcessor';
 import { GridProcessor } from './processors/gridProcessor';
 import { ImageProcessor } from './processors/imageProcessor';
+import { VideoProcessor } from './processors/videoProcessor';
 import { InternalLinkProcessor } from './processors/internalLinkProcessor';
 import { LatexProcessor } from './processors/latexProcessor';
 import { MermaidProcessor } from './processors/mermaidProcessor';
@@ -29,6 +30,7 @@ export class ObsidianMarkdownPreprocessor {
 	private multipleFileProcessor: MultipleFileProcessor;
 	private blockProcessor: BlockProcessor;
 	private imageProcessor: ImageProcessor;
+	private videoProcessor: VideoProcessor;
 	private internalLinkProcessor: InternalLinkProcessor;
 	private footnoteProcessor: FootnoteProcessor;
 	private latexProcessor: LatexProcessor;
@@ -54,6 +56,7 @@ export class ObsidianMarkdownPreprocessor {
 		this.multipleFileProcessor = new MultipleFileProcessor(utils);
 		this.blockProcessor = new BlockProcessor();
 		this.imageProcessor = new ImageProcessor(utils);
+		this.videoProcessor = new VideoProcessor(utils);
 		this.internalLinkProcessor = new InternalLinkProcessor(utils);
 		this.footnoteProcessor = new FootnoteProcessor();
 		this.latexProcessor = new LatexProcessor();
@@ -112,7 +115,8 @@ export class ObsidianMarkdownPreprocessor {
 		const afterFootNoteProcessor = this.footnoteProcessor.process(afterBlockProcessor, options);
 		const afterExcalidrawProcessor = this.excalidrawProcessor.process(afterFootNoteProcessor);
 		const afterImageProcessor = this.imageProcessor.process(afterExcalidrawProcessor);
-		const afterInternalLinkProcessor = this.internalLinkProcessor.process(afterImageProcessor, options);
+		const afterVideoProcessor = this.videoProcessor.process(afterImageProcessor);
+		const afterInternalLinkProcessor = this.internalLinkProcessor.process(afterVideoProcessor, options);
 		const afterLatexProcessor = this.latexProcessor.process(afterInternalLinkProcessor);
 		const afterFormatProcessor = this.formatProcessor.process(afterLatexProcessor);
 		const afterFragmentProcessor = this.fragmentProcessor.process(afterFormatProcessor, options);
@@ -137,7 +141,8 @@ export class ObsidianMarkdownPreprocessor {
 			this.log('afterFootNoteProcessor', afterBlockProcessor, afterFootNoteProcessor);
 			this.log('afterExcalidrawProcessor', afterFootNoteProcessor, afterExcalidrawProcessor);
 			this.log('afterImageProcessor', afterExcalidrawProcessor, afterImageProcessor);
-			this.log('afterInternalLinkProcessor', afterImageProcessor, afterInternalLinkProcessor);
+			this.log('afterVideoProcessor', afterImageProcessor, afterVideoProcessor);
+			this.log('afterInternalLinkProcessor', afterVideoProcessor, afterInternalLinkProcessor);
 			this.log('afterLatexProcessor', afterInternalLinkProcessor, afterLatexProcessor);
 			this.log('afterFormatProcessor', afterLatexProcessor, afterFormatProcessor);
 			this.log('afterFragmentProcessor', afterFormatProcessor, afterFragmentProcessor);
