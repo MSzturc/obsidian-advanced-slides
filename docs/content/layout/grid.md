@@ -446,6 +446,7 @@ This guide provides a quick reference to the full set of attributes that can be 
 - **opacity**="0.1...1"
 - **rotate**="0...360"
 - **filter**="blur | bright | contrast | grayscale | hue | invert | saturate | sepia"
+- **justify-content**="start | center | space-between | space-around | space-evenly | end"
 - **frag**="1"
 - **style**="\<any\>"
 - **class**="\<any\>"
