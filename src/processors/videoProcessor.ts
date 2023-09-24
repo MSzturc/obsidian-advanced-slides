@@ -181,7 +181,7 @@ export class VideoProcessor {
 			if (!comment.hasStyle('object-fit')) {
 				comment.addStyle('object-fit', 'scale-down');
 			}
-			const videoHtml = `<video data-autoplay="" controls="" loop="" data-paused-by-reveal=""> <source src="${filePath}" alt="${alt}" ${this.parser.buildAttributes(comment)} type="video/mp4"></video>`;
+			const videoHtml = `<video ${this.parser.buildAttributes(comment)}> <source src="${filePath}" alt="${alt}" type="video/mp4"></video>`;
 			result = result + videoHtml;
 
 		}
