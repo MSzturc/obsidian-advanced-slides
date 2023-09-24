@@ -13,7 +13,8 @@ export class RevealExporter {
 		this.vaultDirectory = utils.getVaultDirectory();
 	}
 
-	public async export(filePath: string, html: string, imgList: string[]) {
+	public async export(filePath: string, html: string, imgList: string[], vidList: string[]) {
+
 		const ext = path.extname(filePath);
 		const folderName = path.basename(filePath).replaceAll(ext, '');
 		const folderDir = path.join(this.exportDirectory, folderName);
@@ -30,6 +31,13 @@ export class RevealExporter {
 				continue;
 			}
 			await copy(path.join(this.vaultDirectory, img), path.join(folderDir, img));
+		}
+
+		for (const vid of vidList) {
+			if (vid.startsWith('http')) {
+				continue;
+			}
+			await copy(path.join(this.vaultDirectory, vid), path.join(folderDir, vid));
 		}
 
 		window.open('file://' + folderDir);

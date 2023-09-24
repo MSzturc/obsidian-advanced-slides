@@ -1,6 +1,7 @@
 import { basename, extname, join } from 'path';
 
 import { ImageCollector } from './imageCollector';
+import { VideoCollector } from './videoCollector';
 import Mustache from 'mustache';
 import { ObsidianMarkdownPreprocessor } from './obsidianMarkdownPreprocessor';
 import { ObsidianUtils } from './obsidianUtils';
@@ -49,6 +50,8 @@ export class RevealRenderer {
 		if (renderForExport) {
 			ImageCollector.getInstance().reset();
 			ImageCollector.getInstance().enable();
+			VideoCollector.getInstance().reset();
+			VideoCollector.getInstance().enable();
 		}
 
 		const content = (await readFile(filePath.toString())).toString();
@@ -56,7 +59,8 @@ export class RevealRenderer {
 
 		if (renderForExport) {
 			ImageCollector.getInstance().disable();
-			await this.exporter.export(filePath, rendered, ImageCollector.getInstance().getAll());
+			VideoCollector.getInstance().disable();
+			await this.exporter.export(filePath, rendered, ImageCollector.getInstance().getAll(), VideoCollector.getInstance().getAll());
 			rendered = await this.render(content, renderForPrint, renderForEmbed);
 		}
 
@@ -87,6 +91,9 @@ export class RevealRenderer {
 
 		let base = '';
 		if (!ImageCollector.getInstance().shouldCollect()) {
+			base = '/';
+		}
+		if (!VideoCollector.getInstance().shouldCollect()) {
 			base = '/';
 		}
 
