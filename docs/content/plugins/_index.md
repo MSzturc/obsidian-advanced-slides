@@ -6,6 +6,6 @@ alwaysopen = false
 pre ="<i class='fa fa-plug' ></i> "
 +++
 
-Advanced Slides comes with a varity of diffrent plugins built in:
+Advanced Slides comes with a variety of different plugins built-in:
 
 {{% children  %}}
