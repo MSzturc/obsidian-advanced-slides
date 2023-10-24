@@ -1,5 +1,5 @@
 export class CalloutProcessor {
-	private regex = />\s\[!([^\]]+)\]-* *(.*)/;
+	private regex = />\s?\[!([^\]]+)\]-* *(.*)/;
 
 	process(markdown: string) {
 
