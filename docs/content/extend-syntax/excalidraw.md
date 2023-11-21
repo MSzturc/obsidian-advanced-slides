@@ -4,7 +4,7 @@ description = ""
 weight = 10
 +++
 
-{{%alert%}}It’s required to activate Auto-Export SVG / PNG in Excalidraw Settings.{{%/alert%}}
+{{%alert%}}It’s required to activate Auto-Export SVG in Excalidraw Settings. Settings path (as of version 2.0.1): "Embedding Excalidraw into your Notes and Exporting" > "Export Settings" > "Auto-export Settings" > "Auto-export SVG"{{%/alert%}}
 
 ```md
 #### Excalidraw support
