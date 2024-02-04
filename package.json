@@ -43,7 +43,7 @@
 		"obsidian": "^0.16.3",
 		"reveal.js": "^4.5.0",
 		"reveal.js-menu": "^2.1.0",
-		"reveal.js-mermaid-plugin": "^1.0.0",
+		"reveal.js-mermaid-plugin": "^2.1.0",
 		"reveal.js-plugins": "^4.1.5",
 		"reveal.js-elapsed-time-bar": "https://github.com/tkrkt/reveal.js-elapsed-time-bar.git",
 		"reveal-pointer": "https://github.com/burnpiro/reveal-pointer.git",
