@@ -4,13 +4,13 @@ description = ""
 weight = 14
 +++
 
-Advanced Slides allows to add charts using [Obsidian Charts](https://charts.phibr0.de/) plugin syntax or [Reveal.js Charts](https://github.com/rajgoel/reveal.js-plugins/tree/master/chart#usage) syntax.
+Advanced Slides allows to add charts using [Obsidian Charts](https://github.com/phibr0/obsidian-charts) plugin syntax or [Reveal.js Charts](https://github.com/rajgoel/reveal.js-plugins/tree/master/chart#usage) syntax.
 
 #### Obsidian Charts Example:
 
 {{%alert%}}Currently the following features are not supported:
-- [Dataview Integration](https://charts.phibr0.de/Dataview%20Integration)
-- [Chart from Table](https://charts.phibr0.de/Chart%20from%20Table)
+- [Dataview Integration](https://charts.phib.ro/Meta/Charts/Dataview+Integration)
+- [Chart from Table](https://charts.phib.ro/Meta/Charts/Chart+from+Table)
 {{%/alert%}}
 
 
@@ -26,7 +26,7 @@ Advanced Slides allows to add charts using [Obsidian Charts](https://charts.phib
     ```
 ```
 
-You can find more examples in the [Obsidian Charts Documentation](https://charts.phibr0.de/Chart%20Types/)
+You can find more examples in the [Obsidian Charts Documentation](https://charts.phib.ro/Meta/Charts/Obsidian+Charts+Documentation)
 
 #### Reveal.js Charts Example
 
